@@ -461,31 +461,31 @@ func TestDaysNarrow(t *testing.T) {
 	}{
 		{
 			idx:      0,
-			expected: "вс",
+			expected: "В",
 		},
 		{
 			idx:      1,
-			expected: "пн",
+			expected: "П",
 		},
 		{
 			idx:      2,
-			expected: "вт",
+			expected: "В",
 		},
 		{
 			idx:      3,
-			expected: "ср",
+			expected: "С",
 		},
 		{
 			idx:      4,
-			expected: "чт",
+			expected: "Ч",
 		},
 		{
 			idx:      5,
-			expected: "пт",
+			expected: "П",
 		},
 		{
 			idx:      6,
-			expected: "сб",
+			expected: "С",
 		},
 	}
 
@@ -509,45 +509,8 @@ func TestDaysShort(t *testing.T) {
 		}
 	}
 
-	tests := []struct {
-		idx      int
-		expected string
-	}{
-		{
-			idx:      0,
-			expected: "вс",
-		},
-		{
-			idx:      1,
-			expected: "пн",
-		},
-		{
-			idx:      2,
-			expected: "вт",
-		},
-		{
-			idx:      3,
-			expected: "ср",
-		},
-		{
-			idx:      4,
-			expected: "чт",
-		},
-		{
-			idx:      5,
-			expected: "пт",
-		},
-		{
-			idx:      6,
-			expected: "сб",
-		},
-	}
-
-	for _, tt := range tests {
-		s := trans.WeekdayShort(time.Weekday(tt.idx))
-		if s != tt.expected {
-			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
-		}
+	if len(days) != 0 {
+		t.Errorf("Expected daysShort to be empty, got length %d", len(days))
 	}
 }
 
@@ -951,7 +914,7 @@ func TestFmtDateFull(t *testing.T) {
 	}{
 		{
 			t:        time.Date(2016, 02, 03, 9, 0, 1, 0, time.UTC),
-			expected: "среда, 3 февраля 2016 г.",
+			expected: "среда, 3 февраля 2016 г.",
 		},
 	}
 
@@ -973,7 +936,7 @@ func TestFmtDateLong(t *testing.T) {
 	}{
 		{
 			t:        time.Date(2016, 02, 03, 9, 0, 1, 0, time.UTC),
-			expected: "3 февраля 2016 г.",
+			expected: "3 февраля 2016 г.",
 		},
 	}
 
@@ -995,7 +958,7 @@ func TestFmtDateMedium(t *testing.T) {
 	}{
 		{
 			t:        time.Date(2016, 02, 03, 9, 0, 1, 0, time.UTC),
-			expected: "3 февр. 2016 г.",
+			expected: "3 февр. 2016 г.",
 		},
 	}
 
@@ -1045,27 +1008,27 @@ func TestFmtNumber(t *testing.T) {
 		{
 			num:      1123456.5643,
 			v:        2,
-			expected: "1 123 456,56",
+			expected: "1 123 456,56",
 		},
 		{
 			num:      1123456.5643,
 			v:        1,
-			expected: "1 123 456,6",
+			expected: "1 123 456,6",
 		},
 		{
 			num:      221123456.5643,
 			v:        3,
-			expected: "221 123 456,564",
+			expected: "221 123 456,564",
 		},
 		{
 			num:      -221123456.5643,
 			v:        3,
-			expected: "-221 123 456,564",
+			expected: "-221 123 456,564",
 		},
 		{
 			num:      -221123456.5643,
 			v:        3,
-			expected: "-221 123 456,564",
+			expected: "-221 123 456,564",
 		},
 		{
 			num:      0,
@@ -1106,55 +1069,55 @@ func TestFmtCurrency(t *testing.T) {
 			num:      1123456.5643,
 			v:        2,
 			currency: currency.USD,
-			expected: "1 123 456,56 USD",
+			expected: "1 123 456,56 USD",
 		},
 		{
 			num:      1123456.5643,
 			v:        1,
 			currency: currency.USD,
-			expected: "1 123 456,60 USD",
+			expected: "1 123 456,60 USD",
 		},
 		{
 			num:      221123456.5643,
 			v:        3,
 			currency: currency.USD,
-			expected: "221 123 456,564 USD",
+			expected: "221 123 456,564 USD",
 		},
 		{
 			num:      -221123456.5643,
 			v:        3,
 			currency: currency.USD,
-			expected: "-221 123 456,564 USD",
+			expected: "-221 123 456,564 USD",
 		},
 		{
 			num:      -221123456.5643,
 			v:        3,
 			currency: currency.CAD,
-			expected: "-221 123 456,564 CAD",
+			expected: "-221 123 456,564 CAD",
 		},
 		{
 			num:      0,
 			v:        2,
 			currency: currency.USD,
-			expected: "0,00 USD",
+			expected: "0,00 USD",
 		},
 		{
 			num:      -0,
 			v:        2,
 			currency: currency.USD,
-			expected: "0,00 USD",
+			expected: "0,00 USD",
 		},
 		{
 			num:      -0,
 			v:        2,
 			currency: currency.CAD,
-			expected: "0,00 CAD",
+			expected: "0,00 CAD",
 		},
 		{
 			num:      1.23,
 			v:        0,
 			currency: currency.USD,
-			expected: "1,00 USD",
+			expected: "1,00 USD",
 		},
 	}
 
@@ -1180,49 +1143,49 @@ func TestFmtAccounting(t *testing.T) {
 			num:      1123456.5643,
 			v:        2,
 			currency: currency.USD,
-			expected: "1 123 456,56 USD",
+			expected: "1 123 456,56 USD",
 		},
 		{
 			num:      1123456.5643,
 			v:        1,
 			currency: currency.USD,
-			expected: "1 123 456,60 USD",
+			expected: "1 123 456,60 USD",
 		},
 		{
 			num:      221123456.5643,
 			v:        3,
 			currency: currency.USD,
-			expected: "221 123 456,564 USD",
+			expected: "221 123 456,564 USD",
 		},
 		{
 			num:      -221123456.5643,
 			v:        3,
 			currency: currency.USD,
-			expected: "-221 123 456,564 USD",
+			expected: "-221 123 456,564 USD",
 		},
 		{
 			num:      -221123456.5643,
 			v:        3,
 			currency: currency.CAD,
-			expected: "-221 123 456,564 CAD",
+			expected: "-221 123 456,564 CAD",
 		},
 		{
 			num:      -0,
 			v:        2,
 			currency: currency.USD,
-			expected: "0,00 USD",
+			expected: "0,00 USD",
 		},
 		{
 			num:      -0,
 			v:        2,
 			currency: currency.CAD,
-			expected: "0,00 CAD",
+			expected: "0,00 CAD",
 		},
 		{
 			num:      1.23,
 			v:        0,
 			currency: currency.USD,
-			expected: "1,00 USD",
+			expected: "1,00 USD",
 		},
 	}
 

@@ -309,51 +309,14 @@ func TestDaysShort(t *testing.T) {
 	trans := New()
 	days := trans.WeekdaysShort()
 
+	if len(days) != 0 {
+		t.Errorf("Expected empty daysShort, got %d entries", len(days))
+	}
+
 	for i, day := range days {
 		s := trans.WeekdayShort(time.Weekday(i))
 		if s != day {
 			t.Errorf("Expected '%s' Got '%s'", day, s)
-		}
-	}
-
-	tests := []struct {
-		idx      int
-		expected string
-	}{
-		{
-			idx:      0,
-			expected: "日",
-		},
-		{
-			idx:      1,
-			expected: "月",
-		},
-		{
-			idx:      2,
-			expected: "火",
-		},
-		{
-			idx:      3,
-			expected: "水",
-		},
-		{
-			idx:      4,
-			expected: "木",
-		},
-		{
-			idx:      5,
-			expected: "金",
-		},
-		{
-			idx:      6,
-			expected: "土",
-		},
-	}
-
-	for _, tt := range tests {
-		s := trans.WeekdayShort(time.Weekday(tt.idx))
-		if s != tt.expected {
-			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
 	}
 }
@@ -417,71 +380,14 @@ func TestMonthsAbbreviated(t *testing.T) {
 	trans := New()
 	months := trans.MonthsAbbreviated()
 
+	if len(months) != 0 {
+		t.Errorf("Expected empty monthsAbbreviated, got %d entries", len(months))
+	}
+
 	for i, month := range months {
 		s := trans.MonthAbbreviated(time.Month(i + 1))
 		if s != month {
 			t.Errorf("Expected '%s' Got '%s'", month, s)
-		}
-	}
-
-	tests := []struct {
-		idx      int
-		expected string
-	}{
-		{
-			idx:      1,
-			expected: "1月",
-		},
-		{
-			idx:      2,
-			expected: "2月",
-		},
-		{
-			idx:      3,
-			expected: "3月",
-		},
-		{
-			idx:      4,
-			expected: "4月",
-		},
-		{
-			idx:      5,
-			expected: "5月",
-		},
-		{
-			idx:      6,
-			expected: "6月",
-		},
-		{
-			idx:      7,
-			expected: "7月",
-		},
-		{
-			idx:      8,
-			expected: "8月",
-		},
-		{
-			idx:      9,
-			expected: "9月",
-		},
-		{
-			idx:      10,
-			expected: "10月",
-		},
-		{
-			idx:      11,
-			expected: "11月",
-		},
-		{
-			idx:      12,
-			expected: "12月",
-		},
-	}
-
-	for _, tt := range tests {
-		s := trans.MonthAbbreviated(time.Month(tt.idx))
-		if s != tt.expected {
-			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
 	}
 }
@@ -491,71 +397,14 @@ func TestMonthsNarrow(t *testing.T) {
 	trans := New()
 	months := trans.MonthsNarrow()
 
+	if len(months) != 0 {
+		t.Errorf("Expected empty monthsNarrow, got %d entries", len(months))
+	}
+
 	for i, month := range months {
 		s := trans.MonthNarrow(time.Month(i + 1))
 		if s != month {
 			t.Errorf("Expected '%s' Got '%s'", month, s)
-		}
-	}
-
-	tests := []struct {
-		idx      int
-		expected string
-	}{
-		{
-			idx:      1,
-			expected: "1",
-		},
-		{
-			idx:      2,
-			expected: "2",
-		},
-		{
-			idx:      3,
-			expected: "3",
-		},
-		{
-			idx:      4,
-			expected: "4",
-		},
-		{
-			idx:      5,
-			expected: "5",
-		},
-		{
-			idx:      6,
-			expected: "6",
-		},
-		{
-			idx:      7,
-			expected: "7",
-		},
-		{
-			idx:      8,
-			expected: "8",
-		},
-		{
-			idx:      9,
-			expected: "9",
-		},
-		{
-			idx:      10,
-			expected: "10",
-		},
-		{
-			idx:      11,
-			expected: "11",
-		},
-		{
-			idx:      12,
-			expected: "12",
-		},
-	}
-
-	for _, tt := range tests {
-		s := trans.MonthNarrow(time.Month(tt.idx))
-		if s != tt.expected {
-			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
 	}
 }

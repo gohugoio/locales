@@ -681,11 +681,11 @@ func TestFmtTimeFull(t *testing.T) {
 	}{
 		{
 			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, loc),
-			expected: "9:05:01 am Eastern Standard Time",
+			expected: "9:05:01\u202fam Eastern Standard Time",
 		},
 		{
 			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, fixed),
-			expected: "8:05:01 pm OTHER",
+			expected: "8:05:01\u202fpm OTHER",
 		},
 	}
 
@@ -712,11 +712,11 @@ func TestFmtTimeLong(t *testing.T) {
 	}{
 		{
 			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, loc),
-			expected: "9:05:01 am EST",
+			expected: "9:05:01\u202fam EST",
 		},
 		{
 			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, loc),
-			expected: "8:05:01 pm EST",
+			expected: "8:05:01\u202fpm EST",
 		},
 	}
 
@@ -738,11 +738,11 @@ func TestFmtTimeMedium(t *testing.T) {
 	}{
 		{
 			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, time.UTC),
-			expected: "9:05:01 am",
+			expected: "9:05:01\u202fam",
 		},
 		{
 			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, time.UTC),
-			expected: "8:05:01 pm",
+			expected: "8:05:01\u202fpm",
 		},
 	}
 
@@ -764,11 +764,11 @@ func TestFmtTimeShort(t *testing.T) {
 	}{
 		{
 			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, time.UTC),
-			expected: "9:05 am",
+			expected: "9:05\u202fam",
 		},
 		{
 			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, time.UTC),
-			expected: "8:05 pm",
+			expected: "8:05\u202fpm",
 		},
 	}
 
@@ -969,7 +969,7 @@ func TestFmtCurrency(t *testing.T) {
 			num:      -221123456.5643,
 			v:        3,
 			currency: currency.CAD,
-			expected: "-CAD221,123,456.564",
+			expected: "-CA$221,123,456.564",
 		},
 		{
 			num:      0,
@@ -987,7 +987,7 @@ func TestFmtCurrency(t *testing.T) {
 			num:      -0,
 			v:        2,
 			currency: currency.CAD,
-			expected: "CAD0.00",
+			expected: "CA$0.00",
 		},
 		{
 			num:      1.23,
@@ -1043,7 +1043,7 @@ func TestFmtAccounting(t *testing.T) {
 			num:      -221123456.5643,
 			v:        3,
 			currency: currency.CAD,
-			expected: "(CAD221,123,456.564)",
+			expected: "(CA$221,123,456.564)",
 		},
 		{
 			num:      -0,
@@ -1055,7 +1055,7 @@ func TestFmtAccounting(t *testing.T) {
 			num:      -0,
 			v:        2,
 			currency: currency.CAD,
-			expected: "CAD0.00",
+			expected: "CA$0.00",
 		},
 		{
 			num:      1.23,

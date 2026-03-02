@@ -48,6 +48,10 @@ func New() locales.Translator {
 		pluralsCardinal:        []locales.PluralRule{2, 3, 4, 5, 6},
 		pluralsOrdinal:         []locales.PluralRule{2, 6},
 		pluralsRange:           []locales.PluralRule{2, 3, 4, 5, 6},
+		decimal:                ".",
+		group:                  ",",
+		minus:                  "-",
+		percent:                "%",
 		timeSeparator:          ":",
 		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "р.", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "$", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
 		currencyNegativePrefix: "(",
@@ -63,7 +67,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"RC", "AD"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"Roimh Chríost", "Anno Domini"},
-		timezones:              map[string]string{"ACDT": "Am Samhraidh Lár na hAstráile", "ACST": "Am Samhraidh Acre", "ACT": "Am Caighdeánach Acre", "ACWDT": "Am Samhraidh Mheániarthar na hAstráile", "ACWST": "Am Caighdeánach Mheániarthar na hAstráile", "ADT": "Am Samhraidh an Atlantaigh", "ADT Arabia": "Am Samhraidh na hAraibe", "AEDT": "Am Samhraidh Oirthear na hAstráile", "AEST": "Am Caighdeánach Oirthear na hAstráile", "AFT": "Am na hAfganastáine", "AKDT": "Am Samhraidh Alasca", "AKST": "Am Caighdeánach Alasca", "AMST": "Am Samhraidh na hAmasóine", "AMST Armenia": "Am Samhraidh na hAirméine", "AMT": "Am Caighdeánach na hAmasóine", "AMT Armenia": "Am Caighdeánach na hAirméine", "ANAST": "Am Samhraidh Anadyr", "ANAT": "Am Caighdeánach Anadyr", "ARST": "Am Samhraidh na hAirgintíne", "ART": "Am Caighdeánach na hAirgintíne", "AST": "Am Caighdeánach an Atlantaigh", "AST Arabia": "Am Caighdeánach na hAraibe", "AWDT": "Am Samhraidh Iarthar na hAstráile", "AWST": "Am Caighdeánach Iarthar na hAstráile", "AZST": "Am Samhraidh na hAsarbaiseáine", "AZT": "Am Caighdeánach na hAsarbaiseáine", "BDT Bangladesh": "Am Samhraidh na Banglaidéise", "BNT": "Am Bhrúiné Darasalám", "BOT": "Am na Bolaive", "BRST": "Am Samhraidh Bhrasília", "BRT": "Am Caighdeánach Bhrasília", "BST Bangladesh": "Am Caighdeánach na Banglaidéise", "BT": "Am na Bútáine", "CAST": "Am Stáisiún Casey", "CAT": "Am na hAfraice Láir", "CCT": "Am Oileáin Cocos", "CDT": "Am Samhraidh Lárnach Mheiriceá Thuaidh", "CHADT": "Am Samhraidh Chatham", "CHAST": "Am Caighdeánach Chatham", "CHUT": "Am Chuuk", "CKT": "Am Caighdeánach Oileáin Cook", "CKT DST": "Am Samhraidh Oileáin Cook", "CLST": "Am Samhraidh na Sile", "CLT": "Am Caighdeánach na Sile", "COST": "Am Samhraidh na Colóime", "COT": "Am Caighdeánach na Colóime", "CST": "Am Caighdeánach Lárnach Mheiriceá Thuaidh", "CST China": "Am Caighdeánach na Síne", "CST China DST": "Am Samhraidh na Síne", "CVST": "Am Samhraidh Rinn Verde", "CVT": "Am Caighdeánach Rinn Verde", "CXT": "Am Oileán na Nollag", "ChST": "Am Caighdeánach Seamórach", "ChST NMI": "Am na nOileán Máirianach Thuaidh", "CuDT": "Am Samhraidh Chúba", "CuST": "Am Caighdeánach Chúba", "DAVT": "Am Davis", "DDUT": "Am Dumont-d’Urville", "EASST": "Am Samhraidh Oileán na Cásca", "EAST": "Am Caighdeánach Oileán na Cásca", "EAT": "Am Oirthear na hAfraice", "ECT": "Am Eacuadór", "EDT": "Am Samhraidh Oirthearach Mheiriceá Thuaidh", "EGDT": "Am Samhraidh Oirthear na Graonlainne", "EGST": "Am Caighdeánach Oirthear na Graonlainne", "EST": "Am Caighdeánach Oirthearach Mheiriceá Thuaidh", "FEET": "Am Chianoirthear na hEorpa", "FJT": "Am Caighdeánach Fhidsí", "FJT Summer": "Am Samhraidh Fhidsí", "FKST": "Am Samhraidh Oileáin Fháclainne", "FKT": "Am Caighdeánach Oileáin Fháclainne", "FNST": "Am Samhraidh Fernando de Noronha", "FNT": "Am Caighdeánach Fernando de Noronha", "GALT": "Am Oileáin Galápagos", "GAMT": "Am Gambier", "GEST": "Am Samhraidh na Seoirsia", "GET": "Am Caighdeánach na Seoirsia", "GFT": "Am Ghuáin na Fraince", "GIT": "Am Chiribeas", "GMT": "Meán-Am Greenwich", "GNSST": "GNSST", "GNST": "GNST", "GST": "Am na Seoirsia Theas", "GST Guam": "Am Caighdeánach Ghuam", "GYT": "Am na Guáine", "HADT": "Am Samhraidh Haváí-Ailiúit", "HAST": "Am Caighdeánach Haváí-Ailiúit", "HKST": "Am Samhraidh Hong Cong", "HKT": "Am Caighdeánach Hong Cong", "HOVST": "Am Samhraidh Khovd", "HOVT": "Am Caighdeánach Khovd", "ICT": "Am na hInd-Síne", "IDT": "Am Samhraidh Iosrael", "IOT": "Am an Aigéin Indiaigh", "IRKST": "Am Samhraidh Irkutsk", "IRKT": "Am Caighdeánach Irkutsk", "IRST": "Am Caighdeánach na hIaráine", "IRST DST": "Am Samhraidh na hIaráine", "IST": "Am Caighdeánach na hIndia", "IST Israel": "Am Caighdeánach Iosrael", "JDT": "Am Samhraidh na Seapáine", "JST": "Am Caighdeánach na Seapáine", "KOST": "Am Kosrae", "KRAST": "Am Samhraidh Krasnoyarsk", "KRAT": "Am Caighdeánach Krasnoyarsk", "KST": "Am Caighdeánach na Cóiré", "KST DST": "Am Samhraidh na Cóiré", "LHDT": "Am Samhraidh Lord Howe", "LHST": "Am Caighdeánach Lord Howe", "LINT": "Am Oileáin na Líne", "MAGST": "Am Samhraidh Mhagadan", "MAGT": "Am Caighdeánach Mhagadan", "MART": "Am na nOileán Marcasach", "MAWT": "Am Mawson", "MDT": "Am Samhraidh Sléibhte Mheiriceá Thuaidh", "MESZ": "Am Samhraidh Lár na hEorpa", "MEZ": "Am Caighdeánach Lár na hEorpa", "MHT": "Am Oileáin Marshall", "MMT": "Am Mhaenmar", "MSD": "Am Samhraidh Mhoscó", "MST": "Am Caighdeánach Sléibhte Mheiriceá Thuaidh", "MUST": "Am Samhraidh Oileán Mhuirís", "MUT": "Am Caighdeánach Oileán Mhuirís", "MVT": "Am Oileáin Mhaildíve", "MYT": "Am na Malaeisia", "NCT": "Am Caighdeánach na Nua-Chaladóine", "NDT": "Am Samhraidh Thalamh an Éisc", "NDT New Caledonia": "Am Samhraidh na Nua-Chaladóine", "NFDT": "Am Samhraidh Oileán Norfolk", "NFT": "Am Caighdeánach Oileán Norfolk", "NOVST": "Am Samhraidh Novosibirsk", "NOVT": "Am Caighdeánach Novosibirsk", "NPT": "Am Neipeal", "NRT": "Am Nárú", "NST": "Am Caighdeánach Thalamh an Éisc", "NUT": "Am Niue", "NZDT": "Am Samhraidh na Nua-Shéalainne", "NZST": "Am Caighdeánach na Nua-Shéalainne", "OESZ": "Am Samhraidh Oirthear na hEorpa", "OEZ": "Am Caighdeánach Oirthear na hEorpa", "OMSST": "Am Samhraidh Omsk", "OMST": "Am Caighdeánach Omsk", "PDT": "Am Samhraidh an Aigéin Chiúin", "PDTM": "Am Samhraidh Meicsiceach an Aigéin Chiúin", "PETDT": "Am Samhraidh Phetropavlovsk-Kamchatski", "PETST": "Am Caighdeánach Phetropavlovsk-Kamchatski", "PGT": "Am Nua-Ghuine Phapua", "PHOT": "Am Oileáin an Fhéinics", "PKT": "Am Caighdeánach na Pacastáine", "PKT DST": "Am Samhraidh na Pacastáine", "PMDT": "Am Samhraidh Saint-Pierre-et-Miquelon", "PMST": "Am Caighdeánach Saint-Pierre-et-Miquelon", "PONT": "Am Pohnpei", "PST": "Am Caighdeánach an Aigéin Chiúin", "PST Philippine": "Am Caighdeánach na nOileán Filipíneach", "PST Philippine DST": "Am Samhraidh na nOileán Filipíneach", "PST Pitcairn": "Am Pitcairn", "PSTM": "Am Caighdeánach Meicsiceach an Aigéin Chiúin", "PWT": "Am Oileáin Palau", "PYST": "Am Samhraidh Pharagua", "PYT": "Am Caighdeánach Pharagua", "PYT Korea": "Am Pyongyang", "RET": "Am Réunion", "ROTT": "Am Rothera", "SAKST": "Am Samhraidh Shacailín", "SAKT": "Am Caighdeánach Shacailín", "SAMST": "Am Samhraidh Shamara", "SAMT": "Am Caighdeánach Shamara", "SAST": "Am na hAfraice Theas", "SBT": "Am Oileáin Sholaimh", "SCT": "Am na Séiséal", "SGT": "Am Caighdeánach Shingeapór", "SLST": "Am Shrí Lanca", "SRT": "Am Shuranam", "SST Samoa": "Am Caighdeánach Shamó Mheiriceá", "SST Samoa Apia": "Am Caighdeánach Shamó", "SST Samoa Apia DST": "Am Samhraidh Shamó", "SST Samoa DST": "Am Samhraidh Shamó Mheiriceá", "SYOT": "Am Syowa", "TAAF": "Am Francach Dheisceart an Domhain agus an Antartaigh", "TAHT": "Am Thaihítí", "TJT": "Am na Táidsíceastáine", "TKT": "Am Oileáin Thócaláú", "TLT": "Am Thíomór Thoir", "TMST": "Am Samhraidh na Tuircméanastáine", "TMT": "Am Caighdeánach na Tuircméanastáine", "TOST": "Am Samhraidh Thonga", "TOT": "Am Caighdeánach Thonga", "TVT": "Am Thúvalú", "TWT": "Am Caighdeánach Taipei", "TWT DST": "Am Samhraidh Taipei", "ULAST": "Am Samhraidh Ulan Bator", "ULAT": "Am Caighdeánach Ulan Bator", "UYST": "Am Samhraidh Uragua", "UYT": "Am Caighdeánach Uragua", "UZT": "Am Caighdeánach na hÚisbéiceastáine", "UZT DST": "Am Samhraidh na hÚisbéiceastáine", "VET": "Am Veiniséala", "VLAST": "Am Samhraidh Vladivostok", "VLAT": "Am Caighdeánach Vladivostok", "VOLST": "Am Samhraidh Volgograd", "VOLT": "Am Caighdeánach Volgograd", "VOST": "Am Vostok", "VUT": "Am Caighdeánach Vanuatú", "VUT DST": "Am Samhraidh Vanuatú", "WAKT": "Am Oileán Wake", "WARST": "Am Samhraidh Iartharach na hAirgintíne", "WART": "Am Caighdeánach Iartharach na hAirgintíne", "WAST": "Am Iarthar na hAfraice", "WAT": "Am Iarthar na hAfraice", "WESZ": "Am Samhraidh Iarthar na hEorpa", "WEZ": "Am Caighdeánach Iarthar na hEorpa", "WFT": "Am Wallis agus Futuna", "WGST": "Am Samhraidh Iarthar na Graonlainne", "WGT": "Am Caighdeánach Iarthar na Graonlainne", "WIB": "Am Iarthar na hIndinéise", "WIT": "Am Oirthear na hIndinéise", "WITA": "Am Lár na hIndinéise", "YAKST": "Am Samhraidh Iacútsc", "YAKT": "Am Caighdeánach Iacútsc", "YEKST": "Am Samhraidh Yekaterinburg", "YEKT": "Am Caighdeánach Yekaterinburg", "YST": "Am Yukon", "МСК": "Am Caighdeánach Mhoscó", "اقتاۋ": "Am Caighdeánach Aqtau", "اقتاۋ قالاسى": "Am Samhraidh Aqtau", "اقتوبە": "Am Caighdeánach Aqtobe", "اقتوبە قالاسى": "Am Samhraidh Aqtobe", "الماتى": "Am Caighdeánach Almaty", "الماتى قالاسى": "Am Samhraidh Almaty", "باتىس قازاق ەلى": "Am Iarthar na Casacstáine", "شىعىش قازاق ەلى": "Am Oirthear na Casacstáine", "قازاق ەلى": "Am na Casacstáine", "قىرعىزستان": "Am na Cirgeastáine", "قىزىلوردا": "Am Caighdeánach Qyzylorda", "قىزىلوردا قالاسى": "Am Samhraidh Qyzylorda", "∅∅∅": "Am Samhraidh na nAsór"},
+		timezones:              map[string]string{"ACDT": "Am Samhraidh Lár na hAstráile", "ACST": "Am Samhraidh Acre", "ACT": "Am Caighdeánach Acre", "ACWDT": "Am Samhraidh Mheániarthar na hAstráile", "ACWST": "Am Caighdeánach Mheániarthar na hAstráile", "ADT": "Am Samhraidh an Atlantaigh", "ADT Arabia": "Am Samhraidh na hAraibe", "AEDT": "Am Samhraidh Oirthear na hAstráile", "AEST": "Am Caighdeánach Oirthear na hAstráile", "AFT": "Am na hAfganastáine", "AKDT": "Am Samhraidh Alasca", "AKST": "Am Caighdeánach Alasca", "AMST": "Am Samhraidh na hAmasóine", "AMST Armenia": "Am Samhraidh na hAirméine", "AMT": "Am Caighdeánach na hAmasóine", "AMT Armenia": "Am Caighdeánach na hAirméine", "ANAST": "Am Samhraidh Anadyr", "ANAT": "Am Caighdeánach Anadyr", "ARST": "Am Samhraidh na hAirgintíne", "ART": "Am Caighdeánach na hAirgintíne", "AST": "Am Caighdeánach an Atlantaigh", "AST Arabia": "Am Caighdeánach na hAraibe", "AWDT": "Am Samhraidh Iarthar na hAstráile", "AWST": "Am Caighdeánach Iarthar na hAstráile", "AZST": "Am Samhraidh na hAsarbaiseáine", "AZT": "Am Caighdeánach na hAsarbaiseáine", "BDT Bangladesh": "Am Samhraidh na Banglaidéise", "BNT": "Am Bhrúiné Darasalám", "BOT": "Am na Bolaive", "BRST": "Am Samhraidh Bhrasília", "BRT": "Am Caighdeánach Bhrasília", "BST Bangladesh": "Am Caighdeánach na Banglaidéise", "BT": "Am na Bútáine", "CAST": "Am Stáisiún Casey", "CAT": "Am na hAfraice Láir", "CCT": "Am Oileáin Cocos", "CDT": "Am Samhraidh Lárnach Mheiriceá Thuaidh", "CHADT": "Am Samhraidh Chatham", "CHAST": "Am Caighdeánach Chatham", "CHUT": "Am Chuuk", "CKT": "Am Caighdeánach Oileáin Cook", "CKT DST": "Am Samhraidh Oileáin Cook", "CLST": "Am Samhraidh na Sile", "CLT": "Am Caighdeánach na Sile", "COST": "Am Samhraidh na Colóime", "COT": "Am Caighdeánach na Colóime", "CST": "Am Caighdeánach Lárnach Mheiriceá Thuaidh", "CST China": "Am Caighdeánach na Síne", "CST China DST": "Am Samhraidh na Síne", "CVST": "Am Samhraidh Rinn Verde", "CVT": "Am Caighdeánach Rinn Verde", "CXT": "Am Oileán na Nollag", "ChST": "Am Caighdeánach Seamórach", "ChST NMI": "Am na nOileán Máirianach Thuaidh", "CuDT": "Am Samhraidh Chúba", "CuST": "Am Caighdeánach Chúba", "DAVT": "Am Davis", "DDUT": "Am Dumont-d’Urville", "EASST": "Am Samhraidh Oileán na Cásca", "EAST": "Am Caighdeánach Oileán na Cásca", "EAT": "Am Oirthear na hAfraice", "ECT": "Am Eacuadór", "EDT": "Am Samhraidh Oirthearach Mheiriceá Thuaidh", "EGDT": "Am Samhraidh Oirthear na Graonlainne", "EGST": "Am Caighdeánach Oirthear na Graonlainne", "EST": "Am Caighdeánach Oirthearach Mheiriceá Thuaidh", "FEET": "Am Chianoirthear na hEorpa", "FJT": "Am Caighdeánach Fhidsí", "FJT Summer": "Am Samhraidh Fhidsí", "FKST": "Am Samhraidh Oileáin Fháclainne", "FKT": "Am Caighdeánach Oileáin Fháclainne", "FNST": "Am Samhraidh Fernando de Noronha", "FNT": "Am Caighdeánach Fernando de Noronha", "GALT": "Am Oileáin Galápagos", "GAMT": "Am Gambier", "GEST": "Am Samhraidh na Seoirsia", "GET": "Am Caighdeánach na Seoirsia", "GFT": "Am Ghuáin na Fraince", "GIT": "Am Chiribeas", "GMT": "Meán-Am Greenwich", "GNSST": "GNSST", "GNST": "GNST", "GST": "Am Caighdeánach na Murascaille", "GST Guam": "Am Caighdeánach Ghuam", "GYT": "Am na Guáine", "HADT": "Am Caighdeánach Haváí-Ailiúit", "HAST": "Am Caighdeánach Haváí-Ailiúit", "HKST": "Am Samhraidh Hong Cong", "HKT": "Am Caighdeánach Hong Cong", "HOVST": "Am Samhraidh Khovd", "HOVT": "Am Caighdeánach Khovd", "ICT": "Am na hInd-Síne", "IDT": "Am Samhraidh Iosrael", "IOT": "Am an Aigéin Indiaigh", "IRKST": "Am Samhraidh Irkutsk", "IRKT": "Am Caighdeánach Irkutsk", "IRST": "Am Caighdeánach na hIaráine", "IRST DST": "Am Samhraidh na hIaráine", "IST": "Am Caighdeánach na hIndia", "IST Israel": "Am Caighdeánach Iosrael", "JDT": "Am Samhraidh na Seapáine", "JST": "Am Caighdeánach na Seapáine", "KOST": "Am Kosrae", "KRAST": "Am Samhraidh Krasnoyarsk", "KRAT": "Am Caighdeánach Krasnoyarsk", "KST": "Am Caighdeánach na Cóiré", "KST DST": "Am Samhraidh na Cóiré", "LHDT": "Am Samhraidh Lord Howe", "LHST": "Am Caighdeánach Lord Howe", "LINT": "Am Oileáin na Líne", "MAGST": "Am Samhraidh Mhagadan", "MAGT": "Am Caighdeánach Mhagadan", "MART": "Am na nOileán Marcasach", "MAWT": "Am Mawson", "MDT": "Am Samhraidh Mhacao", "MESZ": "Am Samhraidh Lár na hEorpa", "MEZ": "Am Caighdeánach Lár na hEorpa", "MHT": "Am Oileáin Marshall", "MMT": "Am Mhaenmar", "MSD": "Am Samhraidh Mhoscó", "MST": "Am Caighdeánach Mhacao", "MUST": "Am Samhraidh Oileán Mhuirís", "MUT": "Am Caighdeánach Oileán Mhuirís", "MVT": "Am Oileáin Mhaildíve", "MYT": "Am na Malaeisia", "NCT": "Am Caighdeánach na Nua-Chaladóine", "NDT": "Am Samhraidh Thalamh an Éisc", "NDT New Caledonia": "Am Samhraidh na Nua-Chaladóine", "NFDT": "Am Samhraidh Oileán Norfolk", "NFT": "Am Caighdeánach Oileán Norfolk", "NOVST": "Am Samhraidh Novosibirsk", "NOVT": "Am Caighdeánach Novosibirsk", "NPT": "Am Neipeal", "NRT": "Am Nárú", "NST": "Am Caighdeánach Thalamh an Éisc", "NUT": "Am Niue", "NZDT": "Am Samhraidh na Nua-Shéalainne", "NZST": "Am Caighdeánach na Nua-Shéalainne", "OESZ": "Am Samhraidh Oirthear na hEorpa", "OEZ": "Am Caighdeánach Oirthear na hEorpa", "OMSST": "Am Samhraidh Omsk", "OMST": "Am Caighdeánach Omsk", "PDT": "Am Samhraidh an Aigéin Chiúin", "PDTM": "Am Samhraidh Meicsiceach an Aigéin Chiúin", "PETDT": "Am Samhraidh Phetropavlovsk-Kamchatski", "PETST": "Am Caighdeánach Phetropavlovsk-Kamchatski", "PGT": "Am Nua-Ghuine Phapua", "PHOT": "Am Oileáin an Fhéinics", "PKT": "Am Caighdeánach na Pacastáine", "PKT DST": "Am Samhraidh na Pacastáine", "PMDT": "Am Samhraidh Saint-Pierre-et-Miquelon", "PMST": "Am Caighdeánach Saint-Pierre-et-Miquelon", "PONT": "Am Pohnpei", "PST": "Am Caighdeánach an Aigéin Chiúin", "PST Philippine": "Am Caighdeánach na nOileán Filipíneach", "PST Philippine DST": "Am Samhraidh na nOileán Filipíneach", "PST Pitcairn": "Am Pitcairn", "PSTM": "Am Caighdeánach Meicsiceach an Aigéin Chiúin", "PWT": "Am Oileáin Palau", "PYST": "Am Samhraidh Pharagua", "PYT": "Am Caighdeánach Pharagua", "PYT Korea": "Am Pyongyang", "RET": "Am Réunion", "ROTT": "Am Rothera", "SAKST": "Am Samhraidh Shacailín", "SAKT": "Am Caighdeánach Shacailín", "SAMST": "Am Samhraidh Shamara", "SAMT": "Am Caighdeánach Shamara", "SAST": "Am na hAfraice Theas", "SBT": "Am Oileáin Sholaimh", "SCT": "Am na Séiséal", "SGT": "Am Caighdeánach Shingeapór", "SLST": "Am Shrí Lanca", "SRT": "Am Shuranam", "SST Samoa": "Am Caighdeánach Shamó Mheiriceá", "SST Samoa Apia": "Am Caighdeánach Shamó", "SST Samoa Apia DST": "Am Samhraidh Shamó", "SST Samoa DST": "Am Samhraidh Shamó Mheiriceá", "SYOT": "Am Syowa", "TAAF": "Am Francach Dheisceart an Domhain agus an Antartaigh", "TAHT": "Am Thaihítí", "TJT": "Am na Táidsíceastáine", "TKT": "Am Oileáin Thócaláú", "TLT": "Am Thíomór Thoir", "TMST": "Am Samhraidh na Tuircméanastáine", "TMT": "Am Caighdeánach na Tuircméanastáine", "TOST": "Am Samhraidh Thonga", "TOT": "Am Caighdeánach Thonga", "TVT": "Am Thúvalú", "TWT": "Am Caighdeánach Taipei", "TWT DST": "Am Samhraidh Taipei", "ULAST": "Am Samhraidh Ulan Bator", "ULAT": "Am Caighdeánach Ulan Bator", "UYST": "Am Samhraidh Uragua", "UYT": "Am Caighdeánach Uragua", "UZT": "Am Caighdeánach na hÚisbéiceastáine", "UZT DST": "Am Samhraidh na hÚisbéiceastáine", "VET": "Am Veiniséala", "VLAST": "Am Samhraidh Vladivostok", "VLAT": "Am Caighdeánach Vladivostok", "VOLST": "Am Samhraidh Volgograd", "VOLT": "Am Caighdeánach Volgograd", "VOST": "Am Vostok", "VUT": "Am Caighdeánach Vanuatú", "VUT DST": "Am Samhraidh Vanuatú", "WAKT": "Am Oileán Wake", "WARST": "Am Samhraidh Iartharach na hAirgintíne", "WART": "Am Caighdeánach Iartharach na hAirgintíne", "WAST": "Am Iarthar na hAfraice", "WAT": "Am Iarthar na hAfraice", "WESZ": "Am Samhraidh Iarthar na hEorpa", "WEZ": "Am Caighdeánach Iarthar na hEorpa", "WFT": "Am Wallis agus Futuna", "WGST": "Am Samhraidh Iarthar na Graonlainne", "WGT": "Am Caighdeánach Iarthar na Graonlainne", "WIB": "Am Iarthar na hIndinéise", "WIT": "Am Oirthear na hIndinéise", "WITA": "Am Lár na hIndinéise", "YAKST": "Am Samhraidh Iacútsc", "YAKT": "Am Caighdeánach Iacútsc", "YEKST": "Am Samhraidh Yekaterinburg", "YEKT": "Am Caighdeánach Yekaterinburg", "YST": "Am Yukon", "МСК": "Am Caighdeánach Mhoscó", "اقتاۋ": "Am Caighdeánach Aqtau", "اقتاۋ قالاسى": "Am Samhraidh Aqtau", "اقتوبە": "Am Caighdeánach Aqtobe", "اقتوبە قالاسى": "Am Samhraidh Aqtobe", "الماتى": "Am Caighdeánach Almaty", "الماتى قالاسى": "Am Samhraidh Almaty", "باتىس قازاق ەلى": "Am Iarthar na Casacstáine", "شىعىش قازاق ەلى": "Am Oirthear na Casacstáine", "قازاق ەلى": "Am na Casacstáine", "قىرعىزستان": "Am na Cirgeastáine", "قىزىلوردا": "Am Caighdeánach Qyzylorda", "قىزىلوردا قالاسى": "Am Samhraidh Qyzylorda", "∅∅∅": "Am Samhraidh Pheiriú"},
 	}
 }
 
@@ -249,13 +253,73 @@ func (ga *ga) Minus() string {
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ga' and handles both Whole and Real numbers based on 'v'
 func (ga *ga) FmtNumber(num float64, v uint64) string {
 
-	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
+	count := 0
+	inWhole := v == 0
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, ga.decimal[0])
+			inWhole = true
+			continue
+		}
+
+		if inWhole {
+			if count == 3 {
+				b = append(b, ga.group[0])
+				count = 1
+			} else {
+				count++
+			}
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		b = append(b, ga.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'ga' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (ga *ga) FmtPercent(num float64, v uint64) string {
-	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	l := len(s) + 3
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, ga.decimal[0])
+			continue
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		b = append(b, ga.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	b = append(b, ga.percent...)
+
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ga'
@@ -263,7 +327,7 @@ func (ga *ga) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ga.currencies[currency]
-	l := len(s) + len(symbol) + 0
+	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -321,7 +385,7 @@ func (ga *ga) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ga.currencies[currency]
-	l := len(s) + len(symbol) + 2
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

@@ -385,7 +385,7 @@ func postProcess(cldr *cldr.CLDR) {
 			}
 
 			if len(trans.Decimal) == 0 {
-				trans.Decimal = ""
+				trans.Decimal = "."
 			}
 		}
 
@@ -400,7 +400,7 @@ func postProcess(cldr *cldr.CLDR) {
 			}
 
 			if len(trans.Group) == 0 {
-				trans.Group = ""
+				trans.Group = ","
 			}
 		}
 
@@ -415,7 +415,7 @@ func postProcess(cldr *cldr.CLDR) {
 			}
 
 			if len(trans.Minus) == 0 {
-				trans.Minus = ""
+				trans.Minus = "-"
 			}
 		}
 
@@ -430,7 +430,7 @@ func postProcess(cldr *cldr.CLDR) {
 			}
 
 			if len(trans.Percent) == 0 {
-				trans.Percent = ""
+				trans.Percent = "%"
 			}
 		}
 
@@ -477,12 +477,20 @@ func postProcess(cldr *cldr.CLDR) {
 			trans.DecimalNumberFormat = base.DecimalNumberFormat
 		}
 
+		if len(trans.DecimalNumberFormat) == 0 {
+			trans.DecimalNumberFormat = "#,##0.###"
+		}
+
 		if len(trans.PercentNumberFormat) == 0 && inheritedFound {
 			trans.PercentNumberFormat = inherited.PercentNumberFormat
 		}
 
 		if len(trans.PercentNumberFormat) == 0 && baseFound {
 			trans.PercentNumberFormat = base.PercentNumberFormat
+		}
+
+		if len(trans.PercentNumberFormat) == 0 {
+			trans.PercentNumberFormat = "#,##0%"
 		}
 
 		if len(trans.CurrencyNumberFormat) == 0 && inheritedFound {
@@ -856,14 +864,16 @@ func preProcess(cldrVar *cldr.CLDR) {
 				// Try to get the default numbering system instead of the first one
 				systems := ldml.Numbers.DefaultNumberingSystem
 				// There shouldn't really be more than one DefaultNumberingSystem
+				dns := "latn" // default per CLDR root
 				if len(systems) > 0 {
-					if dns := systems[0].Data(); dns != "" {
-						for k := range ldml.Numbers.Symbols {
-							if ldml.Numbers.Symbols[k].NumberSystem == dns {
-								symbol = ldml.Numbers.Symbols[k]
-								break
-							}
-						}
+					if d := systems[0].Data(); d != "" {
+						dns = d
+					}
+				}
+				for k := range ldml.Numbers.Symbols {
+					if ldml.Numbers.Symbols[k].NumberSystem == dns {
+						symbol = ldml.Numbers.Symbols[k]
+						break
 					}
 				}
 

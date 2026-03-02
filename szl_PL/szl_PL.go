@@ -50,6 +50,8 @@ func New() locales.Translator {
 		pluralsRange:           nil,
 		decimal:                ",",
 		group:                  " ",
+		minus:                  "-",
+		percent:                "%",
 		timeSeparator:          ":",
 		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
 		currencyPositivePrefix: " ",
@@ -66,7 +68,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"p.n.e.", "n.e."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"przed naszōm erōm", "naszyj ery"},
-		timezones:              map[string]string{"ACDT": "postrzodkowoaustralijski latowy czas", "ACST": "postrzodkowoaustralijski sztandardowy czas", "ACT": "ACT", "ACWDT": "postrzodkowo-zachodnioaustralijski latowy czas", "ACWST": "postrzodkowo-zachodnioaustralijski sztandardowy czas", "ADT": "czas atlantycki latowy", "ADT Arabia": "Pōłwysep Arabski (latowy czas)", "AEDT": "wschodnioaustralijski latowy czas", "AEST": "wschodnioaustralijski sztandardowy czas", "AFT": "Afganistan", "AKDT": "alaskański czas latowy", "AKST": "alaskański czas sztandardowy", "AMST": "amazōński latowy czas", "AMST Armenia": "Armynijo (latowy czas)", "AMT": "amazōński sztandardowy czas", "AMT Armenia": "Armynijo (sztandardowy czas)", "ANAST": "latowy czas Anadyr", "ANAT": "sztandardowy czas Anadyr", "ARST": "Argyntyna (latowy czas)", "ART": "Argyntyna (sztandardowy czas)", "AST": "czas atlantycki sztandardowy", "AST Arabia": "Pōłwysep Arabski (sztandardowy czas)", "AWDT": "zachodnioaustralijski latowy czas", "AWST": "zachodnioaustralijski sztandardowy czas", "AZST": "Azerbejdżan (latowy czas)", "AZT": "Azerbejdżan (sztandardowy czas)", "BDT Bangladesh": "Bangladesz (latowy czas)", "BNT": "BNT", "BOT": "Boliwijo", "BRST": "Brasília (latowy czas)", "BRT": "Brasília (sztandardowy czas)", "BST Bangladesh": "Bangladesz (sztandardowy czas)", "BT": "BT", "CAST": "CAST", "CAT": "postrzodkowoafrykański czas", "CCT": "Wyspy Kokosowe", "CDT": "czas postrzodkowoamerykański latowy", "CHADT": "CHADT", "CHAST": "CHAST", "CHUT": "Chuuk", "CKT": "Wyspy Cooka (sztandardowy czas)", "CKT DST": "Wyspy Cooka (latowy czas)", "CLST": "Chile (latowy czas)", "CLT": "Chile (sztandardowy czas)", "COST": "Kolumbijo (latowy czas)", "COT": "Kolumbijo (sztandardowy czas)", "CST": "czas postrzodkowoamerykański sztandardowy", "CST China": "Chiny (sztandardowy czas)", "CST China DST": "Chiny (latowy czas)", "CVST": "Wyspy Zielōnego Przilōndka (latowy czas)", "CVT": "Wyspy Zielōnego Przilōndka (sztandardowy czas)", "CXT": "Godnio Wyspa", "ChST": "Czamorro", "ChST NMI": "ChST NMI", "CuDT": "Kuba (latowy czas)", "CuST": "Kuba (sztandardowy czas)", "DAVT": "DAVT", "DDUT": "Dumont-d’Urville", "EASST": "Wyspa Wielkanocno (latowy czas)", "EAST": "Wyspa Wielkanocno (sztandardowy czas)", "EAT": "wschodnioafrykański czas", "ECT": "Ekwador", "EDT": "czas wschodnioamerykański latowy", "EGDT": "Grynlandyjo Wschodnia (latowy czas)", "EGST": "Grynlandyjo Wschodnia (sztandardowy czas)", "EST": "czas wschodnioamerykański sztandardowy", "FEET": "wschodnioeuropejski dalszy czas", "FJT": "Fidżi (sztandardowy czas)", "FJT Summer": "Fidżi (latowy czas)", "FKST": "Falklandy (latowy czas)", "FKT": "Falklandy (sztandardowy czas)", "FNST": "Fernando de Noronha (latowy czas)", "FNT": "Fernando de Noronha (sztandardowy czas)", "GALT": "czas Galapagos", "GAMT": "Wyspy Gambiera", "GEST": "Gruzyjo (latowy czas)", "GET": "Gruzyjo (sztandardowy czas)", "GFT": "Gujana Francusko", "GIT": "Gilbertowe Wyspy", "GMT": "uniwersalnego czasu", "GNSST": "GNSST", "GNST": "GNST", "GST": "Zatoka Perska", "GST Guam": "GST Guam", "GYT": "Gujana", "HADT": "Hawaje-Aleuty (sztandardowy czas)", "HAST": "Hawaje-Aleuty (sztandardowy czas)", "HKST": "Hōngkōng (latowy czas)", "HKT": "Hōngkōng (sztandardowy czas)", "HOVST": "Kobdo (latowy czas)", "HOVT": "Kobdo (sztandardowy czas)", "ICT": "indochiński czas", "IDT": "Izrael (latowy czas)", "IOT": "Ôcean Indyjski", "IRKST": "Irkuck (latowy czas)", "IRKT": "Irkuck (sztandardowy czas)", "IRST": "IRST", "IRST DST": "IRST DST", "IST": "indyjski sztandardowy czas", "IST Israel": "Izrael (sztandardowy czas)", "JDT": "Japōnijo (latowy czas)", "JST": "Japōnijo (sztandardowy czas)", "KOST": "KOST", "KRAST": "Krasnojarsk (latowy czas)", "KRAT": "Krasnojarsk (sztandardowy czas)", "KST": "KST", "KST DST": "KST DST", "LHDT": "Lord Howe (latowy czas)", "LHST": "Lord Howe (sztandardowy czas)", "LINT": "Line Islands", "MAGST": "MAGST", "MAGT": "MAGT", "MART": "Markizy", "MAWT": "MAWT", "MDT": "czas gōrski latowy", "MESZ": "postrzodkowoeuropejski latowy czas", "MEZ": "postrzodkowoeuropejski sztandardowy czas", "MHT": "Wyspy Marshalla", "MMT": "Mjanma", "MSD": "Moskwa (latowy)", "MST": "czas gōrski sztandardowy", "MUST": "MUST", "MUT": "MUT", "MVT": "Malediwy", "MYT": "Malezyjo", "NCT": "Nowo Kaledōnijo (sztandardowy czas)", "NDT": "Nowo Fundlandyjo (latowy czas)", "NDT New Caledonia": "Nowo Kaledōnijo (latowy czas)", "NFDT": "NFDT", "NFT": "NFT", "NOVST": "Nowosybirsk (latowy czas)", "NOVT": "Nowosybirsk (sztandardowy czas)", "NPT": "NPT", "NRT": "NRT", "NST": "Nowo Fundlandyjo (sztandardowy czas)", "NUT": "NUT", "NZDT": "Nowo Zelandyjo (latowy czas)", "NZST": "Nowo Zelandyjo (sztandardowy czas)", "OESZ": "wschodnioeuropejski latowy czas", "OEZ": "wschodnioeuropejski sztandardowy czas", "OMSST": "Ômsk (latowy czas)", "OMST": "Ômsk (sztandardowy czas)", "PDT": "czas pacyficzny latowy", "PDTM": "Meksyk (czas pacyficzny latowy)", "PETDT": "czas Pietropawłowsk Kamczacki latowy", "PETST": "sztandardowy czas Pietropawłowsk Kamczacki", "PGT": "Papua-Nowo Gwinea", "PHOT": "Fyniks", "PKT": "PKT", "PKT DST": "PKT DST", "PMDT": "Saint-Pierre i Miquelon (latowy czas)", "PMST": "Saint-Pierre i Miquelon (sztandardowy czas)", "PONT": "Pohnpei", "PST": "czas pacyficzny sztandardowy", "PST Philippine": "Filipiny (sztandardowy czas)", "PST Philippine DST": "Filipiny (latowy czas)", "PST Pitcairn": "PST Pitcairn", "PSTM": "Meksyk (czas pacyficzny sztandardowy)", "PWT": "PWT", "PYST": "Paragwaj (latowy czas)", "PYT": "Paragwaj (sztandardowy czas)", "PYT Korea": "Pjōngjang", "RET": "RET", "ROTT": "ROTT", "SAKST": "Sachalin (latowy czas)", "SAKT": "Sachalin (sztandardowy czas)", "SAMST": "czas Samara latowy", "SAMT": "sztandardowy czas Samara", "SAST": "połedniowoafrykański czas", "SBT": "Wyspy Salōmōna", "SCT": "Seszele", "SGT": "Singapur", "SLST": "SLST", "SRT": "Surinam", "SST Samoa": "SST Samoa", "SST Samoa Apia": "SST Samoa Apia", "SST Samoa Apia DST": "SST Samoa Apia DST", "SST Samoa DST": "SST Samoa DST", "SYOT": "SYOT", "TAAF": "Francuske Terytoria Połedniowe i Antarktyczne", "TAHT": "TAHT", "TJT": "Tadżykistan", "TKT": "TKT", "TLT": "Timor Wschodni", "TMST": "Turkmynistan (latowy czas)", "TMT": "Turkmynistan (sztandardowy czas)", "TOST": "Tōnga (latowy czas)", "TOT": "Tōnga (sztandardowy czas)", "TVT": "TVT", "TWT": "Tajpej (sztandardowy czas)", "TWT DST": "Tajpej (latowy czas)", "ULAST": "Ułan Bator (latowy czas)", "ULAT": "Ułan Bator (sztandardowy czas)", "UYST": "Urugwaj (latowy czas)", "UYT": "Urugwaj (sztandardowy czas)", "UZT": "UZT", "UZT DST": "UZT DST", "VET": "Wynezuela", "VLAST": "Władywostok (latowy czas)", "VLAT": "Władywostok (sztandardowy czas)", "VOLST": "Wołgograd (latowy czas)", "VOLT": "Wołgograd (sztandardowy czas)", "VOST": "Wostok", "VUT": "VUT", "VUT DST": "VUT DST", "WAKT": "WAKT", "WARST": "Argyntyna Zachodnio (latowy czas)", "WART": "Argyntyna Zachodnio (sztandardowy czas)", "WAST": "zachodnioafrykański czas", "WAT": "zachodnioafrykański czas", "WESZ": "zachodnioeuropejski latowy czas", "WEZ": "zachodnioeuropejski sztandardowy czas", "WFT": "Wallis i Futuna", "WGST": "Grynlandyjo Zachodnio (latowy czas)", "WGT": "Grynlandyjo Zachodnio (sztandardowy czas)", "WIB": "Indōnezyjo Zachodnio", "WIT": "Indōnezyjo Wschodnio", "WITA": "Indōnezyjo Postrzodkowo", "YAKST": "Jakuck (latowy czas)", "YAKT": "Jakuck (sztandardowy czas)", "YEKST": "Jekaterynburg (latowy czas)", "YEKT": "Jekaterynburg (sztandardowy czas)", "YST": "czas jukōński", "МСК": "Moskwa (sztandardowy)", "اقتاۋ": "czas auktaucki sztandardowy", "اقتاۋ قالاسى": "czas auktaucki latowy", "اقتوبە": "czas aktiubiński sztandardowy", "اقتوبە قالاسى": "czas aktiubiński latowy", "الماتى": "czas ałmacki sztandardowy", "الماتى قالاسى": "czas ałmacki latowy", "باتىس قازاق ەلى": "Kazachstan Zachodni", "شىعىش قازاق ەلى": "Kazachstan Wschodni", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "Kirgistan", "قىزىلوردا": "czas kyzyłordzki sztandardowy", "قىزىلوردا قالاسى": "czas kyzyłordzki latowy", "∅∅∅": "Peru (latowy czas)"},
+		timezones:              map[string]string{"ACDT": "postrzodkowoaustralijski latowy czas", "ACST": "postrzodkowoaustralijski sztandardowy czas", "ACT": "ACT", "ACWDT": "postrzodkowo-zachodnioaustralijski latowy czas", "ACWST": "postrzodkowo-zachodnioaustralijski sztandardowy czas", "ADT": "czas atlantycki latowy", "ADT Arabia": "Pōłwysep Arabski (latowy czas)", "AEDT": "wschodnioaustralijski latowy czas", "AEST": "wschodnioaustralijski sztandardowy czas", "AFT": "Afganistan", "AKDT": "alaskański czas latowy", "AKST": "alaskański czas sztandardowy", "AMST": "amazōński latowy czas", "AMST Armenia": "Armynijo (latowy czas)", "AMT": "amazōński sztandardowy czas", "AMT Armenia": "Armynijo (sztandardowy czas)", "ANAST": "latowy czas Anadyr", "ANAT": "sztandardowy czas Anadyr", "ARST": "Argyntyna (latowy czas)", "ART": "Argyntyna (sztandardowy czas)", "AST": "czas atlantycki sztandardowy", "AST Arabia": "Pōłwysep Arabski (sztandardowy czas)", "AWDT": "zachodnioaustralijski latowy czas", "AWST": "zachodnioaustralijski sztandardowy czas", "AZST": "Azerbejdżan (latowy czas)", "AZT": "Azerbejdżan (sztandardowy czas)", "BDT Bangladesh": "Bangladesz (latowy czas)", "BNT": "BNT", "BOT": "Boliwijo", "BRST": "Brasília (latowy czas)", "BRT": "Brasília (sztandardowy czas)", "BST Bangladesh": "Bangladesz (sztandardowy czas)", "BT": "BT", "CAST": "CAST", "CAT": "postrzodkowoafrykański czas", "CCT": "Wyspy Kokosowe", "CDT": "czas postrzodkowoamerykański latowy", "CHADT": "CHADT", "CHAST": "CHAST", "CHUT": "Chuuk", "CKT": "Wyspy Cooka (sztandardowy czas)", "CKT DST": "Wyspy Cooka (latowy czas)", "CLST": "Chile (latowy czas)", "CLT": "Chile (sztandardowy czas)", "COST": "Kolumbijo (latowy czas)", "COT": "Kolumbijo (sztandardowy czas)", "CST": "czas postrzodkowoamerykański sztandardowy", "CST China": "Chiny (sztandardowy czas)", "CST China DST": "Chiny (latowy czas)", "CVST": "Wyspy Zielōnego Przilōndka (latowy czas)", "CVT": "Wyspy Zielōnego Przilōndka (sztandardowy czas)", "CXT": "Godnio Wyspa", "ChST": "Czamorro", "ChST NMI": "ChST NMI", "CuDT": "Kuba (latowy czas)", "CuST": "Kuba (sztandardowy czas)", "DAVT": "DAVT", "DDUT": "Dumont-d’Urville", "EASST": "Wyspa Wielkanocno (latowy czas)", "EAST": "Wyspa Wielkanocno (sztandardowy czas)", "EAT": "wschodnioafrykański czas", "ECT": "Ekwador", "EDT": "czas wschodnioamerykański latowy", "EGDT": "Grynlandyjo Wschodnia (latowy czas)", "EGST": "Grynlandyjo Wschodnia (sztandardowy czas)", "EST": "czas wschodnioamerykański sztandardowy", "FEET": "wschodnioeuropejski dalszy czas", "FJT": "Fidżi (sztandardowy czas)", "FJT Summer": "Fidżi (latowy czas)", "FKST": "Falklandy (latowy czas)", "FKT": "Falklandy (sztandardowy czas)", "FNST": "Fernando de Noronha (latowy czas)", "FNT": "Fernando de Noronha (sztandardowy czas)", "GALT": "czas Galapagos", "GAMT": "Wyspy Gambiera", "GEST": "Gruzyjo (latowy czas)", "GET": "Gruzyjo (sztandardowy czas)", "GFT": "Gujana Francusko", "GIT": "Gilbertowe Wyspy", "GMT": "uniwersalnego czasu", "GNSST": "GNSST", "GNST": "GNST", "GST": "Zatoka Perska", "GST Guam": "GST Guam", "GYT": "Gujana", "HADT": "Hawaje-Aleuty (sztandardowy czas)", "HAST": "Hawaje-Aleuty (sztandardowy czas)", "HKST": "Hōngkōng (latowy czas)", "HKT": "Hōngkōng (sztandardowy czas)", "HOVST": "Kobdo (latowy czas)", "HOVT": "Kobdo (sztandardowy czas)", "ICT": "indochiński czas", "IDT": "Izrael (latowy czas)", "IOT": "Ôcean Indyjski", "IRKST": "Irkuck (latowy czas)", "IRKT": "Irkuck (sztandardowy czas)", "IRST": "IRST", "IRST DST": "IRST DST", "IST": "indyjski sztandardowy czas", "IST Israel": "Izrael (sztandardowy czas)", "JDT": "Japōnijo (latowy czas)", "JST": "Japōnijo (sztandardowy czas)", "KOST": "KOST", "KRAST": "Krasnojarsk (latowy czas)", "KRAT": "Krasnojarsk (sztandardowy czas)", "KST": "KST", "KST DST": "KST DST", "LHDT": "Lord Howe (latowy czas)", "LHST": "Lord Howe (sztandardowy czas)", "LINT": "Line Islands", "MAGST": "MAGST", "MAGT": "MAGT", "MART": "Markizy", "MAWT": "MAWT", "MDT": "MDT", "MESZ": "postrzodkowoeuropejski latowy czas", "MEZ": "postrzodkowoeuropejski sztandardowy czas", "MHT": "Wyspy Marshalla", "MMT": "Mjanma", "MSD": "Moskwa (latowy)", "MST": "MST", "MUST": "MUST", "MUT": "MUT", "MVT": "Malediwy", "MYT": "Malezyjo", "NCT": "Nowo Kaledōnijo (sztandardowy czas)", "NDT": "Nowo Fundlandyjo (latowy czas)", "NDT New Caledonia": "Nowo Kaledōnijo (latowy czas)", "NFDT": "NFDT", "NFT": "NFT", "NOVST": "Nowosybirsk (latowy czas)", "NOVT": "Nowosybirsk (sztandardowy czas)", "NPT": "NPT", "NRT": "NRT", "NST": "Nowo Fundlandyjo (sztandardowy czas)", "NUT": "NUT", "NZDT": "Nowo Zelandyjo (latowy czas)", "NZST": "Nowo Zelandyjo (sztandardowy czas)", "OESZ": "wschodnioeuropejski latowy czas", "OEZ": "wschodnioeuropejski sztandardowy czas", "OMSST": "Ômsk (latowy czas)", "OMST": "Ômsk (sztandardowy czas)", "PDT": "czas pacyficzny latowy", "PDTM": "Meksyk (czas pacyficzny latowy)", "PETDT": "czas Pietropawłowsk Kamczacki latowy", "PETST": "sztandardowy czas Pietropawłowsk Kamczacki", "PGT": "Papua-Nowo Gwinea", "PHOT": "Fyniks", "PKT": "PKT", "PKT DST": "PKT DST", "PMDT": "Saint-Pierre i Miquelon (latowy czas)", "PMST": "Saint-Pierre i Miquelon (sztandardowy czas)", "PONT": "Pohnpei", "PST": "czas pacyficzny sztandardowy", "PST Philippine": "Filipiny (sztandardowy czas)", "PST Philippine DST": "Filipiny (latowy czas)", "PST Pitcairn": "PST Pitcairn", "PSTM": "Meksyk (czas pacyficzny sztandardowy)", "PWT": "PWT", "PYST": "Paragwaj (latowy czas)", "PYT": "Paragwaj (sztandardowy czas)", "PYT Korea": "Pjōngjang", "RET": "RET", "ROTT": "ROTT", "SAKST": "Sachalin (latowy czas)", "SAKT": "Sachalin (sztandardowy czas)", "SAMST": "czas Samara latowy", "SAMT": "sztandardowy czas Samara", "SAST": "połedniowoafrykański czas", "SBT": "Wyspy Salōmōna", "SCT": "Seszele", "SGT": "Singapur", "SLST": "SLST", "SRT": "Surinam", "SST Samoa": "SST Samoa", "SST Samoa Apia": "SST Samoa Apia", "SST Samoa Apia DST": "SST Samoa Apia DST", "SST Samoa DST": "SST Samoa DST", "SYOT": "SYOT", "TAAF": "Francuske Terytoria Połedniowe i Antarktyczne", "TAHT": "TAHT", "TJT": "Tadżykistan", "TKT": "TKT", "TLT": "Timor Wschodni", "TMST": "Turkmynistan (latowy czas)", "TMT": "Turkmynistan (sztandardowy czas)", "TOST": "Tōnga (latowy czas)", "TOT": "Tōnga (sztandardowy czas)", "TVT": "TVT", "TWT": "Tajpej (sztandardowy czas)", "TWT DST": "Tajpej (latowy czas)", "ULAST": "Ułan Bator (latowy czas)", "ULAT": "Ułan Bator (sztandardowy czas)", "UYST": "Urugwaj (latowy czas)", "UYT": "Urugwaj (sztandardowy czas)", "UZT": "UZT", "UZT DST": "UZT DST", "VET": "Wynezuela", "VLAST": "Władywostok (latowy czas)", "VLAT": "Władywostok (sztandardowy czas)", "VOLST": "Wołgograd (latowy czas)", "VOLT": "Wołgograd (sztandardowy czas)", "VOST": "Wostok", "VUT": "VUT", "VUT DST": "VUT DST", "WAKT": "WAKT", "WARST": "Argyntyna Zachodnio (latowy czas)", "WART": "Argyntyna Zachodnio (sztandardowy czas)", "WAST": "zachodnioafrykański czas", "WAT": "zachodnioafrykański czas", "WESZ": "zachodnioeuropejski latowy czas", "WEZ": "zachodnioeuropejski sztandardowy czas", "WFT": "Wallis i Futuna", "WGST": "Grynlandyjo Zachodnio (latowy czas)", "WGT": "Grynlandyjo Zachodnio (sztandardowy czas)", "WIB": "Indōnezyjo Zachodnio", "WIT": "Indōnezyjo Wschodnio", "WITA": "Indōnezyjo Postrzodkowo", "YAKST": "Jakuck (latowy czas)", "YAKT": "Jakuck (sztandardowy czas)", "YEKST": "Jekaterynburg (latowy czas)", "YEKT": "Jekaterynburg (sztandardowy czas)", "YST": "czas jukōński", "МСК": "Moskwa (sztandardowy)", "اقتاۋ": "czas auktaucki sztandardowy", "اقتاۋ قالاسى": "czas auktaucki latowy", "اقتوبە": "czas aktiubiński sztandardowy", "اقتوبە قالاسى": "czas aktiubiński latowy", "الماتى": "czas ałmacki sztandardowy", "الماتى قالاسى": "czas ałmacki latowy", "باتىس قازاق ەلى": "Kazachstan Zachodni", "شىعىش قازاق ەلى": "Kazachstan Wschodni", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "Kirgistan", "قىزىلوردا": "czas kyzyłordzki sztandardowy", "قىزىلوردا قالاسى": "czas kyzyłordzki latowy", "∅∅∅": "Peru (latowy czas)"},
 	}
 }
 
@@ -193,13 +195,75 @@ func (szl *szl_PL) Minus() string {
 // FmtNumber returns 'num' with digits/precision of 'v' for 'szl_PL' and handles both Whole and Real numbers based on 'v'
 func (szl *szl_PL) FmtNumber(num float64, v uint64) string {
 
-	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
+	count := 0
+	inWhole := v == 0
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, szl.decimal[0])
+			inWhole = true
+			continue
+		}
+
+		if inWhole {
+			if count == 3 {
+				for j := len(szl.group) - 1; j >= 0; j-- {
+					b = append(b, szl.group[j])
+				}
+				count = 1
+			} else {
+				count++
+			}
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		b = append(b, szl.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'szl_PL' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (szl *szl_PL) FmtPercent(num float64, v uint64) string {
-	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	l := len(s) + 3
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, szl.decimal[0])
+			continue
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		b = append(b, szl.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	b = append(b, szl.percent...)
+
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'szl_PL'
@@ -207,7 +271,7 @@ func (szl *szl_PL) FmtCurrency(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := szl.currencies[currency]
-	l := len(s) + len(symbol) + 3 + 2*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -271,7 +335,7 @@ func (szl *szl_PL) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := szl.currencies[currency]
-	l := len(s) + len(symbol) + 3 + 2*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

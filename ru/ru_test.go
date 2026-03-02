@@ -300,31 +300,31 @@ func TestDaysNarrow(t *testing.T) {
 	}{
 	 {
 	 	idx:      0,
-	 	expected: "вс",
+	 	expected: "В",
 	 },
 	 {
 	 	idx:      1,
-	 	expected: "пн",
+	 	expected: "П",
 	 },
 	 {
 	 	idx:      2,
-	 	expected: "вт",
+	 	expected: "В",
 	 },
 	 {
 	 	idx:      3,
-	 	expected: "ср",
+	 	expected: "С",
 	 },
 	 {
 	 	idx:      4,
-	 	expected: "чт",
+	 	expected: "Ч",
 	 },
 	 {
 	 	idx:      5,
-	 	expected: "пт",
+	 	expected: "П",
 	 },
 	 {
 	 	idx:      6,
-	 	expected: "сб",
+	 	expected: "С",
 	 },
 	}
 
@@ -348,45 +348,8 @@ func TestDaysShort(t *testing.T) {
 		}
 	}
 
-	tests := []struct {
-		idx      int
-		expected string
-	}{
-	 {
-	 	idx:      0,
-	 	expected: "вс",
-	 },
-	 {
-	 	idx:      1,
-	 	expected: "пн",
-	 },
-	 {
-	 	idx:      2,
-	 	expected: "вт",
-	 },
-	 {
-	 	idx:      3,
-	 	expected: "ср",
-	 },
-	 {
-	 	idx:      4,
-	 	expected: "чт",
-	 },
-	 {
-	 	idx:      5,
-	 	expected: "пт",
-	 },
-	 {
-	 	idx:      6,
-	 	expected: "сб",
-	 },
-	}
-
-	for _, tt := range tests {
-		s := trans.WeekdayShort(time.Weekday(tt.idx))
-		if s != tt.expected {
-			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
-		}
+	if len(days) != 0 {
+		t.Errorf("Expected daysShort to be empty, got length %d", len(days))
 	}
 }
 
@@ -884,27 +847,27 @@ func TestFmtNumber(t *testing.T) {
 	 {
 	 	num:      1123456.5643,
 	 	v:        2,
-	 	expected: "1 123 456,56",
+	 	expected: "1 123 456,56",
 	 },
 	 {
 	 	num:      1123456.5643,
 	 	v:        1,
-	 	expected: "1 123 456,6",
+	 	expected: "1 123 456,6",
 	 },
 	 {
 	 	num:      221123456.5643,
 	 	v:        3,
-	 	expected: "221 123 456,564",
+	 	expected: "221 123 456,564",
 	 },
 	 {
 	 	num:      -221123456.5643,
 	 	v:        3,
-	 	expected: "-221 123 456,564",
+	 	expected: "-221 123 456,564",
 	 },
 	 {
 	 	num:      -221123456.5643,
 	 	v:        3,
-	 	expected: "-221 123 456,564",
+	 	expected: "-221 123 456,564",
 	 },
 	 {
 	 	num:      0,

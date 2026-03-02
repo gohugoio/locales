@@ -48,6 +48,10 @@ func New() locales.Translator {
 		pluralsCardinal:        []locales.PluralRule{1, 2, 3, 4, 5, 6},
 		pluralsOrdinal:         []locales.PluralRule{1, 2, 3, 4, 5, 6},
 		pluralsRange:           []locales.PluralRule{2, 3, 4, 5, 6},
+		decimal:                ".",
+		group:                  ",",
+		minus:                  "-",
+		percent:                "%",
 		timeSeparator:          ":",
 		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "TK", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "р.", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
 		currencyNegativePrefix: "(",
@@ -65,7 +69,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"CC", "OC"},
 		erasNarrow:             []string{"C", "O"},
 		erasWide:               []string{"Cyn Crist", "Oed Crist"},
-		timezones:              map[string]string{"ACDT": "Amser Haf Canolbarth Awstralia", "ACST": "Amser Safonol Canolbarth Awstralia", "ACT": "ACT", "ACWDT": "Amser Haf Canolbarth Gorllewin Awstralia", "ACWST": "Amser Safonol Canolbarth Gorllewin Awstralia", "ADT": "Amser Haf Cefnfor yr Iwerydd", "ADT Arabia": "Amser Haf Arabaidd", "AEDT": "Amser Haf Dwyrain Awstralia", "AEST": "Amser Safonol Dwyrain Awstralia", "AFT": "Amser Afghanistan", "AKDT": "Amser Haf Alaska", "AKST": "Amser Safonol Alaska", "AMST": "Amser Haf Amazonas", "AMST Armenia": "Amser Haf Armenia", "AMT": "Amser Safonol Amazonas", "AMT Armenia": "Amser Safonol Armenia", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "Amser Haf Ariannin", "ART": "Amser Safonol Ariannin", "AST": "Amser Safonol Cefnfor yr Iwerydd", "AST Arabia": "Amser Safonol Arabaidd", "AWDT": "Amser Haf Gorllewin Awstralia", "AWST": "Amser Safonol Gorllewin Awstralia", "AZST": "Amser Haf Aserbaijan", "AZT": "Amser Safonol Aserbaijan", "BDT Bangladesh": "Amser Haf Bangladesh", "BNT": "Amser Brunei Darussalam", "BOT": "Amser Bolifia", "BRST": "Amser Haf Brasília", "BRT": "Amser Safonol Brasília", "BST Bangladesh": "Amser Safonol Bangladesh", "BT": "Amser Bhutan", "CAST": "CAST", "CAT": "Amser Canolbarth Affrica", "CCT": "Amser Ynysoedd Cocos", "CDT": "Amser Haf Canolbarth Gogledd America", "CHADT": "Amser Haf Chatham", "CHAST": "Amser Safonol Chatham", "CHUT": "Amser Chuuk", "CKT": "Amser Safonol Ynysoedd Cook", "CKT DST": "Amser Hanner Haf Ynysoedd Cook", "CLST": "Amser Haf Chile", "CLT": "Amser Safonol Chile", "COST": "Amser Haf Colombia", "COT": "Amser Safonol Colombia", "CST": "Amser Safonol Canolbarth Gogledd America", "CST China": "Amser Safonol Tsieina", "CST China DST": "Amser Haf Tsieina", "CVST": "Amser Haf Cabo Verde", "CVT": "Amser Safonol Cabo Verde", "CXT": "Amser Ynys Y Nadolig", "ChST": "Amser Chamorro", "ChST NMI": "ChST NMI", "CuDT": "Amser Haf Ciwa", "CuST": "Amser Safonol Ciwba", "DAVT": "Amser Davis", "DDUT": "Amser Dumont-d’Urville", "EASST": "Amser Haf Ynys y Pasg", "EAST": "Amser Safonol Ynys y Pasg", "EAT": "Amser Dwyrain Affrica", "ECT": "Amser Ecuador", "EDT": "Amser Haf Dwyrain Gogledd America", "EGDT": "Amser Haf Dwyrain yr Ynys Las", "EGST": "Amser Safonol Dwyrain yr Ynys Las", "EST": "Amser Safonol Dwyrain Gogledd America", "FEET": "Amser Dwyrain Pell Ewrop", "FJT": "Amser Safonol Fiji", "FJT Summer": "Amser Haf Fiji", "FKST": "Amser Haf Ynysoedd Falklands/Malvinas", "FKT": "Amser Safonol Ynysoedd Falklands/Malvinas", "FNST": "Amser Haf Fernando de Noronha", "FNT": "Amser Safonol Fernando de Noronha", "GALT": "Amser Galapagos", "GAMT": "Amser Gambier", "GEST": "Amser Haf Georgia", "GET": "Amser Safonol Georgia", "GFT": "Amser Guyane Ffrengig", "GIT": "Amser Ynysoedd Gilbert", "GMT": "Amser Safonol Greenwich", "GNSST": "GNSST", "GNST": "GNST", "GST": "Amser Safonol y Gwlff", "GST Guam": "GST Guam", "GYT": "Amser Guyana", "HADT": "Amser Safonol Hawaii-Aleutian", "HAST": "Amser Safonol Hawaii-Aleutian", "HKST": "Amser Haf Hong Kong", "HKT": "Amser Safonol Hong Kong", "HOVST": "Amser Haf Hovd", "HOVT": "Amser Safonol Hovd", "ICT": "Amser Indo-Tsieina", "IDT": "Amser Haf Israel", "IOT": "Amser Cefnfor India", "IRKST": "Amser Haf Irkutsk", "IRKT": "Amser Safonol Irkutsk", "IRST": "Amser Safonol Iran", "IRST DST": "Amser Haf Iran", "IST": "Amser India", "IST Israel": "Amser Safonol Israel", "JDT": "Amser Haf Japan", "JST": "Amser Safonol Japan", "KOST": "Amser Kosrae", "KRAST": "Amser Haf Krasnoyarsk", "KRAT": "Amser Safonol Krasnoyarsk", "KST": "Amser Safonol Corea", "KST DST": "Amser Haf Corea", "LHDT": "Amser Haf yr Arglwydd Howe", "LHST": "Amser Safonol yr Arglwydd Howe", "LINT": "Amser Ynysoedd Line", "MAGST": "Amser Haf Magadan", "MAGT": "Amser Safonol Magadan", "MART": "Amser Marquises", "MAWT": "Amser Mawson", "MDT": "Amser Haf Mynyddoedd Gogledd America", "MESZ": "Amser Haf Canolbarth Ewrop", "MEZ": "Amser Safonol Canolbarth Ewrop", "MHT": "Amser Ynysoedd Marshall", "MMT": "Amser Myanmar", "MSD": "Amser Haf Moscfa", "MST": "Amser Safonol Mynyddoedd Gogledd America", "MUST": "Amser Haf Mauritius", "MUT": "Amser Safonol Mauritius", "MVT": "Amser Y Maldives", "MYT": "Amser Malaysia", "NCT": "Amser Safonol Caledonia Newydd", "NDT": "Amser Haf Newfoundland", "NDT New Caledonia": "Amser Haf Caledonia Newydd", "NFDT": "Amser Haf Ynys Norfolk", "NFT": "Amser Safonol Ynys Norfolk", "NOVST": "Amser Haf Novosibirsk", "NOVT": "Amser Safonol Novosibirsk", "NPT": "Amser Nepal", "NRT": "Amser Nauru", "NST": "Amser Safonol Newfoundland", "NUT": "Amser Niue", "NZDT": "Amser Haf Seland Newydd", "NZST": "Amser Safonol Seland Newydd", "OESZ": "Amser Haf Dwyrain Ewrop", "OEZ": "Amser Safonol Dwyrain Ewrop", "OMSST": "Amser Haf Omsk", "OMST": "Amser Safonol Omsk", "PDT": "Amser Haf Cefnfor Tawel Gogledd America", "PDTM": "Amser Haf Pasiffig Mecsico", "PETDT": "PETDT", "PETST": "PETST", "PGT": "Amser Papua Guinea Newydd", "PHOT": "Amser Ynysoedd Phoenix", "PKT": "Amser Safonol Pakistan", "PKT DST": "Amser Haf Pakistan", "PMDT": "Amser Haf Saint-Pierre-et-Miquelon", "PMST": "Amser Safonol Saint-Pierre-et-Miquelon", "PONT": "Amser Pohnpei", "PST": "Amser Safonol Cefnfor Tawel Gogledd America", "PST Philippine": "Amser Safonol Pilipinas", "PST Philippine DST": "Amser Haf Pilipinas", "PST Pitcairn": "Amser Pitcairn", "PSTM": "Amser Safonol Pasiffig Mecsico", "PWT": "Amser Palau", "PYST": "Amser Haf Paraguay", "PYT": "Amser Safonol Paraguay", "PYT Korea": "Amser Pyongyang", "RET": "Amser Réunion", "ROTT": "Amser Rothera", "SAKST": "Amser Haf Sakhalin", "SAKT": "Amser Safonol Sakhalin", "SAMST": "Amser Haf Samara", "SAMT": "Amser Safonol Samara", "SAST": "Amser Safonol De Affrica", "SBT": "Amser Ynysoedd Solomon", "SCT": "Amser Seychelles", "SGT": "Amser Singapore", "SLST": "SLST", "SRT": "Amser Suriname", "SST Samoa": "Amser Safonol Samoa", "SST Samoa Apia": "Amser Safonol Apia", "SST Samoa Apia DST": "Amser Haf Apia", "SST Samoa DST": "Amser Haf Samoa", "SYOT": "Amser Syowa", "TAAF": "Amser Tiroedd Ffrainc yn y De a’r Antarctig", "TAHT": "Amser Tahiti", "TJT": "Amser Tajicistan", "TKT": "Amser Tokelau", "TLT": "Amser Dwyrain Timor", "TMST": "Amser Haf Tyrcmenistan", "TMT": "Amser Safonol Tyrcmenistan", "TOST": "Amser Haf Tonga", "TOT": "Amser Safonol Tonga", "TVT": "Amser Tuvalu", "TWT": "Amser Safonol Taipei", "TWT DST": "Amser Haf Taipei", "ULAST": "Amser Haf Ulan Bator", "ULAT": "Amser Safonol Ulan Bator", "UYST": "Amser Haf Uruguay", "UYT": "Amser Safonol Uruguay", "UZT": "Amser Safonol Uzbekistan", "UZT DST": "Amser Haf Uzbekistan", "VET": "Amser Venezuela", "VLAST": "Amser Haf Vladivostok", "VLAT": "Amser Safonol Vladivostok", "VOLST": "Amser Haf Volgograd", "VOLT": "Amser Safonol Volgograd", "VOST": "Amser Vostok", "VUT": "Amser Safonol Vanuatu", "VUT DST": "Amser Haf Vanuatu", "WAKT": "Amser Ynys Wake", "WARST": "Amser Haf Gorllewin Ariannin", "WART": "Amser Safonol Gorllewin Ariannin", "WAST": "Amser Gorllewin Affrica", "WAT": "Amser Gorllewin Affrica", "WESZ": "Amser Haf Gorllewin Ewrop", "WEZ": "Amser Safonol Gorllewin Ewrop", "WFT": "Amser Wallis a Futuna", "WGST": "Amser Haf Gorllewin yr Ynys Las", "WGT": "Amser Safonol Gorllewin yr Ynys Las", "WIB": "Amser Gorllewin Indonesia", "WIT": "Amser Dwyrain Indonesia", "WITA": "Amser Canolbarth Indonesia", "YAKST": "Amser Haf Yakutsk", "YAKT": "Amser Safonol Yakutsk", "YEKST": "Amser Haf Yekaterinburg", "YEKT": "Amser Safonol Yekaterinburg", "YST": "Amser Yukon", "МСК": "Amser Safonol Moscfa", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "Amser Gorllewin Kazakhstan", "شىعىش قازاق ەلى": "Amser Dwyrain Kazakhstan", "قازاق ەلى": "Amser Kazakhstan", "قىرعىزستان": "Amser Kyrgyzstan", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Amser Haf Periw"},
+		timezones:              map[string]string{"ACDT": "Amser Haf Canolbarth Awstralia", "ACST": "Amser Safonol Canolbarth Awstralia", "ACT": "ACT", "ACWDT": "Amser Haf Canolbarth Gorllewin Awstralia", "ACWST": "Amser Safonol Canolbarth Gorllewin Awstralia", "ADT": "Amser Haf Cefnfor yr Iwerydd", "ADT Arabia": "Amser Haf Arabaidd", "AEDT": "Amser Haf Dwyrain Awstralia", "AEST": "Amser Safonol Dwyrain Awstralia", "AFT": "Amser Afghanistan", "AKDT": "Amser Haf Alaska", "AKST": "Amser Safonol Alaska", "AMST": "Amser Haf Amazonas", "AMST Armenia": "Amser Haf Armenia", "AMT": "Amser Safonol Amazonas", "AMT Armenia": "Amser Safonol Armenia", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "Amser Haf Ariannin", "ART": "Amser Safonol Ariannin", "AST": "Amser Safonol Cefnfor yr Iwerydd", "AST Arabia": "Amser Safonol Arabaidd", "AWDT": "Amser Haf Gorllewin Awstralia", "AWST": "Amser Safonol Gorllewin Awstralia", "AZST": "Amser Haf Aserbaijan", "AZT": "Amser Safonol Aserbaijan", "BDT Bangladesh": "Amser Haf Bangladesh", "BNT": "Amser Brunei Darussalam", "BOT": "Amser Bolifia", "BRST": "Amser Haf Brasília", "BRT": "Amser Safonol Brasília", "BST Bangladesh": "Amser Safonol Bangladesh", "BT": "Amser Bhutan", "CAST": "CAST", "CAT": "Amser Canolbarth Affrica", "CCT": "Amser Ynysoedd Cocos", "CDT": "Amser Haf Canolbarth Gogledd America", "CHADT": "Amser Haf Chatham", "CHAST": "Amser Safonol Chatham", "CHUT": "Amser Chuuk", "CKT": "Amser Safonol Ynysoedd Cook", "CKT DST": "Amser Hanner Haf Ynysoedd Cook", "CLST": "Amser Haf Chile", "CLT": "Amser Safonol Chile", "COST": "Amser Haf Colombia", "COT": "Amser Safonol Colombia", "CST": "Amser Safonol Canolbarth Gogledd America", "CST China": "Amser Safonol Tsieina", "CST China DST": "Amser Haf Tsieina", "CVST": "Amser Haf Cabo Verde", "CVT": "Amser Safonol Cabo Verde", "CXT": "Amser Ynys Y Nadolig", "ChST": "Amser Chamorro", "ChST NMI": "ChST NMI", "CuDT": "Amser Haf Ciwa", "CuST": "Amser Safonol Ciwba", "DAVT": "Amser Davis", "DDUT": "Amser Dumont-d’Urville", "EASST": "Amser Haf Ynys y Pasg", "EAST": "Amser Safonol Ynys y Pasg", "EAT": "Amser Dwyrain Affrica", "ECT": "Amser Ecuador", "EDT": "Amser Haf Dwyrain Gogledd America", "EGDT": "Amser Haf Dwyrain yr Ynys Las", "EGST": "Amser Safonol Dwyrain yr Ynys Las", "EST": "Amser Safonol Dwyrain Gogledd America", "FEET": "Amser Dwyrain Pell Ewrop", "FJT": "Amser Safonol Fiji", "FJT Summer": "Amser Haf Fiji", "FKST": "Amser Haf Ynysoedd Falklands/Malvinas", "FKT": "Amser Safonol Ynysoedd Falklands/Malvinas", "FNST": "Amser Haf Fernando de Noronha", "FNT": "Amser Safonol Fernando de Noronha", "GALT": "Amser Galapagos", "GAMT": "Amser Gambier", "GEST": "Amser Haf Georgia", "GET": "Amser Safonol Georgia", "GFT": "Amser Guyane Ffrengig", "GIT": "Amser Ynysoedd Gilbert", "GMT": "Amser Safonol Greenwich", "GNSST": "GNSST", "GNST": "GNST", "GST": "Amser Safonol y Gwlff", "GST Guam": "GST Guam", "GYT": "Amser Guyana", "HADT": "Amser Safonol Hawaii-Aleutian", "HAST": "Amser Safonol Hawaii-Aleutian", "HKST": "Amser Haf Hong Kong", "HKT": "Amser Safonol Hong Kong", "HOVST": "Amser Haf Hovd", "HOVT": "Amser Safonol Hovd", "ICT": "Amser Indo-Tsieina", "IDT": "Amser Haf Israel", "IOT": "Amser Cefnfor India", "IRKST": "Amser Haf Irkutsk", "IRKT": "Amser Safonol Irkutsk", "IRST": "Amser Safonol Iran", "IRST DST": "Amser Haf Iran", "IST": "Amser India", "IST Israel": "Amser Safonol Israel", "JDT": "Amser Haf Japan", "JST": "Amser Safonol Japan", "KOST": "Amser Kosrae", "KRAST": "Amser Haf Krasnoyarsk", "KRAT": "Amser Safonol Krasnoyarsk", "KST": "Amser Safonol Corea", "KST DST": "Amser Haf Corea", "LHDT": "Amser Haf yr Arglwydd Howe", "LHST": "Amser Safonol yr Arglwydd Howe", "LINT": "Amser Ynysoedd Line", "MAGST": "Amser Haf Magadan", "MAGT": "Amser Safonol Magadan", "MART": "Amser Marquises", "MAWT": "Amser Mawson", "MDT": "MDT", "MESZ": "Amser Haf Canolbarth Ewrop", "MEZ": "Amser Safonol Canolbarth Ewrop", "MHT": "Amser Ynysoedd Marshall", "MMT": "Amser Myanmar", "MSD": "Amser Haf Moscfa", "MST": "MST", "MUST": "Amser Haf Mauritius", "MUT": "Amser Safonol Mauritius", "MVT": "Amser Y Maldives", "MYT": "Amser Malaysia", "NCT": "Amser Safonol Caledonia Newydd", "NDT": "Amser Haf Newfoundland", "NDT New Caledonia": "Amser Haf Caledonia Newydd", "NFDT": "Amser Haf Ynys Norfolk", "NFT": "Amser Safonol Ynys Norfolk", "NOVST": "Amser Haf Novosibirsk", "NOVT": "Amser Safonol Novosibirsk", "NPT": "Amser Nepal", "NRT": "Amser Nauru", "NST": "Amser Safonol Newfoundland", "NUT": "Amser Niue", "NZDT": "Amser Haf Seland Newydd", "NZST": "Amser Safonol Seland Newydd", "OESZ": "Amser Haf Dwyrain Ewrop", "OEZ": "Amser Safonol Dwyrain Ewrop", "OMSST": "Amser Haf Omsk", "OMST": "Amser Safonol Omsk", "PDT": "Amser Haf Cefnfor Tawel Gogledd America", "PDTM": "Amser Haf Pasiffig Mecsico", "PETDT": "PETDT", "PETST": "PETST", "PGT": "Amser Papua Guinea Newydd", "PHOT": "Amser Ynysoedd Phoenix", "PKT": "Amser Safonol Pakistan", "PKT DST": "Amser Haf Pakistan", "PMDT": "Amser Haf Saint-Pierre-et-Miquelon", "PMST": "Amser Safonol Saint-Pierre-et-Miquelon", "PONT": "Amser Pohnpei", "PST": "Amser Safonol Cefnfor Tawel Gogledd America", "PST Philippine": "Amser Safonol Pilipinas", "PST Philippine DST": "Amser Haf Pilipinas", "PST Pitcairn": "Amser Pitcairn", "PSTM": "Amser Safonol Pasiffig Mecsico", "PWT": "Amser Palau", "PYST": "Amser Haf Paraguay", "PYT": "Amser Safonol Paraguay", "PYT Korea": "Amser Pyongyang", "RET": "Amser Réunion", "ROTT": "Amser Rothera", "SAKST": "Amser Haf Sakhalin", "SAKT": "Amser Safonol Sakhalin", "SAMST": "Amser Haf Samara", "SAMT": "Amser Safonol Samara", "SAST": "Amser Safonol De Affrica", "SBT": "Amser Ynysoedd Solomon", "SCT": "Amser Seychelles", "SGT": "Amser Singapore", "SLST": "SLST", "SRT": "Amser Suriname", "SST Samoa": "Amser Safonol Samoa", "SST Samoa Apia": "Amser Safonol Apia", "SST Samoa Apia DST": "Amser Haf Apia", "SST Samoa DST": "Amser Haf Samoa", "SYOT": "Amser Syowa", "TAAF": "Amser Tiroedd Ffrainc yn y De a’r Antarctig", "TAHT": "Amser Tahiti", "TJT": "Amser Tajicistan", "TKT": "Amser Tokelau", "TLT": "Amser Dwyrain Timor", "TMST": "Amser Haf Tyrcmenistan", "TMT": "Amser Safonol Tyrcmenistan", "TOST": "Amser Haf Tonga", "TOT": "Amser Safonol Tonga", "TVT": "Amser Tuvalu", "TWT": "Amser Safonol Taipei", "TWT DST": "Amser Haf Taipei", "ULAST": "Amser Haf Ulan Bator", "ULAT": "Amser Safonol Ulan Bator", "UYST": "Amser Haf Uruguay", "UYT": "Amser Safonol Uruguay", "UZT": "Amser Safonol Uzbekistan", "UZT DST": "Amser Haf Uzbekistan", "VET": "Amser Venezuela", "VLAST": "Amser Haf Vladivostok", "VLAT": "Amser Safonol Vladivostok", "VOLST": "Amser Haf Volgograd", "VOLT": "Amser Safonol Volgograd", "VOST": "Amser Vostok", "VUT": "Amser Safonol Vanuatu", "VUT DST": "Amser Haf Vanuatu", "WAKT": "Amser Ynys Wake", "WARST": "Amser Haf Gorllewin Ariannin", "WART": "Amser Safonol Gorllewin Ariannin", "WAST": "Amser Gorllewin Affrica", "WAT": "Amser Gorllewin Affrica", "WESZ": "Amser Haf Gorllewin Ewrop", "WEZ": "Amser Safonol Gorllewin Ewrop", "WFT": "Amser Wallis a Futuna", "WGST": "Amser Haf Gorllewin yr Ynys Las", "WGT": "Amser Safonol Gorllewin yr Ynys Las", "WIB": "Amser Gorllewin Indonesia", "WIT": "Amser Dwyrain Indonesia", "WITA": "Amser Canolbarth Indonesia", "YAKST": "Amser Haf Yakutsk", "YAKT": "Amser Safonol Yakutsk", "YEKST": "Amser Haf Yekaterinburg", "YEKT": "Amser Safonol Yekaterinburg", "YST": "Amser Yukon", "МСК": "Amser Safonol Moscfa", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "Amser Gorllewin Kazakhstan", "شىعىش قازاق ەلى": "Amser Dwyrain Kazakhstan", "قازاق ەلى": "Amser Kazakhstan", "قىرعىزستان": "Amser Kyrgyzstan", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Amser Haf Periw"},
 	}
 }
 
@@ -267,13 +271,73 @@ func (cy *cy) Minus() string {
 // FmtNumber returns 'num' with digits/precision of 'v' for 'cy' and handles both Whole and Real numbers based on 'v'
 func (cy *cy) FmtNumber(num float64, v uint64) string {
 
-	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
+	count := 0
+	inWhole := v == 0
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, cy.decimal[0])
+			inWhole = true
+			continue
+		}
+
+		if inWhole {
+			if count == 3 {
+				b = append(b, cy.group[0])
+				count = 1
+			} else {
+				count++
+			}
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		b = append(b, cy.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'cy' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (cy *cy) FmtPercent(num float64, v uint64) string {
-	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	l := len(s) + 3
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, cy.decimal[0])
+			continue
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		b = append(b, cy.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	b = append(b, cy.percent...)
+
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'cy'
@@ -281,7 +345,7 @@ func (cy *cy) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cy.currencies[currency]
-	l := len(s) + len(symbol) + 0
+	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -339,7 +403,7 @@ func (cy *cy) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cy.currencies[currency]
-	l := len(s) + len(symbol) + 2
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

@@ -47,6 +47,8 @@ func New() locales.Translator {
 		pluralsCardinal:    []locales.PluralRule{2, 6},
 		pluralsOrdinal:     nil,
 		pluralsRange:       nil,
+		decimal:            ".",
+		group:              ",",
 		minus:              "‏-",
 		percent:            "٪",
 		timeSeparator:      ":",
@@ -195,14 +197,51 @@ func (ckb *ckb_IQ) Minus() string {
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ckb_IQ' and handles both Whole and Real numbers based on 'v'
 func (ckb *ckb_IQ) FmtNumber(num float64, v uint64) string {
 
-	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	l := len(s) + 5 + 1*len(s[:len(s)-int(v)-1])/3
+	count := 0
+	inWhole := v == 0
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, ckb.decimal[0])
+			inWhole = true
+			continue
+		}
+
+		if inWhole {
+			if count == 3 {
+				b = append(b, ckb.group[0])
+				count = 1
+			} else {
+				count++
+			}
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		for j := len(ckb.minus) - 1; j >= 0; j-- {
+			b = append(b, ckb.minus[j])
+		}
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'ckb_IQ' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (ckb *ckb_IQ) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 8
+	l := len(s) + 9
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {

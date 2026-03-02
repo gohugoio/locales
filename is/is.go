@@ -50,6 +50,8 @@ func New() locales.Translator {
 		pluralsRange:           []locales.PluralRule{2, 6},
 		decimal:                ",",
 		group:                  ".",
+		minus:                  "-",
+		percent:                "%",
 		timeSeparator:          ":",
 		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "kr.", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "kr.", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "kr.", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "kr.", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
 		currencyPositiveSuffix: " ",
@@ -67,7 +69,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"f.Kr.", "e.Kr."},
 		erasNarrow:             []string{"f.k.", "e.k."},
 		erasWide:               []string{"fyrir Krist", "eftir Krist"},
-		timezones:              map[string]string{"ACDT": "Sumartími í Mið-Ástralíu", "ACST": "Staðaltími í Mið-Ástralíu", "ACT": "ACT", "ACWDT": "Sumartími í miðvesturhluta Ástralíu", "ACWST": "Staðaltími í miðvesturhluta Ástralíu", "ADT": "Sumartími á Atlantshafssvæðinu", "ADT Arabia": "Sumartími í Arabíu", "AEDT": "Sumartími í Austur-Ástralíu", "AEST": "Staðaltími í Austur-Ástralíu", "AFT": "Afganistantími", "AKDT": "Sumartími í Alaska", "AKST": "Staðaltími í Alaska", "AMST": "Sumartími á Amasónsvæðinu", "AMST Armenia": "Sumartími í Armeníu", "AMT": "Staðaltími á Amasónsvæðinu", "AMT Armenia": "Staðaltími í Armeníu", "ANAST": "Sumartími í Anadyr", "ANAT": "Staðaltími í Anadyr", "ARST": "Sumartími í Argentínu", "ART": "Staðaltími í Argentínu", "AST": "Staðaltími á Atlantshafssvæðinu", "AST Arabia": "Staðaltími í Arabíu", "AWDT": "Sumartími í Vestur-Ástralíu", "AWST": "Staðaltími í Vestur-Ástralíu", "AZST": "Sumartími í Aserbaídsjan", "AZT": "Staðaltími í Aserbaídsjan", "BDT Bangladesh": "Sumartími í Bangladess", "BNT": "Brúneitími", "BOT": "Bólivíutími", "BRST": "Sumartími í Brasilíu", "BRT": "Staðaltími í Brasilíu", "BST Bangladesh": "Staðaltími í Bangladess", "BT": "Bútantími", "CAST": "CAST", "CAT": "Mið-Afríkutími", "CCT": "Kókoseyjatími", "CDT": "Sumartími í miðhluta Bandaríkjanna og Kanada", "CHADT": "Sumartími í Chatham", "CHAST": "Staðaltími í Chatham", "CHUT": "Chuuk-tími", "CKT": "Staðaltími á Cooks-eyjum", "CKT DST": "Hálfsumartími á Cooks-eyjum", "CLST": "Sumartími í Síle", "CLT": "Staðaltími í Síle", "COST": "Sumartími í Kólumbíu", "COT": "Staðaltími í Kólumbíu", "CST": "Staðaltími í miðhluta Bandaríkjanna og Kanada", "CST China": "Staðaltími í Kína", "CST China DST": "Sumartími í Kína", "CVST": "Sumartími á Grænhöfðaeyjum", "CVT": "Staðaltími á Grænhöfðaeyjum", "CXT": "Jólaeyjartími", "ChST": "Chamorro-staðaltími", "ChST NMI": "ChST NMI", "CuDT": "Sumartími á Kúbu", "CuST": "Staðaltími á Kúbu", "DAVT": "Davis-tími", "DDUT": "Tími á Dumont-d’Urville", "EASST": "Sumartími á Páskaeyju", "EAST": "Staðaltími á Páskaeyju", "EAT": "Austur-Afríkutími", "ECT": "Ekvadortími", "EDT": "Sumartími í austurhluta Bandaríkjanna og Kanada", "EGDT": "Sumartími á Austur-Grænlandi", "EGST": "Staðaltími á Austur-Grænlandi", "EST": "Staðaltími í austurhluta Bandaríkjanna og Kanada", "FEET": "Staðartími Kalíníngrad", "FJT": "Staðaltími á Fídjíeyjum", "FJT Summer": "Sumartími á Fídjíeyjum", "FKST": "Sumartími á Falklandseyjum", "FKT": "Staðaltími á Falklandseyjum", "FNST": "Sumartími í Fernando de Noronha", "FNT": "Staðaltími í Fernando de Noronha", "GALT": "Galapagos-tími", "GAMT": "Gambier-tími", "GEST": "Sumartími í Georgíu", "GET": "Staðaltími í Georgíu", "GFT": "Tími í Frönsku Gvæjana", "GIT": "Tími á Gilbert-eyjum", "GMT": "Greenwich-staðaltími", "GNSST": "GNSST", "GNST": "GNST", "GST": "Staðaltími við Persaflóa", "GST Guam": "GST Guam", "GYT": "Gvæjanatími", "HADT": "Staðaltími á Havaí og Aleúta", "HAST": "Staðaltími á Havaí og Aleúta", "HKST": "Sumartími í Hong Kong", "HKT": "Staðaltími í Hong Kong", "HOVST": "Sumartími í Hovd", "HOVT": "Staðaltími í Hovd", "ICT": "Indókínatími", "IDT": "Sumartími í Ísrael", "IOT": "Indlandshafstími", "IRKST": "Sumartími í Irkutsk", "IRKT": "Staðaltími í Irkutsk", "IRST": "Staðaltími í Íran", "IRST DST": "Sumartími í Íran", "IST": "Indlandstími", "IST Israel": "Staðaltími í Ísrael", "JDT": "Sumartími í Japan", "JST": "Staðaltími í Japan", "KOST": "Kosrae-tími", "KRAST": "Sumartími í Krasnoyarsk", "KRAT": "Staðaltími í Krasnoyarsk", "KST": "Staðaltími í Kóreu", "KST DST": "Sumartími í Kóreu", "LHDT": "Sumartími á Lord Howe-eyju", "LHST": "Staðaltími á Lord Howe-eyju", "LINT": "Línueyja-tími", "MAGST": "Sumartími í Magadan", "MAGT": "Staðaltími í Magadan", "MART": "Tími á Markgreifafrúreyjum", "MAWT": "Mawson-tími", "MDT": "Sumartími í Klettafjöllum", "MESZ": "Sumartími í Mið-Evrópu", "MEZ": "Staðaltími í Mið-Evrópu", "MHT": "Tími á Marshall-eyjum", "MMT": "Mjanmar-tími", "MSD": "Sumartími í Moskvu", "MST": "Staðaltími í Klettafjöllum", "MUST": "Sumartími á Máritíus", "MUT": "Staðaltími á Máritíus", "MVT": "Maldíveyja-tími", "MYT": "Malasíutími", "NCT": "Staðaltími í Nýju-Kaledóníu", "NDT": "Sumartími á Nýfundnalandi", "NDT New Caledonia": "Sumartími í Nýju-Kaledóníu", "NFDT": "Sumartími á Norfolk-eyju", "NFT": "Staðaltími á Norfolk-eyju", "NOVST": "Sumartími í Novosibirsk", "NOVT": "Staðaltími í Novosibirsk", "NPT": "Nepaltími", "NRT": "Nárú-tími", "NST": "Staðaltími á Nýfundnalandi", "NUT": "Niue-tími", "NZDT": "Sumartími á Nýja-Sjálandi", "NZST": "Staðaltími á Nýja-Sjálandi", "OESZ": "Sumartími í Austur-Evrópu", "OEZ": "Staðaltími í Austur-Evrópu", "OMSST": "Sumartími í Omsk", "OMST": "Staðaltími í Omsk", "PDT": "Sumartími á Kyrrahafssvæðinu", "PDTM": "Sumartími í Mexíkó á Kyrrahafssvæðinu", "PETDT": "Sumartími í Petropavlovsk-Kamchatski", "PETST": "Staðaltími í Petropavlovsk-Kamchatski", "PGT": "Tími á Papúa Nýju-Gíneu", "PHOT": "Fönixeyjatími", "PKT": "Staðaltími í Pakistan", "PKT DST": "Sumartími í Pakistan", "PMDT": "Sumartími á Sankti Pierre og Miquelon", "PMST": "Staðaltími á Sankti Pierre og Miquelon", "PONT": "Ponape-tími", "PST": "Staðaltími á Kyrrahafssvæðinu", "PST Philippine": "Staðaltími á Filippseyjum", "PST Philippine DST": "Sumartími á Filippseyjum", "PST Pitcairn": "Pitcairn-tími", "PSTM": "Staðaltími í Mexíkó á Kyrrahafssvæðinu", "PWT": "Palátími", "PYST": "Sumartími í Paragvæ", "PYT": "Staðaltími í Paragvæ", "PYT Korea": "Tími í Pjongjang", "RET": "Réunion-tími", "ROTT": "Rothera-tími", "SAKST": "Sumartími á Sakhalin", "SAKT": "Staðaltími á Sakhalin", "SAMST": "Sumartími í Samara", "SAMT": "Staðaltími í Samara", "SAST": "Suður-Afríkutími", "SBT": "Salómonseyjatími", "SCT": "Seychelles-eyjatími", "SGT": "Singapúrtími", "SLST": "SLST", "SRT": "Súrinamtími", "SST Samoa": "Staðaltími á Samóa", "SST Samoa Apia": "Staðaltími í Apía", "SST Samoa Apia DST": "Sumartími í Apía", "SST Samoa DST": "Sumartími á Samóa", "SYOT": "Syowa-tími", "TAAF": "Tími á frönsku suðurhafssvæðum og Suðurskautslandssvæði", "TAHT": "Tahítí-tími", "TJT": "Tadsjíkistan-tími", "TKT": "Tókelá-tími", "TLT": "Tími á Tímor-Leste", "TMST": "Sumartími í Túrkmenistan", "TMT": "Staðaltími í Túrkmenistan", "TOST": "Sumartími á Tonga", "TOT": "Staðaltími á Tonga", "TVT": "Túvalútími", "TWT": "Staðaltími í Taipei", "TWT DST": "Sumartími í Taipei", "ULAST": "Sumartími í Úlan Bator", "ULAT": "Staðaltími í Úlan Bator", "UYST": "Sumartími í Úrúgvæ", "UYT": "Staðaltími í Úrúgvæ", "UZT": "Staðaltími í Úsbekistan", "UZT DST": "Sumartími í Úsbekistan", "VET": "Venesúelatími", "VLAST": "Sumartími í Vladivostok", "VLAT": "Staðaltími í Vladivostok", "VOLST": "Sumartími í Volgograd", "VOLT": "Staðaltími í Volgograd", "VOST": "Vostok-tími", "VUT": "Staðaltími á Vanúatú", "VUT DST": "Sumartími á Vanúatú", "WAKT": "Tími á Wake-eyju", "WARST": "Sumartími í Vestur-Argentínu", "WART": "Staðaltími í Vestur-Argentínu", "WAST": "Vestur-Afríkutími", "WAT": "Vestur-Afríkutími", "WESZ": "Sumartími í Vestur-Evrópu", "WEZ": "Staðaltími í Vestur-Evrópu", "WFT": "Tími á Wallis- og Fútúnaeyjum", "WGST": "Sumartími á Vestur-Grænlandi", "WGT": "Staðaltími á Vestur-Grænlandi", "WIB": "Vestur-Indónesíutími", "WIT": "Austur-Indónesíutími", "WITA": "Mið-Indónesíutími", "YAKST": "Sumartími í Yakutsk", "YAKT": "Staðaltími í Yakutsk", "YEKST": "Sumartími í Yekaterinburg", "YEKT": "Staðaltími í Yekaterinborg", "YST": "Tími í Júkon", "МСК": "Staðaltími í Moskvu", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "Tími í Vestur-Kasakstan", "شىعىش قازاق ەلى": "Tími í Austur-Kasakstan", "قازاق ەلى": "Tími í Kasakstan", "قىرعىزستان": "Kirgistan-tími", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Sumartími í Perú"},
+		timezones:              map[string]string{"ACDT": "Sumartími í Mið-Ástralíu", "ACST": "ACST", "ACT": "ACT", "ACWDT": "Sumartími í miðvesturhluta Ástralíu", "ACWST": "Staðaltími í miðvesturhluta Ástralíu", "ADT": "Sumartími á Atlantshafssvæðinu", "ADT Arabia": "Sumartími í Arabíu", "AEDT": "Sumartími í Austur-Ástralíu", "AEST": "Staðaltími í Austur-Ástralíu", "AFT": "Afganistantími", "AKDT": "Sumartími í Alaska", "AKST": "Staðaltími í Alaska", "AMST": "Sumartími á Amasónsvæðinu", "AMST Armenia": "Sumartími í Armeníu", "AMT": "Staðaltími á Amasónsvæðinu", "AMT Armenia": "Staðaltími í Armeníu", "ANAST": "Sumartími í Anadyr", "ANAT": "Staðaltími í Anadyr", "ARST": "Sumartími í Argentínu", "ART": "Staðaltími í Argentínu", "AST": "Staðaltími á Atlantshafssvæðinu", "AST Arabia": "Staðaltími í Arabíu", "AWDT": "Sumartími í Vestur-Ástralíu", "AWST": "Staðaltími í Vestur-Ástralíu", "AZST": "Sumartími í Aserbaídsjan", "AZT": "Staðaltími í Aserbaídsjan", "BDT Bangladesh": "Sumartími í Bangladess", "BNT": "Brúneitími", "BOT": "Bólivíutími", "BRST": "Sumartími í Brasilíu", "BRT": "Staðaltími í Brasilíu", "BST Bangladesh": "Staðaltími í Bangladess", "BT": "Bútantími", "CAST": "CAST", "CAT": "Mið-Afríkutími", "CCT": "Kókoseyjatími", "CDT": "Sumartími í miðhluta Bandaríkjanna og Kanada", "CHADT": "Sumartími í Chatham", "CHAST": "Staðaltími í Chatham", "CHUT": "Chuuk-tími", "CKT": "Staðaltími á Cooks-eyjum", "CKT DST": "Hálfsumartími á Cooks-eyjum", "CLST": "Sumartími í Síle", "CLT": "Staðaltími í Síle", "COST": "Sumartími í Kólumbíu", "COT": "Staðaltími í Kólumbíu", "CST": "Staðaltími í miðhluta Bandaríkjanna og Kanada", "CST China": "Staðaltími í Kína", "CST China DST": "Sumartími í Kína", "CVST": "Sumartími á Grænhöfðaeyjum", "CVT": "Staðaltími á Grænhöfðaeyjum", "CXT": "Jólaeyjartími", "ChST": "Chamorro-staðaltími", "ChST NMI": "ChST NMI", "CuDT": "Sumartími á Kúbu", "CuST": "Staðaltími á Kúbu", "DAVT": "Davis-tími", "DDUT": "Tími á Dumont-d’Urville", "EASST": "Sumartími á Páskaeyju", "EAST": "Staðaltími á Páskaeyju", "EAT": "Austur-Afríkutími", "ECT": "Ekvadortími", "EDT": "Sumartími í austurhluta Bandaríkjanna og Kanada", "EGDT": "Sumartími á Austur-Grænlandi", "EGST": "Staðaltími á Austur-Grænlandi", "EST": "Staðaltími í austurhluta Bandaríkjanna og Kanada", "FEET": "Staðartími Kalíníngrad", "FJT": "Staðaltími á Fídjíeyjum", "FJT Summer": "Sumartími á Fídjíeyjum", "FKST": "Sumartími á Falklandseyjum", "FKT": "Staðaltími á Falklandseyjum", "FNST": "Sumartími í Fernando de Noronha", "FNT": "Staðaltími í Fernando de Noronha", "GALT": "Galapagos-tími", "GAMT": "Gambier-tími", "GEST": "Sumartími í Georgíu", "GET": "Staðaltími í Georgíu", "GFT": "Tími í Frönsku Gvæjana", "GIT": "Tími á Gilbert-eyjum", "GMT": "Greenwich-staðaltími", "GNSST": "GNSST", "GNST": "GNST", "GST": "Staðaltími við Persaflóa", "GST Guam": "GST Guam", "GYT": "Gvæjanatími", "HADT": "Staðaltími á Havaí og Aleúta", "HAST": "Staðaltími á Havaí og Aleúta", "HKST": "Sumartími í Hong Kong", "HKT": "Staðaltími í Hong Kong", "HOVST": "Sumartími í Hovd", "HOVT": "Staðaltími í Hovd", "ICT": "Indókínatími", "IDT": "Sumartími í Ísrael", "IOT": "Indlandshafstími", "IRKST": "Sumartími í Irkutsk", "IRKT": "Staðaltími í Irkutsk", "IRST": "Staðaltími í Íran", "IRST DST": "Sumartími í Íran", "IST": "Indlandstími", "IST Israel": "Staðaltími í Ísrael", "JDT": "Sumartími í Japan", "JST": "Staðaltími í Japan", "KOST": "Kosrae-tími", "KRAST": "Sumartími í Krasnoyarsk", "KRAT": "Staðaltími í Krasnoyarsk", "KST": "Staðaltími í Kóreu", "KST DST": "Sumartími í Kóreu", "LHDT": "Sumartími á Lord Howe-eyju", "LHST": "Staðaltími á Lord Howe-eyju", "LINT": "Línueyja-tími", "MAGST": "Sumartími í Magadan", "MAGT": "Staðaltími í Magadan", "MART": "Tími á Markgreifafrúreyjum", "MAWT": "Mawson-tími", "MDT": "MDT", "MESZ": "Sumartími í Mið-Evrópu", "MEZ": "Staðaltími í Mið-Evrópu", "MHT": "Tími á Marshall-eyjum", "MMT": "Mjanmar-tími", "MSD": "Sumartími í Moskvu", "MST": "MST", "MUST": "Sumartími á Máritíus", "MUT": "Staðaltími á Máritíus", "MVT": "Maldíveyja-tími", "MYT": "Malasíutími", "NCT": "Staðaltími í Nýju-Kaledóníu", "NDT": "Sumartími á Nýfundnalandi", "NDT New Caledonia": "Sumartími í Nýju-Kaledóníu", "NFDT": "Sumartími á Norfolk-eyju", "NFT": "Staðaltími á Norfolk-eyju", "NOVST": "Sumartími í Novosibirsk", "NOVT": "Staðaltími í Novosibirsk", "NPT": "Nepaltími", "NRT": "Nárú-tími", "NST": "Staðaltími á Nýfundnalandi", "NUT": "Niue-tími", "NZDT": "Sumartími á Nýja-Sjálandi", "NZST": "Staðaltími á Nýja-Sjálandi", "OESZ": "Sumartími í Austur-Evrópu", "OEZ": "Staðaltími í Austur-Evrópu", "OMSST": "Sumartími í Omsk", "OMST": "Staðaltími í Omsk", "PDT": "Sumartími á Kyrrahafssvæðinu", "PDTM": "Sumartími í Mexíkó á Kyrrahafssvæðinu", "PETDT": "Sumartími í Petropavlovsk-Kamchatski", "PETST": "Staðaltími í Petropavlovsk-Kamchatski", "PGT": "Tími á Papúa Nýju-Gíneu", "PHOT": "Fönixeyjatími", "PKT": "Staðaltími í Pakistan", "PKT DST": "Sumartími í Pakistan", "PMDT": "Sumartími á Sankti Pierre og Miquelon", "PMST": "Staðaltími á Sankti Pierre og Miquelon", "PONT": "Ponape-tími", "PST": "Staðaltími á Kyrrahafssvæðinu", "PST Philippine": "Staðaltími á Filippseyjum", "PST Philippine DST": "Sumartími á Filippseyjum", "PST Pitcairn": "Pitcairn-tími", "PSTM": "Staðaltími í Mexíkó á Kyrrahafssvæðinu", "PWT": "Palátími", "PYST": "Sumartími í Paragvæ", "PYT": "Staðaltími í Paragvæ", "PYT Korea": "Tími í Pjongjang", "RET": "Réunion-tími", "ROTT": "Rothera-tími", "SAKST": "Sumartími á Sakhalin", "SAKT": "Staðaltími á Sakhalin", "SAMST": "Sumartími í Samara", "SAMT": "Staðaltími í Samara", "SAST": "Suður-Afríkutími", "SBT": "Salómonseyjatími", "SCT": "Seychelles-eyjatími", "SGT": "Singapúrtími", "SLST": "SLST", "SRT": "Súrinamtími", "SST Samoa": "Staðaltími á Samóa", "SST Samoa Apia": "Staðaltími í Apía", "SST Samoa Apia DST": "Sumartími í Apía", "SST Samoa DST": "Sumartími á Samóa", "SYOT": "Syowa-tími", "TAAF": "Tími á frönsku suðurhafssvæðum og Suðurskautslandssvæði", "TAHT": "Tahítí-tími", "TJT": "Tadsjíkistan-tími", "TKT": "Tókelá-tími", "TLT": "Tími á Tímor-Leste", "TMST": "Sumartími í Túrkmenistan", "TMT": "Staðaltími í Túrkmenistan", "TOST": "Sumartími á Tonga", "TOT": "Staðaltími á Tonga", "TVT": "Túvalútími", "TWT": "Staðaltími í Taipei", "TWT DST": "Sumartími í Taipei", "ULAST": "Sumartími í Úlan Bator", "ULAT": "Staðaltími í Úlan Bator", "UYST": "Sumartími í Úrúgvæ", "UYT": "Staðaltími í Úrúgvæ", "UZT": "Staðaltími í Úsbekistan", "UZT DST": "Sumartími í Úsbekistan", "VET": "Venesúelatími", "VLAST": "Sumartími í Vladivostok", "VLAT": "Staðaltími í Vladivostok", "VOLST": "Sumartími í Volgograd", "VOLT": "Staðaltími í Volgograd", "VOST": "Vostok-tími", "VUT": "Staðaltími á Vanúatú", "VUT DST": "Sumartími á Vanúatú", "WAKT": "Tími á Wake-eyju", "WARST": "Sumartími í Vestur-Argentínu", "WART": "Staðaltími í Vestur-Argentínu", "WAST": "Vestur-Afríkutími", "WAT": "Vestur-Afríkutími", "WESZ": "Sumartími í Vestur-Evrópu", "WEZ": "Staðaltími í Vestur-Evrópu", "WFT": "Tími á Wallis- og Fútúnaeyjum", "WGST": "Sumartími á Vestur-Grænlandi", "WGT": "Staðaltími á Vestur-Grænlandi", "WIB": "Vestur-Indónesíutími", "WIT": "Austur-Indónesíutími", "WITA": "Mið-Indónesíutími", "YAKST": "Sumartími í Yakutsk", "YAKT": "Staðaltími í Yakutsk", "YEKST": "Sumartími í Yekaterinburg", "YEKT": "Staðaltími í Yekaterinborg", "YST": "Tími í Júkon", "МСК": "Staðaltími í Moskvu", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "Tími í Vestur-Kasakstan", "شىعىش قازاق ەلى": "Tími í Austur-Kasakstan", "قازاق ەلى": "Tími í Kasakstan", "قىرعىزستان": "Kirgistan-tími", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Sumartími í Perú"},
 	}
 }
 
@@ -99,8 +101,8 @@ func (is *is) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 	t := locales.T(n, v)
 	iMod10 := i % 10
 	iMod100 := i % 100
-	tMod100 := t % 100
 	tMod10 := t % 10
+	tMod100 := t % 100
 
 	if (t == 0 && iMod10 == 1 && iMod100 != 11) || (tMod10 == 1 && tMod100 != 11) {
 		return locales.PluralRuleOne
@@ -220,13 +222,73 @@ func (is *is) Minus() string {
 // FmtNumber returns 'num' with digits/precision of 'v' for 'is' and handles both Whole and Real numbers based on 'v'
 func (is *is) FmtNumber(num float64, v uint64) string {
 
-	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
+	count := 0
+	inWhole := v == 0
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, is.decimal[0])
+			inWhole = true
+			continue
+		}
+
+		if inWhole {
+			if count == 3 {
+				b = append(b, is.group[0])
+				count = 1
+			} else {
+				count++
+			}
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		b = append(b, is.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'is' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (is *is) FmtPercent(num float64, v uint64) string {
-	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	l := len(s) + 3
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, is.decimal[0])
+			continue
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		b = append(b, is.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	b = append(b, is.percent...)
+
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'is'
@@ -234,7 +296,7 @@ func (is *is) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := is.currencies[currency]
-	l := len(s) + len(symbol) + 3 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -292,7 +354,7 @@ func (is *is) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := is.currencies[currency]
-	l := len(s) + len(symbol) + 3 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
