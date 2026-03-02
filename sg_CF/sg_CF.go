@@ -94,6 +94,9 @@ func (sg *sg_CF) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (sg *sg_CF) MonthAbbreviated(month time.Month) string {
+	if len(sg.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return sg.monthsAbbreviated[month]
 }
 
@@ -104,6 +107,9 @@ func (sg *sg_CF) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (sg *sg_CF) MonthNarrow(month time.Month) string {
+	if len(sg.monthsNarrow) == 0 {
+		return ""
+	}
 	return sg.monthsNarrow[month]
 }
 
@@ -114,6 +120,9 @@ func (sg *sg_CF) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (sg *sg_CF) MonthWide(month time.Month) string {
+	if len(sg.monthsWide) == 0 {
+		return ""
+	}
 	return sg.monthsWide[month]
 }
 
@@ -124,6 +133,9 @@ func (sg *sg_CF) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (sg *sg_CF) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(sg.daysAbbreviated) == 0 {
+		return ""
+	}
 	return sg.daysAbbreviated[weekday]
 }
 
@@ -134,6 +146,9 @@ func (sg *sg_CF) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (sg *sg_CF) WeekdayNarrow(weekday time.Weekday) string {
+	if len(sg.daysNarrow) == 0 {
+		return ""
+	}
 	return sg.daysNarrow[weekday]
 }
 
@@ -144,6 +159,9 @@ func (sg *sg_CF) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (sg *sg_CF) WeekdayShort(weekday time.Weekday) string {
+	if len(sg.daysShort) == 0 {
+		return ""
+	}
 	return sg.daysShort[weekday]
 }
 
@@ -154,6 +172,9 @@ func (sg *sg_CF) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (sg *sg_CF) WeekdayWide(weekday time.Weekday) string {
+	if len(sg.daysWide) == 0 {
+		return ""
+	}
 	return sg.daysWide[weekday]
 }
 

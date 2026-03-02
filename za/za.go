@@ -86,6 +86,9 @@ func (za *za) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) 
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (za *za) MonthAbbreviated(month time.Month) string {
+	if len(za.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return za.monthsAbbreviated[month]
 }
 
@@ -96,6 +99,9 @@ func (za *za) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (za *za) MonthNarrow(month time.Month) string {
+	if len(za.monthsNarrow) == 0 {
+		return ""
+	}
 	return za.monthsNarrow[month]
 }
 
@@ -106,6 +112,9 @@ func (za *za) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (za *za) MonthWide(month time.Month) string {
+	if len(za.monthsWide) == 0 {
+		return ""
+	}
 	return za.monthsWide[month]
 }
 
@@ -116,6 +125,9 @@ func (za *za) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (za *za) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(za.daysAbbreviated) == 0 {
+		return ""
+	}
 	return za.daysAbbreviated[weekday]
 }
 
@@ -126,6 +138,9 @@ func (za *za) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (za *za) WeekdayNarrow(weekday time.Weekday) string {
+	if len(za.daysNarrow) == 0 {
+		return ""
+	}
 	return za.daysNarrow[weekday]
 }
 
@@ -136,6 +151,9 @@ func (za *za) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (za *za) WeekdayShort(weekday time.Weekday) string {
+	if len(za.daysShort) == 0 {
+		return ""
+	}
 	return za.daysShort[weekday]
 }
 
@@ -146,6 +164,9 @@ func (za *za) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (za *za) WeekdayWide(weekday time.Weekday) string {
+	if len(za.daysWide) == 0 {
+		return ""
+	}
 	return za.daysWide[weekday]
 }
 

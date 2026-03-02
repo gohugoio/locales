@@ -90,6 +90,9 @@ func (dje *dje_NE) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (dje *dje_NE) MonthAbbreviated(month time.Month) string {
+	if len(dje.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return dje.monthsAbbreviated[month]
 }
 
@@ -100,6 +103,9 @@ func (dje *dje_NE) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (dje *dje_NE) MonthNarrow(month time.Month) string {
+	if len(dje.monthsNarrow) == 0 {
+		return ""
+	}
 	return dje.monthsNarrow[month]
 }
 
@@ -110,6 +116,9 @@ func (dje *dje_NE) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (dje *dje_NE) MonthWide(month time.Month) string {
+	if len(dje.monthsWide) == 0 {
+		return ""
+	}
 	return dje.monthsWide[month]
 }
 
@@ -120,6 +129,9 @@ func (dje *dje_NE) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (dje *dje_NE) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(dje.daysAbbreviated) == 0 {
+		return ""
+	}
 	return dje.daysAbbreviated[weekday]
 }
 
@@ -130,6 +142,9 @@ func (dje *dje_NE) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (dje *dje_NE) WeekdayNarrow(weekday time.Weekday) string {
+	if len(dje.daysNarrow) == 0 {
+		return ""
+	}
 	return dje.daysNarrow[weekday]
 }
 
@@ -140,6 +155,9 @@ func (dje *dje_NE) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (dje *dje_NE) WeekdayShort(weekday time.Weekday) string {
+	if len(dje.daysShort) == 0 {
+		return ""
+	}
 	return dje.daysShort[weekday]
 }
 
@@ -150,6 +168,9 @@ func (dje *dje_NE) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (dje *dje_NE) WeekdayWide(weekday time.Weekday) string {
+	if len(dje.daysWide) == 0 {
+		return ""
+	}
 	return dje.daysWide[weekday]
 }
 

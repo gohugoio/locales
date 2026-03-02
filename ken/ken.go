@@ -84,6 +84,9 @@ func (ken *ken) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (ken *ken) MonthAbbreviated(month time.Month) string {
+	if len(ken.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return ken.monthsAbbreviated[month]
 }
 
@@ -94,6 +97,9 @@ func (ken *ken) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (ken *ken) MonthNarrow(month time.Month) string {
+	if len(ken.monthsNarrow) == 0 {
+		return ""
+	}
 	return ken.monthsNarrow[month]
 }
 
@@ -104,6 +110,9 @@ func (ken *ken) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (ken *ken) MonthWide(month time.Month) string {
+	if len(ken.monthsWide) == 0 {
+		return ""
+	}
 	return ken.monthsWide[month]
 }
 
@@ -114,6 +123,9 @@ func (ken *ken) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (ken *ken) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(ken.daysAbbreviated) == 0 {
+		return ""
+	}
 	return ken.daysAbbreviated[weekday]
 }
 
@@ -124,6 +136,9 @@ func (ken *ken) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (ken *ken) WeekdayNarrow(weekday time.Weekday) string {
+	if len(ken.daysNarrow) == 0 {
+		return ""
+	}
 	return ken.daysNarrow[weekday]
 }
 
@@ -134,6 +149,9 @@ func (ken *ken) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (ken *ken) WeekdayShort(weekday time.Weekday) string {
+	if len(ken.daysShort) == 0 {
+		return ""
+	}
 	return ken.daysShort[weekday]
 }
 
@@ -144,6 +162,9 @@ func (ken *ken) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (ken *ken) WeekdayWide(weekday time.Weekday) string {
+	if len(ken.daysWide) == 0 {
+		return ""
+	}
 	return ken.daysWide[weekday]
 }
 

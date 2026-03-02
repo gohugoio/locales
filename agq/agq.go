@@ -90,6 +90,9 @@ func (agq *agq) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (agq *agq) MonthAbbreviated(month time.Month) string {
+	if len(agq.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return agq.monthsAbbreviated[month]
 }
 
@@ -100,6 +103,9 @@ func (agq *agq) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (agq *agq) MonthNarrow(month time.Month) string {
+	if len(agq.monthsNarrow) == 0 {
+		return ""
+	}
 	return agq.monthsNarrow[month]
 }
 
@@ -110,6 +116,9 @@ func (agq *agq) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (agq *agq) MonthWide(month time.Month) string {
+	if len(agq.monthsWide) == 0 {
+		return ""
+	}
 	return agq.monthsWide[month]
 }
 
@@ -120,6 +129,9 @@ func (agq *agq) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (agq *agq) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(agq.daysAbbreviated) == 0 {
+		return ""
+	}
 	return agq.daysAbbreviated[weekday]
 }
 
@@ -130,6 +142,9 @@ func (agq *agq) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (agq *agq) WeekdayNarrow(weekday time.Weekday) string {
+	if len(agq.daysNarrow) == 0 {
+		return ""
+	}
 	return agq.daysNarrow[weekday]
 }
 
@@ -140,6 +155,9 @@ func (agq *agq) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (agq *agq) WeekdayShort(weekday time.Weekday) string {
+	if len(agq.daysShort) == 0 {
+		return ""
+	}
 	return agq.daysShort[weekday]
 }
 
@@ -150,6 +168,9 @@ func (agq *agq) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (agq *agq) WeekdayWide(weekday time.Weekday) string {
+	if len(agq.daysWide) == 0 {
+		return ""
+	}
 	return agq.daysWide[weekday]
 }
 

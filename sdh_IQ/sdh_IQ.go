@@ -90,6 +90,9 @@ func (sdh *sdh_IQ) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (sdh *sdh_IQ) MonthAbbreviated(month time.Month) string {
+	if len(sdh.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return sdh.monthsAbbreviated[month]
 }
 
@@ -100,6 +103,9 @@ func (sdh *sdh_IQ) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (sdh *sdh_IQ) MonthNarrow(month time.Month) string {
+	if len(sdh.monthsNarrow) == 0 {
+		return ""
+	}
 	return sdh.monthsNarrow[month]
 }
 
@@ -110,6 +116,9 @@ func (sdh *sdh_IQ) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (sdh *sdh_IQ) MonthWide(month time.Month) string {
+	if len(sdh.monthsWide) == 0 {
+		return ""
+	}
 	return sdh.monthsWide[month]
 }
 
@@ -120,6 +129,9 @@ func (sdh *sdh_IQ) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (sdh *sdh_IQ) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(sdh.daysAbbreviated) == 0 {
+		return ""
+	}
 	return sdh.daysAbbreviated[weekday]
 }
 
@@ -130,6 +142,9 @@ func (sdh *sdh_IQ) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (sdh *sdh_IQ) WeekdayNarrow(weekday time.Weekday) string {
+	if len(sdh.daysNarrow) == 0 {
+		return ""
+	}
 	return sdh.daysNarrow[weekday]
 }
 
@@ -140,6 +155,9 @@ func (sdh *sdh_IQ) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (sdh *sdh_IQ) WeekdayShort(weekday time.Weekday) string {
+	if len(sdh.daysShort) == 0 {
+		return ""
+	}
 	return sdh.daysShort[weekday]
 }
 
@@ -150,6 +168,9 @@ func (sdh *sdh_IQ) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (sdh *sdh_IQ) WeekdayWide(weekday time.Weekday) string {
+	if len(sdh.daysWide) == 0 {
+		return ""
+	}
 	return sdh.daysWide[weekday]
 }
 

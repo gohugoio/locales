@@ -84,6 +84,9 @@ func (rhg *rhg_Rohg_MM) RangePluralRule(num1 float64, v1 uint64, num2 float64, v
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (rhg *rhg_Rohg_MM) MonthAbbreviated(month time.Month) string {
+	if len(rhg.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return rhg.monthsAbbreviated[month]
 }
 
@@ -94,6 +97,9 @@ func (rhg *rhg_Rohg_MM) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (rhg *rhg_Rohg_MM) MonthNarrow(month time.Month) string {
+	if len(rhg.monthsNarrow) == 0 {
+		return ""
+	}
 	return rhg.monthsNarrow[month]
 }
 
@@ -104,6 +110,9 @@ func (rhg *rhg_Rohg_MM) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (rhg *rhg_Rohg_MM) MonthWide(month time.Month) string {
+	if len(rhg.monthsWide) == 0 {
+		return ""
+	}
 	return rhg.monthsWide[month]
 }
 
@@ -114,6 +123,9 @@ func (rhg *rhg_Rohg_MM) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (rhg *rhg_Rohg_MM) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(rhg.daysAbbreviated) == 0 {
+		return ""
+	}
 	return rhg.daysAbbreviated[weekday]
 }
 
@@ -124,6 +136,9 @@ func (rhg *rhg_Rohg_MM) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (rhg *rhg_Rohg_MM) WeekdayNarrow(weekday time.Weekday) string {
+	if len(rhg.daysNarrow) == 0 {
+		return ""
+	}
 	return rhg.daysNarrow[weekday]
 }
 
@@ -134,6 +149,9 @@ func (rhg *rhg_Rohg_MM) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (rhg *rhg_Rohg_MM) WeekdayShort(weekday time.Weekday) string {
+	if len(rhg.daysShort) == 0 {
+		return ""
+	}
 	return rhg.daysShort[weekday]
 }
 
@@ -144,6 +162,9 @@ func (rhg *rhg_Rohg_MM) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (rhg *rhg_Rohg_MM) WeekdayWide(weekday time.Weekday) string {
+	if len(rhg.daysWide) == 0 {
+		return ""
+	}
 	return rhg.daysWide[weekday]
 }
 

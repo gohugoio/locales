@@ -96,6 +96,9 @@ func (dua *dua) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (dua *dua) MonthAbbreviated(month time.Month) string {
+	if len(dua.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return dua.monthsAbbreviated[month]
 }
 
@@ -106,6 +109,9 @@ func (dua *dua) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (dua *dua) MonthNarrow(month time.Month) string {
+	if len(dua.monthsNarrow) == 0 {
+		return ""
+	}
 	return dua.monthsNarrow[month]
 }
 
@@ -116,6 +122,9 @@ func (dua *dua) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (dua *dua) MonthWide(month time.Month) string {
+	if len(dua.monthsWide) == 0 {
+		return ""
+	}
 	return dua.monthsWide[month]
 }
 
@@ -126,6 +135,9 @@ func (dua *dua) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (dua *dua) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(dua.daysAbbreviated) == 0 {
+		return ""
+	}
 	return dua.daysAbbreviated[weekday]
 }
 
@@ -136,6 +148,9 @@ func (dua *dua) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (dua *dua) WeekdayNarrow(weekday time.Weekday) string {
+	if len(dua.daysNarrow) == 0 {
+		return ""
+	}
 	return dua.daysNarrow[weekday]
 }
 
@@ -146,6 +161,9 @@ func (dua *dua) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (dua *dua) WeekdayShort(weekday time.Weekday) string {
+	if len(dua.daysShort) == 0 {
+		return ""
+	}
 	return dua.daysShort[weekday]
 }
 
@@ -156,6 +174,9 @@ func (dua *dua) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (dua *dua) WeekdayWide(weekday time.Weekday) string {
+	if len(dua.daysWide) == 0 {
+		return ""
+	}
 	return dua.daysWide[weekday]
 }
 

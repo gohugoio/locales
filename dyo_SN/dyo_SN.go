@@ -94,6 +94,9 @@ func (dyo *dyo_SN) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (dyo *dyo_SN) MonthAbbreviated(month time.Month) string {
+	if len(dyo.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return dyo.monthsAbbreviated[month]
 }
 
@@ -104,6 +107,9 @@ func (dyo *dyo_SN) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (dyo *dyo_SN) MonthNarrow(month time.Month) string {
+	if len(dyo.monthsNarrow) == 0 {
+		return ""
+	}
 	return dyo.monthsNarrow[month]
 }
 
@@ -114,6 +120,9 @@ func (dyo *dyo_SN) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (dyo *dyo_SN) MonthWide(month time.Month) string {
+	if len(dyo.monthsWide) == 0 {
+		return ""
+	}
 	return dyo.monthsWide[month]
 }
 
@@ -124,6 +133,9 @@ func (dyo *dyo_SN) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (dyo *dyo_SN) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(dyo.daysAbbreviated) == 0 {
+		return ""
+	}
 	return dyo.daysAbbreviated[weekday]
 }
 
@@ -134,6 +146,9 @@ func (dyo *dyo_SN) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (dyo *dyo_SN) WeekdayNarrow(weekday time.Weekday) string {
+	if len(dyo.daysNarrow) == 0 {
+		return ""
+	}
 	return dyo.daysNarrow[weekday]
 }
 
@@ -144,6 +159,9 @@ func (dyo *dyo_SN) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (dyo *dyo_SN) WeekdayShort(weekday time.Weekday) string {
+	if len(dyo.daysShort) == 0 {
+		return ""
+	}
 	return dyo.daysShort[weekday]
 }
 
@@ -154,6 +172,9 @@ func (dyo *dyo_SN) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (dyo *dyo_SN) WeekdayWide(weekday time.Weekday) string {
+	if len(dyo.daysWide) == 0 {
+		return ""
+	}
 	return dyo.daysWide[weekday]
 }
 

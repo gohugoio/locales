@@ -93,6 +93,9 @@ func (wal *wal_ET) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (wal *wal_ET) MonthAbbreviated(month time.Month) string {
+	if len(wal.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return wal.monthsAbbreviated[month]
 }
 
@@ -103,6 +106,9 @@ func (wal *wal_ET) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (wal *wal_ET) MonthNarrow(month time.Month) string {
+	if len(wal.monthsNarrow) == 0 {
+		return ""
+	}
 	return wal.monthsNarrow[month]
 }
 
@@ -113,6 +119,9 @@ func (wal *wal_ET) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (wal *wal_ET) MonthWide(month time.Month) string {
+	if len(wal.monthsWide) == 0 {
+		return ""
+	}
 	return wal.monthsWide[month]
 }
 
@@ -123,6 +132,9 @@ func (wal *wal_ET) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (wal *wal_ET) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(wal.daysAbbreviated) == 0 {
+		return ""
+	}
 	return wal.daysAbbreviated[weekday]
 }
 
@@ -133,6 +145,9 @@ func (wal *wal_ET) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (wal *wal_ET) WeekdayNarrow(weekday time.Weekday) string {
+	if len(wal.daysNarrow) == 0 {
+		return ""
+	}
 	return wal.daysNarrow[weekday]
 }
 
@@ -143,6 +158,9 @@ func (wal *wal_ET) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (wal *wal_ET) WeekdayShort(weekday time.Weekday) string {
+	if len(wal.daysShort) == 0 {
+		return ""
+	}
 	return wal.daysShort[weekday]
 }
 
@@ -153,6 +171,9 @@ func (wal *wal_ET) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (wal *wal_ET) WeekdayWide(weekday time.Weekday) string {
+	if len(wal.daysWide) == 0 {
+		return ""
+	}
 	return wal.daysWide[weekday]
 }
 

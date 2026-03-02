@@ -100,6 +100,9 @@ func (saq *saq_KE) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (saq *saq_KE) MonthAbbreviated(month time.Month) string {
+	if len(saq.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return saq.monthsAbbreviated[month]
 }
 
@@ -110,6 +113,9 @@ func (saq *saq_KE) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (saq *saq_KE) MonthNarrow(month time.Month) string {
+	if len(saq.monthsNarrow) == 0 {
+		return ""
+	}
 	return saq.monthsNarrow[month]
 }
 
@@ -120,6 +126,9 @@ func (saq *saq_KE) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (saq *saq_KE) MonthWide(month time.Month) string {
+	if len(saq.monthsWide) == 0 {
+		return ""
+	}
 	return saq.monthsWide[month]
 }
 
@@ -130,6 +139,9 @@ func (saq *saq_KE) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (saq *saq_KE) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(saq.daysAbbreviated) == 0 {
+		return ""
+	}
 	return saq.daysAbbreviated[weekday]
 }
 
@@ -140,6 +152,9 @@ func (saq *saq_KE) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (saq *saq_KE) WeekdayNarrow(weekday time.Weekday) string {
+	if len(saq.daysNarrow) == 0 {
+		return ""
+	}
 	return saq.daysNarrow[weekday]
 }
 
@@ -150,6 +165,9 @@ func (saq *saq_KE) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (saq *saq_KE) WeekdayShort(weekday time.Weekday) string {
+	if len(saq.daysShort) == 0 {
+		return ""
+	}
 	return saq.daysShort[weekday]
 }
 
@@ -160,6 +178,9 @@ func (saq *saq_KE) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (saq *saq_KE) WeekdayWide(weekday time.Weekday) string {
+	if len(saq.daysWide) == 0 {
+		return ""
+	}
 	return saq.daysWide[weekday]
 }
 

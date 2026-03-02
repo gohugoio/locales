@@ -90,6 +90,9 @@ func (pms *pms) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (pms *pms) MonthAbbreviated(month time.Month) string {
+	if len(pms.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return pms.monthsAbbreviated[month]
 }
 
@@ -100,6 +103,9 @@ func (pms *pms) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (pms *pms) MonthNarrow(month time.Month) string {
+	if len(pms.monthsNarrow) == 0 {
+		return ""
+	}
 	return pms.monthsNarrow[month]
 }
 
@@ -110,6 +116,9 @@ func (pms *pms) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (pms *pms) MonthWide(month time.Month) string {
+	if len(pms.monthsWide) == 0 {
+		return ""
+	}
 	return pms.monthsWide[month]
 }
 
@@ -120,6 +129,9 @@ func (pms *pms) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (pms *pms) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(pms.daysAbbreviated) == 0 {
+		return ""
+	}
 	return pms.daysAbbreviated[weekday]
 }
 
@@ -130,6 +142,9 @@ func (pms *pms) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (pms *pms) WeekdayNarrow(weekday time.Weekday) string {
+	if len(pms.daysNarrow) == 0 {
+		return ""
+	}
 	return pms.daysNarrow[weekday]
 }
 
@@ -140,6 +155,9 @@ func (pms *pms) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (pms *pms) WeekdayShort(weekday time.Weekday) string {
+	if len(pms.daysShort) == 0 {
+		return ""
+	}
 	return pms.daysShort[weekday]
 }
 
@@ -150,6 +168,9 @@ func (pms *pms) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (pms *pms) WeekdayWide(weekday time.Weekday) string {
+	if len(pms.daysWide) == 0 {
+		return ""
+	}
 	return pms.daysWide[weekday]
 }
 

@@ -90,6 +90,9 @@ func (mfe *mfe) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (mfe *mfe) MonthAbbreviated(month time.Month) string {
+	if len(mfe.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return mfe.monthsAbbreviated[month]
 }
 
@@ -100,6 +103,9 @@ func (mfe *mfe) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (mfe *mfe) MonthNarrow(month time.Month) string {
+	if len(mfe.monthsNarrow) == 0 {
+		return ""
+	}
 	return mfe.monthsNarrow[month]
 }
 
@@ -110,6 +116,9 @@ func (mfe *mfe) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (mfe *mfe) MonthWide(month time.Month) string {
+	if len(mfe.monthsWide) == 0 {
+		return ""
+	}
 	return mfe.monthsWide[month]
 }
 
@@ -120,6 +129,9 @@ func (mfe *mfe) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (mfe *mfe) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(mfe.daysAbbreviated) == 0 {
+		return ""
+	}
 	return mfe.daysAbbreviated[weekday]
 }
 
@@ -130,6 +142,9 @@ func (mfe *mfe) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (mfe *mfe) WeekdayNarrow(weekday time.Weekday) string {
+	if len(mfe.daysNarrow) == 0 {
+		return ""
+	}
 	return mfe.daysNarrow[weekday]
 }
 
@@ -140,6 +155,9 @@ func (mfe *mfe) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (mfe *mfe) WeekdayShort(weekday time.Weekday) string {
+	if len(mfe.daysShort) == 0 {
+		return ""
+	}
 	return mfe.daysShort[weekday]
 }
 
@@ -150,6 +168,9 @@ func (mfe *mfe) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (mfe *mfe) WeekdayWide(weekday time.Weekday) string {
+	if len(mfe.daysWide) == 0 {
+		return ""
+	}
 	return mfe.daysWide[weekday]
 }
 

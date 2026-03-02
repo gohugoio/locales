@@ -96,6 +96,9 @@ func (bas *bas) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (bas *bas) MonthAbbreviated(month time.Month) string {
+	if len(bas.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return bas.monthsAbbreviated[month]
 }
 
@@ -106,6 +109,9 @@ func (bas *bas) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (bas *bas) MonthNarrow(month time.Month) string {
+	if len(bas.monthsNarrow) == 0 {
+		return ""
+	}
 	return bas.monthsNarrow[month]
 }
 
@@ -116,6 +122,9 @@ func (bas *bas) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (bas *bas) MonthWide(month time.Month) string {
+	if len(bas.monthsWide) == 0 {
+		return ""
+	}
 	return bas.monthsWide[month]
 }
 
@@ -126,6 +135,9 @@ func (bas *bas) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (bas *bas) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(bas.daysAbbreviated) == 0 {
+		return ""
+	}
 	return bas.daysAbbreviated[weekday]
 }
 
@@ -136,6 +148,9 @@ func (bas *bas) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (bas *bas) WeekdayNarrow(weekday time.Weekday) string {
+	if len(bas.daysNarrow) == 0 {
+		return ""
+	}
 	return bas.daysNarrow[weekday]
 }
 
@@ -146,6 +161,9 @@ func (bas *bas) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (bas *bas) WeekdayShort(weekday time.Weekday) string {
+	if len(bas.daysShort) == 0 {
+		return ""
+	}
 	return bas.daysShort[weekday]
 }
 
@@ -156,6 +174,9 @@ func (bas *bas) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (bas *bas) WeekdayWide(weekday time.Weekday) string {
+	if len(bas.daysWide) == 0 {
+		return ""
+	}
 	return bas.daysWide[weekday]
 }
 

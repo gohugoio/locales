@@ -94,6 +94,9 @@ func (mua *mua) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (mua *mua) MonthAbbreviated(month time.Month) string {
+	if len(mua.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return mua.monthsAbbreviated[month]
 }
 
@@ -104,6 +107,9 @@ func (mua *mua) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (mua *mua) MonthNarrow(month time.Month) string {
+	if len(mua.monthsNarrow) == 0 {
+		return ""
+	}
 	return mua.monthsNarrow[month]
 }
 
@@ -114,6 +120,9 @@ func (mua *mua) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (mua *mua) MonthWide(month time.Month) string {
+	if len(mua.monthsWide) == 0 {
+		return ""
+	}
 	return mua.monthsWide[month]
 }
 
@@ -124,6 +133,9 @@ func (mua *mua) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (mua *mua) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(mua.daysAbbreviated) == 0 {
+		return ""
+	}
 	return mua.daysAbbreviated[weekday]
 }
 
@@ -134,6 +146,9 @@ func (mua *mua) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (mua *mua) WeekdayNarrow(weekday time.Weekday) string {
+	if len(mua.daysNarrow) == 0 {
+		return ""
+	}
 	return mua.daysNarrow[weekday]
 }
 
@@ -144,6 +159,9 @@ func (mua *mua) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (mua *mua) WeekdayShort(weekday time.Weekday) string {
+	if len(mua.daysShort) == 0 {
+		return ""
+	}
 	return mua.daysShort[weekday]
 }
 
@@ -154,6 +172,9 @@ func (mua *mua) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (mua *mua) WeekdayWide(weekday time.Weekday) string {
+	if len(mua.daysWide) == 0 {
+		return ""
+	}
 	return mua.daysWide[weekday]
 }
 

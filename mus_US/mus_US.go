@@ -87,6 +87,9 @@ func (mus *mus_US) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (mus *mus_US) MonthAbbreviated(month time.Month) string {
+	if len(mus.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return mus.monthsAbbreviated[month]
 }
 
@@ -97,6 +100,9 @@ func (mus *mus_US) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (mus *mus_US) MonthNarrow(month time.Month) string {
+	if len(mus.monthsNarrow) == 0 {
+		return ""
+	}
 	return mus.monthsNarrow[month]
 }
 
@@ -107,6 +113,9 @@ func (mus *mus_US) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (mus *mus_US) MonthWide(month time.Month) string {
+	if len(mus.monthsWide) == 0 {
+		return ""
+	}
 	return mus.monthsWide[month]
 }
 
@@ -117,6 +126,9 @@ func (mus *mus_US) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (mus *mus_US) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(mus.daysAbbreviated) == 0 {
+		return ""
+	}
 	return mus.daysAbbreviated[weekday]
 }
 
@@ -127,6 +139,9 @@ func (mus *mus_US) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (mus *mus_US) WeekdayNarrow(weekday time.Weekday) string {
+	if len(mus.daysNarrow) == 0 {
+		return ""
+	}
 	return mus.daysNarrow[weekday]
 }
 
@@ -137,6 +152,9 @@ func (mus *mus_US) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (mus *mus_US) WeekdayShort(weekday time.Weekday) string {
+	if len(mus.daysShort) == 0 {
+		return ""
+	}
 	return mus.daysShort[weekday]
 }
 
@@ -147,6 +165,9 @@ func (mus *mus_US) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (mus *mus_US) WeekdayWide(weekday time.Weekday) string {
+	if len(mus.daysWide) == 0 {
+		return ""
+	}
 	return mus.daysWide[weekday]
 }
 

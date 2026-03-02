@@ -92,6 +92,9 @@ func (vai *vai) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (vai *vai) MonthAbbreviated(month time.Month) string {
+	if len(vai.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return vai.monthsAbbreviated[month]
 }
 
@@ -102,6 +105,9 @@ func (vai *vai) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (vai *vai) MonthNarrow(month time.Month) string {
+	if len(vai.monthsNarrow) == 0 {
+		return ""
+	}
 	return vai.monthsNarrow[month]
 }
 
@@ -112,6 +118,9 @@ func (vai *vai) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (vai *vai) MonthWide(month time.Month) string {
+	if len(vai.monthsWide) == 0 {
+		return ""
+	}
 	return vai.monthsWide[month]
 }
 
@@ -122,6 +131,9 @@ func (vai *vai) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (vai *vai) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(vai.daysAbbreviated) == 0 {
+		return ""
+	}
 	return vai.daysAbbreviated[weekday]
 }
 
@@ -132,6 +144,9 @@ func (vai *vai) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (vai *vai) WeekdayNarrow(weekday time.Weekday) string {
+	if len(vai.daysNarrow) == 0 {
+		return ""
+	}
 	return vai.daysNarrow[weekday]
 }
 
@@ -142,6 +157,9 @@ func (vai *vai) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (vai *vai) WeekdayShort(weekday time.Weekday) string {
+	if len(vai.daysShort) == 0 {
+		return ""
+	}
 	return vai.daysShort[weekday]
 }
 
@@ -152,6 +170,9 @@ func (vai *vai) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (vai *vai) WeekdayWide(weekday time.Weekday) string {
+	if len(vai.daysWide) == 0 {
+		return ""
+	}
 	return vai.daysWide[weekday]
 }
 

@@ -89,6 +89,9 @@ func (sid *sid_ET) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (sid *sid_ET) MonthAbbreviated(month time.Month) string {
+	if len(sid.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return sid.monthsAbbreviated[month]
 }
 
@@ -99,6 +102,9 @@ func (sid *sid_ET) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (sid *sid_ET) MonthNarrow(month time.Month) string {
+	if len(sid.monthsNarrow) == 0 {
+		return ""
+	}
 	return sid.monthsNarrow[month]
 }
 
@@ -109,6 +115,9 @@ func (sid *sid_ET) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (sid *sid_ET) MonthWide(month time.Month) string {
+	if len(sid.monthsWide) == 0 {
+		return ""
+	}
 	return sid.monthsWide[month]
 }
 
@@ -119,6 +128,9 @@ func (sid *sid_ET) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (sid *sid_ET) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(sid.daysAbbreviated) == 0 {
+		return ""
+	}
 	return sid.daysAbbreviated[weekday]
 }
 
@@ -129,6 +141,9 @@ func (sid *sid_ET) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (sid *sid_ET) WeekdayNarrow(weekday time.Weekday) string {
+	if len(sid.daysNarrow) == 0 {
+		return ""
+	}
 	return sid.daysNarrow[weekday]
 }
 
@@ -139,6 +154,9 @@ func (sid *sid_ET) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (sid *sid_ET) WeekdayShort(weekday time.Weekday) string {
+	if len(sid.daysShort) == 0 {
+		return ""
+	}
 	return sid.daysShort[weekday]
 }
 
@@ -149,6 +167,9 @@ func (sid *sid_ET) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (sid *sid_ET) WeekdayWide(weekday time.Weekday) string {
+	if len(sid.daysWide) == 0 {
+		return ""
+	}
 	return sid.daysWide[weekday]
 }
 

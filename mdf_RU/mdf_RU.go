@@ -84,6 +84,9 @@ func (mdf *mdf_RU) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (mdf *mdf_RU) MonthAbbreviated(month time.Month) string {
+	if len(mdf.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return mdf.monthsAbbreviated[month]
 }
 
@@ -94,6 +97,9 @@ func (mdf *mdf_RU) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (mdf *mdf_RU) MonthNarrow(month time.Month) string {
+	if len(mdf.monthsNarrow) == 0 {
+		return ""
+	}
 	return mdf.monthsNarrow[month]
 }
 
@@ -104,6 +110,9 @@ func (mdf *mdf_RU) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (mdf *mdf_RU) MonthWide(month time.Month) string {
+	if len(mdf.monthsWide) == 0 {
+		return ""
+	}
 	return mdf.monthsWide[month]
 }
 
@@ -114,6 +123,9 @@ func (mdf *mdf_RU) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (mdf *mdf_RU) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(mdf.daysAbbreviated) == 0 {
+		return ""
+	}
 	return mdf.daysAbbreviated[weekday]
 }
 
@@ -124,6 +136,9 @@ func (mdf *mdf_RU) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (mdf *mdf_RU) WeekdayNarrow(weekday time.Weekday) string {
+	if len(mdf.daysNarrow) == 0 {
+		return ""
+	}
 	return mdf.daysNarrow[weekday]
 }
 
@@ -134,6 +149,9 @@ func (mdf *mdf_RU) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (mdf *mdf_RU) WeekdayShort(weekday time.Weekday) string {
+	if len(mdf.daysShort) == 0 {
+		return ""
+	}
 	return mdf.daysShort[weekday]
 }
 
@@ -144,6 +162,9 @@ func (mdf *mdf_RU) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (mdf *mdf_RU) WeekdayWide(weekday time.Weekday) string {
+	if len(mdf.daysWide) == 0 {
+		return ""
+	}
 	return mdf.daysWide[weekday]
 }
 

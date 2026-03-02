@@ -102,6 +102,9 @@ func (kl *kl) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) 
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (kl *kl) MonthAbbreviated(month time.Month) string {
+	if len(kl.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return kl.monthsAbbreviated[month]
 }
 
@@ -112,6 +115,9 @@ func (kl *kl) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (kl *kl) MonthNarrow(month time.Month) string {
+	if len(kl.monthsNarrow) == 0 {
+		return ""
+	}
 	return kl.monthsNarrow[month]
 }
 
@@ -122,6 +128,9 @@ func (kl *kl) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (kl *kl) MonthWide(month time.Month) string {
+	if len(kl.monthsWide) == 0 {
+		return ""
+	}
 	return kl.monthsWide[month]
 }
 
@@ -132,6 +141,9 @@ func (kl *kl) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (kl *kl) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(kl.daysAbbreviated) == 0 {
+		return ""
+	}
 	return kl.daysAbbreviated[weekday]
 }
 
@@ -142,6 +154,9 @@ func (kl *kl) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (kl *kl) WeekdayNarrow(weekday time.Weekday) string {
+	if len(kl.daysNarrow) == 0 {
+		return ""
+	}
 	return kl.daysNarrow[weekday]
 }
 
@@ -152,6 +167,9 @@ func (kl *kl) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (kl *kl) WeekdayShort(weekday time.Weekday) string {
+	if len(kl.daysShort) == 0 {
+		return ""
+	}
 	return kl.daysShort[weekday]
 }
 
@@ -162,6 +180,9 @@ func (kl *kl) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (kl *kl) WeekdayWide(weekday time.Weekday) string {
+	if len(kl.daysWide) == 0 {
+		return ""
+	}
 	return kl.daysWide[weekday]
 }
 

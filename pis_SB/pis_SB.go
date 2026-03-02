@@ -86,6 +86,9 @@ func (pis *pis_SB) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (pis *pis_SB) MonthAbbreviated(month time.Month) string {
+	if len(pis.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return pis.monthsAbbreviated[month]
 }
 
@@ -96,6 +99,9 @@ func (pis *pis_SB) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (pis *pis_SB) MonthNarrow(month time.Month) string {
+	if len(pis.monthsNarrow) == 0 {
+		return ""
+	}
 	return pis.monthsNarrow[month]
 }
 
@@ -106,6 +112,9 @@ func (pis *pis_SB) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (pis *pis_SB) MonthWide(month time.Month) string {
+	if len(pis.monthsWide) == 0 {
+		return ""
+	}
 	return pis.monthsWide[month]
 }
 
@@ -116,6 +125,9 @@ func (pis *pis_SB) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (pis *pis_SB) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(pis.daysAbbreviated) == 0 {
+		return ""
+	}
 	return pis.daysAbbreviated[weekday]
 }
 
@@ -126,6 +138,9 @@ func (pis *pis_SB) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (pis *pis_SB) WeekdayNarrow(weekday time.Weekday) string {
+	if len(pis.daysNarrow) == 0 {
+		return ""
+	}
 	return pis.daysNarrow[weekday]
 }
 
@@ -136,6 +151,9 @@ func (pis *pis_SB) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (pis *pis_SB) WeekdayShort(weekday time.Weekday) string {
+	if len(pis.daysShort) == 0 {
+		return ""
+	}
 	return pis.daysShort[weekday]
 }
 
@@ -146,6 +164,9 @@ func (pis *pis_SB) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (pis *pis_SB) WeekdayWide(weekday time.Weekday) string {
+	if len(pis.daysWide) == 0 {
+		return ""
+	}
 	return pis.daysWide[weekday]
 }
 

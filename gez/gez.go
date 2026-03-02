@@ -92,6 +92,9 @@ func (gez *gez) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (gez *gez) MonthAbbreviated(month time.Month) string {
+	if len(gez.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return gez.monthsAbbreviated[month]
 }
 
@@ -102,6 +105,9 @@ func (gez *gez) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (gez *gez) MonthNarrow(month time.Month) string {
+	if len(gez.monthsNarrow) == 0 {
+		return ""
+	}
 	return gez.monthsNarrow[month]
 }
 
@@ -112,6 +118,9 @@ func (gez *gez) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (gez *gez) MonthWide(month time.Month) string {
+	if len(gez.monthsWide) == 0 {
+		return ""
+	}
 	return gez.monthsWide[month]
 }
 
@@ -122,6 +131,9 @@ func (gez *gez) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (gez *gez) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(gez.daysAbbreviated) == 0 {
+		return ""
+	}
 	return gez.daysAbbreviated[weekday]
 }
 
@@ -132,6 +144,9 @@ func (gez *gez) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (gez *gez) WeekdayNarrow(weekday time.Weekday) string {
+	if len(gez.daysNarrow) == 0 {
+		return ""
+	}
 	return gez.daysNarrow[weekday]
 }
 
@@ -142,6 +157,9 @@ func (gez *gez) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (gez *gez) WeekdayShort(weekday time.Weekday) string {
+	if len(gez.daysShort) == 0 {
+		return ""
+	}
 	return gez.daysShort[weekday]
 }
 
@@ -152,6 +170,9 @@ func (gez *gez) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (gez *gez) WeekdayWide(weekday time.Weekday) string {
+	if len(gez.daysWide) == 0 {
+		return ""
+	}
 	return gez.daysWide[weekday]
 }
 

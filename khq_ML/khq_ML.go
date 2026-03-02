@@ -90,6 +90,9 @@ func (khq *khq_ML) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (khq *khq_ML) MonthAbbreviated(month time.Month) string {
+	if len(khq.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return khq.monthsAbbreviated[month]
 }
 
@@ -100,6 +103,9 @@ func (khq *khq_ML) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (khq *khq_ML) MonthNarrow(month time.Month) string {
+	if len(khq.monthsNarrow) == 0 {
+		return ""
+	}
 	return khq.monthsNarrow[month]
 }
 
@@ -110,6 +116,9 @@ func (khq *khq_ML) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (khq *khq_ML) MonthWide(month time.Month) string {
+	if len(khq.monthsWide) == 0 {
+		return ""
+	}
 	return khq.monthsWide[month]
 }
 
@@ -120,6 +129,9 @@ func (khq *khq_ML) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (khq *khq_ML) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(khq.daysAbbreviated) == 0 {
+		return ""
+	}
 	return khq.daysAbbreviated[weekday]
 }
 
@@ -130,6 +142,9 @@ func (khq *khq_ML) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (khq *khq_ML) WeekdayNarrow(weekday time.Weekday) string {
+	if len(khq.daysNarrow) == 0 {
+		return ""
+	}
 	return khq.daysNarrow[weekday]
 }
 
@@ -140,6 +155,9 @@ func (khq *khq_ML) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (khq *khq_ML) WeekdayShort(weekday time.Weekday) string {
+	if len(khq.daysShort) == 0 {
+		return ""
+	}
 	return khq.daysShort[weekday]
 }
 
@@ -150,6 +168,9 @@ func (khq *khq_ML) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (khq *khq_ML) WeekdayWide(weekday time.Weekday) string {
+	if len(khq.daysWide) == 0 {
+		return ""
+	}
 	return khq.daysWide[weekday]
 }
 

@@ -103,6 +103,9 @@ func (gv *gv_IM) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (gv *gv_IM) MonthAbbreviated(month time.Month) string {
+	if len(gv.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return gv.monthsAbbreviated[month]
 }
 
@@ -113,6 +116,9 @@ func (gv *gv_IM) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (gv *gv_IM) MonthNarrow(month time.Month) string {
+	if len(gv.monthsNarrow) == 0 {
+		return ""
+	}
 	return gv.monthsNarrow[month]
 }
 
@@ -123,6 +129,9 @@ func (gv *gv_IM) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (gv *gv_IM) MonthWide(month time.Month) string {
+	if len(gv.monthsWide) == 0 {
+		return ""
+	}
 	return gv.monthsWide[month]
 }
 
@@ -133,6 +142,9 @@ func (gv *gv_IM) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (gv *gv_IM) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(gv.daysAbbreviated) == 0 {
+		return ""
+	}
 	return gv.daysAbbreviated[weekday]
 }
 
@@ -143,6 +155,9 @@ func (gv *gv_IM) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (gv *gv_IM) WeekdayNarrow(weekday time.Weekday) string {
+	if len(gv.daysNarrow) == 0 {
+		return ""
+	}
 	return gv.daysNarrow[weekday]
 }
 
@@ -153,6 +168,9 @@ func (gv *gv_IM) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (gv *gv_IM) WeekdayShort(weekday time.Weekday) string {
+	if len(gv.daysShort) == 0 {
+		return ""
+	}
 	return gv.daysShort[weekday]
 }
 
@@ -163,6 +181,9 @@ func (gv *gv_IM) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (gv *gv_IM) WeekdayWide(weekday time.Weekday) string {
+	if len(gv.daysWide) == 0 {
+		return ""
+	}
 	return gv.daysWide[weekday]
 }
 

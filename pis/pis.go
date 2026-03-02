@@ -86,6 +86,9 @@ func (pis *pis) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (pis *pis) MonthAbbreviated(month time.Month) string {
+	if len(pis.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return pis.monthsAbbreviated[month]
 }
 
@@ -96,6 +99,9 @@ func (pis *pis) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (pis *pis) MonthNarrow(month time.Month) string {
+	if len(pis.monthsNarrow) == 0 {
+		return ""
+	}
 	return pis.monthsNarrow[month]
 }
 
@@ -106,6 +112,9 @@ func (pis *pis) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (pis *pis) MonthWide(month time.Month) string {
+	if len(pis.monthsWide) == 0 {
+		return ""
+	}
 	return pis.monthsWide[month]
 }
 
@@ -116,6 +125,9 @@ func (pis *pis) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (pis *pis) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(pis.daysAbbreviated) == 0 {
+		return ""
+	}
 	return pis.daysAbbreviated[weekday]
 }
 
@@ -126,6 +138,9 @@ func (pis *pis) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (pis *pis) WeekdayNarrow(weekday time.Weekday) string {
+	if len(pis.daysNarrow) == 0 {
+		return ""
+	}
 	return pis.daysNarrow[weekday]
 }
 
@@ -136,6 +151,9 @@ func (pis *pis) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (pis *pis) WeekdayShort(weekday time.Weekday) string {
+	if len(pis.daysShort) == 0 {
+		return ""
+	}
 	return pis.daysShort[weekday]
 }
 
@@ -146,6 +164,9 @@ func (pis *pis) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (pis *pis) WeekdayWide(weekday time.Weekday) string {
+	if len(pis.daysWide) == 0 {
+		return ""
+	}
 	return pis.daysWide[weekday]
 }
 

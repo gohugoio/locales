@@ -85,6 +85,9 @@ func (kpe *kpe_LR) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (kpe *kpe_LR) MonthAbbreviated(month time.Month) string {
+	if len(kpe.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return kpe.monthsAbbreviated[month]
 }
 
@@ -95,6 +98,9 @@ func (kpe *kpe_LR) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (kpe *kpe_LR) MonthNarrow(month time.Month) string {
+	if len(kpe.monthsNarrow) == 0 {
+		return ""
+	}
 	return kpe.monthsNarrow[month]
 }
 
@@ -105,6 +111,9 @@ func (kpe *kpe_LR) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (kpe *kpe_LR) MonthWide(month time.Month) string {
+	if len(kpe.monthsWide) == 0 {
+		return ""
+	}
 	return kpe.monthsWide[month]
 }
 
@@ -115,6 +124,9 @@ func (kpe *kpe_LR) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (kpe *kpe_LR) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(kpe.daysAbbreviated) == 0 {
+		return ""
+	}
 	return kpe.daysAbbreviated[weekday]
 }
 
@@ -125,6 +137,9 @@ func (kpe *kpe_LR) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (kpe *kpe_LR) WeekdayNarrow(weekday time.Weekday) string {
+	if len(kpe.daysNarrow) == 0 {
+		return ""
+	}
 	return kpe.daysNarrow[weekday]
 }
 
@@ -135,6 +150,9 @@ func (kpe *kpe_LR) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (kpe *kpe_LR) WeekdayShort(weekday time.Weekday) string {
+	if len(kpe.daysShort) == 0 {
+		return ""
+	}
 	return kpe.daysShort[weekday]
 }
 
@@ -145,6 +163,9 @@ func (kpe *kpe_LR) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (kpe *kpe_LR) WeekdayWide(weekday time.Weekday) string {
+	if len(kpe.daysWide) == 0 {
+		return ""
+	}
 	return kpe.daysWide[weekday]
 }
 

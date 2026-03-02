@@ -96,6 +96,9 @@ func (nso *nso_ZA) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (nso *nso_ZA) MonthAbbreviated(month time.Month) string {
+	if len(nso.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return nso.monthsAbbreviated[month]
 }
 
@@ -106,6 +109,9 @@ func (nso *nso_ZA) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (nso *nso_ZA) MonthNarrow(month time.Month) string {
+	if len(nso.monthsNarrow) == 0 {
+		return ""
+	}
 	return nso.monthsNarrow[month]
 }
 
@@ -116,6 +122,9 @@ func (nso *nso_ZA) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (nso *nso_ZA) MonthWide(month time.Month) string {
+	if len(nso.monthsWide) == 0 {
+		return ""
+	}
 	return nso.monthsWide[month]
 }
 
@@ -126,6 +135,9 @@ func (nso *nso_ZA) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (nso *nso_ZA) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(nso.daysAbbreviated) == 0 {
+		return ""
+	}
 	return nso.daysAbbreviated[weekday]
 }
 
@@ -136,6 +148,9 @@ func (nso *nso_ZA) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (nso *nso_ZA) WeekdayNarrow(weekday time.Weekday) string {
+	if len(nso.daysNarrow) == 0 {
+		return ""
+	}
 	return nso.daysNarrow[weekday]
 }
 
@@ -146,6 +161,9 @@ func (nso *nso_ZA) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (nso *nso_ZA) WeekdayShort(weekday time.Weekday) string {
+	if len(nso.daysShort) == 0 {
+		return ""
+	}
 	return nso.daysShort[weekday]
 }
 
@@ -156,6 +174,9 @@ func (nso *nso_ZA) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (nso *nso_ZA) WeekdayWide(weekday time.Weekday) string {
+	if len(nso.daysWide) == 0 {
+		return ""
+	}
 	return nso.daysWide[weekday]
 }
 

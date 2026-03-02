@@ -88,6 +88,9 @@ func (cch *cch) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (cch *cch) MonthAbbreviated(month time.Month) string {
+	if len(cch.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return cch.monthsAbbreviated[month]
 }
 
@@ -98,6 +101,9 @@ func (cch *cch) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (cch *cch) MonthNarrow(month time.Month) string {
+	if len(cch.monthsNarrow) == 0 {
+		return ""
+	}
 	return cch.monthsNarrow[month]
 }
 
@@ -108,6 +114,9 @@ func (cch *cch) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (cch *cch) MonthWide(month time.Month) string {
+	if len(cch.monthsWide) == 0 {
+		return ""
+	}
 	return cch.monthsWide[month]
 }
 
@@ -118,6 +127,9 @@ func (cch *cch) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (cch *cch) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(cch.daysAbbreviated) == 0 {
+		return ""
+	}
 	return cch.daysAbbreviated[weekday]
 }
 
@@ -128,6 +140,9 @@ func (cch *cch) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (cch *cch) WeekdayNarrow(weekday time.Weekday) string {
+	if len(cch.daysNarrow) == 0 {
+		return ""
+	}
 	return cch.daysNarrow[weekday]
 }
 
@@ -138,6 +153,9 @@ func (cch *cch) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (cch *cch) WeekdayShort(weekday time.Weekday) string {
+	if len(cch.daysShort) == 0 {
+		return ""
+	}
 	return cch.daysShort[weekday]
 }
 
@@ -148,6 +166,9 @@ func (cch *cch) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (cch *cch) WeekdayWide(weekday time.Weekday) string {
+	if len(cch.daysWide) == 0 {
+		return ""
+	}
 	return cch.daysWide[weekday]
 }
 

@@ -99,6 +99,9 @@ func (tig *tig) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (tig *tig) MonthAbbreviated(month time.Month) string {
+	if len(tig.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return tig.monthsAbbreviated[month]
 }
 
@@ -109,6 +112,9 @@ func (tig *tig) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (tig *tig) MonthNarrow(month time.Month) string {
+	if len(tig.monthsNarrow) == 0 {
+		return ""
+	}
 	return tig.monthsNarrow[month]
 }
 
@@ -119,6 +125,9 @@ func (tig *tig) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (tig *tig) MonthWide(month time.Month) string {
+	if len(tig.monthsWide) == 0 {
+		return ""
+	}
 	return tig.monthsWide[month]
 }
 
@@ -129,6 +138,9 @@ func (tig *tig) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (tig *tig) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(tig.daysAbbreviated) == 0 {
+		return ""
+	}
 	return tig.daysAbbreviated[weekday]
 }
 
@@ -139,6 +151,9 @@ func (tig *tig) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (tig *tig) WeekdayNarrow(weekday time.Weekday) string {
+	if len(tig.daysNarrow) == 0 {
+		return ""
+	}
 	return tig.daysNarrow[weekday]
 }
 
@@ -149,6 +164,9 @@ func (tig *tig) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (tig *tig) WeekdayShort(weekday time.Weekday) string {
+	if len(tig.daysShort) == 0 {
+		return ""
+	}
 	return tig.daysShort[weekday]
 }
 
@@ -159,6 +177,9 @@ func (tig *tig) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (tig *tig) WeekdayWide(weekday time.Weekday) string {
+	if len(tig.daysWide) == 0 {
+		return ""
+	}
 	return tig.daysWide[weekday]
 }
 

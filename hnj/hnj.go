@@ -86,6 +86,9 @@ func (hnj *hnj) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (hnj *hnj) MonthAbbreviated(month time.Month) string {
+	if len(hnj.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return hnj.monthsAbbreviated[month]
 }
 
@@ -96,6 +99,9 @@ func (hnj *hnj) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (hnj *hnj) MonthNarrow(month time.Month) string {
+	if len(hnj.monthsNarrow) == 0 {
+		return ""
+	}
 	return hnj.monthsNarrow[month]
 }
 
@@ -106,6 +112,9 @@ func (hnj *hnj) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (hnj *hnj) MonthWide(month time.Month) string {
+	if len(hnj.monthsWide) == 0 {
+		return ""
+	}
 	return hnj.monthsWide[month]
 }
 
@@ -116,6 +125,9 @@ func (hnj *hnj) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (hnj *hnj) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(hnj.daysAbbreviated) == 0 {
+		return ""
+	}
 	return hnj.daysAbbreviated[weekday]
 }
 
@@ -126,6 +138,9 @@ func (hnj *hnj) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (hnj *hnj) WeekdayNarrow(weekday time.Weekday) string {
+	if len(hnj.daysNarrow) == 0 {
+		return ""
+	}
 	return hnj.daysNarrow[weekday]
 }
 
@@ -136,6 +151,9 @@ func (hnj *hnj) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (hnj *hnj) WeekdayShort(weekday time.Weekday) string {
+	if len(hnj.daysShort) == 0 {
+		return ""
+	}
 	return hnj.daysShort[weekday]
 }
 
@@ -146,6 +164,9 @@ func (hnj *hnj) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (hnj *hnj) WeekdayWide(weekday time.Weekday) string {
+	if len(hnj.daysWide) == 0 {
+		return ""
+	}
 	return hnj.daysWide[weekday]
 }
 

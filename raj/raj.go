@@ -87,6 +87,9 @@ func (raj *raj) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (raj *raj) MonthAbbreviated(month time.Month) string {
+	if len(raj.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return raj.monthsAbbreviated[month]
 }
 
@@ -97,6 +100,9 @@ func (raj *raj) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (raj *raj) MonthNarrow(month time.Month) string {
+	if len(raj.monthsNarrow) == 0 {
+		return ""
+	}
 	return raj.monthsNarrow[month]
 }
 
@@ -107,6 +113,9 @@ func (raj *raj) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (raj *raj) MonthWide(month time.Month) string {
+	if len(raj.monthsWide) == 0 {
+		return ""
+	}
 	return raj.monthsWide[month]
 }
 
@@ -117,6 +126,9 @@ func (raj *raj) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (raj *raj) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(raj.daysAbbreviated) == 0 {
+		return ""
+	}
 	return raj.daysAbbreviated[weekday]
 }
 
@@ -127,6 +139,9 @@ func (raj *raj) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (raj *raj) WeekdayNarrow(weekday time.Weekday) string {
+	if len(raj.daysNarrow) == 0 {
+		return ""
+	}
 	return raj.daysNarrow[weekday]
 }
 
@@ -137,6 +152,9 @@ func (raj *raj) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (raj *raj) WeekdayShort(weekday time.Weekday) string {
+	if len(raj.daysShort) == 0 {
+		return ""
+	}
 	return raj.daysShort[weekday]
 }
 
@@ -147,6 +165,9 @@ func (raj *raj) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (raj *raj) WeekdayWide(weekday time.Weekday) string {
+	if len(raj.daysWide) == 0 {
+		return ""
+	}
 	return raj.daysWide[weekday]
 }
 

@@ -100,6 +100,9 @@ func (bem *bem_ZM) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (bem *bem_ZM) MonthAbbreviated(month time.Month) string {
+	if len(bem.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return bem.monthsAbbreviated[month]
 }
 
@@ -110,6 +113,9 @@ func (bem *bem_ZM) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (bem *bem_ZM) MonthNarrow(month time.Month) string {
+	if len(bem.monthsNarrow) == 0 {
+		return ""
+	}
 	return bem.monthsNarrow[month]
 }
 
@@ -120,6 +126,9 @@ func (bem *bem_ZM) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (bem *bem_ZM) MonthWide(month time.Month) string {
+	if len(bem.monthsWide) == 0 {
+		return ""
+	}
 	return bem.monthsWide[month]
 }
 
@@ -130,6 +139,9 @@ func (bem *bem_ZM) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (bem *bem_ZM) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(bem.daysAbbreviated) == 0 {
+		return ""
+	}
 	return bem.daysAbbreviated[weekday]
 }
 
@@ -140,6 +152,9 @@ func (bem *bem_ZM) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (bem *bem_ZM) WeekdayNarrow(weekday time.Weekday) string {
+	if len(bem.daysNarrow) == 0 {
+		return ""
+	}
 	return bem.daysNarrow[weekday]
 }
 
@@ -150,6 +165,9 @@ func (bem *bem_ZM) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (bem *bem_ZM) WeekdayShort(weekday time.Weekday) string {
+	if len(bem.daysShort) == 0 {
+		return ""
+	}
 	return bem.daysShort[weekday]
 }
 
@@ -160,6 +178,9 @@ func (bem *bem_ZM) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (bem *bem_ZM) WeekdayWide(weekday time.Weekday) string {
+	if len(bem.daysWide) == 0 {
+		return ""
+	}
 	return bem.daysWide[weekday]
 }
 

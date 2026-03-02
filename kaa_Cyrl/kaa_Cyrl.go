@@ -91,6 +91,9 @@ func (kaa *kaa_Cyrl) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 u
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (kaa *kaa_Cyrl) MonthAbbreviated(month time.Month) string {
+	if len(kaa.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return kaa.monthsAbbreviated[month]
 }
 
@@ -101,6 +104,9 @@ func (kaa *kaa_Cyrl) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (kaa *kaa_Cyrl) MonthNarrow(month time.Month) string {
+	if len(kaa.monthsNarrow) == 0 {
+		return ""
+	}
 	return kaa.monthsNarrow[month]
 }
 
@@ -111,6 +117,9 @@ func (kaa *kaa_Cyrl) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (kaa *kaa_Cyrl) MonthWide(month time.Month) string {
+	if len(kaa.monthsWide) == 0 {
+		return ""
+	}
 	return kaa.monthsWide[month]
 }
 
@@ -121,6 +130,9 @@ func (kaa *kaa_Cyrl) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (kaa *kaa_Cyrl) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(kaa.daysAbbreviated) == 0 {
+		return ""
+	}
 	return kaa.daysAbbreviated[weekday]
 }
 
@@ -131,6 +143,9 @@ func (kaa *kaa_Cyrl) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (kaa *kaa_Cyrl) WeekdayNarrow(weekday time.Weekday) string {
+	if len(kaa.daysNarrow) == 0 {
+		return ""
+	}
 	return kaa.daysNarrow[weekday]
 }
 
@@ -141,6 +156,9 @@ func (kaa *kaa_Cyrl) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (kaa *kaa_Cyrl) WeekdayShort(weekday time.Weekday) string {
+	if len(kaa.daysShort) == 0 {
+		return ""
+	}
 	return kaa.daysShort[weekday]
 }
 
@@ -151,6 +169,9 @@ func (kaa *kaa_Cyrl) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (kaa *kaa_Cyrl) WeekdayWide(weekday time.Weekday) string {
+	if len(kaa.daysWide) == 0 {
+		return ""
+	}
 	return kaa.daysWide[weekday]
 }
 

@@ -83,8 +83,8 @@ func (prg *prg) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 	f := locales.F(n, v)
 	nMod10 := math.Mod(n, 10)
 	nMod100 := math.Mod(n, 100)
-	fMod10 := f % 10
 	fMod100 := f % 100
+	fMod10 := f % 10
 
 	if (nMod10 == 0) || (nMod100 >= 11 && nMod100 <= 19) || (v == 2 && fMod100 >= 11 && fMod100 <= 19) {
 		return locales.PluralRuleZero
@@ -107,6 +107,9 @@ func (prg *prg) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (prg *prg) MonthAbbreviated(month time.Month) string {
+	if len(prg.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return prg.monthsAbbreviated[month]
 }
 
@@ -117,6 +120,9 @@ func (prg *prg) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (prg *prg) MonthNarrow(month time.Month) string {
+	if len(prg.monthsNarrow) == 0 {
+		return ""
+	}
 	return prg.monthsNarrow[month]
 }
 
@@ -127,6 +133,9 @@ func (prg *prg) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (prg *prg) MonthWide(month time.Month) string {
+	if len(prg.monthsWide) == 0 {
+		return ""
+	}
 	return prg.monthsWide[month]
 }
 
@@ -137,6 +146,9 @@ func (prg *prg) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (prg *prg) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(prg.daysAbbreviated) == 0 {
+		return ""
+	}
 	return prg.daysAbbreviated[weekday]
 }
 
@@ -147,6 +159,9 @@ func (prg *prg) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (prg *prg) WeekdayNarrow(weekday time.Weekday) string {
+	if len(prg.daysNarrow) == 0 {
+		return ""
+	}
 	return prg.daysNarrow[weekday]
 }
 
@@ -157,6 +172,9 @@ func (prg *prg) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (prg *prg) WeekdayShort(weekday time.Weekday) string {
+	if len(prg.daysShort) == 0 {
+		return ""
+	}
 	return prg.daysShort[weekday]
 }
 
@@ -167,6 +185,9 @@ func (prg *prg) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (prg *prg) WeekdayWide(weekday time.Weekday) string {
+	if len(prg.daysWide) == 0 {
+		return ""
+	}
 	return prg.daysWide[weekday]
 }
 

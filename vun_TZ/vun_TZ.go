@@ -96,6 +96,9 @@ func (vun *vun_TZ) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (vun *vun_TZ) MonthAbbreviated(month time.Month) string {
+	if len(vun.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return vun.monthsAbbreviated[month]
 }
 
@@ -106,6 +109,9 @@ func (vun *vun_TZ) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (vun *vun_TZ) MonthNarrow(month time.Month) string {
+	if len(vun.monthsNarrow) == 0 {
+		return ""
+	}
 	return vun.monthsNarrow[month]
 }
 
@@ -116,6 +122,9 @@ func (vun *vun_TZ) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (vun *vun_TZ) MonthWide(month time.Month) string {
+	if len(vun.monthsWide) == 0 {
+		return ""
+	}
 	return vun.monthsWide[month]
 }
 
@@ -126,6 +135,9 @@ func (vun *vun_TZ) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (vun *vun_TZ) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(vun.daysAbbreviated) == 0 {
+		return ""
+	}
 	return vun.daysAbbreviated[weekday]
 }
 
@@ -136,6 +148,9 @@ func (vun *vun_TZ) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (vun *vun_TZ) WeekdayNarrow(weekday time.Weekday) string {
+	if len(vun.daysNarrow) == 0 {
+		return ""
+	}
 	return vun.daysNarrow[weekday]
 }
 
@@ -146,6 +161,9 @@ func (vun *vun_TZ) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (vun *vun_TZ) WeekdayShort(weekday time.Weekday) string {
+	if len(vun.daysShort) == 0 {
+		return ""
+	}
 	return vun.daysShort[weekday]
 }
 
@@ -156,6 +174,9 @@ func (vun *vun_TZ) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (vun *vun_TZ) WeekdayWide(weekday time.Weekday) string {
+	if len(vun.daysWide) == 0 {
+		return ""
+	}
 	return vun.daysWide[weekday]
 }
 

@@ -94,6 +94,9 @@ func (mer *mer) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (mer *mer) MonthAbbreviated(month time.Month) string {
+	if len(mer.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return mer.monthsAbbreviated[month]
 }
 
@@ -104,6 +107,9 @@ func (mer *mer) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (mer *mer) MonthNarrow(month time.Month) string {
+	if len(mer.monthsNarrow) == 0 {
+		return ""
+	}
 	return mer.monthsNarrow[month]
 }
 
@@ -114,6 +120,9 @@ func (mer *mer) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (mer *mer) MonthWide(month time.Month) string {
+	if len(mer.monthsWide) == 0 {
+		return ""
+	}
 	return mer.monthsWide[month]
 }
 
@@ -124,6 +133,9 @@ func (mer *mer) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (mer *mer) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(mer.daysAbbreviated) == 0 {
+		return ""
+	}
 	return mer.daysAbbreviated[weekday]
 }
 
@@ -134,6 +146,9 @@ func (mer *mer) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (mer *mer) WeekdayNarrow(weekday time.Weekday) string {
+	if len(mer.daysNarrow) == 0 {
+		return ""
+	}
 	return mer.daysNarrow[weekday]
 }
 
@@ -144,6 +159,9 @@ func (mer *mer) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (mer *mer) WeekdayShort(weekday time.Weekday) string {
+	if len(mer.daysShort) == 0 {
+		return ""
+	}
 	return mer.daysShort[weekday]
 }
 
@@ -154,6 +172,9 @@ func (mer *mer) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (mer *mer) WeekdayWide(weekday time.Weekday) string {
+	if len(mer.daysWide) == 0 {
+		return ""
+	}
 	return mer.daysWide[weekday]
 }
 

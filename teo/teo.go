@@ -100,6 +100,9 @@ func (teo *teo) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (teo *teo) MonthAbbreviated(month time.Month) string {
+	if len(teo.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return teo.monthsAbbreviated[month]
 }
 
@@ -110,6 +113,9 @@ func (teo *teo) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (teo *teo) MonthNarrow(month time.Month) string {
+	if len(teo.monthsNarrow) == 0 {
+		return ""
+	}
 	return teo.monthsNarrow[month]
 }
 
@@ -120,6 +126,9 @@ func (teo *teo) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (teo *teo) MonthWide(month time.Month) string {
+	if len(teo.monthsWide) == 0 {
+		return ""
+	}
 	return teo.monthsWide[month]
 }
 
@@ -130,6 +139,9 @@ func (teo *teo) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (teo *teo) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(teo.daysAbbreviated) == 0 {
+		return ""
+	}
 	return teo.daysAbbreviated[weekday]
 }
 
@@ -140,6 +152,9 @@ func (teo *teo) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (teo *teo) WeekdayNarrow(weekday time.Weekday) string {
+	if len(teo.daysNarrow) == 0 {
+		return ""
+	}
 	return teo.daysNarrow[weekday]
 }
 
@@ -150,6 +165,9 @@ func (teo *teo) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (teo *teo) WeekdayShort(weekday time.Weekday) string {
+	if len(teo.daysShort) == 0 {
+		return ""
+	}
 	return teo.daysShort[weekday]
 }
 
@@ -160,6 +178,9 @@ func (teo *teo) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (teo *teo) WeekdayWide(weekday time.Weekday) string {
+	if len(teo.daysWide) == 0 {
+		return ""
+	}
 	return teo.daysWide[weekday]
 }
 

@@ -48,7 +48,7 @@ func New() locales.Translator {
 		monthsWide:        []string{"", "جنوری", "پروری", "مارچ", "اپرێل", "مئیی", "جون", "جۆلایی", "اگست", "ستمبر", "اکتوبر", "نئومبر", "دسمبر"},
 		daysAbbreviated:   []string{"یک", "دو", "سئے", "چار", "پنچ", "جمه", "شم"},
 		daysWide:          []string{"یکشمبه", "دوشمبه", "سئیشمبه", "چارشمبه", "پنچشمبه", "جمه", "شمبه"},
-		timezones:         map[string]string{"ACDT": "نیامی اُسترالیائے گرماگی ساهت", "ACST": "ACST", "ACT": "ACT", "ACWDT": "نیام\u200cرۆنندی اُسترالیائے گرماگی ساهت", "ACWST": "نیام\u200cرۆنندی اُسترالیائے گیشّتگێن ساهت", "ADT": "ADT", "ADT Arabia": "ADT Arabia", "AEDT": "رۆدراتکی اُسترالیائے گرماگی ساهت", "AEST": "رۆدراتکی اُسترالیائے گیشّتگێن ساهت", "AFT": "AFT", "AKDT": "اَلاسکائے گرماگی ساهت", "AKST": "اَلاسکائے گیشّتگێن ساهت", "AMST": "امازۆنئے گرماگی ساهت", "AMST Armenia": "AMST Armenia", "AMT": "امازۆنئے گیشّتگێن ساهت", "AMT Armenia": "AMT Armenia", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "ارجنتینائے گرماگی ساهت", "ART": "ارجنتینائے گیشّتگێن ساهت", "AST": "AST", "AST Arabia": "AST Arabia", "AWDT": "رۆنندی اُسترالیائے گرماگی ساهت", "AWST": "رۆنندی اُسترالیائے گیشّتگێن ساهت", "AZST": "AZST", "AZT": "AZT", "BDT Bangladesh": "BDT Bangladesh", "BNT": "BNT", "BOT": "BOT", "BRST": "برازیلئے گرماگی ساهت", "BRT": "برازیلئے گیشّتگێن ساهت", "BST Bangladesh": "BST Bangladesh", "BT": "BT", "CAST": "CAST", "CAT": "CAT", "CCT": "CCT", "CDT": "نیامی امریکائے گرماگی ساهت", "CHADT": "CHADT", "CHAST": "CHAST", "CHUT": "CHUT", "CKT": "CKT", "CKT DST": "CKT DST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "نیامی امریکائے گیشّتگێن ساهت", "CST China": "CST China", "CST China DST": "CST China DST", "CVST": "CVST", "CVT": "CVT", "CXT": "CXT", "ChST": "ChST", "ChST NMI": "ChST NMI", "CuDT": "CuDT", "CuST": "CuST", "DAVT": "DAVT", "DDUT": "DDUT", "EASST": "EASST", "EAST": "EAST", "EAT": "EAT", "ECT": "ECT", "EDT": "رۆدراتکی امریکائے گرماگی ساهت", "EGDT": "EGDT", "EGST": "EGST", "EST": "رۆدراتکی امریکائے گیشّتگێن ساهت", "FEET": "دێمتری رۆدراتکی یورپئے گیشّتگێن ساهت", "FJT": "FJT", "FJT Summer": "FJT Summer", "FKST": "FKST", "FKT": "FKT", "FNST": "نُرُنهائے گرماگی ساهت", "FNT": "نُرُنهائے گیشّتگێن ساهت", "GALT": "GALT", "GAMT": "GAMT", "GEST": "GEST", "GET": "GET", "GFT": "GFT", "GIT": "GIT", "GMT": "گرین\u200cوِچ مین ٹائم", "GNSST": "GNSST", "GNST": "GNST", "GST": "GST", "GST Guam": "GST Guam", "GYT": "GYT", "HADT": "هئواییئے گرماگی ساهت", "HAST": "هئواییئے گیشّتگێن ساهت", "HKST": "HKST", "HKT": "HKT", "HOVST": "HOVST", "HOVT": "HOVT", "ICT": "ICT", "IDT": "IDT", "IOT": "IOT", "IRKST": "ایرکوتسکئے گرماگی ساهت", "IRKT": "ایرکوتسکئے گیشّتگێن ساهت", "IRST": "IRST", "IRST DST": "IRST DST", "IST": "IST", "IST Israel": "IST Israel", "JDT": "JDT", "JST": "JST", "KOST": "KOST", "KRAST": "کرانسنُیارسکئے گرماگی ساهت", "KRAT": "کرانسنُیارسکئے گیشّتگێن ساهت", "KST": "KST", "KST DST": "KST DST", "LHDT": "لۆرڈ هئو اُسترالیائے گرماگی ساهت", "LHST": "لۆرڈ هئو اُسترالیائے گیشّتگێن ساهت", "LINT": "LINT", "MAGST": "مَگَدَنئے گرماگی ساهت", "MAGT": "مَگَدَنئے گیشّتگێن ساهت", "MART": "MART", "MAWT": "MAWT", "MDT": "MDT", "MESZ": "نیامی یورپئے گرماگی ساهت", "MEZ": "نیامی یورپئے گیشّتگێن ساهت", "MHT": "MHT", "MMT": "MMT", "MSD": "ماسکۆئے گرماگی ساهت", "MST": "MST", "MUST": "MUST", "MUT": "MUT", "MVT": "MVT", "MYT": "MYT", "NCT": "NCT", "NDT": "نیوفاوونڈلئینڈئے گرماگی ساهت", "NDT New Caledonia": "NDT New Caledonia", "NFDT": "NFDT", "NFT": "NFT", "NOVST": "نۆوۆسیبیرسکئے گرماگی ساهت", "NOVT": "نۆوۆسیبیرسکئے گیشّتگێن ساهت", "NPT": "NPT", "NRT": "NRT", "NST": "نیوفاوونڈلئینڈئے گیشّتگێن ساهت", "NUT": "NUT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "رۆدراتکی یورپئے گرماگی ساهت", "OEZ": "رۆدراتکی یورپئے گیشّتگێن ساهت", "OMSST": "اۆمسکئے گرماگی ساهت", "OMST": "اۆمسکئے گیشّتگێن ساهت", "PDT": "آرامزِری امریکائے گرماگی ساهت", "PDTM": "آرامزِری مِکسیکۆئے گرماگی ساهت", "PETDT": "PETDT", "PETST": "PETST", "PGT": "PGT", "PHOT": "PHOT", "PKT": "PKT", "PKT DST": "PKT DST", "PMDT": "PMDT", "PMST": "PMST", "PONT": "PONT", "PST": "آرامزِری امریکائے گیشّتگێن ساهت", "PST Philippine": "PST Philippine", "PST Philippine DST": "PST Philippine DST", "PST Pitcairn": "PST Pitcairn", "PSTM": "آرامزِری مِکسیکۆئے گیشّتگێن ساهت", "PWT": "PWT", "PYST": "PYST", "PYT": "PYT", "PYT Korea": "PYT Korea", "RET": "RET", "ROTT": "ROTT", "SAKST": "SAKST", "SAKT": "SAKT", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "SAST", "SBT": "SBT", "SCT": "SCT", "SGT": "SGT", "SLST": "SLST", "SRT": "SRT", "SST Samoa": "SST Samoa", "SST Samoa Apia": "SST Samoa Apia", "SST Samoa Apia DST": "SST Samoa Apia DST", "SST Samoa DST": "SST Samoa DST", "SYOT": "SYOT", "TAAF": "TAAF", "TAHT": "TAHT", "TJT": "TJT", "TKT": "TKT", "TLT": "TLT", "TMST": "TMST", "TMT": "TMT", "TOST": "TOST", "TOT": "TOT", "TVT": "TVT", "TWT": "TWT", "TWT DST": "TWT DST", "ULAST": "ULAST", "ULAT": "ULAT", "UYST": "UYST", "UYT": "UYT", "UZT": "UZT", "UZT DST": "UZT DST", "VET": "VET", "VLAST": "ولادیوُستُکئے گرماگی ساهت", "VLAT": "ولادیوُستُکئے گیشّتگێن ساهت", "VOLST": "VOLST", "VOLT": "VOLT", "VOST": "VOST", "VUT": "VUT", "VUT DST": "VUT DST", "WAKT": "WAKT", "WARST": "رۆنندی ارجنتینائے گرماگی ساهت", "WART": "رۆنندی ارجنتینائے گیشّتگێن ساهت", "WAST": "WAST", "WAT": "WAT", "WESZ": "رۆنندی یورپئے گرماگی ساهت", "WEZ": "رۆنندی یورپئے گیشّتگێن ساهت", "WFT": "WFT", "WGST": "WGST", "WGT": "WGT", "WIB": "رۆنندی اندۆنیزیائے گیشّتگێن ساهت", "WIT": "رۆدراتکی اندۆنیزیائے گیشّتگێن ساهت", "WITA": "نیامی اندۆنیزیائے گیشّتگێن ساهت", "YAKST": "یاکوتسکئے گرماگی ساهت", "YAKT": "یاکوتسکئے گیشّتگێن ساهت", "YEKST": "یێکاترینبورگئے گرماگی ساهت", "YEKT": "یێکاترینبورگئے گیشّتگێن ساهت", "YST": "YST", "МСК": "ماسکۆئے گیشّتگێن ساهت", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "رۆنندی کازکستانئے گیشّتگێن ساهت", "شىعىش قازاق ەلى": "رۆدراتکی کازکستانئے گیشّتگێن ساهت", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "قىرعىزستان", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "∅∅∅"},
+		timezones:         map[string]string{"ACDT": "نیامی اُسترالیائے گرماگی ساهت", "ACST": "نیامی اُسترالیائے گیشّتگێن ساهت", "ACT": "ACT", "ACWDT": "نیام\u200cرۆنندی اُسترالیائے گرماگی ساهت", "ACWST": "نیام\u200cرۆنندی اُسترالیائے گیشّتگێن ساهت", "ADT": "ADT", "ADT Arabia": "ADT Arabia", "AEDT": "رۆدراتکی اُسترالیائے گرماگی ساهت", "AEST": "رۆدراتکی اُسترالیائے گیشّتگێن ساهت", "AFT": "AFT", "AKDT": "اَلاسکائے گرماگی ساهت", "AKST": "اَلاسکائے گیشّتگێن ساهت", "AMST": "امازۆنئے گرماگی ساهت", "AMST Armenia": "AMST Armenia", "AMT": "امازۆنئے گیشّتگێن ساهت", "AMT Armenia": "AMT Armenia", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "ارجنتینائے گرماگی ساهت", "ART": "ارجنتینائے گیشّتگێن ساهت", "AST": "AST", "AST Arabia": "AST Arabia", "AWDT": "رۆنندی اُسترالیائے گرماگی ساهت", "AWST": "رۆنندی اُسترالیائے گیشّتگێن ساهت", "AZST": "AZST", "AZT": "AZT", "BDT Bangladesh": "BDT Bangladesh", "BNT": "BNT", "BOT": "BOT", "BRST": "برازیلئے گرماگی ساهت", "BRT": "برازیلئے گیشّتگێن ساهت", "BST Bangladesh": "BST Bangladesh", "BT": "BT", "CAST": "CAST", "CAT": "CAT", "CCT": "CCT", "CDT": "نیامی امریکائے گرماگی ساهت", "CHADT": "CHADT", "CHAST": "CHAST", "CHUT": "CHUT", "CKT": "CKT", "CKT DST": "CKT DST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "نیامی امریکائے گیشّتگێن ساهت", "CST China": "CST China", "CST China DST": "CST China DST", "CVST": "CVST", "CVT": "CVT", "CXT": "CXT", "ChST": "ChST", "ChST NMI": "ChST NMI", "CuDT": "CuDT", "CuST": "CuST", "DAVT": "DAVT", "DDUT": "DDUT", "EASST": "EASST", "EAST": "EAST", "EAT": "EAT", "ECT": "ECT", "EDT": "رۆدراتکی امریکائے گرماگی ساهت", "EGDT": "EGDT", "EGST": "EGST", "EST": "رۆدراتکی امریکائے گیشّتگێن ساهت", "FEET": "دێمتری رۆدراتکی یورپئے گیشّتگێن ساهت", "FJT": "FJT", "FJT Summer": "FJT Summer", "FKST": "FKST", "FKT": "FKT", "FNST": "نُرُنهائے گرماگی ساهت", "FNT": "نُرُنهائے گیشّتگێن ساهت", "GALT": "GALT", "GAMT": "GAMT", "GEST": "GEST", "GET": "GET", "GFT": "GFT", "GIT": "GIT", "GMT": "گرین\u200cوِچ مین ٹائم", "GNSST": "GNSST", "GNST": "GNST", "GST": "GST", "GST Guam": "GST Guam", "GYT": "GYT", "HADT": "هئواییئے گرماگی ساهت", "HAST": "هئواییئے گیشّتگێن ساهت", "HKST": "HKST", "HKT": "HKT", "HOVST": "HOVST", "HOVT": "HOVT", "ICT": "ICT", "IDT": "IDT", "IOT": "IOT", "IRKST": "ایرکوتسکئے گرماگی ساهت", "IRKT": "ایرکوتسکئے گیشّتگێن ساهت", "IRST": "IRST", "IRST DST": "IRST DST", "IST": "IST", "IST Israel": "IST Israel", "JDT": "JDT", "JST": "JST", "KOST": "KOST", "KRAST": "کرانسنُیارسکئے گرماگی ساهت", "KRAT": "کرانسنُیارسکئے گیشّتگێن ساهت", "KST": "KST", "KST DST": "KST DST", "LHDT": "لۆرڈ هئو اُسترالیائے گرماگی ساهت", "LHST": "لۆرڈ هئو اُسترالیائے گیشّتگێن ساهت", "LINT": "LINT", "MAGST": "مَگَدَنئے گرماگی ساهت", "MAGT": "مَگَدَنئے گیشّتگێن ساهت", "MART": "MART", "MAWT": "MAWT", "MDT": "MDT", "MESZ": "نیامی یورپئے گرماگی ساهت", "MEZ": "نیامی یورپئے گیشّتگێن ساهت", "MHT": "MHT", "MMT": "MMT", "MSD": "ماسکۆئے گرماگی ساهت", "MST": "MST", "MUST": "MUST", "MUT": "MUT", "MVT": "MVT", "MYT": "MYT", "NCT": "NCT", "NDT": "نیوفاوونڈلئینڈئے گرماگی ساهت", "NDT New Caledonia": "NDT New Caledonia", "NFDT": "NFDT", "NFT": "NFT", "NOVST": "نۆوۆسیبیرسکئے گرماگی ساهت", "NOVT": "نۆوۆسیبیرسکئے گیشّتگێن ساهت", "NPT": "NPT", "NRT": "NRT", "NST": "نیوفاوونڈلئینڈئے گیشّتگێن ساهت", "NUT": "NUT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "رۆدراتکی یورپئے گرماگی ساهت", "OEZ": "رۆدراتکی یورپئے گیشّتگێن ساهت", "OMSST": "اۆمسکئے گرماگی ساهت", "OMST": "اۆمسکئے گیشّتگێن ساهت", "PDT": "آرامزِری امریکائے گرماگی ساهت", "PDTM": "آرامزِری مِکسیکۆئے گرماگی ساهت", "PETDT": "PETDT", "PETST": "PETST", "PGT": "PGT", "PHOT": "PHOT", "PKT": "PKT", "PKT DST": "PKT DST", "PMDT": "PMDT", "PMST": "PMST", "PONT": "PONT", "PST": "آرامزِری امریکائے گیشّتگێن ساهت", "PST Philippine": "PST Philippine", "PST Philippine DST": "PST Philippine DST", "PST Pitcairn": "PST Pitcairn", "PSTM": "آرامزِری مِکسیکۆئے گیشّتگێن ساهت", "PWT": "PWT", "PYST": "PYST", "PYT": "PYT", "PYT Korea": "PYT Korea", "RET": "RET", "ROTT": "ROTT", "SAKST": "SAKST", "SAKT": "SAKT", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "SAST", "SBT": "SBT", "SCT": "SCT", "SGT": "SGT", "SLST": "SLST", "SRT": "SRT", "SST Samoa": "SST Samoa", "SST Samoa Apia": "SST Samoa Apia", "SST Samoa Apia DST": "SST Samoa Apia DST", "SST Samoa DST": "SST Samoa DST", "SYOT": "SYOT", "TAAF": "TAAF", "TAHT": "TAHT", "TJT": "TJT", "TKT": "TKT", "TLT": "TLT", "TMST": "TMST", "TMT": "TMT", "TOST": "TOST", "TOT": "TOT", "TVT": "TVT", "TWT": "TWT", "TWT DST": "TWT DST", "ULAST": "ULAST", "ULAT": "ULAT", "UYST": "UYST", "UYT": "UYT", "UZT": "UZT", "UZT DST": "UZT DST", "VET": "VET", "VLAST": "ولادیوُستُکئے گرماگی ساهت", "VLAT": "ولادیوُستُکئے گیشّتگێن ساهت", "VOLST": "VOLST", "VOLT": "VOLT", "VOST": "VOST", "VUT": "VUT", "VUT DST": "VUT DST", "WAKT": "WAKT", "WARST": "رۆنندی ارجنتینائے گرماگی ساهت", "WART": "رۆنندی ارجنتینائے گیشّتگێن ساهت", "WAST": "WAST", "WAT": "WAT", "WESZ": "رۆنندی یورپئے گرماگی ساهت", "WEZ": "رۆنندی یورپئے گیشّتگێن ساهت", "WFT": "WFT", "WGST": "WGST", "WGT": "WGT", "WIB": "رۆنندی اندۆنیزیائے گیشّتگێن ساهت", "WIT": "رۆدراتکی اندۆنیزیائے گیشّتگێن ساهت", "WITA": "نیامی اندۆنیزیائے گیشّتگێن ساهت", "YAKST": "یاکوتسکئے گرماگی ساهت", "YAKT": "یاکوتسکئے گیشّتگێن ساهت", "YEKST": "یێکاترینبورگئے گرماگی ساهت", "YEKT": "یێکاترینبورگئے گیشّتگێن ساهت", "YST": "YST", "МСК": "ماسکۆئے گیشّتگێن ساهت", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "رۆنندی کازکستانئے گیشّتگێن ساهت", "شىعىش قازاق ەلى": "رۆدراتکی کازکستانئے گیشّتگێن ساهت", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "قىرعىزستان", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "∅∅∅"},
 	}
 }
 
@@ -101,6 +101,9 @@ func (bal *bal) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (bal *bal) MonthAbbreviated(month time.Month) string {
+	if len(bal.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return bal.monthsAbbreviated[month]
 }
 
@@ -111,6 +114,9 @@ func (bal *bal) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (bal *bal) MonthNarrow(month time.Month) string {
+	if len(bal.monthsNarrow) == 0 {
+		return ""
+	}
 	return bal.monthsNarrow[month]
 }
 
@@ -121,6 +127,9 @@ func (bal *bal) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (bal *bal) MonthWide(month time.Month) string {
+	if len(bal.monthsWide) == 0 {
+		return ""
+	}
 	return bal.monthsWide[month]
 }
 
@@ -131,6 +140,9 @@ func (bal *bal) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (bal *bal) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(bal.daysAbbreviated) == 0 {
+		return ""
+	}
 	return bal.daysAbbreviated[weekday]
 }
 
@@ -141,6 +153,9 @@ func (bal *bal) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (bal *bal) WeekdayNarrow(weekday time.Weekday) string {
+	if len(bal.daysNarrow) == 0 {
+		return ""
+	}
 	return bal.daysNarrow[weekday]
 }
 
@@ -151,6 +166,9 @@ func (bal *bal) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (bal *bal) WeekdayShort(weekday time.Weekday) string {
+	if len(bal.daysShort) == 0 {
+		return ""
+	}
 	return bal.daysShort[weekday]
 }
 
@@ -161,6 +179,9 @@ func (bal *bal) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (bal *bal) WeekdayWide(weekday time.Weekday) string {
+	if len(bal.daysWide) == 0 {
+		return ""
+	}
 	return bal.daysWide[weekday]
 }
 

@@ -92,6 +92,9 @@ func (nnh *nnh) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (nnh *nnh) MonthAbbreviated(month time.Month) string {
+	if len(nnh.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return nnh.monthsAbbreviated[month]
 }
 
@@ -102,6 +105,9 @@ func (nnh *nnh) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (nnh *nnh) MonthNarrow(month time.Month) string {
+	if len(nnh.monthsNarrow) == 0 {
+		return ""
+	}
 	return nnh.monthsNarrow[month]
 }
 
@@ -112,6 +118,9 @@ func (nnh *nnh) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (nnh *nnh) MonthWide(month time.Month) string {
+	if len(nnh.monthsWide) == 0 {
+		return ""
+	}
 	return nnh.monthsWide[month]
 }
 
@@ -122,6 +131,9 @@ func (nnh *nnh) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (nnh *nnh) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(nnh.daysAbbreviated) == 0 {
+		return ""
+	}
 	return nnh.daysAbbreviated[weekday]
 }
 
@@ -132,6 +144,9 @@ func (nnh *nnh) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (nnh *nnh) WeekdayNarrow(weekday time.Weekday) string {
+	if len(nnh.daysNarrow) == 0 {
+		return ""
+	}
 	return nnh.daysNarrow[weekday]
 }
 
@@ -142,6 +157,9 @@ func (nnh *nnh) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (nnh *nnh) WeekdayShort(weekday time.Weekday) string {
+	if len(nnh.daysShort) == 0 {
+		return ""
+	}
 	return nnh.daysShort[weekday]
 }
 
@@ -152,6 +170,9 @@ func (nnh *nnh) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (nnh *nnh) WeekdayWide(weekday time.Weekday) string {
+	if len(nnh.daysWide) == 0 {
+		return ""
+	}
 	return nnh.daysWide[weekday]
 }
 

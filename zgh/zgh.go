@@ -91,6 +91,9 @@ func (zgh *zgh) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (zgh *zgh) MonthAbbreviated(month time.Month) string {
+	if len(zgh.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return zgh.monthsAbbreviated[month]
 }
 
@@ -101,6 +104,9 @@ func (zgh *zgh) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (zgh *zgh) MonthNarrow(month time.Month) string {
+	if len(zgh.monthsNarrow) == 0 {
+		return ""
+	}
 	return zgh.monthsNarrow[month]
 }
 
@@ -111,6 +117,9 @@ func (zgh *zgh) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (zgh *zgh) MonthWide(month time.Month) string {
+	if len(zgh.monthsWide) == 0 {
+		return ""
+	}
 	return zgh.monthsWide[month]
 }
 
@@ -121,6 +130,9 @@ func (zgh *zgh) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (zgh *zgh) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(zgh.daysAbbreviated) == 0 {
+		return ""
+	}
 	return zgh.daysAbbreviated[weekday]
 }
 
@@ -131,6 +143,9 @@ func (zgh *zgh) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (zgh *zgh) WeekdayNarrow(weekday time.Weekday) string {
+	if len(zgh.daysNarrow) == 0 {
+		return ""
+	}
 	return zgh.daysNarrow[weekday]
 }
 
@@ -141,6 +156,9 @@ func (zgh *zgh) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (zgh *zgh) WeekdayShort(weekday time.Weekday) string {
+	if len(zgh.daysShort) == 0 {
+		return ""
+	}
 	return zgh.daysShort[weekday]
 }
 
@@ -151,6 +169,9 @@ func (zgh *zgh) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (zgh *zgh) WeekdayWide(weekday time.Weekday) string {
+	if len(zgh.daysWide) == 0 {
+		return ""
+	}
 	return zgh.daysWide[weekday]
 }
 

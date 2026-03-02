@@ -172,6 +172,9 @@ func({{ .BaseLocale }} *{{ .Locale }}) RangePluralRule(num1 float64, v1 uint64,n
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func({{ .BaseLocale }} *{{ .Locale }}) MonthAbbreviated(month time.Month) string {
+	if len({{ .BaseLocale }}.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return {{ .BaseLocale }}.monthsAbbreviated[month]
 }
 
@@ -186,6 +189,9 @@ func({{ .BaseLocale }} *{{ .Locale }}) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func({{ .BaseLocale }} *{{ .Locale }}) MonthNarrow(month time.Month) string {
+	if len({{ .BaseLocale }}.monthsNarrow) == 0 {
+		return ""
+	}
 	return {{ .BaseLocale }}.monthsNarrow[month]
 }
 
@@ -200,6 +206,9 @@ func({{ .BaseLocale }} *{{ .Locale }}) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func({{ .BaseLocale }} *{{ .Locale }}) MonthWide(month time.Month) string {
+	if len({{ .BaseLocale }}.monthsWide) == 0 {
+		return ""
+	}
 	return {{ .BaseLocale }}.monthsWide[month]
 }
 
@@ -214,6 +223,9 @@ func({{ .BaseLocale }} *{{ .Locale }}) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func({{ .BaseLocale }} *{{ .Locale }}) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len({{ .BaseLocale }}.daysAbbreviated) == 0 {
+		return ""
+	}
 	return {{ .BaseLocale }}.daysAbbreviated[weekday]
 }
 
@@ -224,6 +236,9 @@ func({{ .BaseLocale }} *{{ .Locale }}) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func({{ .BaseLocale }} *{{ .Locale }}) WeekdayNarrow(weekday time.Weekday) string {
+	if len({{ .BaseLocale }}.daysNarrow) == 0 {
+		return ""
+	}
 	return {{ .BaseLocale }}.daysNarrow[weekday]
 }
 
@@ -234,6 +249,9 @@ func({{ .BaseLocale }} *{{ .Locale }}) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func({{ .BaseLocale }} *{{ .Locale }}) WeekdayShort(weekday time.Weekday) string {
+	if len({{ .BaseLocale }}.daysShort) == 0 {
+		return ""
+	}
 	return {{ .BaseLocale }}.daysShort[weekday]
 }
 
@@ -244,6 +262,9 @@ func({{ .BaseLocale }} *{{ .Locale }}) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func({{ .BaseLocale }} *{{ .Locale }}) WeekdayWide(weekday time.Weekday) string {
+	if len({{ .BaseLocale }}.daysWide) == 0 {
+		return ""
+	}
 	return {{ .BaseLocale }}.daysWide[weekday]
 }
 

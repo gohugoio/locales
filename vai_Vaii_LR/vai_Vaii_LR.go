@@ -92,6 +92,9 @@ func (vai *vai_Vaii_LR) RangePluralRule(num1 float64, v1 uint64, num2 float64, v
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (vai *vai_Vaii_LR) MonthAbbreviated(month time.Month) string {
+	if len(vai.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return vai.monthsAbbreviated[month]
 }
 
@@ -102,6 +105,9 @@ func (vai *vai_Vaii_LR) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (vai *vai_Vaii_LR) MonthNarrow(month time.Month) string {
+	if len(vai.monthsNarrow) == 0 {
+		return ""
+	}
 	return vai.monthsNarrow[month]
 }
 
@@ -112,6 +118,9 @@ func (vai *vai_Vaii_LR) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (vai *vai_Vaii_LR) MonthWide(month time.Month) string {
+	if len(vai.monthsWide) == 0 {
+		return ""
+	}
 	return vai.monthsWide[month]
 }
 
@@ -122,6 +131,9 @@ func (vai *vai_Vaii_LR) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (vai *vai_Vaii_LR) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(vai.daysAbbreviated) == 0 {
+		return ""
+	}
 	return vai.daysAbbreviated[weekday]
 }
 
@@ -132,6 +144,9 @@ func (vai *vai_Vaii_LR) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (vai *vai_Vaii_LR) WeekdayNarrow(weekday time.Weekday) string {
+	if len(vai.daysNarrow) == 0 {
+		return ""
+	}
 	return vai.daysNarrow[weekday]
 }
 
@@ -142,6 +157,9 @@ func (vai *vai_Vaii_LR) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (vai *vai_Vaii_LR) WeekdayShort(weekday time.Weekday) string {
+	if len(vai.daysShort) == 0 {
+		return ""
+	}
 	return vai.daysShort[weekday]
 }
 
@@ -152,6 +170,9 @@ func (vai *vai_Vaii_LR) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (vai *vai_Vaii_LR) WeekdayWide(weekday time.Weekday) string {
+	if len(vai.daysWide) == 0 {
+		return ""
+	}
 	return vai.daysWide[weekday]
 }
 

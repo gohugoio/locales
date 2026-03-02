@@ -84,6 +84,9 @@ func (mhn *mhn_IT) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (mhn *mhn_IT) MonthAbbreviated(month time.Month) string {
+	if len(mhn.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return mhn.monthsAbbreviated[month]
 }
 
@@ -94,6 +97,9 @@ func (mhn *mhn_IT) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (mhn *mhn_IT) MonthNarrow(month time.Month) string {
+	if len(mhn.monthsNarrow) == 0 {
+		return ""
+	}
 	return mhn.monthsNarrow[month]
 }
 
@@ -104,6 +110,9 @@ func (mhn *mhn_IT) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (mhn *mhn_IT) MonthWide(month time.Month) string {
+	if len(mhn.monthsWide) == 0 {
+		return ""
+	}
 	return mhn.monthsWide[month]
 }
 
@@ -114,6 +123,9 @@ func (mhn *mhn_IT) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (mhn *mhn_IT) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(mhn.daysAbbreviated) == 0 {
+		return ""
+	}
 	return mhn.daysAbbreviated[weekday]
 }
 
@@ -124,6 +136,9 @@ func (mhn *mhn_IT) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (mhn *mhn_IT) WeekdayNarrow(weekday time.Weekday) string {
+	if len(mhn.daysNarrow) == 0 {
+		return ""
+	}
 	return mhn.daysNarrow[weekday]
 }
 
@@ -134,6 +149,9 @@ func (mhn *mhn_IT) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (mhn *mhn_IT) WeekdayShort(weekday time.Weekday) string {
+	if len(mhn.daysShort) == 0 {
+		return ""
+	}
 	return mhn.daysShort[weekday]
 }
 
@@ -144,6 +162,9 @@ func (mhn *mhn_IT) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (mhn *mhn_IT) WeekdayWide(weekday time.Weekday) string {
+	if len(mhn.daysWide) == 0 {
+		return ""
+	}
 	return mhn.daysWide[weekday]
 }
 

@@ -85,6 +85,9 @@ func (mic *mic_CA) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (mic *mic_CA) MonthAbbreviated(month time.Month) string {
+	if len(mic.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return mic.monthsAbbreviated[month]
 }
 
@@ -95,6 +98,9 @@ func (mic *mic_CA) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (mic *mic_CA) MonthNarrow(month time.Month) string {
+	if len(mic.monthsNarrow) == 0 {
+		return ""
+	}
 	return mic.monthsNarrow[month]
 }
 
@@ -105,6 +111,9 @@ func (mic *mic_CA) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (mic *mic_CA) MonthWide(month time.Month) string {
+	if len(mic.monthsWide) == 0 {
+		return ""
+	}
 	return mic.monthsWide[month]
 }
 
@@ -115,6 +124,9 @@ func (mic *mic_CA) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (mic *mic_CA) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(mic.daysAbbreviated) == 0 {
+		return ""
+	}
 	return mic.daysAbbreviated[weekday]
 }
 
@@ -125,6 +137,9 @@ func (mic *mic_CA) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (mic *mic_CA) WeekdayNarrow(weekday time.Weekday) string {
+	if len(mic.daysNarrow) == 0 {
+		return ""
+	}
 	return mic.daysNarrow[weekday]
 }
 
@@ -135,6 +150,9 @@ func (mic *mic_CA) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (mic *mic_CA) WeekdayShort(weekday time.Weekday) string {
+	if len(mic.daysShort) == 0 {
+		return ""
+	}
 	return mic.daysShort[weekday]
 }
 
@@ -145,6 +163,9 @@ func (mic *mic_CA) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (mic *mic_CA) WeekdayWide(weekday time.Weekday) string {
+	if len(mic.daysWide) == 0 {
+		return ""
+	}
 	return mic.daysWide[weekday]
 }
 

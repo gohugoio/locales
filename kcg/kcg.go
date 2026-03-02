@@ -94,6 +94,9 @@ func (kcg *kcg) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (kcg *kcg) MonthAbbreviated(month time.Month) string {
+	if len(kcg.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return kcg.monthsAbbreviated[month]
 }
 
@@ -104,6 +107,9 @@ func (kcg *kcg) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (kcg *kcg) MonthNarrow(month time.Month) string {
+	if len(kcg.monthsNarrow) == 0 {
+		return ""
+	}
 	return kcg.monthsNarrow[month]
 }
 
@@ -114,6 +120,9 @@ func (kcg *kcg) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (kcg *kcg) MonthWide(month time.Month) string {
+	if len(kcg.monthsWide) == 0 {
+		return ""
+	}
 	return kcg.monthsWide[month]
 }
 
@@ -124,6 +133,9 @@ func (kcg *kcg) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (kcg *kcg) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(kcg.daysAbbreviated) == 0 {
+		return ""
+	}
 	return kcg.daysAbbreviated[weekday]
 }
 
@@ -134,6 +146,9 @@ func (kcg *kcg) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (kcg *kcg) WeekdayNarrow(weekday time.Weekday) string {
+	if len(kcg.daysNarrow) == 0 {
+		return ""
+	}
 	return kcg.daysNarrow[weekday]
 }
 
@@ -144,6 +159,9 @@ func (kcg *kcg) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (kcg *kcg) WeekdayShort(weekday time.Weekday) string {
+	if len(kcg.daysShort) == 0 {
+		return ""
+	}
 	return kcg.daysShort[weekday]
 }
 
@@ -154,6 +172,9 @@ func (kcg *kcg) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (kcg *kcg) WeekdayWide(weekday time.Weekday) string {
+	if len(kcg.daysWide) == 0 {
+		return ""
+	}
 	return kcg.daysWide[weekday]
 }
 

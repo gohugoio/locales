@@ -94,6 +94,9 @@ func (dv *dv_MV) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (dv *dv_MV) MonthAbbreviated(month time.Month) string {
+	if len(dv.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return dv.monthsAbbreviated[month]
 }
 
@@ -104,6 +107,9 @@ func (dv *dv_MV) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (dv *dv_MV) MonthNarrow(month time.Month) string {
+	if len(dv.monthsNarrow) == 0 {
+		return ""
+	}
 	return dv.monthsNarrow[month]
 }
 
@@ -114,6 +120,9 @@ func (dv *dv_MV) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (dv *dv_MV) MonthWide(month time.Month) string {
+	if len(dv.monthsWide) == 0 {
+		return ""
+	}
 	return dv.monthsWide[month]
 }
 
@@ -124,6 +133,9 @@ func (dv *dv_MV) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (dv *dv_MV) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(dv.daysAbbreviated) == 0 {
+		return ""
+	}
 	return dv.daysAbbreviated[weekday]
 }
 
@@ -134,6 +146,9 @@ func (dv *dv_MV) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (dv *dv_MV) WeekdayNarrow(weekday time.Weekday) string {
+	if len(dv.daysNarrow) == 0 {
+		return ""
+	}
 	return dv.daysNarrow[weekday]
 }
 
@@ -144,6 +159,9 @@ func (dv *dv_MV) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (dv *dv_MV) WeekdayShort(weekday time.Weekday) string {
+	if len(dv.daysShort) == 0 {
+		return ""
+	}
 	return dv.daysShort[weekday]
 }
 
@@ -154,6 +172,9 @@ func (dv *dv_MV) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (dv *dv_MV) WeekdayWide(weekday time.Weekday) string {
+	if len(dv.daysWide) == 0 {
+		return ""
+	}
 	return dv.daysWide[weekday]
 }
 

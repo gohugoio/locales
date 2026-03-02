@@ -84,6 +84,9 @@ func (cho *cho_US) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (cho *cho_US) MonthAbbreviated(month time.Month) string {
+	if len(cho.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return cho.monthsAbbreviated[month]
 }
 
@@ -94,6 +97,9 @@ func (cho *cho_US) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (cho *cho_US) MonthNarrow(month time.Month) string {
+	if len(cho.monthsNarrow) == 0 {
+		return ""
+	}
 	return cho.monthsNarrow[month]
 }
 
@@ -104,6 +110,9 @@ func (cho *cho_US) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (cho *cho_US) MonthWide(month time.Month) string {
+	if len(cho.monthsWide) == 0 {
+		return ""
+	}
 	return cho.monthsWide[month]
 }
 
@@ -114,6 +123,9 @@ func (cho *cho_US) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (cho *cho_US) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(cho.daysAbbreviated) == 0 {
+		return ""
+	}
 	return cho.daysAbbreviated[weekday]
 }
 
@@ -124,6 +136,9 @@ func (cho *cho_US) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (cho *cho_US) WeekdayNarrow(weekday time.Weekday) string {
+	if len(cho.daysNarrow) == 0 {
+		return ""
+	}
 	return cho.daysNarrow[weekday]
 }
 
@@ -134,6 +149,9 @@ func (cho *cho_US) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (cho *cho_US) WeekdayShort(weekday time.Weekday) string {
+	if len(cho.daysShort) == 0 {
+		return ""
+	}
 	return cho.daysShort[weekday]
 }
 
@@ -144,6 +162,9 @@ func (cho *cho_US) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (cho *cho_US) WeekdayWide(weekday time.Weekday) string {
+	if len(cho.daysWide) == 0 {
+		return ""
+	}
 	return cho.daysWide[weekday]
 }
 

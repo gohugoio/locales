@@ -93,6 +93,9 @@ func (tpi *tpi) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (tpi *tpi) MonthAbbreviated(month time.Month) string {
+	if len(tpi.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return tpi.monthsAbbreviated[month]
 }
 
@@ -103,6 +106,9 @@ func (tpi *tpi) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (tpi *tpi) MonthNarrow(month time.Month) string {
+	if len(tpi.monthsNarrow) == 0 {
+		return ""
+	}
 	return tpi.monthsNarrow[month]
 }
 
@@ -113,6 +119,9 @@ func (tpi *tpi) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (tpi *tpi) MonthWide(month time.Month) string {
+	if len(tpi.monthsWide) == 0 {
+		return ""
+	}
 	return tpi.monthsWide[month]
 }
 
@@ -123,6 +132,9 @@ func (tpi *tpi) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (tpi *tpi) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(tpi.daysAbbreviated) == 0 {
+		return ""
+	}
 	return tpi.daysAbbreviated[weekday]
 }
 
@@ -133,6 +145,9 @@ func (tpi *tpi) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (tpi *tpi) WeekdayNarrow(weekday time.Weekday) string {
+	if len(tpi.daysNarrow) == 0 {
+		return ""
+	}
 	return tpi.daysNarrow[weekday]
 }
 
@@ -143,6 +158,9 @@ func (tpi *tpi) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (tpi *tpi) WeekdayShort(weekday time.Weekday) string {
+	if len(tpi.daysShort) == 0 {
+		return ""
+	}
 	return tpi.daysShort[weekday]
 }
 
@@ -153,6 +171,9 @@ func (tpi *tpi) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (tpi *tpi) WeekdayWide(weekday time.Weekday) string {
+	if len(tpi.daysWide) == 0 {
+		return ""
+	}
 	return tpi.daysWide[weekday]
 }
 

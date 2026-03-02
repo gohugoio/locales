@@ -94,6 +94,9 @@ func (guz *guz_KE) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (guz *guz_KE) MonthAbbreviated(month time.Month) string {
+	if len(guz.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return guz.monthsAbbreviated[month]
 }
 
@@ -104,6 +107,9 @@ func (guz *guz_KE) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (guz *guz_KE) MonthNarrow(month time.Month) string {
+	if len(guz.monthsNarrow) == 0 {
+		return ""
+	}
 	return guz.monthsNarrow[month]
 }
 
@@ -114,6 +120,9 @@ func (guz *guz_KE) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (guz *guz_KE) MonthWide(month time.Month) string {
+	if len(guz.monthsWide) == 0 {
+		return ""
+	}
 	return guz.monthsWide[month]
 }
 
@@ -124,6 +133,9 @@ func (guz *guz_KE) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (guz *guz_KE) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(guz.daysAbbreviated) == 0 {
+		return ""
+	}
 	return guz.daysAbbreviated[weekday]
 }
 
@@ -134,6 +146,9 @@ func (guz *guz_KE) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (guz *guz_KE) WeekdayNarrow(weekday time.Weekday) string {
+	if len(guz.daysNarrow) == 0 {
+		return ""
+	}
 	return guz.daysNarrow[weekday]
 }
 
@@ -144,6 +159,9 @@ func (guz *guz_KE) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (guz *guz_KE) WeekdayShort(weekday time.Weekday) string {
+	if len(guz.daysShort) == 0 {
+		return ""
+	}
 	return guz.daysShort[weekday]
 }
 
@@ -154,6 +172,9 @@ func (guz *guz_KE) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (guz *guz_KE) WeekdayWide(weekday time.Weekday) string {
+	if len(guz.daysWide) == 0 {
+		return ""
+	}
 	return guz.daysWide[weekday]
 }
 

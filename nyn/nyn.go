@@ -96,6 +96,9 @@ func (nyn *nyn) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (nyn *nyn) MonthAbbreviated(month time.Month) string {
+	if len(nyn.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return nyn.monthsAbbreviated[month]
 }
 
@@ -106,6 +109,9 @@ func (nyn *nyn) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (nyn *nyn) MonthNarrow(month time.Month) string {
+	if len(nyn.monthsNarrow) == 0 {
+		return ""
+	}
 	return nyn.monthsNarrow[month]
 }
 
@@ -116,6 +122,9 @@ func (nyn *nyn) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (nyn *nyn) MonthWide(month time.Month) string {
+	if len(nyn.monthsWide) == 0 {
+		return ""
+	}
 	return nyn.monthsWide[month]
 }
 
@@ -126,6 +135,9 @@ func (nyn *nyn) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (nyn *nyn) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(nyn.daysAbbreviated) == 0 {
+		return ""
+	}
 	return nyn.daysAbbreviated[weekday]
 }
 
@@ -136,6 +148,9 @@ func (nyn *nyn) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (nyn *nyn) WeekdayNarrow(weekday time.Weekday) string {
+	if len(nyn.daysNarrow) == 0 {
+		return ""
+	}
 	return nyn.daysNarrow[weekday]
 }
 
@@ -146,6 +161,9 @@ func (nyn *nyn) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (nyn *nyn) WeekdayShort(weekday time.Weekday) string {
+	if len(nyn.daysShort) == 0 {
+		return ""
+	}
 	return nyn.daysShort[weekday]
 }
 
@@ -156,6 +174,9 @@ func (nyn *nyn) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (nyn *nyn) WeekdayWide(weekday time.Weekday) string {
+	if len(nyn.daysWide) == 0 {
+		return ""
+	}
 	return nyn.daysWide[weekday]
 }
 

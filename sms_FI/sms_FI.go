@@ -92,6 +92,9 @@ func (sms *sms_FI) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (sms *sms_FI) MonthAbbreviated(month time.Month) string {
+	if len(sms.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return sms.monthsAbbreviated[month]
 }
 
@@ -102,6 +105,9 @@ func (sms *sms_FI) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (sms *sms_FI) MonthNarrow(month time.Month) string {
+	if len(sms.monthsNarrow) == 0 {
+		return ""
+	}
 	return sms.monthsNarrow[month]
 }
 
@@ -112,6 +118,9 @@ func (sms *sms_FI) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (sms *sms_FI) MonthWide(month time.Month) string {
+	if len(sms.monthsWide) == 0 {
+		return ""
+	}
 	return sms.monthsWide[month]
 }
 
@@ -122,6 +131,9 @@ func (sms *sms_FI) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (sms *sms_FI) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(sms.daysAbbreviated) == 0 {
+		return ""
+	}
 	return sms.daysAbbreviated[weekday]
 }
 
@@ -132,6 +144,9 @@ func (sms *sms_FI) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (sms *sms_FI) WeekdayNarrow(weekday time.Weekday) string {
+	if len(sms.daysNarrow) == 0 {
+		return ""
+	}
 	return sms.daysNarrow[weekday]
 }
 
@@ -142,6 +157,9 @@ func (sms *sms_FI) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (sms *sms_FI) WeekdayShort(weekday time.Weekday) string {
+	if len(sms.daysShort) == 0 {
+		return ""
+	}
 	return sms.daysShort[weekday]
 }
 
@@ -152,6 +170,9 @@ func (sms *sms_FI) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (sms *sms_FI) WeekdayWide(weekday time.Weekday) string {
+	if len(sms.daysWide) == 0 {
+		return ""
+	}
 	return sms.daysWide[weekday]
 }
 
