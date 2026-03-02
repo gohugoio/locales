@@ -18,12 +18,12 @@ type wo_SN struct {
 	group                  string
 	minus                  string
 	percent                string
-	perMille               string
 	timeSeparator          string
-	inifinity              string
 	currencies             []string // idx = enum of currency code
 	currencyPositivePrefix string
+	currencyPositiveSuffix string
 	currencyNegativePrefix string
+	currencyNegativeSuffix string
 	monthsAbbreviated      []string
 	monthsNarrow           []string
 	monthsWide             []string
@@ -31,13 +31,6 @@ type wo_SN struct {
 	daysNarrow             []string
 	daysShort              []string
 	daysWide               []string
-	periodsAbbreviated     []string
-	periodsNarrow          []string
-	periodsShort           []string
-	periodsWide            []string
-	erasAbbreviated        []string
-	erasNarrow             []string
-	erasWide               []string
 	timezones              map[string]string
 }
 
@@ -52,26 +45,18 @@ func New() locales.Translator {
 		group:                  ".",
 		minus:                  "-",
 		percent:                "%",
-		perMille:               "‰",
 		timeSeparator:          ":",
-		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		currencyPositivePrefix: " ",
-		currencyNegativePrefix: " ",
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		currencyPositivePrefix: " ",
+		currencyPositiveSuffix: "K",
+		currencyNegativePrefix: " ",
+		currencyNegativeSuffix: "K",
 		monthsAbbreviated:      []string{"", "Sam", "Few", "Mar", "Awr", "Mee", "Suw", "Sul", "Ut", "Sàt", "Okt", "Now", "Des"},
-		monthsNarrow:           []string{"", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"},
 		monthsWide:             []string{"", "Samwiyee", "Fewriyee", "Mars", "Awril", "Mee", "Suwe", "Sulet", "Ut", "Sàttumbar", "Oktoobar", "Nowàmbar", "Desàmbar"},
 		daysAbbreviated:        []string{"Dib", "Alt", "Tal", "Àla", "Alx", "Àjj", "Ase"},
 		daysNarrow:             []string{"Dib", "Alt", "Tal", "Àla", "Alx", "Àjj", "Ase"},
-		daysShort:              []string{"Dib", "Alt", "Tal", "Àla", "Alx", "Àjj", "Ase"},
 		daysWide:               []string{"Dibéer", "Altine", "Talaata", "Àlarba", "Alxamis", "Àjjuma", "Aseer"},
-		periodsAbbreviated:     []string{"Sub", "Ngo"},
-		periodsNarrow:          []string{"Sub", "Ngo"},
-		periodsWide:            []string{"Sub", "Ngo"},
-		erasAbbreviated:        []string{"JC", "AD"},
-		erasNarrow:             []string{"", ""},
-		erasWide:               []string{"av. JC", "AD"},
-		timezones:              map[string]string{"ACDT": "ACDT", "ACST": "ACST", "ACWDT": "ACWDT", "ACWST": "ACWST", "ADT": "ADT (waxtu bëccëgu atlàntik)", "AEDT": "AEDT", "AEST": "AEST", "AKDT": "AKDT", "AKST": "AKST", "ARST": "ARST", "ART": "ART", "AST": "AST (waxtu estàndaaru penku)", "AWDT": "AWDT", "AWST": "AWST", "BOT": "BOT", "BT": "BT", "CAT": "CAT", "CDT": "CDT (waxtu bëccëgu sàntaraal", "CHADT": "CHADT", "CHAST": "CHAST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "CST (waxtu estàndaaru sàntaraal)", "ChST": "ChST", "EAT": "EAT", "ECT": "ECT", "EDT": "EDT (waxtu bëccëgu penku)", "EST": "EST (waxtu estàndaaru penku)", "GFT": "GFT", "GMT": "GMT (waxtu Greenwich)", "GST": "GST", "GYT": "GYT", "HADT": "HADT", "HAST": "HAST", "HAT": "HAT", "HECU": "HECU", "HEEG": "HEEG", "HENOMX": "HENOMX", "HEOG": "HEOG", "HEPM": "HEPM", "HEPMX": "HEPMX", "HKST": "HKST", "HKT": "HKT", "HNCU": "HNCU", "HNEG": "HNEG", "HNNOMX": "HNNOMX", "HNOG": "HNOG", "HNPM": "HNPM", "HNPMX": "HNPMX", "HNT": "HNT", "IST": "IST", "JDT": "JDT", "JST": "JST", "LHDT": "LHDT", "LHST": "LHST", "MDT": "MDT (waxtu bëccëgu tundu)", "MESZ": "CEST (waxtu ete wu ëroop sàntaraal)", "MEZ": "CEST (waxtu estàndaaru ëroop sàntaraal)", "MST": "MST (waxtu estàndaaru tundu)", "MYT": "MYT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "EEST (waxtu ete wu ëroop u penku)", "OEZ": "EEST (waxtu estàndaaru ëroop u penku)", "PDT": "PDT (waxtu bëccëgu pasifik)", "PST": "PST (waxtu estàndaaru pasifik)", "SAST": "SAST", "SGT": "SGT", "SRT": "SRT", "TMST": "TMST", "TMT": "TMT", "UYST": "UYST", "UYT": "UYT", "VET": "VET", "WARST": "WARST", "WART": "WART", "WAST": "WAST", "WAT": "WAT", "WESZ": "WEST (waxtu ete wu ëroop u sowwu-jant)", "WEZ": "WEST (waxtu estàndaaru ëroop u sowwu-jant)", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "∅∅∅": "∅∅∅"},
+		timezones:              map[string]string{"ACDT": "Waxtu bëccëg ci diggu Australie", "ACST": "Waxtu buñ miin ci Australie", "ACT": "ACT", "ACWDT": "Waxtu bëccëg ci diggu sowwu Australie", "ACWST": "Waxtu buñ miin ci diggu sowwu Australie", "ADT": "ADT (waxtu bëccëgu atlàntik)", "ADT Arabia": "Waxtu bëccëg ci Araab", "AEDT": "Waxtu buñ miin ci penku Australie", "AEST": "Waxtu penku bu Australie", "AFT": "waxtu Afganistan", "AKDT": "Waxtu bëccëg ci Alaska", "AKST": "Waxtu buñ miin ci Alaska", "AMST": "Waxtu ete bu Amazon", "AMST Armenia": "Waxtu ete bu Armeni", "AMT": "Waxtu buñ jagleel Amazon", "AMT Armenia": "Waxtu buñ miin ci Armeni", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "Waxtu ete bu Argentine", "ART": "Waxtu buñ miin ci Arsantiin", "AST": "AST (waxtu estàndaaru penku)", "AST Arabia": "Waxtu buñ miin ci Araab", "AWDT": "Waxtu bëccëg bu sowwu Australie", "AWST": "Waxtu buñ miin ci sowwu Australie", "AZST": "Waxtu ete bu Azerbaïdjan", "AZT": "Waxtu Azerbaïdjan", "BDT Bangladesh": "Waxtu ete bu Bangladesh", "BNT": "Brunei Darussalam", "BOT": "Waxtu Bolivie", "BRST": "Brasilia summer time", "BRT": "Brasilia time", "BST Bangladesh": "Waxtu buñ miin ci Bangladesh", "BT": "waxtu Bhoutan", "CAST": "CAST", "CAT": "Waxtu Afrique Centrale", "CCT": "Waxtu ile Cocos", "CDT": "CDT (waxtu bëccëgu sàntaraal", "CHADT": "Chatham Daylight Time", "CHAST": "Chatham Standard Time", "CHUT": "Waxtu Chuuk", "CKT": "Waxtu buñ miin ci Ile Cook", "CKT DST": "Ile Cook xaaju ete", "CLST": "Waxtu ete bu Sili", "CLT": "Waxtu buñ miin ci Sili", "COST": "Jamonoy ete ci Kolombi", "COT": "Waxtu buñ miin ci Kolombi", "CST": "CST (waxtu estàndaaru sàntaraal)", "CST China": "Waxtu buñ miin ci Chine", "CST China DST": "Chine waxtu bëccëg", "CVST": "Cape Verde ci jamonoy ete", "CVT": "Cape Verde waxtu", "CXT": "waxtu ile bu noel", "ChST": "Chamorro Standard Time", "ChST NMI": "ChST NMI", "CuDT": "Cuba waxtu bëccëg", "CuST": "waxtu buñ miin ci Cuba", "DAVT": "Waxtu Davis", "DDUT": "Dumont-d’Urville", "EASST": "Jamonoy ete ci Ile de Pâques", "EAST": "Waxtu buñ miin ci Ile de Pâques", "EAT": "Waxtu Afrique sowwu jant", "ECT": "waxtu Ecuador", "EDT": "EDT (waxtu bëccëgu penku)", "EGDT": "Waxtu ete bu penku Greenland", "EGST": "Waxtu buñ miin ci penku Greenland", "EST": "EST (waxtu estàndaaru penku)", "FEET": "waxtu penku Europe", "FJT": "Fidji", "FJT Summer": "Jamonoy ete ci Fiji", "FKST": "Jamonoy ete ci ile Falkland", "FKT": "Falkland waxtu buñ miin", "FNST": "Fernando de noronha temps d’été", "FNT": "Vernando de Noronha", "GALT": "waxtu galapagos", "GAMT": "Waxtu Gambier", "GEST": "Georgie waxtu ete", "GET": "Georgie waxtu", "GFT": "Guyane française", "GIT": "waxtu ile Gilbert", "GMT": "GMT (waxtu Greenwich)", "GNSST": "GNSST", "GNST": "GNST", "GST": "Georgie du Sud", "GST Guam": "GST Guam", "GYT": "Waxtu Guyana", "HADT": "Waxtu bëccëg bu Hawaii-Aleutian", "HAST": "Waxtu buñ jagleel Hawaii-Aleutian", "HKST": "Jamonoy ete ci Hong Kong", "HKT": "waxtu buñ miin ci Hong Kong", "HOVST": "Hovd waxtu ete", "HOVT": "Hovd waxtu standard", "ICT": "waxtu Indochine", "IDT": "Israel waxtu bëccëg", "IOT": "Waxtu géeju Inde", "IRKST": "Waxtu ete bu Irkutsk", "IRKT": "waxtu Irkutsk time", "IRST": "Iran waxtu buñ miin", "IRST DST": "Waxtu bëccëg ci Iran", "IST": "Waxtu Inde", "IST Israel": "Waxtu buñ miin ci Israel", "JDT": "Japon waxtu bëccëg", "JST": "Waxtu japon", "KOST": "Waxtu Kosrae", "KRAST": "Krasnoyarsk ci jamonoy ete", "KRAT": "Krasnoyarsk waxtu", "KST": "waxtu buñ miin ci Kore", "KST DST": "waxtu bëccëg ci Kore", "LHDT": "ord Howe Daylight Time", "LHST": "Lord Howe waxtu buñ miin", "LINT": "Waxtu Ile Line", "MAGST": "Waxtu ete bu Magadan", "MAGT": "Magadan, waxtu", "MART": "Waxtu Marquesas", "MAWT": "waxtu Mawson", "MDT": "MDT", "MESZ": "CEST (waxtu ete wu ëroop sàntaraal)", "MEZ": "CEST (waxtu estàndaaru ëroop sàntaraal)", "MHT": "Waxtu Ile Marshall", "MMT": "waxtu Myanmar", "MSD": "Waxtu ete bu Moscou", "MST": "MST", "MUST": "Waxtu ete bu Maurice", "MUT": "Waxtu buñ miin ci Maurice", "MVT": "Waxtu Maldives", "MYT": "Malaysie", "NCT": "Waxtu buñ miin ci Caledonie bu bees", "NDT": "Terre-Neuve", "NDT New Caledonia": "Waxtu ete bu Nouvelle Caledonie", "NFDT": "waxtu bëccëg ci ile Norfolk", "NFT": "Waxtu buñ miin ci Ile Norfolk", "NOVST": "Novosibirsk ci jamonoy ete", "NOVT": "Novosibirsk waxtu", "NPT": "waxtu Nepal", "NRT": "waxtu Nauru", "NST": "Terre Neuve", "NUT": "Waxtu Niue", "NZDT": "Nouvelle-Zélande", "NZST": "Waxtu buñ miin ci Nouvelle-Zélande", "OESZ": "EEST (waxtu ete wu ëroop u penku)", "OEZ": "EEST (waxtu estàndaaru ëroop u penku)", "OMSST": "Omsk waxtu ete", "OMST": "Waxtu buñ miin ci Omsk", "PDT": "PDT (waxtu bëccëgu pasifik)", "PDTM": "Waxtu bëccëg ci Pacific Mexique", "PETDT": "PETDT", "PETST": "PETST", "PGT": "Papouasie-Nouvelle-Guiné", "PHOT": "waxtu ile Phoenix", "PKT": "Waxtu buñ miin ci Pakistan", "PKT DST": "Waxtu ete bu Pakistan", "PMDT": "Saint Pierre and Miquelon", "PMST": "Saint Pierre & Miquelon", "PONT": "Waxtu Ponape", "PST": "PST (waxtu estàndaaru pasifik)", "PST Philippine": "waxtu buñ miin ci filipiin", "PST Philippine DST": "Jamonoy ete ci Philippines", "PST Pitcairn": "Waxtu Pitcairn", "PSTM": "Waxtu buñ miin ci pasifik bu Mexico", "PWT": "waxtu Palau", "PYST": "Paraguay waxtu ete", "PYT": "paraguay waxtu", "PYT Korea": "waxtu Pyongyang", "RET": "waxtu ndaje", "ROTT": "Waxtu Rotera", "SAKST": "Sakhalin Sakhalin", "SAKT": "Saxalin", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "Afrique du Sud", "SBT": "Waxtu Ile Solomon", "SCT": "Waxtu Seychelles", "SGT": "waxtu buñ miin ci Singapuur", "SLST": "SLST", "SRT": "Waxtu Surinam", "SST Samoa": "Samoa Standard Time", "SST Samoa Apia": "Waxtu buñ miin ci Apia", "SST Samoa Apia DST": "Apia waxtu bëccëg", "SST Samoa DST": "Samoa waxtu bëccëg", "SYOT": "waxtu syowa", "TAAF": "Waxtu Sud ak Antarctique bu Français", "TAHT": "waxtu Tahiti", "TJT": "Waxtu Tajikistaan", "TKT": "Tokelau time", "TLT": "Timor oriental", "TMST": "Waxtu ete bu Turkmenistan", "TMT": "Waxtu buñ miin", "TOST": "Jamonoy ete ci Tonga", "TOT": "Tonga waxtu buñ miin", "TVT": "Waxtu Tuvalu", "TWT": "Waxtu buñ miin ci Taipei", "TWT DST": "Taipei waxtu leeralu bis", "ULAST": "Ulaan Baatar time", "ULAT": "Ulaanbatar", "UYST": "Uruguay waxtu ete", "UYT": "Uruguay waxtu buñ miin", "UZT": "Waxtu buñ miin ci Ouzbékistan", "UZT DST": "Waxtu ete bu Ouzbékistan", "VET": "Waxtu Venezuela", "VLAST": "Vladivostok ci jamonoy ete", "VLAT": "Vladivostok ci waxtu", "VOLST": "Jamonoy ete bu Volgograd", "VOLT": "Volgograd waxtu buñ miin", "VOST": "Waxtu Vostok", "VUT": "Waxtu miin", "VUT DST": "Waxtu ete bu Vanuatu", "WAKT": "Waxtu Ile Wake", "WARST": "waxtu ete bu sowwu Argentine", "WART": "Waxtu buñ miin ci sowwu Argentine", "WAST": "Waxtu sowwu Afrique", "WAT": "Waxtu sowwu Afrique", "WESZ": "WEST (waxtu ete wu ëroop u sowwu-jant)", "WEZ": "WEST (waxtu estàndaaru ëroop u sowwu-jant)", "WFT": "Wallis & Futuna Time", "WGST": "waxtu ete bu sowwu Groenland", "WGT": "waxtu buñ miin ci sowwu Groenland", "WIB": "waxtu sowwu Enndonesi", "WIT": "waxtu penku Enndonesi", "WITA": "Waxtu Enndonesi bu diggi bi", "YAKST": "Waxtu ete bu Yakutsk", "YAKT": "Waxtu Yakutsk", "YEKST": "Jamonoy ete", "YEKT": "Yekatérinbourg", "YST": "Waxtu Yukon", "МСК": "Moscow Waxtu", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "Kazakhstan bu sowwu jant", "شىعىش قازاق ەلى": "Kazakhstan penku", "قازاق ەلى": "Waxtu Kazakhstaan", "قىرعىزستان": "Waxtu Kirgistan", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Azores waxtu ete"},
 	}
 }
 
@@ -127,7 +112,7 @@ func (wo *wo_SN) MonthNarrow(month time.Month) string {
 
 // MonthsNarrow returns the locales narrow months
 func (wo *wo_SN) MonthsNarrow() []string {
-	return wo.monthsNarrow[1:]
+	return nil
 }
 
 // MonthWide returns the locales wide month given the 'month' provided
@@ -197,7 +182,6 @@ func (wo *wo_SN) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'wo_SN' and handles both Whole and Real numbers based on 'v'
 func (wo *wo_SN) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -269,29 +253,17 @@ func (wo *wo_SN) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'wo_SN'
 func (wo *wo_SN) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := wo.currencies[currency]
-	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
-	count := 0
-	inWhole := v == 0
+	l := len(s) + len(symbol) + 5
+
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
 			b = append(b, wo.decimal[0])
-			inWhole = true
 			continue
-		}
-
-		if inWhole {
-			if count == 3 {
-				b = append(b, wo.group[0])
-				count = 1
-			} else {
-				count++
-			}
 		}
 
 		b = append(b, s[i])
@@ -314,16 +286,7 @@ func (wo *wo_SN) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 		b[i], b[j] = b[j], b[i]
 	}
 
-	if int(v) < 2 {
-
-		if v == 0 {
-			b = append(b, wo.decimal...)
-		}
-
-		for i := 0; i < 2-int(v); i++ {
-			b = append(b, '0')
-		}
-	}
+	b = append(b, wo.currencyPositiveSuffix...)
 
 	return string(b)
 }
@@ -331,29 +294,17 @@ func (wo *wo_SN) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'wo_SN'
 // in accounting notation.
 func (wo *wo_SN) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := wo.currencies[currency]
-	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
-	count := 0
-	inWhole := v == 0
+	l := len(s) + len(symbol) + 5
+
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
 			b = append(b, wo.decimal[0])
-			inWhole = true
 			continue
-		}
-
-		if inWhole {
-			if count == 3 {
-				b = append(b, wo.group[0])
-				count = 1
-			} else {
-				count++
-			}
 		}
 
 		b = append(b, s[i])
@@ -388,15 +339,10 @@ func (wo *wo_SN) FmtAccounting(num float64, v uint64, currency currency.Type) st
 		b[i], b[j] = b[j], b[i]
 	}
 
-	if int(v) < 2 {
-
-		if v == 0 {
-			b = append(b, wo.decimal...)
-		}
-
-		for i := 0; i < 2-int(v); i++ {
-			b = append(b, '0')
-		}
+	if num < 0 {
+		b = append(b, wo.currencyNegativeSuffix...)
+	} else {
+		b = append(b, wo.currencyPositiveSuffix...)
 	}
 
 	return string(b)
@@ -404,7 +350,6 @@ func (wo *wo_SN) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 // FmtDateShort returns the short date representation of 't' for 'wo_SN'
 func (wo *wo_SN) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -433,7 +378,6 @@ func (wo *wo_SN) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'wo_SN'
 func (wo *wo_SN) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -452,7 +396,6 @@ func (wo *wo_SN) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'wo_SN'
 func (wo *wo_SN) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -471,7 +414,6 @@ func (wo *wo_SN) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'wo_SN'
 func (wo *wo_SN) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, wo.daysWide[t.Weekday()]...)
@@ -492,7 +434,6 @@ func (wo *wo_SN) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'wo_SN'
 func (wo *wo_SN) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -513,7 +454,6 @@ func (wo *wo_SN) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'wo_SN'
 func (wo *wo_SN) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -541,7 +481,6 @@ func (wo *wo_SN) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'wo_SN'
 func (wo *wo_SN) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -573,7 +512,6 @@ func (wo *wo_SN) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'wo_SN'
 func (wo *wo_SN) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

@@ -18,11 +18,11 @@ type he_IL struct {
 	group                  string
 	minus                  string
 	percent                string
-	perMille               string
 	timeSeparator          string
-	inifinity              string
 	currencies             []string // idx = enum of currency code
+	currencyPositivePrefix string
 	currencyPositiveSuffix string
+	currencyNegativePrefix string
 	currencyNegativeSuffix string
 	monthsAbbreviated      []string
 	monthsNarrow           []string
@@ -31,13 +31,6 @@ type he_IL struct {
 	daysNarrow             []string
 	daysShort              []string
 	daysWide               []string
-	periodsAbbreviated     []string
-	periodsNarrow          []string
-	periodsShort           []string
-	periodsWide            []string
-	erasAbbreviated        []string
-	erasNarrow             []string
-	erasWide               []string
 	timezones              map[string]string
 }
 
@@ -45,33 +38,26 @@ type he_IL struct {
 func New() locales.Translator {
 	return &he_IL{
 		locale:                 "he_IL",
-		pluralsCardinal:        []locales.PluralRule{2, 3, 5, 6},
+		pluralsCardinal:        []locales.PluralRule{2, 3, 6},
 		pluralsOrdinal:         []locales.PluralRule{6},
-		pluralsRange:           []locales.PluralRule{5, 6},
+		pluralsRange:           []locales.PluralRule{6},
 		decimal:                ".",
 		group:                  ",",
-		minus:                  "‎-",
+		minus:                  "\u200e-",
 		percent:                "%",
-		perMille:               "‰",
 		timeSeparator:          ":",
-		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		currencyPositiveSuffix: " ",
-		currencyNegativeSuffix: " ",
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		currencyPositivePrefix: "\u200f",
+		currencyPositiveSuffix: " \u200f",
+		currencyNegativePrefix: "\u200f-",
+		currencyNegativeSuffix: " \u200f",
 		monthsAbbreviated:      []string{"", "ינו׳", "פבר׳", "מרץ", "אפר׳", "מאי", "יוני", "יולי", "אוג׳", "ספט׳", "אוק׳", "נוב׳", "דצמ׳"},
-		monthsNarrow:           []string{"", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"},
 		monthsWide:             []string{"", "ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"},
 		daysAbbreviated:        []string{"יום א׳", "יום ב׳", "יום ג׳", "יום ד׳", "יום ה׳", "יום ו׳", "שבת"},
 		daysNarrow:             []string{"א׳", "ב׳", "ג׳", "ד׳", "ה׳", "ו׳", "ש׳"},
 		daysShort:              []string{"א׳", "ב׳", "ג׳", "ד׳", "ה׳", "ו׳", "ש׳"},
 		daysWide:               []string{"יום ראשון", "יום שני", "יום שלישי", "יום רביעי", "יום חמישי", "יום שישי", "יום שבת"},
-		periodsAbbreviated:     []string{"לפנה״צ", "אחה״צ"},
-		periodsNarrow:          []string{"לפנה״צ", "אחה״צ"},
-		periodsWide:            []string{"לפנה״צ", "אחה״צ"},
-		erasAbbreviated:        []string{"לפנה״ס", "לספירה"},
-		erasNarrow:             []string{"", ""},
-		erasWide:               []string{"לפני הספירה", "לספירה"},
-		timezones:              map[string]string{"ACDT": "שעון מרכז אוסטרליה (קיץ)", "ACST": "שעון מרכז אוסטרליה (חורף)", "ACWDT": "שעון מרכז-מערב אוסטרליה (קיץ)", "ACWST": "שעון מרכז-מערב אוסטרליה (חורף)", "ADT": "שעון האוקיינוס האטלנטי (קיץ)", "AEDT": "שעון מזרח אוסטרליה (קיץ)", "AEST": "שעון מזרח אוסטרליה (חורף)", "AKDT": "שעון אלסקה (קיץ)", "AKST": "שעון אלסקה (חורף)", "ARST": "שעון ארגנטינה (קיץ)", "ART": "שעון ארגנטינה (חורף)", "AST": "שעון האוקיינוס האטלנטי (חורף)", "AWDT": "שעון מערב אוסטרליה (קיץ)", "AWST": "שעון מערב אוסטרליה (חורף)", "BOT": "שעון בוליביה", "BT": "שעון בהוטן", "CAT": "שעון מרכז אפריקה", "CDT": "שעון מרכז ארה״ב (קיץ)", "CHADT": "שעון צ׳טהאם (קיץ)", "CHAST": "שעון צ׳טהאם (חורף)", "CLST": "שעון צ׳ילה (קיץ)", "CLT": "שעון צ׳ילה (חורף)", "COST": "שעון קולומביה (קיץ)", "COT": "שעון קולומביה (חורף)", "CST": "שעון מרכז ארה״ב (חורף)", "ChST": "שעון צ׳אמורו", "EAT": "שעון מזרח אפריקה", "ECT": "שעון אקוודור", "EDT": "שעון החוף המזרחי (קיץ)", "EST": "שעון החוף המזרחי (חורף)", "GFT": "שעון גיאנה הצרפתית", "GMT": "שעון גריניץ׳\u200f", "GST": "שעון מדינות המפרץ", "GYT": "שעון גיאנה", "HADT": "שעון האיים האלאוטיים הוואי (קיץ)", "HAST": "שעון האיים האלאוטיים הוואי (חורף)", "HAT": "שעון ניופאונדלנד (קיץ)", "HECU": "שעון קובה (קיץ)", "HEEG": "שעון מזרח גרינלנד (קיץ)", "HENOMX": "שעון צפון-מערב מקסיקו (קיץ)", "HEOG": "שעון מערב גרינלנד (קיץ)", "HEPM": "שעון סנט פייר ומיקלון (קיץ)", "HEPMX": "שעון מערב מקסיקו (קיץ)", "HKST": "שעון הונג קונג (קיץ)", "HKT": "שעון הונג קונג (חורף)", "HNCU": "שעון קובה (חורף)", "HNEG": "שעון מזרח גרינלנד (חורף)", "HNNOMX": "שעון צפון-מערב מקסיקו (חורף)", "HNOG": "שעון מערב גרינלנד (חורף)", "HNPM": "שעון סנט פייר ומיקלון (חורף)", "HNPMX": "שעון מערב מקסיקו (חורף)", "HNT": "שעון ניופאונדלנד (חורף)", "IST": "שעון הודו", "JDT": "שעון יפן (קיץ)", "JST": "שעון יפן (חורף)", "LHDT": "שעון אי הלורד האו (קיץ)", "LHST": "שעון אי הלורד האו (חורף)", "MDT": "שעון אזור ההרים בארה״ב (קיץ)", "MESZ": "שעון מרכז אירופה (קיץ)", "MEZ": "שעון מרכז אירופה (חורף)", "MST": "שעון אזור ההרים בארה״ב (חורף)", "MYT": "שעון מלזיה", "NZDT": "שעון ניו זילנד (קיץ)", "NZST": "שעון ניו זילנד (חורף)", "OESZ": "שעון מזרח אירופה (קיץ)", "OEZ": "שעון מזרח אירופה (חורף)", "PDT": "שעון מערב ארה״ב (קיץ)", "PST": "שעון מערב ארה״ב (חורף)", "SAST": "שעון דרום אפריקה", "SGT": "שעון סינגפור", "SRT": "שעון סורינאם", "TMST": "שעון טורקמניסטן (קיץ)", "TMT": "שעון טורקמניסטן (חורף)", "UYST": "שעון אורוגוואי (קיץ)", "UYT": "שעון אורוגוואי (חורף)", "VET": "שעון ונצואלה", "WARST": "שעון מערב ארגנטינה (קיץ)", "WART": "שעון מערב ארגנטינה (חורף)", "WAST": "שעון מערב אפריקה (קיץ)", "WAT": "שעון מערב אפריקה (חורף)", "WESZ": "שעון מערב אירופה (קיץ)", "WEZ": "שעון מערב אירופה (חורף)", "WIB": "שעון מערב אינדונזיה", "WIT": "שעון מזרח אינדונזיה", "WITA": "שעון מרכז אינדונזיה", "∅∅∅": "שעון ברזיליה (קיץ)"},
+		timezones:              map[string]string{"ACDT": "שעון מרכז אוסטרליה (קיץ)", "ACST": "ACST", "ACT": "ACT", "ACWDT": "שעון מרכז-מערב אוסטרליה (קיץ)", "ACWST": "שעון מרכז-מערב אוסטרליה (חורף)", "ADT": "שעון האוקיינוס האטלנטי (קיץ)", "ADT Arabia": "שעון חצי האי ערב (קיץ)", "AEDT": "שעון מזרח אוסטרליה (קיץ)", "AEST": "שעון מזרח אוסטרליה (חורף)", "AFT": "שעון אפגניסטן", "AKDT": "שעון אלסקה (קיץ)", "AKST": "שעון אלסקה (חורף)", "AMST": "שעון אמזונס (קיץ)", "AMST Armenia": "שעון ארמניה (קיץ)", "AMT": "שעון אמזונס (חורף)", "AMT Armenia": "שעון ארמניה (חורף)", "ANAST": "שעון קיץ אנדיר", "ANAT": "שעון רגיל אנדיר", "ARST": "שעון ארגנטינה (קיץ)", "ART": "שעון ארגנטינה (חורף)", "AST": "שעון האוקיינוס האטלנטי (חורף)", "AST Arabia": "שעון חצי האי ערב (חורף)", "AWDT": "שעון מערב אוסטרליה (קיץ)", "AWST": "שעון מערב אוסטרליה (חורף)", "AZST": "שעון אזרבייג׳ן (קיץ)", "AZT": "שעון אזרבייג׳ן (חורף)", "BDT Bangladesh": "שעון בנגלדש (קיץ)", "BNT": "שעון ברוניי דארוסלאם", "BOT": "שעון בוליביה", "BRST": "שעון ברזיליה (קיץ)", "BRT": "שעון ברזיליה (חורף)", "BST Bangladesh": "שעון בנגלדש (חורף)", "BT": "שעון בהוטן", "CAST": "CAST", "CAT": "שעון מרכז אפריקה", "CCT": "שעון איי קוקוס", "CDT": "שעון מרכז ארה״ב (קיץ)", "CHADT": "שעון צ׳טהאם (קיץ)", "CHAST": "שעון צ׳טהאם (חורף)", "CHUT": "שעון צ׳וק", "CKT": "שעון איי קוק (חורף)", "CKT DST": "שעון איי קוק (מחצית הקיץ)", "CLST": "שעון צ׳ילה (קיץ)", "CLT": "שעון צ׳ילה (חורף)", "COST": "שעון קולומביה (קיץ)", "COT": "שעון קולומביה (חורף)", "CST": "שעון מרכז ארה״ב (חורף)", "CST China": "שעון סין (חורף)", "CST China DST": "שעון סין (קיץ)", "CVST": "שעון כף ורדה (קיץ)", "CVT": "שעון כף ורדה (חורף)", "CXT": "שעון האי כריסטמס", "ChST": "שעון צ׳אמורו", "ChST NMI": "שעון איי מריאנה הצפוניים", "CuDT": "שעון קובה (קיץ)", "CuST": "שעון קובה (חורף)", "DAVT": "שעון דיוויס", "DDUT": "שעון דומון ד׳אורוויל", "EASST": "שעון אי הפסחא (קיץ)", "EAST": "שעון אי הפסחא (חורף)", "EAT": "שעון מזרח אפריקה", "ECT": "שעון אקוודור", "EDT": "שעון החוף המזרחי (קיץ)", "EGDT": "שעון מזרח גרינלנד (קיץ)", "EGST": "שעון מזרח גרינלנד (חורף)", "EST": "שעון החוף המזרחי (חורף)", "FEET": "שעון מינסק", "FJT": "שעון פיג׳י (חורף)", "FJT Summer": "שעון פיג׳י (קיץ)", "FKST": "שעון איי פוקלנד (קיץ)", "FKT": "שעון איי פוקלנד (חורף)", "FNST": "שעון פרננדו די נורוניה (קיץ)", "FNT": "שעון פרננדו די נורוניה (חורף)", "GALT": "שעון איי גלאפגוס", "GAMT": "שעון איי גמבייה", "GEST": "שעון גאורגיה (קיץ)", "GET": "שעון גאורגיה (חורף)", "GFT": "שעון גיאנה הצרפתית", "GIT": "שעון איי גילברט", "GMT": "שעון גריניץ׳\u200f", "GNSST": "GNSST", "GNST": "GNST", "GST": "שעון דרום ג׳ורג׳יה", "GST Guam": "שעון גואם", "GYT": "שעון גיאנה", "HADT": "שעון האיים האלאוטיים הוואי (קיץ)", "HAST": "שעון האיים האלאוטיים הוואי (חורף)", "HKST": "שעון הונג קונג (קיץ)", "HKT": "שעון הונג קונג (חורף)", "HOVST": "שעון חובד (קיץ)", "HOVT": "שעון חובד (חורף)", "ICT": "שעון הודו-סין", "IDT": "שעון ישראל (קיץ)", "IOT": "שעון האוקיינוס ההודי", "IRKST": "שעון אירקוסטק (קיץ)", "IRKT": "שעון אירקוטסק (חורף)", "IRST": "שעון איראן (חורף)", "IRST DST": "שעון איראן (קיץ)", "IST": "שעון הודו", "IST Israel": "שעון ישראל (חורף)", "JDT": "שעון יפן (קיץ)", "JST": "שעון יפן (חורף)", "KOST": "שעון קוסראה", "KRAST": "שעון קרסנויארסק (קיץ)", "KRAT": "שעון קרסנויארסק (חורף)", "KST": "שעון קוריאה (חורף)", "KST DST": "שעון קוריאה (קיץ)", "LHDT": "שעון אי הלורד האו (קיץ)", "LHST": "שעון אי הלורד האו (חורף)", "LINT": "שעון איי ליין", "MAGST": "שעון מגדן (קיץ)", "MAGT": "שעון מגדן (חורף)", "MART": "שעון איי מרקיז", "MAWT": "שעון מאוסון", "MDT": "שעון אזור ההרים בארה״ב (קיץ)", "MESZ": "שעון מרכז אירופה (קיץ)", "MEZ": "שעון מרכז אירופה (חורף)", "MHT": "שעון איי מרשל", "MMT": "שעון מיאנמר", "MSD": "שעון מוסקבה (קיץ)", "MST": "שעון אזור ההרים בארה״ב (חורף)", "MUST": "שעון מאוריציוס (קיץ)", "MUT": "שעון מאוריציוס (חורף)", "MVT": "שעון האיים המלדיביים", "MYT": "שעון מלזיה", "NCT": "שעון קלדוניה החדשה (חורף)", "NDT": "שעון ניופאונדלנד (קיץ)", "NDT New Caledonia": "שעון קלדוניה החדשה (קיץ)", "NFDT": "שעון האי נורפוק (קיץ)", "NFT": "שעון האי נורפוק (חורף)", "NOVST": "שעון נובוסיבירסק (קיץ)", "NOVT": "שעון נובוסיבירסק (חורף)", "NPT": "שעון נפאל", "NRT": "שעון נאורו", "NST": "שעון ניופאונדלנד (חורף)", "NUT": "שעון ניואה", "NZDT": "שעון ניו זילנד (קיץ)", "NZST": "שעון ניו זילנד (חורף)", "OESZ": "שעון מזרח אירופה (קיץ)", "OEZ": "שעון מזרח אירופה (חורף)", "OMSST": "שעון אומסק (קיץ)", "OMST": "שעון אומסק (חורף)", "PDT": "שעון מערב ארה״ב (קיץ)", "PDTM": "שעון מערב מקסיקו (קיץ)", "PETDT": "שעון קיץ פטרופבלובסק-קמצ׳טסקי", "PETST": "שעון רגיל פטרופבלובסק-קמצ׳טסקי", "PGT": "שעון פפואה גיניאה החדשה", "PHOT": "שעון איי פיניקס", "PKT": "שעון פקיסטן (חורף)", "PKT DST": "שעון פקיסטן (קיץ)", "PMDT": "שעון סנט פייר ומיקלון (קיץ)", "PMST": "שעון סנט פייר ומיקלון (חורף)", "PONT": "שעון פונאפי", "PST": "שעון מערב ארה״ב (חורף)", "PST Philippine": "שעון הפיליפינים (חורף)", "PST Philippine DST": "שעון הפיליפינים (קיץ)", "PST Pitcairn": "שעון פיטקרן", "PSTM": "שעון מערב מקסיקו (חורף)", "PWT": "שעון פלאו", "PYST": "שעון פרגוואי (קיץ)", "PYT": "שעון פרגוואי (חורף)", "PYT Korea": "שעון פיונגיאנג", "RET": "שעון ראוניון", "ROTT": "שעון רות׳רה", "SAKST": "שעון סחלין (קיץ)", "SAKT": "שעון סחלין (חורף)", "SAMST": "שעון קיץ סמרה", "SAMT": "שעון רגיל סמרה", "SAST": "שעון דרום אפריקה", "SBT": "שעון איי שלמה", "SCT": "שעון איי סיישל", "SGT": "שעון סינגפור", "SLST": "SLST", "SRT": "שעון סורינאם", "SST Samoa": "שעון סמואה (חורף)", "SST Samoa Apia": "שעון אפיה (חורף)", "SST Samoa Apia DST": "שעון אפיה (קיץ)", "SST Samoa DST": "שעון סמואה (קיץ)", "SYOT": "שעון סייווה", "TAAF": "שעון הארצות הדרומיות והאנטארקטיות של צרפת", "TAHT": "שעון טהיטי", "TJT": "שעון טג׳יקיסטן", "TKT": "שעון טוקלאו", "TLT": "שעון מזרח טימור", "TMST": "שעון טורקמניסטן (קיץ)", "TMT": "שעון טורקמניסטן (חורף)", "TOST": "שעון טונגה (קיץ)", "TOT": "שעון טונגה (חורף)", "TVT": "שעון טובאלו", "TWT": "שעון טאיפיי (חורף)", "TWT DST": "שעון טאיפיי (קיץ)", "ULAST": "שעון אולאן באטור (קיץ)", "ULAT": "שעון אולאן באטור (חורף)", "UYST": "שעון אורוגוואי (קיץ)", "UYT": "שעון אורוגוואי (חורף)", "UZT": "שעון אוזבקיסטן (חורף)", "UZT DST": "שעון אוזבקיסטן (קיץ)", "VET": "שעון ונצואלה", "VLAST": "שעון ולדיווסטוק (קיץ)", "VLAT": "שעון ולדיווסטוק (חורף)", "VOLST": "שעון וולגוגרד (קיץ)", "VOLT": "שעון וולגוגרד (חורף)", "VOST": "שעון ווסטוק", "VUT": "שעון ונואטו (חורף)", "VUT DST": "שעון ונואטו (קיץ)", "WAKT": "שעון האי וייק", "WARST": "שעון מערב ארגנטינה (קיץ)", "WART": "שעון מערב ארגנטינה (חורף)", "WAST": "שעון מערב אפריקה", "WAT": "שעון מערב אפריקה", "WESZ": "שעון מערב אירופה (קיץ)", "WEZ": "שעון מערב אירופה (חורף)", "WFT": "שעון וואליס ופוטונה", "WGST": "שעון מערב גרינלנד (קיץ)", "WGT": "שעון מערב גרינלנד (חורף)", "WIB": "שעון מערב אינדונזיה", "WIT": "שעון מזרח אינדונזיה", "WITA": "שעון מרכז אינדונזיה", "YAKST": "שעון יקוטסק (קיץ)", "YAKT": "שעון יקוטסק (חורף)", "YEKST": "שעון יקטרינבורג (קיץ)", "YEKT": "שעון יקטרינבורג (חורף)", "YST": "שעון יוקון", "МСК": "שעון מוסקבה (חורף)", "اقتاۋ": "שעון אקטאו (חורף)", "اقتاۋ قالاسى": "שעון אקטאו (קיץ)", "اقتوبە": "שעון אוקטובה (חורף)", "اقتوبە قالاسى": "שעון אוקטובה (קיץ)", "الماتى": "שעון אלמטי (חורף)", "الماتى قالاسى": "שעון אלמטי (קיץ)", "باتىس قازاق ەلى": "שעון מערב קזחסטן", "شىعىش قازاق ەلى": "שעון מזרח קזחסטן", "قازاق ەلى": "שעון קזחסטן", "قىرعىزستان": "שעון קירגיזסטן", "قىزىلوردا": "שעון קיזילורדה (חורף)", "قىزىلوردا قالاسى": "שעון קיזילורדה (קיץ)", "∅∅∅": "שעון האיים האזוריים (קיץ)"},
 	}
 }
 
@@ -97,17 +83,13 @@ func (he *he_IL) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'he_IL'
 func (he *he_IL) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 	i := int64(n)
-	nMod10 := math.Mod(n, 10)
 
-	if i == 1 && v == 0 {
+	if (i == 1 && v == 0) || (i == 0 && v != 0) {
 		return locales.PluralRuleOne
 	} else if i == 2 && v == 0 {
 		return locales.PluralRuleTwo
-	} else if v == 0 && (n < 0 || n > 10) && nMod10 == 0 {
-		return locales.PluralRuleMany
 	}
 
 	return locales.PluralRuleOther
@@ -120,34 +102,7 @@ func (he *he_IL) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'he_IL'
 func (he *he_IL) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
-
-	start := he.CardinalPluralRule(num1, v1)
-	end := he.CardinalPluralRule(num2, v2)
-
-	if start == locales.PluralRuleOne && end == locales.PluralRuleTwo {
-		return locales.PluralRuleOther
-	} else if start == locales.PluralRuleOne && end == locales.PluralRuleMany {
-		return locales.PluralRuleMany
-	} else if start == locales.PluralRuleOne && end == locales.PluralRuleOther {
-		return locales.PluralRuleOther
-	} else if start == locales.PluralRuleTwo && end == locales.PluralRuleMany {
-		return locales.PluralRuleOther
-	} else if start == locales.PluralRuleTwo && end == locales.PluralRuleOther {
-		return locales.PluralRuleOther
-	} else if start == locales.PluralRuleMany && end == locales.PluralRuleMany {
-		return locales.PluralRuleMany
-	} else if start == locales.PluralRuleMany && end == locales.PluralRuleOther {
-		return locales.PluralRuleMany
-	} else if start == locales.PluralRuleOther && end == locales.PluralRuleOne {
-		return locales.PluralRuleOther
-	} else if start == locales.PluralRuleOther && end == locales.PluralRuleTwo {
-		return locales.PluralRuleOther
-	} else if start == locales.PluralRuleOther && end == locales.PluralRuleMany {
-		return locales.PluralRuleMany
-	}
-
 	return locales.PluralRuleOther
-
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -167,7 +122,7 @@ func (he *he_IL) MonthNarrow(month time.Month) string {
 
 // MonthsNarrow returns the locales narrow months
 func (he *he_IL) MonthsNarrow() []string {
-	return he.monthsNarrow[1:]
+	return nil
 }
 
 // MonthWide returns the locales wide month given the 'month' provided
@@ -237,7 +192,6 @@ func (he *he_IL) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'he_IL' and handles both Whole and Real numbers based on 'v'
 func (he *he_IL) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 5 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -313,10 +267,9 @@ func (he *he_IL) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'he_IL'
 func (he *he_IL) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := he.currencies[currency]
-	l := len(s) + len(symbol) + 7 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 13 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -339,6 +292,10 @@ func (he *he_IL) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 		}
 
 		b = append(b, s[i])
+	}
+
+	for j := len(he.currencyPositivePrefix) - 1; j >= 0; j-- {
+		b = append(b, he.currencyPositivePrefix[j])
 	}
 
 	if num < 0 {
@@ -373,10 +330,9 @@ func (he *he_IL) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'he_IL'
 // in accounting notation.
 func (he *he_IL) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := he.currencies[currency]
-	l := len(s) + len(symbol) + 7 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 14 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -402,11 +358,13 @@ func (he *he_IL) FmtAccounting(num float64, v uint64, currency currency.Type) st
 	}
 
 	if num < 0 {
-
-		for j := len(he.minus) - 1; j >= 0; j-- {
-			b = append(b, he.minus[j])
+		for j := len(he.currencyNegativePrefix) - 1; j >= 0; j-- {
+			b = append(b, he.currencyNegativePrefix[j])
 		}
-
+	} else {
+		for j := len(he.currencyPositivePrefix) - 1; j >= 0; j-- {
+			b = append(b, he.currencyPositivePrefix[j])
+		}
 	}
 
 	// reverse
@@ -439,7 +397,6 @@ func (he *he_IL) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 // FmtDateShort returns the short date representation of 't' for 'he_IL'
 func (he *he_IL) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -458,7 +415,6 @@ func (he *he_IL) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'he_IL'
 func (he *he_IL) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -477,7 +433,6 @@ func (he *he_IL) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'he_IL'
 func (he *he_IL) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -496,7 +451,6 @@ func (he *he_IL) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'he_IL'
 func (he *he_IL) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, he.daysWide[t.Weekday()]...)
@@ -517,7 +471,6 @@ func (he *he_IL) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'he_IL'
 func (he *he_IL) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
@@ -534,7 +487,6 @@ func (he *he_IL) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'he_IL'
 func (he *he_IL) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
@@ -558,7 +510,6 @@ func (he *he_IL) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'he_IL'
 func (he *he_IL) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
@@ -586,7 +537,6 @@ func (he *he_IL) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'he_IL'
 func (he *he_IL) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)

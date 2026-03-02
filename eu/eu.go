@@ -19,12 +19,9 @@ type eu struct {
 	minus                  string
 	percent                string
 	percentPrefix          string
-	perMille               string
 	timeSeparator          string
-	inifinity              string
 	currencies             []string // idx = enum of currency code
 	currencyPositiveSuffix string
-	currencyNegativePrefix string
 	currencyNegativeSuffix string
 	monthsAbbreviated      []string
 	monthsNarrow           []string
@@ -33,13 +30,6 @@ type eu struct {
 	daysNarrow             []string
 	daysShort              []string
 	daysWide               []string
-	periodsAbbreviated     []string
-	periodsNarrow          []string
-	periodsShort           []string
-	periodsWide            []string
-	erasAbbreviated        []string
-	erasNarrow             []string
-	erasWide               []string
 	timezones              map[string]string
 }
 
@@ -54,28 +44,18 @@ func New() locales.Translator {
 		group:                  ".",
 		minus:                  "−",
 		percent:                "%",
-		perMille:               "‰",
 		timeSeparator:          ":",
-		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "A$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "₧", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "₪", "₹", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "₩", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "US$", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "₫", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		percentPrefix:          " ",
-		currencyPositiveSuffix: " ",
-		currencyNegativePrefix: "(",
-		currencyNegativeSuffix: " )",
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "р.", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "₧", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		percentPrefix:          " ",
+		currencyPositiveSuffix: " )",
+		currencyNegativeSuffix: " )",
 		monthsAbbreviated:      []string{"", "urt.", "ots.", "mar.", "api.", "mai.", "eka.", "uzt.", "abu.", "ira.", "urr.", "aza.", "abe."},
 		monthsNarrow:           []string{"", "U", "O", "M", "A", "M", "E", "U", "A", "I", "U", "A", "A"},
 		monthsWide:             []string{"", "urtarrila", "otsaila", "martxoa", "apirila", "maiatza", "ekaina", "uztaila", "abuztua", "iraila", "urria", "azaroa", "abendua"},
 		daysAbbreviated:        []string{"ig.", "al.", "ar.", "az.", "og.", "or.", "lr."},
 		daysNarrow:             []string{"I", "A", "A", "A", "O", "O", "L"},
-		daysShort:              []string{"ig.", "al.", "ar.", "az.", "og.", "or.", "lr."},
 		daysWide:               []string{"igandea", "astelehena", "asteartea", "asteazkena", "osteguna", "ostirala", "larunbata"},
-		periodsAbbreviated:     []string{"AM", "PM"},
-		periodsNarrow:          []string{"g", "a"},
-		periodsWide:            []string{"AM", "PM"},
-		erasAbbreviated:        []string{"K.a.", "K.o."},
-		erasNarrow:             []string{"", ""},
-		erasWide:               []string{"K.a.", "Kristo ondoren"},
-		timezones:              map[string]string{"ACDT": "Australiako erdialdeko udako ordua", "ACST": "Australiako erdialdeko ordu estandarra", "ACWDT": "Australiako erdi-mendebaldeko udako ordua", "ACWST": "Australiako erdi-mendebaldeko ordu estandarra", "ADT": "Ipar Amerikako Atlantikoko udako ordua", "AEDT": "Australiako ekialdeko udako ordua", "AEST": "Australiako ekialdeko ordu estandarra", "AKDT": "Alaskako udako ordua", "AKST": "Alaskako ordu estandarra", "ARST": "Argentinako udako ordua", "ART": "Argentinako ordu estandarra", "AST": "Ipar Amerikako Atlantikoko ordu estandarra", "AWDT": "Australiako mendebaldeko udako ordua", "AWST": "Australiako mendebaldeko ordu estandarra", "BOT": "Boliviako ordua", "BT": "Bhutango ordua", "CAT": "Afrikako erdialdeko ordua", "CDT": "Ipar Amerikako erdialdeko udako ordua", "CHADT": "Chathamgo udako ordua", "CHAST": "Chathamgo ordu estandarra", "CLST": "Txileko udako ordua", "CLT": "Txileko ordu estandarra", "COST": "Kolonbiako udako ordua", "COT": "Kolonbiako ordu estandarra", "CST": "Ipar Amerikako erdialdeko ordu estandarra", "ChST": "Chamorroko ordu estandarra", "EAT": "Afrikako ekialdeko ordua", "ECT": "Ekuadorreko ordua", "EDT": "Ipar Amerikako ekialdeko udako ordua", "EST": "Ipar Amerikako ekialdeko ordu estandarra", "GFT": "Guyana Frantseseko ordua", "GMT": "Greenwichko meridianoaren ordua", "GST": "Golkoko ordu estandarra", "GYT": "Guyanako ordua", "HADT": "Hawaii-Aleutiar uharteetako udako ordua", "HAST": "Hawaii-Aleutiar uharteetako ordu estandarra", "HAT": "Ternuako udako ordua", "HECU": "Kubako udako ordua", "HEEG": "Groenlandiako ekialdeko udako ordua", "HENOMX": "Mexikoko ipar-ekialdeko udako ordua", "HEOG": "Groenlandiako mendebaldeko udako ordua", "HEPM": "Saint-Pierre eta Mikeluneko udako ordua", "HEPMX": "Mexikoko Pazifikoko udako ordua", "HKST": "Hong Kongo udako ordua", "HKT": "Hong Kongo ordu estandarra", "HNCU": "Kubako ordu estandarra", "HNEG": "Groenlandiako ekialdeko ordu estandarra", "HNNOMX": "Mexikoko ipar-ekialdeko ordu estandarra", "HNOG": "Groenlandiako mendebaldeko ordu estandarra", "HNPM": "Saint-Pierre eta Mikeluneko ordu estandarra", "HNPMX": "Mexikoko Pazifikoko ordu estandarra", "HNT": "Ternuako ordu estandarra", "IST": "Indiako ordua", "JDT": "Japoniako udako ordua", "JST": "Japoniako ordu estandarra", "LHDT": "Lord Howeko udako ordua", "LHST": "Lord Howeko ordu estandarra", "MDT": "Ipar Amerikako mendialdeko udako ordua", "MESZ": "Europako erdialdeko udako ordua", "MEZ": "Europako erdialdeko ordu estandarra", "MST": "Ipar Amerikako mendialdeko ordu estandarra", "MYT": "Malaysiako ordua", "NZDT": "Zeelanda Berriko udako ordua", "NZST": "Zeelanda Berriko ordu estandarra", "OESZ": "Europako ekialdeko udako ordua", "OEZ": "Europako ekialdeko ordu estandarra", "PDT": "Ipar Amerikako Pazifikoko udako ordua", "PST": "Ipar Amerikako Pazifikoko ordu estandarra", "SAST": "Afrikako hegoaldeko ordua", "SGT": "Singapurreko ordu estandarra", "SRT": "Surinamgo ordua", "TMST": "Turkmenistango udako ordua", "TMT": "Turkmenistango ordu estandarra", "UYST": "Uruguaiko udako ordua", "UYT": "Uruguaiko ordu estandarra", "VET": "Venezuelako ordua", "WARST": "Argentina mendebaldeko udako ordua", "WART": "Argentina mendebaldeko ordu estandarra", "WAST": "Afrikako mendebaldeko udako ordua", "WAT": "Afrikako mendebaldeko ordu estandarra", "WESZ": "Europako mendebaldeko udako ordua", "WEZ": "Europako mendebaldeko ordu estandarra", "WIB": "Indonesiako mendebaldeko ordua", "WIT": "Indonesiako ekialdeko ordua", "WITA": "Indonesiako erdialdeko ordua", "∅∅∅": "Azoreetako udako ordua"},
+		timezones:              map[string]string{"ACDT": "Australiako erdialdeko udako ordua", "ACST": "Acreko udako ordua", "ACT": "Acreko ordu estandarra", "ACWDT": "Australiako erdi-mendebaldeko udako ordua", "ACWST": "Australiako erdi-mendebaldeko ordu estandarra", "ADT": "Ipar Amerikako Atlantikoko udako ordua", "ADT Arabia": "Arabiako udako ordua", "AEDT": "Australiako ekialdeko udako ordua", "AEST": "Australiako ekialdeko ordu estandarra", "AFT": "Afganistango ordua", "AKDT": "Alaskako udako ordua", "AKST": "Alaskako ordu estandarra", "AMST": "Amazoniako udako ordua", "AMST Armenia": "Armeniako udako ordua", "AMT": "Amazoniako ordu estandarra", "AMT Armenia": "Armeniako ordu estandarra", "ANAST": "Anadyrreko udako ordua", "ANAT": "Anadyrreko ordu estandarra", "ARST": "Argentinako udako ordua", "ART": "Argentinako ordu estandarra", "AST": "Ipar Amerikako Atlantikoko ordu estandarra", "AST Arabia": "Arabiako ordu estandarra", "AWDT": "Australiako mendebaldeko udako ordua", "AWST": "Australiako mendebaldeko ordu estandarra", "AZST": "Azerbaijango udako ordua", "AZT": "Azerbaijango ordu estandarra", "BDT Bangladesh": "Bangladesheko udako ordua", "BNT": "Brunei Darussalamgo ordua", "BOT": "Boliviako ordua", "BRST": "Brasiliako udako ordua", "BRT": "Brasiliako ordu estandarra", "BST Bangladesh": "Bangladesheko ordu estandarra", "BT": "Bhutango ordua", "CAST": "Caseyko ordua", "CAT": "Afrikako erdialdeko ordua", "CCT": "Cocos uharteetako ordua", "CDT": "Ipar Amerikako erdialdeko udako ordua", "CHADT": "Chathamgo udako ordua", "CHAST": "Chathamgo ordu estandarra", "CHUT": "Chuukeko ordua", "CKT": "Cook uharteetako ordu estandarra", "CKT DST": "Cook uharteetako uda erdialdeko ordua", "CLST": "Txileko udako ordua", "CLT": "Txileko ordu estandarra", "COST": "Kolonbiako udako ordua", "COT": "Kolonbiako ordu estandarra", "CST": "Ipar Amerikako erdialdeko ordu estandarra", "CST China": "Txinako ordu estandarra", "CST China DST": "Txinako udako ordua", "CVST": "Cabo Verdeko udako ordua", "CVT": "Cabo Verdeko ordu estandarra", "CXT": "Christmas uharteko ordua", "ChST": "Chamorroko ordu estandarra", "ChST NMI": "Ipar Mariana uharteetako ordua", "CuDT": "Kubako udako ordua", "CuST": "Kubako ordu estandarra", "DAVT": "Daviseko ordua", "DDUT": "Dumont-d’Urvilleko ordua", "EASST": "Pazko uharteko udako ordua", "EAST": "Pazko uharteko ordu estandarra", "EAT": "Afrikako ekialdeko ordua", "ECT": "Ekuadorreko ordua", "EDT": "Ipar Amerikako ekialdeko udako ordua", "EGDT": "Groenlandiako ekialdeko udako ordua", "EGST": "Groenlandiako ekialdeko ordu estandarra", "EST": "Ipar Amerikako ekialdeko ordu estandarra", "FEET": "Europako ekialde urruneko ordua", "FJT": "Fijiko ordu estandarra", "FJT Summer": "Fijiko udako ordua", "FKST": "Falkland uharteetako udako ordua", "FKT": "Falkland uharteetako ordu estandarra", "FNST": "Fernando de Noronhako udako ordua", "FNT": "Fernando de Noronhako ordu estandarra", "GALT": "Galapagoetako ordua", "GAMT": "Gambierretako ordua", "GEST": "Georgiako udako ordua", "GET": "Georgiako ordu estandarra", "GFT": "Guyana Frantseseko ordua", "GIT": "Gilbert uharteetako ordua", "GMT": "Greenwichko meridianoaren ordua", "GNSST": "GNSST", "GNST": "GNST", "GST": "Golkoko ordu estandarra", "GST Guam": "Guameko ordu estandarra", "GYT": "Guyanako ordua", "HADT": "Hawaii-Aleutiar uharteetako ordu estandarra", "HAST": "Hawaii-Aleutiar uharteetako ordu estandarra", "HKST": "Hong Kongo udako ordua", "HKT": "Hong Kongo ordu estandarra", "HOVST": "Khovdeko udako ordua", "HOVT": "Khovdeko ordu estandarra", "ICT": "Indotxinako ordua", "IDT": "Israelgo udako ordua", "IOT": "Indiako ozeanoko ordua", "IRKST": "Irkutskeko udako ordua", "IRKT": "Irkutskeko ordu estandarra", "IRST": "Irango ordu estandarra", "IRST DST": "Irango udako ordua", "IST": "Indiako ordua", "IST Israel": "Israelgo ordu estandarra", "JDT": "Japoniako udako ordua", "JST": "Japoniako ordu estandarra", "KOST": "Kosraeko ordua", "KRAST": "Krasnoiarskeko udako ordua", "KRAT": "Krasnoiarskeko ordu estandarra", "KST": "Koreako ordu estandarra", "KST DST": "Koreako udako ordua", "LHDT": "Lord Howeko udako ordua", "LHST": "Lord Howeko ordu estandarra", "LINT": "Line uharteetako ordua", "MAGST": "Magadango udako ordua", "MAGT": "Magadango ordu estandarra", "MART": "Markesetako ordua", "MAWT": "Mawsoneko ordua", "MDT": "Macaoko udako ordua", "MESZ": "Europako erdialdeko udako ordua", "MEZ": "Europako erdialdeko ordu estandarra", "MHT": "Marshall Uharteetako ordua", "MMT": "Myanmarreko ordua", "MSD": "Moskuko udako ordua", "MST": "Macaoko ordu estandarra", "MUST": "Maurizioko udako ordua", "MUT": "Maurizioko ordu estandarra", "MVT": "Maldivetako ordua", "MYT": "Malaysiako ordua", "NCT": "Kaledonia Berriko ordu estandarra", "NDT": "Ternuako udako ordua", "NDT New Caledonia": "Kaledonia Berriko udako ordua", "NFDT": "Norfolk uharteetako udako ordua", "NFT": "Norfolk uharteetako ordu estandarra", "NOVST": "Novosibirskeko udako ordua", "NOVT": "Novosibirskeko ordu estandarra", "NPT": "Nepalgo ordua", "NRT": "Nauruko ordua", "NST": "Ternuako ordu estandarra", "NUT": "Niueko ordua", "NZDT": "Zeelanda Berriko udako ordua", "NZST": "Zeelanda Berriko ordu estandarra", "OESZ": "Europako ekialdeko udako ordua", "OEZ": "Europako ekialdeko ordu estandarra", "OMSST": "Omskeko udako ordua", "OMST": "Omskeko ordu estandarra", "PDT": "Ipar Amerikako Pazifikoko udako ordua", "PDTM": "Mexikoko Pazifikoko udako ordua", "PETDT": "Petropavlovsk-Kamchatskiko udako ordua", "PETST": "Petropavlovsk-Kamchatskiko ordu estandarra", "PGT": "Papua Ginea Berriko ordua", "PHOT": "Phoenix uharteetako ordua", "PKT": "Pakistango ordu estandarra", "PKT DST": "Pakistango udako ordua", "PMDT": "Saint-Pierre eta Mikeluneko udako ordua", "PMST": "Saint-Pierre eta Mikeluneko ordu estandarra", "PONT": "Ponapeko ordua", "PST": "Ipar Amerikako Pazifikoko ordu estandarra", "PST Philippine": "Filipinetako ordu estandarra", "PST Philippine DST": "Filipinetako udako ordua", "PST Pitcairn": "Pitcairneko ordua", "PSTM": "Mexikoko Pazifikoko ordu estandarra", "PWT": "Palauko ordua", "PYST": "Paraguaiko udako ordua", "PYT": "Paraguaiko ordu estandarra", "PYT Korea": "Piongiangeko ordua", "RET": "Reunioneko ordua", "ROTT": "Rotherako ordua", "SAKST": "Sakhalingo udako ordua", "SAKT": "Sakhalingo ordu estandarra", "SAMST": "Samarako udako ordua", "SAMT": "Samarako ordu estandarra", "SAST": "Afrikako hegoaldeko ordua", "SBT": "Salomon Uharteetako ordua", "SCT": "Seychelle uharteetako ordua", "SGT": "Singapurreko ordu estandarra", "SLST": "Lankako ordua", "SRT": "Surinamgo ordua", "SST Samoa": "Samoako ordu estandarra", "SST Samoa Apia": "Apiako ordu estandarra", "SST Samoa Apia DST": "Apiako udako ordua", "SST Samoa DST": "Samoako udako ordua", "SYOT": "Syowako ordua", "TAAF": "Frantziaren lurralde austral eta antartikoetako ordutegia", "TAHT": "Tahitiko ordua", "TJT": "Tadjikistango ordua", "TKT": "Tokelauko ordua", "TLT": "Ekialdeko Timorreko ordua", "TMST": "Turkmenistango udako ordua", "TMT": "Turkmenistango ordu estandarra", "TOST": "Tongako udako ordua", "TOT": "Tongako ordu estandarra", "TVT": "Tuvaluko ordua", "TWT": "Taipeiko ordu estandarra", "TWT DST": "Taipeiko udako ordua", "ULAST": "Ulan Batorreko udako ordua", "ULAT": "Ulan Batorreko ordu estandarra", "UYST": "Uruguaiko udako ordua", "UYT": "Uruguaiko ordu estandarra", "UZT": "Uzbekistango ordu estandarra", "UZT DST": "Uzbekistango udako ordua", "VET": "Venezuelako ordua", "VLAST": "Vladivostokeko udako ordua", "VLAT": "Vladivostokeko ordu estandarra", "VOLST": "Volgogradeko udako ordua", "VOLT": "Volgogradeko ordu estandarra", "VOST": "Vostokeko ordua", "VUT": "Vanuatuko ordu estandarra", "VUT DST": "Vanuatuko udako ordua", "WAKT": "Wake uharteko ordua", "WARST": "Argentina mendebaldeko udako ordua", "WART": "Argentina mendebaldeko ordu estandarra", "WAST": "Afrikako mendebaldeko ordua", "WAT": "Afrikako mendebaldeko ordua", "WESZ": "Europako mendebaldeko udako ordua", "WEZ": "Europako mendebaldeko ordu estandarra", "WFT": "Wallis eta Futunako ordutegia", "WGST": "Groenlandiako mendebaldeko udako ordua", "WGT": "Groenlandiako mendebaldeko ordu estandarra", "WIB": "Indonesiako mendebaldeko ordua", "WIT": "Indonesiako ekialdeko ordua", "WITA": "Indonesiako erdialdeko ordua", "YAKST": "Jakutskeko udako ordua", "YAKT": "Jakutskeko ordu estandarra", "YEKST": "Jekaterinburgeko udako ordua", "YEKT": "Jekaterinburgeko ordu estandarra", "YST": "Yukongo ordua", "МСК": "Moskuko ordu estandarra", "اقتاۋ": "Aktauko ordu estandarra", "اقتاۋ قالاسى": "Aktauko udako ordua", "اقتوبە": "Aktobeko ordu estandarra", "اقتوبە قالاسى": "Aktobeko udako ordua", "الماتى": "Almatyko ordu estandarra", "الماتى قالاسى": "Almatyko udako ordua", "باتىس قازاق ەلى": "Kazakhstango mendebaldeko ordua", "شىعىش قازاق ەلى": "Kazakhstango ekialdeko ordua", "قازاق ەلى": "Kazakhstango ordua", "قىرعىزستان": "Kirgizistango ordua", "قىزىلوردا": "Kyzylordako ordu estandarra", "قىزىلوردا قالاسى": "Kyzylordako udako ordua", "∅∅∅": "Peruko udako ordua"},
 	}
 }
 
@@ -101,7 +81,6 @@ func (eu *eu) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'eu'
 func (eu *eu) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -208,7 +187,6 @@ func (eu *eu) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'eu' and handles both Whole and Real numbers based on 'v'
 func (eu *eu) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -301,10 +279,9 @@ func (eu *eu) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'eu'
 func (eu *eu) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := eu.currencies[currency]
-	l := len(s) + len(symbol) + 6 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 7 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -361,10 +338,9 @@ func (eu *eu) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'eu'
 // in accounting notation.
 func (eu *eu) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := eu.currencies[currency]
-	l := len(s) + len(symbol) + 8 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 7 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -390,9 +366,9 @@ func (eu *eu) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 	}
 
 	if num < 0 {
-
-		b = append(b, eu.currencyNegativePrefix[0])
-
+		for j := len(eu.minus) - 1; j >= 0; j-- {
+			b = append(b, eu.minus[j])
+		}
 	}
 
 	// reverse
@@ -425,7 +401,6 @@ func (eu *eu) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 // FmtDateShort returns the short date representation of 't' for 'eu'
 func (eu *eu) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 9 {
@@ -444,7 +419,6 @@ func (eu *eu) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'eu'
 func (eu *eu) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -467,7 +441,6 @@ func (eu *eu) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'eu'
 func (eu *eu) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -491,7 +464,6 @@ func (eu *eu) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'eu'
 func (eu *eu) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -516,7 +488,6 @@ func (eu *eu) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'eu'
 func (eu *eu) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -537,7 +508,6 @@ func (eu *eu) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'eu'
 func (eu *eu) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -565,7 +535,6 @@ func (eu *eu) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'eu'
 func (eu *eu) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -599,7 +568,6 @@ func (eu *eu) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'eu'
 func (eu *eu) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

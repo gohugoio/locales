@@ -18,16 +18,16 @@ type {{ .Locale }} struct {
 	decimal    			   string
 	group      			   string
 	minus      			   string
+	{{- if .FmtPercentExists }}
 	percent    			   string
+	{{- end }}
 	{{- if gt (len .FmtPercentPrefix) 0}}
 	percentPrefix   	   string
 	{{- end }}
 	{{- if gt (len .FmtPercentSuffix) 0}}
 	percentSuffix   	   string
 	{{- end }}
-	perMille   			   string
 	timeSeparator		   string
-	inifinity			   string
 	currencies 			   []string // idx = enum of currency code
 	{{- if gt (len .FmtCurrencyPrefix) 0}}
 	currencyPositivePrefix string
@@ -48,13 +48,15 @@ type {{ .Locale }} struct {
 	daysNarrow      	   []string
 	daysShort      	   	   []string
 	daysWide      	   	   []string
+	{{- if .UsePeriodsAbbreviated }}
 	periodsAbbreviated     []string
-	periodsNarrow      	   []string
-	periodsShort      	   []string
-	periodsWide      	   []string
+	{{- end }}
+	{{- if .UseErasAbbreviated }}
 	erasAbbreviated        []string
-	erasNarrow      	   []string
+	{{- end }}
+	{{- if .UseErasWide }}
 	erasWide      	   	   []string
+	{{- end }}
 	timezones 			   map[string]string
 }
 
@@ -66,44 +68,38 @@ func New() locales.Translator {
 		pluralsOrdinal:  {{ .PluralsOrdinal }},
 		pluralsRange:    {{ .PluralsRange }},
 		{{- if gt (len .Decimal) 0}}
-		decimal:  		 "{{ .Decimal }}",
+		decimal:  		 "{{ escape_str .Decimal }}",
 		{{- end}}
 		{{- if gt (len .Group) 0}}
-		group:    		 "{{ .Group }}",
+		group:    		 "{{ escape_str .Group }}",
 		{{- end}}
 		{{- if gt (len .Minus) 0}}
-		minus:    		 "{{ .Minus }}",
+		minus:    		 "{{ escape_str .Minus }}",
 		{{- end}}
-		{{- if gt (len .Percent) 0}}
-		percent:  		 "{{ .Percent }}",
-		{{- end}}
-		{{- if gt (len .PerMille) 0}}
-		perMille:        "{{ .PerMille }}",
+		{{- if and .FmtPercentExists (gt (len .Percent) 0)}}
+		percent:  		 "{{ escape_str .Percent }}",
 		{{- end}}
 		{{- if gt (len .TimeSeparator) 0}}
-		timeSeparator:	 "{{ .TimeSeparator }}",
-		{{- end}}
-		{{- if gt (len .Infinity) 0}}
-		inifinity:		 "{{ .Infinity }}",
+		timeSeparator:	 "{{ escape_str .TimeSeparator }}",
 		{{- end}}
 		currencies:      {{ .Currencies }},
 		{{- if gt (len .FmtPercentPrefix) 0}}
-		percentPrefix:   "{{ .FmtPercentPrefix }}",
+		percentPrefix:   "{{ escape_str .FmtPercentPrefix }}",
 		{{- end -}}
 		{{- if gt (len .FmtPercentSuffix) 0}}
-		percentSuffix:   "{{ .FmtPercentSuffix }}",
+		percentSuffix:   "{{ escape_str .FmtPercentSuffix }}",
 		{{- end -}}
 		{{- if gt (len .FmtCurrencyPrefix) 0}}
-		currencyPositivePrefix:   "{{ .FmtCurrencyPrefix }}",
+		currencyPositivePrefix:   "{{ escape_str .FmtCurrencyPrefix }}",
 		{{- end -}}
 		{{- if gt (len .FmtCurrencySuffix) 0}}
-		currencyPositiveSuffix:   "{{ .FmtCurrencySuffix }}",
+		currencyPositiveSuffix:   "{{ escape_str .FmtCurrencySuffix }}",
 		{{- end -}}
 		{{- if gt (len .FmtCurrencyNegativePrefix) 0}}
-		currencyNegativePrefix:   "{{ .FmtCurrencyNegativePrefix }}",
+		currencyNegativePrefix:   "{{ escape_str .FmtCurrencyNegativePrefix }}",
 		{{- end -}}
 		{{- if gt (len .FmtCurrencyNegativeSuffix) 0}}
-		currencyNegativeSuffix:   "{{ .FmtCurrencyNegativeSuffix }}",
+		currencyNegativeSuffix:   "{{ escape_str .FmtCurrencyNegativeSuffix }}",
 		{{- end -}}
 		{{- if gt (len .FmtMonthsAbbreviated) 0 }}
 		monthsAbbreviated:   {{ .FmtMonthsAbbreviated }},
@@ -126,25 +122,13 @@ func New() locales.Translator {
 		{{- if gt (len .FmtDaysWide) 0 }}
 		daysWide:   {{ .FmtDaysWide }},
 		{{- end -}}
-		{{- if gt (len .FmtPeriodsAbbreviated) 0 }}
+		{{- if and .UsePeriodsAbbreviated (gt (len .FmtPeriodsAbbreviated) 0) }}
 		periodsAbbreviated:   {{ .FmtPeriodsAbbreviated }},
 		{{- end -}}
-		{{- if gt (len .FmtPeriodsNarrow) 0 }}
-		periodsNarrow:   {{ .FmtPeriodsNarrow }},
-		{{- end -}}
-		{{- if gt (len .FmtPeriodsShort) 0 }}
-		periodsShort:   {{ .FmtPeriodsShort }},
-		{{- end -}}
-		{{- if gt (len .FmtPeriodsWide) 0 }}
-		periodsWide:   {{ .FmtPeriodsWide }},
-		{{- end -}}
-		{{- if gt (len .FmtErasAbbreviated) 0 }}
+		{{- if and .UseErasAbbreviated (gt (len .FmtErasAbbreviated) 0) }}
 		erasAbbreviated:   {{ .FmtErasAbbreviated }},
 		{{- end -}}
-		{{- if gt (len .FmtErasNarrow) 0 }}
-		erasNarrow:   {{ .FmtErasNarrow }},
-		{{- end -}}
-		{{- if gt (len .FmtErasWide) 0 }}
+		{{- if and .UseErasWide (gt (len .FmtErasWide) 0) }}
 		erasWide:   {{ .FmtErasWide }},
 		{{- end }}
 		timezones: {{ .FmtTimezones }},

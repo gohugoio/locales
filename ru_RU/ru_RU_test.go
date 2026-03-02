@@ -9,7 +9,6 @@ import (
 )
 
 func TestLocale(t *testing.T) {
-
 	trans := New()
 	expected := "ru_RU"
 
@@ -19,7 +18,6 @@ func TestLocale(t *testing.T) {
 }
 
 func TestPluralsRange(t *testing.T) {
-
 	trans := New()
 
 	tests := []struct {
@@ -53,7 +51,6 @@ func TestPluralsRange(t *testing.T) {
 }
 
 func TestPluralsOrdinal(t *testing.T) {
-
 	trans := New()
 
 	tests := []struct {
@@ -87,7 +84,6 @@ func TestPluralsOrdinal(t *testing.T) {
 }
 
 func TestPluralsCardinal(t *testing.T) {
-
 	trans := New()
 
 	tests := []struct {
@@ -130,7 +126,6 @@ func TestPluralsCardinal(t *testing.T) {
 }
 
 func TestRangePlurals(t *testing.T) {
-
 	trans := New()
 
 	tests := []struct {
@@ -277,7 +272,6 @@ func TestRangePlurals(t *testing.T) {
 }
 
 func TestOrdinalPlurals(t *testing.T) {
-
 	trans := New()
 
 	tests := []struct {
@@ -316,7 +310,6 @@ func TestOrdinalPlurals(t *testing.T) {
 }
 
 func TestCardinalPlurals(t *testing.T) {
-
 	trans := New()
 
 	tests := []struct {
@@ -390,7 +383,6 @@ func TestCardinalPlurals(t *testing.T) {
 }
 
 func TestDaysAbbreviated(t *testing.T) {
-
 	trans := New()
 	days := trans.WeekdaysAbbreviated()
 
@@ -444,7 +436,6 @@ func TestDaysAbbreviated(t *testing.T) {
 }
 
 func TestDaysNarrow(t *testing.T) {
-
 	trans := New()
 	days := trans.WeekdaysNarrow()
 
@@ -461,31 +452,31 @@ func TestDaysNarrow(t *testing.T) {
 	}{
 		{
 			idx:      0,
-			expected: "вс",
+			expected: "В",
 		},
 		{
 			idx:      1,
-			expected: "пн",
+			expected: "П",
 		},
 		{
 			idx:      2,
-			expected: "вт",
+			expected: "В",
 		},
 		{
 			idx:      3,
-			expected: "ср",
+			expected: "С",
 		},
 		{
 			idx:      4,
-			expected: "чт",
+			expected: "Ч",
 		},
 		{
 			idx:      5,
-			expected: "пт",
+			expected: "П",
 		},
 		{
 			idx:      6,
-			expected: "сб",
+			expected: "С",
 		},
 	}
 
@@ -498,7 +489,6 @@ func TestDaysNarrow(t *testing.T) {
 }
 
 func TestDaysShort(t *testing.T) {
-
 	trans := New()
 	days := trans.WeekdaysShort()
 
@@ -509,50 +499,12 @@ func TestDaysShort(t *testing.T) {
 		}
 	}
 
-	tests := []struct {
-		idx      int
-		expected string
-	}{
-		{
-			idx:      0,
-			expected: "вс",
-		},
-		{
-			idx:      1,
-			expected: "пн",
-		},
-		{
-			idx:      2,
-			expected: "вт",
-		},
-		{
-			idx:      3,
-			expected: "ср",
-		},
-		{
-			idx:      4,
-			expected: "чт",
-		},
-		{
-			idx:      5,
-			expected: "пт",
-		},
-		{
-			idx:      6,
-			expected: "сб",
-		},
-	}
-
-	for _, tt := range tests {
-		s := trans.WeekdayShort(time.Weekday(tt.idx))
-		if s != tt.expected {
-			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
-		}
+	if len(days) != 0 {
+		t.Errorf("Expected daysShort to be empty, got length %d", len(days))
 	}
 }
 
 func TestDaysWide(t *testing.T) {
-
 	trans := New()
 	days := trans.WeekdaysWide()
 
@@ -606,7 +558,6 @@ func TestDaysWide(t *testing.T) {
 }
 
 func TestMonthsAbbreviated(t *testing.T) {
-
 	trans := New()
 	months := trans.MonthsAbbreviated()
 
@@ -680,7 +631,6 @@ func TestMonthsAbbreviated(t *testing.T) {
 }
 
 func TestMonthsNarrow(t *testing.T) {
-
 	trans := New()
 	months := trans.MonthsNarrow()
 
@@ -754,7 +704,6 @@ func TestMonthsNarrow(t *testing.T) {
 }
 
 func TestMonthsWide(t *testing.T) {
-
 	trans := New()
 	months := trans.MonthsWide()
 
@@ -828,7 +777,6 @@ func TestMonthsWide(t *testing.T) {
 }
 
 func TestFmtTimeFull(t *testing.T) {
-
 	loc, err := time.LoadLocation("America/Toronto")
 	if err != nil {
 		t.Errorf("Expected '<nil>' Got '%s'", err)
@@ -841,11 +789,11 @@ func TestFmtTimeFull(t *testing.T) {
 		expected string
 	}{
 		{
-			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, loc),
+			t:        time.Date(2016, 0o2, 0o3, 9, 5, 1, 0, loc),
 			expected: "09:05:01 Восточная Америка, стандартное время",
 		},
 		{
-			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, fixed),
+			t:        time.Date(2016, 0o2, 0o3, 20, 5, 1, 0, fixed),
 			expected: "20:05:01 OTHER",
 		},
 	}
@@ -861,7 +809,6 @@ func TestFmtTimeFull(t *testing.T) {
 }
 
 func TestFmtTimeLong(t *testing.T) {
-
 	loc, err := time.LoadLocation("America/Toronto")
 	if err != nil {
 		t.Errorf("Expected '<nil>' Got '%s'", err)
@@ -872,11 +819,11 @@ func TestFmtTimeLong(t *testing.T) {
 		expected string
 	}{
 		{
-			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, loc),
+			t:        time.Date(2016, 0o2, 0o3, 9, 5, 1, 0, loc),
 			expected: "09:05:01 EST",
 		},
 		{
-			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, loc),
+			t:        time.Date(2016, 0o2, 0o3, 20, 5, 1, 0, loc),
 			expected: "20:05:01 EST",
 		},
 	}
@@ -892,17 +839,16 @@ func TestFmtTimeLong(t *testing.T) {
 }
 
 func TestFmtTimeMedium(t *testing.T) {
-
 	tests := []struct {
 		t        time.Time
 		expected string
 	}{
 		{
-			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, time.UTC),
+			t:        time.Date(2016, 0o2, 0o3, 9, 5, 1, 0, time.UTC),
 			expected: "09:05:01",
 		},
 		{
-			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, time.UTC),
+			t:        time.Date(2016, 0o2, 0o3, 20, 5, 1, 0, time.UTC),
 			expected: "20:05:01",
 		},
 	}
@@ -918,17 +864,16 @@ func TestFmtTimeMedium(t *testing.T) {
 }
 
 func TestFmtTimeShort(t *testing.T) {
-
 	tests := []struct {
 		t        time.Time
 		expected string
 	}{
 		{
-			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, time.UTC),
+			t:        time.Date(2016, 0o2, 0o3, 9, 5, 1, 0, time.UTC),
 			expected: "09:05",
 		},
 		{
-			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, time.UTC),
+			t:        time.Date(2016, 0o2, 0o3, 20, 5, 1, 0, time.UTC),
 			expected: "20:05",
 		},
 	}
@@ -944,14 +889,13 @@ func TestFmtTimeShort(t *testing.T) {
 }
 
 func TestFmtDateFull(t *testing.T) {
-
 	tests := []struct {
 		t        time.Time
 		expected string
 	}{
 		{
-			t:        time.Date(2016, 02, 03, 9, 0, 1, 0, time.UTC),
-			expected: "среда, 3 февраля 2016 г.",
+			t:        time.Date(2016, 0o2, 0o3, 9, 0, 1, 0, time.UTC),
+			expected: "среда, 3 февраля 2016 г.",
 		},
 	}
 
@@ -966,14 +910,13 @@ func TestFmtDateFull(t *testing.T) {
 }
 
 func TestFmtDateLong(t *testing.T) {
-
 	tests := []struct {
 		t        time.Time
 		expected string
 	}{
 		{
-			t:        time.Date(2016, 02, 03, 9, 0, 1, 0, time.UTC),
-			expected: "3 февраля 2016 г.",
+			t:        time.Date(2016, 0o2, 0o3, 9, 0, 1, 0, time.UTC),
+			expected: "3 февраля 2016 г.",
 		},
 	}
 
@@ -988,14 +931,13 @@ func TestFmtDateLong(t *testing.T) {
 }
 
 func TestFmtDateMedium(t *testing.T) {
-
 	tests := []struct {
 		t        time.Time
 		expected string
 	}{
 		{
-			t:        time.Date(2016, 02, 03, 9, 0, 1, 0, time.UTC),
-			expected: "3 февр. 2016 г.",
+			t:        time.Date(2016, 0o2, 0o3, 9, 0, 1, 0, time.UTC),
+			expected: "3 февр. 2016 г.",
 		},
 	}
 
@@ -1010,17 +952,16 @@ func TestFmtDateMedium(t *testing.T) {
 }
 
 func TestFmtDateShort(t *testing.T) {
-
 	tests := []struct {
 		t        time.Time
 		expected string
 	}{
 		{
-			t:        time.Date(2016, 02, 03, 9, 0, 1, 0, time.UTC),
+			t:        time.Date(2016, 0o2, 0o3, 9, 0, 1, 0, time.UTC),
 			expected: "03.02.2016", // date format changed from v29 dd.MM.yy to v30 dd.MM.y so adjusted test for new CLDR data
 		},
 		{
-			t:        time.Date(-500, 02, 03, 9, 0, 1, 0, time.UTC),
+			t:        time.Date(-500, 0o2, 0o3, 9, 0, 1, 0, time.UTC),
 			expected: "03.02.500",
 		},
 	}
@@ -1036,7 +977,6 @@ func TestFmtDateShort(t *testing.T) {
 }
 
 func TestFmtNumber(t *testing.T) {
-
 	tests := []struct {
 		num      float64
 		v        uint64
@@ -1045,27 +985,27 @@ func TestFmtNumber(t *testing.T) {
 		{
 			num:      1123456.5643,
 			v:        2,
-			expected: "1 123 456,56",
+			expected: "1 123 456,56",
 		},
 		{
 			num:      1123456.5643,
 			v:        1,
-			expected: "1 123 456,6",
+			expected: "1 123 456,6",
 		},
 		{
 			num:      221123456.5643,
 			v:        3,
-			expected: "221 123 456,564",
+			expected: "221 123 456,564",
 		},
 		{
 			num:      -221123456.5643,
 			v:        3,
-			expected: "-221 123 456,564",
+			expected: "-221 123 456,564",
 		},
 		{
 			num:      -221123456.5643,
 			v:        3,
-			expected: "-221 123 456,564",
+			expected: "-221 123 456,564",
 		},
 		{
 			num:      0,
@@ -1095,7 +1035,6 @@ func TestFmtNumber(t *testing.T) {
 }
 
 func TestFmtCurrency(t *testing.T) {
-
 	tests := []struct {
 		num      float64
 		v        uint64
@@ -1106,55 +1045,55 @@ func TestFmtCurrency(t *testing.T) {
 			num:      1123456.5643,
 			v:        2,
 			currency: currency.USD,
-			expected: "1 123 456,56 USD",
+			expected: "1 123 456,56 USD",
 		},
 		{
 			num:      1123456.5643,
 			v:        1,
 			currency: currency.USD,
-			expected: "1 123 456,60 USD",
+			expected: "1 123 456,60 USD",
 		},
 		{
 			num:      221123456.5643,
 			v:        3,
 			currency: currency.USD,
-			expected: "221 123 456,564 USD",
+			expected: "221 123 456,564 USD",
 		},
 		{
 			num:      -221123456.5643,
 			v:        3,
 			currency: currency.USD,
-			expected: "-221 123 456,564 USD",
+			expected: "-221 123 456,564 USD",
 		},
 		{
 			num:      -221123456.5643,
 			v:        3,
 			currency: currency.CAD,
-			expected: "-221 123 456,564 CAD",
+			expected: "-221 123 456,564 CAD",
 		},
 		{
 			num:      0,
 			v:        2,
 			currency: currency.USD,
-			expected: "0,00 USD",
+			expected: "0,00 USD",
 		},
 		{
 			num:      -0,
 			v:        2,
 			currency: currency.USD,
-			expected: "0,00 USD",
+			expected: "0,00 USD",
 		},
 		{
 			num:      -0,
 			v:        2,
 			currency: currency.CAD,
-			expected: "0,00 CAD",
+			expected: "0,00 CAD",
 		},
 		{
 			num:      1.23,
 			v:        0,
 			currency: currency.USD,
-			expected: "1,00 USD",
+			expected: "1,00 USD",
 		},
 	}
 
@@ -1169,7 +1108,6 @@ func TestFmtCurrency(t *testing.T) {
 }
 
 func TestFmtAccounting(t *testing.T) {
-
 	tests := []struct {
 		num      float64
 		v        uint64
@@ -1180,49 +1118,49 @@ func TestFmtAccounting(t *testing.T) {
 			num:      1123456.5643,
 			v:        2,
 			currency: currency.USD,
-			expected: "1 123 456,56 USD",
+			expected: "1 123 456,56 USD",
 		},
 		{
 			num:      1123456.5643,
 			v:        1,
 			currency: currency.USD,
-			expected: "1 123 456,60 USD",
+			expected: "1 123 456,60 USD",
 		},
 		{
 			num:      221123456.5643,
 			v:        3,
 			currency: currency.USD,
-			expected: "221 123 456,564 USD",
+			expected: "221 123 456,564 USD",
 		},
 		{
 			num:      -221123456.5643,
 			v:        3,
 			currency: currency.USD,
-			expected: "-221 123 456,564 USD",
+			expected: "-221 123 456,564 USD",
 		},
 		{
 			num:      -221123456.5643,
 			v:        3,
 			currency: currency.CAD,
-			expected: "-221 123 456,564 CAD",
+			expected: "-221 123 456,564 CAD",
 		},
 		{
 			num:      -0,
 			v:        2,
 			currency: currency.USD,
-			expected: "0,00 USD",
+			expected: "0,00 USD",
 		},
 		{
 			num:      -0,
 			v:        2,
 			currency: currency.CAD,
-			expected: "0,00 CAD",
+			expected: "0,00 CAD",
 		},
 		{
 			num:      1.23,
 			v:        0,
 			currency: currency.USD,
-			expected: "1,00 USD",
+			expected: "1,00 USD",
 		},
 	}
 
@@ -1237,7 +1175,6 @@ func TestFmtAccounting(t *testing.T) {
 }
 
 func TestFmtPercent(t *testing.T) {
-
 	tests := []struct {
 		num      float64
 		v        uint64

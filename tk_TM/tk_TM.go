@@ -19,9 +19,7 @@ type tk_TM struct {
 	minus                  string
 	percent                string
 	percentSuffix          string
-	perMille               string
 	timeSeparator          string
-	inifinity              string
 	currencies             []string // idx = enum of currency code
 	currencyPositiveSuffix string
 	currencyNegativeSuffix string
@@ -32,13 +30,6 @@ type tk_TM struct {
 	daysNarrow             []string
 	daysShort              []string
 	daysWide               []string
-	periodsAbbreviated     []string
-	periodsNarrow          []string
-	periodsShort           []string
-	periodsWide            []string
-	erasAbbreviated        []string
-	erasNarrow             []string
-	erasWide               []string
 	timezones              map[string]string
 }
 
@@ -50,16 +41,14 @@ func New() locales.Translator {
 		pluralsOrdinal:         []locales.PluralRule{4, 6},
 		pluralsRange:           []locales.PluralRule{2, 6},
 		decimal:                ",",
-		group:                  " ",
+		group:                  " ",
 		minus:                  "-",
 		percent:                "%",
-		perMille:               "‰",
 		timeSeparator:          ":",
-		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		percentSuffix:          " ",
-		currencyPositiveSuffix: " ",
-		currencyNegativeSuffix: " ",
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		percentSuffix:          " ",
+		currencyPositiveSuffix: " ",
+		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "ýan", "few", "mart", "apr", "maý", "iýun", "iýul", "awg", "sen", "okt", "noý", "dek"},
 		monthsNarrow:           []string{"", "Ý", "F", "M", "A", "M", "I", "I", "A", "S", "O", "N", "D"},
 		monthsWide:             []string{"", "ýanwar", "fewral", "mart", "aprel", "maý", "iýun", "iýul", "awgust", "sentýabr", "oktýabr", "noýabr", "dekabr"},
@@ -67,13 +56,7 @@ func New() locales.Translator {
 		daysNarrow:             []string{"Ý", "D", "S", "Ç", "P", "A", "Ş"},
 		daysShort:              []string{"ýb", "db", "sb", "çb", "pb", "an", "şb"},
 		daysWide:               []string{"ýekşenbe", "duşenbe", "sişenbe", "çarşenbe", "penşenbe", "anna", "şenbe"},
-		periodsAbbreviated:     []string{"go.öň", "go.soň"},
-		periodsNarrow:          []string{"öň", "soň"},
-		periodsWide:            []string{"günortadan öň", "günortadan soň"},
-		erasAbbreviated:        []string{"B.e.öň", "B.e."},
-		erasNarrow:             []string{"", ""},
-		erasWide:               []string{"Isadan öň", "Isadan soň"},
-		timezones:              map[string]string{"ACDT": "Merkezi Awstraliýa tomusky wagty", "ACST": "Merkezi Awstraliýa standart wagty", "ACWDT": "Merkezi Awstraliýa günbatar tomusky wagty", "ACWST": "Merkezi Awstraliýa günbatar standart wagty", "ADT": "Atlantik tomusky wagty", "AEDT": "Gündogar Awstraliýa tomusky wagty", "AEST": "Gündogar Awstraliýa standart wagty", "AKDT": "Alýaska tomusky wagty", "AKST": "Alýaska standart wagty", "ARST": "Argentina tomusky wagty", "ART": "Argentina standart wagty", "AST": "Atlantik standart wagty", "AWDT": "Günbatar Awstraliýa tomusky wagty", "AWST": "Günbatar Awstraliýa standart wagty", "BOT": "Boliwiýa wagty", "BT": "Butan wagty", "CAT": "Merkezi Afrika wagty", "CDT": "Merkezi Amerika tomusky wagty", "CHADT": "Çatem tomusky wagty", "CHAST": "Çatem standart wagty", "CLST": "Çili tomusky wagty", "CLT": "Çili standart wagty", "COST": "Kolumbiýa tomusky wagty", "COT": "Kolumbiýa standart wagty", "CST": "Merkezi Amerika standart wagty", "ChST": "Çamorro wagty", "EAT": "Gündogar Afrika wagty", "ECT": "Ekwador wagty", "EDT": "Demirgazyk Amerika gündogar tomusky wagty", "EST": "Demirgazyk Amerika gündogar standart wagty", "GFT": "Fransuz Gwianasy wagty", "GMT": "Grinwiç boýunça orta wagt", "GST": "Pars aýlagy standart wagty", "GYT": "Gaýana wagty", "HADT": "Gawaý-Aleut tomusky wagty", "HAST": "Gawaý-Aleut standart wagty", "HAT": "Nýufaundlend tomusky wagty", "HECU": "Kuba tomusky wagty", "HEEG": "Gündogar Grenlandiýa tomusky wagty", "HENOMX": "Demirgazyk-günbatar Meksika tomusky wagty", "HEOG": "Günbatar Grenlandiýa tomusky wagty", "HEPM": "Sen-Pýer we Mikelon tomusky wagty", "HEPMX": "Meksikan Ýuwaş umman tomusky wagty", "HKST": "Gonkong tomusky wagty", "HKT": "Gonkong standart wagty", "HNCU": "Kuba standart wagty", "HNEG": "Gündogar Grenlandiýa standart wagty", "HNNOMX": "Demirgazyk-günbatar Meksika standart wagty", "HNOG": "Günbatar Grenlandiýa standart wagty", "HNPM": "Sen-Pýer we Mikelon standart wagty", "HNPMX": "Meksikan Ýuwaş umman standart wagty", "HNT": "Nýufaundlend standart wagty", "IST": "Hindistan standart wagty", "JDT": "Ýaponiýa tomusky wagty", "JST": "Ýaponiýa standart wagty", "LHDT": "Lord-Hau tomusky wagty", "LHST": "Lord-Hau standart wagty", "MDT": "Demirgazyk Amerika dag tomusky wagty", "MESZ": "Merkezi Ýewropa tomusky wagty", "MEZ": "Merkezi Ýewropa standart wagty", "MST": "Demirgazyk Amerika dag standart wagty", "MYT": "Malaýziýa wagty", "NZDT": "Täze Zelandiýa tomusky wagty", "NZST": "Täze Zelandiýa standart wagty", "OESZ": "Gündogar Ýewropa tomusky wagty", "OEZ": "Gündogar Ýewropa standart wagty", "PDT": "Demirgazyk Amerika Ýuwaş umman tomusky wagty", "PST": "Demirgazyk Amerika Ýuwaş umman standart wagty", "SAST": "Günorta Afrika standart wagty", "SGT": "Singapur wagty", "SRT": "Surinam wagty", "TMST": "Türkmenistan tomusky wagty", "TMT": "Türkmenistan standart wagty", "UYST": "Urugwaý tomusky wagty", "UYT": "Urugwaý standart wagty", "VET": "Wenesuela wagty", "WARST": "Günbatar Argentina tomusky wagty", "WART": "Günbatar Argentina standart wagty", "WAST": "Günbatar Afrika tomusky wagty", "WAT": "Günbatar Afrika standart wagty", "WESZ": "Günbatar Ýewropa tomusky wagty", "WEZ": "Günbatar Ýewropa standart wagty", "WIB": "Günbatar Indoneziýa wagty", "WIT": "Gündogar Indoneziýa wagty", "WITA": "Merkezi Indoneziýa wagty", "∅∅∅": "Braziliýa tomusky wagty"},
+		timezones:              map[string]string{"ACDT": "Merkezi Awstraliýa tomusky wagty", "ACST": "Akri tomusky wagty", "ACT": "Akri standart wagty", "ACWDT": "Merkezi Awstraliýa günbatar tomusky wagty", "ACWST": "Merkezi Awstraliýa günbatar standart wagty", "ADT": "Atlantik tomusky wagty", "ADT Arabia": "Arap ýurtlary tomusky wagty", "AEDT": "Gündogar Awstraliýa tomusky wagty", "AEST": "Gündogar Awstraliýa standart wagty", "AFT": "Owganystan wagty", "AKDT": "Alýaska tomusky wagty", "AKST": "Alýaska standart wagty", "AMST": "Amazon tomusky wagty", "AMST Armenia": "Ermenistan tomusky wagty", "AMT": "Amazon standart wagty", "AMT Armenia": "Ermenistan standart wagty", "ANAST": "Anadyr tomusky wagty", "ANAT": "", "ARST": "Argentina tomusky wagty", "ART": "Argentina standart wagty", "AST": "Atlantik standart wagty", "AST Arabia": "Arap ýurtlary standart wagty", "AWDT": "Günbatar Awstraliýa tomusky wagty", "AWST": "Günbatar Awstraliýa standart wagty", "AZST": "Azerbaýjan tomusky wagty", "AZT": "Azerbaýjan standart wagty", "BDT Bangladesh": "Bangladeş tomusky wagty", "BNT": "Bruneý-Darussalam wagty", "BOT": "Boliwiýa wagty", "BRST": "Braziliýa tomusky wagty", "BRT": "Braziliýa standart wagty", "BST Bangladesh": "Bangladeş standart wagty", "BT": "Butan wagty", "CAST": "CAST", "CAT": "Merkezi Afrika wagty", "CCT": "Kokos adalary wagty", "CDT": "Merkezi Amerika tomusky wagty", "CHADT": "Çatem tomusky wagty", "CHAST": "Çatem standart wagty", "CHUT": "Çuuk wagty", "CKT": "Kuk adalary standart wagty", "CKT DST": "Kuk adalary tomusky wagty", "CLST": "Çili tomusky wagty", "CLT": "Çili standart wagty", "COST": "Kolumbiýa tomusky wagty", "COT": "Kolumbiýa standart wagty", "CST": "Merkezi Amerika standart wagty", "CST China": "Hytaý standart wagty", "CST China DST": "Hytaý tomusky wagty", "CVST": "Kabo-Werde tomusky wagty", "CVT": "Kabo-Werde standart wagty", "CXT": "Roždestwo adasy wagty", "ChST": "Çamorro wagty", "ChST NMI": "ChST NMI", "CuDT": "Kuba tomusky wagty", "CuST": "Kuba standart wagty", "DAVT": "Deýwis wagty", "DDUT": "Dýumon-d-Ýurwil wagty", "EASST": "Pasha adasy tomusky wagty", "EAST": "Pasha adasy standart wagty", "EAT": "Gündogar Afrika wagty", "ECT": "Ekwador wagty", "EDT": "Demirgazyk Amerika gündogar tomusky wagty", "EGDT": "Gündogar Grenlandiýa tomusky wagty", "EGST": "Gündogar Grenlandiýa standart wagty", "EST": "Demirgazyk Amerika gündogar standart wagty", "FEET": "Uzak Gündogar Ýewropa wagty", "FJT": "Fiji standart wagty", "FJT Summer": "Fiji tomusky wagty", "FKST": "Folklend adalary tomusky wagty", "FKT": "Folklend adalary standart wagty", "FNST": "Fernandu-di-Noronýa tomusky wagty", "FNT": "Fernandu-di-Noronýa standart wagty", "GALT": "Galapagos adalary wagty", "GAMT": "Gambýe wagty", "GEST": "Gruziýa tomusky wagty", "GET": "Gruziýa standart wagty", "GFT": "Fransuz Gwianasy wagty", "GIT": "Gilbert adalary wagty", "GMT": "Grinwiç ortaça wagty", "GNSST": "GNSST", "GNST": "GNST", "GST": "Pars aýlagy standart wagty", "GST Guam": "GST Guam", "GYT": "Gaýana wagty", "HADT": "Gawaý-Aleut standart wagty", "HAST": "Gawaý-Aleut standart wagty", "HKST": "Gonkong tomusky wagty", "HKT": "Gonkong standart wagty", "HOVST": "Howd tomusky wagty", "HOVT": "Howd standart wagty", "ICT": "Hindihytaý wagty", "IDT": "Ysraýyl tomusky wagty", "IOT": "Hindi ummany wagty", "IRKST": "Irkutsk tomusky wagty", "IRKT": "Irkutsk standart wagty", "IRST": "Eýran standart wagty", "IRST DST": "Eýran tomusky wagty", "IST": "Hindistan standart wagty", "IST Israel": "Ysraýyl standart wagty", "JDT": "Ýaponiýa tomusky wagty", "JST": "Ýaponiýa standart wagty", "KOST": "Kosraýe wagty", "KRAST": "Krasnoýarsk tomusky wagty", "KRAT": "Krasnoýarsk standart wagty", "KST": "Koreýa standart wagty", "KST DST": "Koreýa tomusky wagty", "LHDT": "Lord-Hau tomusky wagty", "LHST": "Lord-Hau standart wagty", "LINT": "Laýn adalary wagty", "MAGST": "Magadan tomusky wagty", "MAGT": "Magadan standart wagty", "MART": "Markiz adalary wagty", "MAWT": "Mouson wagty", "MDT": "Demirgazyk Amerika dag tomusky wagty", "MESZ": "Merkezi Ýewropa tomusky wagty", "MEZ": "Merkezi Ýewropa standart wagty", "MHT": "Marşall adalary wagty", "MMT": "Mýanma wagty", "MSD": "Moskwa tomusky wagty", "MST": "Demirgazyk Amerika dag standart wagty", "MUST": "Mawrikiý tomusky wagty", "MUT": "Mawrikiý standart wagty", "MVT": "Maldiwler wagty", "MYT": "Malaýziýa wagty", "NCT": "Täze Kaledoniýa standart wagty", "NDT": "Nýufaundlend tomusky wagty", "NDT New Caledonia": "Täze Kaledoniýa tomusky wagty", "NFDT": "Norfolk adasy tomusky wagty", "NFT": "Norfolk adasy standart wagty", "NOVST": "Nowosibisk tomusky wagty", "NOVT": "Nowosibirsk standart wagty", "NPT": "Nepal wagty", "NRT": "Nauru wagty", "NST": "Nýufaundlend standart wagty", "NUT": "Niue wagty", "NZDT": "Täze Zelandiýa tomusky wagty", "NZST": "Täze Zelandiýa standart wagty", "OESZ": "Gündogar Ýewropa tomusky wagty", "OEZ": "Gündogar Ýewropa standart wagty", "OMSST": "Omsk tomusky wagty", "OMST": "Omsk standart wagty", "PDT": "Demirgazyk Amerika Ýuwaş umman tomusky wagty", "PDTM": "Meksikan Ýuwaş umman tomusky wagty", "PETDT": "Kamçatka tomusky wagty", "PETST": "", "PGT": "Papua - Täze Gwineýa wagty", "PHOT": "Feniks adalary wagty", "PKT": "Pakistan standart wagty", "PKT DST": "Pakistan tomusky wagty", "PMDT": "Sen-Pýer we Mikelon tomusky wagty", "PMST": "Sen-Pýer we Mikelon standart wagty", "PONT": "Ponape wagty", "PST": "Demirgazyk Amerika Ýuwaş umman standart wagty", "PST Philippine": "Filippinler standart wagty", "PST Philippine DST": "Filippinler tomusky wagty", "PST Pitcairn": "Pitkern wagty", "PSTM": "Meksikan Ýuwaş umman standart wagty", "PWT": "Palau wagty", "PYST": "Paragwaý tomusky wagty", "PYT": "Paragwaý standart wagty", "PYT Korea": "Phenýan wagty", "RET": "Reýunýon wagty", "ROTT": "Rotera wagty", "SAKST": "Sahalin tomusky wagty", "SAKT": "Sahalin standart wagty", "SAMST": "Samara tomusky wagty", "SAMT": "", "SAST": "Günorta Afrika standart wagty", "SBT": "Solomon adalary wagty", "SCT": "Seýşel adalary wagty", "SGT": "Singapur wagty", "SLST": "SLST", "SRT": "Surinam wagty", "SST Samoa": "Samoa standart wagty", "SST Samoa Apia": "Apia standart wagty", "SST Samoa Apia DST": "Apia tomusky wagty", "SST Samoa DST": "Samoa tomusky wagty", "SYOT": "Sýowa wagty", "TAAF": "Fransuz Günorta we Antarktika ýerleri wagty", "TAHT": "Taiti wagty", "TJT": "Täjigistan wagty", "TKT": "Tokelau wagty", "TLT": "Gündogar Timor wagty", "TMST": "Türkmenistan tomusky wagty", "TMT": "Türkmenistan standart wagty", "TOST": "Tonga tomusky wagty", "TOT": "Tonga standart wagty", "TVT": "Tuwalu wagty", "TWT": "Taýbeý standart wagty", "TWT DST": "Taýbeý tomusky wagty", "ULAST": "Ulan-Bator tomusky wagty", "ULAT": "Ulan-Bator standart wagty", "UYST": "Urugwaý tomusky wagty", "UYT": "Urugwaý standart wagty", "UZT": "Özbegistan standart wagty", "UZT DST": "Özbegistan tomusky wagty", "VET": "Wenesuela wagty", "VLAST": "Wladiwostok tomusky wagty", "VLAT": "Wladiwostok standart wagty", "VOLST": "Wolgograd tomusky wagty", "VOLT": "Wolgograd standart wagty", "VOST": "Wostok wagty", "VUT": "Wanuatu standart wagty", "VUT DST": "Wanuatu tomusky wagty", "WAKT": "Weýk adasy wagty", "WARST": "Günbatar Argentina tomusky wagty", "WART": "Günbatar Argentina standart wagty", "WAST": "Günbatar Afrika wagty", "WAT": "Günbatar Afrika wagty", "WESZ": "Günbatar Ýewropa tomusky wagty", "WEZ": "Günbatar Ýewropa standart wagty", "WFT": "Uollis we Futuna wagty", "WGST": "Günbatar Grenlandiýa tomusky wagty", "WGT": "Günbatar Grenlandiýa standart wagty", "WIB": "Günbatar Indoneziýa wagty", "WIT": "Gündogar Indoneziýa wagty", "WITA": "Merkezi Indoneziýa wagty", "YAKST": "Ýakutsk tomusky wagty", "YAKT": "Ýakutsk standart wagty", "YEKST": "Ýekaterinburg tomusky wagty", "YEKT": "Ýekaterinburg standart wagty", "YST": "Ýukon wagty", "МСК": "Moskwa standart wagty", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "Günbatar Gazagystan wagty", "شىعىش قازاق ەلى": "Gündogar Gazagystan wagty", "قازاق ەلى": "Gazagystan wagty", "قىرعىزستان": "Gyrgyzystan wagty", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Peru tomusky wagty"},
 	}
 }
 
@@ -99,7 +82,6 @@ func (tk *tk_TM) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'tk_TM'
 func (tk *tk_TM) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -111,7 +93,6 @@ func (tk *tk_TM) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // OrdinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for 'tk_TM'
 func (tk *tk_TM) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 	nMod10 := math.Mod(n, 10)
 
@@ -124,7 +105,6 @@ func (tk *tk_TM) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'tk_TM'
 func (tk *tk_TM) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
-
 	start := tk.CardinalPluralRule(num1, v1)
 	end := tk.CardinalPluralRule(num2, v2)
 
@@ -135,7 +115,6 @@ func (tk *tk_TM) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 	}
 
 	return locales.PluralRuleOther
-
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -225,7 +204,6 @@ func (tk *tk_TM) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'tk_TM' and handles both Whole and Real numbers based on 'v'
 func (tk *tk_TM) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -301,7 +279,6 @@ func (tk *tk_TM) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'tk_TM'
 func (tk *tk_TM) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := tk.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
@@ -361,7 +338,6 @@ func (tk *tk_TM) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'tk_TM'
 // in accounting notation.
 func (tk *tk_TM) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := tk.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
@@ -392,9 +368,7 @@ func (tk *tk_TM) FmtAccounting(num float64, v uint64, currency currency.Type) st
 	}
 
 	if num < 0 {
-
 		b = append(b, tk.minus[0])
-
 	}
 
 	// reverse
@@ -427,7 +401,6 @@ func (tk *tk_TM) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 // FmtDateShort returns the short date representation of 't' for 'tk_TM'
 func (tk *tk_TM) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -456,7 +429,6 @@ func (tk *tk_TM) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'tk_TM'
 func (tk *tk_TM) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -475,7 +447,6 @@ func (tk *tk_TM) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'tk_TM'
 func (tk *tk_TM) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -494,7 +465,6 @@ func (tk *tk_TM) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'tk_TM'
 func (tk *tk_TM) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -516,7 +486,6 @@ func (tk *tk_TM) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'tk_TM'
 func (tk *tk_TM) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -537,7 +506,6 @@ func (tk *tk_TM) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'tk_TM'
 func (tk *tk_TM) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -565,7 +533,6 @@ func (tk *tk_TM) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'tk_TM'
 func (tk *tk_TM) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -597,7 +564,6 @@ func (tk *tk_TM) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'tk_TM'
 func (tk *tk_TM) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

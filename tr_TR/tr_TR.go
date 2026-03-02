@@ -18,9 +18,7 @@ type tr_TR struct {
 	group                  string
 	minus                  string
 	percent                string
-	perMille               string
 	timeSeparator          string
-	inifinity              string
 	currencies             []string // idx = enum of currency code
 	currencyNegativePrefix string
 	currencyNegativeSuffix string
@@ -31,13 +29,6 @@ type tr_TR struct {
 	daysNarrow             []string
 	daysShort              []string
 	daysWide               []string
-	periodsAbbreviated     []string
-	periodsNarrow          []string
-	periodsShort           []string
-	periodsWide            []string
-	erasAbbreviated        []string
-	erasNarrow             []string
-	erasWide               []string
 	timezones              map[string]string
 }
 
@@ -52,10 +43,8 @@ func New() locales.Translator {
 		group:                  ".",
 		minus:                  "-",
 		percent:                "%",
-		perMille:               "‰",
 		timeSeparator:          ":",
-		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
 		currencyNegativePrefix: "(",
 		currencyNegativeSuffix: ")",
 		monthsAbbreviated:      []string{"", "Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"},
@@ -65,13 +54,7 @@ func New() locales.Translator {
 		daysNarrow:             []string{"P", "P", "S", "Ç", "P", "C", "C"},
 		daysShort:              []string{"Pa", "Pt", "Sa", "Ça", "Pe", "Cu", "Ct"},
 		daysWide:               []string{"Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"},
-		periodsAbbreviated:     []string{"ÖÖ", "ÖS"},
-		periodsNarrow:          []string{"öö", "ös"},
-		periodsWide:            []string{"ÖÖ", "ÖS"},
-		erasAbbreviated:        []string{"MÖ", "MS"},
-		erasNarrow:             []string{"", ""},
-		erasWide:               []string{"Milattan Önce", "Milattan Sonra"},
-		timezones:              map[string]string{"ACDT": "Orta Avustralya Yaz Saati", "ACST": "Orta Avustralya Standart Saati", "ACWDT": "İç Batı Avustralya Yaz Saati", "ACWST": "İç Batı Avustralya Standart Saati", "ADT": "Atlantik Yaz Saati", "AEDT": "Doğu Avustralya Yaz Saati", "AEST": "Doğu Avustralya Standart Saati", "AKDT": "Alaska Yaz Saati", "AKST": "Alaska Standart Saati", "ARST": "Arjantin Yaz Saati", "ART": "Arjantin Standart Saati", "AST": "Atlantik Standart Saati", "AWDT": "Batı Avustralya Yaz Saati", "AWST": "Batı Avustralya Standart Saati", "BOT": "Bolivya Saati", "BT": "Butan Saati", "CAT": "Orta Afrika Saati", "CDT": "Kuzey Amerika Merkezi Yaz Saati", "CHADT": "Chatham Yaz Saati", "CHAST": "Chatham Standart Saati", "CLST": "Şili Yaz Saati", "CLT": "Şili Standart Saati", "COST": "Kolombiya Yaz Saati", "COT": "Kolombiya Standart Saati", "CST": "Kuzey Amerika Merkezi Standart Saati", "ChST": "Chamorro Saati", "EAT": "Doğu Afrika Saati", "ECT": "Ekvador Saati", "EDT": "Kuzey Amerika Doğu Yaz Saati", "EST": "Kuzey Amerika Doğu Standart Saati", "GFT": "Fransız Guyanası Saati", "GMT": "Greenwich Ortalama Saati", "GST": "Körfez Saati", "GYT": "Guyana Saati", "HADT": "Hawaii-Aleut Yaz Saati", "HAST": "Hawaii-Aleut Standart Saati", "HAT": "Newfoundland Yaz Saati", "HECU": "Küba Yaz Saati", "HEEG": "Doğu Grönland Yaz Saati", "HENOMX": "Kuzeybatı Meksika Yaz Saati", "HEOG": "Batı Grönland Yaz Saati", "HEPM": "Saint Pierre ve Miquelon Yaz Saati", "HEPMX": "Meksika Pasifik Kıyısı Yaz Saati", "HKST": "Hong Kong Yaz Saati", "HKT": "Hong Kong Standart Saati", "HNCU": "Küba Standart Saati", "HNEG": "Doğu Grönland Standart Saati", "HNNOMX": "Kuzeybatı Meksika Standart Saati", "HNOG": "Batı Grönland Standart Saati", "HNPM": "Saint Pierre ve Miquelon Standart Saati", "HNPMX": "Meksika Pasifik Kıyısı Standart Saati", "HNT": "Newfoundland Standart Saati", "IST": "Hindistan Standart Saati", "JDT": "Japonya Yaz Saati", "JST": "Japonya Standart Saati", "LHDT": "Lord Howe Yaz Saati", "LHST": "Lord Howe Standart Saati", "MDT": "Kuzey Amerika Dağ Yaz Saati", "MESZ": "Orta Avrupa Yaz Saati", "MEZ": "Orta Avrupa Standart Saati", "MST": "Kuzey Amerika Dağ Standart Saati", "MYT": "Malezya Saati", "NZDT": "Yeni Zelanda Yaz Saati", "NZST": "Yeni Zelanda Standart Saati", "OESZ": "Doğu Avrupa Yaz Saati", "OEZ": "Doğu Avrupa Standart Saati", "PDT": "Kuzey Amerika Pasifik Yaz Saati", "PST": "Kuzey Amerika Pasifik Standart Saati", "SAST": "Güney Afrika Standart Saati", "SGT": "Singapur Standart Saati", "SRT": "Surinam Saati", "TMST": "Türkmenistan Yaz Saati", "TMT": "Türkmenistan Standart Saati", "UYST": "Uruguay Yaz Saati", "UYT": "Uruguay Standart Saati", "VET": "Venezuela Saati", "WARST": "Batı Arjantin Yaz Saati", "WART": "Batı Arjantin Standart Saati", "WAST": "Batı Afrika Yaz Saati", "WAT": "Batı Afrika Standart Saati", "WESZ": "Batı Avrupa Yaz Saati", "WEZ": "Batı Avrupa Standart Saati", "WIB": "Batı Endonezya Saati", "WIT": "Doğu Endonezya Saati", "WITA": "Orta Endonezya Saati", "∅∅∅": "Peru Yaz Saati"},
+		timezones:              map[string]string{"ACDT": "Orta Avustralya Yaz Saati", "ACST": "Orta Avustralya Standart Saati", "ACT": "Acre Standart Saati", "ACWDT": "İç Batı Avustralya Yaz Saati", "ACWST": "İç Batı Avustralya Standart Saati", "ADT": "Atlantik Yaz Saati", "ADT Arabia": "Arabistan Yaz Saati", "AEDT": "Doğu Avustralya Yaz Saati", "AEST": "Doğu Avustralya Standart Saati", "AFT": "Afganistan Saati", "AKDT": "Alaska Yaz Saati", "AKST": "Alaska Standart Saati", "AMST": "Amazon Yaz Saati", "AMST Armenia": "Ermenistan Yaz Saati", "AMT": "Amazon Standart Saati", "AMT Armenia": "Ermenistan Standart Saati", "ANAST": "Anadır Yaz Saati", "ANAT": "Anadır Standart Saati", "ARST": "Arjantin Yaz Saati", "ART": "Arjantin Standart Saati", "AST": "Atlantik Standart Saati", "AST Arabia": "Arabistan Standart Saati", "AWDT": "Batı Avustralya Yaz Saati", "AWST": "Batı Avustralya Standart Saati", "AZST": "Azerbaycan Yaz Saati", "AZT": "Azerbaycan Standart Saati", "BDT Bangladesh": "Bangladeş Yaz Saati", "BNT": "Brunei Darü’s-Selam Saati", "BOT": "Bolivya Saati", "BRST": "Brasilia Yaz Saati", "BRT": "Brasilia Standart Saati", "BST Bangladesh": "Bangladeş Standart Saati", "BT": "Butan Saati", "CAST": "Casey Saati", "CAT": "Orta Afrika Saati", "CCT": "Cocos Adaları Saati", "CDT": "Kuzey Amerika Merkezi Yaz Saati", "CHADT": "Chatham Yaz Saati", "CHAST": "Chatham Standart Saati", "CHUT": "Chuuk Saati", "CKT": "Cook Adaları Standart Saati", "CKT DST": "Cook Adaları Yarı Yaz Saati", "CLST": "Şili Yaz Saati", "CLT": "Şili Standart Saati", "COST": "Kolombiya Yaz Saati", "COT": "Kolombiya Standart Saati", "CST": "Kuzey Amerika Merkezi Standart Saati", "CST China": "Çin Standart Saati", "CST China DST": "Çin Yaz Saati", "CVST": "Cape Verde Yaz Saati", "CVT": "Cape Verde Standart Saati", "CXT": "Christmas Adası Saati", "ChST": "Chamorro Saati", "ChST NMI": "Kuzey Mariana Adaları Saati", "CuDT": "Küba Yaz Saati", "CuST": "Küba Standart Saati", "DAVT": "Davis Saati", "DDUT": "Dumont-d’Urville Saati", "EASST": "Paskalya Adası Yaz Saati", "EAST": "Paskalya Adası Standart Saati", "EAT": "Doğu Afrika Saati", "ECT": "Ekvador Saati", "EDT": "Kuzey Amerika Doğu Yaz Saati", "EGDT": "Doğu Grönland Yaz Saati", "EGST": "Doğu Grönland Standart Saati", "EST": "Kuzey Amerika Doğu Standart Saati", "FEET": "İleri Doğu Avrupa Saati", "FJT": "Fiji Standart Saati", "FJT Summer": "Fiji Yaz Saati", "FKST": "Falkland Adaları Yaz Saati", "FKT": "Falkland Adaları Standart Saati", "FNST": "Fernando de Noronha Yaz Saati", "FNT": "Fernando de Noronha Standart Saati", "GALT": "Galapagos Saati", "GAMT": "Gambier Saati", "GEST": "Gürcistan Yaz Saati", "GET": "Gürcistan Standart Saati", "GFT": "Fransız Guyanası Saati", "GIT": "Gilbert Adaları Saati", "GMT": "Greenwich Ortalama Saati", "GNSST": "GNSST", "GNST": "GNST", "GST": "Güney Georgia Saati", "GST Guam": "Guam Standart Saati", "GYT": "Guyana Saati", "HADT": "Hawaii-Aleut Yaz Saati", "HAST": "Hawaii-Aleut Standart Saati", "HKST": "Hong Kong Yaz Saati", "HKT": "Hong Kong Standart Saati", "HOVST": "Hovd Yaz Saati", "HOVT": "Hovd Standart Saati", "ICT": "Hindiçin Saati", "IDT": "İsrail Yaz Saati", "IOT": "Hint Okyanusu Saati", "IRKST": "İrkutsk Yaz Saati", "IRKT": "İrkutsk Standart Saati", "IRST": "İran Standart Saati", "IRST DST": "İran Yaz Saati", "IST": "Hindistan Standart Saati", "IST Israel": "İsrail Standart Saati", "JDT": "Japonya Yaz Saati", "JST": "Japonya Standart Saati", "KOST": "Kosrae Saati", "KRAST": "Krasnoyarsk Yaz Saati", "KRAT": "Krasnoyarsk Standart Saati", "KST": "Kore Standart Saati", "KST DST": "Kore Yaz Saati", "LHDT": "Lord Howe Yaz Saati", "LHST": "Lord Howe Standart Saati", "LINT": "Line Adaları Saati", "MAGST": "Magadan Yaz Saati", "MAGT": "Magadan Standart Saati", "MART": "Markiz Adaları Saati", "MAWT": "Mawson Saati", "MDT": "Makao Yaz Saati", "MESZ": "Orta Avrupa Yaz Saati", "MEZ": "Orta Avrupa Standart Saati", "MHT": "Marshall Adaları Saati", "MMT": "Myanmar Saati", "MSD": "Moskova Yaz Saati", "MST": "Makao Standart Saati", "MUST": "Mauritius Yaz Saati", "MUT": "Mauritius Standart Saati", "MVT": "Maldivler Saati", "MYT": "Malezya Saati", "NCT": "Yeni Kaledonya Standart Saati", "NDT": "Newfoundland Yaz Saati", "NDT New Caledonia": "Yeni Kaledonya Yaz Saati", "NFDT": "Norfolk Adası Yaz Saati", "NFT": "Norfolk Adası Standart Saati", "NOVST": "Novosibirsk Yaz Saati", "NOVT": "Novosibirsk Standart Saati", "NPT": "Nepal Saati", "NRT": "Nauru Saati", "NST": "Newfoundland Standart Saati", "NUT": "Niue Saati", "NZDT": "Yeni Zelanda Yaz Saati", "NZST": "Yeni Zelanda Standart Saati", "OESZ": "Doğu Avrupa Yaz Saati", "OEZ": "Doğu Avrupa Standart Saati", "OMSST": "Omsk Yaz Saati", "OMST": "Omsk Standart Saati", "PDT": "Kuzey Amerika Pasifik Yaz Saati", "PDTM": "Meksika Pasifik Kıyısı Yaz Saati", "PETDT": "Petropavlovsk-Kamçatski Yaz Saati", "PETST": "Petropavlovsk-Kamçatski Standart Saati", "PGT": "Papua Yeni Gine Saati", "PHOT": "Phoenix Adaları Saati", "PKT": "Pakistan Standart Saati", "PKT DST": "Pakistan Yaz Saati", "PMDT": "Saint Pierre ve Miquelon Yaz Saati", "PMST": "Saint Pierre ve Miquelon Standart Saati", "PONT": "Ponape Saati", "PST": "Kuzey Amerika Pasifik Standart Saati", "PST Philippine": "Filipinler Standart Saati", "PST Philippine DST": "Filipinler Yaz Saati", "PST Pitcairn": "Pitcairn Saati", "PSTM": "Meksika Pasifik Kıyısı Standart Saati", "PWT": "Palau Saati", "PYST": "Paraguay Yaz Saati", "PYT": "Paraguay Standart Saati", "PYT Korea": "Pyongyang Saati", "RET": "Reunion Saati", "ROTT": "Rothera Saati", "SAKST": "Sahalin Yaz Saati", "SAKT": "Sahalin Standart Saati", "SAMST": "Samara Yaz Saati", "SAMT": "Samara Standart Saati", "SAST": "Güney Afrika Standart Saati", "SBT": "Solomon Adaları Saati", "SCT": "Seyşeller Saati", "SGT": "Singapur Standart Saati", "SLST": "Lanka Saati", "SRT": "Surinam Saati", "SST Samoa": "Samoa Standart Saati", "SST Samoa Apia": "Apia Standart Saati", "SST Samoa Apia DST": "Apia Yaz Saati", "SST Samoa DST": "Samoa Yaz Saati", "SYOT": "Showa Saati", "TAAF": "Fransız Güney ve Antarktika Saati", "TAHT": "Tahiti Saati", "TJT": "Tacikistan Saati", "TKT": "Tokelau Saati", "TLT": "Doğu Timor Saati", "TMST": "Türkmenistan Yaz Saati", "TMT": "Türkmenistan Standart Saati", "TOST": "Tonga Yaz Saati", "TOT": "Tonga Standart Saati", "TVT": "Tuvalu Saati", "TWT": "Taipei Standart Saati", "TWT DST": "Taipei Yaz Saati", "ULAST": "Ulan Batur Yaz Saati", "ULAT": "Ulan Batur Standart Saati", "UYST": "Uruguay Yaz Saati", "UYT": "Uruguay Standart Saati", "UZT": "Özbekistan Standart Saati", "UZT DST": "Özbekistan Yaz Saati", "VET": "Venezuela Saati", "VLAST": "Vladivostok Yaz Saati", "VLAT": "Vladivostok Standart Saati", "VOLST": "Volgograd Yaz Saati", "VOLT": "Volgograd Standart Saati", "VOST": "Vostok Saati", "VUT": "Vanuatu Standart Saati", "VUT DST": "Vanuatu Yaz Saati", "WAKT": "Wake Adası Saati", "WARST": "Batı Arjantin Yaz Saati", "WART": "Batı Arjantin Standart Saati", "WAST": "Batı Afrika Saati", "WAT": "Batı Afrika Saati", "WESZ": "Batı Avrupa Yaz Saati", "WEZ": "Batı Avrupa Standart Saati", "WFT": "Wallis ve Futuna Saati", "WGST": "Batı Grönland Yaz Saati", "WGT": "Batı Grönland Standart Saati", "WIB": "Batı Endonezya Saati", "WIT": "Doğu Endonezya Saati", "WITA": "Orta Endonezya Saati", "YAKST": "Yakutsk Yaz Saati", "YAKT": "Yakutsk Standart Saati", "YEKST": "Yekaterinburg Yaz Saati", "YEKT": "Yekaterinburg Standart Saati", "YST": "Yukon Saati", "МСК": "Moskova Standart Saati", "اقتاۋ": "Aktav Standart Saati", "اقتاۋ قالاسى": "Aktav Yaz Saati", "اقتوبە": "Aktöbe Standart Saati", "اقتوبە قالاسى": "Aktöbe Yaz Saati", "الماتى": "Almatı Standart Saati", "الماتى قالاسى": "Almatı Yaz Saati", "باتىس قازاق ەلى": "Batı Kazakistan Saati", "شىعىش قازاق ەلى": "Doğu Kazakistan Saati", "قازاق ەلى": "Kazakistan Saati", "قىرعىزستان": "Kırgızistan Saati", "قىزىلوردا": "Kızılorda Standart Saati", "قىزىلوردا قالاسى": "Kızılorda Yaz Saati", "∅∅∅": "Peru Yaz Saati"},
 	}
 }
 
@@ -97,7 +80,6 @@ func (tr *tr_TR) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'tr_TR'
 func (tr *tr_TR) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -114,7 +96,6 @@ func (tr *tr_TR) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'tr_TR'
 func (tr *tr_TR) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
-
 	start := tr.CardinalPluralRule(num1, v1)
 	end := tr.CardinalPluralRule(num2, v2)
 
@@ -125,7 +106,6 @@ func (tr *tr_TR) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 	}
 
 	return locales.PluralRuleOther
-
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -215,7 +195,6 @@ func (tr *tr_TR) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'tr_TR' and handles both Whole and Real numbers based on 'v'
 func (tr *tr_TR) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -300,7 +279,6 @@ func (tr *tr_TR) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'tr_TR'
 func (tr *tr_TR) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := tr.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -358,7 +336,6 @@ func (tr *tr_TR) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'tr_TR'
 // in accounting notation.
 func (tr *tr_TR) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := tr.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -395,11 +372,9 @@ func (tr *tr_TR) FmtAccounting(num float64, v uint64, currency currency.Type) st
 		b = append(b, tr.currencyNegativePrefix[0])
 
 	} else {
-
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
-
 	}
 
 	// reverse
@@ -427,7 +402,6 @@ func (tr *tr_TR) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 // FmtDateShort returns the short date representation of 't' for 'tr_TR'
 func (tr *tr_TR) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -452,7 +426,6 @@ func (tr *tr_TR) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'tr_TR'
 func (tr *tr_TR) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -471,7 +444,6 @@ func (tr *tr_TR) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'tr_TR'
 func (tr *tr_TR) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -490,7 +462,6 @@ func (tr *tr_TR) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'tr_TR'
 func (tr *tr_TR) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -512,7 +483,6 @@ func (tr *tr_TR) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'tr_TR'
 func (tr *tr_TR) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -533,7 +503,6 @@ func (tr *tr_TR) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'tr_TR'
 func (tr *tr_TR) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -561,7 +530,6 @@ func (tr *tr_TR) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'tr_TR'
 func (tr *tr_TR) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -593,7 +561,6 @@ func (tr *tr_TR) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'tr_TR'
 func (tr *tr_TR) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

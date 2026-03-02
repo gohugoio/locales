@@ -19,9 +19,7 @@ type ro_RO struct {
 	minus                  string
 	percent                string
 	percentSuffix          string
-	perMille               string
 	timeSeparator          string
-	inifinity              string
 	currencies             []string // idx = enum of currency code
 	currencyPositiveSuffix string
 	currencyNegativePrefix string
@@ -33,13 +31,6 @@ type ro_RO struct {
 	daysNarrow             []string
 	daysShort              []string
 	daysWide               []string
-	periodsAbbreviated     []string
-	periodsNarrow          []string
-	periodsShort           []string
-	periodsWide            []string
-	erasAbbreviated        []string
-	erasNarrow             []string
-	erasWide               []string
 	timezones              map[string]string
 }
 
@@ -54,14 +45,12 @@ func New() locales.Translator {
 		group:                  ".",
 		minus:                  "-",
 		percent:                "%",
-		perMille:               "‰",
 		timeSeparator:          ":",
-		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		percentSuffix:          " ",
-		currencyPositiveSuffix: " ",
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		percentSuffix:          " ",
+		currencyPositiveSuffix: " ",
 		currencyNegativePrefix: "(",
-		currencyNegativeSuffix: " )",
+		currencyNegativeSuffix: " )",
 		monthsAbbreviated:      []string{"", "ian.", "feb.", "mar.", "apr.", "mai", "iun.", "iul.", "aug.", "sept.", "oct.", "nov.", "dec."},
 		monthsNarrow:           []string{"", "I", "F", "M", "A", "M", "I", "I", "A", "S", "O", "N", "D"},
 		monthsWide:             []string{"", "ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie"},
@@ -69,13 +58,7 @@ func New() locales.Translator {
 		daysNarrow:             []string{"D", "L", "M", "M", "J", "V", "S"},
 		daysShort:              []string{"du.", "lu.", "ma.", "mi.", "joi", "vi.", "sâ."},
 		daysWide:               []string{"duminică", "luni", "marți", "miercuri", "joi", "vineri", "sâmbătă"},
-		periodsAbbreviated:     []string{"a.m.", "p.m."},
-		periodsNarrow:          []string{"a.m.", "p.m."},
-		periodsWide:            []string{"a.m.", "p.m."},
-		erasAbbreviated:        []string{"î.Hr.", "d.Hr."},
-		erasNarrow:             []string{"î.Hr.", "d.Hr."},
-		erasWide:               []string{"înainte de Hristos", "după Hristos"},
-		timezones:              map[string]string{"ACDT": "Ora de vară a Australiei Centrale", "ACST": "Ora standard a Australiei Centrale", "ACWDT": "Ora de vară a Australiei Central Occidentale", "ACWST": "Ora standard a Australiei Central Occidentale", "ADT": "Ora de vară în zona Atlantic nord-americană", "AEDT": "Ora de vară a Australiei Orientale", "AEST": "Ora standard a Australiei Orientale", "AKDT": "Ora de vară din Alaska", "AKST": "Ora standard din Alaska", "ARST": "Ora de vară a Argentinei", "ART": "Ora standard a Argentinei", "AST": "Ora standard în zona Atlantic nord-americană", "AWDT": "Ora de vară a Australiei Occidentale", "AWST": "Ora standard a Australiei Occidentale", "BOT": "Ora Boliviei", "BT": "Ora Bhutanului", "CAT": "Ora Africii Centrale", "CDT": "Ora de vară centrală nord-americană", "CHADT": "Ora de vară din Chatham", "CHAST": "Ora standard din Chatham", "CLST": "Ora de vară din Chile", "CLT": "Ora standard din Chile", "COST": "Ora de vară a Columbiei", "COT": "Ora standard a Columbiei", "CST": "Ora standard centrală nord-americană", "ChST": "Ora din Chamorro", "EAT": "Ora Africii Orientale", "ECT": "Ora Ecuadorului", "EDT": "Ora de vară orientală nord-americană", "EST": "Ora standard orientală nord-americană", "GFT": "Ora din Guyana Franceză", "GMT": "Ora de Greenwhich", "GST": "Ora standard a Golfului", "GYT": "Ora din Guyana", "HADT": "Ora de vară din Hawaii-Aleutine", "HAST": "Ora standard din Hawaii-Aleutine", "HAT": "Ora de vară din Newfoundland", "HECU": "Ora de vară a Cubei", "HEEG": "Ora de vară a Groenlandei orientale", "HENOMX": "Ora de vară a Mexicului de nord-vest", "HEOG": "Ora de vară a Groenlandei occidentale", "HEPM": "Ora de vară din Saint-Pierre și Miquelon", "HEPMX": "Ora de vară a zonei Pacific mexicane", "HKST": "Ora de vară din Hong Kong", "HKT": "Ora standard din Hong Kong", "HNCU": "Ora standard a Cubei", "HNEG": "Ora standard a Groenlandei orientale", "HNNOMX": "Ora standard a Mexicului de nord-vest", "HNOG": "Ora standard a Groenlandei occidentale", "HNPM": "Ora standard din Saint-Pierre și Miquelon", "HNPMX": "Ora standard a zonei Pacific mexicane", "HNT": "Ora standard din Newfoundland", "IST": "Ora Indiei", "JDT": "Ora de vară a Japoniei", "JST": "Ora standard a Japoniei", "LHDT": "Ora de vară din Lord Howe", "LHST": "Ora standard din Lord Howe", "MDT": "Ora de vară în zona montană nord-americană", "MESZ": "Ora de vară a Europei Centrale", "MEZ": "Ora standard a Europei Centrale", "MST": "Ora standard în zona montană nord-americană", "MYT": "Ora din Malaysia", "NZDT": "Ora de vară a Noii Zeelande", "NZST": "Ora standard a Noii Zeelande", "OESZ": "Ora de vară a Europei de Est", "OEZ": "Ora standard a Europei de Est", "PDT": "Ora de vară în zona Pacific nord-americană", "PST": "Ora standard în zona Pacific nord-americană", "SAST": "Ora Africii Meridionale", "SGT": "Ora din Singapore", "SRT": "Ora Surinamului", "TMST": "Ora de vară din Turkmenistan", "TMT": "Ora standard din Turkmenistan", "UYST": "Ora de vară a Uruguayului", "UYT": "Ora standard a Uruguayului", "VET": "Ora Venezuelei", "WARST": "Ora de vară a Argentinei Occidentale", "WART": "Ora standard a Argentinei Occidentale", "WAST": "Ora de vară a Africii Occidentale", "WAT": "Ora standard a Africii Occidentale", "WESZ": "Ora de vară a Europei de Vest", "WEZ": "Ora standard a Europei de Vest", "WIB": "Ora Indoneziei de Vest", "WIT": "Ora Indoneziei de Est", "WITA": "Ora Indoneziei Centrale", "∅∅∅": "Ora de vară din Peru"},
+		timezones:              map[string]string{"ACDT": "Ora de vară a Australiei Centrale", "ACST": "Ora de vară Acre", "ACT": "Ora standard Acre", "ACWDT": "Ora de vară a Australiei Central Occidentale", "ACWST": "Ora standard a Australiei Central Occidentale", "ADT": "Ora de vară în zona Atlantic nord-americană", "ADT Arabia": "Ora de vară arabă", "AEDT": "Ora de vară a Australiei Orientale", "AEST": "Ora standard a Australiei Orientale", "AFT": "Ora Afganistanului", "AKDT": "Ora de vară din Alaska", "AKST": "Ora standard din Alaska", "AMST": "Ora de vară a Amazonului", "AMST Armenia": "Ora de vară a Armeniei", "AMT": "Ora standard a Amazonului", "AMT Armenia": "Ora standard a Armeniei", "ANAST": "Ora de vară din Anadyr", "ANAT": "Ora standard din Anadyr", "ARST": "Ora de vară a Argentinei", "ART": "Ora standard a Argentinei", "AST": "Ora standard în zona Atlantic nord-americană", "AST Arabia": "Ora standard arabă", "AWDT": "Ora de vară a Australiei Occidentale", "AWST": "Ora standard a Australiei Occidentale", "AZST": "Ora de vară a Azerbaidjanului", "AZT": "Ora standard a Azerbaidjanului", "BDT Bangladesh": "Ora de vară din Bangladesh", "BNT": "Ora din Brunei Darussalam", "BOT": "Ora Boliviei", "BRST": "Ora de vară a Brasiliei", "BRT": "Ora standard a Brasiliei", "BST Bangladesh": "Ora standard din Bangladesh", "BT": "Ora Bhutanului", "CAST": "CAST", "CAT": "Ora Africii Centrale", "CCT": "Ora Insulelor Cocos", "CDT": "Ora de vară centrală nord-americană", "CHADT": "Ora de vară din Chatham", "CHAST": "Ora standard din Chatham", "CHUT": "Ora din Chuuk", "CKT": "Ora standard a Insulelor Cook", "CKT DST": "Ora de vară a Insulelor Cook", "CLST": "Ora de vară din Chile", "CLT": "Ora standard din Chile", "COST": "Ora de vară a Columbiei", "COT": "Ora standard a Columbiei", "CST": "Ora standard centrală nord-americană", "CST China": "Ora standard a Chinei", "CST China DST": "Ora de vară a Chinei", "CVST": "Ora de vară din Capul Verde", "CVT": "Ora standard din Capul Verde", "CXT": "Ora din Insula Christmas", "ChST": "Ora din Chamorro", "ChST NMI": "ChST NMI", "CuDT": "Ora de vară a Cubei", "CuST": "Ora standard a Cubei", "DAVT": "Ora din Davis", "DDUT": "Ora din Dumont-d’Urville", "EASST": "Ora de vară din Insula Paștelui", "EAST": "Ora standard din Insula Paștelui", "EAT": "Ora Africii Orientale", "ECT": "Ora Ecuadorului", "EDT": "Ora de vară orientală nord-americană", "EGDT": "Ora de vară a Groenlandei orientale", "EGST": "Ora standard a Groenlandei orientale", "EST": "Ora standard orientală nord-americană", "FEET": "Ora Europei de Est îndepărtate", "FJT": "Ora standard din Fiji", "FJT Summer": "Ora de vară din Fiji", "FKST": "Ora de vară din Insulele Falkland", "FKT": "Ora standard din Insulele Falkland", "FNST": "Ora de vară din Fernando de Noronha", "FNT": "Ora standard din Fernando de Noronha", "GALT": "Ora din Galapagos", "GAMT": "Ora din Gambier", "GEST": "Ora de vară a Georgiei", "GET": "Ora standard a Georgiei", "GFT": "Ora din Guyana Franceză", "GIT": "Ora Insulelor Gilbert", "GMT": "Ora de Greenwich", "GNSST": "GNSST", "GNST": "GNST", "GST": "Ora standard a Golfului", "GST Guam": "GST Guam", "GYT": "Ora din Guyana", "HADT": "Ora standard din Hawaii-Aleutine", "HAST": "Ora standard din Hawaii-Aleutine", "HKST": "Ora de vară din Hong Kong", "HKT": "Ora standard din Hong Kong", "HOVST": "Ora de vară din Hovd", "HOVT": "Ora standard din Hovd", "ICT": "Ora Indochinei", "IDT": "Ora de vară a Israelului", "IOT": "Ora Oceanului Indian", "IRKST": "Ora de vară din Irkuțk", "IRKT": "Ora standard din Irkuțk", "IRST": "Ora standard a Iranului", "IRST DST": "Ora de vară a Iranului", "IST": "Ora Indiei", "IST Israel": "Ora standard a Israelului", "JDT": "Ora de vară a Japoniei", "JST": "Ora standard a Japoniei", "KOST": "Ora din Kosrae", "KRAST": "Ora de vară din Krasnoiarsk", "KRAT": "Ora standard din Krasnoiarsk", "KST": "Ora standard a Coreei", "KST DST": "Ora de vară a Coreei", "LHDT": "Ora de vară din Lord Howe", "LHST": "Ora standard din Lord Howe", "LINT": "Ora din Insulele Line", "MAGST": "Ora de vară din Magadan", "MAGT": "Ora standard din Magadan", "MART": "Ora Insulelor Marchize", "MAWT": "Ora din Mawson", "MDT": "Ora de vară în zona montană nord-americană", "MESZ": "Ora de vară a Europei Centrale", "MEZ": "Ora standard a Europei Centrale", "MHT": "Ora Insulelor Marshall", "MMT": "Ora Myanmarului", "MSD": "Ora de vară a Moscovei", "MST": "Ora standard în zona montană nord-americană", "MUST": "Ora de vară din Mauritius", "MUT": "Ora standard din Mauritius", "MVT": "Ora din Maldive", "MYT": "Ora din Malaysia", "NCT": "Ora standard a Noii Caledonii", "NDT": "Ora de vară din Newfoundland", "NDT New Caledonia": "Ora de vară a Noii Caledonii", "NFDT": "Ora de vară a Insulei Norfolk", "NFT": "Ora standard a Insulei Norfolk", "NOVST": "Ora de vară din Novosibirsk", "NOVT": "Ora standard din Novosibirsk", "NPT": "Ora Nepalului", "NRT": "Ora din Nauru", "NST": "Ora standard din Newfoundland", "NUT": "Ora din Niue", "NZDT": "Ora de vară a Noii Zeelande", "NZST": "Ora standard a Noii Zeelande", "OESZ": "Ora de vară a Europei de Est", "OEZ": "Ora standard a Europei de Est", "OMSST": "Ora de vară din Omsk", "OMST": "Ora standard din Omsk", "PDT": "Ora de vară în zona Pacific nord-americană", "PDTM": "Ora de vară a zonei Pacific mexicane", "PETDT": "Ora de vară din Petropavlovsk-Kamciațki", "PETST": "Ora standard din Petropavlovsk-Kamciațki", "PGT": "Ora din Papua Noua Guinee", "PHOT": "Ora Insulelor Phoenix", "PKT": "Ora standard a Pakistanului", "PKT DST": "Ora de vară a Pakistanului", "PMDT": "Ora de vară din Saint-Pierre și Miquelon", "PMST": "Ora standard din Saint-Pierre și Miquelon", "PONT": "Ora din Ponape", "PST": "Ora standard în zona Pacific nord-americană", "PST Philippine": "Ora standard din Filipine", "PST Philippine DST": "Ora de vară din Filipine", "PST Pitcairn": "Ora din Pitcairn", "PSTM": "Ora standard a zonei Pacific mexicane", "PWT": "Ora din Palau", "PYST": "Ora de vară din Paraguay", "PYT": "Ora standard din Paraguay", "PYT Korea": "Ora din Pyongyang", "RET": "Ora din Reunion", "ROTT": "Ora din Rothera", "SAKST": "Ora de vară din Sahalin", "SAKT": "Ora standard din Sahalin", "SAMST": "Ora de vară din Samara", "SAMT": "Ora standard din Samara", "SAST": "Ora Africii Meridionale", "SBT": "Ora Insulelor Solomon", "SCT": "Ora din Seychelles", "SGT": "Ora din Singapore", "SLST": "SLST", "SRT": "Ora Surinamului", "SST Samoa": "Ora standard din Samoa", "SST Samoa Apia": "Ora standard din Samoa", "SST Samoa Apia DST": "Ora de vară din Samoa", "SST Samoa DST": "Ora de vară din Samoa", "SYOT": "Ora din Syowa", "TAAF": "Ora din Teritoriile Australe și Antarctice Franceze", "TAHT": "Ora din Tahiti", "TJT": "Ora din Tadjikistan", "TKT": "Ora din Tokelau", "TLT": "Ora Timorului de Est", "TMST": "Ora de vară din Turkmenistan", "TMT": "Ora standard din Turkmenistan", "TOST": "Ora de vară din Tonga", "TOT": "Ora standard din Tonga", "TVT": "Ora din Tuvalu", "TWT": "Ora standard din Taipei", "TWT DST": "Ora de vară din Taipei", "ULAST": "Ora de vară din Ulan Bator", "ULAT": "Ora standard din Ulan Bator", "UYST": "Ora de vară a Uruguayului", "UYT": "Ora standard a Uruguayului", "UZT": "Ora standard din Uzbekistan", "UZT DST": "Ora de vară din Uzbekistan", "VET": "Ora Venezuelei", "VLAST": "Ora de vară din Vladivostok", "VLAT": "Ora standard din Vladivostok", "VOLST": "Ora de vară din Volgograd", "VOLT": "Ora standard din Volgograd", "VOST": "Ora din Vostok", "VUT": "Ora standard din Vanuatu", "VUT DST": "Ora de vară din Vanuatu", "WAKT": "Ora Insulei Wake", "WARST": "Ora de vară a Argentinei Occidentale", "WART": "Ora standard a Argentinei Occidentale", "WAST": "Ora Africii Occidentale", "WAT": "Ora Africii Occidentale", "WESZ": "Ora de vară a Europei de Vest", "WEZ": "Ora standard a Europei de Vest", "WFT": "Ora din Wallis și Futuna", "WGST": "Ora de vară a Groenlandei occidentale", "WGT": "Ora standard a Groenlandei occidentale", "WIB": "Ora Indoneziei de Vest", "WIT": "Ora Indoneziei de Est", "WITA": "Ora Indoneziei Centrale", "YAKST": "Ora de vară din Iakuțk", "YAKT": "Ora standard din Iakuțk", "YEKST": "Ora de vară din Ekaterinburg", "YEKT": "Ora standard din Ekaterinburg", "YST": "Ora din Yukon", "МСК": "Ora standard a Moscovei", "اقتاۋ": "Ora standard Aqtau", "اقتاۋ قالاسى": "Ora de vară a zonei Aqtau", "اقتوبە": "Ora standard Aqtobe", "اقتوبە قالاسى": "Ora de vară a zonei Aqtobe", "الماتى": "Ora standard Almaty", "الماتى قالاسى": "Ora de vară Almaty", "باتىس قازاق ەلى": "Ora din Kazahstanul de Vest", "شىعىش قازاق ەلى": "Ora din Kazahstanul de Est", "قازاق ەلى": "Ora din Kazahstan", "قىرعىزستان": "Ora din Kârgâzstan", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Ora de vară din Peru"},
 	}
 }
 
@@ -101,14 +84,13 @@ func (ro *ro_RO) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'ro_RO'
 func (ro *ro_RO) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 	i := int64(n)
 	nMod100 := math.Mod(n, 100)
 
 	if i == 1 && v == 0 {
 		return locales.PluralRuleOne
-	} else if (v != 0) || (n == 0) || (nMod100 >= 2 && nMod100 <= 19) {
+	} else if (v != 0) || (n == 0) || (n != 1 && nMod100 >= 1 && nMod100 <= 19) {
 		return locales.PluralRuleFew
 	}
 
@@ -117,7 +99,6 @@ func (ro *ro_RO) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // OrdinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for 'ro_RO'
 func (ro *ro_RO) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -129,7 +110,6 @@ func (ro *ro_RO) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'ro_RO'
 func (ro *ro_RO) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
-
 	start := ro.CardinalPluralRule(num1, v1)
 	end := ro.CardinalPluralRule(num2, v2)
 
@@ -148,7 +128,6 @@ func (ro *ro_RO) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 	}
 
 	return locales.PluralRuleOther
-
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -238,7 +217,6 @@ func (ro *ro_RO) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ro_RO' and handles both Whole and Real numbers based on 'v'
 func (ro *ro_RO) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -312,7 +290,6 @@ func (ro *ro_RO) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ro_RO'
 func (ro *ro_RO) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ro.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -370,7 +347,6 @@ func (ro *ro_RO) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ro_RO'
 // in accounting notation.
 func (ro *ro_RO) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ro.currencies[currency]
 	l := len(s) + len(symbol) + 6 + 1*len(s[:len(s)-int(v)-1])/3
@@ -399,9 +375,7 @@ func (ro *ro_RO) FmtAccounting(num float64, v uint64, currency currency.Type) st
 	}
 
 	if num < 0 {
-
 		b = append(b, ro.currencyNegativePrefix[0])
-
 	}
 
 	// reverse
@@ -434,7 +408,6 @@ func (ro *ro_RO) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 // FmtDateShort returns the short date representation of 't' for 'ro_RO'
 func (ro *ro_RO) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -463,7 +436,6 @@ func (ro *ro_RO) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'ro_RO'
 func (ro *ro_RO) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -482,7 +454,6 @@ func (ro *ro_RO) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'ro_RO'
 func (ro *ro_RO) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -501,7 +472,6 @@ func (ro *ro_RO) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'ro_RO'
 func (ro *ro_RO) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, ro.daysWide[t.Weekday()]...)
@@ -522,7 +492,6 @@ func (ro *ro_RO) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'ro_RO'
 func (ro *ro_RO) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -543,7 +512,6 @@ func (ro *ro_RO) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'ro_RO'
 func (ro *ro_RO) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -571,7 +539,6 @@ func (ro *ro_RO) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'ro_RO'
 func (ro *ro_RO) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -603,7 +570,6 @@ func (ro *ro_RO) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'ro_RO'
 func (ro *ro_RO) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

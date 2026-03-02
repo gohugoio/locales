@@ -18,9 +18,7 @@ type sq_XK struct {
 	group                  string
 	minus                  string
 	percent                string
-	perMille               string
 	timeSeparator          string
-	inifinity              string
 	currencies             []string // idx = enum of currency code
 	currencyPositiveSuffix string
 	currencyNegativePrefix string
@@ -32,13 +30,6 @@ type sq_XK struct {
 	daysNarrow             []string
 	daysShort              []string
 	daysWide               []string
-	periodsAbbreviated     []string
-	periodsNarrow          []string
-	periodsShort           []string
-	periodsWide            []string
-	erasAbbreviated        []string
-	erasNarrow             []string
-	erasWide               []string
 	timezones              map[string]string
 }
 
@@ -50,30 +41,21 @@ func New() locales.Translator {
 		pluralsOrdinal:         []locales.PluralRule{2, 5, 6},
 		pluralsRange:           []locales.PluralRule{2, 6},
 		decimal:                ",",
-		group:                  " ",
+		group:                  " ",
 		minus:                  "-",
 		percent:                "%",
-		perMille:               "‰",
 		timeSeparator:          ":",
-		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		currencyPositiveSuffix: " ",
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		currencyPositiveSuffix: " ",
 		currencyNegativePrefix: "(",
-		currencyNegativeSuffix: " )",
+		currencyNegativeSuffix: " )",
 		monthsAbbreviated:      []string{"", "jan", "shk", "mar", "pri", "maj", "qer", "korr", "gush", "sht", "tet", "nën", "dhj"},
 		monthsNarrow:           []string{"", "j", "sh", "m", "p", "m", "q", "k", "g", "sh", "t", "n", "dh"},
 		monthsWide:             []string{"", "janar", "shkurt", "mars", "prill", "maj", "qershor", "korrik", "gusht", "shtator", "tetor", "nëntor", "dhjetor"},
-		daysAbbreviated:        []string{"Die", "Hën", "Mar", "Mër", "Enj", "Pre", "Sht"},
+		daysAbbreviated:        []string{"die", "hën", "mar", "mër", "enj", "pre", "sht"},
 		daysNarrow:             []string{"d", "h", "m", "m", "e", "p", "sh"},
-		daysShort:              []string{"die", "hën", "mar", "mër", "enj", "pre", "sht"},
 		daysWide:               []string{"e diel", "e hënë", "e martë", "e mërkurë", "e enjte", "e premte", "e shtunë"},
-		periodsAbbreviated:     []string{"p.d.", "m.d."},
-		periodsNarrow:          []string{"p.d.", "m.d."},
-		periodsWide:            []string{"e paradites", "e pasdites"},
-		erasAbbreviated:        []string{"p.K.", "mb.K."},
-		erasNarrow:             []string{"p.K.", "mb.K."},
-		erasWide:               []string{"para Krishtit", "mbas Krishtit"},
-		timezones:              map[string]string{"ACDT": "Ora verore e Australisë Qendrore", "ACST": "Ora standarde e Australisë Qendrore", "ACWDT": "Ora verore e Australisë Qendroro-Perëndimore", "ACWST": "Ora standarde e Australisë Qendroro-Perëndimore", "ADT": "Ora verore e Atlantikut", "AEDT": "Ora verore e Australisë Lindore", "AEST": "Ora standarde e Australisë Lindore", "AKDT": "Ora verore e Alaskës", "AKST": "Ora standarde e Alaskës", "ARST": "Ora verore e Argjentinës", "ART": "Ora standarde e Argjentinës", "AST": "Ora standarde e Atlantikut", "AWDT": "Ora verore e Australisë Perëndimore", "AWST": "Ora standarde e Australisë Perëndimore", "BOT": "Ora e Bolivisë", "BT": "Ora e Butanit", "CAT": "Ora e Afrikës Qendrore", "CDT": "Ora verore e SHBA-së Qendrore", "CHADT": "Ora verore e Katamit", "CHAST": "Ora standarde e Katamit", "CLST": "Ora verore e Kilit", "CLT": "Ora standarde e Kilit", "COST": "Ora verore e Kolumbisë", "COT": "Ora standarde e Kolumbisë", "CST": "Ora standarde e SHBA-së Qendrore", "ChST": "Ora e Kamorros", "EAT": "Ora e Afrikës Lindore", "ECT": "Ora e Ekuadorit", "EDT": "Ora verore e SHBA-së Lindore", "EST": "Ora standarde e SHBA-së Lindore", "GFT": "Ora e Guajanës Franceze", "GMT": "Ora e Grinuiçit", "GST": "Ora e Gjirit", "GYT": "Ora e Guajanës", "HADT": "Ora verore e Ishujve Hauai-Aleutian", "HAST": "Ora standarde e Ishujve Hauai-Aleutian", "HAT": "Ora verore e Njufaundlendit [Tokës së Re]", "HECU": "Ora verore e Kubës", "HEEG": "Ora verore e Grenlandës Lindore", "HENOMX": "Ora verore e Meksikës Veriperëndimore", "HEOG": "Ora verore e Grënlandës Perëndimore", "HEPM": "Ora verore e Shën-Pier dhe Mikelon", "HEPMX": "Ora verore e Territoreve Meksikane të Bregut të Paqësorit", "HKST": "Ora verore e Hong-Kongut", "HKT": "Ora standarde e Hong-Kongut", "HNCU": "Ora standarde e Kubës", "HNEG": "Ora standarde e Grenlandës Lindore", "HNNOMX": "Ora standarde e Meksikës Veriperëndimore", "HNOG": "Ora standarde e Grënlandës Perëndimore", "HNPM": "Ora standarde e Shën-Pier dhe Mikelon", "HNPMX": "Ora standarde e Territoreve Meksikane të Bregut të Paqësorit", "HNT": "Ora standarde e Njufaundlendit [Tokës së Re]", "IST": "Ora standarde e Indisë", "JDT": "Ora verore e Japonisë", "JST": "Ora standarde e Japonisë", "LHDT": "Ora verore e Lord-Houit", "LHST": "Ora standarde e Lord-Houit", "MDT": "Ora verore e Territoreve Amerikane të Brezit Malor", "MESZ": "Ora verore e Evropës Qendrore", "MEZ": "Ora standarde e Evropës Qendrore", "MST": "Ora standarde e Territoreve Amerikane të Brezit Malor", "MYT": "Ora e Malajzisë", "NZDT": "Ora verore e Zelandës së Re", "NZST": "Ora standarde e Zelandës së Re", "OESZ": "Ora verore e Evropës Lindore", "OEZ": "Ora standarde e Evropës Lindore", "PDT": "Ora verore e Territoreve Amerikane të Bregut të Paqësorit", "PST": "Ora standarde e Territoreve Amerikane të Bregut të Paqësorit", "SAST": "Ora standarde e Afrikës Jugore", "SGT": "Ora e Singaporit", "SRT": "Ora e Surinamit", "TMST": "Ora verore e Turkmenistanit", "TMT": "Ora standarde e Turkmenistanit", "UYST": "Ora verore e Uruguait", "UYT": "Ora standarde e Uruguait", "VET": "Ora e Venezuelës", "WARST": "Ora verore e Argjentinës Perëndimore", "WART": "Ora standarde e Argjentinës Perëndimore", "WAST": "Ora verore e Afrikës Perëndimore", "WAT": "Ora standarde e Afrikës Perëndimore", "WESZ": "Ora verore e Evropës Perëndimore", "WEZ": "Ora standarde e Evropës Perëndimore", "WIB": "Ora e Indonezisë Perëndimore", "WIT": "Ora e Indonezisë Lindore", "WITA": "Ora e Indonezisë Qendrore", "∅∅∅": "Ora verore e Perusë"},
+		timezones:              map[string]string{"ACDT": "Ora verore e Australisë Qendrore", "ACST": "Ora verore e Ejkrit [Ako]", "ACT": "Ora standarde e Ejkrit [Ako]", "ACWDT": "Ora verore e Australisë Qendroro-Perëndimore", "ACWST": "Ora standarde e Australisë Qendroro-Perëndimore", "ADT": "Ora verore e Atlantikut", "ADT Arabia": "Ora verore arabe", "AEDT": "Ora verore e Australisë Lindore", "AEST": "Ora standarde e Australisë Lindore", "AFT": "Ora e Afganistanit", "AKDT": "Ora verore e Alaskës", "AKST": "Ora standarde e Alaskës", "AMST": "Ora verore e Amazonës", "AMST Armenia": "Ora verore e Armenisë", "AMT": "Ora standarde e Amazonës", "AMT Armenia": "Ora standarde e Armenisë", "ANAST": "Ora verore e Anadirit", "ANAT": "Ora standarde e Anadirit", "ARST": "Ora verore e Argjentinës", "ART": "Ora standarde e Argjentinës", "AST": "Ora standarde e Atlantikut", "AST Arabia": "Ora standarde arabe", "AWDT": "Ora verore e Australisë Perëndimore", "AWST": "Ora standarde e Australisë Perëndimore", "AZST": "Ora verore e Azerbajxhanit", "AZT": "Ora standarde e Azerbajxhanit", "BDT Bangladesh": "Ora verore e Bangladeshit", "BNT": "Ora e Brunei-Durasalamit", "BOT": "Ora e Bolivisë", "BRST": "Ora verore e Brazilisë", "BRT": "Ora standarde e Brazilisë", "BST Bangladesh": "Ora standarde e Bangladeshit", "BT": "Ora e Butanit", "CAST": "Ora e Kejsit", "CAT": "Ora e Afrikës Qendrore", "CCT": "Ora e Ishujve Kokos", "CDT": "Ora verore e SHBA-së Qendrore", "CHADT": "Ora verore e Katamit", "CHAST": "Ora standarde e Katamit", "CHUT": "Ora e Çukut", "CKT": "Ora standarde e Ishujve Kuk", "CKT DST": "Ora verore e Ishujve Kuk", "CLST": "Ora verore e Kilit", "CLT": "Ora standarde e Kilit", "COST": "Ora verore e Kolumbisë", "COT": "Ora standarde e Kolumbisë", "CST": "Ora standarde e SHBA-së Qendrore", "CST China": "Ora standarde e Kinës", "CST China DST": "Ora verore e Kinës", "CVST": "Ora verore e Kepit të Gjelbër", "CVT": "Ora standarde e Kepit të Gjelbër", "CXT": "Ora e Ishullit të Krishtlindjeve", "ChST": "Ora e Kamorros", "ChST NMI": "Ora e Ishujve të Marianës së Veriut", "CuDT": "Ora verore e Kubës", "CuST": "Ora standarde e Kubës", "DAVT": "Ora e Dejvisit", "DDUT": "Ora e Dumont-d’Urvilës", "EASST": "Ora verore e Ishullit të Pashkës", "EAST": "Ora standarde e Ishullit të Pashkës", "EAT": "Ora e Afrikës Lindore", "ECT": "Ora e Ekuadorit", "EDT": "Ora verore e SHBA-së Lindore", "EGDT": "Ora verore e Grenlandës Lindore", "EGST": "Ora standarde e Grenlandës Lindore", "EST": "Ora standarde e SHBA-së Lindore", "FEET": "Ora e Evropës së Largët Lindore", "FJT": "Ora standarde e Fixhit", "FJT Summer": "Ora verore e Fixhit", "FKST": "Ora verore e Ishujve Falkland", "FKT": "Ora standarde e Ishujve Falkland", "FNST": "Ora verore e Fernando-de-Noronjës", "FNT": "Ora standarde e Fernando-de-Noronjës", "GALT": "Ora e Galapagosit", "GAMT": "Ora e Gambierit", "GEST": "Ora verore e Gjeorgjisë", "GET": "Ora standarde e Gjeorgjisë", "GFT": "Ora e Guajanës Franceze", "GIT": "Ora e Ishujve Gilbert", "GMT": "Ora e Grinuiçit", "GNSST": "GNSST", "GNST": "GNST", "GST": "Ora e Gjirit", "GST Guam": "Ora e Guamit", "GYT": "Ora e Guajanës", "HADT": "Ora standarde e Ishujve Hauai-Aleutian", "HAST": "Ora standarde e Ishujve Hauai-Aleutian", "HKST": "Ora verore e Hong-Kongut", "HKT": "Ora standarde e Hong-Kongut", "HOVST": "Ora verore e Hovdit", "HOVT": "Ora standarde e Hovdit", "ICT": "Ora e Indokinës", "IDT": "Ora verore e Izraelit", "IOT": "Ora e Oqeanit Indian", "IRKST": "Ora verore e Irkutskut", "IRKT": "Ora standarde e Irkutskut", "IRST": "Ora standarde e Iranit", "IRST DST": "Ora verore e Iranit", "IST": "Ora standarde e Indisë", "IST Israel": "Ora standarde e Izraelit", "JDT": "Ora verore e Japonisë", "JST": "Ora standarde e Japonisë", "KOST": "Ora e Kosrës", "KRAST": "Ora verore e Krasnojarskut", "KRAT": "Ora standarde e Krasnojarskut", "KST": "Ora standarde koreane", "KST DST": "Ora verore koreane", "LHDT": "Ora verore e Lord-Houit", "LHST": "Ora standarde e Lord-Houit", "LINT": "Ora e Ishujve Sporadikë Ekuatorialë", "MAGST": "Ora verore e Magadanit", "MAGT": "Ora standarde e Magadanit", "MART": "Ora e Ishujve Markezë", "MAWT": "Ora e Mausonit", "MDT": "Ora verore e Makaos", "MESZ": "Ora verore e Evropës Qendrore", "MEZ": "Ora standarde e Evropës Qendrore", "MHT": "Ora e Ishujve Marshall", "MMT": "Ora e Mianmarit", "MSD": "Ora verore e Moskës", "MST": "Ora standarde e Makaos", "MUST": "Ora verore e Mauritiusit", "MUT": "Ora standarde e Mauritiusit", "MVT": "Ora e Maldiveve", "MYT": "Ora e Malajzisë", "NCT": "Ora standarde e Kaledonisë së Re", "NDT": "Ora verore e Njufaundlendit [Tokës së Re]", "NDT New Caledonia": "Ora verore e Kaledonisë së Re", "NFDT": "Ora verore e Ishullit Norfolk", "NFT": "Ora standarde e Ishullit Norfolk", "NOVST": "Ora verore e Novosibirskut", "NOVT": "Ora standarde e Novosibirskut", "NPT": "Ora e Nepalit", "NRT": "Ora e Naurusë", "NST": "Ora standarde e Njufaundlendit [Tokës së Re]", "NUT": "Ora e Niuesë", "NZDT": "Ora verore e Zelandës së Re", "NZST": "Ora standarde e Zelandës së Re", "OESZ": "Ora verore e Evropës Lindore", "OEZ": "Ora standarde e Evropës Lindore", "OMSST": "Ora verore e Omskut", "OMST": "Ora standarde e Omskut", "PDT": "Ora verore e Territoreve Amerikane të Bregut të Paqësorit", "PDTM": "Ora verore e Territoreve Meksikane të Bregut të Paqësorit", "PETDT": "Ora verore e Petropavllovsk-Kamçatkës", "PETST": "Ora standarde e Petropavllovsk-Kamçatkës", "PGT": "Ora e Guinesë së Re-Papua", "PHOT": "Ora e Ishujve Feniks", "PKT": "Ora standarde e Pakistanit", "PKT DST": "Ora verore e Pakistanit", "PMDT": "Ora verore e Shën-Pier dhe Mikelon", "PMST": "Ora standarde e Shën-Pier dhe Mikelon", "PONT": "Ora e Ponapeit", "PST": "Ora standarde e Territoreve Amerikane të Bregut të Paqësorit", "PST Philippine": "Ora standarde e Filipineve", "PST Philippine DST": "Ora verore e Filipineve", "PST Pitcairn": "Ora e Pitkernit", "PSTM": "Ora standarde e Territoreve Meksikane të Bregut të Paqësorit", "PWT": "Ora e Palaut", "PYST": "Ora Verore e Paraguait", "PYT": "Ora standarde e Paraguait", "PYT Korea": "Ora e Penianit", "RET": "Ora e Reunionit", "ROTT": "Ora e Rodherës", "SAKST": "Ora verore e Sakalinit", "SAKT": "Ora standarde e Sakalinit", "SAMST": "Ora verore e Samarës", "SAMT": "Ora standarde e Samarës", "SAST": "Ora standarde e Afrikës Jugore", "SBT": "Ora e Ishujve Solomon", "SCT": "Ora e Sejshelleve", "SGT": "Ora e Singaporit", "SLST": "Ora e Lankasë", "SRT": "Ora e Surinamit", "SST Samoa": "Ora standarde e Samoas", "SST Samoa Apia": "Ora standarde e Apias", "SST Samoa Apia DST": "Ora verore e Apias", "SST Samoa DST": "Ora verore e Samoas", "SYOT": "Ora e Sjouit", "TAAF": "Ora e Territoreve Jugore dhe Antarktike Franceze", "TAHT": "Ora e Tahitit", "TJT": "Ora e Taxhikistanit", "TKT": "Ora e Tokelaut", "TLT": "Ora e Timorit Lindor", "TMST": "Ora verore e Turkmenistanit", "TMT": "Ora standarde e Turkmenistanit", "TOST": "Ora verore e Tongës", "TOT": "Ora standarde e Tongës", "TVT": "Ora e Tuvalusë", "TWT": "Ora standarde e Tajpeit", "TWT DST": "Ora verore e Tajpeit", "ULAST": "Ora verore e Ulan-Batorit", "ULAT": "Ora standarde e Ulan-Batorit", "UYST": "Ora verore e Uruguait", "UYT": "Ora standarde e Uruguait", "UZT": "Ora standarde e Uzbekistanit", "UZT DST": "Ora verore e Uzbekistanit", "VET": "Ora e Venezuelës", "VLAST": "Ora verore e Vladivostokut", "VLAT": "Ora standarde e Vladivostokut", "VOLST": "Ora verore e Volgogradit", "VOLT": "Ora standarde e Volgogradit", "VOST": "Ora e Vostokut", "VUT": "Ora standarde e Vanuatusë", "VUT DST": "Ora verore e Vanuatusë", "WAKT": "Ora e Ishullit Uejk", "WARST": "Ora verore e Argjentinës Perëndimore", "WART": "Ora standarde e Argjentinës Perëndimore", "WAST": "Ora e Afrikës Perëndimore", "WAT": "Ora e Afrikës Perëndimore", "WESZ": "Ora verore e Evropës Perëndimore", "WEZ": "Ora standarde e Evropës Perëndimore", "WFT": "Ora e Uollisit dhe Futunës", "WGST": "Ora verore e Grënlandës Perëndimore", "WGT": "Ora standarde e Grënlandës Perëndimore", "WIB": "Ora e Indonezisë Perëndimore", "WIT": "Ora e Indonezisë Lindore", "WITA": "Ora e Indonezisë Qendrore", "YAKST": "Ora verore e Jakutskut", "YAKT": "Ora standarde e Jakutskut", "YEKST": "Ora verore e Ekaterinburgut", "YEKT": "Ora standarde e Ekaterinburgut", "YST": "Ora e Jukonit", "МСК": "Ora standarde e Moskës", "اقتاۋ": "Ora standarde e Aktaut", "اقتاۋ قالاسى": "Ora verore e Aktaut", "اقتوبە": "Ora standarde e Aktobit", "اقتوبە قالاسى": "Ora verore e Aktobit", "الماتى": "Ora standarde e Almatit", "الماتى قالاسى": "Ora verore e Almatit", "باتىس قازاق ەلى": "Ora e Kazakistanit Perëndimor", "شىعىش قازاق ەلى": "Ora e Kazakistanit Lindor", "قازاق ەلى": "Ora e Kazakistanit", "قىرعىزستان": "Ora e Kirgizisë", "قىزىلوردا": "Ora standarde e Kizilordit", "قىزىلوردا قالاسى": "Ora verore e Kizilordit", "∅∅∅": "Ora verore e Perusë"},
 	}
 }
 
@@ -99,7 +81,6 @@ func (sq *sq_XK) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'sq_XK'
 func (sq *sq_XK) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -111,7 +92,6 @@ func (sq *sq_XK) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // OrdinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for 'sq_XK'
 func (sq *sq_XK) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 	nMod10 := math.Mod(n, 10)
 	nMod100 := math.Mod(n, 100)
@@ -127,7 +107,6 @@ func (sq *sq_XK) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'sq_XK'
 func (sq *sq_XK) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
-
 	start := sq.CardinalPluralRule(num1, v1)
 	end := sq.CardinalPluralRule(num2, v2)
 
@@ -138,7 +117,6 @@ func (sq *sq_XK) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 	}
 
 	return locales.PluralRuleOther
-
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -228,7 +206,6 @@ func (sq *sq_XK) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'sq_XK' and handles both Whole and Real numbers based on 'v'
 func (sq *sq_XK) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -302,7 +279,6 @@ func (sq *sq_XK) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'sq_XK'
 func (sq *sq_XK) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sq.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
@@ -362,7 +338,6 @@ func (sq *sq_XK) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'sq_XK'
 // in accounting notation.
 func (sq *sq_XK) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sq.currencies[currency]
 	l := len(s) + len(symbol) + 6 + 2*len(s[:len(s)-int(v)-1])/3
@@ -393,9 +368,7 @@ func (sq *sq_XK) FmtAccounting(num float64, v uint64, currency currency.Type) st
 	}
 
 	if num < 0 {
-
 		b = append(b, sq.currencyNegativePrefix[0])
-
 	}
 
 	// reverse
@@ -428,7 +401,6 @@ func (sq *sq_XK) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 // FmtDateShort returns the short date representation of 't' for 'sq_XK'
 func (sq *sq_XK) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -447,7 +419,6 @@ func (sq *sq_XK) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'sq_XK'
 func (sq *sq_XK) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -466,7 +437,6 @@ func (sq *sq_XK) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'sq_XK'
 func (sq *sq_XK) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -485,7 +455,6 @@ func (sq *sq_XK) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'sq_XK'
 func (sq *sq_XK) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, sq.daysWide[t.Weekday()]...)
@@ -506,7 +475,6 @@ func (sq *sq_XK) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'sq_XK'
 func (sq *sq_XK) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -527,7 +495,6 @@ func (sq *sq_XK) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'sq_XK'
 func (sq *sq_XK) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -555,7 +522,6 @@ func (sq *sq_XK) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'sq_XK'
 func (sq *sq_XK) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -587,7 +553,6 @@ func (sq *sq_XK) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'sq_XK'
 func (sq *sq_XK) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

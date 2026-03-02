@@ -18,11 +18,8 @@ type eo struct {
 	group                  string
 	minus                  string
 	percent                string
-	perMille               string
 	timeSeparator          string
-	inifinity              string
 	currencies             []string // idx = enum of currency code
-	currencyPositivePrefix string
 	currencyPositiveSuffix string
 	currencyNegativePrefix string
 	currencyNegativeSuffix string
@@ -33,13 +30,6 @@ type eo struct {
 	daysNarrow             []string
 	daysShort              []string
 	daysWide               []string
-	periodsAbbreviated     []string
-	periodsNarrow          []string
-	periodsShort           []string
-	periodsWide            []string
-	erasAbbreviated        []string
-	erasNarrow             []string
-	erasWide               []string
 	timezones              map[string]string
 }
 
@@ -51,30 +41,21 @@ func New() locales.Translator {
 		pluralsOrdinal:         nil,
 		pluralsRange:           nil,
 		decimal:                ",",
-		group:                  " ",
-		minus:                  "−",
+		group:                  "\u202f",
+		minus:                  "-",
 		percent:                "%",
-		perMille:               "‰",
 		timeSeparator:          ":",
-		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AU$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "₹", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "₩", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "₺", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "US$", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		currencyPositivePrefix: " ",
-		currencyPositiveSuffix: "K",
-		currencyNegativePrefix: " ",
-		currencyNegativeSuffix: "K",
-		monthsAbbreviated:      []string{"", "jan", "feb", "mar", "apr", "maj", "jun", "jul", "aŭg", "sep", "okt", "nov", "dec"},
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "₵", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "₨", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "₨", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "₨", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "₨", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		currencyPositiveSuffix: "\u202f",
+		currencyNegativePrefix: "(",
+		currencyNegativeSuffix: "\u202f)",
+		monthsAbbreviated:      []string{"", "Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aŭg", "Sep", "Okt", "Nov", "Dec"},
 		monthsNarrow:           []string{"", "J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"},
-		monthsWide:             []string{"", "januaro", "februaro", "marto", "aprilo", "majo", "junio", "julio", "aŭgusto", "septembro", "oktobro", "novembro", "decembro"},
+		monthsWide:             []string{"", "Januaro", "Februaro", "Marto", "Aprilo", "Majo", "Junio", "Julio", "Aŭgusto", "Septembro", "Oktobro", "Novembro", "Decembro"},
 		daysAbbreviated:        []string{"di", "lu", "ma", "me", "ĵa", "ve", "sa"},
-		daysNarrow:             []string{"D", "L", "M", "M", "Ĵ", "V", "S"},
+		daysNarrow:             []string{"d", "l", "m", "m", "ĵ", "v", "s"},
 		daysWide:               []string{"dimanĉo", "lundo", "mardo", "merkredo", "ĵaŭdo", "vendredo", "sabato"},
-		periodsAbbreviated:     []string{"atm", "ptm"},
-		periodsNarrow:          []string{"a", "p"},
-		periodsWide:            []string{"atm", "ptm"},
-		erasAbbreviated:        []string{"aK", "pK"},
-		erasNarrow:             []string{"aK", "pK"},
-		erasWide:               []string{"aK", "pK"},
-		timezones:              map[string]string{"ACDT": "centra aŭstralia somera tempo", "ACST": "centra aŭstralia norma tempo", "ACWDT": "centrokcidenta aŭstralia somera tempo", "ACWST": "centrokcidenta aŭstralia norma tempo", "ADT": "atlantika nord-amerika somera tempo", "AEDT": "orienta aŭstralia somera tempo", "AEST": "orienta aŭstralia norma tempo", "AKDT": "AKDT", "AKST": "AKST", "ARST": "ARST", "ART": "ART", "AST": "atlantika nord-amerika norma tempo", "AWDT": "okcidenta aŭstralia somera tempo", "AWST": "okcidenta aŭstralia norma tempo", "BOT": "BOT", "BT": "BT", "CAT": "centra afrika tempo", "CDT": "centra nord-amerika somera tempo", "CHADT": "CHADT", "CHAST": "CHAST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "centra nord-amerika norma tempo", "ChST": "ChST", "EAT": "orienta afrika tempo", "ECT": "ECT", "EDT": "orienta nord-amerika somera tempo", "EST": "orienta nord-amerika norma tempo", "GFT": "GFT", "GMT": "universala tempo kunordigita", "GST": "GST", "GYT": "GYT", "HADT": "HADT", "HAST": "HAST", "HAT": "HAT", "HECU": "HECU", "HEEG": "HEEG", "HENOMX": "HENOMX", "HEOG": "HEOG", "HEPM": "HEPM", "HEPMX": "HEPMX", "HKST": "HKST", "HKT": "HKT", "HNCU": "HNCU", "HNEG": "HNEG", "HNNOMX": "HNNOMX", "HNOG": "HNOG", "HNPM": "HNPM", "HNPMX": "HNPMX", "HNT": "HNT", "IST": "barata tempo", "JDT": "japana somera tempo", "JST": "japana norma tempo", "LHDT": "LHDT", "LHST": "LHST", "MDT": "monta nord-amerika somera tempo", "MESZ": "centra eŭropa somera tempo", "MEZ": "centra eŭropa norma tempo", "MST": "monta nord-amerika norma tempo", "MYT": "MYT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "orienta eŭropa somera tempo", "OEZ": "orienta eŭropa norma tempo", "PDT": "pacifika nord-amerika somera tempo", "PST": "pacifika nord-amerika norma tempo", "SAST": "suda afrika tempo", "SGT": "SGT", "SRT": "SRT", "TMST": "TMST", "TMT": "TMT", "UYST": "UYST", "UYT": "UYT", "VET": "VET", "WARST": "WARST", "WART": "WART", "WAST": "okcidenta afrika somera tempo", "WAT": "okcidenta afrika norma tempo", "WESZ": "okcidenta eŭropa somera tempo", "WEZ": "okcidenta eŭropa norma tempo", "WIB": "okcidenta indonezia tempo", "WIT": "orienta indonezia tempo", "WITA": "centra indonezia tempo", "∅∅∅": "∅∅∅"},
+		timezones:              map[string]string{"ACDT": "centra aŭstralia somera tempo", "ACST": "centra aŭstralia norma tempo", "ACT": "ACT", "ACWDT": "centrokcidenta aŭstralia somera tempo", "ACWST": "centrokcidenta aŭstralia norma tempo", "ADT": "atlantika nordamerika somera tempo", "ADT Arabia": "araba somera tempo", "AEDT": "orienta aŭstralia somera tempo", "AEST": "orienta aŭstralia norma tempo", "AFT": "afgana tempo", "AKDT": "alaska somera tempo", "AKST": "alaska norma tempo", "AMST": "amazona somera tempo", "AMST Armenia": "armena somera tempo", "AMT": "amazona norma tempo", "AMT Armenia": "armena norma tempo", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "argentina somera tempo", "ART": "argentina norma tempo", "AST": "atlantika nordamerika norma tempo", "AST Arabia": "araba norma tempo", "AWDT": "okcidenta aŭstralia somera tempo", "AWST": "okcidenta aŭstralia norma tempo", "AZST": "azerbajĝana somera tempo", "AZT": "azerbajĝana norma tempo", "BDT Bangladesh": "bangladeŝa somera tempo", "BNT": "bruneja tempo", "BOT": "bolivia tempo", "BRST": "brazilja somera tempo", "BRT": "brazilja norma tempo", "BST Bangladesh": "bangladeŝa norma tempo", "BT": "butana tempo", "CAST": "CAST", "CAT": "centrafrika tempo", "CCT": "kokosinsula tempo", "CDT": "centra nordamerika somera tempo", "CHADT": "ĉathama somera tempo", "CHAST": "ĉathama norma tempo", "CHUT": "tempo: Ĉuuk", "CKT": "kukinsula norma tempo", "CKT DST": "kukinsula somera tempo", "CLST": "ĉilia somera tempo", "CLT": "ĉilia norma tempo", "COST": "kolombia somera tempo", "COT": "kolombia norma tempo", "CST": "centra nordamerika norma tempo", "CST China": "ĉina norma tempo", "CST China DST": "ĉina somera tempo", "CVST": "kaboverda somera tempo", "CVT": "kaboverda norma tempo", "CXT": "kristnaskinsula tempo", "ChST": "ĉamora tempo", "ChST NMI": "ChST NMI", "CuDT": "Kubo (somera tempo)", "CuST": "Kubo (norma tempo)", "DAVT": "tempo: Davis", "DDUT": "tempo: Dumont d’Urville", "EASST": "paskinsula somera tempo", "EAST": "paskinsula norma tempo", "EAT": "orientafrika tempo", "ECT": "ekvadora tempo", "EDT": "orienta nordamerika somera tempo", "EGDT": "orienta gronlanda somera tempo", "EGST": "orienta gronlanda norma tempo", "EST": "orienta nordamerika norma tempo", "FEET": "ekstrem-orienteŭropa tempo", "FJT": "fiĝia norma tempo", "FJT Summer": "fiĝia somera tempo", "FKST": "falklanda somera tempo", "FKT": "falklanda norma tempo", "FNST": "Fernando de Noronha (somera tempo)", "FNT": "Fernando de Noronha (norma tempo)", "GALT": "galapaga tempo", "GAMT": "tempo: Gambier", "GEST": "kartvela somera tempo", "GET": "kartvela norma tempo", "GFT": "tempo: Franca Gujano", "GIT": "gilbertinsula tempo", "GMT": "universala tempo kunordigita", "GNSST": "GNSST", "GNST": "GNST", "GST": "tempo: Sud-Georgio", "GST Guam": "GST Guam", "GYT": "gujana tempo", "HADT": "Havajo-Aleutoj (norma tempo)", "HAST": "Havajo-Aleutoj (norma tempo)", "HKST": "honkonga somera tempo", "HKT": "honkonga norma tempo", "HOVST": "ĥovda somera tempo", "HOVT": "ĥovda norma tempo", "ICT": "hindoĉina tempo", "IDT": "israela somera tempo", "IOT": "hindoceana tempo", "IRKST": "irkutska somera tempo", "IRKT": "irkutska norma tempo", "IRST": "irana norma tempo", "IRST DST": "irana somera tempo", "IST": "hinda norma tempo", "IST Israel": "israela norma tempo", "JDT": "japana somera tempo", "JST": "japana norma tempo", "KOST": "tempo: Kosrae", "KRAST": "krasnojarska somera tempo", "KRAT": "krasnojarska norma tempo", "KST": "korea norma tempo", "KST DST": "korea somera tempo", "LHDT": "Lord Howe (somera tempo)", "LHST": "Lord Howe (norma tempo)", "LINT": "tempo: Liniaj Insuloj", "MAGST": "magadana somera tempo", "MAGT": "magadana norma tempo", "MART": "markizinsula tempo", "MAWT": "tempo: Mawson", "MDT": "MDT", "MESZ": "centreŭropa somera tempo", "MEZ": "centreŭropa norma tempo", "MHT": "marŝalinsula tempo", "MMT": "birma tempo", "MSD": "moskva somera tempo", "MST": "MST", "MUST": "maŭricia somera tempo", "MUT": "maŭricia norma tempo", "MVT": "maldiva tempo", "MYT": "malajzia tempo", "NCT": "novkaledonia norma tempo", "NDT": "Novlando (somera tempo)", "NDT New Caledonia": "novkaledonia somera tempo", "NFDT": "norfolkinsula somera tempo", "NFT": "norfolkinsula norma tempo", "NOVST": "novosibirska somera tempo", "NOVT": "novosibirska norma tempo", "NPT": "nepala tempo", "NRT": "naura tempo", "NST": "Novlando (norma tempo)", "NUT": "niua tempo", "NZDT": "novzelanda somera tempo", "NZST": "novzelanda norma tempo", "OESZ": "orienteŭropa somera tempo", "OEZ": "orienteŭropa norma tempo", "OMSST": "omska somera tempo", "OMST": "omska norma tempo", "PDT": "pacifika nordamerika somera tempo", "PDTM": "pacifika meksika somera tempo", "PETDT": "PETDT", "PETST": "PETST", "PGT": "tempo: Papuo-Nov-Gvineo", "PHOT": "feniksinsula tempo", "PKT": "pakistana norma tempo", "PKT DST": "pakistana somera tempo", "PMDT": "Sankta Piero kaj Mikelono (somera tempo)", "PMST": "Sankta Piero kaj Mikelono (norma tempo)", "PONT": "tempo: Ponape", "PST": "pacifika nordamerika norma tempo", "PST Philippine": "filipina norma tempo", "PST Philippine DST": "filipina somera tempo", "PST Pitcairn": "pitkarninsula tempo", "PSTM": "pacifika meksika norma tempo", "PWT": "palaŭa tempo", "PYST": "paragvaja somera tempo", "PYT": "paragvaja norma tempo", "PYT Korea": "nord-korea tempo", "RET": "tempo: Reunio", "ROTT": "tempo: Rothera", "SAKST": "saĥalena somera tempo", "SAKT": "saĥalena norma tempo", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "sudafrika tempo", "SBT": "tempo: Salomonoj", "SCT": "sejŝela tempo", "SGT": "singapura norma tempo", "SLST": "SLST", "SRT": "surinama tempo", "SST Samoa": "uson-samoa norma tempo", "SST Samoa Apia": "samoa norma tempo", "SST Samoa Apia DST": "samoa somera tempo", "SST Samoa DST": "uson-samoa somera tempo", "SYOT": "tempo: Showa", "TAAF": "tempo: Francaj Sudaj Teritorioj", "TAHT": "tahitia tempo", "TJT": "taĝika tempo", "TKT": "tokelaa tempo", "TLT": "orient-timora tempo", "TMST": "turkmena somera tempo", "TMT": "turkmena norma tempo", "TOST": "tonga somera tempo", "TOT": "tonga norma tempo", "TVT": "tuvala tempo", "TWT": "tajvana norma tempo", "TWT DST": "tajvana somera tempo", "ULAST": "ulanbatora somera tempo", "ULAT": "ulanbatora norma tempo", "UYST": "urugvaja somera tempo", "UYT": "urugvaja norma tempo", "UZT": "uzbeka norma tempo", "UZT DST": "uzbeka somera tempo", "VET": "venezuela tempo", "VLAST": "vladivostoka somera tempo", "VLAT": "vladivostoka norma tempo", "VOLST": "volgograda somera tempo", "VOLT": "volgograda norma tempo", "VOST": "tempo: Vostok", "VUT": "vanuatua norma tempo", "VUT DST": "vanuatua somera tempo", "WAKT": "vejkinsula tempo", "WARST": "okcident-argentina somera tempo", "WART": "okcident-argentina norma tempo", "WAST": "okcidentafrika tempo", "WAT": "okcidentafrika tempo", "WESZ": "okcidenteŭropa somera tempo", "WEZ": "okcidenteŭropa norma tempo", "WFT": "tempo: Valiso kaj Futuno", "WGST": "okcidenta gronlanda somera tempo", "WGT": "okcidenta gronlanda norma tempo", "WIB": "okcident-indonezia tempo", "WIT": "orient-indonezia tempo", "WITA": "centr-indonezia tempo", "YAKST": "jakutska somera tempo", "YAKT": "jakutska norma tempo", "YEKST": "jekaterinburga somera tempo", "YEKT": "jekaterinburga norma tempo", "YST": "jukonia tempo", "МСК": "moskva norma tempo", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "okcident-kazaĥa tempo", "شىعىش قازاق ەلى": "orient-kazaĥa tempo", "قازاق ەلى": "kazaĥa tempo", "قىرعىزستان": "kirgiza tempo", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "perua somera tempo"},
 	}
 }
 
@@ -100,7 +81,6 @@ func (eo *eo) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'eo'
 func (eo *eo) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -207,9 +187,8 @@ func (eo *eo) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'eo' and handles both Whole and Real numbers based on 'v'
 func (eo *eo) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 4 + 2*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 3*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -237,9 +216,7 @@ func (eo *eo) FmtNumber(num float64, v uint64) string {
 	}
 
 	if num < 0 {
-		for j := len(eo.minus) - 1; j >= 0; j-- {
-			b = append(b, eo.minus[j])
-		}
+		b = append(b, eo.minus[0])
 	}
 
 	// reverse
@@ -254,7 +231,7 @@ func (eo *eo) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (eo *eo) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 5
+	l := len(s) + 3
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -268,9 +245,7 @@ func (eo *eo) FmtPercent(num float64, v uint64) string {
 	}
 
 	if num < 0 {
-		for j := len(eo.minus) - 1; j >= 0; j-- {
-			b = append(b, eo.minus[j])
-		}
+		b = append(b, eo.minus[0])
 	}
 
 	// reverse
@@ -285,35 +260,37 @@ func (eo *eo) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'eo'
 func (eo *eo) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := eo.currencies[currency]
-	l := len(s) + len(symbol) + 7
-
+	l := len(s) + len(symbol) + 5 + 3*len(s[:len(s)-int(v)-1])/3
+	count := 0
+	inWhole := v == 0
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
 			b = append(b, eo.decimal[0])
+			inWhole = true
 			continue
+		}
+
+		if inWhole {
+			if count == 3 {
+				for j := len(eo.group) - 1; j >= 0; j-- {
+					b = append(b, eo.group[j])
+				}
+				count = 1
+			} else {
+				count++
+			}
 		}
 
 		b = append(b, s[i])
 	}
 
-	for j := len(symbol) - 1; j >= 0; j-- {
-		b = append(b, symbol[j])
-	}
-
-	for j := len(eo.currencyPositivePrefix) - 1; j >= 0; j-- {
-		b = append(b, eo.currencyPositivePrefix[j])
-	}
-
 	if num < 0 {
-		for j := len(eo.minus) - 1; j >= 0; j-- {
-			b = append(b, eo.minus[j])
-		}
+		b = append(b, eo.minus[0])
 	}
 
 	// reverse
@@ -321,7 +298,20 @@ func (eo *eo) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 		b[i], b[j] = b[j], b[i]
 	}
 
+	if int(v) < 2 {
+
+		if v == 0 {
+			b = append(b, eo.decimal...)
+		}
+
+		for i := 0; i < 2-int(v); i++ {
+			b = append(b, '0')
+		}
+	}
+
 	b = append(b, eo.currencyPositiveSuffix...)
+
+	b = append(b, symbol...)
 
 	return string(b)
 }
@@ -329,47 +319,37 @@ func (eo *eo) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'eo'
 // in accounting notation.
 func (eo *eo) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := eo.currencies[currency]
-	l := len(s) + len(symbol) + 7
-
+	l := len(s) + len(symbol) + 7 + 3*len(s[:len(s)-int(v)-1])/3
+	count := 0
+	inWhole := v == 0
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
 			b = append(b, eo.decimal[0])
+			inWhole = true
 			continue
+		}
+
+		if inWhole {
+			if count == 3 {
+				for j := len(eo.group) - 1; j >= 0; j-- {
+					b = append(b, eo.group[j])
+				}
+				count = 1
+			} else {
+				count++
+			}
 		}
 
 		b = append(b, s[i])
 	}
 
 	if num < 0 {
-
-		for j := len(symbol) - 1; j >= 0; j-- {
-			b = append(b, symbol[j])
-		}
-
-		for j := len(eo.currencyNegativePrefix) - 1; j >= 0; j-- {
-			b = append(b, eo.currencyNegativePrefix[j])
-		}
-
-		for j := len(eo.minus) - 1; j >= 0; j-- {
-			b = append(b, eo.minus[j])
-		}
-
-	} else {
-
-		for j := len(symbol) - 1; j >= 0; j-- {
-			b = append(b, symbol[j])
-		}
-
-		for j := len(eo.currencyPositivePrefix) - 1; j >= 0; j-- {
-			b = append(b, eo.currencyPositivePrefix[j])
-		}
-
+		b = append(b, eo.currencyNegativePrefix[0])
 	}
 
 	// reverse
@@ -377,11 +357,24 @@ func (eo *eo) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 		b[i], b[j] = b[j], b[i]
 	}
 
+	if int(v) < 2 {
+
+		if v == 0 {
+			b = append(b, eo.decimal...)
+		}
+
+		for i := 0; i < 2-int(v); i++ {
+			b = append(b, '0')
+		}
+	}
+
 	if num < 0 {
 		b = append(b, eo.currencyNegativeSuffix...)
+		b = append(b, symbol...)
 	} else {
 
 		b = append(b, eo.currencyPositiveSuffix...)
+		b = append(b, symbol...)
 	}
 
 	return string(b)
@@ -389,7 +382,6 @@ func (eo *eo) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 // FmtDateShort returns the short date representation of 't' for 'eo'
 func (eo *eo) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 9 {
@@ -419,7 +411,6 @@ func (eo *eo) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'eo'
 func (eo *eo) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -443,7 +434,6 @@ func (eo *eo) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'eo'
 func (eo *eo) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -467,11 +457,11 @@ func (eo *eo) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'eo'
 func (eo *eo) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, eo.daysWide[t.Weekday()]...)
-	b = append(b, []byte{0x2c, 0x20}...)
+	b = append(b, []byte{0x2c, 0x20, 0x6c, 0x61}...)
+	b = append(b, []byte{0x20}...)
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
 	b = append(b, []byte{0x2d, 0x61}...)
 	b = append(b, []byte{0x20, 0x64, 0x65}...)
@@ -490,7 +480,6 @@ func (eo *eo) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'eo'
 func (eo *eo) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -511,7 +500,6 @@ func (eo *eo) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'eo'
 func (eo *eo) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -539,7 +527,6 @@ func (eo *eo) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'eo'
 func (eo *eo) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -571,14 +558,19 @@ func (eo *eo) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'eo'
 func (eo *eo) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
+	if t.Hour() < 10 {
+		b = append(b, '0')
+	}
+
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
-	b = append(b, []byte{0x2d, 0x61}...)
-	b = append(b, []byte{0x20, 0x68, 0x6f, 0x72, 0x6f}...)
-	b = append(b, []byte{0x20, 0x6b, 0x61, 0x6a}...)
-	b = append(b, []byte{0x20}...)
+	b = append(b, eo.timeSeparator...)
+
+	if t.Minute() < 10 {
+		b = append(b, '0')
+	}
+
 	b = strconv.AppendInt(b, int64(t.Minute()), 10)
 	b = append(b, eo.timeSeparator...)
 
