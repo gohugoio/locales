@@ -189,7 +189,6 @@ func (nqo *nqo) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'nqo' and handles both Whole and Real numbers based on 'v'
 func (nqo *nqo) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -263,7 +262,6 @@ func (nqo *nqo) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'nqo'
 func (nqo *nqo) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := nqo.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -272,7 +270,6 @@ func (nqo *nqo) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'nqo'
 // in accounting notation.
 func (nqo *nqo) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := nqo.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -280,7 +277,6 @@ func (nqo *nqo) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 // FmtDateShort returns the short date representation of 't' for 'nqo'
 func (nqo *nqo) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -288,7 +284,6 @@ func (nqo *nqo) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'nqo'
 func (nqo *nqo) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -296,7 +291,6 @@ func (nqo *nqo) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'nqo'
 func (nqo *nqo) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -304,7 +298,6 @@ func (nqo *nqo) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'nqo'
 func (nqo *nqo) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -312,7 +305,6 @@ func (nqo *nqo) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'nqo'
 func (nqo *nqo) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -320,7 +312,6 @@ func (nqo *nqo) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'nqo'
 func (nqo *nqo) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -328,7 +319,6 @@ func (nqo *nqo) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'nqo'
 func (nqo *nqo) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -336,7 +326,6 @@ func (nqo *nqo) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'nqo'
 func (nqo *nqo) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)

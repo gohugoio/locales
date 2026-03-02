@@ -86,7 +86,6 @@ func (kaj *kaj) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'kaj'
 func (kaj *kaj) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -193,7 +192,6 @@ func (kaj *kaj) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'kaj' and handles both Whole and Real numbers based on 'v'
 func (kaj *kaj) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -265,7 +263,6 @@ func (kaj *kaj) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'kaj'
 func (kaj *kaj) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kaj.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -274,7 +271,6 @@ func (kaj *kaj) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'kaj'
 // in accounting notation.
 func (kaj *kaj) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kaj.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -282,7 +278,6 @@ func (kaj *kaj) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 // FmtDateShort returns the short date representation of 't' for 'kaj'
 func (kaj *kaj) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 9 {
@@ -312,7 +307,6 @@ func (kaj *kaj) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'kaj'
 func (kaj *kaj) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -331,7 +325,6 @@ func (kaj *kaj) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'kaj'
 func (kaj *kaj) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -350,7 +343,6 @@ func (kaj *kaj) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'kaj'
 func (kaj *kaj) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, kaj.daysWide[t.Weekday()]...)
@@ -377,7 +369,6 @@ func (kaj *kaj) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'kaj'
 func (kaj *kaj) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -398,7 +389,6 @@ func (kaj *kaj) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'kaj'
 func (kaj *kaj) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -426,7 +416,6 @@ func (kaj *kaj) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'kaj'
 func (kaj *kaj) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -458,7 +447,6 @@ func (kaj *kaj) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'kaj'
 func (kaj *kaj) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

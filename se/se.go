@@ -95,7 +95,6 @@ func (se *se) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'se'
 func (se *se) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -204,7 +203,6 @@ func (se *se) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'se' and handles both Whole and Real numbers based on 'v'
 func (se *se) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -284,7 +282,6 @@ func (se *se) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'se'
 func (se *se) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := se.currencies[currency]
 	l := len(s) + len(symbol) + 6 + 2*len(s[:len(s)-int(v)-1])/3
@@ -346,7 +343,6 @@ func (se *se) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'se'
 // in accounting notation.
 func (se *se) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := se.currencies[currency]
 	l := len(s) + len(symbol) + 6 + 2*len(s[:len(s)-int(v)-1])/3
@@ -377,11 +373,9 @@ func (se *se) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 	}
 
 	if num < 0 {
-
 		for j := len(se.minus) - 1; j >= 0; j-- {
 			b = append(b, se.minus[j])
 		}
-
 	}
 
 	// reverse
@@ -414,7 +408,6 @@ func (se *se) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 // FmtDateShort returns the short date representation of 't' for 'se'
 func (se *se) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -422,7 +415,6 @@ func (se *se) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'se'
 func (se *se) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -430,7 +422,6 @@ func (se *se) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'se'
 func (se *se) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -438,7 +429,6 @@ func (se *se) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'se'
 func (se *se) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -446,7 +436,6 @@ func (se *se) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'se'
 func (se *se) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -454,7 +443,6 @@ func (se *se) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'se'
 func (se *se) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -462,7 +450,6 @@ func (se *se) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'se'
 func (se *se) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -470,7 +457,6 @@ func (se *se) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'se'
 func (se *se) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)

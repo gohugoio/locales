@@ -190,7 +190,6 @@ func (ja *ja) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ja' and handles both Whole and Real numbers based on 'v'
 func (ja *ja) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -262,7 +261,6 @@ func (ja *ja) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ja'
 func (ja *ja) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ja.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -320,7 +318,6 @@ func (ja *ja) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ja'
 // in accounting notation.
 func (ja *ja) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ja.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -357,11 +354,9 @@ func (ja *ja) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 		b = append(b, ja.currencyNegativePrefix[0])
 
 	} else {
-
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
-
 	}
 
 	// reverse
@@ -389,7 +384,6 @@ func (ja *ja) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 // FmtDateShort returns the short date representation of 't' for 'ja'
 func (ja *ja) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -419,7 +413,6 @@ func (ja *ja) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'ja'
 func (ja *ja) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -449,7 +442,6 @@ func (ja *ja) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'ja'
 func (ja *ja) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -469,7 +461,6 @@ func (ja *ja) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'ja'
 func (ja *ja) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -490,7 +481,6 @@ func (ja *ja) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'ja'
 func (ja *ja) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
@@ -507,7 +497,6 @@ func (ja *ja) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'ja'
 func (ja *ja) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
@@ -531,7 +520,6 @@ func (ja *ja) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'ja'
 func (ja *ja) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
@@ -559,7 +547,6 @@ func (ja *ja) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'ja'
 func (ja *ja) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)

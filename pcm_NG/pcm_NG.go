@@ -88,7 +88,6 @@ func (pcm *pcm_NG) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'pcm_NG'
 func (pcm *pcm_NG) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 	i := int64(n)
 
@@ -196,7 +195,6 @@ func (pcm *pcm_NG) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'pcm_NG' and handles both Whole and Real numbers based on 'v'
 func (pcm *pcm_NG) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -268,7 +266,6 @@ func (pcm *pcm_NG) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'pcm_NG'
 func (pcm *pcm_NG) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := pcm.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -326,7 +323,6 @@ func (pcm *pcm_NG) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'pcm_NG'
 // in accounting notation.
 func (pcm *pcm_NG) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := pcm.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -363,11 +359,9 @@ func (pcm *pcm_NG) FmtAccounting(num float64, v uint64, currency currency.Type) 
 		b = append(b, pcm.minus[0])
 
 	} else {
-
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
-
 	}
 
 	// reverse
@@ -391,7 +385,6 @@ func (pcm *pcm_NG) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'pcm_NG'
 func (pcm *pcm_NG) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -420,7 +413,6 @@ func (pcm *pcm_NG) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'pcm_NG'
 func (pcm *pcm_NG) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -439,7 +431,6 @@ func (pcm *pcm_NG) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'pcm_NG'
 func (pcm *pcm_NG) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -458,7 +449,6 @@ func (pcm *pcm_NG) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'pcm_NG'
 func (pcm *pcm_NG) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, pcm.daysWide[t.Weekday()]...)
@@ -479,7 +469,6 @@ func (pcm *pcm_NG) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'pcm_NG'
 func (pcm *pcm_NG) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -500,7 +489,6 @@ func (pcm *pcm_NG) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'pcm_NG'
 func (pcm *pcm_NG) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -528,7 +516,6 @@ func (pcm *pcm_NG) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'pcm_NG'
 func (pcm *pcm_NG) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
@@ -556,7 +543,6 @@ func (pcm *pcm_NG) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'pcm_NG'
 func (pcm *pcm_NG) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

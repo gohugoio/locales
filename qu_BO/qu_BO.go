@@ -189,7 +189,6 @@ func (qu *qu_BO) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'qu_BO' and handles both Whole and Real numbers based on 'v'
 func (qu *qu_BO) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -263,7 +262,6 @@ func (qu *qu_BO) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'qu_BO'
 func (qu *qu_BO) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := qu.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -319,7 +317,6 @@ func (qu *qu_BO) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'qu_BO'
 // in accounting notation.
 func (qu *qu_BO) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := qu.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -348,9 +345,7 @@ func (qu *qu_BO) FmtAccounting(num float64, v uint64, currency currency.Type) st
 	}
 
 	if num < 0 {
-
 		b = append(b, qu.minus[0])
-
 	}
 
 	// reverse
@@ -372,7 +367,6 @@ func (qu *qu_BO) FmtAccounting(num float64, v uint64, currency currency.Type) st
 	if num < 0 {
 		b = append(b, symbol...)
 	} else {
-
 		b = append(b, symbol...)
 	}
 
@@ -381,7 +375,6 @@ func (qu *qu_BO) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 // FmtDateShort returns the short date representation of 't' for 'qu_BO'
 func (qu *qu_BO) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -400,7 +393,6 @@ func (qu *qu_BO) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'qu_BO'
 func (qu *qu_BO) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -419,7 +411,6 @@ func (qu *qu_BO) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'qu_BO'
 func (qu *qu_BO) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -438,7 +429,6 @@ func (qu *qu_BO) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'qu_BO'
 func (qu *qu_BO) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, qu.daysWide[t.Weekday()]...)
@@ -459,7 +449,6 @@ func (qu *qu_BO) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'qu_BO'
 func (qu *qu_BO) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -489,7 +478,6 @@ func (qu *qu_BO) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'qu_BO'
 func (qu *qu_BO) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -526,7 +514,6 @@ func (qu *qu_BO) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'qu_BO'
 func (qu *qu_BO) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -568,7 +555,6 @@ func (qu *qu_BO) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'qu_BO'
 func (qu *qu_BO) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

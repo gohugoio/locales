@@ -187,7 +187,6 @@ func (bo *bo_IN) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'bo_IN' and handles both Whole and Real numbers based on 'v'
 func (bo *bo_IN) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -259,7 +258,6 @@ func (bo *bo_IN) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'bo_IN'
 func (bo *bo_IN) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := bo.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -268,7 +266,6 @@ func (bo *bo_IN) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'bo_IN'
 // in accounting notation.
 func (bo *bo_IN) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := bo.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -276,7 +273,6 @@ func (bo *bo_IN) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 // FmtDateShort returns the short date representation of 't' for 'bo_IN'
 func (bo *bo_IN) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -306,7 +302,6 @@ func (bo *bo_IN) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'bo_IN'
 func (bo *bo_IN) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -325,7 +320,6 @@ func (bo *bo_IN) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'bo_IN'
 func (bo *bo_IN) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, []byte{0xe0, 0xbd, 0xa6, 0xe0, 0xbe, 0xa4, 0xe0, 0xbe, 0xb1, 0xe0, 0xbd, 0xb2, 0xe0, 0xbc, 0x8b, 0xe0, 0xbd, 0xa3, 0xe0, 0xbd, 0xbc, 0xe0, 0xbc, 0x8b}...)
@@ -346,7 +340,6 @@ func (bo *bo_IN) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'bo_IN'
 func (bo *bo_IN) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -367,7 +360,6 @@ func (bo *bo_IN) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'bo_IN'
 func (bo *bo_IN) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -397,7 +389,6 @@ func (bo *bo_IN) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'bo_IN'
 func (bo *bo_IN) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -434,7 +425,6 @@ func (bo *bo_IN) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'bo_IN'
 func (bo *bo_IN) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -476,7 +466,6 @@ func (bo *bo_IN) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'bo_IN'
 func (bo *bo_IN) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

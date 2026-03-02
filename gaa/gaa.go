@@ -193,7 +193,6 @@ func (gaa *gaa) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'gaa' and handles both Whole and Real numbers based on 'v'
 func (gaa *gaa) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -265,7 +264,6 @@ func (gaa *gaa) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'gaa'
 func (gaa *gaa) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gaa.currencies[currency]
 	l := len(s) + len(symbol) + 3 + 1*len(s[:len(s)-int(v)-1])/3
@@ -325,7 +323,6 @@ func (gaa *gaa) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'gaa'
 // in accounting notation.
 func (gaa *gaa) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gaa.currencies[currency]
 	l := len(s) + len(symbol) + 3 + 1*len(s[:len(s)-int(v)-1])/3
@@ -362,11 +359,9 @@ func (gaa *gaa) FmtAccounting(num float64, v uint64, currency currency.Type) str
 		b = append(b, gaa.minus[0])
 
 	} else {
-
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
-
 	}
 
 	// reverse
@@ -388,7 +383,6 @@ func (gaa *gaa) FmtAccounting(num float64, v uint64, currency currency.Type) str
 	if num < 0 {
 		b = append(b, gaa.currencyNegativeSuffix...)
 	} else {
-
 		b = append(b, gaa.currencyPositiveSuffix...)
 	}
 
@@ -397,7 +391,6 @@ func (gaa *gaa) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 // FmtDateShort returns the short date representation of 't' for 'gaa'
 func (gaa *gaa) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Month()), 10)
@@ -416,7 +409,6 @@ func (gaa *gaa) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'gaa'
 func (gaa *gaa) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, gaa.monthsAbbreviated[t.Month()]...)
@@ -435,7 +427,6 @@ func (gaa *gaa) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'gaa'
 func (gaa *gaa) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, gaa.monthsWide[t.Month()]...)
@@ -454,7 +445,6 @@ func (gaa *gaa) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'gaa'
 func (gaa *gaa) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, gaa.daysWide[t.Weekday()]...)
@@ -475,7 +465,6 @@ func (gaa *gaa) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'gaa'
 func (gaa *gaa) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -505,7 +494,6 @@ func (gaa *gaa) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'gaa'
 func (gaa *gaa) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -542,7 +530,6 @@ func (gaa *gaa) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'gaa'
 func (gaa *gaa) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -584,7 +571,6 @@ func (gaa *gaa) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'gaa'
 func (gaa *gaa) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

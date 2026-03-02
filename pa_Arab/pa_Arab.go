@@ -97,7 +97,6 @@ func (pa *pa_Arab) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'pa_Arab'
 func (pa *pa_Arab) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n >= 0 && n <= 1 {
@@ -114,7 +113,6 @@ func (pa *pa_Arab) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'pa_Arab'
 func (pa *pa_Arab) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
-
 	start := pa.CardinalPluralRule(num1, v1)
 	end := pa.CardinalPluralRule(num2, v2)
 
@@ -127,7 +125,6 @@ func (pa *pa_Arab) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 	}
 
 	return locales.PluralRuleOther
-
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -217,7 +214,6 @@ func (pa *pa_Arab) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'pa_Arab' and handles both Whole and Real numbers based on 'v'
 func (pa *pa_Arab) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -236,7 +232,6 @@ func (pa *pa_Arab) FmtNumber(num float64, v uint64) string {
 		}
 
 		if inWhole {
-
 			if count == groupThreshold {
 				b = append(b, pa.group[0])
 				count = 1
@@ -298,7 +293,6 @@ func (pa *pa_Arab) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'pa_Arab'
 func (pa *pa_Arab) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := pa.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -318,7 +312,6 @@ func (pa *pa_Arab) FmtCurrency(num float64, v uint64, currency currency.Type) st
 		}
 
 		if inWhole {
-
 			if count == groupThreshold {
 				b = append(b, pa.group[0])
 				count = 1
@@ -369,7 +362,6 @@ func (pa *pa_Arab) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'pa_Arab'
 // in accounting notation.
 func (pa *pa_Arab) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := pa.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -389,7 +381,6 @@ func (pa *pa_Arab) FmtAccounting(num float64, v uint64, currency currency.Type) 
 		}
 
 		if inWhole {
-
 			if count == groupThreshold {
 				b = append(b, pa.group[0])
 				count = 1
@@ -451,7 +442,6 @@ func (pa *pa_Arab) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'pa_Arab'
 func (pa *pa_Arab) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -480,7 +470,6 @@ func (pa *pa_Arab) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'pa_Arab'
 func (pa *pa_Arab) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -499,7 +488,6 @@ func (pa *pa_Arab) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'pa_Arab'
 func (pa *pa_Arab) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -518,7 +506,6 @@ func (pa *pa_Arab) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'pa_Arab'
 func (pa *pa_Arab) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, pa.daysWide[t.Weekday()]...)
@@ -544,7 +531,6 @@ func (pa *pa_Arab) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'pa_Arab'
 func (pa *pa_Arab) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -574,7 +560,6 @@ func (pa *pa_Arab) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'pa_Arab'
 func (pa *pa_Arab) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -611,7 +596,6 @@ func (pa *pa_Arab) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'pa_Arab'
 func (pa *pa_Arab) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -653,7 +637,6 @@ func (pa *pa_Arab) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'pa_Arab'
 func (pa *pa_Arab) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

@@ -196,7 +196,6 @@ func (yrl *yrl) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'yrl' and handles both Whole and Real numbers based on 'v'
 func (yrl *yrl) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -268,7 +267,6 @@ func (yrl *yrl) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'yrl'
 func (yrl *yrl) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := yrl.currencies[currency]
 	l := len(s) + len(symbol) + 9
@@ -310,7 +308,6 @@ func (yrl *yrl) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'yrl'
 // in accounting notation.
 func (yrl *yrl) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := yrl.currencies[currency]
 	l := len(s) + len(symbol) + 9
@@ -359,7 +356,6 @@ func (yrl *yrl) FmtAccounting(num float64, v uint64, currency currency.Type) str
 	if num < 0 {
 		b = append(b, yrl.currencyNegativeSuffix...)
 	} else {
-
 		b = append(b, yrl.currencyPositiveSuffix...)
 	}
 
@@ -368,7 +364,6 @@ func (yrl *yrl) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 // FmtDateShort returns the short date representation of 't' for 'yrl'
 func (yrl *yrl) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -397,7 +392,6 @@ func (yrl *yrl) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'yrl'
 func (yrl *yrl) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -416,7 +410,6 @@ func (yrl *yrl) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'yrl'
 func (yrl *yrl) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -435,7 +428,6 @@ func (yrl *yrl) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'yrl'
 func (yrl *yrl) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, yrl.daysWide[t.Weekday()]...)
@@ -456,7 +448,6 @@ func (yrl *yrl) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'yrl'
 func (yrl *yrl) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -477,7 +468,6 @@ func (yrl *yrl) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'yrl'
 func (yrl *yrl) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -505,7 +495,6 @@ func (yrl *yrl) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'yrl'
 func (yrl *yrl) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -537,7 +526,6 @@ func (yrl *yrl) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'yrl'
 func (yrl *yrl) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

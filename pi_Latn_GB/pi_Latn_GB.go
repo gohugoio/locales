@@ -178,7 +178,6 @@ func (pi *pi_Latn_GB) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'pi_Latn_GB' and handles both Whole and Real numbers based on 'v'
 func (pi *pi_Latn_GB) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -250,7 +249,6 @@ func (pi *pi_Latn_GB) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'pi_Latn_GB'
 func (pi *pi_Latn_GB) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := pi.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -259,7 +257,6 @@ func (pi *pi_Latn_GB) FmtCurrency(num float64, v uint64, currency currency.Type)
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'pi_Latn_GB'
 // in accounting notation.
 func (pi *pi_Latn_GB) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := pi.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -267,7 +264,6 @@ func (pi *pi_Latn_GB) FmtAccounting(num float64, v uint64, currency currency.Typ
 
 // FmtDateShort returns the short date representation of 't' for 'pi_Latn_GB'
 func (pi *pi_Latn_GB) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -275,7 +271,6 @@ func (pi *pi_Latn_GB) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'pi_Latn_GB'
 func (pi *pi_Latn_GB) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -283,7 +278,6 @@ func (pi *pi_Latn_GB) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'pi_Latn_GB'
 func (pi *pi_Latn_GB) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -291,7 +285,6 @@ func (pi *pi_Latn_GB) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'pi_Latn_GB'
 func (pi *pi_Latn_GB) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -299,7 +292,6 @@ func (pi *pi_Latn_GB) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'pi_Latn_GB'
 func (pi *pi_Latn_GB) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -307,7 +299,6 @@ func (pi *pi_Latn_GB) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'pi_Latn_GB'
 func (pi *pi_Latn_GB) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -315,7 +306,6 @@ func (pi *pi_Latn_GB) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'pi_Latn_GB'
 func (pi *pi_Latn_GB) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -323,7 +313,6 @@ func (pi *pi_Latn_GB) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'pi_Latn_GB'
 func (pi *pi_Latn_GB) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)

@@ -99,7 +99,6 @@ func (lo *lo_LA) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // OrdinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for 'lo_LA'
 func (lo *lo_LA) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -201,7 +200,6 @@ func (lo *lo_LA) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'lo_LA' and handles both Whole and Real numbers based on 'v'
 func (lo *lo_LA) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -273,7 +271,6 @@ func (lo *lo_LA) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'lo_LA'
 func (lo *lo_LA) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := lo.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -335,7 +332,6 @@ func (lo *lo_LA) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'lo_LA'
 // in accounting notation.
 func (lo *lo_LA) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := lo.currencies[currency]
 	l := len(s) + len(symbol) + 3 + 1*len(s[:len(s)-int(v)-1])/3
@@ -404,7 +400,6 @@ func (lo *lo_LA) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 // FmtDateShort returns the short date representation of 't' for 'lo_LA'
 func (lo *lo_LA) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -423,7 +418,6 @@ func (lo *lo_LA) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'lo_LA'
 func (lo *lo_LA) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -442,7 +436,6 @@ func (lo *lo_LA) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'lo_LA'
 func (lo *lo_LA) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -461,7 +454,6 @@ func (lo *lo_LA) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'lo_LA'
 func (lo *lo_LA) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, lo.daysWide[t.Weekday()]...)
@@ -482,7 +474,6 @@ func (lo *lo_LA) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'lo_LA'
 func (lo *lo_LA) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
@@ -499,7 +490,6 @@ func (lo *lo_LA) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'lo_LA'
 func (lo *lo_LA) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
@@ -523,7 +513,6 @@ func (lo *lo_LA) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'lo_LA'
 func (lo *lo_LA) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
@@ -546,7 +535,6 @@ func (lo *lo_LA) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'lo_LA'
 func (lo *lo_LA) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)

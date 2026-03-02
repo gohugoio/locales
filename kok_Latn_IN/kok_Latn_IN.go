@@ -94,7 +94,6 @@ func (kok *kok_Latn_IN) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'kok_Latn_IN'
 func (kok *kok_Latn_IN) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 	i := int64(n)
 
@@ -107,7 +106,6 @@ func (kok *kok_Latn_IN) CardinalPluralRule(num float64, v uint64) locales.Plural
 
 // OrdinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for 'kok_Latn_IN'
 func (kok *kok_Latn_IN) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -213,7 +211,6 @@ func (kok *kok_Latn_IN) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'kok_Latn_IN' and handles both Whole and Real numbers based on 'v'
 func (kok *kok_Latn_IN) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -232,7 +229,6 @@ func (kok *kok_Latn_IN) FmtNumber(num float64, v uint64) string {
 		}
 
 		if inWhole {
-
 			if count == groupThreshold {
 				b = append(b, kok.group[0])
 				count = 1
@@ -294,7 +290,6 @@ func (kok *kok_Latn_IN) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'kok_Latn_IN'
 func (kok *kok_Latn_IN) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kok.currencies[currency]
 	l := len(s) + len(symbol) + 5
@@ -332,7 +327,6 @@ func (kok *kok_Latn_IN) FmtCurrency(num float64, v uint64, currency currency.Typ
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'kok_Latn_IN'
 // in accounting notation.
 func (kok *kok_Latn_IN) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kok.currencies[currency]
 	l := len(s) + len(symbol) + 5
@@ -358,11 +352,9 @@ func (kok *kok_Latn_IN) FmtAccounting(num float64, v uint64, currency currency.T
 		b = append(b, kok.minus[0])
 
 	} else {
-
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
-
 	}
 
 	// reverse
@@ -373,7 +365,6 @@ func (kok *kok_Latn_IN) FmtAccounting(num float64, v uint64, currency currency.T
 	if num < 0 {
 		b = append(b, kok.currencyNegativeSuffix...)
 	} else {
-
 		b = append(b, kok.currencyPositiveSuffix...)
 	}
 
@@ -382,7 +373,6 @@ func (kok *kok_Latn_IN) FmtAccounting(num float64, v uint64, currency currency.T
 
 // FmtDateShort returns the short date representation of 't' for 'kok_Latn_IN'
 func (kok *kok_Latn_IN) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -401,7 +391,6 @@ func (kok *kok_Latn_IN) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'kok_Latn_IN'
 func (kok *kok_Latn_IN) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -420,7 +409,6 @@ func (kok *kok_Latn_IN) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'kok_Latn_IN'
 func (kok *kok_Latn_IN) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -439,7 +427,6 @@ func (kok *kok_Latn_IN) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'kok_Latn_IN'
 func (kok *kok_Latn_IN) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, kok.daysWide[t.Weekday()]...)
@@ -460,7 +447,6 @@ func (kok *kok_Latn_IN) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'kok_Latn_IN'
 func (kok *kok_Latn_IN) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -490,7 +476,6 @@ func (kok *kok_Latn_IN) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'kok_Latn_IN'
 func (kok *kok_Latn_IN) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -527,7 +512,6 @@ func (kok *kok_Latn_IN) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'kok_Latn_IN'
 func (kok *kok_Latn_IN) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -569,7 +553,6 @@ func (kok *kok_Latn_IN) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'kok_Latn_IN'
 func (kok *kok_Latn_IN) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

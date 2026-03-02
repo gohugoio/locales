@@ -192,7 +192,6 @@ func (ccp *ccp) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ccp' and handles both Whole and Real numbers based on 'v'
 func (ccp *ccp) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -211,7 +210,6 @@ func (ccp *ccp) FmtNumber(num float64, v uint64) string {
 		}
 
 		if inWhole {
-
 			if count == groupThreshold {
 				b = append(b, ccp.group[0])
 				count = 1
@@ -273,7 +271,6 @@ func (ccp *ccp) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ccp'
 func (ccp *ccp) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ccp.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -293,7 +290,6 @@ func (ccp *ccp) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 		}
 
 		if inWhole {
-
 			if count == groupThreshold {
 				b = append(b, ccp.group[0])
 				count = 1
@@ -338,7 +334,6 @@ func (ccp *ccp) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ccp'
 // in accounting notation.
 func (ccp *ccp) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ccp.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -358,7 +353,6 @@ func (ccp *ccp) FmtAccounting(num float64, v uint64, currency currency.Type) str
 		}
 
 		if inWhole {
-
 			if count == groupThreshold {
 				b = append(b, ccp.group[0])
 				count = 1
@@ -376,9 +370,7 @@ func (ccp *ccp) FmtAccounting(num float64, v uint64, currency currency.Type) str
 	}
 
 	if num < 0 {
-
 		b = append(b, ccp.currencyNegativePrefix[0])
-
 	}
 
 	// reverse
@@ -401,7 +393,6 @@ func (ccp *ccp) FmtAccounting(num float64, v uint64, currency currency.Type) str
 		b = append(b, ccp.currencyNegativeSuffix...)
 		b = append(b, symbol...)
 	} else {
-
 		b = append(b, symbol...)
 	}
 
@@ -410,7 +401,6 @@ func (ccp *ccp) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 // FmtDateShort returns the short date representation of 't' for 'ccp'
 func (ccp *ccp) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -429,7 +419,6 @@ func (ccp *ccp) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'ccp'
 func (ccp *ccp) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -448,7 +437,6 @@ func (ccp *ccp) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'ccp'
 func (ccp *ccp) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -467,7 +455,6 @@ func (ccp *ccp) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'ccp'
 func (ccp *ccp) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, ccp.daysWide[t.Weekday()]...)
@@ -488,7 +475,6 @@ func (ccp *ccp) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'ccp'
 func (ccp *ccp) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -518,7 +504,6 @@ func (ccp *ccp) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'ccp'
 func (ccp *ccp) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -555,7 +540,6 @@ func (ccp *ccp) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'ccp'
 func (ccp *ccp) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -597,7 +581,6 @@ func (ccp *ccp) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'ccp'
 func (ccp *ccp) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

@@ -182,7 +182,6 @@ func (bgn *bgn_PK) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'bgn_PK' and handles both Whole and Real numbers based on 'v'
 func (bgn *bgn_PK) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -254,7 +253,6 @@ func (bgn *bgn_PK) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'bgn_PK'
 func (bgn *bgn_PK) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := bgn.currencies[currency]
 	l := len(s) + len(symbol) + 14
@@ -290,7 +288,6 @@ func (bgn *bgn_PK) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'bgn_PK'
 // in accounting notation.
 func (bgn *bgn_PK) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := bgn.currencies[currency]
 	l := len(s) + len(symbol) + 14
@@ -308,9 +305,7 @@ func (bgn *bgn_PK) FmtAccounting(num float64, v uint64, currency currency.Type) 
 	}
 
 	if num < 0 {
-
 		b = append(b, bgn.minus[0])
-
 	}
 
 	// reverse
@@ -332,7 +327,6 @@ func (bgn *bgn_PK) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'bgn_PK'
 func (bgn *bgn_PK) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -340,7 +334,6 @@ func (bgn *bgn_PK) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'bgn_PK'
 func (bgn *bgn_PK) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -348,7 +341,6 @@ func (bgn *bgn_PK) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'bgn_PK'
 func (bgn *bgn_PK) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -356,7 +348,6 @@ func (bgn *bgn_PK) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'bgn_PK'
 func (bgn *bgn_PK) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -364,7 +355,6 @@ func (bgn *bgn_PK) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'bgn_PK'
 func (bgn *bgn_PK) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -372,7 +362,6 @@ func (bgn *bgn_PK) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'bgn_PK'
 func (bgn *bgn_PK) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -380,7 +369,6 @@ func (bgn *bgn_PK) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'bgn_PK'
 func (bgn *bgn_PK) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -388,7 +376,6 @@ func (bgn *bgn_PK) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'bgn_PK'
 func (bgn *bgn_PK) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)

@@ -99,7 +99,6 @@ func (kk *kk_Arab) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'kk_Arab'
 func (kk *kk_Arab) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -111,7 +110,6 @@ func (kk *kk_Arab) CardinalPluralRule(num float64, v uint64) locales.PluralRule 
 
 // OrdinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for 'kk_Arab'
 func (kk *kk_Arab) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 	nMod10 := math.Mod(n, 10)
 
@@ -124,7 +122,6 @@ func (kk *kk_Arab) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'kk_Arab'
 func (kk *kk_Arab) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
-
 	start := kk.CardinalPluralRule(num1, v1)
 	end := kk.CardinalPluralRule(num2, v2)
 
@@ -135,7 +132,6 @@ func (kk *kk_Arab) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 	}
 
 	return locales.PluralRuleOther
-
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -225,7 +221,6 @@ func (kk *kk_Arab) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'kk_Arab' and handles both Whole and Real numbers based on 'v'
 func (kk *kk_Arab) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -299,7 +294,6 @@ func (kk *kk_Arab) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'kk_Arab'
 func (kk *kk_Arab) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kk.currencies[currency]
 	l := len(s) + len(symbol) + 12
@@ -341,7 +335,6 @@ func (kk *kk_Arab) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'kk_Arab'
 // in accounting notation.
 func (kk *kk_Arab) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kk.currencies[currency]
 	l := len(s) + len(symbol) + 12
@@ -390,7 +383,6 @@ func (kk *kk_Arab) FmtAccounting(num float64, v uint64, currency currency.Type) 
 	if num < 0 {
 		b = append(b, kk.currencyNegativeSuffix...)
 	} else {
-
 		b = append(b, kk.currencyPositiveSuffix...)
 	}
 
@@ -399,7 +391,6 @@ func (kk *kk_Arab) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'kk_Arab'
 func (kk *kk_Arab) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -428,7 +419,6 @@ func (kk *kk_Arab) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'kk_Arab'
 func (kk *kk_Arab) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -447,7 +437,6 @@ func (kk *kk_Arab) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'kk_Arab'
 func (kk *kk_Arab) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -466,7 +455,6 @@ func (kk *kk_Arab) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'kk_Arab'
 func (kk *kk_Arab) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -487,7 +475,6 @@ func (kk *kk_Arab) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'kk_Arab'
 func (kk *kk_Arab) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -508,7 +495,6 @@ func (kk *kk_Arab) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'kk_Arab'
 func (kk *kk_Arab) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -536,7 +522,6 @@ func (kk *kk_Arab) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'kk_Arab'
 func (kk *kk_Arab) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -568,7 +553,6 @@ func (kk *kk_Arab) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'kk_Arab'
 func (kk *kk_Arab) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

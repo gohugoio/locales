@@ -88,7 +88,6 @@ func (ssy *ssy_ER) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'ssy_ER'
 func (ssy *ssy_ER) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -195,7 +194,6 @@ func (ssy *ssy_ER) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ssy_ER' and handles both Whole and Real numbers based on 'v'
 func (ssy *ssy_ER) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -267,7 +265,6 @@ func (ssy *ssy_ER) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ssy_ER'
 func (ssy *ssy_ER) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ssy.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -325,7 +322,6 @@ func (ssy *ssy_ER) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ssy_ER'
 // in accounting notation.
 func (ssy *ssy_ER) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ssy.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -362,11 +358,9 @@ func (ssy *ssy_ER) FmtAccounting(num float64, v uint64, currency currency.Type) 
 		b = append(b, ssy.minus[0])
 
 	} else {
-
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
-
 	}
 
 	// reverse
@@ -390,7 +384,6 @@ func (ssy *ssy_ER) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'ssy_ER'
 func (ssy *ssy_ER) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -419,7 +412,6 @@ func (ssy *ssy_ER) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'ssy_ER'
 func (ssy *ssy_ER) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -442,7 +434,6 @@ func (ssy *ssy_ER) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'ssy_ER'
 func (ssy *ssy_ER) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -465,7 +456,6 @@ func (ssy *ssy_ER) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'ssy_ER'
 func (ssy *ssy_ER) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, ssy.daysWide[t.Weekday()]...)
@@ -491,7 +481,6 @@ func (ssy *ssy_ER) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'ssy_ER'
 func (ssy *ssy_ER) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -521,7 +510,6 @@ func (ssy *ssy_ER) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'ssy_ER'
 func (ssy *ssy_ER) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -558,7 +546,6 @@ func (ssy *ssy_ER) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'ssy_ER'
 func (ssy *ssy_ER) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -600,7 +587,6 @@ func (ssy *ssy_ER) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'ssy_ER'
 func (ssy *ssy_ER) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

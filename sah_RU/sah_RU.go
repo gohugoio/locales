@@ -192,7 +192,6 @@ func (sah *sah_RU) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'sah_RU' and handles both Whole and Real numbers based on 'v'
 func (sah *sah_RU) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -266,7 +265,6 @@ func (sah *sah_RU) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'sah_RU'
 func (sah *sah_RU) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sah.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
@@ -326,7 +324,6 @@ func (sah *sah_RU) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'sah_RU'
 // in accounting notation.
 func (sah *sah_RU) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sah.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
@@ -357,9 +354,7 @@ func (sah *sah_RU) FmtAccounting(num float64, v uint64, currency currency.Type) 
 	}
 
 	if num < 0 {
-
 		b = append(b, sah.minus[0])
-
 	}
 
 	// reverse
@@ -392,7 +387,6 @@ func (sah *sah_RU) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'sah_RU'
 func (sah *sah_RU) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 9 {
@@ -411,7 +405,6 @@ func (sah *sah_RU) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'sah_RU'
 func (sah *sah_RU) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -430,7 +423,6 @@ func (sah *sah_RU) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'sah_RU'
 func (sah *sah_RU) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -449,7 +441,6 @@ func (sah *sah_RU) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'sah_RU'
 func (sah *sah_RU) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -472,7 +463,6 @@ func (sah *sah_RU) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'sah_RU'
 func (sah *sah_RU) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -493,7 +483,6 @@ func (sah *sah_RU) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'sah_RU'
 func (sah *sah_RU) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -521,7 +510,6 @@ func (sah *sah_RU) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'sah_RU'
 func (sah *sah_RU) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -553,7 +541,6 @@ func (sah *sah_RU) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'sah_RU'
 func (sah *sah_RU) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

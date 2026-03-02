@@ -188,7 +188,6 @@ func (tyv *tyv_RU) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'tyv_RU' and handles both Whole and Real numbers based on 'v'
 func (tyv *tyv_RU) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -262,7 +261,6 @@ func (tyv *tyv_RU) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'tyv_RU'
 func (tyv *tyv_RU) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := tyv.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -271,7 +269,6 @@ func (tyv *tyv_RU) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'tyv_RU'
 // in accounting notation.
 func (tyv *tyv_RU) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := tyv.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -279,7 +276,6 @@ func (tyv *tyv_RU) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'tyv_RU'
 func (tyv *tyv_RU) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -309,7 +305,6 @@ func (tyv *tyv_RU) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'tyv_RU'
 func (tyv *tyv_RU) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -329,7 +324,6 @@ func (tyv *tyv_RU) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'tyv_RU'
 func (tyv *tyv_RU) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -349,7 +343,6 @@ func (tyv *tyv_RU) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'tyv_RU'
 func (tyv *tyv_RU) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -371,7 +364,6 @@ func (tyv *tyv_RU) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'tyv_RU'
 func (tyv *tyv_RU) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -392,7 +384,6 @@ func (tyv *tyv_RU) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'tyv_RU'
 func (tyv *tyv_RU) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -420,7 +411,6 @@ func (tyv *tyv_RU) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'tyv_RU'
 func (tyv *tyv_RU) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -452,7 +442,6 @@ func (tyv *tyv_RU) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'tyv_RU'
 func (tyv *tyv_RU) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

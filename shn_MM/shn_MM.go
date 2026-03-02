@@ -191,7 +191,6 @@ func (shn *shn_MM) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'shn_MM' and handles both Whole and Real numbers based on 'v'
 func (shn *shn_MM) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -263,7 +262,6 @@ func (shn *shn_MM) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'shn_MM'
 func (shn *shn_MM) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := shn.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -272,7 +270,6 @@ func (shn *shn_MM) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'shn_MM'
 // in accounting notation.
 func (shn *shn_MM) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := shn.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -280,7 +277,6 @@ func (shn *shn_MM) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'shn_MM'
 func (shn *shn_MM) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -310,7 +306,6 @@ func (shn *shn_MM) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'shn_MM'
 func (shn *shn_MM) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -329,7 +324,6 @@ func (shn *shn_MM) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'shn_MM'
 func (shn *shn_MM) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -348,7 +342,6 @@ func (shn *shn_MM) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'shn_MM'
 func (shn *shn_MM) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -369,7 +362,6 @@ func (shn *shn_MM) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'shn_MM'
 func (shn *shn_MM) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -390,7 +382,6 @@ func (shn *shn_MM) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'shn_MM'
 func (shn *shn_MM) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -418,7 +409,6 @@ func (shn *shn_MM) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'shn_MM'
 func (shn *shn_MM) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -450,7 +440,6 @@ func (shn *shn_MM) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'shn_MM'
 func (shn *shn_MM) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

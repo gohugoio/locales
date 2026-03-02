@@ -195,7 +195,6 @@ func (yue *yue_Hans) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'yue_Hans' and handles both Whole and Real numbers based on 'v'
 func (yue *yue_Hans) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -267,7 +266,6 @@ func (yue *yue_Hans) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'yue_Hans'
 func (yue *yue_Hans) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := yue.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -325,7 +323,6 @@ func (yue *yue_Hans) FmtCurrency(num float64, v uint64, currency currency.Type) 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'yue_Hans'
 // in accounting notation.
 func (yue *yue_Hans) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := yue.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -362,11 +359,9 @@ func (yue *yue_Hans) FmtAccounting(num float64, v uint64, currency currency.Type
 		b = append(b, yue.currencyNegativePrefix[0])
 
 	} else {
-
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
-
 	}
 
 	// reverse
@@ -394,7 +389,6 @@ func (yue *yue_Hans) FmtAccounting(num float64, v uint64, currency currency.Type
 
 // FmtDateShort returns the short date representation of 't' for 'yue_Hans'
 func (yue *yue_Hans) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -413,7 +407,6 @@ func (yue *yue_Hans) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'yue_Hans'
 func (yue *yue_Hans) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -433,7 +426,6 @@ func (yue *yue_Hans) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'yue_Hans'
 func (yue *yue_Hans) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -453,7 +445,6 @@ func (yue *yue_Hans) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'yue_Hans'
 func (yue *yue_Hans) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -474,7 +465,6 @@ func (yue *yue_Hans) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'yue_Hans'
 func (yue *yue_Hans) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -495,7 +485,6 @@ func (yue *yue_Hans) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'yue_Hans'
 func (yue *yue_Hans) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -523,7 +512,6 @@ func (yue *yue_Hans) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'yue_Hans'
 func (yue *yue_Hans) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -557,7 +545,6 @@ func (yue *yue_Hans) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'yue_Hans'
 func (yue *yue_Hans) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

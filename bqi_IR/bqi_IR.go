@@ -187,7 +187,6 @@ func (bqi *bqi_IR) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'bqi_IR' and handles both Whole and Real numbers based on 'v'
 func (bqi *bqi_IR) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 7 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -263,7 +262,6 @@ func (bqi *bqi_IR) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'bqi_IR'
 func (bqi *bqi_IR) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := bqi.currencies[currency]
 	l := len(s) + len(symbol) + 12 + 1*len(s[:len(s)-int(v)-1])/3
@@ -327,7 +325,6 @@ func (bqi *bqi_IR) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'bqi_IR'
 // in accounting notation.
 func (bqi *bqi_IR) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := bqi.currencies[currency]
 	l := len(s) + len(symbol) + 14 + 1*len(s[:len(s)-int(v)-1])/3
@@ -402,7 +399,6 @@ func (bqi *bqi_IR) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'bqi_IR'
 func (bqi *bqi_IR) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -410,7 +406,6 @@ func (bqi *bqi_IR) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'bqi_IR'
 func (bqi *bqi_IR) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -418,7 +413,6 @@ func (bqi *bqi_IR) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'bqi_IR'
 func (bqi *bqi_IR) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -426,7 +420,6 @@ func (bqi *bqi_IR) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'bqi_IR'
 func (bqi *bqi_IR) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -434,7 +427,6 @@ func (bqi *bqi_IR) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'bqi_IR'
 func (bqi *bqi_IR) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -442,7 +434,6 @@ func (bqi *bqi_IR) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'bqi_IR'
 func (bqi *bqi_IR) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -450,7 +441,6 @@ func (bqi *bqi_IR) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'bqi_IR'
 func (bqi *bqi_IR) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -458,7 +448,6 @@ func (bqi *bqi_IR) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'bqi_IR'
 func (bqi *bqi_IR) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)

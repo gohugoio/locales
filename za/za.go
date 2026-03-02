@@ -181,7 +181,6 @@ func (za *za) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'za' and handles both Whole and Real numbers based on 'v'
 func (za *za) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -253,7 +252,6 @@ func (za *za) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'za'
 func (za *za) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := za.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -262,7 +260,6 @@ func (za *za) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'za'
 // in accounting notation.
 func (za *za) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := za.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -270,7 +267,6 @@ func (za *za) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 // FmtDateShort returns the short date representation of 't' for 'za'
 func (za *za) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -278,7 +274,6 @@ func (za *za) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'za'
 func (za *za) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -286,7 +281,6 @@ func (za *za) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'za'
 func (za *za) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -294,7 +288,6 @@ func (za *za) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'za'
 func (za *za) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -302,7 +295,6 @@ func (za *za) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'za'
 func (za *za) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -310,7 +302,6 @@ func (za *za) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'za'
 func (za *za) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -318,7 +309,6 @@ func (za *za) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'za'
 func (za *za) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -326,7 +316,6 @@ func (za *za) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'za'
 func (za *za) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)

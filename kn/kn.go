@@ -93,7 +93,6 @@ func (kn *kn) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'kn'
 func (kn *kn) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 	i := int64(n)
 
@@ -111,7 +110,6 @@ func (kn *kn) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'kn'
 func (kn *kn) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
-
 	start := kn.CardinalPluralRule(num1, v1)
 	end := kn.CardinalPluralRule(num2, v2)
 
@@ -122,7 +120,6 @@ func (kn *kn) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) 
 	}
 
 	return locales.PluralRuleOther
-
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -212,7 +209,6 @@ func (kn *kn) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'kn' and handles both Whole and Real numbers based on 'v'
 func (kn *kn) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -284,7 +280,6 @@ func (kn *kn) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'kn'
 func (kn *kn) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kn.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -342,7 +337,6 @@ func (kn *kn) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'kn'
 // in accounting notation.
 func (kn *kn) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kn.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -379,11 +373,9 @@ func (kn *kn) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 		b = append(b, kn.currencyNegativePrefix[0])
 
 	} else {
-
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
-
 	}
 
 	// reverse
@@ -411,7 +403,6 @@ func (kn *kn) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 // FmtDateShort returns the short date representation of 't' for 'kn'
 func (kn *kn) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -430,7 +421,6 @@ func (kn *kn) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'kn'
 func (kn *kn) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, kn.monthsAbbreviated[t.Month()]...)
@@ -449,7 +439,6 @@ func (kn *kn) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'kn'
 func (kn *kn) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, kn.monthsWide[t.Month()]...)
@@ -468,7 +457,6 @@ func (kn *kn) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'kn'
 func (kn *kn) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, kn.daysWide[t.Weekday()]...)
@@ -489,7 +477,6 @@ func (kn *kn) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'kn'
 func (kn *kn) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -523,7 +510,6 @@ func (kn *kn) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'kn'
 func (kn *kn) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -564,7 +550,6 @@ func (kn *kn) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'kn'
 func (kn *kn) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -610,7 +595,6 @@ func (kn *kn) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'kn'
 func (kn *kn) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

@@ -195,7 +195,6 @@ func (kea *kea_CV) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'kea_CV' and handles both Whole and Real numbers based on 'v'
 func (kea *kea_CV) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -269,7 +268,6 @@ func (kea *kea_CV) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'kea_CV'
 func (kea *kea_CV) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kea.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
@@ -329,7 +327,6 @@ func (kea *kea_CV) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'kea_CV'
 // in accounting notation.
 func (kea *kea_CV) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kea.currencies[currency]
 	l := len(s) + len(symbol) + 6 + 2*len(s[:len(s)-int(v)-1])/3
@@ -360,9 +357,7 @@ func (kea *kea_CV) FmtAccounting(num float64, v uint64, currency currency.Type) 
 	}
 
 	if num < 0 {
-
 		b = append(b, kea.currencyNegativePrefix[0])
-
 	}
 
 	// reverse
@@ -395,7 +390,6 @@ func (kea *kea_CV) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'kea_CV'
 func (kea *kea_CV) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -424,7 +418,6 @@ func (kea *kea_CV) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'kea_CV'
 func (kea *kea_CV) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -443,7 +436,6 @@ func (kea *kea_CV) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'kea_CV'
 func (kea *kea_CV) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -464,7 +456,6 @@ func (kea *kea_CV) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'kea_CV'
 func (kea *kea_CV) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, kea.daysWide[t.Weekday()]...)
@@ -487,7 +478,6 @@ func (kea *kea_CV) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'kea_CV'
 func (kea *kea_CV) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -508,7 +498,6 @@ func (kea *kea_CV) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'kea_CV'
 func (kea *kea_CV) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -536,7 +525,6 @@ func (kea *kea_CV) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'kea_CV'
 func (kea *kea_CV) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -568,7 +556,6 @@ func (kea *kea_CV) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'kea_CV'
 func (kea *kea_CV) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

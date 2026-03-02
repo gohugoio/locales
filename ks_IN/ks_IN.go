@@ -86,7 +86,6 @@ func (ks *ks_IN) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'ks_IN'
 func (ks *ks_IN) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -193,7 +192,6 @@ func (ks *ks_IN) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ks_IN' and handles both Whole and Real numbers based on 'v'
 func (ks *ks_IN) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 0
 	count := 0
@@ -212,7 +210,6 @@ func (ks *ks_IN) FmtNumber(num float64, v uint64) string {
 		}
 
 		if inWhole {
-
 			if count == groupThreshold {
 				b = append(b, ks.group[0])
 				count = 1
@@ -274,7 +271,6 @@ func (ks *ks_IN) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ks_IN'
 func (ks *ks_IN) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ks.currencies[currency]
 	l := len(s) + len(symbol) + 2
@@ -294,7 +290,6 @@ func (ks *ks_IN) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 		}
 
 		if inWhole {
-
 			if count == groupThreshold {
 				b = append(b, ks.group[0])
 				count = 1
@@ -345,7 +340,6 @@ func (ks *ks_IN) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ks_IN'
 // in accounting notation.
 func (ks *ks_IN) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ks.currencies[currency]
 	l := len(s) + len(symbol) + 2
@@ -365,7 +359,6 @@ func (ks *ks_IN) FmtAccounting(num float64, v uint64, currency currency.Type) st
 		}
 
 		if inWhole {
-
 			if count == groupThreshold {
 				b = append(b, ks.group[0])
 				count = 1
@@ -427,7 +420,6 @@ func (ks *ks_IN) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 // FmtDateShort returns the short date representation of 't' for 'ks_IN'
 func (ks *ks_IN) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Month()), 10)
@@ -446,7 +438,6 @@ func (ks *ks_IN) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'ks_IN'
 func (ks *ks_IN) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, ks.monthsAbbreviated[t.Month()]...)
@@ -465,7 +456,6 @@ func (ks *ks_IN) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'ks_IN'
 func (ks *ks_IN) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, ks.monthsWide[t.Month()]...)
@@ -484,7 +474,6 @@ func (ks *ks_IN) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'ks_IN'
 func (ks *ks_IN) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, ks.daysWide[t.Weekday()]...)
@@ -505,7 +494,6 @@ func (ks *ks_IN) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'ks_IN'
 func (ks *ks_IN) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -535,7 +523,6 @@ func (ks *ks_IN) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'ks_IN'
 func (ks *ks_IN) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -572,7 +559,6 @@ func (ks *ks_IN) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'ks_IN'
 func (ks *ks_IN) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -614,7 +600,6 @@ func (ks *ks_IN) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'ks_IN'
 func (ks *ks_IN) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

@@ -9,7 +9,6 @@ import (
 )
 
 func TestLocale(t *testing.T) {
-
 	trans := New()
 	expected := "aa_ET"
 
@@ -19,7 +18,6 @@ func TestLocale(t *testing.T) {
 }
 
 func TestPluralsRange(t *testing.T) {
-
 	trans := New()
 
 	tests := []struct {
@@ -53,7 +51,6 @@ func TestPluralsRange(t *testing.T) {
 }
 
 func TestPluralsOrdinal(t *testing.T) {
-
 	trans := New()
 
 	tests := []struct {
@@ -96,7 +93,6 @@ func TestPluralsOrdinal(t *testing.T) {
 }
 
 func TestPluralsCardinal(t *testing.T) {
-
 	trans := New()
 
 	tests := []struct {
@@ -133,7 +129,6 @@ func TestPluralsCardinal(t *testing.T) {
 }
 
 func TestRangePlurals(t *testing.T) {
-
 	trans := New()
 
 	tests := []struct {
@@ -161,7 +156,6 @@ func TestRangePlurals(t *testing.T) {
 }
 
 func TestOrdinalPlurals(t *testing.T) {
-
 	trans := New()
 
 	tests := []struct {
@@ -200,7 +194,6 @@ func TestOrdinalPlurals(t *testing.T) {
 }
 
 func TestCardinalPlurals(t *testing.T) {
-
 	trans := New()
 
 	tests := []struct {
@@ -229,7 +222,6 @@ func TestCardinalPlurals(t *testing.T) {
 }
 
 func TestDaysAbbreviated(t *testing.T) {
-
 	trans := New()
 	days := trans.WeekdaysAbbreviated()
 
@@ -283,7 +275,6 @@ func TestDaysAbbreviated(t *testing.T) {
 }
 
 func TestDaysNarrow(t *testing.T) {
-
 	trans := New()
 	days := trans.WeekdaysNarrow()
 
@@ -337,7 +328,6 @@ func TestDaysNarrow(t *testing.T) {
 }
 
 func TestDaysShort(t *testing.T) {
-
 	trans := New()
 	days := trans.WeekdaysShort()
 
@@ -391,7 +381,6 @@ func TestDaysShort(t *testing.T) {
 }
 
 func TestDaysWide(t *testing.T) {
-
 	trans := New()
 	days := trans.WeekdaysWide()
 
@@ -445,7 +434,6 @@ func TestDaysWide(t *testing.T) {
 }
 
 func TestMonthsAbbreviated(t *testing.T) {
-
 	trans := New()
 	months := trans.MonthsAbbreviated()
 
@@ -519,7 +507,6 @@ func TestMonthsAbbreviated(t *testing.T) {
 }
 
 func TestMonthsNarrow(t *testing.T) {
-
 	trans := New()
 	months := trans.MonthsNarrow()
 
@@ -593,7 +580,6 @@ func TestMonthsNarrow(t *testing.T) {
 }
 
 func TestMonthsWide(t *testing.T) {
-
 	trans := New()
 	months := trans.MonthsWide()
 
@@ -667,7 +653,6 @@ func TestMonthsWide(t *testing.T) {
 }
 
 func TestFmtTimeFull(t *testing.T) {
-
 	// loc, err := time.LoadLocation("America/Toronto")
 	// if err != nil {
 	// 	t.Errorf("Expected '<nil>' Got '%s'", err)
@@ -700,7 +685,6 @@ func TestFmtTimeFull(t *testing.T) {
 }
 
 func TestFmtTimeLong(t *testing.T) {
-
 	// loc, err := time.LoadLocation("America/Toronto")
 	// if err != nil {
 	// 	t.Errorf("Expected '<nil>' Got '%s'", err)
@@ -731,7 +715,6 @@ func TestFmtTimeLong(t *testing.T) {
 }
 
 func TestFmtTimeMedium(t *testing.T) {
-
 	tests := []struct {
 		t        time.Time
 		expected string
@@ -757,7 +740,6 @@ func TestFmtTimeMedium(t *testing.T) {
 }
 
 func TestFmtTimeShort(t *testing.T) {
-
 	tests := []struct {
 		t        time.Time
 		expected string
@@ -783,7 +765,6 @@ func TestFmtTimeShort(t *testing.T) {
 }
 
 func TestFmtDateFull(t *testing.T) {
-
 	tests := []struct {
 		t        time.Time
 		expected string
@@ -805,7 +786,6 @@ func TestFmtDateFull(t *testing.T) {
 }
 
 func TestFmtDateLong(t *testing.T) {
-
 	tests := []struct {
 		t        time.Time
 		expected string
@@ -827,7 +807,6 @@ func TestFmtDateLong(t *testing.T) {
 }
 
 func TestFmtDateMedium(t *testing.T) {
-
 	tests := []struct {
 		t        time.Time
 		expected string
@@ -849,7 +828,6 @@ func TestFmtDateMedium(t *testing.T) {
 }
 
 func TestFmtDateShort(t *testing.T) {
-
 	tests := []struct {
 		t        time.Time
 		expected string
@@ -875,7 +853,6 @@ func TestFmtDateShort(t *testing.T) {
 }
 
 func TestFmtNumber(t *testing.T) {
-
 	tests := []struct {
 		num      float64
 		v        uint64
@@ -934,7 +911,6 @@ func TestFmtNumber(t *testing.T) {
 }
 
 func TestFmtCurrency(t *testing.T) {
-
 	tests := []struct {
 		num      float64
 		v        uint64
@@ -1008,7 +984,6 @@ func TestFmtCurrency(t *testing.T) {
 }
 
 func TestFmtAccounting(t *testing.T) {
-
 	tests := []struct {
 		num      float64
 		v        uint64
@@ -1076,7 +1051,6 @@ func TestFmtAccounting(t *testing.T) {
 }
 
 func TestFmtPercent(t *testing.T) {
-
 	tests := []struct {
 		num      float64
 		v        uint64

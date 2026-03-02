@@ -96,7 +96,6 @@ func (ku *ku_Arab_IR) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'ku_Arab_IR'
 func (ku *ku_Arab_IR) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -203,7 +202,6 @@ func (ku *ku_Arab_IR) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ku_Arab_IR' and handles both Whole and Real numbers based on 'v'
 func (ku *ku_Arab_IR) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -288,7 +286,6 @@ func (ku *ku_Arab_IR) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ku_Arab_IR'
 func (ku *ku_Arab_IR) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ku.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -346,7 +343,6 @@ func (ku *ku_Arab_IR) FmtCurrency(num float64, v uint64, currency currency.Type)
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ku_Arab_IR'
 // in accounting notation.
 func (ku *ku_Arab_IR) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ku.currencies[currency]
 	l := len(s) + len(symbol) + 6 + 1*len(s[:len(s)-int(v)-1])/3
@@ -375,9 +371,7 @@ func (ku *ku_Arab_IR) FmtAccounting(num float64, v uint64, currency currency.Typ
 	}
 
 	if num < 0 {
-
 		b = append(b, ku.currencyNegativePrefix[0])
-
 	}
 
 	// reverse
@@ -410,7 +404,6 @@ func (ku *ku_Arab_IR) FmtAccounting(num float64, v uint64, currency currency.Typ
 
 // FmtDateShort returns the short date representation of 't' for 'ku_Arab_IR'
 func (ku *ku_Arab_IR) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -439,7 +432,6 @@ func (ku *ku_Arab_IR) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'ku_Arab_IR'
 func (ku *ku_Arab_IR) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -458,7 +450,6 @@ func (ku *ku_Arab_IR) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'ku_Arab_IR'
 func (ku *ku_Arab_IR) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -481,7 +472,6 @@ func (ku *ku_Arab_IR) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'ku_Arab_IR'
 func (ku *ku_Arab_IR) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, ku.daysWide[t.Weekday()]...)
@@ -506,7 +496,6 @@ func (ku *ku_Arab_IR) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'ku_Arab_IR'
 func (ku *ku_Arab_IR) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -527,7 +516,6 @@ func (ku *ku_Arab_IR) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'ku_Arab_IR'
 func (ku *ku_Arab_IR) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -555,7 +543,6 @@ func (ku *ku_Arab_IR) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'ku_Arab_IR'
 func (ku *ku_Arab_IR) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -587,7 +574,6 @@ func (ku *ku_Arab_IR) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'ku_Arab_IR'
 func (ku *ku_Arab_IR) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

@@ -93,7 +93,6 @@ func (tzm *tzm) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'tzm'
 func (tzm *tzm) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if (n >= 0 && n <= 1) || (n >= 11 && n <= 99) {
@@ -200,7 +199,6 @@ func (tzm *tzm) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'tzm' and handles both Whole and Real numbers based on 'v'
 func (tzm *tzm) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -274,7 +272,6 @@ func (tzm *tzm) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'tzm'
 func (tzm *tzm) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := tzm.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
@@ -334,7 +331,6 @@ func (tzm *tzm) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'tzm'
 // in accounting notation.
 func (tzm *tzm) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := tzm.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
@@ -365,9 +361,7 @@ func (tzm *tzm) FmtAccounting(num float64, v uint64, currency currency.Type) str
 	}
 
 	if num < 0 {
-
 		b = append(b, tzm.minus[0])
-
 	}
 
 	// reverse
@@ -400,7 +394,6 @@ func (tzm *tzm) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 // FmtDateShort returns the short date representation of 't' for 'tzm'
 func (tzm *tzm) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -429,7 +422,6 @@ func (tzm *tzm) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'tzm'
 func (tzm *tzm) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -448,7 +440,6 @@ func (tzm *tzm) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'tzm'
 func (tzm *tzm) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -467,7 +458,6 @@ func (tzm *tzm) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'tzm'
 func (tzm *tzm) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, tzm.daysWide[t.Weekday()]...)
@@ -488,7 +478,6 @@ func (tzm *tzm) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'tzm'
 func (tzm *tzm) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -496,7 +485,6 @@ func (tzm *tzm) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'tzm'
 func (tzm *tzm) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -504,7 +492,6 @@ func (tzm *tzm) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'tzm'
 func (tzm *tzm) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -512,7 +499,6 @@ func (tzm *tzm) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'tzm'
 func (tzm *tzm) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)

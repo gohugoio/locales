@@ -182,7 +182,6 @@ func (mzn *mzn) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'mzn' and handles both Whole and Real numbers based on 'v'
 func (mzn *mzn) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -254,7 +253,6 @@ func (mzn *mzn) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'mzn'
 func (mzn *mzn) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := mzn.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -263,7 +261,6 @@ func (mzn *mzn) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'mzn'
 // in accounting notation.
 func (mzn *mzn) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := mzn.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -271,7 +268,6 @@ func (mzn *mzn) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 // FmtDateShort returns the short date representation of 't' for 'mzn'
 func (mzn *mzn) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -279,7 +275,6 @@ func (mzn *mzn) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'mzn'
 func (mzn *mzn) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -287,7 +282,6 @@ func (mzn *mzn) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'mzn'
 func (mzn *mzn) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -295,7 +289,6 @@ func (mzn *mzn) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'mzn'
 func (mzn *mzn) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -303,7 +296,6 @@ func (mzn *mzn) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'mzn'
 func (mzn *mzn) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -311,7 +303,6 @@ func (mzn *mzn) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'mzn'
 func (mzn *mzn) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -319,7 +310,6 @@ func (mzn *mzn) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'mzn'
 func (mzn *mzn) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -327,7 +317,6 @@ func (mzn *mzn) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'mzn'
 func (mzn *mzn) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)

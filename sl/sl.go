@@ -98,7 +98,6 @@ func (sl *sl) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'sl'
 func (sl *sl) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 	i := int64(n)
 	iMod100 := i % 100
@@ -121,7 +120,6 @@ func (sl *sl) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'sl'
 func (sl *sl) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
-
 	start := sl.CardinalPluralRule(num1, v1)
 	end := sl.CardinalPluralRule(num2, v2)
 
@@ -158,7 +156,6 @@ func (sl *sl) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) 
 	}
 
 	return locales.PluralRuleOther
-
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -248,7 +245,6 @@ func (sl *sl) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'sl' and handles both Whole and Real numbers based on 'v'
 func (sl *sl) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -326,7 +322,6 @@ func (sl *sl) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'sl'
 func (sl *sl) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sl.currencies[currency]
 	l := len(s) + len(symbol) + 6 + 1*len(s[:len(s)-int(v)-1])/3
@@ -386,7 +381,6 @@ func (sl *sl) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'sl'
 // in accounting notation.
 func (sl *sl) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sl.currencies[currency]
 	l := len(s) + len(symbol) + 8 + 1*len(s[:len(s)-int(v)-1])/3
@@ -415,9 +409,7 @@ func (sl *sl) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 	}
 
 	if num < 0 {
-
 		b = append(b, sl.currencyNegativePrefix[0])
-
 	}
 
 	// reverse
@@ -450,7 +442,6 @@ func (sl *sl) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 // FmtDateShort returns the short date representation of 't' for 'sl'
 func (sl *sl) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -469,7 +460,6 @@ func (sl *sl) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'sl'
 func (sl *sl) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -488,7 +478,6 @@ func (sl *sl) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'sl'
 func (sl *sl) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -507,7 +496,6 @@ func (sl *sl) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'sl'
 func (sl *sl) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, sl.daysWide[t.Weekday()]...)
@@ -528,7 +516,6 @@ func (sl *sl) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'sl'
 func (sl *sl) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -549,7 +536,6 @@ func (sl *sl) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'sl'
 func (sl *sl) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -577,7 +563,6 @@ func (sl *sl) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'sl'
 func (sl *sl) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -609,7 +594,6 @@ func (sl *sl) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'sl'
 func (sl *sl) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

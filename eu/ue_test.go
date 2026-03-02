@@ -3,7 +3,6 @@ package eu
 import "testing"
 
 func TestPercent(t *testing.T) {
-
 	tests := []struct {
 		num      float64
 		v        uint64

@@ -190,7 +190,6 @@ func (ig *ig_NG) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ig_NG' and handles both Whole and Real numbers based on 'v'
 func (ig *ig_NG) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 5 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -268,7 +267,6 @@ func (ig *ig_NG) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ig_NG'
 func (ig *ig_NG) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ig.currencies[currency]
 	l := len(s) + len(symbol) + 5 + 1*len(s[:len(s)-int(v)-1])/3
@@ -328,7 +326,6 @@ func (ig *ig_NG) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ig_NG'
 // in accounting notation.
 func (ig *ig_NG) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ig.currencies[currency]
 	l := len(s) + len(symbol) + 5 + 1*len(s[:len(s)-int(v)-1])/3
@@ -367,11 +364,9 @@ func (ig *ig_NG) FmtAccounting(num float64, v uint64, currency currency.Type) st
 		}
 
 	} else {
-
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
-
 	}
 
 	// reverse
@@ -395,7 +390,6 @@ func (ig *ig_NG) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 // FmtDateShort returns the short date representation of 't' for 'ig_NG'
 func (ig *ig_NG) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -414,7 +408,6 @@ func (ig *ig_NG) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'ig_NG'
 func (ig *ig_NG) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -433,7 +426,6 @@ func (ig *ig_NG) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'ig_NG'
 func (ig *ig_NG) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -452,7 +444,6 @@ func (ig *ig_NG) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'ig_NG'
 func (ig *ig_NG) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, ig.daysWide[t.Weekday()]...)
@@ -473,7 +464,6 @@ func (ig *ig_NG) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'ig_NG'
 func (ig *ig_NG) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -494,7 +484,6 @@ func (ig *ig_NG) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'ig_NG'
 func (ig *ig_NG) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -522,7 +511,6 @@ func (ig *ig_NG) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'ig_NG'
 func (ig *ig_NG) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -554,7 +542,6 @@ func (ig *ig_NG) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'ig_NG'
 func (ig *ig_NG) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

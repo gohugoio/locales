@@ -89,7 +89,6 @@ func (so *so_KE) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'so_KE'
 func (so *so_KE) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -196,7 +195,6 @@ func (so *so_KE) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'so_KE' and handles both Whole and Real numbers based on 'v'
 func (so *so_KE) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -268,7 +266,6 @@ func (so *so_KE) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'so_KE'
 func (so *so_KE) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := so.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -277,7 +274,6 @@ func (so *so_KE) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'so_KE'
 // in accounting notation.
 func (so *so_KE) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := so.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -285,7 +281,6 @@ func (so *so_KE) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 // FmtDateShort returns the short date representation of 't' for 'so_KE'
 func (so *so_KE) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -314,7 +309,6 @@ func (so *so_KE) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'so_KE'
 func (so *so_KE) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -337,7 +331,6 @@ func (so *so_KE) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'so_KE'
 func (so *so_KE) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, so.monthsWide[t.Month()]...)
@@ -356,7 +349,6 @@ func (so *so_KE) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'so_KE'
 func (so *so_KE) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, so.daysWide[t.Weekday()]...)
@@ -377,7 +369,6 @@ func (so *so_KE) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'so_KE'
 func (so *so_KE) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -398,7 +389,6 @@ func (so *so_KE) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'so_KE'
 func (so *so_KE) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -426,7 +416,6 @@ func (so *so_KE) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'so_KE'
 func (so *so_KE) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -458,7 +447,6 @@ func (so *so_KE) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'so_KE'
 func (so *so_KE) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

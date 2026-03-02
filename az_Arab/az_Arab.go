@@ -97,7 +97,6 @@ func (az *az_Arab) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'az_Arab'
 func (az *az_Arab) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -109,7 +108,6 @@ func (az *az_Arab) CardinalPluralRule(num float64, v uint64) locales.PluralRule 
 
 // OrdinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for 'az_Arab'
 func (az *az_Arab) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 	i := int64(n)
 	iMod10 := i % 10
@@ -129,7 +127,6 @@ func (az *az_Arab) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'az_Arab'
 func (az *az_Arab) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
-
 	start := az.CardinalPluralRule(num1, v1)
 	end := az.CardinalPluralRule(num2, v2)
 
@@ -140,7 +137,6 @@ func (az *az_Arab) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 	}
 
 	return locales.PluralRuleOther
-
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -230,7 +226,6 @@ func (az *az_Arab) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'az_Arab' and handles both Whole and Real numbers based on 'v'
 func (az *az_Arab) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2
 
@@ -291,7 +286,6 @@ func (az *az_Arab) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'az_Arab'
 func (az *az_Arab) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := az.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -349,7 +343,6 @@ func (az *az_Arab) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'az_Arab'
 // in accounting notation.
 func (az *az_Arab) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := az.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -378,9 +371,7 @@ func (az *az_Arab) FmtAccounting(num float64, v uint64, currency currency.Type) 
 	}
 
 	if num < 0 {
-
 		b = append(b, az.minus[0])
-
 	}
 
 	// reverse
@@ -413,7 +404,6 @@ func (az *az_Arab) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'az_Arab'
 func (az *az_Arab) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -443,7 +433,6 @@ func (az *az_Arab) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'az_Arab'
 func (az *az_Arab) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -462,7 +451,6 @@ func (az *az_Arab) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'az_Arab'
 func (az *az_Arab) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -481,7 +469,6 @@ func (az *az_Arab) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'az_Arab'
 func (az *az_Arab) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -502,7 +489,6 @@ func (az *az_Arab) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'az_Arab'
 func (az *az_Arab) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -523,7 +509,6 @@ func (az *az_Arab) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'az_Arab'
 func (az *az_Arab) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -551,7 +536,6 @@ func (az *az_Arab) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'az_Arab'
 func (az *az_Arab) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -583,7 +567,6 @@ func (az *az_Arab) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'az_Arab'
 func (az *az_Arab) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

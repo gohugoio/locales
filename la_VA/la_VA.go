@@ -194,7 +194,6 @@ func (la *la_VA) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'la_VA' and handles both Whole and Real numbers based on 'v'
 func (la *la_VA) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -268,7 +267,6 @@ func (la *la_VA) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'la_VA'
 func (la *la_VA) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := la.currencies[currency]
 	l := len(s) + len(symbol) + 5
@@ -310,7 +308,6 @@ func (la *la_VA) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'la_VA'
 // in accounting notation.
 func (la *la_VA) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := la.currencies[currency]
 	l := len(s) + len(symbol) + 5
@@ -359,7 +356,6 @@ func (la *la_VA) FmtAccounting(num float64, v uint64, currency currency.Type) st
 	if num < 0 {
 		b = append(b, la.currencyNegativeSuffix...)
 	} else {
-
 		b = append(b, la.currencyPositiveSuffix...)
 	}
 
@@ -368,7 +364,6 @@ func (la *la_VA) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 // FmtDateShort returns the short date representation of 't' for 'la_VA'
 func (la *la_VA) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -395,7 +390,6 @@ func (la *la_VA) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'la_VA'
 func (la *la_VA) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, []byte{0x64, 0x69, 0x65}...)
@@ -424,7 +418,6 @@ func (la *la_VA) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'la_VA'
 func (la *la_VA) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, []byte{0x64, 0x69, 0x65}...)
@@ -453,7 +446,6 @@ func (la *la_VA) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'la_VA'
 func (la *la_VA) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, la.daysWide[t.Weekday()]...)
@@ -483,7 +475,6 @@ func (la *la_VA) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'la_VA'
 func (la *la_VA) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -504,7 +495,6 @@ func (la *la_VA) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'la_VA'
 func (la *la_VA) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -532,7 +522,6 @@ func (la *la_VA) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'la_VA'
 func (la *la_VA) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -564,7 +553,6 @@ func (la *la_VA) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'la_VA'
 func (la *la_VA) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

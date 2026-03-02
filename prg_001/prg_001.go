@@ -93,7 +93,6 @@ func (prg *prg_001) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'prg_001'
 func (prg *prg_001) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 	f := locales.F(n, v)
 	nMod10 := math.Mod(n, 10)
@@ -207,7 +206,6 @@ func (prg *prg_001) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'prg_001' and handles both Whole and Real numbers based on 'v'
 func (prg *prg_001) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -281,7 +279,6 @@ func (prg *prg_001) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'prg_001'
 func (prg *prg_001) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := prg.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
@@ -341,7 +338,6 @@ func (prg *prg_001) FmtCurrency(num float64, v uint64, currency currency.Type) s
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'prg_001'
 // in accounting notation.
 func (prg *prg_001) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := prg.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
@@ -372,9 +368,7 @@ func (prg *prg_001) FmtAccounting(num float64, v uint64, currency currency.Type)
 	}
 
 	if num < 0 {
-
 		b = append(b, prg.minus[0])
-
 	}
 
 	// reverse
@@ -407,7 +401,6 @@ func (prg *prg_001) FmtAccounting(num float64, v uint64, currency currency.Type)
 
 // FmtDateShort returns the short date representation of 't' for 'prg_001'
 func (prg *prg_001) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -436,7 +429,6 @@ func (prg *prg_001) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'prg_001'
 func (prg *prg_001) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -466,7 +458,6 @@ func (prg *prg_001) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'prg_001'
 func (prg *prg_001) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -486,7 +477,6 @@ func (prg *prg_001) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'prg_001'
 func (prg *prg_001) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, prg.daysWide[t.Weekday()]...)
@@ -509,7 +499,6 @@ func (prg *prg_001) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'prg_001'
 func (prg *prg_001) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -530,7 +519,6 @@ func (prg *prg_001) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'prg_001'
 func (prg *prg_001) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -558,7 +546,6 @@ func (prg *prg_001) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'prg_001'
 func (prg *prg_001) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -590,7 +577,6 @@ func (prg *prg_001) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'prg_001'
 func (prg *prg_001) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

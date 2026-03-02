@@ -89,7 +89,6 @@ func (syr *syr_IQ) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'syr_IQ'
 func (syr *syr_IQ) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -196,7 +195,6 @@ func (syr *syr_IQ) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'syr_IQ' and handles both Whole and Real numbers based on 'v'
 func (syr *syr_IQ) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -268,7 +266,6 @@ func (syr *syr_IQ) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'syr_IQ'
 func (syr *syr_IQ) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := syr.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -277,7 +274,6 @@ func (syr *syr_IQ) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'syr_IQ'
 // in accounting notation.
 func (syr *syr_IQ) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := syr.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -285,7 +281,6 @@ func (syr *syr_IQ) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'syr_IQ'
 func (syr *syr_IQ) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -310,7 +305,6 @@ func (syr *syr_IQ) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'syr_IQ'
 func (syr *syr_IQ) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -329,7 +323,6 @@ func (syr *syr_IQ) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'syr_IQ'
 func (syr *syr_IQ) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -348,7 +341,6 @@ func (syr *syr_IQ) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'syr_IQ'
 func (syr *syr_IQ) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, syr.daysWide[t.Weekday()]...)
@@ -369,7 +361,6 @@ func (syr *syr_IQ) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'syr_IQ'
 func (syr *syr_IQ) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -399,7 +390,6 @@ func (syr *syr_IQ) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'syr_IQ'
 func (syr *syr_IQ) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -436,7 +426,6 @@ func (syr *syr_IQ) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'syr_IQ'
 func (syr *syr_IQ) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -478,7 +467,6 @@ func (syr *syr_IQ) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'syr_IQ'
 func (syr *syr_IQ) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

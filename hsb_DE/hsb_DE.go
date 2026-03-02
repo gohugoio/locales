@@ -96,7 +96,6 @@ func (hsb *hsb_DE) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'hsb_DE'
 func (hsb *hsb_DE) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 	i := int64(n)
 	f := locales.F(n, v)
@@ -211,7 +210,6 @@ func (hsb *hsb_DE) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'hsb_DE' and handles both Whole and Real numbers based on 'v'
 func (hsb *hsb_DE) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -285,7 +283,6 @@ func (hsb *hsb_DE) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'hsb_DE'
 func (hsb *hsb_DE) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := hsb.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -343,7 +340,6 @@ func (hsb *hsb_DE) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'hsb_DE'
 // in accounting notation.
 func (hsb *hsb_DE) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := hsb.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -372,9 +368,7 @@ func (hsb *hsb_DE) FmtAccounting(num float64, v uint64, currency currency.Type) 
 	}
 
 	if num < 0 {
-
 		b = append(b, hsb.minus[0])
-
 	}
 
 	// reverse
@@ -407,7 +401,6 @@ func (hsb *hsb_DE) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'hsb_DE'
 func (hsb *hsb_DE) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -426,7 +419,6 @@ func (hsb *hsb_DE) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'hsb_DE'
 func (hsb *hsb_DE) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -445,7 +437,6 @@ func (hsb *hsb_DE) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'hsb_DE'
 func (hsb *hsb_DE) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -464,7 +455,6 @@ func (hsb *hsb_DE) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'hsb_DE'
 func (hsb *hsb_DE) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, hsb.daysWide[t.Weekday()]...)
@@ -485,7 +475,6 @@ func (hsb *hsb_DE) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'hsb_DE'
 func (hsb *hsb_DE) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
@@ -504,7 +493,6 @@ func (hsb *hsb_DE) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'hsb_DE'
 func (hsb *hsb_DE) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
@@ -528,7 +516,6 @@ func (hsb *hsb_DE) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'hsb_DE'
 func (hsb *hsb_DE) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
@@ -556,7 +543,6 @@ func (hsb *hsb_DE) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'hsb_DE'
 func (hsb *hsb_DE) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)

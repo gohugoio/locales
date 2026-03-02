@@ -197,7 +197,6 @@ func (zh *zh_Hant) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'zh_Hant' and handles both Whole and Real numbers based on 'v'
 func (zh *zh_Hant) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -269,7 +268,6 @@ func (zh *zh_Hant) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'zh_Hant'
 func (zh *zh_Hant) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := zh.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -327,7 +325,6 @@ func (zh *zh_Hant) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'zh_Hant'
 // in accounting notation.
 func (zh *zh_Hant) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := zh.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -364,11 +361,9 @@ func (zh *zh_Hant) FmtAccounting(num float64, v uint64, currency currency.Type) 
 		b = append(b, zh.currencyNegativePrefix[0])
 
 	} else {
-
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
-
 	}
 
 	// reverse
@@ -396,7 +391,6 @@ func (zh *zh_Hant) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'zh_Hant'
 func (zh *zh_Hant) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -415,7 +409,6 @@ func (zh *zh_Hant) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'zh_Hant'
 func (zh *zh_Hant) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -435,7 +428,6 @@ func (zh *zh_Hant) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'zh_Hant'
 func (zh *zh_Hant) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -455,7 +447,6 @@ func (zh *zh_Hant) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'zh_Hant'
 func (zh *zh_Hant) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -476,7 +467,6 @@ func (zh *zh_Hant) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'zh_Hant'
 func (zh *zh_Hant) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, []byte{0x42}...)
@@ -501,7 +491,6 @@ func (zh *zh_Hant) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'zh_Hant'
 func (zh *zh_Hant) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, []byte{0x42}...)
@@ -533,7 +522,6 @@ func (zh *zh_Hant) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'zh_Hant'
 func (zh *zh_Hant) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, []byte{0x42}...)
@@ -571,7 +559,6 @@ func (zh *zh_Hant) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'zh_Hant'
 func (zh *zh_Hant) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, []byte{0x42}...)

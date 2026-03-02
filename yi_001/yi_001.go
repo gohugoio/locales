@@ -95,7 +95,6 @@ func (yi *yi_001) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'yi_001'
 func (yi *yi_001) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 	i := int64(n)
 
@@ -203,7 +202,6 @@ func (yi *yi_001) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'yi_001' and handles both Whole and Real numbers based on 'v'
 func (yi *yi_001) FmtNumber(num float64, v uint64) string {
-
 	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
@@ -215,7 +213,6 @@ func (yi *yi_001) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'yi_001'
 func (yi *yi_001) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := yi.currencies[currency]
 	l := len(s) + len(symbol) + 5
@@ -257,7 +254,6 @@ func (yi *yi_001) FmtCurrency(num float64, v uint64, currency currency.Type) str
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'yi_001'
 // in accounting notation.
 func (yi *yi_001) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := yi.currencies[currency]
 	l := len(s) + len(symbol) + 5
@@ -306,7 +302,6 @@ func (yi *yi_001) FmtAccounting(num float64, v uint64, currency currency.Type) s
 	if num < 0 {
 		b = append(b, yi.currencyNegativeSuffix...)
 	} else {
-
 		b = append(b, yi.currencyPositiveSuffix...)
 	}
 
@@ -315,7 +310,6 @@ func (yi *yi_001) FmtAccounting(num float64, v uint64, currency currency.Type) s
 
 // FmtDateShort returns the short date representation of 't' for 'yi_001'
 func (yi *yi_001) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -344,7 +338,6 @@ func (yi *yi_001) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'yi_001'
 func (yi *yi_001) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -363,7 +356,6 @@ func (yi *yi_001) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'yi_001'
 func (yi *yi_001) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -382,7 +374,6 @@ func (yi *yi_001) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'yi_001'
 func (yi *yi_001) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, yi.daysWide[t.Weekday()]...)
@@ -403,7 +394,6 @@ func (yi *yi_001) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'yi_001'
 func (yi *yi_001) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -424,7 +414,6 @@ func (yi *yi_001) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'yi_001'
 func (yi *yi_001) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -452,7 +441,6 @@ func (yi *yi_001) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'yi_001'
 func (yi *yi_001) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -484,7 +472,6 @@ func (yi *yi_001) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'yi_001'
 func (yi *yi_001) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

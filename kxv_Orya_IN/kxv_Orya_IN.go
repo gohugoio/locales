@@ -196,7 +196,6 @@ func (kxv *kxv_Orya_IN) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'kxv_Orya_IN' and handles both Whole and Real numbers based on 'v'
 func (kxv *kxv_Orya_IN) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -215,7 +214,6 @@ func (kxv *kxv_Orya_IN) FmtNumber(num float64, v uint64) string {
 		}
 
 		if inWhole {
-
 			if count == groupThreshold {
 				b = append(b, kxv.group[0])
 				count = 1
@@ -277,7 +275,6 @@ func (kxv *kxv_Orya_IN) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'kxv_Orya_IN'
 func (kxv *kxv_Orya_IN) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kxv.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -339,7 +336,6 @@ func (kxv *kxv_Orya_IN) FmtCurrency(num float64, v uint64, currency currency.Typ
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'kxv_Orya_IN'
 // in accounting notation.
 func (kxv *kxv_Orya_IN) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kxv.currencies[currency]
 	l := len(s) + len(symbol) + 6 + 1*len(s[:len(s)-int(v)-1])/3
@@ -414,7 +410,6 @@ func (kxv *kxv_Orya_IN) FmtAccounting(num float64, v uint64, currency currency.T
 
 // FmtDateShort returns the short date representation of 't' for 'kxv_Orya_IN'
 func (kxv *kxv_Orya_IN) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -433,7 +428,6 @@ func (kxv *kxv_Orya_IN) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'kxv_Orya_IN'
 func (kxv *kxv_Orya_IN) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -452,7 +446,6 @@ func (kxv *kxv_Orya_IN) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'kxv_Orya_IN'
 func (kxv *kxv_Orya_IN) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -471,7 +464,6 @@ func (kxv *kxv_Orya_IN) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'kxv_Orya_IN'
 func (kxv *kxv_Orya_IN) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, kxv.daysWide[t.Weekday()]...)
@@ -492,7 +484,6 @@ func (kxv *kxv_Orya_IN) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'kxv_Orya_IN'
 func (kxv *kxv_Orya_IN) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -522,7 +513,6 @@ func (kxv *kxv_Orya_IN) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'kxv_Orya_IN'
 func (kxv *kxv_Orya_IN) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -559,7 +549,6 @@ func (kxv *kxv_Orya_IN) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'kxv_Orya_IN'
 func (kxv *kxv_Orya_IN) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -601,7 +590,6 @@ func (kxv *kxv_Orya_IN) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'kxv_Orya_IN'
 func (kxv *kxv_Orya_IN) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

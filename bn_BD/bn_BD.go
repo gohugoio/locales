@@ -94,7 +94,6 @@ func (bn *bn_BD) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'bn_BD'
 func (bn *bn_BD) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 	i := int64(n)
 
@@ -107,7 +106,6 @@ func (bn *bn_BD) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // OrdinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for 'bn_BD'
 func (bn *bn_BD) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n == 1 || n == 5 || n == 7 || n == 8 || n == 9 || n == 10 {
@@ -125,7 +123,6 @@ func (bn *bn_BD) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'bn_BD'
 func (bn *bn_BD) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
-
 	start := bn.CardinalPluralRule(num1, v1)
 	end := bn.CardinalPluralRule(num2, v2)
 
@@ -136,7 +133,6 @@ func (bn *bn_BD) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 	}
 
 	return locales.PluralRuleOther
-
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -226,7 +222,6 @@ func (bn *bn_BD) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'bn_BD' and handles both Whole and Real numbers based on 'v'
 func (bn *bn_BD) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -245,7 +240,6 @@ func (bn *bn_BD) FmtNumber(num float64, v uint64) string {
 		}
 
 		if inWhole {
-
 			if count == groupThreshold {
 				b = append(b, bn.group[0])
 				count = 1
@@ -307,7 +301,6 @@ func (bn *bn_BD) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'bn_BD'
 func (bn *bn_BD) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := bn.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -327,7 +320,6 @@ func (bn *bn_BD) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 		}
 
 		if inWhole {
-
 			if count == groupThreshold {
 				b = append(b, bn.group[0])
 				count = 1
@@ -372,7 +364,6 @@ func (bn *bn_BD) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'bn_BD'
 // in accounting notation.
 func (bn *bn_BD) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := bn.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -392,7 +383,6 @@ func (bn *bn_BD) FmtAccounting(num float64, v uint64, currency currency.Type) st
 		}
 
 		if inWhole {
-
 			if count == groupThreshold {
 				b = append(b, bn.group[0])
 				count = 1
@@ -410,9 +400,7 @@ func (bn *bn_BD) FmtAccounting(num float64, v uint64, currency currency.Type) st
 	}
 
 	if num < 0 {
-
 		b = append(b, bn.currencyNegativePrefix[0])
-
 	}
 
 	// reverse
@@ -435,7 +423,6 @@ func (bn *bn_BD) FmtAccounting(num float64, v uint64, currency currency.Type) st
 		b = append(b, bn.currencyNegativeSuffix...)
 		b = append(b, symbol...)
 	} else {
-
 		b = append(b, symbol...)
 	}
 
@@ -444,7 +431,6 @@ func (bn *bn_BD) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 // FmtDateShort returns the short date representation of 't' for 'bn_BD'
 func (bn *bn_BD) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -463,7 +449,6 @@ func (bn *bn_BD) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'bn_BD'
 func (bn *bn_BD) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -482,7 +467,6 @@ func (bn *bn_BD) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'bn_BD'
 func (bn *bn_BD) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -501,7 +485,6 @@ func (bn *bn_BD) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'bn_BD'
 func (bn *bn_BD) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, bn.daysWide[t.Weekday()]...)
@@ -522,7 +505,6 @@ func (bn *bn_BD) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'bn_BD'
 func (bn *bn_BD) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -552,7 +534,6 @@ func (bn *bn_BD) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'bn_BD'
 func (bn *bn_BD) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -589,7 +570,6 @@ func (bn *bn_BD) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'bn_BD'
 func (bn *bn_BD) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -631,7 +611,6 @@ func (bn *bn_BD) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'bn_BD'
 func (bn *bn_BD) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

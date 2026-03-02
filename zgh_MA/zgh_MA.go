@@ -189,7 +189,6 @@ func (zgh *zgh_MA) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'zgh_MA' and handles both Whole and Real numbers based on 'v'
 func (zgh *zgh_MA) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -265,7 +264,6 @@ func (zgh *zgh_MA) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'zgh_MA'
 func (zgh *zgh_MA) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := zgh.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 2*len(s[:len(s)-int(v)-1])/3
@@ -323,7 +321,6 @@ func (zgh *zgh_MA) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'zgh_MA'
 // in accounting notation.
 func (zgh *zgh_MA) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := zgh.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 2*len(s[:len(s)-int(v)-1])/3
@@ -354,9 +351,7 @@ func (zgh *zgh_MA) FmtAccounting(num float64, v uint64, currency currency.Type) 
 	}
 
 	if num < 0 {
-
 		b = append(b, zgh.minus[0])
-
 	}
 
 	// reverse
@@ -378,7 +373,6 @@ func (zgh *zgh_MA) FmtAccounting(num float64, v uint64, currency currency.Type) 
 	if num < 0 {
 		b = append(b, symbol...)
 	} else {
-
 		b = append(b, symbol...)
 	}
 
@@ -387,7 +381,6 @@ func (zgh *zgh_MA) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'zgh_MA'
 func (zgh *zgh_MA) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -406,7 +399,6 @@ func (zgh *zgh_MA) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'zgh_MA'
 func (zgh *zgh_MA) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -425,7 +417,6 @@ func (zgh *zgh_MA) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'zgh_MA'
 func (zgh *zgh_MA) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -444,7 +435,6 @@ func (zgh *zgh_MA) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'zgh_MA'
 func (zgh *zgh_MA) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, zgh.daysWide[t.Weekday()]...)
@@ -465,7 +455,6 @@ func (zgh *zgh_MA) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'zgh_MA'
 func (zgh *zgh_MA) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -486,7 +475,6 @@ func (zgh *zgh_MA) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'zgh_MA'
 func (zgh *zgh_MA) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -514,7 +502,6 @@ func (zgh *zgh_MA) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'zgh_MA'
 func (zgh *zgh_MA) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -546,7 +533,6 @@ func (zgh *zgh_MA) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'zgh_MA'
 func (zgh *zgh_MA) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

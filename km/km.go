@@ -193,7 +193,6 @@ func (km *km) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'km' and handles both Whole and Real numbers based on 'v'
 func (km *km) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -265,7 +264,6 @@ func (km *km) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'km'
 func (km *km) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := km.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -321,7 +319,6 @@ func (km *km) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'km'
 // in accounting notation.
 func (km *km) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := km.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -350,9 +347,7 @@ func (km *km) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 	}
 
 	if num < 0 {
-
 		b = append(b, km.currencyNegativePrefix[0])
-
 	}
 
 	// reverse
@@ -375,7 +370,6 @@ func (km *km) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 		b = append(b, km.currencyNegativeSuffix...)
 		b = append(b, symbol...)
 	} else {
-
 		b = append(b, symbol...)
 	}
 
@@ -384,7 +378,6 @@ func (km *km) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 // FmtDateShort returns the short date representation of 't' for 'km'
 func (km *km) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -403,7 +396,6 @@ func (km *km) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'km'
 func (km *km) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -422,7 +414,6 @@ func (km *km) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'km'
 func (km *km) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -441,7 +432,6 @@ func (km *km) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'km'
 func (km *km) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, km.daysWide[t.Weekday()]...)
@@ -462,7 +452,6 @@ func (km *km) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'km'
 func (km *km) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -492,7 +481,6 @@ func (km *km) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'km'
 func (km *km) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -529,7 +517,6 @@ func (km *km) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'km'
 func (km *km) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -571,7 +558,6 @@ func (km *km) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'km'
 func (km *km) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

@@ -91,7 +91,6 @@ func (mas *mas_KE) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'mas_KE'
 func (mas *mas_KE) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -198,7 +197,6 @@ func (mas *mas_KE) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'mas_KE' and handles both Whole and Real numbers based on 'v'
 func (mas *mas_KE) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -270,7 +268,6 @@ func (mas *mas_KE) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'mas_KE'
 func (mas *mas_KE) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := mas.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -328,7 +325,6 @@ func (mas *mas_KE) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'mas_KE'
 // in accounting notation.
 func (mas *mas_KE) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := mas.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -365,11 +361,9 @@ func (mas *mas_KE) FmtAccounting(num float64, v uint64, currency currency.Type) 
 		b = append(b, mas.currencyNegativePrefix[0])
 
 	} else {
-
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
-
 	}
 
 	// reverse
@@ -397,7 +391,6 @@ func (mas *mas_KE) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'mas_KE'
 func (mas *mas_KE) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -426,7 +419,6 @@ func (mas *mas_KE) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'mas_KE'
 func (mas *mas_KE) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -445,7 +437,6 @@ func (mas *mas_KE) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'mas_KE'
 func (mas *mas_KE) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -464,7 +455,6 @@ func (mas *mas_KE) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'mas_KE'
 func (mas *mas_KE) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, mas.daysWide[t.Weekday()]...)
@@ -485,7 +475,6 @@ func (mas *mas_KE) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'mas_KE'
 func (mas *mas_KE) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -506,7 +495,6 @@ func (mas *mas_KE) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'mas_KE'
 func (mas *mas_KE) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -534,7 +522,6 @@ func (mas *mas_KE) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'mas_KE'
 func (mas *mas_KE) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -566,7 +553,6 @@ func (mas *mas_KE) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'mas_KE'
 func (mas *mas_KE) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

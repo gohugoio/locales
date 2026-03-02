@@ -92,7 +92,6 @@ func (shi *shi_Latn) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'shi_Latn'
 func (shi *shi_Latn) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 	i := int64(n)
 
@@ -202,7 +201,6 @@ func (shi *shi_Latn) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'shi_Latn' and handles both Whole and Real numbers based on 'v'
 func (shi *shi_Latn) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -276,7 +274,6 @@ func (shi *shi_Latn) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'shi_Latn'
 func (shi *shi_Latn) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := shi.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 2*len(s[:len(s)-int(v)-1])/3
@@ -334,7 +331,6 @@ func (shi *shi_Latn) FmtCurrency(num float64, v uint64, currency currency.Type) 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'shi_Latn'
 // in accounting notation.
 func (shi *shi_Latn) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := shi.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 2*len(s[:len(s)-int(v)-1])/3
@@ -365,9 +361,7 @@ func (shi *shi_Latn) FmtAccounting(num float64, v uint64, currency currency.Type
 	}
 
 	if num < 0 {
-
 		b = append(b, shi.minus[0])
-
 	}
 
 	// reverse
@@ -389,7 +383,6 @@ func (shi *shi_Latn) FmtAccounting(num float64, v uint64, currency currency.Type
 	if num < 0 {
 		b = append(b, symbol...)
 	} else {
-
 		b = append(b, symbol...)
 	}
 
@@ -398,7 +391,6 @@ func (shi *shi_Latn) FmtAccounting(num float64, v uint64, currency currency.Type
 
 // FmtDateShort returns the short date representation of 't' for 'shi_Latn'
 func (shi *shi_Latn) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -417,7 +409,6 @@ func (shi *shi_Latn) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'shi_Latn'
 func (shi *shi_Latn) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -436,7 +427,6 @@ func (shi *shi_Latn) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'shi_Latn'
 func (shi *shi_Latn) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -455,7 +445,6 @@ func (shi *shi_Latn) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'shi_Latn'
 func (shi *shi_Latn) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, shi.daysWide[t.Weekday()]...)
@@ -476,7 +465,6 @@ func (shi *shi_Latn) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'shi_Latn'
 func (shi *shi_Latn) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -497,7 +485,6 @@ func (shi *shi_Latn) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'shi_Latn'
 func (shi *shi_Latn) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -525,7 +512,6 @@ func (shi *shi_Latn) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'shi_Latn'
 func (shi *shi_Latn) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -557,7 +543,6 @@ func (shi *shi_Latn) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'shi_Latn'
 func (shi *shi_Latn) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

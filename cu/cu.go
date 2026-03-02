@@ -194,7 +194,6 @@ func (cu *cu) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'cu' and handles both Whole and Real numbers based on 'v'
 func (cu *cu) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -270,7 +269,6 @@ func (cu *cu) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'cu'
 func (cu *cu) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cu.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
@@ -330,7 +328,6 @@ func (cu *cu) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'cu'
 // in accounting notation.
 func (cu *cu) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cu.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
@@ -361,9 +358,7 @@ func (cu *cu) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 	}
 
 	if num < 0 {
-
 		b = append(b, cu.minus[0])
-
 	}
 
 	// reverse
@@ -396,7 +391,6 @@ func (cu *cu) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 // FmtDateShort returns the short date representation of 't' for 'cu'
 func (cu *cu) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -426,7 +420,6 @@ func (cu *cu) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'cu'
 func (cu *cu) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -445,7 +438,6 @@ func (cu *cu) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'cu'
 func (cu *cu) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -464,7 +456,6 @@ func (cu *cu) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'cu'
 func (cu *cu) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, cu.daysWide[t.Weekday()]...)
@@ -488,7 +479,6 @@ func (cu *cu) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'cu'
 func (cu *cu) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -509,7 +499,6 @@ func (cu *cu) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'cu'
 func (cu *cu) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -537,7 +526,6 @@ func (cu *cu) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'cu'
 func (cu *cu) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -569,7 +557,6 @@ func (cu *cu) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'cu'
 func (cu *cu) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

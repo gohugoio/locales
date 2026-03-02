@@ -178,7 +178,6 @@ func (kpe *kpe_LR) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'kpe_LR' and handles both Whole and Real numbers based on 'v'
 func (kpe *kpe_LR) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -250,7 +249,6 @@ func (kpe *kpe_LR) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'kpe_LR'
 func (kpe *kpe_LR) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kpe.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -259,7 +257,6 @@ func (kpe *kpe_LR) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'kpe_LR'
 // in accounting notation.
 func (kpe *kpe_LR) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kpe.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -267,7 +264,6 @@ func (kpe *kpe_LR) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'kpe_LR'
 func (kpe *kpe_LR) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -275,7 +271,6 @@ func (kpe *kpe_LR) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'kpe_LR'
 func (kpe *kpe_LR) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -283,7 +278,6 @@ func (kpe *kpe_LR) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'kpe_LR'
 func (kpe *kpe_LR) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -291,7 +285,6 @@ func (kpe *kpe_LR) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'kpe_LR'
 func (kpe *kpe_LR) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -299,7 +292,6 @@ func (kpe *kpe_LR) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'kpe_LR'
 func (kpe *kpe_LR) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -329,7 +321,6 @@ func (kpe *kpe_LR) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'kpe_LR'
 func (kpe *kpe_LR) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -366,7 +357,6 @@ func (kpe *kpe_LR) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'kpe_LR'
 func (kpe *kpe_LR) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -408,7 +398,6 @@ func (kpe *kpe_LR) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'kpe_LR'
 func (kpe *kpe_LR) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

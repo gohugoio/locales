@@ -181,7 +181,6 @@ func (apc *apc_SY) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'apc_SY' and handles both Whole and Real numbers based on 'v'
 func (apc *apc_SY) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -253,7 +252,6 @@ func (apc *apc_SY) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'apc_SY'
 func (apc *apc_SY) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := apc.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -262,7 +260,6 @@ func (apc *apc_SY) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'apc_SY'
 // in accounting notation.
 func (apc *apc_SY) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := apc.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -270,7 +267,6 @@ func (apc *apc_SY) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'apc_SY'
 func (apc *apc_SY) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -278,7 +274,6 @@ func (apc *apc_SY) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'apc_SY'
 func (apc *apc_SY) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -286,7 +281,6 @@ func (apc *apc_SY) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'apc_SY'
 func (apc *apc_SY) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -294,7 +288,6 @@ func (apc *apc_SY) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'apc_SY'
 func (apc *apc_SY) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -302,7 +295,6 @@ func (apc *apc_SY) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'apc_SY'
 func (apc *apc_SY) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -310,7 +302,6 @@ func (apc *apc_SY) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'apc_SY'
 func (apc *apc_SY) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -318,7 +309,6 @@ func (apc *apc_SY) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'apc_SY'
 func (apc *apc_SY) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -326,7 +316,6 @@ func (apc *apc_SY) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'apc_SY'
 func (apc *apc_SY) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)

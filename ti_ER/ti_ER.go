@@ -88,7 +88,6 @@ func (ti *ti_ER) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'ti_ER'
 func (ti *ti_ER) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n >= 0 && n <= 1 {
@@ -195,7 +194,6 @@ func (ti *ti_ER) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ti_ER' and handles both Whole and Real numbers based on 'v'
 func (ti *ti_ER) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -267,7 +265,6 @@ func (ti *ti_ER) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ti_ER'
 func (ti *ti_ER) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ti.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -325,7 +322,6 @@ func (ti *ti_ER) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ti_ER'
 // in accounting notation.
 func (ti *ti_ER) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ti.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -362,11 +358,9 @@ func (ti *ti_ER) FmtAccounting(num float64, v uint64, currency currency.Type) st
 		b = append(b, ti.minus[0])
 
 	} else {
-
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
-
 	}
 
 	// reverse
@@ -390,7 +384,6 @@ func (ti *ti_ER) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 // FmtDateShort returns the short date representation of 't' for 'ti_ER'
 func (ti *ti_ER) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Month()), 10)
@@ -409,7 +402,6 @@ func (ti *ti_ER) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'ti_ER'
 func (ti *ti_ER) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, ti.monthsAbbreviated[t.Month()]...)
@@ -428,7 +420,6 @@ func (ti *ti_ER) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'ti_ER'
 func (ti *ti_ER) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, ti.monthsWide[t.Month()]...)
@@ -447,7 +438,6 @@ func (ti *ti_ER) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'ti_ER'
 func (ti *ti_ER) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, ti.daysWide[t.Weekday()]...)
@@ -468,7 +458,6 @@ func (ti *ti_ER) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'ti_ER'
 func (ti *ti_ER) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -498,7 +487,6 @@ func (ti *ti_ER) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'ti_ER'
 func (ti *ti_ER) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -535,7 +523,6 @@ func (ti *ti_ER) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'ti_ER'
 func (ti *ti_ER) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -577,7 +564,6 @@ func (ti *ti_ER) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'ti_ER'
 func (ti *ti_ER) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

@@ -183,7 +183,6 @@ func (hnj *hnj_Hmnp) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'hnj_Hmnp' and handles both Whole and Real numbers based on 'v'
 func (hnj *hnj_Hmnp) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -255,7 +254,6 @@ func (hnj *hnj_Hmnp) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'hnj_Hmnp'
 func (hnj *hnj_Hmnp) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := hnj.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -264,7 +262,6 @@ func (hnj *hnj_Hmnp) FmtCurrency(num float64, v uint64, currency currency.Type) 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'hnj_Hmnp'
 // in accounting notation.
 func (hnj *hnj_Hmnp) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := hnj.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -272,7 +269,6 @@ func (hnj *hnj_Hmnp) FmtAccounting(num float64, v uint64, currency currency.Type
 
 // FmtDateShort returns the short date representation of 't' for 'hnj_Hmnp'
 func (hnj *hnj_Hmnp) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -280,7 +276,6 @@ func (hnj *hnj_Hmnp) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'hnj_Hmnp'
 func (hnj *hnj_Hmnp) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -288,7 +283,6 @@ func (hnj *hnj_Hmnp) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'hnj_Hmnp'
 func (hnj *hnj_Hmnp) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -296,7 +290,6 @@ func (hnj *hnj_Hmnp) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'hnj_Hmnp'
 func (hnj *hnj_Hmnp) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -304,7 +297,6 @@ func (hnj *hnj_Hmnp) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'hnj_Hmnp'
 func (hnj *hnj_Hmnp) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -312,7 +304,6 @@ func (hnj *hnj_Hmnp) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'hnj_Hmnp'
 func (hnj *hnj_Hmnp) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -320,7 +311,6 @@ func (hnj *hnj_Hmnp) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'hnj_Hmnp'
 func (hnj *hnj_Hmnp) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -328,7 +318,6 @@ func (hnj *hnj_Hmnp) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'hnj_Hmnp'
 func (hnj *hnj_Hmnp) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)

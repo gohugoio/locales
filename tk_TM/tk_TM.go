@@ -97,7 +97,6 @@ func (tk *tk_TM) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'tk_TM'
 func (tk *tk_TM) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -109,7 +108,6 @@ func (tk *tk_TM) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // OrdinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for 'tk_TM'
 func (tk *tk_TM) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 	nMod10 := math.Mod(n, 10)
 
@@ -122,7 +120,6 @@ func (tk *tk_TM) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'tk_TM'
 func (tk *tk_TM) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
-
 	start := tk.CardinalPluralRule(num1, v1)
 	end := tk.CardinalPluralRule(num2, v2)
 
@@ -133,7 +130,6 @@ func (tk *tk_TM) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 	}
 
 	return locales.PluralRuleOther
-
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -223,7 +219,6 @@ func (tk *tk_TM) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'tk_TM' and handles both Whole and Real numbers based on 'v'
 func (tk *tk_TM) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -299,7 +294,6 @@ func (tk *tk_TM) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'tk_TM'
 func (tk *tk_TM) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := tk.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
@@ -359,7 +353,6 @@ func (tk *tk_TM) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'tk_TM'
 // in accounting notation.
 func (tk *tk_TM) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := tk.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
@@ -390,9 +383,7 @@ func (tk *tk_TM) FmtAccounting(num float64, v uint64, currency currency.Type) st
 	}
 
 	if num < 0 {
-
 		b = append(b, tk.minus[0])
-
 	}
 
 	// reverse
@@ -425,7 +416,6 @@ func (tk *tk_TM) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 // FmtDateShort returns the short date representation of 't' for 'tk_TM'
 func (tk *tk_TM) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -454,7 +444,6 @@ func (tk *tk_TM) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'tk_TM'
 func (tk *tk_TM) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -473,7 +462,6 @@ func (tk *tk_TM) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'tk_TM'
 func (tk *tk_TM) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -492,7 +480,6 @@ func (tk *tk_TM) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'tk_TM'
 func (tk *tk_TM) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -514,7 +501,6 @@ func (tk *tk_TM) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'tk_TM'
 func (tk *tk_TM) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -535,7 +521,6 @@ func (tk *tk_TM) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'tk_TM'
 func (tk *tk_TM) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -563,7 +548,6 @@ func (tk *tk_TM) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'tk_TM'
 func (tk *tk_TM) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -595,7 +579,6 @@ func (tk *tk_TM) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'tk_TM'
 func (tk *tk_TM) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

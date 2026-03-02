@@ -94,7 +94,6 @@ func (fa *fa_IR) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'fa_IR'
 func (fa *fa_IR) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 	i := int64(n)
 
@@ -112,7 +111,6 @@ func (fa *fa_IR) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'fa_IR'
 func (fa *fa_IR) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
-
 	start := fa.CardinalPluralRule(num1, v1)
 	end := fa.CardinalPluralRule(num2, v2)
 
@@ -125,7 +123,6 @@ func (fa *fa_IR) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 	}
 
 	return locales.PluralRuleOther
-
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -215,7 +212,6 @@ func (fa *fa_IR) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'fa_IR' and handles both Whole and Real numbers based on 'v'
 func (fa *fa_IR) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 7 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -291,7 +287,6 @@ func (fa *fa_IR) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'fa_IR'
 func (fa *fa_IR) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := fa.currencies[currency]
 	l := len(s) + len(symbol) + 12 + 1*len(s[:len(s)-int(v)-1])/3
@@ -355,7 +350,6 @@ func (fa *fa_IR) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'fa_IR'
 // in accounting notation.
 func (fa *fa_IR) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := fa.currencies[currency]
 	l := len(s) + len(symbol) + 12 + 1*len(s[:len(s)-int(v)-1])/3
@@ -430,7 +424,6 @@ func (fa *fa_IR) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 // FmtDateShort returns the short date representation of 't' for 'fa_IR'
 func (fa *fa_IR) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -449,7 +442,6 @@ func (fa *fa_IR) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'fa_IR'
 func (fa *fa_IR) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -468,7 +460,6 @@ func (fa *fa_IR) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'fa_IR'
 func (fa *fa_IR) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -487,7 +478,6 @@ func (fa *fa_IR) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'fa_IR'
 func (fa *fa_IR) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, fa.daysWide[t.Weekday()]...)
@@ -508,7 +498,6 @@ func (fa *fa_IR) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'fa_IR'
 func (fa *fa_IR) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
@@ -525,7 +514,6 @@ func (fa *fa_IR) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'fa_IR'
 func (fa *fa_IR) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
@@ -549,7 +537,6 @@ func (fa *fa_IR) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'fa_IR'
 func (fa *fa_IR) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
@@ -579,7 +566,6 @@ func (fa *fa_IR) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'fa_IR'
 func (fa *fa_IR) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)

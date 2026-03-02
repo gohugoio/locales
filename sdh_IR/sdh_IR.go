@@ -78,7 +78,6 @@ func (sdh *sdh_IR) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'sdh_IR'
 func (sdh *sdh_IR) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -185,7 +184,6 @@ func (sdh *sdh_IR) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'sdh_IR' and handles both Whole and Real numbers based on 'v'
 func (sdh *sdh_IR) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -257,7 +255,6 @@ func (sdh *sdh_IR) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'sdh_IR'
 func (sdh *sdh_IR) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sdh.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -266,7 +263,6 @@ func (sdh *sdh_IR) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'sdh_IR'
 // in accounting notation.
 func (sdh *sdh_IR) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sdh.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -274,7 +270,6 @@ func (sdh *sdh_IR) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'sdh_IR'
 func (sdh *sdh_IR) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -282,7 +277,6 @@ func (sdh *sdh_IR) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'sdh_IR'
 func (sdh *sdh_IR) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -290,7 +284,6 @@ func (sdh *sdh_IR) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'sdh_IR'
 func (sdh *sdh_IR) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -298,7 +291,6 @@ func (sdh *sdh_IR) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'sdh_IR'
 func (sdh *sdh_IR) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -306,7 +298,6 @@ func (sdh *sdh_IR) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'sdh_IR'
 func (sdh *sdh_IR) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -314,7 +305,6 @@ func (sdh *sdh_IR) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'sdh_IR'
 func (sdh *sdh_IR) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -322,7 +312,6 @@ func (sdh *sdh_IR) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'sdh_IR'
 func (sdh *sdh_IR) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -330,7 +319,6 @@ func (sdh *sdh_IR) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'sdh_IR'
 func (sdh *sdh_IR) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)

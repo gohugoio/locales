@@ -96,7 +96,6 @@ func (sr *sr_Cyrl_XK) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'sr_Cyrl_XK'
 func (sr *sr_Cyrl_XK) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 	i := int64(n)
 	f := locales.F(n, v)
@@ -121,7 +120,6 @@ func (sr *sr_Cyrl_XK) OrdinalPluralRule(num float64, v uint64) locales.PluralRul
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'sr_Cyrl_XK'
 func (sr *sr_Cyrl_XK) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
-
 	start := sr.CardinalPluralRule(num1, v1)
 	end := sr.CardinalPluralRule(num2, v2)
 
@@ -144,7 +142,6 @@ func (sr *sr_Cyrl_XK) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 
 	}
 
 	return locales.PluralRuleOther
-
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -234,7 +231,6 @@ func (sr *sr_Cyrl_XK) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'sr_Cyrl_XK' and handles both Whole and Real numbers based on 'v'
 func (sr *sr_Cyrl_XK) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -306,7 +302,6 @@ func (sr *sr_Cyrl_XK) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'sr_Cyrl_XK'
 func (sr *sr_Cyrl_XK) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sr.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -364,7 +359,6 @@ func (sr *sr_Cyrl_XK) FmtCurrency(num float64, v uint64, currency currency.Type)
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'sr_Cyrl_XK'
 // in accounting notation.
 func (sr *sr_Cyrl_XK) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sr.currencies[currency]
 	l := len(s) + len(symbol) + 6 + 1*len(s[:len(s)-int(v)-1])/3
@@ -393,9 +387,7 @@ func (sr *sr_Cyrl_XK) FmtAccounting(num float64, v uint64, currency currency.Typ
 	}
 
 	if num < 0 {
-
 		b = append(b, sr.currencyNegativePrefix[0])
-
 	}
 
 	// reverse
@@ -428,7 +420,6 @@ func (sr *sr_Cyrl_XK) FmtAccounting(num float64, v uint64, currency currency.Typ
 
 // FmtDateShort returns the short date representation of 't' for 'sr_Cyrl_XK'
 func (sr *sr_Cyrl_XK) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -449,7 +440,6 @@ func (sr *sr_Cyrl_XK) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'sr_Cyrl_XK'
 func (sr *sr_Cyrl_XK) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -470,7 +460,6 @@ func (sr *sr_Cyrl_XK) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'sr_Cyrl_XK'
 func (sr *sr_Cyrl_XK) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -491,7 +480,6 @@ func (sr *sr_Cyrl_XK) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'sr_Cyrl_XK'
 func (sr *sr_Cyrl_XK) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, sr.daysWide[t.Weekday()]...)
@@ -514,7 +502,6 @@ func (sr *sr_Cyrl_XK) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'sr_Cyrl_XK'
 func (sr *sr_Cyrl_XK) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -535,7 +522,6 @@ func (sr *sr_Cyrl_XK) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'sr_Cyrl_XK'
 func (sr *sr_Cyrl_XK) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -563,7 +549,6 @@ func (sr *sr_Cyrl_XK) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'sr_Cyrl_XK'
 func (sr *sr_Cyrl_XK) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -595,7 +580,6 @@ func (sr *sr_Cyrl_XK) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'sr_Cyrl_XK'
 func (sr *sr_Cyrl_XK) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

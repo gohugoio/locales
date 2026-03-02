@@ -191,7 +191,6 @@ func (cop *cop) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'cop' and handles both Whole and Real numbers based on 'v'
 func (cop *cop) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -263,7 +262,6 @@ func (cop *cop) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'cop'
 func (cop *cop) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cop.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -272,7 +270,6 @@ func (cop *cop) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'cop'
 // in accounting notation.
 func (cop *cop) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cop.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -280,7 +277,6 @@ func (cop *cop) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 // FmtDateShort returns the short date representation of 't' for 'cop'
 func (cop *cop) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -288,7 +284,6 @@ func (cop *cop) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'cop'
 func (cop *cop) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -296,7 +291,6 @@ func (cop *cop) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'cop'
 func (cop *cop) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -304,7 +298,6 @@ func (cop *cop) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'cop'
 func (cop *cop) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -312,7 +305,6 @@ func (cop *cop) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'cop'
 func (cop *cop) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -320,7 +312,6 @@ func (cop *cop) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'cop'
 func (cop *cop) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -328,7 +319,6 @@ func (cop *cop) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'cop'
 func (cop *cop) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -336,7 +326,6 @@ func (cop *cop) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'cop'
 func (cop *cop) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	return string(b)

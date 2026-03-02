@@ -8,7 +8,6 @@ import (
 )
 
 func BenchmarkFmtNumber(b *testing.B) {
-
 	trans := New()
 	f64 := float64(1234567.43)
 	precision := uint64(2)
@@ -22,9 +21,7 @@ func BenchmarkFmtNumber(b *testing.B) {
 	})
 
 	b.Run("Parallel", func(b *testing.B) {
-
 		b.RunParallel(func(pb *testing.PB) {
-
 			for pb.Next() {
 				trans.FmtNumber(f64, precision)
 			}
@@ -33,7 +30,6 @@ func BenchmarkFmtNumber(b *testing.B) {
 }
 
 func BenchmarkFmtPercent(b *testing.B) {
-
 	trans := New()
 	f64 := float64(97.05)
 	precision := uint64(2)
@@ -47,9 +43,7 @@ func BenchmarkFmtPercent(b *testing.B) {
 	})
 
 	b.Run("Parallel", func(b *testing.B) {
-
 		b.RunParallel(func(pb *testing.PB) {
-
 			for pb.Next() {
 				trans.FmtPercent(f64, precision)
 			}
@@ -58,7 +52,6 @@ func BenchmarkFmtPercent(b *testing.B) {
 }
 
 func BenchmarkFmtCurrency(b *testing.B) {
-
 	trans := New()
 	f64 := float64(1234567.43)
 	precision := uint64(2)
@@ -72,9 +65,7 @@ func BenchmarkFmtCurrency(b *testing.B) {
 	})
 
 	b.Run("Parallel", func(b *testing.B) {
-
 		b.RunParallel(func(pb *testing.PB) {
-
 			for pb.Next() {
 				trans.FmtCurrency(f64, precision, currency.USD)
 			}
@@ -83,7 +74,6 @@ func BenchmarkFmtCurrency(b *testing.B) {
 }
 
 func BenchmarkFmtAccounting(b *testing.B) {
-
 	trans := New()
 	f64 := float64(1234567.43)
 	precision := uint64(2)
@@ -97,9 +87,7 @@ func BenchmarkFmtAccounting(b *testing.B) {
 	})
 
 	b.Run("Parallel", func(b *testing.B) {
-
 		b.RunParallel(func(pb *testing.PB) {
-
 			for pb.Next() {
 				trans.FmtAccounting(f64, precision, currency.USD)
 			}
@@ -108,7 +96,6 @@ func BenchmarkFmtAccounting(b *testing.B) {
 }
 
 func BenchmarkFmtDate(b *testing.B) {
-
 	trans := New()
 	t := time.Now()
 
@@ -121,9 +108,7 @@ func BenchmarkFmtDate(b *testing.B) {
 	})
 
 	b.Run("FmtDateShortParallel", func(b *testing.B) {
-
 		b.RunParallel(func(pb *testing.PB) {
-
 			for pb.Next() {
 				trans.FmtDateShort(t)
 			}
@@ -137,9 +122,7 @@ func BenchmarkFmtDate(b *testing.B) {
 	})
 
 	b.Run("FmtDateMediumParallel", func(b *testing.B) {
-
 		b.RunParallel(func(pb *testing.PB) {
-
 			for pb.Next() {
 				trans.FmtDateMedium(t)
 			}
@@ -153,9 +136,7 @@ func BenchmarkFmtDate(b *testing.B) {
 	})
 
 	b.Run("FmtDateLongParallel", func(b *testing.B) {
-
 		b.RunParallel(func(pb *testing.PB) {
-
 			for pb.Next() {
 				trans.FmtDateLong(t)
 			}
@@ -169,9 +150,7 @@ func BenchmarkFmtDate(b *testing.B) {
 	})
 
 	b.Run("FmtDateFullParallel", func(b *testing.B) {
-
 		b.RunParallel(func(pb *testing.PB) {
-
 			for pb.Next() {
 				trans.FmtDateFull(t)
 			}
@@ -180,7 +159,6 @@ func BenchmarkFmtDate(b *testing.B) {
 }
 
 func BenchmarkFmtTime(b *testing.B) {
-
 	trans := New()
 	t := time.Now()
 
@@ -193,9 +171,7 @@ func BenchmarkFmtTime(b *testing.B) {
 	})
 
 	b.Run("FmtTimeShortParallel", func(b *testing.B) {
-
 		b.RunParallel(func(pb *testing.PB) {
-
 			for pb.Next() {
 				trans.FmtTimeShort(t)
 			}
@@ -209,9 +185,7 @@ func BenchmarkFmtTime(b *testing.B) {
 	})
 
 	b.Run("FmtTimeMediumParallel", func(b *testing.B) {
-
 		b.RunParallel(func(pb *testing.PB) {
-
 			for pb.Next() {
 				trans.FmtTimeMedium(t)
 			}
@@ -225,9 +199,7 @@ func BenchmarkFmtTime(b *testing.B) {
 	})
 
 	b.Run("FmtTimeLongParallel", func(b *testing.B) {
-
 		b.RunParallel(func(pb *testing.PB) {
-
 			for pb.Next() {
 				trans.FmtTimeLong(t)
 			}
@@ -241,9 +213,7 @@ func BenchmarkFmtTime(b *testing.B) {
 	})
 
 	b.Run("FmtTimeFullParallel", func(b *testing.B) {
-
 		b.RunParallel(func(pb *testing.PB) {
-
 			for pb.Next() {
 				trans.FmtTimeFull(t)
 			}

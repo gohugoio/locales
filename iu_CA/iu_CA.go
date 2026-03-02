@@ -81,7 +81,6 @@ func (iu *iu_CA) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'iu_CA'
 func (iu *iu_CA) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
-
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -190,7 +189,6 @@ func (iu *iu_CA) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'iu_CA' and handles both Whole and Real numbers based on 'v'
 func (iu *iu_CA) FmtNumber(num float64, v uint64) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -262,7 +260,6 @@ func (iu *iu_CA) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'iu_CA'
 func (iu *iu_CA) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := iu.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -271,7 +268,6 @@ func (iu *iu_CA) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'iu_CA'
 // in accounting notation.
 func (iu *iu_CA) FmtAccounting(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := iu.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -279,7 +275,6 @@ func (iu *iu_CA) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 // FmtDateShort returns the short date representation of 't' for 'iu_CA'
 func (iu *iu_CA) FmtDateShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	if t.Month() < 10 {
@@ -308,7 +303,6 @@ func (iu *iu_CA) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'iu_CA'
 func (iu *iu_CA) FmtDateMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, iu.monthsAbbreviated[t.Month()]...)
@@ -327,7 +321,6 @@ func (iu *iu_CA) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'iu_CA'
 func (iu *iu_CA) FmtDateLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, iu.monthsWide[t.Month()]...)
@@ -346,7 +339,6 @@ func (iu *iu_CA) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'iu_CA'
 func (iu *iu_CA) FmtDateFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	b = append(b, iu.daysWide[t.Weekday()]...)
@@ -367,7 +359,6 @@ func (iu *iu_CA) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'iu_CA'
 func (iu *iu_CA) FmtTimeShort(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -397,7 +388,6 @@ func (iu *iu_CA) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'iu_CA'
 func (iu *iu_CA) FmtTimeMedium(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -434,7 +424,6 @@ func (iu *iu_CA) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'iu_CA'
 func (iu *iu_CA) FmtTimeLong(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -476,7 +465,6 @@ func (iu *iu_CA) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'iu_CA'
 func (iu *iu_CA) FmtTimeFull(t time.Time) string {
-
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
