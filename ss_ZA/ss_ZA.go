@@ -10,33 +10,24 @@ import (
 )
 
 type ss_ZA struct {
-	locale             string
-	pluralsCardinal    []locales.PluralRule
-	pluralsOrdinal     []locales.PluralRule
-	pluralsRange       []locales.PluralRule
-	decimal            string
-	group              string
-	minus              string
-	percent            string
-	perMille           string
-	timeSeparator      string
-	inifinity          string
-	currencies         []string // idx = enum of currency code
-	monthsAbbreviated  []string
-	monthsNarrow       []string
-	monthsWide         []string
-	daysAbbreviated    []string
-	daysNarrow         []string
-	daysShort          []string
-	daysWide           []string
-	periodsAbbreviated []string
-	periodsNarrow      []string
-	periodsShort       []string
-	periodsWide        []string
-	erasAbbreviated    []string
-	erasNarrow         []string
-	erasWide           []string
-	timezones          map[string]string
+	locale            string
+	pluralsCardinal   []locales.PluralRule
+	pluralsOrdinal    []locales.PluralRule
+	pluralsRange      []locales.PluralRule
+	decimal           string
+	group             string
+	minus             string
+	percent           string
+	timeSeparator     string
+	currencies        []string // idx = enum of currency code
+	monthsAbbreviated []string
+	monthsNarrow      []string
+	monthsWide        []string
+	daysAbbreviated   []string
+	daysNarrow        []string
+	daysShort         []string
+	daysWide          []string
+	timezones         map[string]string
 }
 
 // New returns a new instance of translator for the 'ss_ZA' locale

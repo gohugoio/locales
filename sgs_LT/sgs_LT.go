@@ -10,33 +10,24 @@ import (
 )
 
 type sgs_LT struct {
-	locale             string
-	pluralsCardinal    []locales.PluralRule
-	pluralsOrdinal     []locales.PluralRule
-	pluralsRange       []locales.PluralRule
-	decimal            string
-	group              string
-	minus              string
-	percent            string
-	perMille           string
-	timeSeparator      string
-	inifinity          string
-	currencies         []string // idx = enum of currency code
-	monthsAbbreviated  []string
-	monthsNarrow       []string
-	monthsWide         []string
-	daysAbbreviated    []string
-	daysNarrow         []string
-	daysShort          []string
-	daysWide           []string
-	periodsAbbreviated []string
-	periodsNarrow      []string
-	periodsShort       []string
-	periodsWide        []string
-	erasAbbreviated    []string
-	erasNarrow         []string
-	erasWide           []string
-	timezones          map[string]string
+	locale            string
+	pluralsCardinal   []locales.PluralRule
+	pluralsOrdinal    []locales.PluralRule
+	pluralsRange      []locales.PluralRule
+	decimal           string
+	group             string
+	minus             string
+	percent           string
+	timeSeparator     string
+	currencies        []string // idx = enum of currency code
+	monthsAbbreviated []string
+	monthsNarrow      []string
+	monthsWide        []string
+	daysAbbreviated   []string
+	daysNarrow        []string
+	daysShort         []string
+	daysWide          []string
+	timezones         map[string]string
 }
 
 // New returns a new instance of translator for the 'sgs_LT' locale
@@ -80,8 +71,8 @@ func (sgs *sgs_LT) PluralsRange() []locales.PluralRule {
 func (sgs *sgs_LT) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 	n := math.Abs(num)
 	f := locales.F(n, v)
-	nMod100 := math.Mod(n, 100)
 	nMod10 := math.Mod(n, 10)
+	nMod100 := math.Mod(n, 100)
 
 	if nMod10 == 1 && nMod100 != 11 {
 		return locales.PluralRuleOne

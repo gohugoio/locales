@@ -18,9 +18,7 @@ type haw_US struct {
 	group                  string
 	minus                  string
 	percent                string
-	perMille               string
 	timeSeparator          string
-	inifinity              string
 	currencies             []string // idx = enum of currency code
 	currencyNegativePrefix string
 	currencyNegativeSuffix string
@@ -32,12 +30,6 @@ type haw_US struct {
 	daysShort              []string
 	daysWide               []string
 	periodsAbbreviated     []string
-	periodsNarrow          []string
-	periodsShort           []string
-	periodsWide            []string
-	erasAbbreviated        []string
-	erasNarrow             []string
-	erasWide               []string
 	timezones              map[string]string
 }
 

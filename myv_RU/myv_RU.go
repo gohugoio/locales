@@ -10,33 +10,24 @@ import (
 )
 
 type myv_RU struct {
-	locale             string
-	pluralsCardinal    []locales.PluralRule
-	pluralsOrdinal     []locales.PluralRule
-	pluralsRange       []locales.PluralRule
-	decimal            string
-	group              string
-	minus              string
-	percent            string
-	perMille           string
-	timeSeparator      string
-	inifinity          string
-	currencies         []string // idx = enum of currency code
-	monthsAbbreviated  []string
-	monthsNarrow       []string
-	monthsWide         []string
-	daysAbbreviated    []string
-	daysNarrow         []string
-	daysShort          []string
-	daysWide           []string
-	periodsAbbreviated []string
-	periodsNarrow      []string
-	periodsShort       []string
-	periodsWide        []string
-	erasAbbreviated    []string
-	erasNarrow         []string
-	erasWide           []string
-	timezones          map[string]string
+	locale            string
+	pluralsCardinal   []locales.PluralRule
+	pluralsOrdinal    []locales.PluralRule
+	pluralsRange      []locales.PluralRule
+	decimal           string
+	group             string
+	minus             string
+	percent           string
+	timeSeparator     string
+	currencies        []string // idx = enum of currency code
+	monthsAbbreviated []string
+	monthsNarrow      []string
+	monthsWide        []string
+	daysAbbreviated   []string
+	daysNarrow        []string
+	daysShort         []string
+	daysWide          []string
+	timezones         map[string]string
 }
 
 // New returns a new instance of translator for the 'myv_RU' locale
@@ -56,10 +47,6 @@ func New() locales.Translator {
 		monthsWide:        []string{"", "якшамков", "даволков", "эйзюрков", "чадыков", "панжиков", "аштемков", "медьков", "умарьков", "таштамков", "ожоков", "сундерьков", "ацамков"},
 		daysAbbreviated:   []string{"тар", "атя", "вас", "кун", "кал", "сюк", "шля"},
 		daysWide:          []string{"таргочистэ", "атяньчистэ", "вастаньчистэ", "куншкачистэ", "калоньчистэ", "сюконьчистэ", "шлямочистэ"},
-		periodsWide:       []string{"обедтэ икеле", "обедтэ мейле"},
-		erasAbbreviated:   []string{"", ""},
-		erasNarrow:        []string{"", ""},
-		erasWide:          []string{"Христосонь чачомадо икеле", "Христосонь чачомадо мейле"},
 		timezones:         map[string]string{"ACDT": "ACDT", "ACST": "ACST", "ACT": "ACT", "ACWDT": "ACWDT", "ACWST": "ACWST", "ADT": "ADT", "ADT Arabia": "ADT Arabia", "AEDT": "AEDT", "AEST": "AEST", "AFT": "Афганистанонь шка", "AKDT": "Аляскань кизэнь шка", "AKST": "Аляскань свалонь шка", "AMST": "Амазононь кизэнь шка", "AMST Armenia": "AMST Armenia", "AMT": "Амазононь свалонь шка", "AMT Armenia": "AMT Armenia", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "ARST", "ART": "ART", "AST": "AST", "AST Arabia": "AST Arabia", "AWDT": "AWDT", "AWST": "AWST", "AZST": "AZST", "AZT": "AZT", "BDT Bangladesh": "Бангладешень кизэнь шка", "BNT": "BNT", "BOT": "BOT", "BRST": "Базилиянь кизэнь шка", "BRT": "Базилиянь свалонь шка", "BST Bangladesh": "Бангладешень свалонь шка", "BT": "BT", "CAST": "CAST", "CAT": "CAT", "CCT": "CCT", "CDT": "CDT", "CHADT": "CHADT", "CHAST": "CHAST", "CHUT": "CHUT", "CKT": "CKT", "CKT DST": "CKT DST", "CLST": "Чилинь кизэнь шка", "CLT": "Чилинь свалонь шка", "COST": "COST", "COT": "COT", "CST": "CST", "CST China": "Китаень свалонь шка", "CST China DST": "Китаень кизэнь шка", "CVST": "CVST", "CVT": "CVT", "CXT": "CXT", "ChST": "ChST", "ChST NMI": "ChST NMI", "CuDT": "Кубань кизэнь шка", "CuST": "Кубань свалонь шка", "DAVT": "DAVT", "DDUT": "DDUT", "EASST": "EASST", "EAST": "EAST", "EAT": "EAT", "ECT": "ECT", "EDT": "EDT", "EGDT": "EGDT", "EGST": "EGST", "EST": "EST", "FEET": "FEET", "FJT": "FJT", "FJT Summer": "FJT Summer", "FKST": "FKST", "FKT": "FKT", "FNST": "FNST", "FNT": "FNT", "GALT": "GALT", "GAMT": "GAMT", "GEST": "GEST", "GET": "GET", "GFT": "GFT", "GIT": "GIT", "GMT": "GMT", "GNSST": "GNSST", "GNST": "GNST", "GST": "GST", "GST Guam": "GST Guam", "GYT": "GYT", "HADT": "HADT", "HAST": "HAST", "HKST": "HKST", "HKT": "HKT", "HOVST": "HOVST", "HOVT": "HOVT", "ICT": "ICT", "IDT": "IDT", "IOT": "IOT", "IRKST": "IRKST", "IRKT": "IRKT", "IRST": "Иранонь свалонь шка", "IRST DST": "Иранонь кизэнь шка", "IST": "Индиянь свалонь шка", "IST Israel": "IST Israel", "JDT": "Япониянь кизэнь шка", "JST": "Япониянь свалонь шка", "KOST": "KOST", "KRAST": "KRAST", "KRAT": "KRAT", "KST": "Кореань свалонь шка", "KST DST": "Кореань кизэнь шка", "LHDT": "LHDT", "LHST": "LHST", "LINT": "LINT", "MAGST": "MAGST", "MAGT": "MAGT", "MART": "MART", "MAWT": "MAWT", "MDT": "MDT", "MESZ": "MESZ", "MEZ": "MEZ", "MHT": "MHT", "MMT": "MMT", "MSD": "Московонь кизэнь шка", "MST": "MST", "MUST": "MUST", "MUT": "MUT", "MVT": "MVT", "MYT": "MYT", "NCT": "NCT", "NDT": "NDT", "NDT New Caledonia": "NDT New Caledonia", "NFDT": "NFDT", "NFT": "NFT", "NOVST": "NOVST", "NOVT": "NOVT", "NPT": "NPT", "NRT": "NRT", "NST": "NST", "NUT": "NUT", "NZDT": "Од Зеландиянь кизэнь шка", "NZST": "Од Зеландиянь свалонь шка", "OESZ": "OESZ", "OEZ": "OEZ", "OMSST": "Омскоень кизэнь шка", "OMST": "Омскоень свалонь шка", "PDT": "PDT", "PDTM": "PDTM", "PETDT": "PETDT", "PETST": "PETST", "PGT": "PGT", "PHOT": "PHOT", "PKT": "PKT", "PKT DST": "PKT DST", "PMDT": "PMDT", "PMST": "PMST", "PONT": "PONT", "PST": "PST", "PST Philippine": "PST Philippine", "PST Philippine DST": "PST Philippine DST", "PST Pitcairn": "PST Pitcairn", "PSTM": "PSTM", "PWT": "PWT", "PYST": "Парагваень кизэнь шка", "PYT": "Парагваень свалонь шка", "PYT Korea": "PYT Korea", "RET": "RET", "ROTT": "ROTT", "SAKST": "Сахалинэнь кизэнь шка", "SAKT": "Сахалинэнь свалонь шка", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "SAST", "SBT": "SBT", "SCT": "SCT", "SGT": "SGT", "SLST": "SLST", "SRT": "SRT", "SST Samoa": "SST Samoa", "SST Samoa Apia": "SST Samoa Apia", "SST Samoa Apia DST": "SST Samoa Apia DST", "SST Samoa DST": "SST Samoa DST", "SYOT": "SYOT", "TAAF": "TAAF", "TAHT": "TAHT", "TJT": "TJT", "TKT": "TKT", "TLT": "TLT", "TMST": "TMST", "TMT": "TMT", "TOST": "TOST", "TOT": "TOT", "TVT": "TVT", "TWT": "TWT", "TWT DST": "TWT DST", "ULAST": "ULAST", "ULAT": "ULAT", "UYST": "Уругваень кизэнь шка", "UYT": "Уругваень свалонь шка", "UZT": "Узбекистанонь свалонь шка", "UZT DST": "Узбекистанонь кизэнь шка", "VET": "VET", "VLAST": "VLAST", "VLAT": "VLAT", "VOLST": "VOLST", "VOLT": "VOLT", "VOST": "VOST", "VUT": "VUT", "VUT DST": "VUT DST", "WAKT": "WAKT", "WARST": "WARST", "WART": "WART", "WAST": "WAST", "WAT": "WAT", "WESZ": "WESZ", "WEZ": "WEZ", "WFT": "WFT", "WGST": "WGST", "WGT": "WGT", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "YAKST": "YAKST", "YAKT": "YAKT", "YEKST": "YEKST", "YEKT": "YEKT", "YST": "YST", "МСК": "Московонь свалонь шка", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "Казахстанонь чивалгомань шка", "شىعىش قازاق ەلى": "Казахстанонь чилисемань шка", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "قىرعىزستان", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "∅∅∅"},
 	}
 }

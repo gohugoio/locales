@@ -44,6 +44,30 @@ var (
 
 			return strconv.Itoa(count)
 		},
+		"escape_str": func(s string) string {
+			r := strings.NewReplacer(
+				"\u200e", `\u200e`,
+				"\u200f", `\u200f`,
+				"\u200b", `\u200b`,
+				"\u200c", `\u200c`,
+				"\u200d", `\u200d`,
+				"\u2069", `\u2069`,
+				"\u2068", `\u2068`,
+				"\u2067", `\u2067`,
+				"\u2066", `\u2066`,
+				"\u202f", `\u202f`,
+				"\u202e", `\u202e`,
+				"\u202d", `\u202d`,
+				"\u202c", `\u202c`,
+				"\u202b", `\u202b`,
+				"\u202a", `\u202a`,
+				"\u2061", `\u2061`,
+				"\u2060", `\u2060`,
+				"\u061c", `\u061c`,
+				"\ufeff", `\ufeff`,
+			)
+			return r.Replace(s)
+		},
 	}
 	prVarFuncs = map[string]string{
 		"n": "n := math.Abs(num)\n",
@@ -67,11 +91,10 @@ var (
 	fModRegex              = regexp.MustCompile("(f%[0-9]+)")
 	tModRegex              = regexp.MustCompile("(t%[0-9]+)")
 	eModRegex              = regexp.MustCompile("(e%[0-9]+)")
-	groupLenRegex          = regexp.MustCompile(",([0-9#]+)\\.")
+	groupLenRegex          = regexp.MustCompile(`,([0-9#]+)\.`)
 	groupLenPercentRegex   = regexp.MustCompile(",([0-9#]+)$")
 	secondaryGroupLenRegex = regexp.MustCompile(",([0-9#]+),")
-	requiredNumRegex       = regexp.MustCompile("([0-9]+)\\.")
-	requiredDecimalRegex   = regexp.MustCompile("\\.([0-9]+)")
+	requiredDecimalRegex   = regexp.MustCompile(`\.([0-9]+)`)
 
 	enInheritance = map[string]string{
 		"en_150": "en_001", "en_AG": "en_001", "en_AI": "en_001", "en_AU": "en_001", "en_BB": "en_001", "en_BE": "en_001", "en_BM": "en_001", "en_BS": "en_001", "en_BW": "en_001", "en_BZ": "en_001", "en_CA": "en_001", "en_CC": "en_001", "en_CK": "en_001", "en_CM": "en_001", "en_CX": "en_001", "en_CY": "en_001", "en_DG": "en_001", "en_DM": "en_001", "en_ER": "en_001", "en_FJ": "en_001", "en_FK": "en_001", "en_FM": "en_001", "en_GB": "en_001", "en_GD": "en_001", "en_GG": "en_001", "en_GH": "en_001", "en_GI": "en_001", "en_GM": "en_001", "en_GY": "en_001", "en_HK": "en_001", "en_IE": "en_001", "en_IL": "en_001", "en_IM": "en_001", "en_IN": "en_001", "en_IO": "en_001", "en_JE": "en_001", "en_JM": "en_001", "en_KE": "en_001", "en_KI": "en_001", "en_KN": "en_001", "en_KY": "en_001", "en_LC": "en_001", "en_LR": "en_001", "en_LS": "en_001", "en_MG": "en_001", "en_MO": "en_001", "en_MS": "en_001", "en_MT": "en_001", "en_MU": "en_001", "en_MW": "en_001", "en_MY": "en_001", "en_NA": "en_001", "en_NF": "en_001", "en_NG": "en_001", "en_NR": "en_001", "en_NU": "en_001", "en_NZ": "en_001", "en_PG": "en_001", "en_PH": "en_001", "en_PK": "en_001", "en_PN": "en_001", "en_PW": "en_001", "en_RW": "en_001", "en_SB": "en_001", "en_SC": "en_001", "en_SD": "en_001", "en_SG": "en_001", "en_SH": "en_001", "en_SL": "en_001", "en_SS": "en_001", "en_SX": "en_001", "en_SZ": "en_001", "en_TC": "en_001", "en_TK": "en_001", "en_TO": "en_001", "en_TT": "en_001", "en_TV": "en_001", "en_TZ": "en_001", "en_UG": "en_001", "en_VC": "en_001", "en_VG": "en_001", "en_VU": "en_001", "en_WS": "en_001", "en_ZA": "en_001", "en_ZM": "en_001", "en_ZW": "en_001",
@@ -144,7 +167,10 @@ type translator struct {
 	FmtCurrencyNegativeLeft      bool
 
 	// Date & Time
-	FmtCalendarExists bool
+	FmtCalendarExists     bool
+	UsePeriodsAbbreviated bool
+	UseErasAbbreviated    bool
+	UseErasWide           bool
 
 	FmtMonthsAbbreviated string
 	FmtMonthsNarrow      string
@@ -699,7 +725,7 @@ func postProcess(cldr *cldr.CLDR) {
 
 		ldml := cldr.RawLDML(trans.Locale)
 
-		currencies := make([]string, len(globalCurrencies), len(globalCurrencies))
+		currencies := make([]string, len(globalCurrencies))
 
 		var kval string
 
@@ -739,11 +765,11 @@ func postProcess(cldr *cldr.CLDR) {
 
 		// timezones
 
-		if (trans.timezones == nil || len(trans.timezones) == 0) && inheritedFound {
+		if len(trans.timezones) == 0 && inheritedFound {
 			trans.timezones = inherited.timezones
 		}
 
-		if (trans.timezones == nil || len(trans.timezones) == 0) && baseFound {
+		if len(trans.timezones) == 0 && baseFound {
 			trans.timezones = base.timezones
 		}
 
@@ -815,6 +841,15 @@ func postProcess(cldr *cldr.CLDR) {
 
 		trans.FmtDateShort, trans.FmtDateMedium, trans.FmtDateLong, trans.FmtDateFull = parseDateFormats(trans, trans.FmtDateShort, trans.FmtDateMedium, trans.FmtDateLong, trans.FmtDateFull)
 		trans.FmtTimeShort, trans.FmtTimeMedium, trans.FmtTimeLong, trans.FmtTimeFull = parseDateFormats(trans, trans.FmtTimeShort, trans.FmtTimeMedium, trans.FmtTimeLong, trans.FmtTimeFull)
+
+		trans.UsePeriodsAbbreviated = strings.Contains(trans.FmtTimeShort, "periodsAbbreviated") ||
+			strings.Contains(trans.FmtTimeMedium, "periodsAbbreviated") ||
+			strings.Contains(trans.FmtTimeLong, "periodsAbbreviated") ||
+			strings.Contains(trans.FmtTimeFull, "periodsAbbreviated")
+
+		allDateFmts := trans.FmtDateShort + trans.FmtDateMedium + trans.FmtDateLong + trans.FmtDateFull
+		trans.UseErasAbbreviated = strings.Contains(allDateFmts, "erasAbbreviated")
+		trans.UseErasWide = strings.Contains(allDateFmts, "erasWide")
 	}
 }
 
@@ -1197,7 +1232,7 @@ func preProcess(cldrVar *cldr.CLDR) {
 
 								// [0] = AM
 								// [0] = PM
-								ampm := make([]string, 2, 2)
+								ampm := make([]string, 2)
 
 								for _, d := range width.DayPeriod {
 
@@ -1241,9 +1276,9 @@ func preProcess(cldrVar *cldr.CLDR) {
 
 						// [0] = BC
 						// [0] = AD
-						abbrev := make([]string, 2, 2)
-						narr := make([]string, 2, 2)
-						wide := make([]string, 2, 2)
+						abbrev := make([]string, 2)
+						narr := make([]string, 2)
+						wide := make([]string, 2)
 
 						if calendar.Eras.EraAbbr != nil {
 							if len(calendar.Eras.EraAbbr.Era) == 4 {
@@ -1909,8 +1944,6 @@ func parseCurrencyNumberFormat(trans *translator) {
 	// if len(trans.FmtCurrencyNegativeSuffix) > 0 {
 	// 	trans.FmtCurrencyNegativeSuffix = fmt.Sprintf("%#v", []byte(trans.FmtCurrencyNegativeSuffix))
 	// }
-
-	return
 }
 
 func parsePercentNumberFormat(trans *translator) {
@@ -1991,8 +2024,6 @@ func parsePercentNumberFormat(trans *translator) {
 	// if len(trans.FmtPercentSuffix) > 0 {
 	// 	trans.FmtPercentSuffix = fmt.Sprintf("%#v", []byte(trans.FmtPercentSuffix))
 	// }
-
-	return
 }
 
 func parseDecimalNumberFormat(trans *translator) {
@@ -2018,8 +2049,6 @@ func parseDecimalNumberFormat(trans *translator) {
 	if len(match) > 0 {
 		trans.FmtNumberSecondaryGroupLen = len(match) - 2
 	}
-
-	return
 }
 
 type sortRank struct {
@@ -2306,7 +2335,7 @@ func parseOrdinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results 
 							}
 
 							if lastWasRange {
-								pre = strings.TrimRight(pre, " || ") + " && "
+								pre = strings.TrimSuffix(pre, " || ") + " && "
 							}
 
 							lastWasRange = false
@@ -2326,9 +2355,9 @@ func parseOrdinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results 
 
 						}
 
-						pre = strings.TrimRight(pre, " || ")
-						pre = strings.TrimRight(pre, " && ")
-						pre = strings.TrimRight(pre, " || ")
+						pre = strings.TrimSuffix(pre, " || ")
+						pre = strings.TrimSuffix(pre, " && ")
+						pre = strings.TrimSuffix(pre, " || ")
 
 						if hasBracket && bracketAdded {
 							pre += ")"
@@ -2349,10 +2378,10 @@ func parseOrdinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results 
 				stmt += pre + " && "
 			}
 
-			stmt = strings.TrimRight(stmt, " && ") + ") || "
+			stmt = strings.TrimSuffix(stmt, " && ") + ") || "
 		}
 
-		stmt = strings.TrimRight(stmt, " || ")
+		stmt = strings.TrimSuffix(stmt, " || ")
 
 		results += stmt
 
@@ -2599,7 +2628,7 @@ FIND:
 							}
 
 							if lastWasRange {
-								pre = strings.TrimRight(pre, " || ") + " && "
+								pre = strings.TrimSuffix(pre, " || ") + " && "
 							}
 
 							lastWasRange = false
@@ -2619,9 +2648,9 @@ FIND:
 
 						}
 
-						pre = strings.TrimRight(pre, " || ")
-						pre = strings.TrimRight(pre, " && ")
-						pre = strings.TrimRight(pre, " || ")
+						pre = strings.TrimSuffix(pre, " || ")
+						pre = strings.TrimSuffix(pre, " && ")
+						pre = strings.TrimSuffix(pre, " || ")
 
 						if hasBracket && bracketAdded {
 							pre += ")"
@@ -2642,10 +2671,10 @@ FIND:
 				stmt += pre + " && "
 			}
 
-			stmt = strings.TrimRight(stmt, " && ") + ") || "
+			stmt = strings.TrimSuffix(stmt, " && ") + ") || "
 		}
 
-		stmt = strings.TrimRight(stmt, " || ")
+		stmt = strings.TrimSuffix(stmt, " || ")
 
 		results += stmt
 

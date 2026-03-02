@@ -18,9 +18,7 @@ type bgn_AF struct {
 	group                  string
 	minus                  string
 	percent                string
-	perMille               string
 	timeSeparator          string
-	inifinity              string
 	currencies             []string // idx = enum of currency code
 	currencyPositiveSuffix string
 	currencyNegativeSuffix string
@@ -31,13 +29,6 @@ type bgn_AF struct {
 	daysNarrow             []string
 	daysShort              []string
 	daysWide               []string
-	periodsAbbreviated     []string
-	periodsNarrow          []string
-	periodsShort           []string
-	periodsWide            []string
-	erasAbbreviated        []string
-	erasNarrow             []string
-	erasWide               []string
 	timezones              map[string]string
 }
 

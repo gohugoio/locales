@@ -18,9 +18,7 @@ type kea_CV struct {
 	group                  string
 	minus                  string
 	percent                string
-	perMille               string
 	timeSeparator          string
-	inifinity              string
 	currencies             []string // idx = enum of currency code
 	currencyPositiveSuffix string
 	currencyNegativePrefix string
@@ -32,13 +30,6 @@ type kea_CV struct {
 	daysNarrow             []string
 	daysShort              []string
 	daysWide               []string
-	periodsAbbreviated     []string
-	periodsNarrow          []string
-	periodsShort           []string
-	periodsWide            []string
-	erasAbbreviated        []string
-	erasNarrow             []string
-	erasWide               []string
 	timezones              map[string]string
 }
 
@@ -65,10 +56,6 @@ func New() locales.Translator {
 		daysNarrow:             []string{"D", "S", "T", "K", "K", "S", "S"},
 		daysShort:              []string{"du", "si", "te", "ku", "ki", "se", "sa"},
 		daysWide:               []string{"dumingu", "sigunda-fera", "tersa-fera", "kuarta-fera", "kinta-fera", "sesta-fera", "sábadu"},
-		periodsAbbreviated:     []string{"am", "pm"},
-		erasAbbreviated:        []string{"AK", "DK"},
-		erasNarrow:             []string{"", ""},
-		erasWide:               []string{"antis di Kristu", "dispos di Kristu"},
 		timezones:              map[string]string{"ACDT": "Ora di Veron di Austrália Sentral", "ACST": "ACST", "ACT": "ACT", "ACWDT": "Ora di Veron di Austrália Sentru-Osidental", "ACWST": "Ora Padron di Austrália Sentru-Osidental", "ADT": "Ora di Veron di Atlántiku", "ADT Arabia": "ADT Arabia", "AEDT": "Ora di Veron di Austrália Oriental", "AEST": "Ora Padron di Austrália Oriental", "AFT": "AFT", "AKDT": "Ora di Veron di Alaska", "AKST": "Ora Padron di Alaska", "AMST": "AMST", "AMST Armenia": "AMST Armenia", "AMT": "AMT", "AMT Armenia": "AMT Armenia", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "ARST", "ART": "ART", "AST": "Ora Padron di Atlántiku", "AST Arabia": "AST Arabia", "AWDT": "Ora di Veron di Austrália Osidental", "AWST": "Ora Padron di Austrália Osidental", "AZST": "AZST", "AZT": "AZT", "BDT Bangladesh": "BDT Bangladesh", "BNT": "BNT", "BOT": "BOT", "BRST": "BRST", "BRT": "BRT", "BST Bangladesh": "BST Bangladesh", "BT": "BT", "CAST": "CAST", "CAT": "Ora di Áfrika Sentral", "CCT": "CCT", "CDT": "Ora di Veron Sentral", "CHADT": "CHADT", "CHAST": "CHAST", "CHUT": "CHUT", "CKT": "CKT", "CKT DST": "CKT DST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "Ora Padron Sentral", "CST China": "CST China", "CST China DST": "CST China DST", "CVST": "Ora di Veron de Kabu Verdi", "CVT": "Ora Padron di Kabu Verdi", "CXT": "CXT", "ChST": "ChST", "ChST NMI": "ChST NMI", "CuDT": "Ora di Veron di Kuba", "CuST": "Ora Padron di Kuba", "DAVT": "DAVT", "DDUT": "DDUT", "EASST": "EASST", "EAST": "EAST", "EAT": "Ora di Áfrika Oriental", "ECT": "ECT", "EDT": "Ora di Veron Oriental", "EGDT": "Ora di Veron di Gronelándia Oriental", "EGST": "Ora Padron di Gronelándia Oriental", "EST": "Ora Padron Oriental", "FEET": "FEET", "FJT": "FJT", "FJT Summer": "FJT Summer", "FKST": "FKST", "FKT": "FKT", "FNST": "FNST", "FNT": "FNT", "GALT": "GALT", "GAMT": "GAMT", "GEST": "GEST", "GET": "GET", "GFT": "GFT", "GIT": "GIT", "GMT": "Ora Médiu di Greenwich", "GNSST": "GNSST", "GNST": "GNST", "GST": "GST", "GST Guam": "GST Guam", "GYT": "GYT", "HADT": "Ora Padron di Avaí i Aleutas", "HAST": "Ora Padron di Avaí i Aleutas", "HKST": "HKST", "HKT": "HKT", "HOVST": "HOVST", "HOVT": "HOVT", "ICT": "ICT", "IDT": "IDT", "IOT": "IOT", "IRKST": "IRKST", "IRKT": "IRKT", "IRST": "IRST", "IRST DST": "IRST DST", "IST": "IST", "IST Israel": "IST Israel", "JDT": "JDT", "JST": "JST", "KOST": "KOST", "KRAST": "KRAST", "KRAT": "KRAT", "KST": "KST", "KST DST": "KST DST", "LHDT": "LHDT", "LHST": "LHST", "LINT": "LINT", "MAGST": "MAGST", "MAGT": "MAGT", "MART": "MART", "MAWT": "MAWT", "MDT": "MDT", "MESZ": "Ora di Veron di Europa Sentral", "MEZ": "Ora Padron di Europa Sentral", "MHT": "MHT", "MMT": "MMT", "MSD": "MSD", "MST": "MST", "MUST": "MUST", "MUT": "MUT", "MVT": "MVT", "MYT": "MYT", "NCT": "NCT", "NDT": "Ora di Veron di Tera Nova", "NDT New Caledonia": "NDT New Caledonia", "NFDT": "NFDT", "NFT": "NFT", "NOVST": "NOVST", "NOVT": "NOVT", "NPT": "NPT", "NRT": "NRT", "NST": "Ora Padron di Tera Nova", "NUT": "NUT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "Ora di Veron di Europa Oriental", "OEZ": "Ora Padron di Europa Oriental", "OMSST": "OMSST", "OMST": "OMST", "PDT": "Ora di Veron di Pasífiku", "PDTM": "Ora di Veron di Pasífiku Mexikanu", "PETDT": "PETDT", "PETST": "PETST", "PGT": "PGT", "PHOT": "PHOT", "PKT": "PKT", "PKT DST": "PKT DST", "PMDT": "Ora di Veron di San Pedru i Mikelon", "PMST": "Ora Padron di San Pedru i Mikelon", "PONT": "PONT", "PST": "Ora Padron di Pasífiku", "PST Philippine": "PST Philippine", "PST Philippine DST": "PST Philippine DST", "PST Pitcairn": "PST Pitcairn", "PSTM": "Ora Padron di Pasífiku Mexikanu", "PWT": "PWT", "PYST": "PYST", "PYT": "PYT", "PYT Korea": "PYT Korea", "RET": "RET", "ROTT": "ROTT", "SAKST": "SAKST", "SAKT": "SAKT", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "Ora di Sul di Áfrika", "SBT": "SBT", "SCT": "SCT", "SGT": "SGT", "SLST": "SLST", "SRT": "SRT", "SST Samoa": "SST Samoa", "SST Samoa Apia": "SST Samoa Apia", "SST Samoa Apia DST": "SST Samoa Apia DST", "SST Samoa DST": "SST Samoa DST", "SYOT": "SYOT", "TAAF": "TAAF", "TAHT": "TAHT", "TJT": "TJT", "TKT": "TKT", "TLT": "TLT", "TMST": "TMST", "TMT": "TMT", "TOST": "TOST", "TOT": "TOT", "TVT": "TVT", "TWT": "TWT", "TWT DST": "TWT DST", "ULAST": "ULAST", "ULAT": "ULAT", "UYST": "UYST", "UYT": "UYT", "UZT": "UZT", "UZT DST": "UZT DST", "VET": "VET", "VLAST": "VLAST", "VLAT": "VLAT", "VOLST": "VOLST", "VOLT": "VOLT", "VOST": "VOST", "VUT": "VUT", "VUT DST": "VUT DST", "WAKT": "WAKT", "WARST": "WARST", "WART": "WART", "WAST": "Ora di Áfrika Osidental", "WAT": "Ora di Áfrika Osidental", "WESZ": "Ora di Veron di Europa Osidental", "WEZ": "Ora Padron di Europa Osidental", "WFT": "WFT", "WGST": "Ora di Veron di Gronelándia Osidental", "WGT": "Ora Padron di Gronelándia Osidental", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "YAKST": "YAKST", "YAKT": "YAKT", "YEKST": "YEKST", "YEKT": "YEKT", "YST": "Ora di Yukon", "МСК": "МСК", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "باتىس قازاق ەلى", "شىعىش قازاق ەلى": "شىعىش قازاق ەلى", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "قىرعىزستان", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "∅∅∅"},
 	}
 }
