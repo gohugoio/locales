@@ -55,7 +55,7 @@ func New() locales.Translator {
 		daysNarrow:             []string{"H", "J", "J", "S", "S", "S", "H"},
 		daysWide:               []string{"Hɔgbaa", "Ju", "Jufɔ", "Shɔ", "Soo", "Sohaa", "Hɔɔ"},
 		periodsAbbreviated:     []string{"LB", "SN"},
-		timezones:              map[string]string{"ACDT": "ACDT", "ACST": "ACST", "ACT": "ACT", "ACWDT": "ACWDT", "ACWST": "ACWST", "ADT": "Atlantik Be Yɛ Latsa Beiaŋ", "ADT Arabia": "ADT Arabia", "AEDT": "AEDT", "AEST": "AEST", "AFT": "AFT", "AKDT": "Alaska Be Yɛ Latsa Beiaŋ", "AKST": "Alaska Be Yɛ Fɛi Beiaŋ", "AMST": "AMST", "AMST Armenia": "AMST Armenia", "AMT": "AMT", "AMT Armenia": "AMT Armenia", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "ARST", "ART": "ART", "AST": "Atlantik Be Yɛ Fɛi Beiaŋ", "AST Arabia": "AST Arabia", "AWDT": "AWDT", "AWST": "AWST", "AZST": "AZST", "AZT": "AZT", "BDT Bangladesh": "BDT Bangladesh", "BNT": "BNT", "BOT": "BOT", "BRST": "BRST", "BRT": "BRT", "BST Bangladesh": "BST Bangladesh", "BT": "BT", "CAST": "CAST", "CAT": "Afrika Teŋgbɛ Be", "CCT": "CCT", "CDT": "Amerika Teŋgbɛbii Abe Yɛ Latsa Beiaŋ", "CHADT": "CHADT", "CHAST": "CHAST", "CHUT": "CHUT", "CKT": "CKT", "CKT DST": "CKT DST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "Amerika Teŋgbɛbii Abe Yɛ Fɛi Beiaŋ", "CST China": "CST China", "CST China DST": "CST China DST", "CVST": "Kape Verde Be Yɛ Latsa Beiaŋ", "CVT": "Kape Verde Be Yɛ Fɛi Beiaŋ", "CXT": "CXT", "ChST": "ChST", "ChST NMI": "ChST NMI", "CuDT": "Kuba Be Yɛ Latsa Beiaŋ", "CuST": "Kuba Be Yɛ Fɛi Beiaŋ", "DAVT": "DAVT", "DDUT": "DDUT", "EASST": "EASST", "EAST": "EAST", "EAT": "Afrika Bokagbɛ Be", "ECT": "ECT", "EDT": "Amerika Bokãgbɛbii Abe Yɛ Latsa Beiaŋ", "EGDT": "Greenland Bokãgbɛ Be Yɛ Latsa Beiaŋ", "EGST": "Greenland Bokãgbɛ Be Yɛ Fɛi Beiaŋ", "EST": "Amerika Bokãgbɛbii Abe Yɛ Fɛi Beiaŋ", "FEET": "FEET", "FJT": "FJT", "FJT Summer": "FJT Summer", "FKST": "FKST", "FKT": "FKT", "FNST": "FNST", "FNT": "FNT", "GALT": "GALT", "GAMT": "GAMT", "GEST": "GEST", "GET": "GET", "GFT": "GFT", "GIT": "GIT", "GMT": "Betsɔɔmɔ ni ka ŋɛlɛ kome nɔ", "GNSST": "GNSST", "GNST": "GNST", "GST": "GST", "GST Guam": "GST Guam", "GYT": "GYT", "HADT": "Hawaii-Aleutia Be Yɛ Fɛi Beiaŋ", "HAST": "Hawaii-Aleutia Be Yɛ Fɛi Beiaŋ", "HKST": "HKST", "HKT": "HKT", "HOVST": "HOVST", "HOVT": "HOVT", "ICT": "ICT", "IDT": "IDT", "IOT": "Indian Ŋshɔ Lɛ Be", "IRKST": "IRKST", "IRKT": "IRKT", "IRST": "IRST", "IRST DST": "IRST DST", "IST": "IST", "IST Israel": "IST Israel", "JDT": "JDT", "JST": "JST", "KOST": "KOST", "KRAST": "KRAST", "KRAT": "KRAT", "KST": "KST", "KST DST": "KST DST", "LHDT": "LHDT", "LHST": "LHST", "LINT": "LINT", "MAGST": "MAGST", "MAGT": "MAGT", "MART": "MART", "MAWT": "MAWT", "MDT": "MDT", "MESZ": "MESZ", "MEZ": "MEZ", "MHT": "MHT", "MMT": "MMT", "MSD": "MSD", "MST": "MST", "MUST": "Mauritius Be Yɛ Latsa Beiaŋ", "MUT": "Mauritius Be Yɛ Fɛi Beiaŋ", "MVT": "MVT", "MYT": "MYT", "NCT": "NCT", "NDT": "Newfoundland Be Yɛ Latsa Beiaŋ", "NDT New Caledonia": "NDT New Caledonia", "NFDT": "NFDT", "NFT": "NFT", "NOVST": "NOVST", "NOVT": "NOVT", "NPT": "NPT", "NRT": "NRT", "NST": "Newfoundland Be Yɛ Fɛi Beiaŋ", "NUT": "NUT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "OESZ", "OEZ": "OEZ", "OMSST": "OMSST", "OMST": "OMST", "PDT": "Pasifik Be Yɛ Latsa Beiaŋ", "PDTM": "Meziko Pasifik Be Yɛ Latsa Beiaŋ", "PETDT": "PETDT", "PETST": "PETST", "PGT": "PGT", "PHOT": "PHOT", "PKT": "PKT", "PKT DST": "PKT DST", "PMDT": "St. Pierre Kɛ Mikelon Be Yɛ Latsa Beiaŋ", "PMST": "St. Pierre Kɛ Mikelon Be Yɛ Fɛi Beiaŋ", "PONT": "PONT", "PST": "Pasifik Be Yɛ Fɛi Beiaŋ", "PST Philippine": "PST Philippine", "PST Philippine DST": "PST Philippine DST", "PST Pitcairn": "PST Pitcairn", "PSTM": "Meziko Pasifik Be Yɛ Fɛi Beiaŋ", "PWT": "PWT", "PYST": "PYST", "PYT": "PYT", "PYT Korea": "PYT Korea", "RET": "Réunion Be", "ROTT": "ROTT", "SAKST": "SAKST", "SAKT": "SAKT", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "South Afrika Be", "SBT": "SBT", "SCT": "Seyshelles Be", "SGT": "SGT", "SLST": "SLST", "SRT": "SRT", "SST Samoa": "SST Samoa", "SST Samoa Apia": "SST Samoa Apia", "SST Samoa Apia DST": "SST Samoa Apia DST", "SST Samoa DST": "SST Samoa DST", "SYOT": "SYOT", "TAAF": "Antarktik Kɛ Wuoyigbɛbii Ni Wieɔ Frɛntsi Be", "TAHT": "TAHT", "TJT": "TJT", "TKT": "TKT", "TLT": "TLT", "TMST": "TMST", "TMT": "TMT", "TOST": "TOST", "TOT": "TOT", "TVT": "TVT", "TWT": "TWT", "TWT DST": "TWT DST", "ULAST": "ULAST", "ULAT": "ULAT", "UYST": "UYST", "UYT": "UYT", "UZT": "UZT", "UZT DST": "UZT DST", "VET": "VET", "VLAST": "VLAST", "VLAT": "VLAT", "VOLST": "VOLST", "VOLT": "VOLT", "VOST": "VOST", "VUT": "VUT", "VUT DST": "VUT DST", "WAKT": "WAKT", "WARST": "WARST", "WART": "WART", "WAST": "Afrika Anaigbɛ Be", "WAT": "Afrika Anaigbɛ Be", "WESZ": "WESZ", "WEZ": "WEZ", "WFT": "WFT", "WGST": "Greenland Anaigbɛ Be Yɛ Latsa Beiaŋ", "WGT": "Greenland Anaigbɛ Be Yɛ Fɛi Beiaŋ", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "YAKST": "YAKST", "YAKT": "YAKT", "YEKST": "YEKST", "YEKT": "YEKT", "YST": "YST", "МСК": "МСК", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "باتىس قازاق ەلى", "شىعىش قازاق ەلى": "شىعىش قازاق ەلى", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "قىرعىزستان", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "∅∅∅"},
+		timezones:              map[string]string{"ACDT": "ACDT", "ACST": "ACST", "ACT": "ACT", "ACWDT": "ACWDT", "ACWST": "ACWST", "ADT": "Atlantik Be Yɛ Latsa Beiaŋ", "ADT Arabia": "ADT Arabia", "AEDT": "AEDT", "AEST": "AEST", "AFT": "AFT", "AKDT": "Alaska Be Yɛ Latsa Beiaŋ", "AKST": "Alaska Be Yɛ Fɛi Beiaŋ", "AMST": "AMST", "AMST Armenia": "AMST Armenia", "AMT": "AMT", "AMT Armenia": "AMT Armenia", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "ARST", "ART": "ART", "AST": "Atlantik Be Yɛ Fɛi Beiaŋ", "AST Arabia": "AST Arabia", "AWDT": "AWDT", "AWST": "AWST", "AZST": "AZST", "AZT": "AZT", "BDT Bangladesh": "BDT Bangladesh", "BNT": "BNT", "BOT": "BOT", "BRST": "BRST", "BRT": "BRT", "BST Bangladesh": "BST Bangladesh", "BT": "BT", "CAST": "CAST", "CAT": "Afrika Teŋgbɛ Be", "CCT": "CCT", "CDT": "Amerika Teŋgbɛbii Abe Yɛ Latsa Beiaŋ", "CHADT": "CHADT", "CHAST": "CHAST", "CHUT": "CHUT", "CKT": "CKT", "CKT DST": "CKT DST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "Amerika Teŋgbɛbii Abe Yɛ Fɛi Beiaŋ", "CST China": "CST China", "CST China DST": "CST China DST", "CVST": "Kape Verde Be Yɛ Latsa Beiaŋ", "CVT": "Kape Verde Be Yɛ Fɛi Beiaŋ", "CXT": "CXT", "ChST": "ChST", "ChST NMI": "ChST NMI", "CuDT": "Kuba Be Yɛ Latsa Beiaŋ", "CuST": "Kuba Be Yɛ Fɛi Beiaŋ", "DAVT": "DAVT", "DDUT": "DDUT", "EASST": "EASST", "EAST": "EAST", "EAT": "Afrika Bokagbɛ Be", "ECT": "ECT", "EDT": "Amerika Bokãgbɛbii Abe Yɛ Latsa Beiaŋ", "EGDT": "Greenland Bokãgbɛ Be Yɛ Latsa Beiaŋ", "EGST": "Greenland Bokãgbɛ Be Yɛ Fɛi Beiaŋ", "EST": "Amerika Bokãgbɛbii Abe Yɛ Fɛi Beiaŋ", "FEET": "FEET", "FJT": "FJT", "FJT Summer": "FJT Summer", "FKST": "FKST", "FKT": "FKT", "FNST": "FNST", "FNT": "FNT", "GALT": "GALT", "GAMT": "GAMT", "GEST": "GEST", "GET": "GET", "GFT": "GFT", "GIT": "GIT", "GMT": "Betsɔɔmɔ ni ka ŋɛlɛ kome nɔ", "GNSST": "GNSST", "GNST": "GNST", "GST": "GST", "GST Guam": "GST Guam", "GYT": "GYT", "HADT": "Hawaii-Aleutia Be Yɛ Latsa Beiaŋ", "HAST": "Hawaii-Aleutia Be Yɛ Fɛi Beiaŋ", "HKST": "HKST", "HKT": "HKT", "HOVST": "HOVST", "HOVT": "HOVT", "ICT": "ICT", "IDT": "IDT", "IOT": "Indian Ŋshɔ Lɛ Be", "IRKST": "IRKST", "IRKT": "IRKT", "IRST": "IRST", "IRST DST": "IRST DST", "IST": "IST", "IST Israel": "IST Israel", "JDT": "JDT", "JST": "JST", "KOST": "KOST", "KRAST": "KRAST", "KRAT": "KRAT", "KST": "KST", "KST DST": "KST DST", "LHDT": "LHDT", "LHST": "LHST", "LINT": "LINT", "MAGST": "MAGST", "MAGT": "MAGT", "MART": "MART", "MAWT": "MAWT", "MDT": "MDT", "MESZ": "MESZ", "MEZ": "MEZ", "MHT": "MHT", "MMT": "MMT", "MSD": "MSD", "MST": "MST", "MUST": "Mauritius Be Yɛ Latsa Beiaŋ", "MUT": "Mauritius Be Yɛ Fɛi Beiaŋ", "MVT": "MVT", "MYT": "MYT", "NCT": "NCT", "NDT": "Newfoundland Be Yɛ Latsa Beiaŋ", "NDT New Caledonia": "NDT New Caledonia", "NFDT": "NFDT", "NFT": "NFT", "NOVST": "NOVST", "NOVT": "NOVT", "NPT": "NPT", "NRT": "NRT", "NST": "Newfoundland Be Yɛ Fɛi Beiaŋ", "NUT": "NUT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "OESZ", "OEZ": "OEZ", "OMSST": "OMSST", "OMST": "OMST", "PDT": "Pasifik Be Yɛ Latsa Beiaŋ", "PDTM": "Meziko Pasifik Be Yɛ Latsa Beiaŋ", "PETDT": "PETDT", "PETST": "PETST", "PGT": "PGT", "PHOT": "PHOT", "PKT": "PKT", "PKT DST": "PKT DST", "PMDT": "St. Pierre Kɛ Mikelon Be Yɛ Latsa Beiaŋ", "PMST": "St. Pierre Kɛ Mikelon Be Yɛ Fɛi Beiaŋ", "PONT": "PONT", "PST": "Pasifik Be Yɛ Fɛi Beiaŋ", "PST Philippine": "PST Philippine", "PST Philippine DST": "PST Philippine DST", "PST Pitcairn": "PST Pitcairn", "PSTM": "Meziko Pasifik Be Yɛ Fɛi Beiaŋ", "PWT": "PWT", "PYST": "PYST", "PYT": "PYT", "PYT Korea": "PYT Korea", "RET": "Réunion Be", "ROTT": "ROTT", "SAKST": "SAKST", "SAKT": "SAKT", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "South Afrika Be", "SBT": "SBT", "SCT": "Seyshelles Be", "SGT": "SGT", "SLST": "SLST", "SRT": "SRT", "SST Samoa": "SST Samoa", "SST Samoa Apia": "SST Samoa Apia", "SST Samoa Apia DST": "SST Samoa Apia DST", "SST Samoa DST": "SST Samoa DST", "SYOT": "SYOT", "TAAF": "Antarktik Kɛ Wuoyigbɛbii Ni Wieɔ Frɛntsi Be", "TAHT": "TAHT", "TJT": "TJT", "TKT": "TKT", "TLT": "TLT", "TMST": "TMST", "TMT": "TMT", "TOST": "TOST", "TOT": "TOT", "TVT": "TVT", "TWT": "TWT", "TWT DST": "TWT DST", "ULAST": "ULAST", "ULAT": "ULAT", "UYST": "UYST", "UYT": "UYT", "UZT": "UZT", "UZT DST": "UZT DST", "VET": "VET", "VLAST": "VLAST", "VLAT": "VLAT", "VOLST": "VOLST", "VOLT": "VOLT", "VOST": "VOST", "VUT": "VUT", "VUT DST": "VUT DST", "WAKT": "WAKT", "WARST": "WARST", "WART": "WART", "WAST": "Afrika Anaigbɛ Be", "WAT": "Afrika Anaigbɛ Be", "WESZ": "WESZ", "WEZ": "WEZ", "WFT": "WFT", "WGST": "Greenland Anaigbɛ Be Yɛ Latsa Beiaŋ", "WGT": "Greenland Anaigbɛ Be Yɛ Fɛi Beiaŋ", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "YAKST": "YAKST", "YAKT": "YAKT", "YEKST": "YEKST", "YEKT": "YEKT", "YST": "YST", "МСК": "МСК", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "باتىس قازاق ەلى", "شىعىش قازاق ەلى": "شىعىش قازاق ەلى", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "قىرعىزستان", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Azores Be Yɛ Latsa Beiaŋ"},
 	}
 }
 
@@ -96,6 +96,9 @@ func (gaa *gaa) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (gaa *gaa) MonthAbbreviated(month time.Month) string {
+	if len(gaa.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return gaa.monthsAbbreviated[month]
 }
 
@@ -106,6 +109,9 @@ func (gaa *gaa) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (gaa *gaa) MonthNarrow(month time.Month) string {
+	if len(gaa.monthsNarrow) == 0 {
+		return ""
+	}
 	return gaa.monthsNarrow[month]
 }
 
@@ -116,6 +122,9 @@ func (gaa *gaa) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (gaa *gaa) MonthWide(month time.Month) string {
+	if len(gaa.monthsWide) == 0 {
+		return ""
+	}
 	return gaa.monthsWide[month]
 }
 
@@ -126,6 +135,9 @@ func (gaa *gaa) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (gaa *gaa) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(gaa.daysAbbreviated) == 0 {
+		return ""
+	}
 	return gaa.daysAbbreviated[weekday]
 }
 
@@ -136,6 +148,9 @@ func (gaa *gaa) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (gaa *gaa) WeekdayNarrow(weekday time.Weekday) string {
+	if len(gaa.daysNarrow) == 0 {
+		return ""
+	}
 	return gaa.daysNarrow[weekday]
 }
 
@@ -146,6 +161,9 @@ func (gaa *gaa) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (gaa *gaa) WeekdayShort(weekday time.Weekday) string {
+	if len(gaa.daysShort) == 0 {
+		return ""
+	}
 	return gaa.daysShort[weekday]
 }
 
@@ -156,6 +174,9 @@ func (gaa *gaa) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (gaa *gaa) WeekdayWide(weekday time.Weekday) string {
+	if len(gaa.daysWide) == 0 {
+		return ""
+	}
 	return gaa.daysWide[weekday]
 }
 

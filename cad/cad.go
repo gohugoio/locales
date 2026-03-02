@@ -87,6 +87,9 @@ func (cad *cad) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (cad *cad) MonthAbbreviated(month time.Month) string {
+	if len(cad.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return cad.monthsAbbreviated[month]
 }
 
@@ -97,6 +100,9 @@ func (cad *cad) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (cad *cad) MonthNarrow(month time.Month) string {
+	if len(cad.monthsNarrow) == 0 {
+		return ""
+	}
 	return cad.monthsNarrow[month]
 }
 
@@ -107,6 +113,9 @@ func (cad *cad) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (cad *cad) MonthWide(month time.Month) string {
+	if len(cad.monthsWide) == 0 {
+		return ""
+	}
 	return cad.monthsWide[month]
 }
 
@@ -117,6 +126,9 @@ func (cad *cad) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (cad *cad) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(cad.daysAbbreviated) == 0 {
+		return ""
+	}
 	return cad.daysAbbreviated[weekday]
 }
 
@@ -127,6 +139,9 @@ func (cad *cad) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (cad *cad) WeekdayNarrow(weekday time.Weekday) string {
+	if len(cad.daysNarrow) == 0 {
+		return ""
+	}
 	return cad.daysNarrow[weekday]
 }
 
@@ -137,6 +152,9 @@ func (cad *cad) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (cad *cad) WeekdayShort(weekday time.Weekday) string {
+	if len(cad.daysShort) == 0 {
+		return ""
+	}
 	return cad.daysShort[weekday]
 }
 
@@ -147,6 +165,9 @@ func (cad *cad) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (cad *cad) WeekdayWide(weekday time.Weekday) string {
+	if len(cad.daysWide) == 0 {
+		return ""
+	}
 	return cad.daysWide[weekday]
 }
 

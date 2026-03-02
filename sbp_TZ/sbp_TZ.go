@@ -89,6 +89,9 @@ func (sbp *sbp_TZ) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (sbp *sbp_TZ) MonthAbbreviated(month time.Month) string {
+	if len(sbp.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return sbp.monthsAbbreviated[month]
 }
 
@@ -99,6 +102,9 @@ func (sbp *sbp_TZ) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (sbp *sbp_TZ) MonthNarrow(month time.Month) string {
+	if len(sbp.monthsNarrow) == 0 {
+		return ""
+	}
 	return sbp.monthsNarrow[month]
 }
 
@@ -109,6 +115,9 @@ func (sbp *sbp_TZ) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (sbp *sbp_TZ) MonthWide(month time.Month) string {
+	if len(sbp.monthsWide) == 0 {
+		return ""
+	}
 	return sbp.monthsWide[month]
 }
 
@@ -119,6 +128,9 @@ func (sbp *sbp_TZ) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (sbp *sbp_TZ) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(sbp.daysAbbreviated) == 0 {
+		return ""
+	}
 	return sbp.daysAbbreviated[weekday]
 }
 
@@ -129,6 +141,9 @@ func (sbp *sbp_TZ) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (sbp *sbp_TZ) WeekdayNarrow(weekday time.Weekday) string {
+	if len(sbp.daysNarrow) == 0 {
+		return ""
+	}
 	return sbp.daysNarrow[weekday]
 }
 
@@ -139,6 +154,9 @@ func (sbp *sbp_TZ) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (sbp *sbp_TZ) WeekdayShort(weekday time.Weekday) string {
+	if len(sbp.daysShort) == 0 {
+		return ""
+	}
 	return sbp.daysShort[weekday]
 }
 
@@ -149,6 +167,9 @@ func (sbp *sbp_TZ) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (sbp *sbp_TZ) WeekdayWide(weekday time.Weekday) string {
+	if len(sbp.daysWide) == 0 {
+		return ""
+	}
 	return sbp.daysWide[weekday]
 }
 

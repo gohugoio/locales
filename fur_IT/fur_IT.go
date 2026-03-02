@@ -96,6 +96,9 @@ func (fur *fur_IT) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (fur *fur_IT) MonthAbbreviated(month time.Month) string {
+	if len(fur.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return fur.monthsAbbreviated[month]
 }
 
@@ -106,6 +109,9 @@ func (fur *fur_IT) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (fur *fur_IT) MonthNarrow(month time.Month) string {
+	if len(fur.monthsNarrow) == 0 {
+		return ""
+	}
 	return fur.monthsNarrow[month]
 }
 
@@ -116,6 +122,9 @@ func (fur *fur_IT) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (fur *fur_IT) MonthWide(month time.Month) string {
+	if len(fur.monthsWide) == 0 {
+		return ""
+	}
 	return fur.monthsWide[month]
 }
 
@@ -126,6 +135,9 @@ func (fur *fur_IT) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (fur *fur_IT) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(fur.daysAbbreviated) == 0 {
+		return ""
+	}
 	return fur.daysAbbreviated[weekday]
 }
 
@@ -136,6 +148,9 @@ func (fur *fur_IT) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (fur *fur_IT) WeekdayNarrow(weekday time.Weekday) string {
+	if len(fur.daysNarrow) == 0 {
+		return ""
+	}
 	return fur.daysNarrow[weekday]
 }
 
@@ -146,6 +161,9 @@ func (fur *fur_IT) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (fur *fur_IT) WeekdayShort(weekday time.Weekday) string {
+	if len(fur.daysShort) == 0 {
+		return ""
+	}
 	return fur.daysShort[weekday]
 }
 
@@ -156,6 +174,9 @@ func (fur *fur_IT) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (fur *fur_IT) WeekdayWide(weekday time.Weekday) string {
+	if len(fur.daysWide) == 0 {
+		return ""
+	}
 	return fur.daysWide[weekday]
 }
 

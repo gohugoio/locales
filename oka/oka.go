@@ -84,6 +84,9 @@ func (oka *oka) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (oka *oka) MonthAbbreviated(month time.Month) string {
+	if len(oka.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return oka.monthsAbbreviated[month]
 }
 
@@ -94,6 +97,9 @@ func (oka *oka) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (oka *oka) MonthNarrow(month time.Month) string {
+	if len(oka.monthsNarrow) == 0 {
+		return ""
+	}
 	return oka.monthsNarrow[month]
 }
 
@@ -104,6 +110,9 @@ func (oka *oka) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (oka *oka) MonthWide(month time.Month) string {
+	if len(oka.monthsWide) == 0 {
+		return ""
+	}
 	return oka.monthsWide[month]
 }
 
@@ -114,6 +123,9 @@ func (oka *oka) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (oka *oka) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(oka.daysAbbreviated) == 0 {
+		return ""
+	}
 	return oka.daysAbbreviated[weekday]
 }
 
@@ -124,6 +136,9 @@ func (oka *oka) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (oka *oka) WeekdayNarrow(weekday time.Weekday) string {
+	if len(oka.daysNarrow) == 0 {
+		return ""
+	}
 	return oka.daysNarrow[weekday]
 }
 
@@ -134,6 +149,9 @@ func (oka *oka) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (oka *oka) WeekdayShort(weekday time.Weekday) string {
+	if len(oka.daysShort) == 0 {
+		return ""
+	}
 	return oka.daysShort[weekday]
 }
 
@@ -144,6 +162,9 @@ func (oka *oka) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (oka *oka) WeekdayWide(weekday time.Weekday) string {
+	if len(oka.daysWide) == 0 {
+		return ""
+	}
 	return oka.daysWide[weekday]
 }
 

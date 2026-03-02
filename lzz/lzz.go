@@ -84,6 +84,9 @@ func (lzz *lzz) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (lzz *lzz) MonthAbbreviated(month time.Month) string {
+	if len(lzz.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return lzz.monthsAbbreviated[month]
 }
 
@@ -94,6 +97,9 @@ func (lzz *lzz) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (lzz *lzz) MonthNarrow(month time.Month) string {
+	if len(lzz.monthsNarrow) == 0 {
+		return ""
+	}
 	return lzz.monthsNarrow[month]
 }
 
@@ -104,6 +110,9 @@ func (lzz *lzz) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (lzz *lzz) MonthWide(month time.Month) string {
+	if len(lzz.monthsWide) == 0 {
+		return ""
+	}
 	return lzz.monthsWide[month]
 }
 
@@ -114,6 +123,9 @@ func (lzz *lzz) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (lzz *lzz) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(lzz.daysAbbreviated) == 0 {
+		return ""
+	}
 	return lzz.daysAbbreviated[weekday]
 }
 
@@ -124,6 +136,9 @@ func (lzz *lzz) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (lzz *lzz) WeekdayNarrow(weekday time.Weekday) string {
+	if len(lzz.daysNarrow) == 0 {
+		return ""
+	}
 	return lzz.daysNarrow[weekday]
 }
 
@@ -134,6 +149,9 @@ func (lzz *lzz) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (lzz *lzz) WeekdayShort(weekday time.Weekday) string {
+	if len(lzz.daysShort) == 0 {
+		return ""
+	}
 	return lzz.daysShort[weekday]
 }
 
@@ -144,6 +162,9 @@ func (lzz *lzz) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (lzz *lzz) WeekdayWide(weekday time.Weekday) string {
+	if len(lzz.daysWide) == 0 {
+		return ""
+	}
 	return lzz.daysWide[weekday]
 }
 

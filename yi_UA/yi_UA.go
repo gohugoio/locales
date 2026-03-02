@@ -94,6 +94,9 @@ func (yi *yi_UA) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (yi *yi_UA) MonthAbbreviated(month time.Month) string {
+	if len(yi.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return yi.monthsAbbreviated[month]
 }
 
@@ -104,6 +107,9 @@ func (yi *yi_UA) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (yi *yi_UA) MonthNarrow(month time.Month) string {
+	if len(yi.monthsNarrow) == 0 {
+		return ""
+	}
 	return yi.monthsNarrow[month]
 }
 
@@ -114,6 +120,9 @@ func (yi *yi_UA) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (yi *yi_UA) MonthWide(month time.Month) string {
+	if len(yi.monthsWide) == 0 {
+		return ""
+	}
 	return yi.monthsWide[month]
 }
 
@@ -124,6 +133,9 @@ func (yi *yi_UA) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (yi *yi_UA) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(yi.daysAbbreviated) == 0 {
+		return ""
+	}
 	return yi.daysAbbreviated[weekday]
 }
 
@@ -134,6 +146,9 @@ func (yi *yi_UA) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (yi *yi_UA) WeekdayNarrow(weekday time.Weekday) string {
+	if len(yi.daysNarrow) == 0 {
+		return ""
+	}
 	return yi.daysNarrow[weekday]
 }
 
@@ -144,6 +159,9 @@ func (yi *yi_UA) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (yi *yi_UA) WeekdayShort(weekday time.Weekday) string {
+	if len(yi.daysShort) == 0 {
+		return ""
+	}
 	return yi.daysShort[weekday]
 }
 
@@ -154,6 +172,9 @@ func (yi *yi_UA) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (yi *yi_UA) WeekdayWide(weekday time.Weekday) string {
+	if len(yi.daysWide) == 0 {
+		return ""
+	}
 	return yi.daysWide[weekday]
 }
 

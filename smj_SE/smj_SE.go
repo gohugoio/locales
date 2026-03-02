@@ -92,6 +92,9 @@ func (smj *smj_SE) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (smj *smj_SE) MonthAbbreviated(month time.Month) string {
+	if len(smj.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return smj.monthsAbbreviated[month]
 }
 
@@ -102,6 +105,9 @@ func (smj *smj_SE) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (smj *smj_SE) MonthNarrow(month time.Month) string {
+	if len(smj.monthsNarrow) == 0 {
+		return ""
+	}
 	return smj.monthsNarrow[month]
 }
 
@@ -112,6 +118,9 @@ func (smj *smj_SE) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (smj *smj_SE) MonthWide(month time.Month) string {
+	if len(smj.monthsWide) == 0 {
+		return ""
+	}
 	return smj.monthsWide[month]
 }
 
@@ -122,6 +131,9 @@ func (smj *smj_SE) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (smj *smj_SE) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(smj.daysAbbreviated) == 0 {
+		return ""
+	}
 	return smj.daysAbbreviated[weekday]
 }
 
@@ -132,6 +144,9 @@ func (smj *smj_SE) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (smj *smj_SE) WeekdayNarrow(weekday time.Weekday) string {
+	if len(smj.daysNarrow) == 0 {
+		return ""
+	}
 	return smj.daysNarrow[weekday]
 }
 
@@ -142,6 +157,9 @@ func (smj *smj_SE) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (smj *smj_SE) WeekdayShort(weekday time.Weekday) string {
+	if len(smj.daysShort) == 0 {
+		return ""
+	}
 	return smj.daysShort[weekday]
 }
 
@@ -152,6 +170,9 @@ func (smj *smj_SE) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (smj *smj_SE) WeekdayWide(weekday time.Weekday) string {
+	if len(smj.daysWide) == 0 {
+		return ""
+	}
 	return smj.daysWide[weekday]
 }
 

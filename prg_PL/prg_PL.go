@@ -107,6 +107,9 @@ func (prg *prg_PL) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (prg *prg_PL) MonthAbbreviated(month time.Month) string {
+	if len(prg.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return prg.monthsAbbreviated[month]
 }
 
@@ -117,6 +120,9 @@ func (prg *prg_PL) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (prg *prg_PL) MonthNarrow(month time.Month) string {
+	if len(prg.monthsNarrow) == 0 {
+		return ""
+	}
 	return prg.monthsNarrow[month]
 }
 
@@ -127,6 +133,9 @@ func (prg *prg_PL) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (prg *prg_PL) MonthWide(month time.Month) string {
+	if len(prg.monthsWide) == 0 {
+		return ""
+	}
 	return prg.monthsWide[month]
 }
 
@@ -137,6 +146,9 @@ func (prg *prg_PL) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (prg *prg_PL) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(prg.daysAbbreviated) == 0 {
+		return ""
+	}
 	return prg.daysAbbreviated[weekday]
 }
 
@@ -147,6 +159,9 @@ func (prg *prg_PL) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (prg *prg_PL) WeekdayNarrow(weekday time.Weekday) string {
+	if len(prg.daysNarrow) == 0 {
+		return ""
+	}
 	return prg.daysNarrow[weekday]
 }
 
@@ -157,6 +172,9 @@ func (prg *prg_PL) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (prg *prg_PL) WeekdayShort(weekday time.Weekday) string {
+	if len(prg.daysShort) == 0 {
+		return ""
+	}
 	return prg.daysShort[weekday]
 }
 
@@ -167,6 +185,9 @@ func (prg *prg_PL) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (prg *prg_PL) WeekdayWide(weekday time.Weekday) string {
+	if len(prg.daysWide) == 0 {
+		return ""
+	}
 	return prg.daysWide[weekday]
 }
 

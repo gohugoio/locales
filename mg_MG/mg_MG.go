@@ -96,6 +96,9 @@ func (mg *mg_MG) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (mg *mg_MG) MonthAbbreviated(month time.Month) string {
+	if len(mg.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return mg.monthsAbbreviated[month]
 }
 
@@ -106,6 +109,9 @@ func (mg *mg_MG) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (mg *mg_MG) MonthNarrow(month time.Month) string {
+	if len(mg.monthsNarrow) == 0 {
+		return ""
+	}
 	return mg.monthsNarrow[month]
 }
 
@@ -116,6 +122,9 @@ func (mg *mg_MG) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (mg *mg_MG) MonthWide(month time.Month) string {
+	if len(mg.monthsWide) == 0 {
+		return ""
+	}
 	return mg.monthsWide[month]
 }
 
@@ -126,6 +135,9 @@ func (mg *mg_MG) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (mg *mg_MG) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(mg.daysAbbreviated) == 0 {
+		return ""
+	}
 	return mg.daysAbbreviated[weekday]
 }
 
@@ -136,6 +148,9 @@ func (mg *mg_MG) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (mg *mg_MG) WeekdayNarrow(weekday time.Weekday) string {
+	if len(mg.daysNarrow) == 0 {
+		return ""
+	}
 	return mg.daysNarrow[weekday]
 }
 
@@ -146,6 +161,9 @@ func (mg *mg_MG) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (mg *mg_MG) WeekdayShort(weekday time.Weekday) string {
+	if len(mg.daysShort) == 0 {
+		return ""
+	}
 	return mg.daysShort[weekday]
 }
 
@@ -156,6 +174,9 @@ func (mg *mg_MG) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (mg *mg_MG) WeekdayWide(weekday time.Weekday) string {
+	if len(mg.daysWide) == 0 {
+		return ""
+	}
 	return mg.daysWide[weekday]
 }
 

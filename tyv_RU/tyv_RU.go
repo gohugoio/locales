@@ -91,6 +91,9 @@ func (tyv *tyv_RU) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (tyv *tyv_RU) MonthAbbreviated(month time.Month) string {
+	if len(tyv.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return tyv.monthsAbbreviated[month]
 }
 
@@ -101,6 +104,9 @@ func (tyv *tyv_RU) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (tyv *tyv_RU) MonthNarrow(month time.Month) string {
+	if len(tyv.monthsNarrow) == 0 {
+		return ""
+	}
 	return tyv.monthsNarrow[month]
 }
 
@@ -111,6 +117,9 @@ func (tyv *tyv_RU) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (tyv *tyv_RU) MonthWide(month time.Month) string {
+	if len(tyv.monthsWide) == 0 {
+		return ""
+	}
 	return tyv.monthsWide[month]
 }
 
@@ -121,6 +130,9 @@ func (tyv *tyv_RU) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (tyv *tyv_RU) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(tyv.daysAbbreviated) == 0 {
+		return ""
+	}
 	return tyv.daysAbbreviated[weekday]
 }
 
@@ -131,6 +143,9 @@ func (tyv *tyv_RU) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (tyv *tyv_RU) WeekdayNarrow(weekday time.Weekday) string {
+	if len(tyv.daysNarrow) == 0 {
+		return ""
+	}
 	return tyv.daysNarrow[weekday]
 }
 
@@ -141,6 +156,9 @@ func (tyv *tyv_RU) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (tyv *tyv_RU) WeekdayShort(weekday time.Weekday) string {
+	if len(tyv.daysShort) == 0 {
+		return ""
+	}
 	return tyv.daysShort[weekday]
 }
 
@@ -151,6 +169,9 @@ func (tyv *tyv_RU) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (tyv *tyv_RU) WeekdayWide(weekday time.Weekday) string {
+	if len(tyv.daysWide) == 0 {
+		return ""
+	}
 	return tyv.daysWide[weekday]
 }
 

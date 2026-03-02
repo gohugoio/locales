@@ -91,6 +91,9 @@ func (mni *mni_Beng) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 u
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (mni *mni_Beng) MonthAbbreviated(month time.Month) string {
+	if len(mni.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return mni.monthsAbbreviated[month]
 }
 
@@ -101,6 +104,9 @@ func (mni *mni_Beng) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (mni *mni_Beng) MonthNarrow(month time.Month) string {
+	if len(mni.monthsNarrow) == 0 {
+		return ""
+	}
 	return mni.monthsNarrow[month]
 }
 
@@ -111,6 +117,9 @@ func (mni *mni_Beng) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (mni *mni_Beng) MonthWide(month time.Month) string {
+	if len(mni.monthsWide) == 0 {
+		return ""
+	}
 	return mni.monthsWide[month]
 }
 
@@ -121,6 +130,9 @@ func (mni *mni_Beng) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (mni *mni_Beng) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(mni.daysAbbreviated) == 0 {
+		return ""
+	}
 	return mni.daysAbbreviated[weekday]
 }
 
@@ -131,6 +143,9 @@ func (mni *mni_Beng) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (mni *mni_Beng) WeekdayNarrow(weekday time.Weekday) string {
+	if len(mni.daysNarrow) == 0 {
+		return ""
+	}
 	return mni.daysNarrow[weekday]
 }
 
@@ -141,6 +156,9 @@ func (mni *mni_Beng) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (mni *mni_Beng) WeekdayShort(weekday time.Weekday) string {
+	if len(mni.daysShort) == 0 {
+		return ""
+	}
 	return mni.daysShort[weekday]
 }
 
@@ -151,6 +169,9 @@ func (mni *mni_Beng) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (mni *mni_Beng) WeekdayWide(weekday time.Weekday) string {
+	if len(mni.daysWide) == 0 {
+		return ""
+	}
 	return mni.daysWide[weekday]
 }
 

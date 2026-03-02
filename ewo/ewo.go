@@ -94,6 +94,9 @@ func (ewo *ewo) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (ewo *ewo) MonthAbbreviated(month time.Month) string {
+	if len(ewo.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return ewo.monthsAbbreviated[month]
 }
 
@@ -104,6 +107,9 @@ func (ewo *ewo) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (ewo *ewo) MonthNarrow(month time.Month) string {
+	if len(ewo.monthsNarrow) == 0 {
+		return ""
+	}
 	return ewo.monthsNarrow[month]
 }
 
@@ -114,6 +120,9 @@ func (ewo *ewo) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (ewo *ewo) MonthWide(month time.Month) string {
+	if len(ewo.monthsWide) == 0 {
+		return ""
+	}
 	return ewo.monthsWide[month]
 }
 
@@ -124,6 +133,9 @@ func (ewo *ewo) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (ewo *ewo) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(ewo.daysAbbreviated) == 0 {
+		return ""
+	}
 	return ewo.daysAbbreviated[weekday]
 }
 
@@ -134,6 +146,9 @@ func (ewo *ewo) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (ewo *ewo) WeekdayNarrow(weekday time.Weekday) string {
+	if len(ewo.daysNarrow) == 0 {
+		return ""
+	}
 	return ewo.daysNarrow[weekday]
 }
 
@@ -144,6 +159,9 @@ func (ewo *ewo) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (ewo *ewo) WeekdayShort(weekday time.Weekday) string {
+	if len(ewo.daysShort) == 0 {
+		return ""
+	}
 	return ewo.daysShort[weekday]
 }
 
@@ -154,6 +172,9 @@ func (ewo *ewo) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (ewo *ewo) WeekdayWide(weekday time.Weekday) string {
+	if len(ewo.daysWide) == 0 {
+		return ""
+	}
 	return ewo.daysWide[weekday]
 }
 

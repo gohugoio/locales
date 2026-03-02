@@ -92,6 +92,9 @@ func (aa *aa_DJ) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (aa *aa_DJ) MonthAbbreviated(month time.Month) string {
+	if len(aa.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return aa.monthsAbbreviated[month]
 }
 
@@ -102,6 +105,9 @@ func (aa *aa_DJ) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (aa *aa_DJ) MonthNarrow(month time.Month) string {
+	if len(aa.monthsNarrow) == 0 {
+		return ""
+	}
 	return aa.monthsNarrow[month]
 }
 
@@ -112,6 +118,9 @@ func (aa *aa_DJ) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (aa *aa_DJ) MonthWide(month time.Month) string {
+	if len(aa.monthsWide) == 0 {
+		return ""
+	}
 	return aa.monthsWide[month]
 }
 
@@ -122,6 +131,9 @@ func (aa *aa_DJ) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (aa *aa_DJ) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(aa.daysAbbreviated) == 0 {
+		return ""
+	}
 	return aa.daysAbbreviated[weekday]
 }
 
@@ -132,6 +144,9 @@ func (aa *aa_DJ) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (aa *aa_DJ) WeekdayNarrow(weekday time.Weekday) string {
+	if len(aa.daysNarrow) == 0 {
+		return ""
+	}
 	return aa.daysNarrow[weekday]
 }
 
@@ -142,6 +157,9 @@ func (aa *aa_DJ) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (aa *aa_DJ) WeekdayShort(weekday time.Weekday) string {
+	if len(aa.daysShort) == 0 {
+		return ""
+	}
 	return aa.daysShort[weekday]
 }
 
@@ -152,6 +170,9 @@ func (aa *aa_DJ) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (aa *aa_DJ) WeekdayWide(weekday time.Weekday) string {
+	if len(aa.daysWide) == 0 {
+		return ""
+	}
 	return aa.daysWide[weekday]
 }
 

@@ -90,6 +90,9 @@ func (ses *ses_ML) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (ses *ses_ML) MonthAbbreviated(month time.Month) string {
+	if len(ses.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return ses.monthsAbbreviated[month]
 }
 
@@ -100,6 +103,9 @@ func (ses *ses_ML) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (ses *ses_ML) MonthNarrow(month time.Month) string {
+	if len(ses.monthsNarrow) == 0 {
+		return ""
+	}
 	return ses.monthsNarrow[month]
 }
 
@@ -110,6 +116,9 @@ func (ses *ses_ML) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (ses *ses_ML) MonthWide(month time.Month) string {
+	if len(ses.monthsWide) == 0 {
+		return ""
+	}
 	return ses.monthsWide[month]
 }
 
@@ -120,6 +129,9 @@ func (ses *ses_ML) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (ses *ses_ML) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(ses.daysAbbreviated) == 0 {
+		return ""
+	}
 	return ses.daysAbbreviated[weekday]
 }
 
@@ -130,6 +142,9 @@ func (ses *ses_ML) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (ses *ses_ML) WeekdayNarrow(weekday time.Weekday) string {
+	if len(ses.daysNarrow) == 0 {
+		return ""
+	}
 	return ses.daysNarrow[weekday]
 }
 
@@ -140,6 +155,9 @@ func (ses *ses_ML) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (ses *ses_ML) WeekdayShort(weekday time.Weekday) string {
+	if len(ses.daysShort) == 0 {
+		return ""
+	}
 	return ses.daysShort[weekday]
 }
 
@@ -150,6 +168,9 @@ func (ses *ses_ML) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (ses *ses_ML) WeekdayWide(weekday time.Weekday) string {
+	if len(ses.daysWide) == 0 {
+		return ""
+	}
 	return ses.daysWide[weekday]
 }
 

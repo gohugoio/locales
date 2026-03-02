@@ -94,6 +94,9 @@ func (kde *kde) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (kde *kde) MonthAbbreviated(month time.Month) string {
+	if len(kde.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return kde.monthsAbbreviated[month]
 }
 
@@ -104,6 +107,9 @@ func (kde *kde) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (kde *kde) MonthNarrow(month time.Month) string {
+	if len(kde.monthsNarrow) == 0 {
+		return ""
+	}
 	return kde.monthsNarrow[month]
 }
 
@@ -114,6 +120,9 @@ func (kde *kde) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (kde *kde) MonthWide(month time.Month) string {
+	if len(kde.monthsWide) == 0 {
+		return ""
+	}
 	return kde.monthsWide[month]
 }
 
@@ -124,6 +133,9 @@ func (kde *kde) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (kde *kde) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(kde.daysAbbreviated) == 0 {
+		return ""
+	}
 	return kde.daysAbbreviated[weekday]
 }
 
@@ -134,6 +146,9 @@ func (kde *kde) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (kde *kde) WeekdayNarrow(weekday time.Weekday) string {
+	if len(kde.daysNarrow) == 0 {
+		return ""
+	}
 	return kde.daysNarrow[weekday]
 }
 
@@ -144,6 +159,9 @@ func (kde *kde) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (kde *kde) WeekdayShort(weekday time.Weekday) string {
+	if len(kde.daysShort) == 0 {
+		return ""
+	}
 	return kde.daysShort[weekday]
 }
 
@@ -154,6 +172,9 @@ func (kde *kde) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (kde *kde) WeekdayWide(weekday time.Weekday) string {
+	if len(kde.daysWide) == 0 {
+		return ""
+	}
 	return kde.daysWide[weekday]
 }
 

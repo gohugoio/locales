@@ -94,6 +94,9 @@ func (kam *kam_KE) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (kam *kam_KE) MonthAbbreviated(month time.Month) string {
+	if len(kam.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return kam.monthsAbbreviated[month]
 }
 
@@ -104,6 +107,9 @@ func (kam *kam_KE) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (kam *kam_KE) MonthNarrow(month time.Month) string {
+	if len(kam.monthsNarrow) == 0 {
+		return ""
+	}
 	return kam.monthsNarrow[month]
 }
 
@@ -114,6 +120,9 @@ func (kam *kam_KE) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (kam *kam_KE) MonthWide(month time.Month) string {
+	if len(kam.monthsWide) == 0 {
+		return ""
+	}
 	return kam.monthsWide[month]
 }
 
@@ -124,6 +133,9 @@ func (kam *kam_KE) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (kam *kam_KE) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(kam.daysAbbreviated) == 0 {
+		return ""
+	}
 	return kam.daysAbbreviated[weekday]
 }
 
@@ -134,6 +146,9 @@ func (kam *kam_KE) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (kam *kam_KE) WeekdayNarrow(weekday time.Weekday) string {
+	if len(kam.daysNarrow) == 0 {
+		return ""
+	}
 	return kam.daysNarrow[weekday]
 }
 
@@ -144,6 +159,9 @@ func (kam *kam_KE) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (kam *kam_KE) WeekdayShort(weekday time.Weekday) string {
+	if len(kam.daysShort) == 0 {
+		return ""
+	}
 	return kam.daysShort[weekday]
 }
 
@@ -154,6 +172,9 @@ func (kam *kam_KE) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (kam *kam_KE) WeekdayWide(weekday time.Weekday) string {
+	if len(kam.daysWide) == 0 {
+		return ""
+	}
 	return kam.daysWide[weekday]
 }
 

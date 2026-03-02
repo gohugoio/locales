@@ -86,6 +86,9 @@ func (kek *kek) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (kek *kek) MonthAbbreviated(month time.Month) string {
+	if len(kek.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return kek.monthsAbbreviated[month]
 }
 
@@ -96,6 +99,9 @@ func (kek *kek) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (kek *kek) MonthNarrow(month time.Month) string {
+	if len(kek.monthsNarrow) == 0 {
+		return ""
+	}
 	return kek.monthsNarrow[month]
 }
 
@@ -106,6 +112,9 @@ func (kek *kek) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (kek *kek) MonthWide(month time.Month) string {
+	if len(kek.monthsWide) == 0 {
+		return ""
+	}
 	return kek.monthsWide[month]
 }
 
@@ -116,6 +125,9 @@ func (kek *kek) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (kek *kek) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(kek.daysAbbreviated) == 0 {
+		return ""
+	}
 	return kek.daysAbbreviated[weekday]
 }
 
@@ -126,6 +138,9 @@ func (kek *kek) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (kek *kek) WeekdayNarrow(weekday time.Weekday) string {
+	if len(kek.daysNarrow) == 0 {
+		return ""
+	}
 	return kek.daysNarrow[weekday]
 }
 
@@ -136,6 +151,9 @@ func (kek *kek) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (kek *kek) WeekdayShort(weekday time.Weekday) string {
+	if len(kek.daysShort) == 0 {
+		return ""
+	}
 	return kek.daysShort[weekday]
 }
 
@@ -146,6 +164,9 @@ func (kek *kek) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (kek *kek) WeekdayWide(weekday time.Weekday) string {
+	if len(kek.daysWide) == 0 {
+		return ""
+	}
 	return kek.daysWide[weekday]
 }
 

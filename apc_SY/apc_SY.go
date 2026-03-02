@@ -86,6 +86,9 @@ func (apc *apc_SY) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (apc *apc_SY) MonthAbbreviated(month time.Month) string {
+	if len(apc.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return apc.monthsAbbreviated[month]
 }
 
@@ -96,6 +99,9 @@ func (apc *apc_SY) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (apc *apc_SY) MonthNarrow(month time.Month) string {
+	if len(apc.monthsNarrow) == 0 {
+		return ""
+	}
 	return apc.monthsNarrow[month]
 }
 
@@ -106,6 +112,9 @@ func (apc *apc_SY) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (apc *apc_SY) MonthWide(month time.Month) string {
+	if len(apc.monthsWide) == 0 {
+		return ""
+	}
 	return apc.monthsWide[month]
 }
 
@@ -116,6 +125,9 @@ func (apc *apc_SY) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (apc *apc_SY) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(apc.daysAbbreviated) == 0 {
+		return ""
+	}
 	return apc.daysAbbreviated[weekday]
 }
 
@@ -126,6 +138,9 @@ func (apc *apc_SY) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (apc *apc_SY) WeekdayNarrow(weekday time.Weekday) string {
+	if len(apc.daysNarrow) == 0 {
+		return ""
+	}
 	return apc.daysNarrow[weekday]
 }
 
@@ -136,6 +151,9 @@ func (apc *apc_SY) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (apc *apc_SY) WeekdayShort(weekday time.Weekday) string {
+	if len(apc.daysShort) == 0 {
+		return ""
+	}
 	return apc.daysShort[weekday]
 }
 
@@ -146,6 +164,9 @@ func (apc *apc_SY) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (apc *apc_SY) WeekdayWide(weekday time.Weekday) string {
+	if len(apc.daysWide) == 0 {
+		return ""
+	}
 	return apc.daysWide[weekday]
 }
 

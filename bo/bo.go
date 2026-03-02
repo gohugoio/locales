@@ -89,6 +89,9 @@ func (bo *bo) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) 
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (bo *bo) MonthAbbreviated(month time.Month) string {
+	if len(bo.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return bo.monthsAbbreviated[month]
 }
 
@@ -99,6 +102,9 @@ func (bo *bo) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (bo *bo) MonthNarrow(month time.Month) string {
+	if len(bo.monthsNarrow) == 0 {
+		return ""
+	}
 	return bo.monthsNarrow[month]
 }
 
@@ -109,6 +115,9 @@ func (bo *bo) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (bo *bo) MonthWide(month time.Month) string {
+	if len(bo.monthsWide) == 0 {
+		return ""
+	}
 	return bo.monthsWide[month]
 }
 
@@ -119,6 +128,9 @@ func (bo *bo) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (bo *bo) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(bo.daysAbbreviated) == 0 {
+		return ""
+	}
 	return bo.daysAbbreviated[weekday]
 }
 
@@ -129,6 +141,9 @@ func (bo *bo) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (bo *bo) WeekdayNarrow(weekday time.Weekday) string {
+	if len(bo.daysNarrow) == 0 {
+		return ""
+	}
 	return bo.daysNarrow[weekday]
 }
 
@@ -139,6 +154,9 @@ func (bo *bo) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (bo *bo) WeekdayShort(weekday time.Weekday) string {
+	if len(bo.daysShort) == 0 {
+		return ""
+	}
 	return bo.daysShort[weekday]
 }
 
@@ -149,6 +167,9 @@ func (bo *bo) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (bo *bo) WeekdayWide(weekday time.Weekday) string {
+	if len(bo.daysWide) == 0 {
+		return ""
+	}
 	return bo.daysWide[weekday]
 }
 

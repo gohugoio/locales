@@ -93,6 +93,9 @@ func (luy *luy) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (luy *luy) MonthAbbreviated(month time.Month) string {
+	if len(luy.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return luy.monthsAbbreviated[month]
 }
 
@@ -103,6 +106,9 @@ func (luy *luy) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (luy *luy) MonthNarrow(month time.Month) string {
+	if len(luy.monthsNarrow) == 0 {
+		return ""
+	}
 	return luy.monthsNarrow[month]
 }
 
@@ -113,6 +119,9 @@ func (luy *luy) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (luy *luy) MonthWide(month time.Month) string {
+	if len(luy.monthsWide) == 0 {
+		return ""
+	}
 	return luy.monthsWide[month]
 }
 
@@ -123,6 +132,9 @@ func (luy *luy) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (luy *luy) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(luy.daysAbbreviated) == 0 {
+		return ""
+	}
 	return luy.daysAbbreviated[weekday]
 }
 
@@ -133,6 +145,9 @@ func (luy *luy) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (luy *luy) WeekdayNarrow(weekday time.Weekday) string {
+	if len(luy.daysNarrow) == 0 {
+		return ""
+	}
 	return luy.daysNarrow[weekday]
 }
 
@@ -143,6 +158,9 @@ func (luy *luy) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (luy *luy) WeekdayShort(weekday time.Weekday) string {
+	if len(luy.daysShort) == 0 {
+		return ""
+	}
 	return luy.daysShort[weekday]
 }
 
@@ -153,6 +171,9 @@ func (luy *luy) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (luy *luy) WeekdayWide(weekday time.Weekday) string {
+	if len(luy.daysWide) == 0 {
+		return ""
+	}
 	return luy.daysWide[weekday]
 }
 

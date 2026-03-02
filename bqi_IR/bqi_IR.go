@@ -92,6 +92,9 @@ func (bqi *bqi_IR) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (bqi *bqi_IR) MonthAbbreviated(month time.Month) string {
+	if len(bqi.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return bqi.monthsAbbreviated[month]
 }
 
@@ -102,6 +105,9 @@ func (bqi *bqi_IR) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (bqi *bqi_IR) MonthNarrow(month time.Month) string {
+	if len(bqi.monthsNarrow) == 0 {
+		return ""
+	}
 	return bqi.monthsNarrow[month]
 }
 
@@ -112,6 +118,9 @@ func (bqi *bqi_IR) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (bqi *bqi_IR) MonthWide(month time.Month) string {
+	if len(bqi.monthsWide) == 0 {
+		return ""
+	}
 	return bqi.monthsWide[month]
 }
 
@@ -122,6 +131,9 @@ func (bqi *bqi_IR) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (bqi *bqi_IR) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(bqi.daysAbbreviated) == 0 {
+		return ""
+	}
 	return bqi.daysAbbreviated[weekday]
 }
 
@@ -132,6 +144,9 @@ func (bqi *bqi_IR) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (bqi *bqi_IR) WeekdayNarrow(weekday time.Weekday) string {
+	if len(bqi.daysNarrow) == 0 {
+		return ""
+	}
 	return bqi.daysNarrow[weekday]
 }
 
@@ -142,6 +157,9 @@ func (bqi *bqi_IR) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (bqi *bqi_IR) WeekdayShort(weekday time.Weekday) string {
+	if len(bqi.daysShort) == 0 {
+		return ""
+	}
 	return bqi.daysShort[weekday]
 }
 
@@ -152,6 +170,9 @@ func (bqi *bqi_IR) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (bqi *bqi_IR) WeekdayWide(weekday time.Weekday) string {
+	if len(bqi.daysWide) == 0 {
+		return ""
+	}
 	return bqi.daysWide[weekday]
 }
 

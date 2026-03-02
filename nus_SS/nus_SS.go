@@ -96,6 +96,9 @@ func (nus *nus_SS) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (nus *nus_SS) MonthAbbreviated(month time.Month) string {
+	if len(nus.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return nus.monthsAbbreviated[month]
 }
 
@@ -106,6 +109,9 @@ func (nus *nus_SS) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (nus *nus_SS) MonthNarrow(month time.Month) string {
+	if len(nus.monthsNarrow) == 0 {
+		return ""
+	}
 	return nus.monthsNarrow[month]
 }
 
@@ -116,6 +122,9 @@ func (nus *nus_SS) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (nus *nus_SS) MonthWide(month time.Month) string {
+	if len(nus.monthsWide) == 0 {
+		return ""
+	}
 	return nus.monthsWide[month]
 }
 
@@ -126,6 +135,9 @@ func (nus *nus_SS) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (nus *nus_SS) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(nus.daysAbbreviated) == 0 {
+		return ""
+	}
 	return nus.daysAbbreviated[weekday]
 }
 
@@ -136,6 +148,9 @@ func (nus *nus_SS) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (nus *nus_SS) WeekdayNarrow(weekday time.Weekday) string {
+	if len(nus.daysNarrow) == 0 {
+		return ""
+	}
 	return nus.daysNarrow[weekday]
 }
 
@@ -146,6 +161,9 @@ func (nus *nus_SS) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (nus *nus_SS) WeekdayShort(weekday time.Weekday) string {
+	if len(nus.daysShort) == 0 {
+		return ""
+	}
 	return nus.daysShort[weekday]
 }
 
@@ -156,6 +174,9 @@ func (nus *nus_SS) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (nus *nus_SS) WeekdayWide(weekday time.Weekday) string {
+	if len(nus.daysWide) == 0 {
+		return ""
+	}
 	return nus.daysWide[weekday]
 }
 

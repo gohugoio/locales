@@ -91,6 +91,9 @@ func (kaa *kaa_Latn_UZ) RangePluralRule(num1 float64, v1 uint64, num2 float64, v
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (kaa *kaa_Latn_UZ) MonthAbbreviated(month time.Month) string {
+	if len(kaa.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return kaa.monthsAbbreviated[month]
 }
 
@@ -101,6 +104,9 @@ func (kaa *kaa_Latn_UZ) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (kaa *kaa_Latn_UZ) MonthNarrow(month time.Month) string {
+	if len(kaa.monthsNarrow) == 0 {
+		return ""
+	}
 	return kaa.monthsNarrow[month]
 }
 
@@ -111,6 +117,9 @@ func (kaa *kaa_Latn_UZ) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (kaa *kaa_Latn_UZ) MonthWide(month time.Month) string {
+	if len(kaa.monthsWide) == 0 {
+		return ""
+	}
 	return kaa.monthsWide[month]
 }
 
@@ -121,6 +130,9 @@ func (kaa *kaa_Latn_UZ) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (kaa *kaa_Latn_UZ) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(kaa.daysAbbreviated) == 0 {
+		return ""
+	}
 	return kaa.daysAbbreviated[weekday]
 }
 
@@ -131,6 +143,9 @@ func (kaa *kaa_Latn_UZ) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (kaa *kaa_Latn_UZ) WeekdayNarrow(weekday time.Weekday) string {
+	if len(kaa.daysNarrow) == 0 {
+		return ""
+	}
 	return kaa.daysNarrow[weekday]
 }
 
@@ -141,6 +156,9 @@ func (kaa *kaa_Latn_UZ) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (kaa *kaa_Latn_UZ) WeekdayShort(weekday time.Weekday) string {
+	if len(kaa.daysShort) == 0 {
+		return ""
+	}
 	return kaa.daysShort[weekday]
 }
 
@@ -151,6 +169,9 @@ func (kaa *kaa_Latn_UZ) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (kaa *kaa_Latn_UZ) WeekdayWide(weekday time.Weekday) string {
+	if len(kaa.daysWide) == 0 {
+		return ""
+	}
 	return kaa.daysWide[weekday]
 }
 

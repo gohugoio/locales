@@ -91,6 +91,9 @@ func (bo *bo_IN) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (bo *bo_IN) MonthAbbreviated(month time.Month) string {
+	if len(bo.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return bo.monthsAbbreviated[month]
 }
 
@@ -101,6 +104,9 @@ func (bo *bo_IN) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (bo *bo_IN) MonthNarrow(month time.Month) string {
+	if len(bo.monthsNarrow) == 0 {
+		return ""
+	}
 	return bo.monthsNarrow[month]
 }
 
@@ -111,6 +117,9 @@ func (bo *bo_IN) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (bo *bo_IN) MonthWide(month time.Month) string {
+	if len(bo.monthsWide) == 0 {
+		return ""
+	}
 	return bo.monthsWide[month]
 }
 
@@ -121,6 +130,9 @@ func (bo *bo_IN) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (bo *bo_IN) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(bo.daysAbbreviated) == 0 {
+		return ""
+	}
 	return bo.daysAbbreviated[weekday]
 }
 
@@ -131,6 +143,9 @@ func (bo *bo_IN) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (bo *bo_IN) WeekdayNarrow(weekday time.Weekday) string {
+	if len(bo.daysNarrow) == 0 {
+		return ""
+	}
 	return bo.daysNarrow[weekday]
 }
 
@@ -141,6 +156,9 @@ func (bo *bo_IN) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (bo *bo_IN) WeekdayShort(weekday time.Weekday) string {
+	if len(bo.daysShort) == 0 {
+		return ""
+	}
 	return bo.daysShort[weekday]
 }
 
@@ -151,6 +169,9 @@ func (bo *bo_IN) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (bo *bo_IN) WeekdayWide(weekday time.Weekday) string {
+	if len(bo.daysWide) == 0 {
+		return ""
+	}
 	return bo.daysWide[weekday]
 }
 

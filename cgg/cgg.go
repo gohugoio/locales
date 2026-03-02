@@ -96,6 +96,9 @@ func (cgg *cgg) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (cgg *cgg) MonthAbbreviated(month time.Month) string {
+	if len(cgg.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return cgg.monthsAbbreviated[month]
 }
 
@@ -106,6 +109,9 @@ func (cgg *cgg) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (cgg *cgg) MonthNarrow(month time.Month) string {
+	if len(cgg.monthsNarrow) == 0 {
+		return ""
+	}
 	return cgg.monthsNarrow[month]
 }
 
@@ -116,6 +122,9 @@ func (cgg *cgg) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (cgg *cgg) MonthWide(month time.Month) string {
+	if len(cgg.monthsWide) == 0 {
+		return ""
+	}
 	return cgg.monthsWide[month]
 }
 
@@ -126,6 +135,9 @@ func (cgg *cgg) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (cgg *cgg) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(cgg.daysAbbreviated) == 0 {
+		return ""
+	}
 	return cgg.daysAbbreviated[weekday]
 }
 
@@ -136,6 +148,9 @@ func (cgg *cgg) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (cgg *cgg) WeekdayNarrow(weekday time.Weekday) string {
+	if len(cgg.daysNarrow) == 0 {
+		return ""
+	}
 	return cgg.daysNarrow[weekday]
 }
 
@@ -146,6 +161,9 @@ func (cgg *cgg) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (cgg *cgg) WeekdayShort(weekday time.Weekday) string {
+	if len(cgg.daysShort) == 0 {
+		return ""
+	}
 	return cgg.daysShort[weekday]
 }
 
@@ -156,6 +174,9 @@ func (cgg *cgg) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (cgg *cgg) WeekdayWide(weekday time.Weekday) string {
+	if len(cgg.daysWide) == 0 {
+		return ""
+	}
 	return cgg.daysWide[weekday]
 }
 

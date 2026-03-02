@@ -96,6 +96,9 @@ func (jmc *jmc_TZ) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (jmc *jmc_TZ) MonthAbbreviated(month time.Month) string {
+	if len(jmc.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return jmc.monthsAbbreviated[month]
 }
 
@@ -106,6 +109,9 @@ func (jmc *jmc_TZ) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (jmc *jmc_TZ) MonthNarrow(month time.Month) string {
+	if len(jmc.monthsNarrow) == 0 {
+		return ""
+	}
 	return jmc.monthsNarrow[month]
 }
 
@@ -116,6 +122,9 @@ func (jmc *jmc_TZ) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (jmc *jmc_TZ) MonthWide(month time.Month) string {
+	if len(jmc.monthsWide) == 0 {
+		return ""
+	}
 	return jmc.monthsWide[month]
 }
 
@@ -126,6 +135,9 @@ func (jmc *jmc_TZ) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (jmc *jmc_TZ) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(jmc.daysAbbreviated) == 0 {
+		return ""
+	}
 	return jmc.daysAbbreviated[weekday]
 }
 
@@ -136,6 +148,9 @@ func (jmc *jmc_TZ) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (jmc *jmc_TZ) WeekdayNarrow(weekday time.Weekday) string {
+	if len(jmc.daysNarrow) == 0 {
+		return ""
+	}
 	return jmc.daysNarrow[weekday]
 }
 
@@ -146,6 +161,9 @@ func (jmc *jmc_TZ) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (jmc *jmc_TZ) WeekdayShort(weekday time.Weekday) string {
+	if len(jmc.daysShort) == 0 {
+		return ""
+	}
 	return jmc.daysShort[weekday]
 }
 
@@ -156,6 +174,9 @@ func (jmc *jmc_TZ) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (jmc *jmc_TZ) WeekdayWide(weekday time.Weekday) string {
+	if len(jmc.daysWide) == 0 {
+		return ""
+	}
 	return jmc.daysWide[weekday]
 }
 

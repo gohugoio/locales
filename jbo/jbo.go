@@ -84,6 +84,9 @@ func (jbo *jbo) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (jbo *jbo) MonthAbbreviated(month time.Month) string {
+	if len(jbo.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return jbo.monthsAbbreviated[month]
 }
 
@@ -94,6 +97,9 @@ func (jbo *jbo) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (jbo *jbo) MonthNarrow(month time.Month) string {
+	if len(jbo.monthsNarrow) == 0 {
+		return ""
+	}
 	return jbo.monthsNarrow[month]
 }
 
@@ -104,6 +110,9 @@ func (jbo *jbo) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (jbo *jbo) MonthWide(month time.Month) string {
+	if len(jbo.monthsWide) == 0 {
+		return ""
+	}
 	return jbo.monthsWide[month]
 }
 
@@ -114,6 +123,9 @@ func (jbo *jbo) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (jbo *jbo) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(jbo.daysAbbreviated) == 0 {
+		return ""
+	}
 	return jbo.daysAbbreviated[weekday]
 }
 
@@ -124,6 +136,9 @@ func (jbo *jbo) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (jbo *jbo) WeekdayNarrow(weekday time.Weekday) string {
+	if len(jbo.daysNarrow) == 0 {
+		return ""
+	}
 	return jbo.daysNarrow[weekday]
 }
 
@@ -134,6 +149,9 @@ func (jbo *jbo) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (jbo *jbo) WeekdayShort(weekday time.Weekday) string {
+	if len(jbo.daysShort) == 0 {
+		return ""
+	}
 	return jbo.daysShort[weekday]
 }
 
@@ -144,6 +162,9 @@ func (jbo *jbo) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (jbo *jbo) WeekdayWide(weekday time.Weekday) string {
+	if len(jbo.daysWide) == 0 {
+		return ""
+	}
 	return jbo.daysWide[weekday]
 }
 

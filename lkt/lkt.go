@@ -88,6 +88,9 @@ func (lkt *lkt) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (lkt *lkt) MonthAbbreviated(month time.Month) string {
+	if len(lkt.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return lkt.monthsAbbreviated[month]
 }
 
@@ -98,6 +101,9 @@ func (lkt *lkt) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (lkt *lkt) MonthNarrow(month time.Month) string {
+	if len(lkt.monthsNarrow) == 0 {
+		return ""
+	}
 	return lkt.monthsNarrow[month]
 }
 
@@ -108,6 +114,9 @@ func (lkt *lkt) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (lkt *lkt) MonthWide(month time.Month) string {
+	if len(lkt.monthsWide) == 0 {
+		return ""
+	}
 	return lkt.monthsWide[month]
 }
 
@@ -118,6 +127,9 @@ func (lkt *lkt) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (lkt *lkt) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(lkt.daysAbbreviated) == 0 {
+		return ""
+	}
 	return lkt.daysAbbreviated[weekday]
 }
 
@@ -128,6 +140,9 @@ func (lkt *lkt) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (lkt *lkt) WeekdayNarrow(weekday time.Weekday) string {
+	if len(lkt.daysNarrow) == 0 {
+		return ""
+	}
 	return lkt.daysNarrow[weekday]
 }
 
@@ -138,6 +153,9 @@ func (lkt *lkt) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (lkt *lkt) WeekdayShort(weekday time.Weekday) string {
+	if len(lkt.daysShort) == 0 {
+		return ""
+	}
 	return lkt.daysShort[weekday]
 }
 
@@ -148,6 +166,9 @@ func (lkt *lkt) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (lkt *lkt) WeekdayWide(weekday time.Weekday) string {
+	if len(lkt.daysWide) == 0 {
+		return ""
+	}
 	return lkt.daysWide[weekday]
 }
 

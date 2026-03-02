@@ -91,6 +91,9 @@ func (trv *trv) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (trv *trv) MonthAbbreviated(month time.Month) string {
+	if len(trv.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return trv.monthsAbbreviated[month]
 }
 
@@ -101,6 +104,9 @@ func (trv *trv) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (trv *trv) MonthNarrow(month time.Month) string {
+	if len(trv.monthsNarrow) == 0 {
+		return ""
+	}
 	return trv.monthsNarrow[month]
 }
 
@@ -111,6 +117,9 @@ func (trv *trv) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (trv *trv) MonthWide(month time.Month) string {
+	if len(trv.monthsWide) == 0 {
+		return ""
+	}
 	return trv.monthsWide[month]
 }
 
@@ -121,6 +130,9 @@ func (trv *trv) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (trv *trv) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(trv.daysAbbreviated) == 0 {
+		return ""
+	}
 	return trv.daysAbbreviated[weekday]
 }
 
@@ -131,6 +143,9 @@ func (trv *trv) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (trv *trv) WeekdayNarrow(weekday time.Weekday) string {
+	if len(trv.daysNarrow) == 0 {
+		return ""
+	}
 	return trv.daysNarrow[weekday]
 }
 
@@ -141,6 +156,9 @@ func (trv *trv) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (trv *trv) WeekdayShort(weekday time.Weekday) string {
+	if len(trv.daysShort) == 0 {
+		return ""
+	}
 	return trv.daysShort[weekday]
 }
 
@@ -151,6 +169,9 @@ func (trv *trv) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (trv *trv) WeekdayWide(weekday time.Weekday) string {
+	if len(trv.daysWide) == 0 {
+		return ""
+	}
 	return trv.daysWide[weekday]
 }
 

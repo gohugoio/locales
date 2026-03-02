@@ -95,6 +95,9 @@ func (yav *yav) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (yav *yav) MonthAbbreviated(month time.Month) string {
+	if len(yav.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return yav.monthsAbbreviated[month]
 }
 
@@ -105,6 +108,9 @@ func (yav *yav) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (yav *yav) MonthNarrow(month time.Month) string {
+	if len(yav.monthsNarrow) == 0 {
+		return ""
+	}
 	return yav.monthsNarrow[month]
 }
 
@@ -115,6 +121,9 @@ func (yav *yav) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (yav *yav) MonthWide(month time.Month) string {
+	if len(yav.monthsWide) == 0 {
+		return ""
+	}
 	return yav.monthsWide[month]
 }
 
@@ -125,6 +134,9 @@ func (yav *yav) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (yav *yav) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(yav.daysAbbreviated) == 0 {
+		return ""
+	}
 	return yav.daysAbbreviated[weekday]
 }
 
@@ -135,6 +147,9 @@ func (yav *yav) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (yav *yav) WeekdayNarrow(weekday time.Weekday) string {
+	if len(yav.daysNarrow) == 0 {
+		return ""
+	}
 	return yav.daysNarrow[weekday]
 }
 
@@ -145,6 +160,9 @@ func (yav *yav) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (yav *yav) WeekdayShort(weekday time.Weekday) string {
+	if len(yav.daysShort) == 0 {
+		return ""
+	}
 	return yav.daysShort[weekday]
 }
 
@@ -155,6 +173,9 @@ func (yav *yav) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (yav *yav) WeekdayWide(weekday time.Weekday) string {
+	if len(yav.daysWide) == 0 {
+		return ""
+	}
 	return yav.daysWide[weekday]
 }
 

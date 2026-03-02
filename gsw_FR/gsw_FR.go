@@ -111,6 +111,9 @@ func (gsw *gsw_FR) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (gsw *gsw_FR) MonthAbbreviated(month time.Month) string {
+	if len(gsw.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return gsw.monthsAbbreviated[month]
 }
 
@@ -121,6 +124,9 @@ func (gsw *gsw_FR) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (gsw *gsw_FR) MonthNarrow(month time.Month) string {
+	if len(gsw.monthsNarrow) == 0 {
+		return ""
+	}
 	return gsw.monthsNarrow[month]
 }
 
@@ -131,6 +137,9 @@ func (gsw *gsw_FR) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (gsw *gsw_FR) MonthWide(month time.Month) string {
+	if len(gsw.monthsWide) == 0 {
+		return ""
+	}
 	return gsw.monthsWide[month]
 }
 
@@ -141,6 +150,9 @@ func (gsw *gsw_FR) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (gsw *gsw_FR) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(gsw.daysAbbreviated) == 0 {
+		return ""
+	}
 	return gsw.daysAbbreviated[weekday]
 }
 
@@ -151,6 +163,9 @@ func (gsw *gsw_FR) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (gsw *gsw_FR) WeekdayNarrow(weekday time.Weekday) string {
+	if len(gsw.daysNarrow) == 0 {
+		return ""
+	}
 	return gsw.daysNarrow[weekday]
 }
 
@@ -161,6 +176,9 @@ func (gsw *gsw_FR) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (gsw *gsw_FR) WeekdayShort(weekday time.Weekday) string {
+	if len(gsw.daysShort) == 0 {
+		return ""
+	}
 	return gsw.daysShort[weekday]
 }
 
@@ -171,6 +189,9 @@ func (gsw *gsw_FR) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (gsw *gsw_FR) WeekdayWide(weekday time.Weekday) string {
+	if len(gsw.daysWide) == 0 {
+		return ""
+	}
 	return gsw.daysWide[weekday]
 }
 

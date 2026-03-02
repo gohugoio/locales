@@ -55,7 +55,7 @@ func New() locales.Translator {
 		daysAbbreviated:        []string{"Sü.", "Ma.", "Di.", "Mi.", "Du.", "Fr.", "Sa."},
 		daysNarrow:             []string{"S", "M", "D", "M", "D", "F", "S"},
 		daysWide:               []string{"Sünndag", "Maandag", "Dingsdag", "Middeweken", "Dunnersdag", "Freedag", "Sünnavend"},
-		timezones:              map[string]string{"ACDT": "Zentraalaustraalsch Summertiet", "ACST": "ACST", "ACT": "ACT", "ACWDT": "Westzentraalaustraalsch Summertiet", "ACWST": "Westzentraalaustraalsch Standardtiet", "ADT": "Noordamerikaansch Atlantik-Summertiet", "ADT Arabia": "Araabsch Summertiet", "AEDT": "Oostaustraalsch Summertiet", "AEST": "Oostaustraalsch Standardtiet", "AFT": "AFT", "AKDT": "AKDT", "AKST": "AKST", "AMST": "AMST", "AMST Armenia": "AMST Armenia", "AMT": "AMT", "AMT Armenia": "AMT Armenia", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "ARST", "ART": "ART", "AST": "Noordamerikaansch Atlantik-Standardtiet", "AST Arabia": "Araabsch Standardtiet", "AWDT": "Westaustraalsch Summertiet", "AWST": "Westaustraalsch Standardtiet", "AZST": "AZST", "AZT": "AZT", "BDT Bangladesh": "BDT Bangladesh", "BNT": "BNT", "BOT": "BOT", "BRST": "BRST", "BRT": "BRT", "BST Bangladesh": "BST Bangladesh", "BT": "BT", "CAST": "CAST", "CAT": "Zentraalafrikaansch Tiet", "CCT": "CCT", "CDT": "Noordamerikaansch zentraal Summertiet", "CHADT": "CHADT", "CHAST": "CHAST", "CHUT": "CHUT", "CKT": "CKT", "CKT DST": "CKT DST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "Noordamerikaansch zentraal Standardtiet", "CST China": "China-Standardtiet", "CST China DST": "China-Summertiet", "CVST": "CVST", "CVT": "CVT", "CXT": "CXT", "ChST": "ChST", "ChST NMI": "ChST NMI", "CuDT": "CuDT", "CuST": "CuST", "DAVT": "DAVT", "DDUT": "DDUT", "EASST": "EASST", "EAST": "EAST", "EAT": "Oostafrikaansch Tiet", "ECT": "ECT", "EDT": "Noordamerikaansch oosten Summertiet", "EGDT": "EGDT", "EGST": "EGST", "EST": "Noordamerikaansch oosten Standardtiet", "FEET": "FEET", "FJT": "FJT", "FJT Summer": "FJT Summer", "FKST": "FKST", "FKT": "FKT", "FNST": "FNST", "FNT": "FNT", "GALT": "GALT", "GAMT": "GAMT", "GEST": "GEST", "GET": "GET", "GFT": "GFT", "GIT": "GIT", "GMT": "Gröönwisch-Welttiet", "GNSST": "GNSST", "GNST": "GNST", "GST": "GST", "GST Guam": "GST Guam", "GYT": "GYT", "HADT": "HADT", "HAST": "HAST", "HKST": "HKST", "HKT": "HKT", "HOVST": "HOVST", "HOVT": "HOVT", "ICT": "Söödoostasiaatsch Tiet", "IDT": "Israel-Summertiet", "IOT": "IOT", "IRKST": "IRKST", "IRKT": "IRKT", "IRST": "IRST", "IRST DST": "IRST DST", "IST": "Indien-Tiet", "IST Israel": "Israel-Standardtiet", "JDT": "Japaansch Summertiet", "JST": "Japaansch Standardtiet", "KOST": "KOST", "KRAST": "KRAST", "KRAT": "KRAT", "KST": "Koreaansch Standardtiet", "KST DST": "Koreaansch Summertiet", "LHDT": "LHDT", "LHST": "LHST", "LINT": "LINT", "MAGST": "MAGST", "MAGT": "MAGT", "MART": "MART", "MAWT": "MAWT", "MDT": "Noordamerikaansch Barg-Summertiet", "MESZ": "Zentraaleuropääsch Summertiet", "MEZ": "Zentraaleuropääsch Standardtiet", "MHT": "MHT", "MMT": "MMT", "MSD": "Moskau-Summertiet", "MST": "Noordamerikaansch Barg-Standardtiet", "MUST": "MUST", "MUT": "MUT", "MVT": "MVT", "MYT": "MYT", "NCT": "NCT", "NDT": "NDT", "NDT New Caledonia": "NDT New Caledonia", "NFDT": "NFDT", "NFT": "NFT", "NOVST": "NOVST", "NOVT": "NOVT", "NPT": "NPT", "NRT": "NRT", "NST": "NST", "NUT": "NUT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "Oosteuropääsch Summertiet", "OEZ": "Oosteuropääsch Standardtiet", "OMSST": "OMSST", "OMST": "OMST", "PDT": "Noordamerikaansch Pazifik-Summertiet", "PDTM": "PDTM", "PETDT": "PETDT", "PETST": "PETST", "PGT": "PGT", "PHOT": "PHOT", "PKT": "PKT", "PKT DST": "PKT DST", "PMDT": "PMDT", "PMST": "PMST", "PONT": "PONT", "PST": "Noordamerikaansch Pazifik-Standardtiet", "PST Philippine": "PST Philippine", "PST Philippine DST": "PST Philippine DST", "PST Pitcairn": "PST Pitcairn", "PSTM": "PSTM", "PWT": "PWT", "PYST": "PYST", "PYT": "PYT", "PYT Korea": "PYT Korea", "RET": "RET", "ROTT": "ROTT", "SAKST": "SAKST", "SAKT": "SAKT", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "Söödafrikaansch Tiet", "SBT": "SBT", "SCT": "SCT", "SGT": "SGT", "SLST": "SLST", "SRT": "SRT", "SST Samoa": "SST Samoa", "SST Samoa Apia": "SST Samoa Apia", "SST Samoa Apia DST": "SST Samoa Apia DST", "SST Samoa DST": "SST Samoa DST", "SYOT": "SYOT", "TAAF": "TAAF", "TAHT": "TAHT", "TJT": "TJT", "TKT": "TKT", "TLT": "TLT", "TMST": "TMST", "TMT": "TMT", "TOST": "TOST", "TOT": "TOT", "TVT": "TVT", "TWT": "TWT", "TWT DST": "TWT DST", "ULAST": "ULAST", "ULAT": "ULAT", "UYST": "UYST", "UYT": "UYT", "UZT": "UZT", "UZT DST": "UZT DST", "VET": "VET", "VLAST": "VLAST", "VLAT": "VLAT", "VOLST": "VOLST", "VOLT": "VOLT", "VOST": "VOST", "VUT": "VUT", "VUT DST": "VUT DST", "WAKT": "WAKT", "WARST": "WARST", "WART": "WART", "WAST": "Westafrikaansch Tiet", "WAT": "Westafrikaansch Tiet", "WESZ": "Westeuropääsch Summertiet", "WEZ": "Westeuropääsch Standardtiet", "WFT": "WFT", "WGST": "WGST", "WGT": "WGT", "WIB": "Westindoneesch Tiet", "WIT": "Oostindoneesch Tiet", "WITA": "Indoneesch Zentraaltiet", "YAKST": "YAKST", "YAKT": "YAKT", "YEKST": "YEKST", "YEKT": "YEKT", "YST": "YST", "МСК": "Moskau-Standardtiet", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "باتىس قازاق ەلى", "شىعىش قازاق ەلى": "شىعىش قازاق ەلى", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "قىرعىزستان", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "∅∅∅"},
+		timezones:              map[string]string{"ACDT": "Zentraalaustraalsch Summertiet", "ACST": "Zentraalaustraalsch Standardtiet", "ACT": "ACT", "ACWDT": "Westzentraalaustraalsch Summertiet", "ACWST": "Westzentraalaustraalsch Standardtiet", "ADT": "Noordamerikaansch Atlantik-Summertiet", "ADT Arabia": "Araabsch Summertiet", "AEDT": "Oostaustraalsch Summertiet", "AEST": "Oostaustraalsch Standardtiet", "AFT": "AFT", "AKDT": "AKDT", "AKST": "AKST", "AMST": "AMST", "AMST Armenia": "AMST Armenia", "AMT": "AMT", "AMT Armenia": "AMT Armenia", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "ARST", "ART": "ART", "AST": "Noordamerikaansch Atlantik-Standardtiet", "AST Arabia": "Araabsch Standardtiet", "AWDT": "Westaustraalsch Summertiet", "AWST": "Westaustraalsch Standardtiet", "AZST": "AZST", "AZT": "AZT", "BDT Bangladesh": "BDT Bangladesh", "BNT": "BNT", "BOT": "BOT", "BRST": "BRST", "BRT": "BRT", "BST Bangladesh": "BST Bangladesh", "BT": "BT", "CAST": "CAST", "CAT": "Zentraalafrikaansch Tiet", "CCT": "CCT", "CDT": "Noordamerikaansch zentraal Summertiet", "CHADT": "CHADT", "CHAST": "CHAST", "CHUT": "CHUT", "CKT": "CKT", "CKT DST": "CKT DST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "Noordamerikaansch zentraal Standardtiet", "CST China": "China-Standardtiet", "CST China DST": "China-Summertiet", "CVST": "CVST", "CVT": "CVT", "CXT": "CXT", "ChST": "ChST", "ChST NMI": "ChST NMI", "CuDT": "CuDT", "CuST": "CuST", "DAVT": "DAVT", "DDUT": "DDUT", "EASST": "EASST", "EAST": "EAST", "EAT": "Oostafrikaansch Tiet", "ECT": "ECT", "EDT": "Noordamerikaansch oosten Summertiet", "EGDT": "EGDT", "EGST": "EGST", "EST": "Noordamerikaansch oosten Standardtiet", "FEET": "FEET", "FJT": "FJT", "FJT Summer": "FJT Summer", "FKST": "FKST", "FKT": "FKT", "FNST": "FNST", "FNT": "FNT", "GALT": "GALT", "GAMT": "GAMT", "GEST": "GEST", "GET": "GET", "GFT": "GFT", "GIT": "GIT", "GMT": "Gröönwisch-Welttiet", "GNSST": "GNSST", "GNST": "GNST", "GST": "GST", "GST Guam": "GST Guam", "GYT": "GYT", "HADT": "HADT", "HAST": "HAST", "HKST": "HKST", "HKT": "HKT", "HOVST": "HOVST", "HOVT": "HOVT", "ICT": "Söödoostasiaatsch Tiet", "IDT": "Israel-Summertiet", "IOT": "IOT", "IRKST": "IRKST", "IRKT": "IRKT", "IRST": "IRST", "IRST DST": "IRST DST", "IST": "Indien-Tiet", "IST Israel": "Israel-Standardtiet", "JDT": "Japaansch Summertiet", "JST": "Japaansch Standardtiet", "KOST": "KOST", "KRAST": "KRAST", "KRAT": "KRAT", "KST": "Koreaansch Standardtiet", "KST DST": "Koreaansch Summertiet", "LHDT": "LHDT", "LHST": "LHST", "LINT": "LINT", "MAGST": "MAGST", "MAGT": "MAGT", "MART": "MART", "MAWT": "MAWT", "MDT": "MDT", "MESZ": "Zentraaleuropääsch Summertiet", "MEZ": "Zentraaleuropääsch Standardtiet", "MHT": "MHT", "MMT": "MMT", "MSD": "Moskau-Summertiet", "MST": "MST", "MUST": "MUST", "MUT": "MUT", "MVT": "MVT", "MYT": "MYT", "NCT": "NCT", "NDT": "NDT", "NDT New Caledonia": "NDT New Caledonia", "NFDT": "NFDT", "NFT": "NFT", "NOVST": "NOVST", "NOVT": "NOVT", "NPT": "NPT", "NRT": "NRT", "NST": "NST", "NUT": "NUT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "Oosteuropääsch Summertiet", "OEZ": "Oosteuropääsch Standardtiet", "OMSST": "OMSST", "OMST": "OMST", "PDT": "Noordamerikaansch Pazifik-Summertiet", "PDTM": "PDTM", "PETDT": "PETDT", "PETST": "PETST", "PGT": "PGT", "PHOT": "PHOT", "PKT": "PKT", "PKT DST": "PKT DST", "PMDT": "PMDT", "PMST": "PMST", "PONT": "PONT", "PST": "Noordamerikaansch Pazifik-Standardtiet", "PST Philippine": "PST Philippine", "PST Philippine DST": "PST Philippine DST", "PST Pitcairn": "PST Pitcairn", "PSTM": "PSTM", "PWT": "PWT", "PYST": "PYST", "PYT": "PYT", "PYT Korea": "PYT Korea", "RET": "RET", "ROTT": "ROTT", "SAKST": "SAKST", "SAKT": "SAKT", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "Söödafrikaansch Tiet", "SBT": "SBT", "SCT": "SCT", "SGT": "SGT", "SLST": "SLST", "SRT": "SRT", "SST Samoa": "SST Samoa", "SST Samoa Apia": "SST Samoa Apia", "SST Samoa Apia DST": "SST Samoa Apia DST", "SST Samoa DST": "SST Samoa DST", "SYOT": "SYOT", "TAAF": "TAAF", "TAHT": "TAHT", "TJT": "TJT", "TKT": "TKT", "TLT": "TLT", "TMST": "TMST", "TMT": "TMT", "TOST": "TOST", "TOT": "TOT", "TVT": "TVT", "TWT": "TWT", "TWT DST": "TWT DST", "ULAST": "ULAST", "ULAT": "ULAT", "UYST": "UYST", "UYT": "UYT", "UZT": "UZT", "UZT DST": "UZT DST", "VET": "VET", "VLAST": "VLAST", "VLAT": "VLAT", "VOLST": "VOLST", "VOLT": "VOLT", "VOST": "VOST", "VUT": "VUT", "VUT DST": "VUT DST", "WAKT": "WAKT", "WARST": "WARST", "WART": "WART", "WAST": "Westafrikaansch Tiet", "WAT": "Westafrikaansch Tiet", "WESZ": "Westeuropääsch Summertiet", "WEZ": "Westeuropääsch Standardtiet", "WFT": "WFT", "WGST": "WGST", "WGT": "WGT", "WIB": "Westindoneesch Tiet", "WIT": "Oostindoneesch Tiet", "WITA": "Indoneesch Zentraaltiet", "YAKST": "YAKST", "YAKT": "YAKT", "YEKST": "YEKST", "YEKT": "YEKT", "YST": "YST", "МСК": "Moskau-Standardtiet", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "باتىس قازاق ەلى", "شىعىش قازاق ەلى": "شىعىش قازاق ەلى", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "قىرعىزستان", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "∅∅∅"},
 	}
 }
 
@@ -96,6 +96,9 @@ func (nds *nds_DE) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (nds *nds_DE) MonthAbbreviated(month time.Month) string {
+	if len(nds.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return nds.monthsAbbreviated[month]
 }
 
@@ -106,6 +109,9 @@ func (nds *nds_DE) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (nds *nds_DE) MonthNarrow(month time.Month) string {
+	if len(nds.monthsNarrow) == 0 {
+		return ""
+	}
 	return nds.monthsNarrow[month]
 }
 
@@ -116,6 +122,9 @@ func (nds *nds_DE) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (nds *nds_DE) MonthWide(month time.Month) string {
+	if len(nds.monthsWide) == 0 {
+		return ""
+	}
 	return nds.monthsWide[month]
 }
 
@@ -126,6 +135,9 @@ func (nds *nds_DE) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (nds *nds_DE) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(nds.daysAbbreviated) == 0 {
+		return ""
+	}
 	return nds.daysAbbreviated[weekday]
 }
 
@@ -136,6 +148,9 @@ func (nds *nds_DE) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (nds *nds_DE) WeekdayNarrow(weekday time.Weekday) string {
+	if len(nds.daysNarrow) == 0 {
+		return ""
+	}
 	return nds.daysNarrow[weekday]
 }
 
@@ -146,6 +161,9 @@ func (nds *nds_DE) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (nds *nds_DE) WeekdayShort(weekday time.Weekday) string {
+	if len(nds.daysShort) == 0 {
+		return ""
+	}
 	return nds.daysShort[weekday]
 }
 
@@ -156,6 +174,9 @@ func (nds *nds_DE) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (nds *nds_DE) WeekdayWide(weekday time.Weekday) string {
+	if len(nds.daysWide) == 0 {
+		return ""
+	}
 	return nds.daysWide[weekday]
 }
 

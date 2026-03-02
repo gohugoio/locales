@@ -94,6 +94,9 @@ func (kaj *kaj) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (kaj *kaj) MonthAbbreviated(month time.Month) string {
+	if len(kaj.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return kaj.monthsAbbreviated[month]
 }
 
@@ -104,6 +107,9 @@ func (kaj *kaj) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (kaj *kaj) MonthNarrow(month time.Month) string {
+	if len(kaj.monthsNarrow) == 0 {
+		return ""
+	}
 	return kaj.monthsNarrow[month]
 }
 
@@ -114,6 +120,9 @@ func (kaj *kaj) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (kaj *kaj) MonthWide(month time.Month) string {
+	if len(kaj.monthsWide) == 0 {
+		return ""
+	}
 	return kaj.monthsWide[month]
 }
 
@@ -124,6 +133,9 @@ func (kaj *kaj) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (kaj *kaj) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(kaj.daysAbbreviated) == 0 {
+		return ""
+	}
 	return kaj.daysAbbreviated[weekday]
 }
 
@@ -134,6 +146,9 @@ func (kaj *kaj) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (kaj *kaj) WeekdayNarrow(weekday time.Weekday) string {
+	if len(kaj.daysNarrow) == 0 {
+		return ""
+	}
 	return kaj.daysNarrow[weekday]
 }
 
@@ -144,6 +159,9 @@ func (kaj *kaj) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (kaj *kaj) WeekdayShort(weekday time.Weekday) string {
+	if len(kaj.daysShort) == 0 {
+		return ""
+	}
 	return kaj.daysShort[weekday]
 }
 
@@ -154,6 +172,9 @@ func (kaj *kaj) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (kaj *kaj) WeekdayWide(weekday time.Weekday) string {
+	if len(kaj.daysWide) == 0 {
+		return ""
+	}
 	return kaj.daysWide[weekday]
 }
 

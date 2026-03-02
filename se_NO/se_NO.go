@@ -104,6 +104,9 @@ func (se *se_NO) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (se *se_NO) MonthAbbreviated(month time.Month) string {
+	if len(se.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return se.monthsAbbreviated[month]
 }
 
@@ -114,6 +117,9 @@ func (se *se_NO) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (se *se_NO) MonthNarrow(month time.Month) string {
+	if len(se.monthsNarrow) == 0 {
+		return ""
+	}
 	return se.monthsNarrow[month]
 }
 
@@ -124,6 +130,9 @@ func (se *se_NO) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (se *se_NO) MonthWide(month time.Month) string {
+	if len(se.monthsWide) == 0 {
+		return ""
+	}
 	return se.monthsWide[month]
 }
 
@@ -134,6 +143,9 @@ func (se *se_NO) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (se *se_NO) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(se.daysAbbreviated) == 0 {
+		return ""
+	}
 	return se.daysAbbreviated[weekday]
 }
 
@@ -144,6 +156,9 @@ func (se *se_NO) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (se *se_NO) WeekdayNarrow(weekday time.Weekday) string {
+	if len(se.daysNarrow) == 0 {
+		return ""
+	}
 	return se.daysNarrow[weekday]
 }
 
@@ -154,6 +169,9 @@ func (se *se_NO) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (se *se_NO) WeekdayShort(weekday time.Weekday) string {
+	if len(se.daysShort) == 0 {
+		return ""
+	}
 	return se.daysShort[weekday]
 }
 
@@ -164,6 +182,9 @@ func (se *se_NO) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (se *se_NO) WeekdayWide(weekday time.Weekday) string {
+	if len(se.daysWide) == 0 {
+		return ""
+	}
 	return se.daysWide[weekday]
 }
 

@@ -94,6 +94,9 @@ func (ebu *ebu) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (ebu *ebu) MonthAbbreviated(month time.Month) string {
+	if len(ebu.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return ebu.monthsAbbreviated[month]
 }
 
@@ -104,6 +107,9 @@ func (ebu *ebu) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (ebu *ebu) MonthNarrow(month time.Month) string {
+	if len(ebu.monthsNarrow) == 0 {
+		return ""
+	}
 	return ebu.monthsNarrow[month]
 }
 
@@ -114,6 +120,9 @@ func (ebu *ebu) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (ebu *ebu) MonthWide(month time.Month) string {
+	if len(ebu.monthsWide) == 0 {
+		return ""
+	}
 	return ebu.monthsWide[month]
 }
 
@@ -124,6 +133,9 @@ func (ebu *ebu) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (ebu *ebu) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(ebu.daysAbbreviated) == 0 {
+		return ""
+	}
 	return ebu.daysAbbreviated[weekday]
 }
 
@@ -134,6 +146,9 @@ func (ebu *ebu) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (ebu *ebu) WeekdayNarrow(weekday time.Weekday) string {
+	if len(ebu.daysNarrow) == 0 {
+		return ""
+	}
 	return ebu.daysNarrow[weekday]
 }
 
@@ -144,6 +159,9 @@ func (ebu *ebu) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (ebu *ebu) WeekdayShort(weekday time.Weekday) string {
+	if len(ebu.daysShort) == 0 {
+		return ""
+	}
 	return ebu.daysShort[weekday]
 }
 
@@ -154,6 +172,9 @@ func (ebu *ebu) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (ebu *ebu) WeekdayWide(weekday time.Weekday) string {
+	if len(ebu.daysWide) == 0 {
+		return ""
+	}
 	return ebu.daysWide[weekday]
 }
 

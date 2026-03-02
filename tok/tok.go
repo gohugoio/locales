@@ -91,6 +91,9 @@ func (tok *tok) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (tok *tok) MonthAbbreviated(month time.Month) string {
+	if len(tok.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return tok.monthsAbbreviated[month]
 }
 
@@ -101,6 +104,9 @@ func (tok *tok) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (tok *tok) MonthNarrow(month time.Month) string {
+	if len(tok.monthsNarrow) == 0 {
+		return ""
+	}
 	return tok.monthsNarrow[month]
 }
 
@@ -111,6 +117,9 @@ func (tok *tok) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (tok *tok) MonthWide(month time.Month) string {
+	if len(tok.monthsWide) == 0 {
+		return ""
+	}
 	return tok.monthsWide[month]
 }
 
@@ -121,6 +130,9 @@ func (tok *tok) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (tok *tok) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(tok.daysAbbreviated) == 0 {
+		return ""
+	}
 	return tok.daysAbbreviated[weekday]
 }
 
@@ -131,6 +143,9 @@ func (tok *tok) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (tok *tok) WeekdayNarrow(weekday time.Weekday) string {
+	if len(tok.daysNarrow) == 0 {
+		return ""
+	}
 	return tok.daysNarrow[weekday]
 }
 
@@ -141,6 +156,9 @@ func (tok *tok) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (tok *tok) WeekdayShort(weekday time.Weekday) string {
+	if len(tok.daysShort) == 0 {
+		return ""
+	}
 	return tok.daysShort[weekday]
 }
 
@@ -151,6 +169,9 @@ func (tok *tok) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (tok *tok) WeekdayWide(weekday time.Weekday) string {
+	if len(tok.daysWide) == 0 {
+		return ""
+	}
 	return tok.daysWide[weekday]
 }
 

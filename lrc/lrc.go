@@ -85,6 +85,9 @@ func (lrc *lrc) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (lrc *lrc) MonthAbbreviated(month time.Month) string {
+	if len(lrc.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return lrc.monthsAbbreviated[month]
 }
 
@@ -95,6 +98,9 @@ func (lrc *lrc) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (lrc *lrc) MonthNarrow(month time.Month) string {
+	if len(lrc.monthsNarrow) == 0 {
+		return ""
+	}
 	return lrc.monthsNarrow[month]
 }
 
@@ -105,6 +111,9 @@ func (lrc *lrc) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (lrc *lrc) MonthWide(month time.Month) string {
+	if len(lrc.monthsWide) == 0 {
+		return ""
+	}
 	return lrc.monthsWide[month]
 }
 
@@ -115,6 +124,9 @@ func (lrc *lrc) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (lrc *lrc) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(lrc.daysAbbreviated) == 0 {
+		return ""
+	}
 	return lrc.daysAbbreviated[weekday]
 }
 
@@ -125,6 +137,9 @@ func (lrc *lrc) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (lrc *lrc) WeekdayNarrow(weekday time.Weekday) string {
+	if len(lrc.daysNarrow) == 0 {
+		return ""
+	}
 	return lrc.daysNarrow[weekday]
 }
 
@@ -135,6 +150,9 @@ func (lrc *lrc) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (lrc *lrc) WeekdayShort(weekday time.Weekday) string {
+	if len(lrc.daysShort) == 0 {
+		return ""
+	}
 	return lrc.daysShort[weekday]
 }
 
@@ -145,6 +163,9 @@ func (lrc *lrc) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (lrc *lrc) WeekdayWide(weekday time.Weekday) string {
+	if len(lrc.daysWide) == 0 {
+		return ""
+	}
 	return lrc.daysWide[weekday]
 }
 

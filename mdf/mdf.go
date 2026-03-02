@@ -84,6 +84,9 @@ func (mdf *mdf) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (mdf *mdf) MonthAbbreviated(month time.Month) string {
+	if len(mdf.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return mdf.monthsAbbreviated[month]
 }
 
@@ -94,6 +97,9 @@ func (mdf *mdf) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (mdf *mdf) MonthNarrow(month time.Month) string {
+	if len(mdf.monthsNarrow) == 0 {
+		return ""
+	}
 	return mdf.monthsNarrow[month]
 }
 
@@ -104,6 +110,9 @@ func (mdf *mdf) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (mdf *mdf) MonthWide(month time.Month) string {
+	if len(mdf.monthsWide) == 0 {
+		return ""
+	}
 	return mdf.monthsWide[month]
 }
 
@@ -114,6 +123,9 @@ func (mdf *mdf) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (mdf *mdf) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(mdf.daysAbbreviated) == 0 {
+		return ""
+	}
 	return mdf.daysAbbreviated[weekday]
 }
 
@@ -124,6 +136,9 @@ func (mdf *mdf) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (mdf *mdf) WeekdayNarrow(weekday time.Weekday) string {
+	if len(mdf.daysNarrow) == 0 {
+		return ""
+	}
 	return mdf.daysNarrow[weekday]
 }
 
@@ -134,6 +149,9 @@ func (mdf *mdf) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (mdf *mdf) WeekdayShort(weekday time.Weekday) string {
+	if len(mdf.daysShort) == 0 {
+		return ""
+	}
 	return mdf.daysShort[weekday]
 }
 
@@ -144,6 +162,9 @@ func (mdf *mdf) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (mdf *mdf) WeekdayWide(weekday time.Weekday) string {
+	if len(mdf.daysWide) == 0 {
+		return ""
+	}
 	return mdf.daysWide[weekday]
 }
 

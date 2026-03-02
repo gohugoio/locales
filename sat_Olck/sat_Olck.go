@@ -103,6 +103,9 @@ func (sat *sat_Olck) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 u
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (sat *sat_Olck) MonthAbbreviated(month time.Month) string {
+	if len(sat.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return sat.monthsAbbreviated[month]
 }
 
@@ -113,6 +116,9 @@ func (sat *sat_Olck) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (sat *sat_Olck) MonthNarrow(month time.Month) string {
+	if len(sat.monthsNarrow) == 0 {
+		return ""
+	}
 	return sat.monthsNarrow[month]
 }
 
@@ -123,6 +129,9 @@ func (sat *sat_Olck) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (sat *sat_Olck) MonthWide(month time.Month) string {
+	if len(sat.monthsWide) == 0 {
+		return ""
+	}
 	return sat.monthsWide[month]
 }
 
@@ -133,6 +142,9 @@ func (sat *sat_Olck) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (sat *sat_Olck) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(sat.daysAbbreviated) == 0 {
+		return ""
+	}
 	return sat.daysAbbreviated[weekday]
 }
 
@@ -143,6 +155,9 @@ func (sat *sat_Olck) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (sat *sat_Olck) WeekdayNarrow(weekday time.Weekday) string {
+	if len(sat.daysNarrow) == 0 {
+		return ""
+	}
 	return sat.daysNarrow[weekday]
 }
 
@@ -153,6 +168,9 @@ func (sat *sat_Olck) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (sat *sat_Olck) WeekdayShort(weekday time.Weekday) string {
+	if len(sat.daysShort) == 0 {
+		return ""
+	}
 	return sat.daysShort[weekday]
 }
 
@@ -163,6 +181,9 @@ func (sat *sat_Olck) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (sat *sat_Olck) WeekdayWide(weekday time.Weekday) string {
+	if len(sat.daysWide) == 0 {
+		return ""
+	}
 	return sat.daysWide[weekday]
 }
 

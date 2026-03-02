@@ -100,6 +100,9 @@ func (tzm *tzm_MA) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (tzm *tzm_MA) MonthAbbreviated(month time.Month) string {
+	if len(tzm.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return tzm.monthsAbbreviated[month]
 }
 
@@ -110,6 +113,9 @@ func (tzm *tzm_MA) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (tzm *tzm_MA) MonthNarrow(month time.Month) string {
+	if len(tzm.monthsNarrow) == 0 {
+		return ""
+	}
 	return tzm.monthsNarrow[month]
 }
 
@@ -120,6 +126,9 @@ func (tzm *tzm_MA) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (tzm *tzm_MA) MonthWide(month time.Month) string {
+	if len(tzm.monthsWide) == 0 {
+		return ""
+	}
 	return tzm.monthsWide[month]
 }
 
@@ -130,6 +139,9 @@ func (tzm *tzm_MA) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (tzm *tzm_MA) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(tzm.daysAbbreviated) == 0 {
+		return ""
+	}
 	return tzm.daysAbbreviated[weekday]
 }
 
@@ -140,6 +152,9 @@ func (tzm *tzm_MA) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (tzm *tzm_MA) WeekdayNarrow(weekday time.Weekday) string {
+	if len(tzm.daysNarrow) == 0 {
+		return ""
+	}
 	return tzm.daysNarrow[weekday]
 }
 
@@ -150,6 +165,9 @@ func (tzm *tzm_MA) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (tzm *tzm_MA) WeekdayShort(weekday time.Weekday) string {
+	if len(tzm.daysShort) == 0 {
+		return ""
+	}
 	return tzm.daysShort[weekday]
 }
 
@@ -160,6 +178,9 @@ func (tzm *tzm_MA) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (tzm *tzm_MA) WeekdayWide(weekday time.Weekday) string {
+	if len(tzm.daysWide) == 0 {
+		return ""
+	}
 	return tzm.daysWide[weekday]
 }
 

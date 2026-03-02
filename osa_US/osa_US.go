@@ -89,6 +89,9 @@ func (osa *osa_US) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (osa *osa_US) MonthAbbreviated(month time.Month) string {
+	if len(osa.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return osa.monthsAbbreviated[month]
 }
 
@@ -99,6 +102,9 @@ func (osa *osa_US) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (osa *osa_US) MonthNarrow(month time.Month) string {
+	if len(osa.monthsNarrow) == 0 {
+		return ""
+	}
 	return osa.monthsNarrow[month]
 }
 
@@ -109,6 +115,9 @@ func (osa *osa_US) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (osa *osa_US) MonthWide(month time.Month) string {
+	if len(osa.monthsWide) == 0 {
+		return ""
+	}
 	return osa.monthsWide[month]
 }
 
@@ -119,6 +128,9 @@ func (osa *osa_US) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (osa *osa_US) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(osa.daysAbbreviated) == 0 {
+		return ""
+	}
 	return osa.daysAbbreviated[weekday]
 }
 
@@ -129,6 +141,9 @@ func (osa *osa_US) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (osa *osa_US) WeekdayNarrow(weekday time.Weekday) string {
+	if len(osa.daysNarrow) == 0 {
+		return ""
+	}
 	return osa.daysNarrow[weekday]
 }
 
@@ -139,6 +154,9 @@ func (osa *osa_US) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (osa *osa_US) WeekdayShort(weekday time.Weekday) string {
+	if len(osa.daysShort) == 0 {
+		return ""
+	}
 	return osa.daysShort[weekday]
 }
 
@@ -149,6 +167,9 @@ func (osa *osa_US) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (osa *osa_US) WeekdayWide(weekday time.Weekday) string {
+	if len(osa.daysWide) == 0 {
+		return ""
+	}
 	return osa.daysWide[weekday]
 }
 

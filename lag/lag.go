@@ -99,6 +99,9 @@ func (lag *lag) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (lag *lag) MonthAbbreviated(month time.Month) string {
+	if len(lag.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return lag.monthsAbbreviated[month]
 }
 
@@ -109,6 +112,9 @@ func (lag *lag) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (lag *lag) MonthNarrow(month time.Month) string {
+	if len(lag.monthsNarrow) == 0 {
+		return ""
+	}
 	return lag.monthsNarrow[month]
 }
 
@@ -119,6 +125,9 @@ func (lag *lag) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (lag *lag) MonthWide(month time.Month) string {
+	if len(lag.monthsWide) == 0 {
+		return ""
+	}
 	return lag.monthsWide[month]
 }
 
@@ -129,6 +138,9 @@ func (lag *lag) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (lag *lag) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(lag.daysAbbreviated) == 0 {
+		return ""
+	}
 	return lag.daysAbbreviated[weekday]
 }
 
@@ -139,6 +151,9 @@ func (lag *lag) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (lag *lag) WeekdayNarrow(weekday time.Weekday) string {
+	if len(lag.daysNarrow) == 0 {
+		return ""
+	}
 	return lag.daysNarrow[weekday]
 }
 
@@ -149,6 +164,9 @@ func (lag *lag) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (lag *lag) WeekdayShort(weekday time.Weekday) string {
+	if len(lag.daysShort) == 0 {
+		return ""
+	}
 	return lag.daysShort[weekday]
 }
 
@@ -159,6 +177,9 @@ func (lag *lag) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (lag *lag) WeekdayWide(weekday time.Weekday) string {
+	if len(lag.daysWide) == 0 {
+		return ""
+	}
 	return lag.daysWide[weekday]
 }
 

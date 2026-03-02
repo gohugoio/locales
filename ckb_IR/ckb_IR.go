@@ -97,6 +97,9 @@ func (ckb *ckb_IR) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (ckb *ckb_IR) MonthAbbreviated(month time.Month) string {
+	if len(ckb.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return ckb.monthsAbbreviated[month]
 }
 
@@ -107,6 +110,9 @@ func (ckb *ckb_IR) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (ckb *ckb_IR) MonthNarrow(month time.Month) string {
+	if len(ckb.monthsNarrow) == 0 {
+		return ""
+	}
 	return ckb.monthsNarrow[month]
 }
 
@@ -117,6 +123,9 @@ func (ckb *ckb_IR) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (ckb *ckb_IR) MonthWide(month time.Month) string {
+	if len(ckb.monthsWide) == 0 {
+		return ""
+	}
 	return ckb.monthsWide[month]
 }
 
@@ -127,6 +136,9 @@ func (ckb *ckb_IR) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (ckb *ckb_IR) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(ckb.daysAbbreviated) == 0 {
+		return ""
+	}
 	return ckb.daysAbbreviated[weekday]
 }
 
@@ -137,6 +149,9 @@ func (ckb *ckb_IR) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (ckb *ckb_IR) WeekdayNarrow(weekday time.Weekday) string {
+	if len(ckb.daysNarrow) == 0 {
+		return ""
+	}
 	return ckb.daysNarrow[weekday]
 }
 
@@ -147,6 +162,9 @@ func (ckb *ckb_IR) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (ckb *ckb_IR) WeekdayShort(weekday time.Weekday) string {
+	if len(ckb.daysShort) == 0 {
+		return ""
+	}
 	return ckb.daysShort[weekday]
 }
 
@@ -157,6 +175,9 @@ func (ckb *ckb_IR) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (ckb *ckb_IR) WeekdayWide(weekday time.Weekday) string {
+	if len(ckb.daysWide) == 0 {
+		return ""
+	}
 	return ckb.daysWide[weekday]
 }
 

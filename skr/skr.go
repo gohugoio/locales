@@ -86,6 +86,9 @@ func (skr *skr) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (skr *skr) MonthAbbreviated(month time.Month) string {
+	if len(skr.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return skr.monthsAbbreviated[month]
 }
 
@@ -96,6 +99,9 @@ func (skr *skr) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (skr *skr) MonthNarrow(month time.Month) string {
+	if len(skr.monthsNarrow) == 0 {
+		return ""
+	}
 	return skr.monthsNarrow[month]
 }
 
@@ -106,6 +112,9 @@ func (skr *skr) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (skr *skr) MonthWide(month time.Month) string {
+	if len(skr.monthsWide) == 0 {
+		return ""
+	}
 	return skr.monthsWide[month]
 }
 
@@ -116,6 +125,9 @@ func (skr *skr) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (skr *skr) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(skr.daysAbbreviated) == 0 {
+		return ""
+	}
 	return skr.daysAbbreviated[weekday]
 }
 
@@ -126,6 +138,9 @@ func (skr *skr) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (skr *skr) WeekdayNarrow(weekday time.Weekday) string {
+	if len(skr.daysNarrow) == 0 {
+		return ""
+	}
 	return skr.daysNarrow[weekday]
 }
 
@@ -136,6 +151,9 @@ func (skr *skr) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (skr *skr) WeekdayShort(weekday time.Weekday) string {
+	if len(skr.daysShort) == 0 {
+		return ""
+	}
 	return skr.daysShort[weekday]
 }
 
@@ -146,6 +164,9 @@ func (skr *skr) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (skr *skr) WeekdayWide(weekday time.Weekday) string {
+	if len(skr.daysWide) == 0 {
+		return ""
+	}
 	return skr.daysWide[weekday]
 }
 

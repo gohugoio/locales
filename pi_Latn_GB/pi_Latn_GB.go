@@ -84,6 +84,9 @@ func (pi *pi_Latn_GB) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (pi *pi_Latn_GB) MonthAbbreviated(month time.Month) string {
+	if len(pi.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return pi.monthsAbbreviated[month]
 }
 
@@ -94,6 +97,9 @@ func (pi *pi_Latn_GB) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (pi *pi_Latn_GB) MonthNarrow(month time.Month) string {
+	if len(pi.monthsNarrow) == 0 {
+		return ""
+	}
 	return pi.monthsNarrow[month]
 }
 
@@ -104,6 +110,9 @@ func (pi *pi_Latn_GB) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (pi *pi_Latn_GB) MonthWide(month time.Month) string {
+	if len(pi.monthsWide) == 0 {
+		return ""
+	}
 	return pi.monthsWide[month]
 }
 
@@ -114,6 +123,9 @@ func (pi *pi_Latn_GB) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (pi *pi_Latn_GB) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(pi.daysAbbreviated) == 0 {
+		return ""
+	}
 	return pi.daysAbbreviated[weekday]
 }
 
@@ -124,6 +136,9 @@ func (pi *pi_Latn_GB) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (pi *pi_Latn_GB) WeekdayNarrow(weekday time.Weekday) string {
+	if len(pi.daysNarrow) == 0 {
+		return ""
+	}
 	return pi.daysNarrow[weekday]
 }
 
@@ -134,6 +149,9 @@ func (pi *pi_Latn_GB) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (pi *pi_Latn_GB) WeekdayShort(weekday time.Weekday) string {
+	if len(pi.daysShort) == 0 {
+		return ""
+	}
 	return pi.daysShort[weekday]
 }
 
@@ -144,6 +162,9 @@ func (pi *pi_Latn_GB) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (pi *pi_Latn_GB) WeekdayWide(weekday time.Weekday) string {
+	if len(pi.daysWide) == 0 {
+		return ""
+	}
 	return pi.daysWide[weekday]
 }
 

@@ -102,6 +102,9 @@ func (kl *kl_GL) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (kl *kl_GL) MonthAbbreviated(month time.Month) string {
+	if len(kl.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return kl.monthsAbbreviated[month]
 }
 
@@ -112,6 +115,9 @@ func (kl *kl_GL) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (kl *kl_GL) MonthNarrow(month time.Month) string {
+	if len(kl.monthsNarrow) == 0 {
+		return ""
+	}
 	return kl.monthsNarrow[month]
 }
 
@@ -122,6 +128,9 @@ func (kl *kl_GL) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (kl *kl_GL) MonthWide(month time.Month) string {
+	if len(kl.monthsWide) == 0 {
+		return ""
+	}
 	return kl.monthsWide[month]
 }
 
@@ -132,6 +141,9 @@ func (kl *kl_GL) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (kl *kl_GL) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(kl.daysAbbreviated) == 0 {
+		return ""
+	}
 	return kl.daysAbbreviated[weekday]
 }
 
@@ -142,6 +154,9 @@ func (kl *kl_GL) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (kl *kl_GL) WeekdayNarrow(weekday time.Weekday) string {
+	if len(kl.daysNarrow) == 0 {
+		return ""
+	}
 	return kl.daysNarrow[weekday]
 }
 
@@ -152,6 +167,9 @@ func (kl *kl_GL) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (kl *kl_GL) WeekdayShort(weekday time.Weekday) string {
+	if len(kl.daysShort) == 0 {
+		return ""
+	}
 	return kl.daysShort[weekday]
 }
 
@@ -162,6 +180,9 @@ func (kl *kl_GL) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (kl *kl_GL) WeekdayWide(weekday time.Weekday) string {
+	if len(kl.daysWide) == 0 {
+		return ""
+	}
 	return kl.daysWide[weekday]
 }
 

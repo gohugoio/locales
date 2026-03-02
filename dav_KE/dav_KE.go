@@ -94,6 +94,9 @@ func (dav *dav_KE) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (dav *dav_KE) MonthAbbreviated(month time.Month) string {
+	if len(dav.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return dav.monthsAbbreviated[month]
 }
 
@@ -104,6 +107,9 @@ func (dav *dav_KE) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (dav *dav_KE) MonthNarrow(month time.Month) string {
+	if len(dav.monthsNarrow) == 0 {
+		return ""
+	}
 	return dav.monthsNarrow[month]
 }
 
@@ -114,6 +120,9 @@ func (dav *dav_KE) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (dav *dav_KE) MonthWide(month time.Month) string {
+	if len(dav.monthsWide) == 0 {
+		return ""
+	}
 	return dav.monthsWide[month]
 }
 
@@ -124,6 +133,9 @@ func (dav *dav_KE) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (dav *dav_KE) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(dav.daysAbbreviated) == 0 {
+		return ""
+	}
 	return dav.daysAbbreviated[weekday]
 }
 
@@ -134,6 +146,9 @@ func (dav *dav_KE) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (dav *dav_KE) WeekdayNarrow(weekday time.Weekday) string {
+	if len(dav.daysNarrow) == 0 {
+		return ""
+	}
 	return dav.daysNarrow[weekday]
 }
 
@@ -144,6 +159,9 @@ func (dav *dav_KE) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (dav *dav_KE) WeekdayShort(weekday time.Weekday) string {
+	if len(dav.daysShort) == 0 {
+		return ""
+	}
 	return dav.daysShort[weekday]
 }
 
@@ -154,6 +172,9 @@ func (dav *dav_KE) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (dav *dav_KE) WeekdayWide(weekday time.Weekday) string {
+	if len(dav.daysWide) == 0 {
+		return ""
+	}
 	return dav.daysWide[weekday]
 }
 

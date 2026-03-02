@@ -53,7 +53,7 @@ func New() locales.Translator {
 		daysAbbreviated:        []string{"бс", "бн", "оп", "сэ", "чп", "бэ", "сб"},
 		daysNarrow:             []string{"Б", "Б", "О", "С", "Ч", "Б", "С"},
 		daysWide:               []string{"баскыһыанньа", "бэнидиэнньик", "оптуорунньук", "сэрэдэ", "чэппиэр", "Бээтиҥсэ", "субуота"},
-		timezones:              map[string]string{"ACDT": "Киин Австралия сайыҥҥы кэмэ", "ACST": "ACST", "ACT": "ACT", "ACWDT": "ACWDT", "ACWST": "ACWST", "ADT": "ADT", "ADT Arabia": "Арааб сайыҥҥы кэмэ", "AEDT": "Илин Австралия сайыҥҥы кэмэ", "AEST": "Илин Австралия сүрүн кэмэ", "AFT": "AFT", "AKDT": "AKDT", "AKST": "AKST", "AMST": "AMST", "AMST Armenia": "Эрмээн сайыҥҥы кэмэ", "AMT": "AMT", "AMT Armenia": "Эрмээн сүрүн кэмэ", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "ARST", "ART": "ART", "AST": "AST", "AST Arabia": "Арааб сүрүн кэмэ", "AWDT": "Арҕаа Австралия сайыҥҥы кэмэ", "AWST": "Арҕаа Австралия сүрүн кэмэ", "AZST": "AZST", "AZT": "AZT", "BDT Bangladesh": "BDT Bangladesh", "BNT": "BNT", "BOT": "BOT", "BRST": "BRST", "BRT": "BRT", "BST Bangladesh": "BST Bangladesh", "BT": "BT", "CAST": "CAST", "CAT": "CAT", "CCT": "CCT", "CDT": "CDT", "CHADT": "CHADT", "CHAST": "CHAST", "CHUT": "CHUT", "CKT": "CKT", "CKT DST": "CKT DST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "CST", "CST China": "Кытай сүрүн кэмэ", "CST China DST": "Кытай сайыҥҥы кэмэ", "CVST": "CVST", "CVT": "CVT", "CXT": "CXT", "ChST": "ChST", "ChST NMI": "ChST NMI", "CuDT": "CuDT", "CuST": "CuST", "DAVT": "DAVT", "DDUT": "DDUT", "EASST": "EASST", "EAST": "EAST", "EAT": "EAT", "ECT": "ECT", "EDT": "EDT", "EGDT": "EGDT", "EGST": "EGST", "EST": "EST", "FEET": "FEET", "FJT": "FJT", "FJT Summer": "FJT Summer", "FKST": "FKST", "FKT": "FKT", "FNST": "FNST", "FNT": "FNT", "GALT": "GALT", "GAMT": "GAMT", "GEST": "Курусуун сайыҥҥы кэмэ", "GET": "Курусуун сүрүн кэмэ", "GFT": "GFT", "GIT": "GIT", "GMT": "GMT", "GNSST": "GNSST", "GNST": "GNST", "GST": "GST", "GST Guam": "GST Guam", "GYT": "GYT", "HADT": "HADT", "HAST": "HAST", "HKST": "HKST", "HKT": "HKT", "HOVST": "HOVST", "HOVT": "HOVT", "ICT": "ICT", "IDT": "IDT", "IOT": "IOT", "IRKST": "IRKST", "IRKT": "IRKT", "IRST": "Ираан сүрүн кэмэ", "IRST DST": "Ыраан сайыҥҥы кэмэ", "IST": "Ииндийэ сүрүн кэмэ", "IST Israel": "IST Israel", "JDT": "Дьоппуон сайыҥҥы кэмэ", "JST": "Дьоппуон сүрүн кэмэ", "KOST": "KOST", "KRAST": "Красноярскай сайыҥҥы кэмэ", "KRAT": "Красноярскай сүрүн кэмэ", "KST": "Кэриэй сүрүн кэмэ", "KST DST": "Кэриэй сайыҥҥы кэмэ", "LHDT": "LHDT", "LHST": "LHST", "LINT": "LINT", "MAGST": "Магадаан сайыҥҥы кэмэ", "MAGT": "Магадаан сүрүн кэмэ", "MART": "MART", "MAWT": "MAWT", "MDT": "MDT", "MESZ": "MESZ", "MEZ": "MEZ", "MHT": "MHT", "MMT": "MMT", "MSD": "Москуба сайыҥҥы кэмэ", "MST": "MST", "MUST": "MUST", "MUT": "MUT", "MVT": "MVT", "MYT": "MYT", "NCT": "NCT", "NDT": "NDT", "NDT New Caledonia": "NDT New Caledonia", "NFDT": "NFDT", "NFT": "NFT", "NOVST": "Новосибирскай сайыҥҥы кэмэ", "NOVT": "Новосибирскай сүрүн кэмэ", "NPT": "NPT", "NRT": "NRT", "NST": "NST", "NUT": "NUT", "NZDT": "Саҥа Сэйлэнд сайыҥҥы кэмэ", "NZST": "Саҥа Сэйлэнд сүрүн кэмэ", "OESZ": "OESZ", "OEZ": "OEZ", "OMSST": "Омскай сайыҥҥы кэмэ", "OMST": "Омскай сүрүн кэмэ", "PDT": "PDT", "PDTM": "PDTM", "PETDT": "PETDT", "PETST": "PETST", "PGT": "PGT", "PHOT": "PHOT", "PKT": "Пакистаан сүрүн кэмэ", "PKT DST": "Пакистаан сайыҥҥы кэмэ", "PMDT": "PMDT", "PMST": "PMST", "PONT": "PONT", "PST": "PST", "PST Philippine": "PST Philippine", "PST Philippine DST": "PST Philippine DST", "PST Pitcairn": "PST Pitcairn", "PSTM": "PSTM", "PWT": "PWT", "PYST": "PYST", "PYT": "PYT", "PYT Korea": "PYT Korea", "RET": "RET", "ROTT": "ROTT", "SAKST": "Сахалыын сайыҥҥы кэмэ", "SAKT": "Сахалыын сүрүн кэмэ", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "SAST", "SBT": "SBT", "SCT": "SCT", "SGT": "SGT", "SLST": "SLST", "SRT": "SRT", "SST Samoa": "SST Samoa", "SST Samoa Apia": "SST Samoa Apia", "SST Samoa Apia DST": "SST Samoa Apia DST", "SST Samoa DST": "SST Samoa DST", "SYOT": "SYOT", "TAAF": "TAAF", "TAHT": "TAHT", "TJT": "TJT", "TKT": "TKT", "TLT": "TLT", "TMST": "TMST", "TMT": "TMT", "TOST": "TOST", "TOT": "TOT", "TVT": "TVT", "TWT": "TWT", "TWT DST": "TWT DST", "ULAST": "Улан Баатар сайыҥҥы кэмэ", "ULAT": "Улан Баатар сүрүн кэмэ", "UYST": "UYST", "UYT": "UYT", "UZT": "UZT", "UZT DST": "UZT DST", "VET": "VET", "VLAST": "Быладьыбастыак сайыҥҥы кэмэ", "VLAT": "Быладьыбастыак сүрүн кэмэ", "VOLST": "Волгоград сайыҥҥы кэмэ", "VOLT": "Волгоград сүрүн кэмэ", "VOST": "VOST", "VUT": "VUT", "VUT DST": "VUT DST", "WAKT": "WAKT", "WARST": "WARST", "WART": "WART", "WAST": "WAST", "WAT": "WAT", "WESZ": "WESZ", "WEZ": "WEZ", "WFT": "WFT", "WGST": "WGST", "WGT": "WGT", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "YAKST": "Дьокуускай сайыҥҥы кэмэ", "YAKT": "Дьокуускай сүрүн кэмэ", "YEKST": "Екатеринбуур сайыҥҥы кэмэ", "YEKT": "Екатеринбуур сүрүн кэмэ", "YST": "YST", "МСК": "Москуба сүрүн кэмэ", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "Арҕаа Казахстаан кэмэ", "شىعىش قازاق ەلى": "Илин Казахстаан кэмэ", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "Кыргыстаан кэмэ", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "∅∅∅"},
+		timezones:              map[string]string{"ACDT": "Киин Австралия сайыҥҥы кэмэ", "ACST": "Киин Австралия сүрүн кэмэ", "ACT": "ACT", "ACWDT": "ACWDT", "ACWST": "ACWST", "ADT": "ADT", "ADT Arabia": "Арааб сайыҥҥы кэмэ", "AEDT": "Илин Австралия сайыҥҥы кэмэ", "AEST": "Илин Австралия сүрүн кэмэ", "AFT": "AFT", "AKDT": "AKDT", "AKST": "AKST", "AMST": "AMST", "AMST Armenia": "Эрмээн сайыҥҥы кэмэ", "AMT": "AMT", "AMT Armenia": "Эрмээн сүрүн кэмэ", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "ARST", "ART": "ART", "AST": "AST", "AST Arabia": "Арааб сүрүн кэмэ", "AWDT": "Арҕаа Австралия сайыҥҥы кэмэ", "AWST": "Арҕаа Австралия сүрүн кэмэ", "AZST": "AZST", "AZT": "AZT", "BDT Bangladesh": "BDT Bangladesh", "BNT": "BNT", "BOT": "BOT", "BRST": "BRST", "BRT": "BRT", "BST Bangladesh": "BST Bangladesh", "BT": "BT", "CAST": "CAST", "CAT": "CAT", "CCT": "CCT", "CDT": "CDT", "CHADT": "CHADT", "CHAST": "CHAST", "CHUT": "CHUT", "CKT": "CKT", "CKT DST": "CKT DST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "CST", "CST China": "Кытай сүрүн кэмэ", "CST China DST": "Кытай сайыҥҥы кэмэ", "CVST": "CVST", "CVT": "CVT", "CXT": "CXT", "ChST": "ChST", "ChST NMI": "ChST NMI", "CuDT": "CuDT", "CuST": "CuST", "DAVT": "DAVT", "DDUT": "DDUT", "EASST": "EASST", "EAST": "EAST", "EAT": "EAT", "ECT": "ECT", "EDT": "EDT", "EGDT": "EGDT", "EGST": "EGST", "EST": "EST", "FEET": "FEET", "FJT": "FJT", "FJT Summer": "FJT Summer", "FKST": "FKST", "FKT": "FKT", "FNST": "FNST", "FNT": "FNT", "GALT": "GALT", "GAMT": "GAMT", "GEST": "Курусуун сайыҥҥы кэмэ", "GET": "Курусуун сүрүн кэмэ", "GFT": "GFT", "GIT": "GIT", "GMT": "GMT", "GNSST": "GNSST", "GNST": "GNST", "GST": "GST", "GST Guam": "GST Guam", "GYT": "GYT", "HADT": "HADT", "HAST": "HAST", "HKST": "HKST", "HKT": "HKT", "HOVST": "HOVST", "HOVT": "HOVT", "ICT": "ICT", "IDT": "IDT", "IOT": "IOT", "IRKST": "IRKST", "IRKT": "IRKT", "IRST": "Ираан сүрүн кэмэ", "IRST DST": "Ыраан сайыҥҥы кэмэ", "IST": "Ииндийэ сүрүн кэмэ", "IST Israel": "IST Israel", "JDT": "Дьоппуон сайыҥҥы кэмэ", "JST": "Дьоппуон сүрүн кэмэ", "KOST": "KOST", "KRAST": "Красноярскай сайыҥҥы кэмэ", "KRAT": "Красноярскай сүрүн кэмэ", "KST": "Кэриэй сүрүн кэмэ", "KST DST": "Кэриэй сайыҥҥы кэмэ", "LHDT": "LHDT", "LHST": "LHST", "LINT": "LINT", "MAGST": "Магадаан сайыҥҥы кэмэ", "MAGT": "Магадаан сүрүн кэмэ", "MART": "MART", "MAWT": "MAWT", "MDT": "MDT", "MESZ": "MESZ", "MEZ": "MEZ", "MHT": "MHT", "MMT": "MMT", "MSD": "Москуба сайыҥҥы кэмэ", "MST": "MST", "MUST": "MUST", "MUT": "MUT", "MVT": "MVT", "MYT": "MYT", "NCT": "NCT", "NDT": "NDT", "NDT New Caledonia": "NDT New Caledonia", "NFDT": "NFDT", "NFT": "NFT", "NOVST": "Новосибирскай сайыҥҥы кэмэ", "NOVT": "Новосибирскай сүрүн кэмэ", "NPT": "NPT", "NRT": "NRT", "NST": "NST", "NUT": "NUT", "NZDT": "Саҥа Сэйлэнд сайыҥҥы кэмэ", "NZST": "Саҥа Сэйлэнд сүрүн кэмэ", "OESZ": "OESZ", "OEZ": "OEZ", "OMSST": "Омскай сайыҥҥы кэмэ", "OMST": "Омскай сүрүн кэмэ", "PDT": "PDT", "PDTM": "PDTM", "PETDT": "PETDT", "PETST": "PETST", "PGT": "PGT", "PHOT": "PHOT", "PKT": "Пакистаан сүрүн кэмэ", "PKT DST": "Пакистаан сайыҥҥы кэмэ", "PMDT": "PMDT", "PMST": "PMST", "PONT": "PONT", "PST": "PST", "PST Philippine": "PST Philippine", "PST Philippine DST": "PST Philippine DST", "PST Pitcairn": "PST Pitcairn", "PSTM": "PSTM", "PWT": "PWT", "PYST": "PYST", "PYT": "PYT", "PYT Korea": "PYT Korea", "RET": "RET", "ROTT": "ROTT", "SAKST": "Сахалыын сайыҥҥы кэмэ", "SAKT": "Сахалыын сүрүн кэмэ", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "SAST", "SBT": "SBT", "SCT": "SCT", "SGT": "SGT", "SLST": "SLST", "SRT": "SRT", "SST Samoa": "SST Samoa", "SST Samoa Apia": "SST Samoa Apia", "SST Samoa Apia DST": "SST Samoa Apia DST", "SST Samoa DST": "SST Samoa DST", "SYOT": "SYOT", "TAAF": "TAAF", "TAHT": "TAHT", "TJT": "TJT", "TKT": "TKT", "TLT": "TLT", "TMST": "TMST", "TMT": "TMT", "TOST": "TOST", "TOT": "TOT", "TVT": "TVT", "TWT": "TWT", "TWT DST": "TWT DST", "ULAST": "Улан Баатар сайыҥҥы кэмэ", "ULAT": "Улан Баатар сүрүн кэмэ", "UYST": "UYST", "UYT": "UYT", "UZT": "UZT", "UZT DST": "UZT DST", "VET": "VET", "VLAST": "Быладьыбастыак сайыҥҥы кэмэ", "VLAT": "Быладьыбастыак сүрүн кэмэ", "VOLST": "Волгоград сайыҥҥы кэмэ", "VOLT": "Волгоград сүрүн кэмэ", "VOST": "VOST", "VUT": "VUT", "VUT DST": "VUT DST", "WAKT": "WAKT", "WARST": "WARST", "WART": "WART", "WAST": "WAST", "WAT": "WAT", "WESZ": "WESZ", "WEZ": "WEZ", "WFT": "WFT", "WGST": "WGST", "WGT": "WGT", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "YAKST": "Дьокуускай сайыҥҥы кэмэ", "YAKT": "Дьокуускай сүрүн кэмэ", "YEKST": "Екатеринбуур сайыҥҥы кэмэ", "YEKT": "Екатеринбуур сүрүн кэмэ", "YST": "YST", "МСК": "Москуба сүрүн кэмэ", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "Арҕаа Казахстаан кэмэ", "شىعىش قازاق ەلى": "Илин Казахстаан кэмэ", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "Кыргыстаан кэмэ", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "∅∅∅"},
 	}
 }
 
@@ -94,6 +94,9 @@ func (sah *sah) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (sah *sah) MonthAbbreviated(month time.Month) string {
+	if len(sah.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return sah.monthsAbbreviated[month]
 }
 
@@ -104,6 +107,9 @@ func (sah *sah) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (sah *sah) MonthNarrow(month time.Month) string {
+	if len(sah.monthsNarrow) == 0 {
+		return ""
+	}
 	return sah.monthsNarrow[month]
 }
 
@@ -114,6 +120,9 @@ func (sah *sah) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (sah *sah) MonthWide(month time.Month) string {
+	if len(sah.monthsWide) == 0 {
+		return ""
+	}
 	return sah.monthsWide[month]
 }
 
@@ -124,6 +133,9 @@ func (sah *sah) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (sah *sah) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(sah.daysAbbreviated) == 0 {
+		return ""
+	}
 	return sah.daysAbbreviated[weekday]
 }
 
@@ -134,6 +146,9 @@ func (sah *sah) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (sah *sah) WeekdayNarrow(weekday time.Weekday) string {
+	if len(sah.daysNarrow) == 0 {
+		return ""
+	}
 	return sah.daysNarrow[weekday]
 }
 
@@ -144,6 +159,9 @@ func (sah *sah) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (sah *sah) WeekdayShort(weekday time.Weekday) string {
+	if len(sah.daysShort) == 0 {
+		return ""
+	}
 	return sah.daysShort[weekday]
 }
 
@@ -154,6 +172,9 @@ func (sah *sah) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (sah *sah) WeekdayWide(weekday time.Weekday) string {
+	if len(sah.daysWide) == 0 {
+		return ""
+	}
 	return sah.daysWide[weekday]
 }
 

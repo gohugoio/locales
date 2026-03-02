@@ -93,6 +93,9 @@ func (ksf *ksf) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (ksf *ksf) MonthAbbreviated(month time.Month) string {
+	if len(ksf.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return ksf.monthsAbbreviated[month]
 }
 
@@ -103,6 +106,9 @@ func (ksf *ksf) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (ksf *ksf) MonthNarrow(month time.Month) string {
+	if len(ksf.monthsNarrow) == 0 {
+		return ""
+	}
 	return ksf.monthsNarrow[month]
 }
 
@@ -113,6 +119,9 @@ func (ksf *ksf) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (ksf *ksf) MonthWide(month time.Month) string {
+	if len(ksf.monthsWide) == 0 {
+		return ""
+	}
 	return ksf.monthsWide[month]
 }
 
@@ -123,6 +132,9 @@ func (ksf *ksf) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (ksf *ksf) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(ksf.daysAbbreviated) == 0 {
+		return ""
+	}
 	return ksf.daysAbbreviated[weekday]
 }
 
@@ -133,6 +145,9 @@ func (ksf *ksf) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (ksf *ksf) WeekdayNarrow(weekday time.Weekday) string {
+	if len(ksf.daysNarrow) == 0 {
+		return ""
+	}
 	return ksf.daysNarrow[weekday]
 }
 
@@ -143,6 +158,9 @@ func (ksf *ksf) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (ksf *ksf) WeekdayShort(weekday time.Weekday) string {
+	if len(ksf.daysShort) == 0 {
+		return ""
+	}
 	return ksf.daysShort[weekday]
 }
 
@@ -153,6 +171,9 @@ func (ksf *ksf) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (ksf *ksf) WeekdayWide(weekday time.Weekday) string {
+	if len(ksf.daysWide) == 0 {
+		return ""
+	}
 	return ksf.daysWide[weekday]
 }
 

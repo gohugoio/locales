@@ -93,6 +93,9 @@ func (jgo *jgo) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (jgo *jgo) MonthAbbreviated(month time.Month) string {
+	if len(jgo.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return jgo.monthsAbbreviated[month]
 }
 
@@ -103,6 +106,9 @@ func (jgo *jgo) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (jgo *jgo) MonthNarrow(month time.Month) string {
+	if len(jgo.monthsNarrow) == 0 {
+		return ""
+	}
 	return jgo.monthsNarrow[month]
 }
 
@@ -113,6 +119,9 @@ func (jgo *jgo) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (jgo *jgo) MonthWide(month time.Month) string {
+	if len(jgo.monthsWide) == 0 {
+		return ""
+	}
 	return jgo.monthsWide[month]
 }
 
@@ -123,6 +132,9 @@ func (jgo *jgo) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (jgo *jgo) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(jgo.daysAbbreviated) == 0 {
+		return ""
+	}
 	return jgo.daysAbbreviated[weekday]
 }
 
@@ -133,6 +145,9 @@ func (jgo *jgo) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (jgo *jgo) WeekdayNarrow(weekday time.Weekday) string {
+	if len(jgo.daysNarrow) == 0 {
+		return ""
+	}
 	return jgo.daysNarrow[weekday]
 }
 
@@ -143,6 +158,9 @@ func (jgo *jgo) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (jgo *jgo) WeekdayShort(weekday time.Weekday) string {
+	if len(jgo.daysShort) == 0 {
+		return ""
+	}
 	return jgo.daysShort[weekday]
 }
 
@@ -153,6 +171,9 @@ func (jgo *jgo) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (jgo *jgo) WeekdayWide(weekday time.Weekday) string {
+	if len(jgo.daysWide) == 0 {
+		return ""
+	}
 	return jgo.daysWide[weekday]
 }
 

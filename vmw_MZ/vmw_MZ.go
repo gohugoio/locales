@@ -90,6 +90,9 @@ func (vmw *vmw_MZ) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (vmw *vmw_MZ) MonthAbbreviated(month time.Month) string {
+	if len(vmw.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return vmw.monthsAbbreviated[month]
 }
 
@@ -100,6 +103,9 @@ func (vmw *vmw_MZ) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (vmw *vmw_MZ) MonthNarrow(month time.Month) string {
+	if len(vmw.monthsNarrow) == 0 {
+		return ""
+	}
 	return vmw.monthsNarrow[month]
 }
 
@@ -110,6 +116,9 @@ func (vmw *vmw_MZ) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (vmw *vmw_MZ) MonthWide(month time.Month) string {
+	if len(vmw.monthsWide) == 0 {
+		return ""
+	}
 	return vmw.monthsWide[month]
 }
 
@@ -120,6 +129,9 @@ func (vmw *vmw_MZ) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (vmw *vmw_MZ) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(vmw.daysAbbreviated) == 0 {
+		return ""
+	}
 	return vmw.daysAbbreviated[weekday]
 }
 
@@ -130,6 +142,9 @@ func (vmw *vmw_MZ) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (vmw *vmw_MZ) WeekdayNarrow(weekday time.Weekday) string {
+	if len(vmw.daysNarrow) == 0 {
+		return ""
+	}
 	return vmw.daysNarrow[weekday]
 }
 
@@ -140,6 +155,9 @@ func (vmw *vmw_MZ) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (vmw *vmw_MZ) WeekdayShort(weekday time.Weekday) string {
+	if len(vmw.daysShort) == 0 {
+		return ""
+	}
 	return vmw.daysShort[weekday]
 }
 
@@ -150,6 +168,9 @@ func (vmw *vmw_MZ) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (vmw *vmw_MZ) WeekdayWide(weekday time.Weekday) string {
+	if len(vmw.daysWide) == 0 {
+		return ""
+	}
 	return vmw.daysWide[weekday]
 }
 

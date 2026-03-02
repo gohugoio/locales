@@ -100,6 +100,9 @@ func (naq *naq) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (naq *naq) MonthAbbreviated(month time.Month) string {
+	if len(naq.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return naq.monthsAbbreviated[month]
 }
 
@@ -110,6 +113,9 @@ func (naq *naq) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (naq *naq) MonthNarrow(month time.Month) string {
+	if len(naq.monthsNarrow) == 0 {
+		return ""
+	}
 	return naq.monthsNarrow[month]
 }
 
@@ -120,6 +126,9 @@ func (naq *naq) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (naq *naq) MonthWide(month time.Month) string {
+	if len(naq.monthsWide) == 0 {
+		return ""
+	}
 	return naq.monthsWide[month]
 }
 
@@ -130,6 +139,9 @@ func (naq *naq) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (naq *naq) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(naq.daysAbbreviated) == 0 {
+		return ""
+	}
 	return naq.daysAbbreviated[weekday]
 }
 
@@ -140,6 +152,9 @@ func (naq *naq) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (naq *naq) WeekdayNarrow(weekday time.Weekday) string {
+	if len(naq.daysNarrow) == 0 {
+		return ""
+	}
 	return naq.daysNarrow[weekday]
 }
 
@@ -150,6 +165,9 @@ func (naq *naq) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (naq *naq) WeekdayShort(weekday time.Weekday) string {
+	if len(naq.daysShort) == 0 {
+		return ""
+	}
 	return naq.daysShort[weekday]
 }
 
@@ -160,6 +178,9 @@ func (naq *naq) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (naq *naq) WeekdayWide(weekday time.Weekday) string {
+	if len(naq.daysWide) == 0 {
+		return ""
+	}
 	return naq.daysWide[weekday]
 }
 

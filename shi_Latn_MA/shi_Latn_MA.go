@@ -98,6 +98,9 @@ func (shi *shi_Latn_MA) RangePluralRule(num1 float64, v1 uint64, num2 float64, v
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
 func (shi *shi_Latn_MA) MonthAbbreviated(month time.Month) string {
+	if len(shi.monthsAbbreviated) == 0 {
+		return ""
+	}
 	return shi.monthsAbbreviated[month]
 }
 
@@ -108,6 +111,9 @@ func (shi *shi_Latn_MA) MonthsAbbreviated() []string {
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
 func (shi *shi_Latn_MA) MonthNarrow(month time.Month) string {
+	if len(shi.monthsNarrow) == 0 {
+		return ""
+	}
 	return shi.monthsNarrow[month]
 }
 
@@ -118,6 +124,9 @@ func (shi *shi_Latn_MA) MonthsNarrow() []string {
 
 // MonthWide returns the locales wide month given the 'month' provided
 func (shi *shi_Latn_MA) MonthWide(month time.Month) string {
+	if len(shi.monthsWide) == 0 {
+		return ""
+	}
 	return shi.monthsWide[month]
 }
 
@@ -128,6 +137,9 @@ func (shi *shi_Latn_MA) MonthsWide() []string {
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
 func (shi *shi_Latn_MA) WeekdayAbbreviated(weekday time.Weekday) string {
+	if len(shi.daysAbbreviated) == 0 {
+		return ""
+	}
 	return shi.daysAbbreviated[weekday]
 }
 
@@ -138,6 +150,9 @@ func (shi *shi_Latn_MA) WeekdaysAbbreviated() []string {
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
 func (shi *shi_Latn_MA) WeekdayNarrow(weekday time.Weekday) string {
+	if len(shi.daysNarrow) == 0 {
+		return ""
+	}
 	return shi.daysNarrow[weekday]
 }
 
@@ -148,6 +163,9 @@ func (shi *shi_Latn_MA) WeekdaysNarrow() []string {
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
 func (shi *shi_Latn_MA) WeekdayShort(weekday time.Weekday) string {
+	if len(shi.daysShort) == 0 {
+		return ""
+	}
 	return shi.daysShort[weekday]
 }
 
@@ -158,6 +176,9 @@ func (shi *shi_Latn_MA) WeekdaysShort() []string {
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
 func (shi *shi_Latn_MA) WeekdayWide(weekday time.Weekday) string {
+	if len(shi.daysWide) == 0 {
+		return ""
+	}
 	return shi.daysWide[weekday]
 }
 
