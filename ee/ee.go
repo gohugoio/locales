@@ -48,30 +48,22 @@ func New() locales.Translator {
 		pluralsCardinal:        []locales.PluralRule{2, 6},
 		pluralsOrdinal:         nil,
 		pluralsRange:           nil,
-		decimal:                ".",
-		group:                  ",",
-		minus:                  "-",
-		percent:                "%",
-		perMille:               "‰",
 		timeSeparator:          ":",
-		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AU$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GH₵", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "₪", "₹", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "₩", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "US$", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "₫", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AU$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "р.", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GH₵", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
 		currencyNegativePrefix: "(",
 		currencyNegativeSuffix: ")",
 		monthsAbbreviated:      []string{"", "dzv", "dzd", "ted", "afɔ", "dam", "mas", "sia", "dea", "any", "kel", "ade", "dzm"},
 		monthsNarrow:           []string{"", "d", "d", "t", "a", "d", "m", "s", "d", "a", "k", "a", "d"},
-		monthsWide:             []string{"", "dzove", "dzodze", "tedoxe", "afɔfĩe", "dama", "masa", "siamlɔm", "deasiamime", "anyɔnyɔ", "kele", "adeɛmekpɔxe", "dzome"},
+		monthsWide:             []string{"", "dzove", "dzodze", "tedoxe", "afɔfĩe", "dame", "masa", "siamlɔm", "deasiamime", "anyɔnyɔ", "kele", "adeɛmekpɔxe", "dzome"},
 		daysAbbreviated:        []string{"kɔs", "dzo", "bla", "kuɖ", "yaw", "fiɖ", "mem"},
 		daysNarrow:             []string{"k", "d", "b", "k", "y", "f", "m"},
-		daysShort:              []string{"kɔs", "dzo", "bla", "kuɖ", "yaw", "fiɖ", "mem"},
 		daysWide:               []string{"kɔsiɖa", "dzoɖa", "blaɖa", "kuɖa", "yawoɖa", "fiɖa", "memleɖa"},
 		periodsAbbreviated:     []string{"ŋdi", "ɣetrɔ"},
 		periodsNarrow:          []string{"ŋ", "ɣ"},
-		periodsWide:            []string{"ŋdi", "ɣetrɔ"},
 		erasAbbreviated:        []string{"HYV", "Yŋ"},
-		erasNarrow:             []string{"hY", "Yŋ"},
-		erasWide:               []string{"", ""},
-		timezones:              map[string]string{"ACDT": "Australian Central dzomeli gaƒoƒo me", "ACST": "Australian Central nutome gaƒoƒo me", "ACWDT": "Australian Central Western kele gaƒoƒo me", "ACWST": "Australian Central Western nutome gaƒoƒo me", "ADT": "Atlantic kele gaƒoƒome", "AEDT": "Australian Eastern kele gaƒoƒo me", "AEST": "Australian Eastern nutome gaƒoƒo me", "AKDT": "Alaska kele gaƒoƒo me", "AKST": "Alaska nutome gaƒoƒo me", "ARST": "Argentina dzomeŋɔli gaƒoƒo me", "ART": "Argentina nutome gaƒoƒo me", "AST": "Atlantic nutome gaƒoƒome", "AWDT": "Australian Western kele gaƒoƒo me", "AWST": "Australian Western nutome gaƒoƒo me", "BOT": "Bolivia gaƒoƒo me", "BT": "Bhutan gaƒoƒo me", "CAT": "Central Africa gaƒoƒo me", "CDT": "Titina America kele gaƒoƒo me", "CHADT": "Chatham kele gaƒoƒo me", "CHAST": "Chatham nutome gaƒoƒo me", "CLST": "Chile dzomeŋɔli gaƒoƒo me", "CLT": "Chile nutome gaƒoƒo me", "COST": "Colombia dzomeŋɔli gaƒoƒo me", "COT": "Colombia nutome gaƒoƒo me", "CST": "Titina America nutome gaƒoƒo me", "ChST": "Chamorro gaƒoƒo me", "EAT": "East Africa gaƒoƒo me", "ECT": "Ecuador gaƒoƒo me", "EDT": "Eastern America kele gaƒoƒo me", "EST": "Eastern America nutome gaƒoƒo me", "GFT": "French Guiana gaƒoƒo me", "GMT": "Greenwich gaƒoƒo me", "GST": "Gulf nutome gaƒoƒo me", "GYT": "Guyana gaƒoƒo me", "HADT": "Hawaii-Aleutia kele gaƒoƒo me", "HAST": "Hawaii-Aleutia nutome gaƒoƒo me", "HAT": "Newfoundland kele gaƒoƒome", "HECU": "Cuba kele gaƒoƒome", "HEEG": "East Greenland dzomeŋɔli gaƒoƒo me", "HENOMX": "Northwest Mexico kele gaƒoƒo me", "HEOG": "West Greenland kele gaƒoƒo me", "HEPM": "St. Pierre & Miquelon kele gaƒoƒome", "HEPMX": "Mexican Pacific kele gaƒoƒome", "HKST": "Hong Kong dzomeŋɔli gaƒoƒo me", "HKT": "Hong Kong nutome gaƒoƒo me", "HNCU": "Cuba nutome gaƒoƒome", "HNEG": "East Greenland nutome gaƒoƒo me", "HNNOMX": "Northwest Mexico nutome gaƒoƒo me", "HNOG": "West Greenland nutome gaƒoƒo me", "HNPM": "St. Pierre & Miquelon nutome gaƒoƒome", "HNPMX": "Mexican Pacific nutome gaƒoƒo me", "HNT": "Newfoundland nutome gaƒoƒome", "IST": "India gaƒoƒo me", "JDT": "Japan dzomeŋɔli gaƒoƒo me", "JST": "Japan nutome gaƒoƒo me", "LHDT": "Lord Howe kele gaƒoƒo me", "LHST": "Lord Howe nutome gaƒoƒo me", "MDT": "Mountain kele gaƒoƒo me", "MESZ": "Central Europe dzomeŋɔli gaƒoƒo me", "MEZ": "Central Europe nutome gaƒoƒo me", "MST": "Mountain nutome gaƒoƒo me", "MYT": "Malaysia gaƒoƒo me", "NZDT": "New Zealand kele gaƒoƒo me", "NZST": "New Zealand nutome gaƒoƒo me", "OESZ": "Ɣedzeƒe Europe ŋkekeme gaƒoƒome", "OEZ": "Ɣedzeƒe Europe gaƒoƒoɖoanyime", "PDT": "Pacific kele gaƒoƒo me", "PST": "Pacific nutome gaƒoƒo me", "SAST": "South Africa nutome gaƒoƒo me", "SGT": "Singapore nutome gaƒoƒo me", "SRT": "Suriname gaƒoƒome", "TMST": "Turkmenistan dzomeŋɔli gaƒoƒo me", "TMT": "Turkmenistan nutome gaƒoƒo me", "UYST": "Uruguay dzomeŋɔli gaƒoƒo me", "UYT": "Uruguay nutome gaƒoƒo me", "VET": "Venezuela gaƒoƒo me", "WARST": "Ɣetoɖoƒe Argentina dzomeŋɔli gaƒoƒo me", "WART": "Ɣetoɖoƒe Argentina nutome gaƒoƒo me", "WAST": "West Africa dzomeŋɔli gaƒoƒo me", "WAT": "West Africa nutome gaƒoƒo me", "WESZ": "Western Europe dzomeŋɔli gaƒoƒo me", "WEZ": "Western Europe nutome gaƒoƒo me", "WIB": "Western Indonesia gaƒoƒo me", "WIT": "Eastern Indonesia gaƒoƒo me", "WITA": "Central Indonesia gaƒoƒo me", "∅∅∅": "Peru dzomeŋɔli gaƒoƒome"},
+		erasNarrow:             []string{"", ""},
+		erasWide:               []string{"Hafi Yesu Va", "Yesu ŋɔli"},
+		timezones:              map[string]string{"ACDT": "Australian Central dzomeli gaƒoƒo me", "ACST": "Australian Central nutome gaƒoƒo me", "ACT": "Eker gaƒoƒoɖoanyime", "ACWDT": "Australian Central Western kele gaƒoƒo me", "ACWST": "Australian Central Western nutome gaƒoƒo me", "ADT": "Atlantic kele gaƒoƒome", "ADT Arabia": "Arabia dzomeŋɔli gaƒoƒo me", "AEDT": "Australian Eastern kele gaƒoƒo me", "AEST": "Australian Eastern nutome gaƒoƒo me", "AFT": "Afghanistan gaƒoƒo me", "AKDT": "Alaska kele gaƒoƒo me", "AKST": "Alaska nutome gaƒoƒo me", "AMST": "Amazon dzomeŋɔli gaƒoƒo me", "AMST Armenia": "Armenia dzomeŋɔli gaƒoƒo me", "AMT": "Amazon nutome gaƒoƒo me", "AMT Armenia": "Armenia nutome gaƒoƒo me", "ANAST": "Anadir ŋkekeme gaƒoƒome", "ANAT": "Anadir gaƒoƒoɖoanyime", "ARST": "Argentina dzomeŋɔli gaƒoƒo me", "ART": "Argentina nutome gaƒoƒo me", "AST": "Atlantic nutome gaƒoƒome", "AST Arabia": "Arabia nutome gaƒoƒo me", "AWDT": "Australian Western kele gaƒoƒo me", "AWST": "Australian Western nutome gaƒoƒo me", "AZST": "Azerbaijan dzomeŋɔli gaƒoƒo me", "AZT": "Azerbaijan nutome gaƒoƒo me", "BDT Bangladesh": "Bangladesh dzomeŋɔli gaƒoƒo me", "BNT": "Brunei Darussalam gaƒoƒo me", "BOT": "Bolivia gaƒoƒo me", "BRST": "Brasilia dzomeŋɔli gaƒoƒo me", "BRT": "Brasilia nutome gaƒoƒo me", "BST Bangladesh": "Bangladesh nutome gaƒoƒo me", "BT": "Bhutan gaƒoƒo me", "CAST": "CAST", "CAT": "Central Africa gaƒoƒo me", "CCT": "Cocos Islands gaƒoƒo me", "CDT": "Titina America kele gaƒoƒo me", "CHADT": "Chatham kele gaƒoƒo me", "CHAST": "Chatham nutome gaƒoƒo me", "CHUT": "Chuuk gaƒoƒo me", "CKT": "Cook Islands nutome gaƒoƒo me", "CKT DST": "Cook Islands dzomeŋɔli gaƒoƒo me", "CLST": "Chile dzomeŋɔli gaƒoƒo me", "CLT": "Chile nutome gaƒoƒo me", "COST": "Colombia dzomeŋɔli gaƒoƒo me", "COT": "Colombia nutome gaƒoƒo me", "CST": "Titina America nutome gaƒoƒo me", "CST China": "China nutome gaƒoƒo me", "CST China DST": "China kele gaƒoƒo me", "CVST": "Cape Verde dzomeŋɔli gaƒoƒo me", "CVT": "Cape Verde nutome gaƒoƒo me", "CXT": "Christmas Island gaƒoƒo me", "ChST": "Chamorro gaƒoƒo me", "ChST NMI": "ChST NMI", "CuDT": "Cuba kele gaƒoƒome", "CuST": "Cuba nutome gaƒoƒome", "DAVT": "Davis gaƒoƒo me", "DDUT": "Dumont-d’Urville gaƒoƒo me", "EASST": "Easter Island dzomeŋɔli gaƒoƒo me", "EAST": "Easter Island nutome gaƒoƒo me", "EAT": "East Africa gaƒoƒo me", "ECT": "Ecuador gaƒoƒo me", "EDT": "Eastern America kele gaƒoƒo me", "EGDT": "East Greenland dzomeŋɔli gaƒoƒo me", "EGST": "East Greenland nutome gaƒoƒo me", "EST": "Eastern America nutome gaƒoƒo me", "FEET": "FEET", "FJT": "Fiji nutome gaƒoƒo me", "FJT Summer": "Fiji dzomeŋɔli gaƒoƒo me", "FKST": "Falkland Islands dzomeŋɔli gaƒoƒo me", "FKT": "Falkland Islands nutome gaƒoƒo me", "FNST": "Fernando de Noronha dzomeŋɔli gaƒoƒo me", "FNT": "Fernando de Noronha nutome gaƒoƒo me", "GALT": "Galapagos gaƒoƒo me", "GAMT": "Gambier gaƒoƒo me", "GEST": "Georgia dzomeŋɔli gaƒoƒo me", "GET": "Georgia nutome gaƒoƒo me", "GFT": "French Guiana gaƒoƒo me", "GIT": "Gilbert Islands gaƒoƒo me", "GMT": "Greenwich gaƒoƒo", "GNSST": "GNSST", "GNST": "GNST", "GST": "South Georgia gaƒoƒo me", "GST Guam": "GST Guam", "GYT": "Guyana gaƒoƒo me", "HADT": "Hawaii-Aleutia kele gaƒoƒo me", "HAST": "Hawaii-Aleutia nutome gaƒoƒo me", "HKST": "Hong Kong dzomeŋɔli gaƒoƒo me", "HKT": "Hong Kong nutome gaƒoƒo me", "HOVST": "Hovd dzomeŋɔli gaƒoƒo me", "HOVT": "Hovd nutome gaƒoƒo me", "ICT": "Indonesia gaƒoƒo me", "IDT": "Israel kele gaƒoƒo me", "IOT": "Indian Ocean gaƒoƒo me", "IRKST": "Irkutsk dzomeŋɔli gaƒoƒo me", "IRKT": "Irkutsk nutome gaƒoƒo me", "IRST": "Iran nutome gaƒoƒo me", "IRST DST": "Iran kele gaƒoƒo me", "IST": "India gaƒoƒo me", "IST Israel": "Israel nutome gaƒoƒo me", "JDT": "Japan dzomeŋɔli gaƒoƒo me", "JST": "Japan nutome gaƒoƒo me", "KOST": "Kosrae gaƒoƒo me", "KRAST": "Krasnoyarsk dzomeŋɔli gaƒoƒo me", "KRAT": "Krasnoyarsk nutome gaƒoƒo me", "KST": "Korea nutome gaƒoƒo me", "KST DST": "Korea dzomeŋɔli gaƒoƒo me", "LHDT": "Lord Howe kele gaƒoƒo me", "LHST": "Lord Howe nutome gaƒoƒo me", "LINT": "Line Islands gaƒoƒo me", "MAGST": "Magadan dzomeŋɔli gaƒoƒo me", "MAGT": "Magadan nutome gaƒoƒo me", "MART": "Marquesas gaƒoƒo me", "MAWT": "Mawson gaƒoƒo me", "MDT": "Mountain kele gaƒoƒo me", "MESZ": "Central Europe dzomeŋɔli gaƒoƒo me", "MEZ": "Central Europe nutome gaƒoƒo me", "MHT": "Marshall Islands gaƒoƒo me", "MMT": "Myanmar gaƒoƒo me", "MSD": "Moscow dzomeŋɔli gaƒoƒo me", "MST": "Mountain nutome gaƒoƒo me", "MUST": "Mauritius dzomeŋɔli gaƒoƒo me", "MUT": "Mauritius nutome gaƒoƒo me", "MVT": "Maldives gaƒoƒo me", "MYT": "Malaysia gaƒoƒo me", "NCT": "New Caledonia nutome gaƒoƒo me", "NDT": "Newfoundland kele gaƒoƒome", "NDT New Caledonia": "New Caledonia dzomeŋɔli gaƒoƒo me", "NFDT": "Norfolk Island dzomeŋɔli gaƒoƒo me", "NFT": "Norfolk Island nutome gaƒoƒo me", "NOVST": "Novosibirsk dzomeŋɔli gaƒoƒo me", "NOVT": "Novosibirsk nutome gaƒoƒo me", "NPT": "Nepal gaƒoƒo me", "NRT": "Nauru gaƒoƒo me", "NST": "Newfoundland nutome gaƒoƒome", "NUT": "Niue gaƒoƒo me", "NZDT": "New Zealand kele gaƒoƒo me", "NZST": "New Zealand nutome gaƒoƒo me", "OESZ": "Ɣedzeƒe Europe ŋkekeme gaƒoƒome", "OEZ": "Ɣedzeƒe Europe gaƒoƒoɖoanyime", "OMSST": "Omsk dzomeŋɔli gaƒoƒo me", "OMST": "Omsk nutome gaƒoƒo me", "PDT": "Pacific kele gaƒoƒo me", "PDTM": "Mexican Pacific kele gaƒoƒome", "PETDT": "Petropavlovsk-Kamtsatski ŋkekeme gaƒoƒome", "PETST": "Petropavlovsk-Kamtsatski gaƒoƒoɖoanyime", "PGT": "Papua New Guinea gaƒoƒo me", "PHOT": "Phoenix Islands gaƒoƒo me", "PKT": "Pakistan nutome gaƒoƒo me", "PKT DST": "Pakistan dzomeŋɔli gaƒoƒo me", "PMDT": "St. Pierre & Miquelon kele gaƒoƒome", "PMST": "St. Pierre & Miquelon nutome gaƒoƒome", "PONT": "Ponape gaƒoƒo me", "PST": "Pacific nutome gaƒoƒo me", "PST Philippine": "Philippine nutome gaƒoƒo me", "PST Philippine DST": "Philippine dzomeŋɔli gaƒoƒo me", "PST Pitcairn": "Pitcairn gaƒoƒo me", "PSTM": "Mexican Pacific nutome gaƒoƒo me", "PWT": "Palau gaƒoƒo me", "PYST": "Paraguay dzomeŋɔli gaƒoƒo me", "PYT": "Paraguay nutome gaƒoƒo me", "PYT Korea": "Pyongyang gaƒoƒo me", "RET": "Reunion gaƒoƒo me", "ROTT": "Rothera gaƒoƒo me", "SAKST": "Sakhalin dzomeŋɔli gaƒoƒo me", "SAKT": "Sakhalin nutome gaƒoƒo me", "SAMST": "Samara ŋkekeme gaƒoƒome", "SAMT": "Samara gaƒoƒoɖoanyime", "SAST": "South Africa nutome gaƒoƒo me", "SBT": "Solomon Islands gaƒoƒo me", "SCT": "Seychelles gaƒoƒo me", "SGT": "Singapore nutome gaƒoƒo me", "SLST": "SLST", "SRT": "Suriname gaƒoƒome", "SST Samoa": "Samoa nutome gaƒoƒo me", "SST Samoa Apia": "Apia nutome gaƒoƒo me", "SST Samoa Apia DST": "Apia kele gaƒoƒo me", "SST Samoa DST": "Samoa kele gaƒoƒo me", "SYOT": "Syowa gaƒoƒo me", "TAAF": "French Southern & Antarctic gaƒoƒo me", "TAHT": "Tahiti gaƒoƒo me", "TJT": "Tajikistan gaƒoƒo me", "TKT": "Tokelau gaƒoƒo me", "TLT": "East Timor gaƒoƒo me", "TMST": "Turkmenistan dzomeŋɔli gaƒoƒo me", "TMT": "Turkmenistan nutome gaƒoƒo me", "TOST": "Tonga dzomeŋɔli gaƒoƒo me", "TOT": "Tonga nutome gaƒoƒo me", "TVT": "Tuvalu gaƒoƒo me", "TWT": "Taipei nutome gaƒoƒo me", "TWT DST": "Taipei kele gaƒoƒo me", "ULAST": "Ulan Bator dzomeŋɔli gaƒoƒo me", "ULAT": "Ulan Bator nutome gaƒoƒo me", "UYST": "Uruguay dzomeŋɔli gaƒoƒo me", "UYT": "Uruguay nutome gaƒoƒo me", "UZT": "Uzbekistan nutome gaƒoƒo me", "UZT DST": "Uzbekistan dzomeŋɔli gaƒoƒo me", "VET": "Venezuela gaƒoƒo me", "VLAST": "Vladivostok dzomeŋɔli gaƒoƒo me", "VLAT": "Vladivostok nutome gaƒoƒo me", "VOLST": "Vogograd dzomeŋɔli gaƒoƒo me", "VOLT": "Volgograd nutome gaƒoƒo me", "VOST": "Vostok gaƒoƒo me", "VUT": "Vanuatu nutome gaƒoƒo me", "VUT DST": "Vanuatu dzomeŋɔli gaƒoƒo me", "WAKT": "Wake Island gaƒoƒo me", "WARST": "Ɣetoɖoƒe Argentina dzomeŋɔli gaƒoƒo me", "WART": "Ɣetoɖoƒe Argentina nutome gaƒoƒo me", "WAST": "West Africa game", "WAT": "West Africa game", "WESZ": "Western Europe dzomeŋɔli gaƒoƒo me", "WEZ": "Western Europe nutome gaƒoƒo me", "WFT": "Wallis & Futuna gaƒoƒo me", "WGST": "West Greenland kele gaƒoƒo me", "WGT": "West Greenland nutome gaƒoƒo me", "WIB": "Western Indonesia gaƒoƒo me", "WIT": "Eastern Indonesia gaƒoƒo me", "WITA": "Central Indonesia gaƒoƒo me", "YAKST": "Yakutsk dzomeŋɔli gaƒoƒo me", "YAKT": "Yakutsk nutome gaƒoƒo me", "YEKST": "Yekaterinburg dzomeŋɔli gaƒoƒo me", "YEKT": "Yekaterinburg nutome gaƒoƒo me", "YST": "YST", "МСК": "Moscow nutome gaƒoƒo me", "اقتاۋ": "Aktau gaƒoƒoɖoanyime", "اقتاۋ قالاسى": "Aktau dzomeŋɔli gaƒoƒome", "اقتوبە": "Aktobe gaƒoƒoɖoanyime", "اقتوبە قالاسى": "Akttobe gaƒoƒome", "الماتى": "Almati gaƒoƒoɖoanyime", "الماتى قالاسى": "Almati dzomeŋɔli gaƒoƒome", "باتىس قازاق ەلى": "West Kazakhstan gaƒoƒo me", "شىعىش قازاق ەلى": "East Kazakhstan gaƒoƒo me", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "Kyrgystan gaƒoƒo me", "قىزىلوردا": "Kizilɔrda gaƒoƒoɖoanyime", "قىزىلوردا قالاسى": "Kizilɔrda dzomeŋɔli gaƒoƒome", "∅∅∅": "Azores dzomeŋɔli gaƒoƒo me"},
 	}
 }
 
@@ -205,73 +197,13 @@ func (ee *ee) Minus() string {
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ee' and handles both Whole and Real numbers based on 'v'
 func (ee *ee) FmtNumber(num float64, v uint64) string {
 
-	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
-	count := 0
-	inWhole := v == 0
-	b := make([]byte, 0, l)
-
-	for i := len(s) - 1; i >= 0; i-- {
-
-		if s[i] == '.' {
-			b = append(b, ee.decimal[0])
-			inWhole = true
-			continue
-		}
-
-		if inWhole {
-			if count == 3 {
-				b = append(b, ee.group[0])
-				count = 1
-			} else {
-				count++
-			}
-		}
-
-		b = append(b, s[i])
-	}
-
-	if num < 0 {
-		b = append(b, ee.minus[0])
-	}
-
-	// reverse
-	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
-		b[i], b[j] = b[j], b[i]
-	}
-
-	return string(b)
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'ee' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (ee *ee) FmtPercent(num float64, v uint64) string {
-	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 3
-	b := make([]byte, 0, l)
-
-	for i := len(s) - 1; i >= 0; i-- {
-
-		if s[i] == '.' {
-			b = append(b, ee.decimal[0])
-			continue
-		}
-
-		b = append(b, s[i])
-	}
-
-	if num < 0 {
-		b = append(b, ee.minus[0])
-	}
-
-	// reverse
-	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
-		b[i], b[j] = b[j], b[i]
-	}
-
-	b = append(b, ee.percent...)
-
-	return string(b)
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ee'
@@ -279,7 +211,7 @@ func (ee *ee) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ee.currencies[currency]
-	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 0
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -337,7 +269,7 @@ func (ee *ee) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ee.currencies[currency]
-	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

@@ -24,6 +24,7 @@ type brx struct {
 	currencies             []string // idx = enum of currency code
 	currencyPositivePrefix string
 	currencyNegativePrefix string
+	currencyNegativeSuffix string
 	monthsAbbreviated      []string
 	monthsNarrow           []string
 	monthsWide             []string
@@ -48,27 +49,23 @@ func New() locales.Translator {
 		pluralsCardinal:        []locales.PluralRule{2, 6},
 		pluralsOrdinal:         nil,
 		pluralsRange:           nil,
-		decimal:                ".",
-		group:                  ",",
-		minus:                  "-",
-		percent:                "%",
-		perMille:               "‰",
 		timeSeparator:          ":",
-		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		currencyPositivePrefix: " ",
-		currencyNegativePrefix: " ",
-		monthsNarrow:           []string{"", "ज", "फे", "मा", "ए", "मे", "जु", "जु", "आ", "से", "अ", "न", "दि"},
-		monthsWide:             []string{"", "जानुवारी", "फेब्रुवारी", "मार्स", "एफ्रिल", "मे", "जुन", "जुलाइ", "आगस्थ", "सेबथेज्ब़र", "अखथबर", "नबेज्ब़र", "दिसेज्ब़र"},
-		daysAbbreviated:        []string{"रबि", "सम", "मंगल", "बुद", "बिसथि", "सुखुर", "सुनि"},
-		daysNarrow:             []string{"र", "स", "मं", "बु", "बि", "सु", "सु"},
-		daysWide:               []string{"रबिबार", "समबार", "मंगलबार", "बुदबार", "बिसथिबार", "सुखुरबार", "सुनिबार"},
+		currencies:             []string{"ADP", "ए.इ.दि", "AFA", "AFN", "ALK", "अल", "ए.एम.दि", "ए.एन.जि", "ए.अ.ए", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ए.आर.एस", "ATS", "AUD", "ए.दब्ल्यु.जि", "AZM", "ए.जेत.एन", "BAD", "बि.ए.एम", "BAN", "बि.बि.दि", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "बि.जि.एन", "BGO", "बि.ऐत्स.दि", "बि.आइ.एफ", "बि.एम.डि", "BND", "बि.अ.बि", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "बि.एस.दि", "BTN", "BUK", "बि.दब्ल्यु.पि", "BYB", "बि.वाई.एन", "BYR", "बि.जेद.डि", "सि.ए $", "सि.दि.एफ", "CHE", "सि.ऐत्स.एफ", "CHW", "CLE", "CLF", "सि.एल.पि", "सि.एन.ऐत्स", "CNX", "सिएन¥", "सि.अ.पि", "COU", "सि.आर.सि", "CSD", "CSK", "सि.इउ.सि", "सि.इउ.पि", "सि.भि.इ", "CYP", "सि.जेद.के", "DDM", "DEM", "दि.जे.एफ", "दि.के.के", "डि.अ.पि", "दि.जेत.दि", "ECS", "ECV", "EEK", "ई.जि.पि", "इ.आर.एन", "ESA", "ESB", "ESP", "इ.ति.बि", "EUR", "FIM", "FJD", "एफ.के.पि", "FRF", "GBP", "GEK", "जि.इ.एल", "GHC", "जि.ऐत्स.एस", "जि.आइ.पि", "जि.एम.दि", "जि.एन.एफ", "GNS", "GQE", "GRD", "जि.ति.किउ", "GWE", "GWP", "जि.वाई.दि", "ऐत्स.के$", "ऐत्स.एन.एल", "HRD", "ऐत्स.आर.के", "ऐत्स.ति.जि", "ऐत्स.इउ.एफ", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "आइ.किउ.दि", "IRR", "ISJ", "आई.एस.के", "ITL", "जे.एम.दि", "जे.अ.दि", "JPY", "के.इ.एस", "के.जि.एस", "KHR", "के.एम.एफ", "के.पि.दब्ल्यु", "KRH", "KRO", "KRW", "के.दब्ल्यु.दि", "के.वाई.दि", "के.जेत.ति", "LAK", "एल.बि.पि", "LKR", "एल.आर.दि", "एल.एस.एल", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "एल.वाई.दि", "एम.ए.दि", "MAF", "MCF", "MDC", "एम.डि.एल", "एम.जि.ए", "MGF", "एम.के.दि", "MKN", "MLF", "MMK", "एम.एन.ति", "एम.अ.पि", "MRO", "एम.आर.इउ", "MTL", "MTP", "एम.इउ.आर", "MVP", "MVR", "एम.दब्ल्यु.के", "एम.एक्स $", "MXP", "MXV", "MYR", "MZE", "MZM", "एम.जेत.एन", "एन.ए.दि", "एन.जि.एन", "NIC", "एन.आई.अ", "NLG", "एन.अ.के", "NPR", "NZD", "अ.एम.आर", "पि.ए.बि", "PEI", "पि.इ.एन", "PES", "PGK", "PHP", "PKR", "पि.एल.एन", "PLZ", "PTE", "पि.आई.जि", "किउ.ए.आर", "RHD", "ROL", "आर.अ.एन", "आर.एस.दि", "रूब", "RUR", "आर.एफ", "एस.ए.आर", "SBD", "एस.सि.आर", "SDD", "एस.दि.जि", "SDP", "एस.इ.के", "SGD", "एस.ऐत्स.पि", "SIT", "SKK", "एस.एल.इ", "एस.एल.एल", "एस.अ.एस", "एस.आर.डि", "SRG", "एस.एस.पि", "STD", "एस.ति.एन", "SUR", "SVC", "एस.वाई.पि", "एस.जेत.एल", "THB", "TJR", "ति.जे.एस", "TMM", "ति.एम.ति", "ति.एन.दि", "TOP", "TPE", "TRL", "ति.आर.वाई", "ति.ति.डि", "एन.ति$", "ति.जेत.एस", "इउ.ए.ऐत्स", "UAK", "UGS", "इउ.जि.एक्स", "$", "USN", "USS", "UYI", "UYP", "इउ.वाई.इउ", "UYW", "इउ.जेत.एस", "VEB", "VED", "VEF", "भि.इ.एस", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "इ.सि $", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "वाई.इ.आर", "YUD", "YUM", "YUN", "YUR", "ZAL", "जेत.ए.आर", "ZMK", "जेत.के", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		currencyPositivePrefix: " ",
+		currencyNegativePrefix: "( ",
+		currencyNegativeSuffix: ")",
+		monthsAbbreviated:      []string{"", "जान", "फेब", "मार्च", "एप्रि", "मे", "जुन", "जुल", "आग", "सेप", "अक्ट’", "नवे", "डिसे"},
+		monthsNarrow:           []string{"", "ज", "फ", "म", "ए", "म", "ज", "ज", "आ", "स", "अ", "न", "ड"},
+		monthsWide:             []string{"", "जानुवारी", "फेब्रूवारी", "मार्च", "एप्रिल", "मे", "जुन", "जुलाई", "आगष्ट", "सेप्थेम्बर", "अक्ट’बर", "नवेम्बर", "डिसेम्बर"},
+		daysAbbreviated:        []string{"रबि", "सम", "मंगल", "बुध", "बिस्थि", "सुखुर", "सनि"},
+		daysNarrow:             []string{"र", "स", "मं", "बु", "बि", "सु", "स"},
+		daysWide:               []string{"रबिबार", "समबार", "मंगलबार", "बुधबार", "बिस्थिबार", "सुखुरबार", "सनिबार"},
 		periodsAbbreviated:     []string{"फुं", "बेलासे"},
-		periodsWide:            []string{"फुं", "बेलासे"},
-		erasAbbreviated:        []string{"ईसा.पूर्व", "सन"},
+		periodsNarrow:          []string{"फुं", "बे"},
+		erasAbbreviated:        []string{"बि.सि.", "ए.दि"},
 		erasNarrow:             []string{"", ""},
-		erasWide:               []string{"", ""},
-		timezones:              map[string]string{"ACDT": "मध्य ओस्ट्रेलिया डेलाईट टाईम", "ACST": "मध्य ओस्ट्रेलिया स्टैंडर्ड टाईम", "ACWDT": "मध्य-पश्चीम ओस्ट्रेलिया डेलाईट टाईम", "ACWST": "मध्य-पश्चीम ओस्ट्रेलिया स्टैंडर्ड टाईम", "ADT": "अटलांटीक डेलाईट टाईम", "AEDT": "पूर्वी ओस्ट्रेलिया डेलाईट टाईम", "AEST": "पूर्वी ओस्ट्रेलिया स्टैंडर्ड टाईम", "AKDT": "अलास्का डेलाईट टाईम", "AKST": "अलास्का स्टैंडर्ड टाईम", "ARST": "अर्जण्टिना समर टाईम", "ART": "अर्जनटिना स्टैंडर्ड टाईम", "AST": "अटलांटीक स्टैंडर्ड टाईम", "AWDT": "दक्षिण ओस्ट्रेलिया डेलाईट टाईम", "AWST": "दक्षिण ओस्ट्रेलिया स्टैंडर्ड टाईम", "BOT": "बोलिविया स्टैंडर्ड टाईम", "BT": "भुटान स्टैंडर्ड टाईम", "CAT": "मध्य अफ्रीका स्टैंडर्ड टाईम", "CDT": "सैंट्रल अमरिका डेलाईट टाईम", "CHADT": "चैथम डेलाईट टाईम", "CHAST": "चैथम स्टैंडर्ड टाईम", "CLST": "चीली समर टाईम", "CLT": "चीली स्टैंडर्ड टाईम", "COST": "कोलंबिया समर टाईम", "COT": "कोलंबिया स्टैंडर्ड टाईम", "CST": "सैंट्रल अमरिका स्टैंडर्ड टाईम", "ChST": "चामरो स्टैंडर्ड टाईम", "EAT": "पूर्वी अफ्रीका स्टैंडर्ड टाईम", "ECT": "एक्वाडौर स्टैंडर्ड टाईम", "EDT": "ईस्टर्न अमरिका डेलाईट टाईम", "EST": "ईस्टर्न अमरिका स्टैंडर्ड टाईम", "GFT": "फ्रान्सीसी गुयाना स्टैंडर्ड टाईम", "GMT": "ग्रीनीच स्टैंडर्ड टाईम", "GST": "गल्फ़ स्टैंडर्ड टाईम", "GYT": "गुयाना स्टैंडर्ड टाईम", "HADT": "हवाई आलटन डेलाईट टाईम", "HAST": "हवाई आलटन स्टैंडर्ड टाईम", "HAT": "न्युफाऊंडलैण्ड डेलाईट टाईम", "HECU": "क्युबा डेलाईट टाईम", "HEEG": "ग्रीनलैण्ड ईस्टर्न समर टाईम", "HENOMX": "HENOMX", "HEOG": "ग्रीनलैण्ड वेस्टर्न समर टाईम", "HEPM": "सेँ पीयॅर एवं मीकलों डेलाईट टाईम", "HEPMX": "HEPMX", "HKST": "हाँगकॉंग समर टाईम", "HKT": "हाँगकॉंग स्टैंडर्ड टाईम", "HNCU": "क्युबा स्टैंडर्ड टाईम", "HNEG": "ग्रीनलैण्ड ईस्टर्न स्टैंडर्ड टाईम", "HNNOMX": "HNNOMX", "HNOG": "ग्रीनलैण्ड वेस्टर्न स्टैंडर्ड टाईम", "HNPM": "सेँ पीयॅर एवं मीकलों स्टैंडर्ड टाईम", "HNPMX": "HNPMX", "HNT": "न्युफाऊंडलैण्ड स्टैंडर्ड टाईम", "IST": "भारतीय स्टैंडर्ड टाईम", "JDT": "जपान डेलाईट टाईम", "JST": "जपान स्टैंडर्ड टाईम", "LHDT": "लार्ड़ होव डेलाईट टाईम", "LHST": "लार्ड़ होव स्टैंडर्ड टाईम", "MDT": "अमरिका माऊन्टन डेलाईट टाईम", "MESZ": "मध्य यूरोप समर टाईम", "MEZ": "मध्य यूरोप स्टैंडर्ड टाईम", "MST": "अमरिका माऊन्टन स्टैंडर्ड टाईम", "MYT": "मलेशिया स्टैंडर्ड टाईम", "NZDT": "न्युज़ीलैण्ड डेलाईट टाईम", "NZST": "न्युज़ीलैण्ड स्टैंडर्ड टाईम", "OESZ": "ईस्टर्न यूरोप समर टाईम", "OEZ": "ईस्टर्न यूरोप स्टैंडर्ड टाईम", "PDT": "पैसीफीक डेलाईट टाईम", "PST": "पैसीफीक स्टैंडर्ड टाईम", "SAST": "दक्षिण अफ्रीका स्टैंडर्ड टाईम", "SGT": "सींगापुर स्टैंडर्ड टाईम", "SRT": "सुरीनाम स्टैंडर्ड टाईम", "TMST": "तुर्कमेनीस्तान समर टाईम", "TMT": "तुर्कमेनीस्तान स्टैंडर्ड टाईम", "UYST": "ऊरुगुए समर टाईम", "UYT": "ऊरुगुए स्टैंडर्ड टाईम", "VET": "वेनेज़ुएला स्टैंडर्ड टाईम", "WARST": "पश्चीम अर्जण्टिना समर टाईम", "WART": "पश्चीम अर्जण्टिना स्टैंडर्ड टाईम", "WAST": "पश्चीम अफ्रीका समर टाईम", "WAT": "पश्चीम अफ्रीका स्टैंडर्ड टाईम", "WESZ": "वेस्टर्न यूरोप समर टाईम", "WEZ": "वेस्टर्न यूरोप स्टैंडर्ड टाईम", "WIB": "वेस्टर्न ईंडोनीशिया स्टैंडर्ड टाईम", "WIT": "ईस्टर्न ईंडोनीशिया स्टैंडर्ड टाईम", "WITA": "ईंडोनीशिया स्टैंडर्ड टाईम", "∅∅∅": "ब्राज़ीलिया समर टाईम"},
+		erasWide:               []string{"ख्राइष्तनि सिगां", "आन्न’ दामिनि"},
+		timezones:              map[string]string{"ACDT": "अ’स्ट्रेलिया मिरु सानारि सम", "ACST": "अ’स्ट्रेलियानि मिरु थाखोआरि सम", "ACT": "आकर स्टैंडर्ड टाईम", "ACWDT": "अस्ट्रेलियानि मिरु सोनाबारि सानारि सम", "ACWST": "अस्ट्रेलियानि मिरु सोनाबारि थाखोआरि सम", "ADT": "आटलान्टिक सानारि सम", "ADT Arabia": "आराबीयान सानारि सम", "AEDT": "अस्ट्रेलियानि सानजायारि सानारि सम", "AEST": "अस्ट्रेलियानि सानजायारि थाखोआरि सम", "AFT": "आफगानीस्तान सम", "AKDT": "आलास्कानि सानारि सम", "AKST": "आलास्का स्टेन्डार्ड सम", "AMST": "आमाजन दैज्लां सम", "AMST Armenia": "आर्मेनिया दैज्लां सम", "AMT": "आमाजन थाखोआऱि सम", "AMT Armenia": "आर्मेनिया थाखोआरि सम", "ANAST": "अनादीर समर टाईम", "ANAT": "अनादीर स्टैंडर्ड टाईम", "ARST": "आर्जेन्टिना दैज्लां सम", "ART": "आर्जेन्टिना थाखोआरि सम", "AST": "आटलान्टिक थाखोआरि सम", "AST Arabia": "आराबीयान थाखोआरि सम", "AWDT": "अस्ट्रेलियानि सोनाबारि सानारि सम", "AWST": "अस्ट्रेलियानि सोनाबारि थाखोआरि सम", "AZST": "आजारबाईजान दैज्लां सम", "AZT": "आजारबाईजान थाखोआरि सम", "BDT Bangladesh": "बांलादेश दैज्लां सम", "BNT": "ब्रुनेई दर उस सलाम स्टैंडर्ड टाईम", "BOT": "बलिभिया सम", "BRST": "ब्राजीलिया दैज्लां सम", "BRT": "ब्राजीलिया थाखोआरि सम", "BST Bangladesh": "बांलादेश थाखोआरि सम", "BT": "भुटान सम", "CAST": "CAST", "CAT": "मिरु आफ्रिका सम", "CCT": "कक’स द्वीपफोरनि सम", "CDT": "साहा आमेरिकानि मिरु सानारि सम", "CHADT": "चेथाम सानारि सम", "CHAST": "चेथाम थाखोआरि सम", "CHUT": "चूक सम", "CKT": "कुक द्वीपफोरनि थाखोआरि सम", "CKT DST": "कुक द्वीपफोरनि खावसे दैज्लां सम", "CLST": "चीले दैज्लां सम", "CLT": "चीले थाखोआरि सम", "COST": "कलम्बिया दैज्लां सम", "COT": "कलम्बिया थाखोआरि सम", "CST": "साहा आमेरिकानि मिरु मानथाखोआरि सम", "CST China": "चाईना थाखोआरि सम", "CST China DST": "चाईना सानारि सम", "CVST": "केप भेर्दे दैज्लां सम", "CVT": "केप भेर्दे थाखोआरि सम", "CXT": "ख्रीस्टमास द्वीप सम", "ChST": "चाम’र्र’ थाखोआरि सम", "ChST NMI": "नॉर्थ मारिआना स्टैंडर्ड टाईम", "CuDT": "किउबा सानारि सम", "CuST": "किउबा थाखोआरि सम", "DAVT": "डेभिस सम", "DDUT": "डुमन्त-डीआर्भील सम", "EASST": "सानजायारि द्वीप दैज्लां सम", "EAST": "सानजायारि द्वीप थाखोआरि सम", "EAT": "सानजा आफ्रिका सम", "ECT": "एकुवाडर सम", "EDT": "साहा आमेरिकानि सानजायारि सानारि सम", "EGDT": "सानडजा ग्रीनलेण्ड दैज्लां सम", "EGST": "सानजा ग्रीनलेण्ड थाखोआरि सम", "EST": "साहा आमेरिकानि सानजायारि थाखोआरि सम", "FEET": "गोजानसिन-सानजायारि युर’पनि सम", "FJT": "फीजी थाखोआरि सम", "FJT Summer": "फीजी दैज्लां सम", "FKST": "फकलेण्ड द्वीपफोरनि दैज्लां सम", "FKT": "फकलेण्ड द्वीपफोरनि थाखोआरि सम", "FNST": "फेरनान्द’ दे नर’न्हा दैज्लां सम", "FNT": "फेरनान्द’ दे नर’न्हा थाखोआरि सम", "GALT": "गालापाग’स सम", "GAMT": "गाम्बियेर सम", "GEST": "जर्जिया दैज्लां सम", "GET": "जर्जिया थाखोआरि सम", "GFT": "फ्रेन्च गुईयाना सम", "GIT": "गीलबार्ट द्वीपफोरनि सम", "GMT": "ग्रिनवीच गेजेरारि सम", "GNSST": "GNSST", "GNST": "GNST", "GST": "खोला जर्जिया सम", "GST Guam": "गुआम स्टैंडर्ड टाईम", "GYT": "गुयाना सम", "HADT": "हावाई-एल्युतियान थाखोआरि सम", "HAST": "हावाई-एल्युतियान थाखोआरि सम", "HKST": "हंकं दैज्लां सम", "HKT": "हंकं थाखोआरि सम", "HOVST": "ह’भ्द दैज्लां सम", "HOVT": "ह’भ्द थाखोआरि सम", "ICT": "ईंडो चइना स्टैंडर्ड टाईम", "IDT": "इज्राईल सानारि सम", "IOT": "भारत लैथोमायारि सम", "IRKST": "ईर्कुत्स्क दैज्लांं सम", "IRKT": "ईर्कुत्स्क थाखोआरि सम", "IRST": "इरान थाखोआरि सम", "IRST DST": "इरान सानारि सम", "IST": "भारतारि थाखोआरि सम", "IST Israel": "इज्राईल थाखोआरि सम", "JDT": "जापान सानारि सम", "JST": "जापान थाखोआरि सम", "KOST": "कस्रे सम", "KRAST": "क्रास्न’यार्स्क दैज्लांं सम", "KRAT": "क्रास्न’यार्स्क थाखोआरि सम", "KST": "क’रिया थाखोआरि सम", "KST DST": "क’रिया सानारि सम", "LHDT": "लर्ड हावि सानारि सम", "LHST": "लर्ड हावि थाखोआरि सम", "LINT": "लाईन द्वीपफोरनि सम", "MAGST": "मागादान दैज्लां सम", "MAGT": "मागादान थाखोआरि सम", "MART": "मार्केसास सम", "MAWT": "मौसन सम", "MDT": "साहा आमोरिकानि हाजोमायारि सानारि सम", "MESZ": "मिरु युर’पनि दैज्लां सम", "MEZ": "मिरु युर’पनि थाखोआरि सम", "MHT": "मार्शेल द्वीपफोरनि सम", "MMT": "म्यानमार स्टैंडर्ड टाईम", "MSD": "मस्कौ दैज्लां सम", "MST": "साहा आमेरिकानि हाजोमायारि थाखोआरि सम", "MUST": "म’रिशियासनि दैज्लां सम", "MUT": "म’रिशियासनि थाखोआरि सम", "MVT": "मालदीभ्स सम", "MYT": "मलेशिया स्टैंडर्ड टाईम", "NCT": "गोदान केलेडनिया थाखोआरि सम", "NDT": "निउफाउन्दलेन्द सानारि सम", "NDT New Caledonia": "गोदान केलेडनिया दैज्लां सम", "NFDT": "नरफ’क द्वीप सानारि सम", "NFT": "नरफ’क द्वीप थाखोआरि सम", "NOVST": "नभ’सिबिर्स्क दैज्लां सम", "NOVT": "नभ’सिबिर्स्क थाखोआरि सम", "NPT": "नेपाल सम", "NRT": "नाऊरु सम", "NST": "निउफाउन्दलेन्द थाखोआरि सम", "NUT": "नीऊए सम", "NZDT": "निउजिलेण्ड सानारि सम", "NZST": "निउजिलेण्ड थाखोआरि सम", "OESZ": "सानजायारि युर’पनि दैज्लां सम", "OEZ": "सानजायारि युर’पनि थाखोआरि सम", "OMSST": "अम्स्क दैज्लां सम", "OMST": "अम्स्क थाखोआरि सम", "PDT": "साहा आमेरिकानि पेसिफिक सानारि सम", "PDTM": "मेक्सिक’नि पेसिफिक सानारि सम", "PETDT": "पेत्रोपावलोस्क कामचटका समर टाईम", "PETST": "पेत्रोपावलोस्क कामचटका स्टैंडर्ड टाईम", "PGT": "पापुआ निउ गिनी सम", "PHOT": "फनीक्स द्वीपफोरनि सम", "PKT": "पाकिस्तान थाखोआरि सम", "PKT DST": "पाकिस्तान दैज्लां सम", "PMDT": "सैन्ट पियेर आरो मिक्वेलन सानारि सम", "PMST": "सैन्ट पियेर आरो मिक्वेलन थाखोआरि सम", "PONT": "पनापे सम", "PST": "साहा आमेरिकानि पेसिफिक थाखोआरि सम", "PST Philippine": "फीलीपीन्स स्टैंडर्ड टाईम", "PST Philippine DST": "फीलीपीन्स समर टाईम", "PST Pitcairn": "पीटकैर्न सम", "PSTM": "मेक्सिक’नि पेसिफिक थाखोआरि सम", "PWT": "पालाउ सम", "PYST": "पारागुवे दैज्लां सम", "PYT": "पारागुवे थाखोआरि सम", "PYT Korea": "प्यंयां सम", "RET": "रियूनियन सम", "ROTT": "रथेरा सम", "SAKST": "साखालिन दैज्लां सम", "SAKT": "साखालिन थाखोआरि सम", "SAMST": "समारा समर टाईम", "SAMT": "समारा स्टैंडर्ड टाईम", "SAST": "खोला आफ्रिकानि थाखोआरि सम", "SBT": "सल’मन द्वीपफोरनि सम", "SCT": "सेशेल्स सम", "SGT": "सींगापुर स्टैंडर्ड टाईम", "SLST": "लंका स्टैंडर्ड टाईम", "SRT": "सुरीनाम सम", "SST Samoa": "साम’वा थाखोआरि सम", "SST Samoa Apia": "आपिया थाखोआरि सम", "SST Samoa Apia DST": "आपिया सान सम", "SST Samoa DST": "साम’वा सानारि सम", "SYOT": "सीअवा सम", "TAAF": "फ्रेन्च खोलायारि आरो एन्टार्कटिक सम", "TAHT": "टाहिटी सम", "TJT": "ताजिकिस्तान सम", "TKT": "टकेलौ सम", "TLT": "ईस्ट टीमोर स्टैंडर्ड टाईम", "TMST": "तुर्कमेनीस्तान दैज्लां सम", "TMT": "तुर्कमेनीस्तान थाखोआरि सम", "TOST": "टंगा दैज्लां सम", "TOT": "टंगा थाखोआरि सम", "TVT": "तुभालु सम", "TWT": "ताईपेइ थाखोआरि सम", "TWT DST": "ताईपेइ सानारि सम", "ULAST": "उलानबातार दैज्लां सम", "ULAT": "उलानबातार थाखोआरि सम", "UYST": "उरुगुवे दैज्लां सम", "UYT": "उरुगुवे थाखोआरि सम", "UZT": "उजबेकिस्तान थाखोआरि सम", "UZT DST": "उजबेकिस्तान दैज्लां सम", "VET": "भेनेजुवेला सम", "VLAST": "भ्लादिभस्त’क दैज्लां सम", "VLAT": "भ्लादिभस्त’क थाखोआरि सम", "VOLST": "भल्ग’ग्रेद दैज्लां सम", "VOLT": "भल्ग’ग्रेद थाखोआरि सम", "VOST": "भस्त’क सम", "VUT": "वानुआटु थाखोआरि सम", "VUT DST": "वानुआटु दैज्लां सम", "WAKT": "वैक द्वीप सम", "WARST": "सोनाब आर्जेन्टिना दैज्लां सम", "WART": "सोनाब आर्जेन्टिना थाखोआरि सम", "WAST": "सोनाब आफ्रिकानि सम", "WAT": "सोनाब आफ्रिकानि सम", "WESZ": "सोनाब युर’पनि दैज्लां सम", "WEZ": "सोनाब युर’पनि थाखोआरि सम", "WFT": "वालीस आरो फुतुना सम", "WGST": "सेनाब ग्रीनलेण्ड दैज्लां सम", "WGT": "सोनाब ग्रीनलेण्ड थाखोआरि सम", "WIB": "वेस्टर्न ईंडोनीशिया स्टैंडर्ड टाईम", "WIT": "ईस्टर्न ईंडोनीशिया स्टैंडर्ड टाईम", "WITA": "ईंडोनीशिया स्टैंडर्ड टाईम", "YAKST": "याकुत्स्क दैज्लां सम", "YAKT": "याकुत्स्क थाखोआरि सम", "YEKST": "येकातेरीनाबुर्ग दैज्लां सम", "YEKT": "येकातेरीनाबुर्ग थाखोआरि सम", "YST": "यूकन सम", "МСК": "मस्कौ थाखोआरि सम", "اقتاۋ": "अक़्टाऊ स्टैंडर्ड टाईम", "اقتاۋ قالاسى": "अक़्टाऊ समर टाईम", "اقتوبە": "अक़्टोबे स्टैंडर्ड टाईम", "اقتوبە قالاسى": "अक़्टोबे समर टाईम", "الماتى": "अलमाटी स्टैंडर्ड टाईम", "الماتى قالاسى": "अलमाटी समर टाईम", "باتىس قازاق ەلى": "सोनाब काजाखस्तान सम", "شىعىش قازاق ەلى": "सानजा काजाखस्तान सम", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "कीर्गीस्तान सम", "قىزىلوردا": "क़ीज़ीलोर्डा स्टैंडर्ड टाईम", "قىزىلوردا قالاسى": "क़ीज़ीलोर्डा समर टाईम", "∅∅∅": "आज’र्सनि दैज्लां सम"},
 	}
 }
 
@@ -121,7 +118,7 @@ func (brx *brx) MonthAbbreviated(month time.Month) string {
 
 // MonthsAbbreviated returns the locales abbreviated months
 func (brx *brx) MonthsAbbreviated() []string {
-	return nil
+	return brx.monthsAbbreviated[1:]
 }
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
@@ -203,7 +200,7 @@ func (brx *brx) Minus() string {
 func (brx *brx) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 0
 	count := 0
 	inWhole := v == 0
 	inSecondary := false
@@ -253,7 +250,7 @@ func (brx *brx) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (brx *brx) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 3
+	l := len(s) + 0
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -285,12 +282,9 @@ func (brx *brx) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := brx.currencies[currency]
-	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2
 	count := 0
 	inWhole := v == 0
-	inSecondary := false
-	groupThreshold := 3
-
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -302,15 +296,9 @@ func (brx *brx) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 		}
 
 		if inWhole {
-
-			if count == groupThreshold {
+			if count == 3 {
 				b = append(b, brx.group[0])
 				count = 1
-
-				if !inSecondary {
-					inSecondary = true
-					groupThreshold = 2
-				}
 			} else {
 				count++
 			}
@@ -356,12 +344,9 @@ func (brx *brx) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := brx.currencies[currency]
-	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4
 	count := 0
 	inWhole := v == 0
-	inSecondary := false
-	groupThreshold := 3
-
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -373,15 +358,9 @@ func (brx *brx) FmtAccounting(num float64, v uint64, currency currency.Type) str
 		}
 
 		if inWhole {
-
-			if count == groupThreshold {
+			if count == 3 {
 				b = append(b, brx.group[0])
 				count = 1
-
-				if !inSecondary {
-					inSecondary = true
-					groupThreshold = 2
-				}
 			} else {
 				count++
 			}
@@ -399,8 +378,6 @@ func (brx *brx) FmtAccounting(num float64, v uint64, currency currency.Type) str
 		for j := len(brx.currencyNegativePrefix) - 1; j >= 0; j-- {
 			b = append(b, brx.currencyNegativePrefix[j])
 		}
-
-		b = append(b, brx.minus[0])
 
 	} else {
 
@@ -430,6 +407,10 @@ func (brx *brx) FmtAccounting(num float64, v uint64, currency currency.Type) str
 		}
 	}
 
+	if num < 0 {
+		b = append(b, brx.currencyNegativeSuffix...)
+	}
+
 	return string(b)
 }
 
@@ -438,15 +419,25 @@ func (brx *brx) FmtDateShort(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	b = strconv.AppendInt(b, int64(t.Month()), 10)
-	b = append(b, []byte{0x2f}...)
-	b = strconv.AppendInt(b, int64(t.Day()), 10)
-	b = append(b, []byte{0x2f}...)
+	if t.Day() < 10 {
+		b = append(b, '0')
+	}
 
-	if t.Year() > 9 {
-		b = append(b, strconv.Itoa(t.Year())[2:]...)
+	b = strconv.AppendInt(b, int64(t.Day()), 10)
+	b = append(b, []byte{0x2d}...)
+
+	if t.Month() < 10 {
+		b = append(b, '0')
+	}
+
+	b = strconv.AppendInt(b, int64(t.Month()), 10)
+
+	b = append(b, []byte{0x2d}...)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
 	} else {
-		b = append(b, strconv.Itoa(t.Year())[1:]...)
+		b = strconv.AppendInt(b, int64(-t.Year()), 10)
 	}
 
 	return string(b)
@@ -457,9 +448,9 @@ func (brx *brx) FmtDateMedium(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	b = append(b, brx.monthsAbbreviated[t.Month()]...)
-	b = append(b, []byte{0x20}...)
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
+	b = append(b, []byte{0x20}...)
+	b = append(b, brx.monthsAbbreviated[t.Month()]...)
 	b = append(b, []byte{0x2c, 0x20}...)
 
 	if t.Year() > 0 {
@@ -476,9 +467,9 @@ func (brx *brx) FmtDateLong(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	b = append(b, brx.monthsWide[t.Month()]...)
-	b = append(b, []byte{0x20}...)
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
+	b = append(b, []byte{0x20}...)
+	b = append(b, brx.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x2c, 0x20}...)
 
 	if t.Year() > 0 {
@@ -495,18 +486,19 @@ func (brx *brx) FmtDateFull(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	b = append(b, brx.daysWide[t.Weekday()]...)
-	b = append(b, []byte{0x2c, 0x20}...)
+	b = strconv.AppendInt(b, int64(t.Day()), 10)
+	b = append(b, []byte{0x20}...)
 	b = append(b, brx.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Day()), 10)
-	b = append(b, []byte{0x2c, 0x20}...)
 
 	if t.Year() > 0 {
 		b = strconv.AppendInt(b, int64(t.Year()), 10)
 	} else {
 		b = strconv.AppendInt(b, int64(-t.Year()), 10)
 	}
+
+	b = append(b, []byte{0x2c, 0x20}...)
+	b = append(b, brx.daysWide[t.Weekday()]...)
 
 	return string(b)
 }
@@ -516,6 +508,14 @@ func (brx *brx) FmtTimeShort(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
+	if t.Hour() < 12 {
+		b = append(b, brx.periodsAbbreviated[0]...)
+	} else {
+		b = append(b, brx.periodsAbbreviated[1]...)
+	}
+
+	b = append(b, []byte{0x20, 0xe0, 0xa4, 0xa8, 0xe0, 0xa4, 0xbf, 0x20}...)
+
 	h := t.Hour()
 
 	if h > 12 {
@@ -530,13 +530,6 @@ func (brx *brx) FmtTimeShort(t time.Time) string {
 	}
 
 	b = strconv.AppendInt(b, int64(t.Minute()), 10)
-	b = append(b, []byte{0x20}...)
-
-	if t.Hour() < 12 {
-		b = append(b, brx.periodsAbbreviated[0]...)
-	} else {
-		b = append(b, brx.periodsAbbreviated[1]...)
-	}
 
 	return string(b)
 }
@@ -546,6 +539,14 @@ func (brx *brx) FmtTimeMedium(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
+	if t.Hour() < 12 {
+		b = append(b, brx.periodsAbbreviated[0]...)
+	} else {
+		b = append(b, brx.periodsAbbreviated[1]...)
+	}
+
+	b = append(b, []byte{0x20}...)
+
 	h := t.Hour()
 
 	if h > 12 {
@@ -567,13 +568,6 @@ func (brx *brx) FmtTimeMedium(t time.Time) string {
 	}
 
 	b = strconv.AppendInt(b, int64(t.Second()), 10)
-	b = append(b, []byte{0x20}...)
-
-	if t.Hour() < 12 {
-		b = append(b, brx.periodsAbbreviated[0]...)
-	} else {
-		b = append(b, brx.periodsAbbreviated[1]...)
-	}
 
 	return string(b)
 }
@@ -583,6 +577,14 @@ func (brx *brx) FmtTimeLong(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
+	if t.Hour() < 12 {
+		b = append(b, brx.periodsAbbreviated[0]...)
+	} else {
+		b = append(b, brx.periodsAbbreviated[1]...)
+	}
+
+	b = append(b, []byte{0x20}...)
+
 	h := t.Hour()
 
 	if h > 12 {
@@ -604,14 +606,6 @@ func (brx *brx) FmtTimeLong(t time.Time) string {
 	}
 
 	b = strconv.AppendInt(b, int64(t.Second()), 10)
-	b = append(b, []byte{0x20}...)
-
-	if t.Hour() < 12 {
-		b = append(b, brx.periodsAbbreviated[0]...)
-	} else {
-		b = append(b, brx.periodsAbbreviated[1]...)
-	}
-
 	b = append(b, []byte{0x20}...)
 
 	tz, _ := t.Zone()
@@ -625,6 +619,14 @@ func (brx *brx) FmtTimeFull(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
+	if t.Hour() < 12 {
+		b = append(b, brx.periodsAbbreviated[0]...)
+	} else {
+		b = append(b, brx.periodsAbbreviated[1]...)
+	}
+
+	b = append(b, []byte{0x20}...)
+
 	h := t.Hour()
 
 	if h > 12 {
@@ -646,14 +648,6 @@ func (brx *brx) FmtTimeFull(t time.Time) string {
 	}
 
 	b = strconv.AppendInt(b, int64(t.Second()), 10)
-	b = append(b, []byte{0x20}...)
-
-	if t.Hour() < 12 {
-		b = append(b, brx.periodsAbbreviated[0]...)
-	} else {
-		b = append(b, brx.periodsAbbreviated[1]...)
-	}
-
 	b = append(b, []byte{0x20}...)
 
 	tz, _ := t.Zone()

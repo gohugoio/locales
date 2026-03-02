@@ -229,6 +229,7 @@ const (
 	SHP
 	SIT
 	SKK
+	SLE
 	SLL
 	SOS
 	SRD
@@ -266,6 +267,7 @@ const (
 	UYW
 	UZS
 	VEB
+	VED
 	VEF
 	VES
 	VND
@@ -280,6 +282,7 @@ const (
 	XBC
 	XBD
 	XCD
+	XCG
 	XDR
 	XEU
 	XFO
@@ -306,6 +309,7 @@ const (
 	ZRN
 	ZRZ
 	ZWD
+	ZWG
 	ZWL
 	ZWR
 )

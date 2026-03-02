@@ -22,7 +22,9 @@ type ps_PK struct {
 	timeSeparator          string
 	inifinity              string
 	currencies             []string // idx = enum of currency code
+	currencyPositivePrefix string
 	currencyPositiveSuffix string
+	currencyNegativePrefix string
 	currencyNegativeSuffix string
 	monthsAbbreviated      []string
 	monthsNarrow           []string
@@ -48,27 +50,23 @@ func New() locales.Translator {
 		pluralsCardinal:        []locales.PluralRule{2, 6},
 		pluralsOrdinal:         []locales.PluralRule{6},
 		pluralsRange:           []locales.PluralRule{2, 6},
-		percent:                "٪",
-		perMille:               "؉",
 		timeSeparator:          ":",
-		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "Rs", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		currencyPositiveSuffix: " ",
-		currencyNegativeSuffix: " ",
-		monthsAbbreviated:      []string{"", "جنوري", "فبروري", "مارچ", "اپریل", "مۍ", "جون", "جولای", "اګست", "سېپتمبر", "اکتوبر", "نومبر", "دسمبر"},
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "Rs", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		currencyPositivePrefix: " ",
+		currencyPositiveSuffix: ")",
+		currencyNegativePrefix: " ",
+		currencyNegativeSuffix: ")",
+		monthsAbbreviated:      []string{"", "جنوري", "فبروري", "مارچ", "اپریل", "مۍ", "جون", "جولای", "اګست", "سپتمبر", "اکتوبر", "نومبر", "دسمبر"},
 		monthsNarrow:           []string{"", "ج", "ف", "م", "ا", "م", "ج", "ج", "ا", "س", "ا", "ن", "د"},
 		monthsWide:             []string{"", "جنوري", "فبروري", "مارچ", "اپریل", "مۍ", "جون", "جولای", "اګست", "سېپتمبر", "اکتوبر", "نومبر", "دسمبر"},
-		daysAbbreviated:        []string{"يونۍ", "دونۍ", "درېنۍ", "څلرنۍ", "پينځنۍ", "جمعه", "اونۍ"},
-		daysNarrow:             []string{"S", "M", "T", "W", "T", "F", "S"},
-		daysShort:              []string{"يونۍ", "دونۍ", "درېنۍ", "څلرنۍ", "پينځنۍ", "جمعه", "اونۍ"},
 		daysWide:               []string{"يونۍ", "دونۍ", "درېنۍ", "څلرنۍ", "پينځنۍ", "جمعه", "اونۍ"},
 		periodsAbbreviated:     []string{"غ.م.", "غ.و."},
 		periodsNarrow:          []string{"غ.م.", "غ.و."},
 		periodsWide:            []string{"غ.م.", "غ.و."},
-		erasAbbreviated:        []string{"له میلاد وړاندې", "م."},
+		erasAbbreviated:        []string{"", ""},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"له میلاد څخه وړاندې", "له میلاد څخه وروسته"},
-		timezones:              map[string]string{"ACDT": "آسترالوي مرکزي د ورځې روښانه وخت", "ACST": "آسترالوي مرکزي معياري وخت", "ACWDT": "آسترالوي مرکزي لوېديځ د ورځې روښانه وخت", "ACWST": "آسترالوي مرکزي لوېديځ معياري وخت", "ADT": "اتلانتیک د رڼا ورځے وخت", "AEDT": "آسترالوي ختيځ د ورځې روښانه وخت", "AEST": "آسترالوي ختيځ معياري وخت", "AKDT": "د الاسکا د ورځے روښانه کول", "AKST": "", "ARST": "ارجنټاین اوړي وخت", "ART": "ارجنټاین معیاری وخت", "AST": "", "AWDT": "د اسټرالیا لویدیځ د ورځے وخت", "AWST": "", "BOT": "بولیویا وخت", "BT": "بهوټان وخت", "CAT": "منځنی افريقا وخت", "CDT": "مرکزي رڼا ورځے وخت", "CHADT": "چاتام د ورځې روښانه وخت", "CHAST": "چاتام معياري وخت", "CLST": "چلی اوړي وخت", "CLT": "چلی معیاری وخت", "COST": "کولمبیا اوړي وخت", "COT": "کولمبیا معیاری وخت", "CST": "", "ChST": "چمارو معياري وخت", "EAT": "ختيځ افريقا وخت", "ECT": "د اکوادور وخت", "EDT": "ختيځ د رڼا ورځے وخت", "EST": "", "GFT": "د فرانسوي ګانا وخت", "GMT": "ګرينويچ معياري وخت", "GST": "خلیج معياري وخت", "GYT": "د ګوانانا وخت", "HADT": "هوایی الیوتین رڼا ورځے وخت", "HAST": "", "HAT": "د نوي فیلډلینډ رڼا ورځے وخت", "HECU": "کیوبا د رڼا ورځے وخت", "HEEG": "د ختیځ ګرینلینډ اوړي وخت", "HENOMX": "د شمال لویدیځ مکسیکو رڼا ورځے وخت", "HEOG": "لویدیځ ګرینلینډ اوړي وخت", "HEPM": "سینټ پییرا و ميکلين رڼا ورځے وخت", "HEPMX": "مکسیکن پیسفک رڼا ورځے وخت", "HKST": "هانګ کانګ اوړي وخت", "HKT": "هانګ کانګ معياري وخت", "HNCU": "", "HNEG": "د ختیځ ګرینلینډ معياري وخت", "HNNOMX": "", "HNOG": "لویدیځ ګرینلینډ معياري وخت", "HNPM": "", "HNPMX": "", "HNT": "", "IST": "هند معیاري وخت", "JDT": "جاپان د رڼا ورځے وخت", "JST": "", "LHDT": "رب هاو د ورځے د رڼا وخت", "LHST": "", "MDT": "د غره د رڼا ورځے وخت", "MESZ": "وسطي اروپايي د اوړي وخت", "MEZ": "د مرکزي اروپا معیاري وخت", "MST": "", "MYT": "ملائیشیا وخت", "NZDT": "د نیوزی لینڈ د ورځے د رڼا وخت", "NZST": "", "OESZ": "ختيځ اروپايي اوړي وخت", "OEZ": "ختيځ اروپايي معياري وخت", "PDT": "پیسفک د رڼا ورځے وخت", "PST": "", "SAST": "جنوبي افريقا معياري وخت", "SGT": "سنګاپور معیاري وخت", "SRT": "سورینام وخت", "TMST": "ترکمنستان اوړي وخت", "TMT": "ترکمنستان معياري وخت", "UYST": "یوروګوای اوړي وخت", "UYT": "یوروګوای معياري وخت", "VET": "وینزویلا وخت", "WARST": "لوېديځ ارجنټاين اوړي وخت", "WART": "لوېديځ ارجنټاين معياري وخت", "WAST": "د افریقا افریقا لویدیځ وخت", "WAT": "لویدیځ افریقایي معیاري وخت", "WESZ": "د لودیځے اورپا د اوړي وخت", "WEZ": "د لودیځے اروپا معیاري وخت", "WIB": "لویدیځ اندونیزیا وخت", "WIT": "اندونیزیا وخت", "WITA": "مرکزي ادونيزيا وخت", "∅∅∅": "ايزورس اوړي وخت"},
+		timezones:              map[string]string{"ACDT": "آسترالوي مرکزي د ورځې روښانه وخت", "ACST": "آسترالوي مرکزي معياري وخت", "ACT": "ACT", "ACWDT": "آسترالوي مرکزي لوېديځ د ورځې روښانه وخت", "ACWST": "آسترالوي مرکزي لوېديځ معياري وخت", "ADT": "اتلانتیک د رڼا ورځے وخت", "ADT Arabia": "د عربي ورځپاڼے وخت", "AEDT": "آسترالوي ختيځ د ورځې روښانه وخت", "AEST": "آسترالوي ختيځ معياري وخت", "AFT": "افغانستان وخت", "AKDT": "د الاسکا د ورځے روښانه کول", "AKST": "", "AMST": "ایمیزون اوړي وخت", "AMST Armenia": "ارمنستان اوړي وخت", "AMT": "ایمیزون معیاری وخت", "AMT Armenia": "ارمنستان معياري وخت", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "ارجنټاین اوړي وخت", "ART": "ارجنټاین معیاری وخت", "AST": "", "AST Arabia": "", "AWDT": "د اسټرالیا لویدیځ د ورځے وخت", "AWST": "", "AZST": "اذرباییجان اوړي وخت", "AZT": "آذربايجان معياري وخت", "BDT Bangladesh": "بنګله ديش اوړي وخت", "BNT": "برونايي دارالسلام وخت", "BOT": "بولیویا وخت", "BRST": "برسلیا اوړي وخت", "BRT": "برسلیا معیاری وخت", "BST Bangladesh": "بنګلادیش معیاري وخت", "BT": "بهوټان وخت", "CAST": "CAST", "CAT": "منځنی افريقا وخت", "CCT": "کوکوز ټاپوګانو وخت", "CDT": "مرکزي رڼا ورځے وخت", "CHADT": "چاتام د ورځې روښانه وخت", "CHAST": "چاتام معياري وخت", "CHUT": "چوک وخت", "CKT": "کوک ټاپوګانو معياري وخت", "CKT DST": "کوک ټاپوګانو نيم اوړي وخت", "CLST": "چلی اوړي وخت", "CLT": "چلی معیاری وخت", "COST": "کولمبیا اوړي وخت", "COT": "کولمبیا معیاری وخت", "CST": "", "CST China": "", "CST China DST": "د چين د رڼا ورځے وخت", "CVST": "کیپ وردډ سمر وخت", "CVT": "کیپ وردډ معياري وخت", "CXT": "کريسمس ټاپو وخت", "ChST": "چمارو معياري وخت", "ChST NMI": "ChST NMI", "CuDT": "کیوبا د رڼا ورځے وخت", "CuST": "", "DAVT": "ډيوس وخت", "DDUT": "ډومونټ ډي ارول", "EASST": "ايستر ټاپو اوړي وخت", "EAST": "ايستر ټاپو معياري وخت", "EAT": "ختيځ افريقا وخت", "ECT": "د اکوادور وخت", "EDT": "ختيځ د رڼا ورځے وخت", "EGDT": "د ختیځ ګرینلینډ اوړي وخت", "EGST": "د ختیځ ګرینلینډ معياري وخت", "EST": "", "FEET": "لرې ختيځ اروپايي وخت", "FJT": "فجی معياري وخت", "FJT Summer": "فجي د اوړي وخت", "FKST": "د فوکلنډ ټاپو اوړي وخت", "FKT": "د فوکلنډ ټاپو معیاری وخت", "FNST": "فرنانڈو دي نورونھا اوړي وخت", "FNT": "فرنانڈو دي نورونها معیاری وخت", "GALT": "ګالپګوس وخت", "GAMT": "ګيمبير وخت", "GEST": "د جورجيا د اوړي وخت", "GET": "جورجیا معیاري وخت", "GFT": "د فرانسوي ګانا وخت", "GIT": "جلبرټ ټاپوګانو وخت", "GMT": "ګرينويچ معياري وخت", "GNSST": "GNSST", "GNST": "GNST", "GST": "د سویل جورجیا وخت", "GST Guam": "GST Guam", "GYT": "د ګوانانا وخت", "HADT": "هوایی الیوتین رڼا ورځے وخت", "HAST": "", "HKST": "هانګ کانګ اوړي وخت", "HKT": "هانګ کانګ معياري وخت", "HOVST": "هاوډ اوړي وخت", "HOVT": "هاوډ معیاری وخت", "ICT": "انډوچاینه وخت", "IDT": "د اسراییلو د ورځے وخت", "IOT": "د هند سمندر وخت", "IRKST": "ارکوټسک اوړي وخت", "IRKT": "ارکوټسک معياري وخت", "IRST": "", "IRST DST": "د ایران د ورځے وخت", "IST": "هند معیاري وخت", "IST Israel": "", "JDT": "جاپان د رڼا ورځے وخت", "JST": "", "KOST": "کوسراي وخت", "KRAST": "کريسنويارسک اوړي وخت", "KRAT": "کريسنويارسک معياري وخت", "KST": "", "KST DST": "د کوریا د ورځے د ورځے وخت", "LHDT": "رب هاو د ورځے د رڼا وخت", "LHST": "", "LINT": "د کرښے ټاټوبي وخت", "MAGST": "ميګډان اوړي وخت", "MAGT": "ميګډان معياري وخت", "MART": "مارکسس وخت", "MAWT": "ماوسن وخت", "MDT": "د غره د رڼا ورځے وخت", "MESZ": "مرکزي اروپايياوړي وخت", "MEZ": "د مرکزي اروپا معیاري وخت", "MHT": "مارشل ټاپوګانو وخت", "MMT": "میانمار وخت", "MSD": "ماسکو سمر وخت", "MST": "", "MUST": "ماريشيس د اوړي وخت", "MUT": "ماریشیس معياري وخت", "MVT": "مالديپ وخت", "MYT": "ملائیشیا وخت", "NCT": "نيو کالیډونیا معياري وخت", "NDT": "د نوي فیلډلینډ رڼا ورځے وخت", "NDT New Caledonia": "نيو کايډونيا اوړي وخت", "NFDT": "د نورفکاس ټاپو اوړي وخت", "NFT": "د نورفکاس ټاپو معياري وخت", "NOVST": "نووسيبرسک اوړي وخت", "NOVT": "نووسيبرسک معياري وخت", "NPT": "نیپال وخت", "NRT": "ناورو وخت", "NST": "", "NUT": "نییو وخت", "NZDT": "د نیوزی لینڈ د ورځے د رڼا وخت", "NZST": "", "OESZ": "ختيځ اروپايي اوړي وخت", "OEZ": "ختيځ اروپايي معياري وخت", "OMSST": "اومسک اوړي وخت", "OMST": "اومسک معياري وخت", "PDT": "پیسفک د رڼا ورځے وخت", "PDTM": "مکسیکن پیسفک رڼا ورځے وخت", "PETDT": "PETDT", "PETST": "PETST", "PGT": "پاپوا نیو ګنی وخت", "PHOT": "د فینکس ټاپو وخت", "PKT": "پاکستان معیاري وخت", "PKT DST": "پاکستان اوړي وخت", "PMDT": "سینټ پییرا و ميکلين رڼا ورځے وخت", "PMST": "", "PONT": "پونيپ وخت", "PST": "", "PST Philippine": "فلپاين معياري وخت", "PST Philippine DST": "فلپاين اوړي وخت", "PST Pitcairn": "پیټ کارین وخت", "PSTM": "", "PWT": "پالاو وخت", "PYST": "پاراګوای اوړي وخت", "PYT": "پیراګوای معياري وخت", "PYT Korea": "پيانګ يانګ وخت", "RET": "ري يونين وخت", "ROTT": "رودرا وخت", "SAKST": "سخلين اوړي وخت", "SAKT": "سخلین معياري وخت", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "جنوبي افريقا معياري وخت", "SBT": "سلیمان ټاپوګانو وخت", "SCT": "سیچیلس وخت", "SGT": "سنګاپور معیاري وخت", "SLST": "SLST", "SRT": "سورینام وخت", "SST Samoa": "", "SST Samoa Apia": "", "SST Samoa Apia DST": "د اپیا د ورځے وخت", "SST Samoa DST": "د سموا د ورځے روښانه کول", "SYOT": "سیوا وخت", "TAAF": "د فرانسے سویل او انټارټيک وخت", "TAHT": "ټهيټي وخت", "TJT": "تاجکستان وخت", "TKT": "توکیلاو وخت", "TLT": "ختيځ تيمور وخت", "TMST": "ترکمنستان اوړي وخت", "TMT": "ترکمنستان معياري وخت", "TOST": "ټونګا اوړي وخت", "TOT": "د ټونګ معياري وخت", "TVT": "تووالو وخت", "TWT": "تايپي معياري وخت", "TWT DST": "تايپي د ورځې روښانه وخت", "ULAST": "اولان باټر اوړي وخت", "ULAT": "اولان باټر معیاري وخت", "UYST": "یوروګوای اوړي وخت", "UYT": "یوروګوای معياري وخت", "UZT": "ازبکستان معياري وخت", "UZT DST": "ازبکستان اوړي وخت", "VET": "وینزویلا وخت", "VLAST": "ولاديوستاک اوړي وخت", "VLAT": "ولاديوستاک معياري وخت", "VOLST": "والګوګراد اوړي وخت", "VOLT": "والګوګراد معياري وخت", "VOST": "واستوک وخت", "VUT": "ونواتو معياري وخت", "VUT DST": "ونواتو اوړي وخت", "WAKT": "ويک تاپو وخت", "WARST": "لوېديځ ارجنټاين اوړي وخت", "WART": "لوېديځ ارجنټاين معياري وخت", "WAST": "لوېديځ افريقا وخت", "WAT": "لوېديځ افريقا وخت", "WESZ": "د لودیځے اورپا د اوړي وخت", "WEZ": "د لودیځے اروپا معیاري وخت", "WFT": "والس او فوتونا وخت", "WGST": "لویدیځ ګرینلینډ اوړي وخت", "WGT": "لویدیځ ګرینلینډ معياري وخت", "WIB": "لویدیځ اندونیزیا وخت", "WIT": "اندونیزیا وخت", "WITA": "مرکزي ادونيزيا وخت", "YAKST": "ياکوټسک د اوړي وخت", "YAKT": "ياکوټسک معياري وخت", "YEKST": "د ياکټرنبرګ د اوړي وخت", "YEKT": "د ياکيټرنبرګ معياري وخت", "YST": "د یوکون وخت", "МСК": "ماسکو معياري وخت", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "لویدیځ قزاقستان وخت", "شىعىش قازاق ەلى": "ختيځ قازقستان وخت", "قازاق ەلى": "قزاقستان وخت", "قىرعىزستان": "کرغیزستان وخت", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "ايزورس اوړي وخت"},
 	}
 }
 
@@ -219,32 +217,7 @@ func (ps *ps_PK) FmtNumber(num float64, v uint64) string {
 // FmtPercent returns 'num' with digits/precision of 'v' for 'ps_PK' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (ps *ps_PK) FmtPercent(num float64, v uint64) string {
-	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 2
-	b := make([]byte, 0, l)
-
-	for i := len(s) - 1; i >= 0; i-- {
-
-		if s[i] == '.' {
-			b = append(b, ps.decimal[0])
-			continue
-		}
-
-		b = append(b, s[i])
-	}
-
-	if num < 0 {
-		b = append(b, ps.minus[0])
-	}
-
-	// reverse
-	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
-		b[i], b[j] = b[j], b[i]
-	}
-
-	b = append(b, ps.percent...)
-
-	return string(b)
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ps_PK'
@@ -252,7 +225,7 @@ func (ps *ps_PK) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ps.currencies[currency]
-	l := len(s) + len(symbol) + 2
+	l := len(s) + len(symbol) + 3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -275,6 +248,14 @@ func (ps *ps_PK) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 		}
 
 		b = append(b, s[i])
+	}
+
+	for j := len(symbol) - 1; j >= 0; j-- {
+		b = append(b, symbol[j])
+	}
+
+	for j := len(ps.currencyPositivePrefix) - 1; j >= 0; j-- {
+		b = append(b, ps.currencyPositivePrefix[j])
 	}
 
 	if num < 0 {
@@ -299,8 +280,6 @@ func (ps *ps_PK) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	b = append(b, ps.currencyPositiveSuffix...)
 
-	b = append(b, symbol...)
-
 	return string(b)
 }
 
@@ -310,7 +289,7 @@ func (ps *ps_PK) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ps.currencies[currency]
-	l := len(s) + len(symbol) + 2
+	l := len(s) + len(symbol) + 3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -337,7 +316,25 @@ func (ps *ps_PK) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	if num < 0 {
 
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
+		}
+
+		for j := len(ps.currencyNegativePrefix) - 1; j >= 0; j-- {
+			b = append(b, ps.currencyNegativePrefix[j])
+		}
+
 		b = append(b, ps.minus[0])
+
+	} else {
+
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
+		}
+
+		for j := len(ps.currencyPositivePrefix) - 1; j >= 0; j-- {
+			b = append(b, ps.currencyPositivePrefix[j])
+		}
 
 	}
 
@@ -359,11 +356,9 @@ func (ps *ps_PK) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	if num < 0 {
 		b = append(b, ps.currencyNegativeSuffix...)
-		b = append(b, symbol...)
 	} else {
 
 		b = append(b, ps.currencyPositiveSuffix...)
-		b = append(b, symbol...)
 	}
 
 	return string(b)
@@ -412,15 +407,13 @@ func (ps *ps_PK) FmtDateLong(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	b = append(b, []byte{0xd8, 0xaf, 0x20}...)
-
 	if t.Year() > 0 {
 		b = strconv.AppendInt(b, int64(t.Year()), 10)
 	} else {
 		b = strconv.AppendInt(b, int64(-t.Year()), 10)
 	}
 
-	b = append(b, []byte{0x20, 0xd8, 0xaf, 0x20}...)
+	b = append(b, []byte{0x20}...)
 	b = append(b, ps.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
 	b = strconv.AppendInt(b, int64(t.Day()), 10)

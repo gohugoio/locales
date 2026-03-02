@@ -1,0 +1,575 @@
+package aa_ER
+
+import (
+	"math"
+	"strconv"
+	"time"
+
+	"github.com/gohugoio/locales"
+	"github.com/gohugoio/locales/currency"
+)
+
+type aa_ER struct {
+	locale             string
+	pluralsCardinal    []locales.PluralRule
+	pluralsOrdinal     []locales.PluralRule
+	pluralsRange       []locales.PluralRule
+	decimal            string
+	group              string
+	minus              string
+	percent            string
+	perMille           string
+	timeSeparator      string
+	inifinity          string
+	currencies         []string // idx = enum of currency code
+	monthsAbbreviated  []string
+	monthsNarrow       []string
+	monthsWide         []string
+	daysAbbreviated    []string
+	daysNarrow         []string
+	daysShort          []string
+	daysWide           []string
+	periodsAbbreviated []string
+	periodsNarrow      []string
+	periodsShort       []string
+	periodsWide        []string
+	erasAbbreviated    []string
+	erasNarrow         []string
+	erasWide           []string
+	timezones          map[string]string
+}
+
+// New returns a new instance of translator for the 'aa_ER' locale
+func New() locales.Translator {
+	return &aa_ER{
+		locale:             "aa_ER",
+		pluralsCardinal:    nil,
+		pluralsOrdinal:     nil,
+		pluralsRange:       nil,
+		timeSeparator:      ":",
+		currencies:         []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "Nfk", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		monthsAbbreviated:  []string{"", "Qun", "Nah", "Cig", "Agd", "Cax", "Qas", "Qad", "Leq", "Way", "Dit", "Xim", "Kax"},
+		monthsNarrow:       []string{"", "Q", "N", "C", "A", "C", "Q", "Q", "L", "W", "D", "X", "K"},
+		monthsWide:         []string{"", "Qunxa Garablu", "Kudo", "Ciggilta Kudo", "Agda Baxis", "Caxah Alsa", "Qasa Dirri", "Qado Dirri", "Liiqen", "Waysu", "Diteli", "Ximoli", "Kaxxa Garablu"},
+		daysAbbreviated:    []string{"Aca", "Etl", "Tal", "Arb", "Kam", "Gum", "Sab"},
+		daysNarrow:         []string{"A", "E", "T", "A", "K", "G", "S"},
+		daysWide:           []string{"Acaada", "Etleeni", "Talaata", "Arbaqa", "Kamiisi", "Gumqata", "Sabti"},
+		periodsAbbreviated: []string{"saaku", "carra"},
+		erasAbbreviated:    []string{"YD", "YW"},
+		erasNarrow:         []string{"", ""},
+		erasWide:           []string{"Yaasuusuk Duma", "Yaasuusuk Wadir"},
+		timezones:          map[string]string{"ACDT": "ACDT", "ACST": "ACST", "ACT": "ACT", "ACWDT": "ACWDT", "ACWST": "ACWST", "ADT": "ADT", "ADT Arabia": "ADT Arabia", "AEDT": "AEDT", "AEST": "AEST", "AFT": "AFT", "AKDT": "AKDT", "AKST": "AKST", "AMST": "AMST", "AMST Armenia": "AMST Armenia", "AMT": "AMT", "AMT Armenia": "AMT Armenia", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "ARST", "ART": "ART", "AST": "AST", "AST Arabia": "AST Arabia", "AWDT": "AWDT", "AWST": "AWST", "AZST": "AZST", "AZT": "AZT", "BDT Bangladesh": "BDT Bangladesh", "BNT": "BNT", "BOT": "BOT", "BRST": "BRST", "BRT": "BRT", "BST Bangladesh": "BST Bangladesh", "BT": "BT", "CAST": "CAST", "CAT": "CAT", "CCT": "CCT", "CDT": "CDT", "CHADT": "CHADT", "CHAST": "CHAST", "CHUT": "CHUT", "CKT": "CKT", "CKT DST": "CKT DST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "CST", "CST China": "CST China", "CST China DST": "CST China DST", "CVST": "CVST", "CVT": "CVT", "CXT": "CXT", "ChST": "ChST", "ChST NMI": "ChST NMI", "CuDT": "CuDT", "CuST": "CuST", "DAVT": "DAVT", "DDUT": "DDUT", "EASST": "EASST", "EAST": "EAST", "EAT": "EAT", "ECT": "ECT", "EDT": "EDT", "EGDT": "EGDT", "EGST": "EGST", "EST": "EST", "FEET": "FEET", "FJT": "FJT", "FJT Summer": "FJT Summer", "FKST": "FKST", "FKT": "FKT", "FNST": "FNST", "FNT": "FNT", "GALT": "GALT", "GAMT": "GAMT", "GEST": "GEST", "GET": "GET", "GFT": "GFT", "GIT": "GIT", "GMT": "GMT", "GNSST": "GNSST", "GNST": "GNST", "GST": "GST", "GST Guam": "GST Guam", "GYT": "GYT", "HADT": "HADT", "HAST": "HAST", "HKST": "HKST", "HKT": "HKT", "HOVST": "HOVST", "HOVT": "HOVT", "ICT": "ICT", "IDT": "IDT", "IOT": "IOT", "IRKST": "IRKST", "IRKT": "IRKT", "IRST": "IRST", "IRST DST": "IRST DST", "IST": "IST", "IST Israel": "IST Israel", "JDT": "JDT", "JST": "JST", "KOST": "KOST", "KRAST": "KRAST", "KRAT": "KRAT", "KST": "KST", "KST DST": "KST DST", "LHDT": "LHDT", "LHST": "LHST", "LINT": "LINT", "MAGST": "MAGST", "MAGT": "MAGT", "MART": "MART", "MAWT": "MAWT", "MDT": "MDT", "MESZ": "MESZ", "MEZ": "MEZ", "MHT": "MHT", "MMT": "MMT", "MSD": "MSD", "MST": "MST", "MUST": "MUST", "MUT": "MUT", "MVT": "MVT", "MYT": "MYT", "NCT": "NCT", "NDT": "NDT", "NDT New Caledonia": "NDT New Caledonia", "NFDT": "NFDT", "NFT": "NFT", "NOVST": "NOVST", "NOVT": "NOVT", "NPT": "NPT", "NRT": "NRT", "NST": "NST", "NUT": "NUT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "OESZ", "OEZ": "OEZ", "OMSST": "OMSST", "OMST": "OMST", "PDT": "PDT", "PDTM": "PDTM", "PETDT": "PETDT", "PETST": "PETST", "PGT": "PGT", "PHOT": "PHOT", "PKT": "PKT", "PKT DST": "PKT DST", "PMDT": "PMDT", "PMST": "PMST", "PONT": "PONT", "PST": "PST", "PST Philippine": "PST Philippine", "PST Philippine DST": "PST Philippine DST", "PST Pitcairn": "PST Pitcairn", "PSTM": "PSTM", "PWT": "PWT", "PYST": "PYST", "PYT": "PYT", "PYT Korea": "PYT Korea", "RET": "RET", "ROTT": "ROTT", "SAKST": "SAKST", "SAKT": "SAKT", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "SAST", "SBT": "SBT", "SCT": "SCT", "SGT": "SGT", "SLST": "SLST", "SRT": "SRT", "SST Samoa": "SST Samoa", "SST Samoa Apia": "SST Samoa Apia", "SST Samoa Apia DST": "SST Samoa Apia DST", "SST Samoa DST": "SST Samoa DST", "SYOT": "SYOT", "TAAF": "TAAF", "TAHT": "TAHT", "TJT": "TJT", "TKT": "TKT", "TLT": "TLT", "TMST": "TMST", "TMT": "TMT", "TOST": "TOST", "TOT": "TOT", "TVT": "TVT", "TWT": "TWT", "TWT DST": "TWT DST", "ULAST": "ULAST", "ULAT": "ULAT", "UYST": "UYST", "UYT": "UYT", "UZT": "UZT", "UZT DST": "UZT DST", "VET": "VET", "VLAST": "VLAST", "VLAT": "VLAT", "VOLST": "VOLST", "VOLT": "VOLT", "VOST": "VOST", "VUT": "VUT", "VUT DST": "VUT DST", "WAKT": "WAKT", "WARST": "WARST", "WART": "WART", "WAST": "WAST", "WAT": "WAT", "WESZ": "WESZ", "WEZ": "WEZ", "WFT": "WFT", "WGST": "WGST", "WGT": "WGT", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "YAKST": "YAKST", "YAKT": "YAKT", "YEKST": "YEKST", "YEKT": "YEKT", "YST": "YST", "МСК": "МСК", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "باتىس قازاق ەلى", "شىعىش قازاق ەلى": "شىعىش قازاق ەلى", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "قىرعىزستان", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "∅∅∅"},
+	}
+}
+
+// Locale returns the current translators string locale
+func (aa *aa_ER) Locale() string {
+	return aa.locale
+}
+
+// PluralsCardinal returns the list of cardinal plural rules associated with 'aa_ER'
+func (aa *aa_ER) PluralsCardinal() []locales.PluralRule {
+	return aa.pluralsCardinal
+}
+
+// PluralsOrdinal returns the list of ordinal plural rules associated with 'aa_ER'
+func (aa *aa_ER) PluralsOrdinal() []locales.PluralRule {
+	return aa.pluralsOrdinal
+}
+
+// PluralsRange returns the list of range plural rules associated with 'aa_ER'
+func (aa *aa_ER) PluralsRange() []locales.PluralRule {
+	return aa.pluralsRange
+}
+
+// CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'aa_ER'
+func (aa *aa_ER) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
+	return locales.PluralRuleUnknown
+}
+
+// OrdinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for 'aa_ER'
+func (aa *aa_ER) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
+	return locales.PluralRuleUnknown
+}
+
+// RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'aa_ER'
+func (aa *aa_ER) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
+	return locales.PluralRuleUnknown
+}
+
+// MonthAbbreviated returns the locales abbreviated month given the 'month' provided
+func (aa *aa_ER) MonthAbbreviated(month time.Month) string {
+	return aa.monthsAbbreviated[month]
+}
+
+// MonthsAbbreviated returns the locales abbreviated months
+func (aa *aa_ER) MonthsAbbreviated() []string {
+	return aa.monthsAbbreviated[1:]
+}
+
+// MonthNarrow returns the locales narrow month given the 'month' provided
+func (aa *aa_ER) MonthNarrow(month time.Month) string {
+	return aa.monthsNarrow[month]
+}
+
+// MonthsNarrow returns the locales narrow months
+func (aa *aa_ER) MonthsNarrow() []string {
+	return aa.monthsNarrow[1:]
+}
+
+// MonthWide returns the locales wide month given the 'month' provided
+func (aa *aa_ER) MonthWide(month time.Month) string {
+	return aa.monthsWide[month]
+}
+
+// MonthsWide returns the locales wide months
+func (aa *aa_ER) MonthsWide() []string {
+	return aa.monthsWide[1:]
+}
+
+// WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
+func (aa *aa_ER) WeekdayAbbreviated(weekday time.Weekday) string {
+	return aa.daysAbbreviated[weekday]
+}
+
+// WeekdaysAbbreviated returns the locales abbreviated weekdays
+func (aa *aa_ER) WeekdaysAbbreviated() []string {
+	return aa.daysAbbreviated
+}
+
+// WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
+func (aa *aa_ER) WeekdayNarrow(weekday time.Weekday) string {
+	return aa.daysNarrow[weekday]
+}
+
+// WeekdaysNarrow returns the locales narrow weekdays
+func (aa *aa_ER) WeekdaysNarrow() []string {
+	return aa.daysNarrow
+}
+
+// WeekdayShort returns the locales short weekday given the 'weekday' provided
+func (aa *aa_ER) WeekdayShort(weekday time.Weekday) string {
+	return aa.daysShort[weekday]
+}
+
+// WeekdaysShort returns the locales short weekdays
+func (aa *aa_ER) WeekdaysShort() []string {
+	return aa.daysShort
+}
+
+// WeekdayWide returns the locales wide weekday given the 'weekday' provided
+func (aa *aa_ER) WeekdayWide(weekday time.Weekday) string {
+	return aa.daysWide[weekday]
+}
+
+// WeekdaysWide returns the locales wide weekdays
+func (aa *aa_ER) WeekdaysWide() []string {
+	return aa.daysWide
+}
+
+// Decimal returns the decimal point of number
+func (aa *aa_ER) Decimal() string {
+	return aa.decimal
+}
+
+// Group returns the group of number
+func (aa *aa_ER) Group() string {
+	return aa.group
+}
+
+// Group returns the minus sign of number
+func (aa *aa_ER) Minus() string {
+	return aa.minus
+}
+
+// FmtNumber returns 'num' with digits/precision of 'v' for 'aa_ER' and handles both Whole and Real numbers based on 'v'
+func (aa *aa_ER) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+}
+
+// FmtPercent returns 'num' with digits/precision of 'v' for 'aa_ER' and handles both Whole and Real numbers based on 'v'
+// NOTE: 'num' passed into FmtPercent is assumed to be in percent already
+func (aa *aa_ER) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+}
+
+// FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'aa_ER'
+func (aa *aa_ER) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	symbol := aa.currencies[currency]
+	l := len(s) + len(symbol) + 0
+	count := 0
+	inWhole := v == 0
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, aa.decimal[0])
+			inWhole = true
+			continue
+		}
+
+		if inWhole {
+			if count == 3 {
+				b = append(b, aa.group[0])
+				count = 1
+			} else {
+				count++
+			}
+		}
+
+		b = append(b, s[i])
+	}
+
+	for j := len(symbol) - 1; j >= 0; j-- {
+		b = append(b, symbol[j])
+	}
+
+	if num < 0 {
+		b = append(b, aa.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	if int(v) < 2 {
+
+		if v == 0 {
+			b = append(b, aa.decimal...)
+		}
+
+		for i := 0; i < 2-int(v); i++ {
+			b = append(b, '0')
+		}
+	}
+
+	return string(b)
+}
+
+// FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'aa_ER'
+// in accounting notation.
+func (aa *aa_ER) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	symbol := aa.currencies[currency]
+	l := len(s) + len(symbol) + 0
+	count := 0
+	inWhole := v == 0
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, aa.decimal[0])
+			inWhole = true
+			continue
+		}
+
+		if inWhole {
+			if count == 3 {
+				b = append(b, aa.group[0])
+				count = 1
+			} else {
+				count++
+			}
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
+		}
+
+		b = append(b, aa.minus[0])
+
+	} else {
+
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
+		}
+
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	if int(v) < 2 {
+
+		if v == 0 {
+			b = append(b, aa.decimal...)
+		}
+
+		for i := 0; i < 2-int(v); i++ {
+			b = append(b, '0')
+		}
+	}
+
+	return string(b)
+}
+
+// FmtDateShort returns the short date representation of 't' for 'aa_ER'
+func (aa *aa_ER) FmtDateShort(t time.Time) string {
+
+	b := make([]byte, 0, 32)
+
+	if t.Day() < 10 {
+		b = append(b, '0')
+	}
+
+	b = strconv.AppendInt(b, int64(t.Day()), 10)
+	b = append(b, []byte{0x2f}...)
+
+	if t.Month() < 10 {
+		b = append(b, '0')
+	}
+
+	b = strconv.AppendInt(b, int64(t.Month()), 10)
+
+	b = append(b, []byte{0x2f}...)
+
+	if t.Year() > 9 {
+		b = append(b, strconv.Itoa(t.Year())[2:]...)
+	} else {
+		b = append(b, strconv.Itoa(t.Year())[1:]...)
+	}
+
+	return string(b)
+}
+
+// FmtDateMedium returns the medium date representation of 't' for 'aa_ER'
+func (aa *aa_ER) FmtDateMedium(t time.Time) string {
+
+	b := make([]byte, 0, 32)
+
+	if t.Day() < 10 {
+		b = append(b, '0')
+	}
+
+	b = strconv.AppendInt(b, int64(t.Day()), 10)
+	b = append(b, []byte{0x2d}...)
+	b = append(b, aa.monthsAbbreviated[t.Month()]...)
+	b = append(b, []byte{0x2d}...)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(-t.Year()), 10)
+	}
+
+	return string(b)
+}
+
+// FmtDateLong returns the long date representation of 't' for 'aa_ER'
+func (aa *aa_ER) FmtDateLong(t time.Time) string {
+
+	b := make([]byte, 0, 32)
+
+	if t.Day() < 10 {
+		b = append(b, '0')
+	}
+
+	b = strconv.AppendInt(b, int64(t.Day()), 10)
+	b = append(b, []byte{0x20}...)
+	b = append(b, aa.monthsWide[t.Month()]...)
+	b = append(b, []byte{0x20}...)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(-t.Year()), 10)
+	}
+
+	return string(b)
+}
+
+// FmtDateFull returns the full date representation of 't' for 'aa_ER'
+func (aa *aa_ER) FmtDateFull(t time.Time) string {
+
+	b := make([]byte, 0, 32)
+
+	b = append(b, aa.daysWide[t.Weekday()]...)
+	b = append(b, []byte{0x2c, 0x20}...)
+	b = append(b, aa.monthsWide[t.Month()]...)
+	b = append(b, []byte{0x20}...)
+
+	if t.Day() < 10 {
+		b = append(b, '0')
+	}
+
+	b = strconv.AppendInt(b, int64(t.Day()), 10)
+	b = append(b, []byte{0x2c, 0x20}...)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(-t.Year()), 10)
+	}
+
+	return string(b)
+}
+
+// FmtTimeShort returns the short time representation of 't' for 'aa_ER'
+func (aa *aa_ER) FmtTimeShort(t time.Time) string {
+
+	b := make([]byte, 0, 32)
+
+	h := t.Hour()
+
+	if h > 12 {
+		h -= 12
+	}
+
+	b = strconv.AppendInt(b, int64(h), 10)
+	b = append(b, aa.timeSeparator...)
+
+	if t.Minute() < 10 {
+		b = append(b, '0')
+	}
+
+	b = strconv.AppendInt(b, int64(t.Minute()), 10)
+	b = append(b, []byte{0xe2, 0x80, 0xaf}...)
+
+	if t.Hour() < 12 {
+		b = append(b, aa.periodsAbbreviated[0]...)
+	} else {
+		b = append(b, aa.periodsAbbreviated[1]...)
+	}
+
+	return string(b)
+}
+
+// FmtTimeMedium returns the medium time representation of 't' for 'aa_ER'
+func (aa *aa_ER) FmtTimeMedium(t time.Time) string {
+
+	b := make([]byte, 0, 32)
+
+	h := t.Hour()
+
+	if h > 12 {
+		h -= 12
+	}
+
+	b = strconv.AppendInt(b, int64(h), 10)
+	b = append(b, aa.timeSeparator...)
+
+	if t.Minute() < 10 {
+		b = append(b, '0')
+	}
+
+	b = strconv.AppendInt(b, int64(t.Minute()), 10)
+	b = append(b, aa.timeSeparator...)
+
+	if t.Second() < 10 {
+		b = append(b, '0')
+	}
+
+	b = strconv.AppendInt(b, int64(t.Second()), 10)
+	b = append(b, []byte{0xe2, 0x80, 0xaf}...)
+
+	if t.Hour() < 12 {
+		b = append(b, aa.periodsAbbreviated[0]...)
+	} else {
+		b = append(b, aa.periodsAbbreviated[1]...)
+	}
+
+	return string(b)
+}
+
+// FmtTimeLong returns the long time representation of 't' for 'aa_ER'
+func (aa *aa_ER) FmtTimeLong(t time.Time) string {
+
+	b := make([]byte, 0, 32)
+
+	h := t.Hour()
+
+	if h > 12 {
+		h -= 12
+	}
+
+	b = strconv.AppendInt(b, int64(h), 10)
+	b = append(b, aa.timeSeparator...)
+
+	if t.Minute() < 10 {
+		b = append(b, '0')
+	}
+
+	b = strconv.AppendInt(b, int64(t.Minute()), 10)
+	b = append(b, aa.timeSeparator...)
+
+	if t.Second() < 10 {
+		b = append(b, '0')
+	}
+
+	b = strconv.AppendInt(b, int64(t.Second()), 10)
+	b = append(b, []byte{0xe2, 0x80, 0xaf}...)
+
+	if t.Hour() < 12 {
+		b = append(b, aa.periodsAbbreviated[0]...)
+	} else {
+		b = append(b, aa.periodsAbbreviated[1]...)
+	}
+
+	b = append(b, []byte{0x20}...)
+
+	tz, _ := t.Zone()
+	b = append(b, tz...)
+
+	return string(b)
+}
+
+// FmtTimeFull returns the full time representation of 't' for 'aa_ER'
+func (aa *aa_ER) FmtTimeFull(t time.Time) string {
+
+	b := make([]byte, 0, 32)
+
+	h := t.Hour()
+
+	if h > 12 {
+		h -= 12
+	}
+
+	b = strconv.AppendInt(b, int64(h), 10)
+	b = append(b, aa.timeSeparator...)
+
+	if t.Minute() < 10 {
+		b = append(b, '0')
+	}
+
+	b = strconv.AppendInt(b, int64(t.Minute()), 10)
+	b = append(b, aa.timeSeparator...)
+
+	if t.Second() < 10 {
+		b = append(b, '0')
+	}
+
+	b = strconv.AppendInt(b, int64(t.Second()), 10)
+	b = append(b, []byte{0xe2, 0x80, 0xaf}...)
+
+	if t.Hour() < 12 {
+		b = append(b, aa.periodsAbbreviated[0]...)
+	} else {
+		b = append(b, aa.periodsAbbreviated[1]...)
+	}
+
+	b = append(b, []byte{0x20}...)
+
+	tz, _ := t.Zone()
+
+	if btz, ok := aa.timezones[tz]; ok {
+		b = append(b, btz...)
+	} else {
+		b = append(b, tz...)
+	}
+
+	return string(b)
+}

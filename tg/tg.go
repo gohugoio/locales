@@ -49,27 +49,21 @@ func New() locales.Translator {
 		pluralsOrdinal:         nil,
 		pluralsRange:           nil,
 		decimal:                ",",
-		group:                  " ",
-		minus:                  "-",
-		percent:                "%",
-		perMille:               "‰",
+		group:                  " ",
 		timeSeparator:          ":",
-		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "₹", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "сом.", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "$", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		currencyPositiveSuffix: " ",
-		currencyNegativeSuffix: " ",
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "сом.", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "$", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		currencyPositiveSuffix: " ",
+		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"},
 		monthsNarrow:           []string{"", "Я", "Ф", "М", "А", "М", "И", "И", "А", "С", "О", "Н", "Д"},
 		monthsWide:             []string{"", "Январ", "Феврал", "Март", "Апрел", "Май", "Июн", "Июл", "Август", "Сентябр", "Октябр", "Ноябр", "Декабр"},
 		daysAbbreviated:        []string{"Яшб", "Дшб", "Сшб", "Чшб", "Пшб", "Ҷмъ", "Шнб"},
 		daysNarrow:             []string{"Я", "Д", "С", "Ч", "П", "Ҷ", "Ш"},
-		daysShort:              []string{"Яшб", "Дшб", "Сшб", "Чшб", "Пшб", "Ҷмъ", "Шнб"},
 		daysWide:               []string{"Якшанбе", "Душанбе", "Сешанбе", "Чоршанбе", "Панҷшанбе", "Ҷумъа", "Шанбе"},
-		periodsWide:            []string{"AM", "PM"},
 		erasAbbreviated:        []string{"ПеМ", "ПаМ"},
 		erasNarrow:             []string{"", ""},
-		erasWide:               []string{"Пеш аз милод", "ПаМ"},
-		timezones:              map[string]string{"ACDT": "ACDT", "ACST": "ACST", "ACWDT": "ACWDT", "ACWST": "ACWST", "ADT": "Вақти рӯзонаи атлантикӣ", "AEDT": "AEDT", "AEST": "AEST", "AKDT": "AKDT", "AKST": "AKST", "ARST": "ARST", "ART": "ART", "AST": "Вақти стандартии атлантикӣ", "AWDT": "AWDT", "AWST": "AWST", "BOT": "BOT", "BT": "BT", "CAT": "CAT", "CDT": "Вақти рӯзонаи марказӣ", "CHADT": "CHADT", "CHAST": "CHAST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "Вақти стандартии марказӣ", "ChST": "ChST", "EAT": "EAT", "ECT": "ECT", "EDT": "Вақти рӯзонаи шарқӣ", "EST": "Вақти стандартии шарқӣ", "GFT": "GFT", "GMT": "Ба вақти Гринвич", "GST": "GST", "GYT": "GYT", "HADT": "HADT", "HAST": "HAST", "HAT": "HAT", "HECU": "HECU", "HEEG": "HEEG", "HENOMX": "HENOMX", "HEOG": "HEOG", "HEPM": "HEPM", "HEPMX": "HEPMX", "HKST": "HKST", "HKT": "HKT", "HNCU": "HNCU", "HNEG": "HNEG", "HNNOMX": "HNNOMX", "HNOG": "HNOG", "HNPM": "HNPM", "HNPMX": "HNPMX", "HNT": "HNT", "IST": "IST", "JDT": "JDT", "JST": "JST", "LHDT": "LHDT", "LHST": "LHST", "MDT": "Вақти рӯзонаи кӯҳӣ", "MESZ": "Вақти тобистонаи аврупоии марказӣ", "MEZ": "Вақти стандартии аврупоии марказӣ", "MST": "Вақти стандартии кӯҳӣ", "MYT": "MYT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "Вақти тобистонаи аврупоии шарқӣ", "OEZ": "Вақти стандартии аврупоии шарқӣ", "PDT": "Вақти рӯзонаи Уқёнуси Ором", "PST": "Вақти стандартии Уқёнуси Ором", "SAST": "SAST", "SGT": "SGT", "SRT": "SRT", "TMST": "TMST", "TMT": "TMT", "UYST": "UYST", "UYT": "UYT", "VET": "VET", "WARST": "WARST", "WART": "WART", "WAST": "WAST", "WAT": "WAT", "WESZ": "Вақти тобистонаи аврупоии ғарбӣ", "WEZ": "Вақти стандартии аврупоии ғарбӣ", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "∅∅∅": "∅∅∅"},
+		erasWide:               []string{"Пеш аз милод", "Пас аз милод"},
+		timezones:              map[string]string{"ACDT": "Вақти рӯонаи Австралияи Марказӣ", "ACST": "ACST", "ACT": "ACT", "ACWDT": "Вақти рӯзонаи Ғарбии Австралия Марказӣ", "ACWST": "Вақти стандартии Ғарбии Австралия Марказӣ", "ADT": "Вақти рӯзонаи атлантикӣ", "ADT Arabia": "Вақти рӯзонаи Арабистон", "AEDT": "Вақти рӯзонаи шарқии Австралия", "AEST": "Вақти стандартии шарқии Австралия", "AFT": "Вақти Афғонистон", "AKDT": "Вақти рӯзонаи Аляска", "AKST": "Вақти стандартии Аляска", "AMST": "Вақти тобистонаи Амазон", "AMST Armenia": "Вақти рӯзонаи Арманистон", "AMT": "Вақти стандартии Амазон", "AMT Armenia": "Вақти стандартии Арманистон", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "Вақти тобистонаи Аргентина", "ART": "Вақти стандартии Аргентина", "AST": "Вақти стандартии атлантикӣ", "AST Arabia": "Вақти стандартии Арабистон", "AWDT": "Вақти рӯзонаи Австралияи Ғарбӣ", "AWST": "Вақти стандартии Австралияи Ғарбӣ", "AZST": "Вақти тобистонаи Озарбойҷон", "AZT": "Вақти стандартии Озарбойҷон", "BDT Bangladesh": "Вақти тобистонаи Бангладеш", "BNT": "Вақти Бруней Доруссалом", "BOT": "Вақти Боливия", "BRST": "Вақти тобистонаи Бразилия", "BRT": "Вақти стандартии Бразилия", "BST Bangladesh": "Вақти стандартии Бангладеш", "BT": "Вақти Бутан", "CAST": "CAST", "CAT": "Вақти Африқои Марказӣ", "CCT": "Вақти Ҷазираҳои Кокос", "CDT": "Вақти рӯзонаи марказӣ", "CHADT": "Вақти рӯзонаи Чатам", "CHAST": "Вақти стандартии Чатам", "CHUT": "Вақти Чук", "CKT": "Вақти стандартии Ҷазираҳои Кук", "CKT DST": "Вақти нимаи тобистонаи Ҷазираҳои Кук", "CLST": "Вақти тобистонаи Чили", "CLT": "Вақти стандартии Чили", "COST": "Вақти тобистонаи Колумбия", "COT": "Вақти стандартии Колумбия", "CST": "Вақти стандартии марказӣ", "CST China": "Вақти стандартии Чин", "CST China DST": "Вақти рӯзонаи Чин", "CVST": "Вақти тобистонаи Кабо-Верде", "CVT": "Вақти стандартии Кабо-Верде", "CXT": "Вақти ҷазираи Мавлуди Исо", "ChST": "Вақти стандартии Чаморро", "ChST NMI": "ChST NMI", "CuDT": "Вақти рӯзонаи Куба", "CuST": "Вақти стандартии Куба", "DAVT": "Вақти Давис", "DDUT": "Вақти Дюмон-д’Урвил", "EASST": "Вақти тобистонаи ҷазираи Пасха", "EAST": "Вақти стандартии ҷазираи Пасха", "EAT": "Вақти Африқои Шарқӣ", "ECT": "Вақти Эквадор", "EDT": "Вақти рӯзонаи шарқӣ", "EGDT": "Вақти тобистонаи Гренландияи Шарқӣ", "EGST": "Вақти стандартии Гренландияи Шарқӣ", "EST": "Вақти стандартии шарқӣ", "FEET": "Вақти Аврупои Шарқӣ", "FJT": "Вақти стандартии Фиҷи", "FJT Summer": "Вақти тобистонаи Фиҷи", "FKST": "Вақти тобистонаи Ҷазираҳои Фолкленд", "FKT": "Вақти стандартии Ҷазираҳои Фолкленд", "FNST": "Вақти тобистонаи Фернандо де Норонха", "FNT": "Вақти стандартии Фернандо де Норонха", "GALT": "Вақти Галапагос", "GAMT": "Вақти Гамбир", "GEST": "Вақти тобистонаи Гурҷистон", "GET": "Вақти стандартии Гурҷистон", "GFT": "Вақти Гвианаи Фаронса", "GIT": "Вақти Ҷазираҳои Гилберт", "GMT": "Вақти миёнаи Гринвич", "GNSST": "GNSST", "GNST": "GNST", "GST": "Вақти Ҷорҷияи Ҷанубӣ", "GST Guam": "GST Guam", "GYT": "Вақти Гайана", "HADT": "Вақти рӯзонаи Ҳавайӣ-Алеутӣ", "HAST": "Вақти стандартии Ҳавайӣ-Алеутӣ", "HKST": "Вақти тобистонаи Ҳонконг", "HKT": "Вақти стандартии Ҳонконг", "HOVST": "Вақти тобистонаи Ховд", "HOVT": "Вақти стандартии Ҳовд", "ICT": "Вақти Ҳиндучин", "IDT": "Вақти рӯзонаи Исроил", "IOT": "Вақти уқёнуси Ҳинд", "IRKST": "Вақти тобистонаи Иркутск", "IRKT": "Вақти стандартии Иркутск", "IRST": "Вақти стандартии Эрон", "IRST DST": "Вақти рӯзонаи Эрон", "IST": "Вақти стандартии Ҳиндустон", "IST Israel": "Вақти стандартии Исроил", "JDT": "Вақти равшании Ҷопон", "JST": "Вақти стандартии Ҷопон", "KOST": "Вақти Косрае", "KRAST": "Вақти тобистонаи Красноярск", "KRAT": "Вақти стандартии Красноярск", "KST": "Вақти стандартии Корея", "KST DST": "Вақти рӯзонаи Корея", "LHDT": "Вақти рӯзонаи Лорд Хоу", "LHST": "Вақти стандартии Лорд Хоу", "LINT": "Вақти Ҷазираҳои Лин", "MAGST": "Вақти тобистонаи Магадан", "MAGT": "Вақти стандартии Магадан", "MART": "Вақти Маркес", "MAWT": "Вақти Мавсон", "MDT": "Вақти рӯзонаи кӯҳӣ", "MESZ": "Вақти тобистонаи аврупоии марказӣ", "MEZ": "Вақти стандартии аврупоии марказӣ", "MHT": "Вақти Ҷазираҳои Маршалл", "MMT": "Вақти Мянма", "MSD": "Вақти тобистонаи Маскав", "MST": "Вақти стандартии кӯҳӣ", "MUST": "Вақти тобистонаи Маврикий", "MUT": "Вақти стандартии Маврикий", "MVT": "Вақти Малдив", "MYT": "Вақти Малайзия", "NCT": "Вақти стандартии Каледонияи Нав", "NDT": "Вақти рӯзонаи Нюфаундленд", "NDT New Caledonia": "Вақти тобистонаи Каледонияи Нав", "NFDT": "Вақти рӯзонаи ҷазираи Норфолк", "NFT": "Вақти стандартии ҷазираи Норфолк", "NOVST": "Вақти тобистонаи Новосибирск", "NOVT": "Вақти стандартии Новосибирск", "NPT": "Вақти Непал", "NRT": "Вақти Науру", "NST": "Вақти стандартии Нюфаундленд", "NUT": "Вақти Ниуэ", "NZDT": "Вақти рӯзонаи Зеландияи Нав", "NZST": "Вақти стандартии Зеландияи Нав", "OESZ": "Вақти тобистонаи аврупоии шарқӣ", "OEZ": "Вақти стандартии аврупоии шарқӣ", "OMSST": "Вақти тобистонаи Омск", "OMST": "Омск вақти стандартӣ", "PDT": "Вақти рӯзонаи Уқёнуси Ором", "PDTM": "Вақти рӯзонаи Уқёнуси Ором Мексика", "PETDT": "PETDT", "PETST": "PETST", "PGT": "Вақти Папуа Гвинеяи Нав", "PHOT": "Вақти Ҷазираҳои Финикс", "PKT": "Вақти стандартии Покистон", "PKT DST": "Вақти тобистонаи Покистон", "PMDT": "Вақти рӯзонаи Сент-Пиер ва Микелон", "PMST": "Вақти стандартии Сент-Пиер ва Микелон", "PONT": "Ponape Time", "PST": "Вақти стандартии Уқёнуси Ором", "PST Philippine": "Вақти стандартии Филиппин", "PST Philippine DST": "Вақти тобистонаи Филиппин", "PST Pitcairn": "Вақти Питкэрн", "PSTM": "Вақти стандартии Уқёнуси Ором Мексика", "PWT": "Вақти Палау", "PYST": "Вақти тобистонаи Парагвай", "PYT": "Вақти стандартии Парагвай", "PYT Korea": "Вақти Пхенян", "RET": "Вақти Реюнион", "ROTT": "Вақти Ротера", "SAKST": "Вақти тобистонаи Сахалин", "SAKT": "Вақти стандартии Сахалин", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "Вақти стандартии Африқои Ҷанубӣ", "SBT": "Вақти Ҷазираҳои Соломон", "SCT": "Вақти Сейшел", "SGT": "Вақти стандартии Сингапур", "SLST": "SLST", "SRT": "Вақти Суринам", "SST Samoa": "Вақти стандартии Самоа", "SST Samoa Apia": "Вақти стандартии Апиа", "SST Samoa Apia DST": "Вақти рӯзонаи Апиа", "SST Samoa DST": "Вақти рӯзонаи Самоа", "SYOT": "Вақти Сёва", "TAAF": "Вақти ҷанубӣ ва Антарктидаи Фаронса", "TAHT": "Вақти Таити", "TJT": "Вақти Тоҷикистон", "TKT": "Вақти Токелау", "TLT": "Вақти Тимори Шарқӣ", "TMST": "Вақти тобистонаи Туркманистон", "TMT": "Вақти стандартии Туркманистон", "TOST": "Вақти тобистонаи Тонга", "TOT": "Вақти стандартии Тонга", "TVT": "Вақти Тувалу", "TWT": "Вақти стандартии Тайбэй", "TWT DST": "Вақти рӯзонаи Тайбэй", "ULAST": "Вақти тобистонаи Улан-Батор", "ULAT": "Вақти стандартии Улан-Батор", "UYST": "Вақти тобистонаи Уругвай", "UYT": "Вақти стандартии Уругвай", "UZT": "Вақти стандартии Ӯзбекистон", "UZT DST": "Вақти тобистонаи Ӯзбекистон", "VET": "Вақти Венесуэла", "VLAST": "Вақти тобистонаи Владивосток", "VLAT": "Вақти стандартии Владивосток", "VOLST": "Вақти тобистонаи Волгоград", "VOLT": "Вақти стандартии Волгоград", "VOST": "Вақти Восток", "VUT": "Вақти стандартии Вануату", "VUT DST": "Вақти тобистонаи Вануату", "WAKT": "Вақти бедории ҷазира", "WARST": "Вақти тобистонаи Аргентинаи Ғарбӣ", "WART": "Вақти стандартии Аргентинаи Ғарбӣ", "WAST": "Вақти Африқои Ғарбӣ", "WAT": "Вақти Африқои Ғарбӣ", "WESZ": "Вақти тобистонаи аврупоии ғарбӣ", "WEZ": "Вақти стандартии аврупоии ғарбӣ", "WFT": "Вақти Уоллис ва Футуна", "WGST": "Вақти тобистонаи Гренландияи Ғарбӣ", "WGT": "Вақти стандартии Гренландияи Ғарбӣ", "WIB": "Вақти Индонезияи Ғарбӣ", "WIT": "Вақти шарқии Индонезия", "WITA": "Вақти Индонезияи Марказӣ", "YAKST": "Якутск вақти тобистона", "YAKT": "Якутск вақти стандартӣ", "YEKST": "Вақти тобистонаи Екатеринбург", "YEKT": "Вақти стандартии Екатеринбург", "YST": "Вақти Юкон", "МСК": "Вақти стандартии Маскав", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "Вақти Қазоқистони Ғарбӣ", "شىعىش قازاق ەلى": "Вақти Қазоқистони Шарқӣ", "قازاق ەلى": "Вақти Қазоқистон", "قىرعىزستان": "Вақти Қирғизистон", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Вақти тобистонаи Перу"},
 	}
 }
 
@@ -196,75 +190,13 @@ func (tg *tg) Minus() string {
 // FmtNumber returns 'num' with digits/precision of 'v' for 'tg' and handles both Whole and Real numbers based on 'v'
 func (tg *tg) FmtNumber(num float64, v uint64) string {
 
-	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
-	count := 0
-	inWhole := v == 0
-	b := make([]byte, 0, l)
-
-	for i := len(s) - 1; i >= 0; i-- {
-
-		if s[i] == '.' {
-			b = append(b, tg.decimal[0])
-			inWhole = true
-			continue
-		}
-
-		if inWhole {
-			if count == 3 {
-				for j := len(tg.group) - 1; j >= 0; j-- {
-					b = append(b, tg.group[j])
-				}
-				count = 1
-			} else {
-				count++
-			}
-		}
-
-		b = append(b, s[i])
-	}
-
-	if num < 0 {
-		b = append(b, tg.minus[0])
-	}
-
-	// reverse
-	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
-		b[i], b[j] = b[j], b[i]
-	}
-
-	return string(b)
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'tg' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (tg *tg) FmtPercent(num float64, v uint64) string {
-	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 3
-	b := make([]byte, 0, l)
-
-	for i := len(s) - 1; i >= 0; i-- {
-
-		if s[i] == '.' {
-			b = append(b, tg.decimal[0])
-			continue
-		}
-
-		b = append(b, s[i])
-	}
-
-	if num < 0 {
-		b = append(b, tg.minus[0])
-	}
-
-	// reverse
-	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
-		b[i], b[j] = b[j], b[i]
-	}
-
-	b = append(b, tg.percent...)
-
-	return string(b)
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'tg'
@@ -272,7 +204,7 @@ func (tg *tg) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := tg.currencies[currency]
-	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 3 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -332,7 +264,7 @@ func (tg *tg) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := tg.currencies[currency]
-	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 3 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

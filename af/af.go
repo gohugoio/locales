@@ -49,13 +49,9 @@ func New() locales.Translator {
 		pluralsOrdinal:         []locales.PluralRule{6},
 		pluralsRange:           []locales.PluralRule{6},
 		decimal:                ",",
-		group:                  " ",
-		minus:                  "-",
-		percent:                "%",
-		perMille:               "‰",
+		group:                  " ",
 		timeSeparator:          ":",
-		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "A$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "₪", "₹", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "₩", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "₫", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "R", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "р.", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "leu", "RSD", "₽", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "R", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
 		currencyNegativePrefix: "(",
 		currencyNegativeSuffix: ")",
 		monthsAbbreviated:      []string{"", "Jan.", "Feb.", "Mrt.", "Apr.", "Mei", "Jun.", "Jul.", "Aug.", "Sep.", "Okt.", "Nov.", "Des."},
@@ -63,15 +59,13 @@ func New() locales.Translator {
 		monthsWide:             []string{"", "Januarie", "Februarie", "Maart", "April", "Mei", "Junie", "Julie", "Augustus", "September", "Oktober", "November", "Desember"},
 		daysAbbreviated:        []string{"So.", "Ma.", "Di.", "Wo.", "Do.", "Vr.", "Sa."},
 		daysNarrow:             []string{"S", "M", "D", "W", "D", "V", "S"},
-		daysShort:              []string{"So.", "Ma.", "Di.", "Wo.", "Do.", "Vr.", "Sa."},
 		daysWide:               []string{"Sondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrydag", "Saterdag"},
 		periodsAbbreviated:     []string{"vm.", "nm."},
 		periodsNarrow:          []string{"v", "n"},
-		periodsWide:            []string{"vm.", "nm."},
 		erasAbbreviated:        []string{"v.C.", "n.C."},
-		erasNarrow:             []string{"v.C.", "n.C."},
-		erasWide:               []string{"voor Christus", "na Christus"},
-		timezones:              map[string]string{"ACDT": "Sentraal-Australiese dagligtyd", "ACST": "Sentraal-Australiese standaardtyd", "ACWDT": "Sentraal-westelike Australiese dagligtyd", "ACWST": "Sentraal-westelike Australiese standaard-tyd", "ADT": "Atlantiese dagligtyd", "AEDT": "Oostelike Australiese dagligtyd", "AEST": "Oostelike Australiese standaardtyd", "AKDT": "Alaska-dagligtyd", "AKST": "Alaska-standaardtyd", "ARST": "Argentinië-somertyd", "ART": "Argentinië-standaardtyd", "AST": "Atlantiese standaardtyd", "AWDT": "Westelike Australiese dagligtyd", "AWST": "Westelike Australiese standaardtyd", "BOT": "Bolivia-tyd", "BT": "Bhoetan-tyd", "CAT": "Sentraal-Afrika-tyd", "CDT": "Noord-Amerikaanse sentrale dagligtyd", "CHADT": "Chatham-dagligtyd", "CHAST": "Chatham-standaardtyd", "CLST": "Chili-somertyd", "CLT": "Chili-standaardtyd", "COST": "Colombia-somertyd", "COT": "Colombië-standaardtyd", "CST": "Noord-Amerikaanse sentrale standaardtyd", "ChST": "Chamorro-standaardtyd", "EAT": "Oos-Afrika-tyd", "ECT": "Ecuador-tyd", "EDT": "Noord-Amerikaanse oostelike dagligtyd", "EST": "Noord-Amerikaanse oostelike standaardtyd", "GFT": "Frans-Guiana-tyd", "GMT": "Greenwich-tyd", "GST": "Persiese Golf-standaardtyd", "GYT": "Guyana-tyd", "HADT": "Hawaii-Aleoete-dagligtyd", "HAST": "Hawaii-Aleoete-standaardtyd", "HAT": "Newfoundland-dagligtyd", "HECU": "Kuba-dagligtyd", "HEEG": "Oos-Groenland-somertyd", "HENOMX": "Noordwes-Meksiko-dagligtyd", "HEOG": "Wes-Groenland-somertyd", "HEPM": "Sint-Pierre en Miquelon-dagligtyd", "HEPMX": "Meksikaanse Pasifiese dagligtyd", "HKST": "Hongkong-somertyd", "HKT": "Hongkong-standaardtyd", "HNCU": "Kuba-standaardtyd", "HNEG": "Oos-Groenland-standaardtyd", "HNNOMX": "Noordwes-Meksiko-standaardtyd", "HNOG": "Wes-Groenland-standaardtyd", "HNPM": "Sint-Pierre en Miquelon-standaardtyd", "HNPMX": "Meksikaanse Pasifiese standaardtyd", "HNT": "Newfoundland-standaardtyd", "IST": "Indië-standaardtyd", "JDT": "Japan-dagligtyd", "JST": "Japan-standaardtyd", "LHDT": "Lord Howe-dagligtyd", "LHST": "Lord Howe-standaardtyd", "MDT": "Noord-Amerikaanse berg-dagligtyd", "MESZ": "Sentraal-Europese somertyd", "MEZ": "Sentraal-Europese standaardtyd", "MST": "Noord-Amerikaanse berg-standaardtyd", "MYT": "Maleisië-tyd", "NZDT": "Nieu-Seeland-dagligtyd", "NZST": "Nieu-Seeland-standaardtyd", "OESZ": "Oos-Europese somertyd", "OEZ": "Oos-Europese standaardtyd", "PDT": "Pasifiese dagligtyd", "PST": "Pasifiese standaardtyd", "SAST": "Suid-Afrika-standaardtyd", "SGT": "Singapoer-standaardtyd", "SRT": "Suriname-tyd", "TMST": "Turkmenistan-somertyd", "TMT": "Turkmenistan-standaardtyd", "UYST": "Uruguay-somertyd", "UYT": "Uruguay-standaardtyd", "VET": "Venezuela-tyd", "WARST": "Wes-Argentinië-somertyd", "WART": "Wes-Argentinië-standaardtyd", "WAST": "Wes-Afrika-somertyd", "WAT": "Wes-Afrika-standaardtyd", "WESZ": "Wes-Europese somertyd", "WEZ": "Wes-Europese standaardtyd", "WIB": "Wes-Indonesië-tyd", "WIT": "Oos-Indonesië-tyd", "WITA": "Sentraal-Indonesiese tyd", "∅∅∅": "Brasilia-somertyd"},
+		erasNarrow:             []string{"vgj", "gj"},
+		erasWide:               []string{"voor Christus", "ná Christus"},
+		timezones:              map[string]string{"ACDT": "Sentraal-Australiese dagligtyd", "ACST": "ACST", "ACT": "ACT", "ACWDT": "Sentraal-westelike Australiese dagligtyd", "ACWST": "Sentraal-westelike Australiese standaard-tyd", "ADT": "Atlantiese dagligtyd", "ADT Arabia": "Arabiese dagligtyd", "AEDT": "Oostelike Australiese dagligtyd", "AEST": "Oostelike Australiese standaardtyd", "AFT": "Afganistan-tyd", "AKDT": "Alaska-dagligtyd", "AKST": "Alaska-standaardtyd", "AMST": "Amasone-somertyd", "AMST Armenia": "Armenië-somertyd", "AMT": "Amasone-standaardtyd", "AMT Armenia": "Armenië-standaardtyd", "ANAST": "Anadyr-somertyd", "ANAT": "Anadyr-standaardtyd", "ARST": "Argentinië-somertyd", "ART": "Argentinië-standaardtyd", "AST": "Atlantiese standaardtyd", "AST Arabia": "Arabiese standaardtyd", "AWDT": "Westelike Australiese dagligtyd", "AWST": "Westelike Australiese standaardtyd", "AZST": "Azerbeidjan-somertyd", "AZT": "Azerbeidjan-standaardtyd", "BDT Bangladesh": "Bangladesj-somertyd", "BNT": "Broenei Darussalam-tyd", "BOT": "Bolivië-tyd", "BRST": "Brasilia-somertyd", "BRT": "Brasilia-standaardtyd", "BST Bangladesh": "Bangladesj-standaardtyd", "BT": "Bhoetan-tyd", "CAST": "CAST", "CAT": "Sentraal-Afrika-tyd", "CCT": "Kokoseilande-tyd", "CDT": "Noord-Amerikaanse sentrale dagligtyd", "CHADT": "Chatham-dagligtyd", "CHAST": "Chatham-standaardtyd", "CHUT": "Chuuk-tyd", "CKT": "Cookeilande-standaardtyd", "CKT DST": "Cookeilande-halfsomertyd", "CLST": "Chili-somertyd", "CLT": "Chili-standaardtyd", "COST": "Colombië-somertyd", "COT": "Colombië-standaardtyd", "CST": "Noord-Amerikaanse sentrale standaardtyd", "CST China": "China-standaardtyd", "CST China DST": "China-dagligtyd", "CVST": "Kaap Verde-somertyd", "CVT": "Kaap Verde-standaardtyd", "CXT": "Christmaseiland-tyd", "ChST": "Chamorro-standaardtyd", "ChST NMI": "ChST NMI", "CuDT": "Kuba-dagligtyd", "CuST": "Kuba-standaardtyd", "DAVT": "Davis-tyd", "DDUT": "Dumont d’Urville-tyd", "EASST": "Paaseiland-somertyd", "EAST": "Paaseiland-standaardtyd", "EAT": "Oos-Afrika-tyd", "ECT": "Ecuador-tyd", "EDT": "Noord-Amerikaanse oostelike dagligtyd", "EGDT": "Oos-Groenland-somertyd", "EGST": "Oos-Groenland-standaardtyd", "EST": "Noord-Amerikaanse oostelike standaardtyd", "FEET": "Verder-oos-Europese tyd", "FJT": "Fidji-standaardtyd", "FJT Summer": "Fidji-somertyd", "FKST": "Falklandeilande-somertyd", "FKT": "Falklandeilande-standaardtyd", "FNST": "Fernando de Noronha-somertyd", "FNT": "Fernando de Noronha-standaardtyd", "GALT": "Galapagos-tyd", "GAMT": "Gambier-tyd", "GEST": "Georgië-somertyd", "GET": "Georgië-standaardtyd", "GFT": "Frans-Guiana-tyd", "GIT": "Gilberteilande-tyd", "GMT": "Greenwich-tyd", "GNSST": "GNSST", "GNST": "GNST", "GST": "Suid-Georgië-tyd", "GST Guam": "GST Guam", "GYT": "Guiana-tyd", "HADT": "Hawaii-Aleoete-dagligtyd", "HAST": "Hawaii-Aleoete-standaardtyd", "HKST": "Hongkong-somertyd", "HKT": "Hongkong-standaardtyd", "HOVST": "Hovd-somertyd", "HOVT": "Hovd-standaardtyd", "ICT": "Indosjina-tyd", "IDT": "Israel-dagligtyd", "IOT": "Indiese Oseaan-tyd", "IRKST": "Irkoetsk-somertyd", "IRKT": "Irkoetsk-standaardtyd", "IRST": "Iran-standaardtyd", "IRST DST": "Iran-dagligtyd", "IST": "Indië-standaardtyd", "IST Israel": "Israel-standaardtyd", "JDT": "Japan-dagligtyd", "JST": "Japan-standaardtyd", "KOST": "Kosrae-tyd", "KRAST": "Krasnojarsk-somertyd", "KRAT": "Krasnojarsk-standaardtyd", "KST": "Koreaanse standaardtyd", "KST DST": "Koreaanse dagligtyd", "LHDT": "Lord Howe-dagligtyd", "LHST": "Lord Howe-standaardtyd", "LINT": "Line-eilande-tyd", "MAGST": "Magadan-somertyd", "MAGT": "Magadan-standaardtyd", "MART": "Marquesas-tyd", "MAWT": "Mawson-tyd", "MDT": "MDT", "MESZ": "Sentraal-Europese somertyd", "MEZ": "Sentraal-Europese standaardtyd", "MHT": "Marshalleilande-tyd", "MMT": "Mianmar-tyd", "MSD": "Moskou-somertyd", "MST": "MST", "MUST": "Mauritius-somertyd", "MUT": "Mauritius-standaardtyd", "MVT": "Maledive-tyd", "MYT": "Maleisië-tyd", "NCT": "Nieu-Kaledonië-standaardtyd", "NDT": "Newfoundland-dagligtyd", "NDT New Caledonia": "Nieu-Kaledonië-somertyd", "NFDT": "Norfolkeiland-dagligtyd", "NFT": "Norfolkeiland-standaardtyd", "NOVST": "Novosibirsk-somertyd", "NOVT": "Novosibirsk-standaardtyd", "NPT": "Nepal-tyd", "NRT": "Nauru-tyd", "NST": "Newfoundland-standaardtyd", "NUT": "Niue-tyd", "NZDT": "Nieu-Seeland-dagligtyd", "NZST": "Nieu-Seeland-standaardtyd", "OESZ": "Oos-Europese somertyd", "OEZ": "Oos-Europese standaardtyd", "OMSST": "Omsk-somertyd", "OMST": "Omsk-standaardtyd", "PDT": "Pasifiese dagligtyd", "PDTM": "Meksikaanse Pasifiese dagligtyd", "PETDT": "Petropavlovsk-Kamchatski-somertyd", "PETST": "Petropavlovsk-Kamchatski-standaardtyd", "PGT": "Papoea-Nieu-Guinee-tyd", "PHOT": "Fenikseilande-tyd", "PKT": "Pakistan-standaardtyd", "PKT DST": "Pakistan-somertyd", "PMDT": "Sint-Pierre en Miquelon-dagligtyd", "PMST": "Sint-Pierre en Miquelon-standaardtyd", "PONT": "Ponape-tyd", "PST": "Pasifiese standaardtyd", "PST Philippine": "Filippynse standaardtyd", "PST Philippine DST": "Filippynse somertyd", "PST Pitcairn": "Pitcairn-tyd", "PSTM": "Meksikaanse Pasifiese standaardtyd", "PWT": "Palau-tyd", "PYST": "Paraguay-somertyd", "PYT": "Paraguay-standaardtyd", "PYT Korea": "Pyongyang-tyd", "RET": "Réunion-tyd", "ROTT": "Rothera-tyd", "SAKST": "Sakhalin-somertyd", "SAKT": "Sakhalin-standaardtyd", "SAMST": "Samara-dagligtyd", "SAMT": "Samara-standaardtyd", "SAST": "Suid-Afrika-standaardtyd", "SBT": "Salomonseilande-tyd", "SCT": "Seychelle-tyd", "SGT": "Singapoer-standaardtyd", "SLST": "SLST", "SRT": "Suriname-tyd", "SST Samoa": "Samoa-standaardtyd", "SST Samoa Apia": "Apia-standaardtyd", "SST Samoa Apia DST": "Apia-dagligtyd", "SST Samoa DST": "Samoa-dagligtyd", "SYOT": "Syowa-tyd", "TAAF": "Franse Suider- en Antarktiese tyd", "TAHT": "Tahiti-tyd", "TJT": "Tadjikistan-tyd", "TKT": "Tokelau-tyd", "TLT": "Oos-Timor-tyd", "TMST": "Turkmenistan-somertyd", "TMT": "Turkmenistan-standaardtyd", "TOST": "Tonga-somertyd", "TOT": "Tonga-standaardtyd", "TVT": "Tuvalu-tyd", "TWT": "Taipei-standaardtyd", "TWT DST": "Taipei-dagligtyd", "ULAST": "Ulaanbaatar-somertyd", "ULAT": "Ulaanbaatar-standaardtyd", "UYST": "Uruguay-somertyd", "UYT": "Uruguay-standaardtyd", "UZT": "Oesbekistan-standaardtyd", "UZT DST": "Oesbekistan-somertyd", "VET": "Venezuela-tyd", "VLAST": "Wladiwostok-somertyd", "VLAT": "Wladiwostok-standaardtyd", "VOLST": "Wolgograd-somertyd", "VOLT": "Wolgograd-standaardtyd", "VOST": "Wostok-tyd", "VUT": "Vanuatu-standaardtyd", "VUT DST": "Vanuatu-somertyd", "WAKT": "Wake-eiland-tyd", "WARST": "Wes-Argentinië-somertyd", "WART": "Wes-Argentinië-standaardtyd", "WAST": "Wes-Afrika-tyd", "WAT": "Wes-Afrika-tyd", "WESZ": "Wes-Europese somertyd", "WEZ": "Wes-Europese standaardtyd", "WFT": "Wallis en Futuna-tyd", "WGST": "Wes-Groenland-somertyd", "WGT": "Wes-Groenland-standaardtyd", "WIB": "Wes-Indonesië-tyd", "WIT": "Oos-Indonesië-tyd", "WITA": "Sentraal-Indonesiese tyd", "YAKST": "Jakoetsk-somertyd", "YAKT": "Jakoetsk-standaardtyd", "YEKST": "Jekaterinburg-somertyd", "YEKT": "Jekaterinburg-standaardtyd", "YST": "Yukontyd", "МСК": "Moskou-standaardtyd", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "Wes-Kazakstan-tyd", "شىعىش قازاق ەلى": "Oos-Kazakstan-tyd", "قازاق ەلى": "Kazakstan-tyd", "قىرعىزستان": "Kirgistan-tyd", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Asore-somertyd"},
 	}
 }
 
@@ -205,75 +199,13 @@ func (af *af) Minus() string {
 // FmtNumber returns 'num' with digits/precision of 'v' for 'af' and handles both Whole and Real numbers based on 'v'
 func (af *af) FmtNumber(num float64, v uint64) string {
 
-	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
-	count := 0
-	inWhole := v == 0
-	b := make([]byte, 0, l)
-
-	for i := len(s) - 1; i >= 0; i-- {
-
-		if s[i] == '.' {
-			b = append(b, af.decimal[0])
-			inWhole = true
-			continue
-		}
-
-		if inWhole {
-			if count == 3 {
-				for j := len(af.group) - 1; j >= 0; j-- {
-					b = append(b, af.group[j])
-				}
-				count = 1
-			} else {
-				count++
-			}
-		}
-
-		b = append(b, s[i])
-	}
-
-	if num < 0 {
-		b = append(b, af.minus[0])
-	}
-
-	// reverse
-	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
-		b[i], b[j] = b[j], b[i]
-	}
-
-	return string(b)
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'af' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (af *af) FmtPercent(num float64, v uint64) string {
-	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 3
-	b := make([]byte, 0, l)
-
-	for i := len(s) - 1; i >= 0; i-- {
-
-		if s[i] == '.' {
-			b = append(b, af.decimal[0])
-			continue
-		}
-
-		b = append(b, s[i])
-	}
-
-	if num < 0 {
-		b = append(b, af.minus[0])
-	}
-
-	// reverse
-	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
-		b[i], b[j] = b[j], b[i]
-	}
-
-	b = append(b, af.percent...)
-
-	return string(b)
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'af'
@@ -281,7 +213,7 @@ func (af *af) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := af.currencies[currency]
-	l := len(s) + len(symbol) + 2 + 2*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 1 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -341,7 +273,7 @@ func (af *af) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := af.currencies[currency]
-	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 3 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

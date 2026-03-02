@@ -46,28 +46,19 @@ func New() locales.Translator {
 		pluralsCardinal:    []locales.PluralRule{2, 6},
 		pluralsOrdinal:     nil,
 		pluralsRange:       nil,
-		decimal:            ".",
-		group:              ",",
-		minus:              "-",
-		percent:            "%",
-		perMille:           "‰",
 		timeSeparator:      ":",
-		inifinity:          "∞",
-		currencies:         []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "Nfk", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencies:         []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "Nfk", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
 		monthsAbbreviated:  []string{"", "ጥሪ", "ለካ", "መጋ", "ሚያ", "ግን", "ሰነ", "ሓም", "ነሓ", "መስ", "ጥቅ", "ሕዳ", "ታሕ"},
 		monthsNarrow:       []string{"", "ጥ", "ለ", "መ", "ሚ", "ግ", "ሰ", "ሓ", "ነ", "መ", "ጥ", "ሕ", "ታ"},
-		monthsWide:         []string{"", "ጥሪ", "ለካቲት", "መጋቢት", "ሚያዝያ", "ግንቦት", "ሰነ", "ሓምለ", "ነሓሰ", "መስከረም", "ጥቅምቲ", "ሕዳር", "ታሕሳስ"},
+		monthsWide:         []string{"", "ጥሪ", "ለካቲት", "መጋቢት", "ሚያዝያ", "ጉንበት", "ሰነ", "ሓምለ", "ነሓሰ", "መስከረም", "ጥቅምቲ", "ሕዳር", "ታሕሳስ"},
 		daysAbbreviated:    []string{"ሰን", "ሰኑ", "ሰሉ", "ረቡ", "ሓሙ", "ዓር", "ቀዳ"},
-		daysNarrow:         []string{"ሰ"},
-		daysShort:          []string{"ሰን", "ሰኑ", "ሰሉ", "ረቡ", "ሓሙ", "ዓር", "ቀዳ"},
-		daysWide:           []string{"ሰንበት", "ሰኑይ", "ሠሉስ", "ረቡዕ", "ኃሙስ", "ዓርቢ", "ቀዳም"},
-		periodsAbbreviated: []string{"ንጉሆ ሰዓተ", "ድሕር ሰዓት"},
-		periodsNarrow:      []string{"ንጉሆ ሰዓተ", "ድሕር ሰዓት"},
-		periodsWide:        []string{"ንጉሆ ሰዓተ", "ድሕር ሰዓት"},
+		daysNarrow:         []string{"ሰ", "ሰ", "ሰ", "ረ", "ሓ", "ዓ", "ቀ"},
+		daysWide:           []string{"ሰንበት", "ሰኑይ", "ሰሉስ", "ረቡዕ", "ሓሙስ", "ዓርቢ", "ቀዳም"},
+		periodsAbbreviated: []string{"ቅ.ቀ.", "ድ.ቀ."},
 		erasAbbreviated:    []string{"", ""},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"", ""},
-		timezones:          map[string]string{"ACDT": "ACDT", "ACST": "ACST", "ACWDT": "ACWDT", "ACWST": "ACWST", "ADT": "ADT", "AEDT": "AEDT", "AEST": "AEST", "AKDT": "AKDT", "AKST": "AKST", "ARST": "ARST", "ART": "ART", "AST": "AST", "AWDT": "AWDT", "AWST": "AWST", "BOT": "BOT", "BT": "BT", "CAT": "CAT", "CDT": "CDT", "CHADT": "CHADT", "CHAST": "CHAST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "CST", "ChST": "ChST", "EAT": "EAT", "ECT": "ECT", "EDT": "EDT", "EST": "EST", "GFT": "GFT", "GMT": "GMT", "GST": "GST", "GYT": "GYT", "HADT": "HADT", "HAST": "HAST", "HAT": "HAT", "HECU": "HECU", "HEEG": "HEEG", "HENOMX": "HENOMX", "HEOG": "HEOG", "HEPM": "HEPM", "HEPMX": "HEPMX", "HKST": "HKST", "HKT": "HKT", "HNCU": "HNCU", "HNEG": "HNEG", "HNNOMX": "HNNOMX", "HNOG": "HNOG", "HNPM": "HNPM", "HNPMX": "HNPMX", "HNT": "HNT", "IST": "IST", "JDT": "JDT", "JST": "JST", "LHDT": "LHDT", "LHST": "LHST", "MDT": "MDT", "MESZ": "MESZ", "MEZ": "MEZ", "MST": "MST", "MYT": "MYT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "OESZ", "OEZ": "OEZ", "PDT": "PDT", "PST": "PST", "SAST": "SAST", "SGT": "SGT", "SRT": "SRT", "TMST": "TMST", "TMT": "TMT", "UYST": "UYST", "UYT": "UYT", "VET": "VET", "WARST": "WARST", "WART": "WART", "WAST": "WAST", "WAT": "WAT", "WESZ": "WESZ", "WEZ": "WEZ", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "∅∅∅": "∅∅∅"},
+		timezones:          map[string]string{"ACDT": "ናይ ማዕከላይ መዓልቲ አውስራሊያ ግዘ", "ACST": "ናይ ማዕከላይ መደበኛ አውስራሊያ ግዘ", "ACT": "ናይ መደበኛ ግዘ ኣክሪ", "ACWDT": "ናይ ምዕራባዊ መዓልቲ አውስራሊያ ግዘ", "ACWST": "ናይ ምዕራባዊ መደበኛ አውስራሊያ ግዘ", "ADT": "ናይ መዓልቲ ግዘ አትላንቲክ", "ADT Arabia": "ናይ መዓልቲ አረብ ግዘ", "AEDT": "ናይ ምብራቓዊ መዓልቲ ኣውስትራልያ ግዘ", "AEST": "ናይ ምብራቓዊ መደበኛ ኣውስትራልያ ግዘ", "AFT": "ናይ አፍጋኒስታን ግዘ", "AKDT": "ናይ መዓልቲ ግዘ አላስካ", "AKST": "ናይ መደበኛ ግዘ አላስካ", "AMST": "ግዜ ክረምቲ ኣማዞን", "AMST Armenia": "ናይ ክረምቲ አርሜኒያ ግዘ", "AMT": "ናይ መደበኛ ግዘ ኣማዞን", "AMT Armenia": "ናይ መደበኛ አርሜኒያ ግዘ", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "ግዜ ክረምቲ ኣርጀንቲና", "ART": "ናይ መደበኛ ግዘ ኣርጀንቲና", "AST": "ናይ መደበኛ ግዘ አትላንቲክ", "AST Arabia": "ናይ መደበኛ አረብ ግዘ", "AWDT": "ናይ ምዕራባዊ መዓልቲ አውስትራሊያ ግዘ", "AWST": "ናይ ምዕራባዊ መደበኛ አውስትራሊያ ግዘ", "AZST": "ናይ ክረምቲ አዘርባዣን ግዘ", "AZT": "ናይ መደበኛ አዘርባዣን ግዘ", "BDT Bangladesh": "ናይ ክረምቲ ባንግላዲሽ ግዘ", "BNT": "ናይ ብሩኔ ዳሩሳሌም ግዘ", "BOT": "ግዜ ቦሊቭያ", "BRST": "ግዜ ክረምቲ ብራዚልያ", "BRT": "ናይ መደበኛ ግዘ ብራዚልያ", "BST Bangladesh": "ናይ መደበኛ ባንግላዲሽ ግዘ", "BT": "ናይ ቡህታን ግዘ", "CAST": "CAST", "CAT": "ግዜ ማእከላይ ኣፍሪቃ", "CCT": "ናይ ኮኮስ ደሴት ግዘ", "CDT": "ናይ መዓልቲ ግዘ ማእከላይ አመሪካ", "CHADT": "ናይ መዓልቲ ቻትሃም ግዘ", "CHAST": "ናይ መደበኛ ቻትሃም ግዘ", "CHUT": "ናይ ቹክ ግዘ", "CKT": "ናይ መደበኛ ኩክ ደሴት ግዘ", "CKT DST": "ናይ ፍርቂ ክረምቲ ኩክ ደሴት ግዘ", "CLST": "ግዜ ክረምቲ ቺሌ", "CLT": "ናይ መደበኛ ግዘ ቺሌ", "COST": "ግዜ ክረምቲ ኮሎምብያ", "COT": "ናይ መደበኛ ግዘ ኮሎምብያ", "CST": "ናይ መደበኛ ግዘ ማእከላይ አመሪካ", "CST China": "ናይ መደበኛ ቻይና ግዘ", "CST China DST": "ናይ መዓልቲ ቻይና ግዘ", "CVST": "ግዜ ክረምቲ ኬፕ ቨርደ", "CVT": "ናይ መደበኛ ግዘ ኬፕ ቨርደ", "CXT": "ናይ ልደት ደሴት ግዘ", "ChST": "ናይ መደበኛ ቻሞሮ ግዘ", "ChST NMI": "ChST NMI", "CuDT": "ናይ መዓልቲ ግዘ ኩባ", "CuST": "ናይ መደበኛ ግዘ ኩባ", "DAVT": "ናይ ዴቪስ ግዘ", "DDUT": "ናይ ዱሞ-ዱርቪል ግዘ", "EASST": "ግዜ ክረምቲ ደሴት ፋሲካ", "EAST": "ናይ መደበኛ ግዘ ደሴት ፋሲካ", "EAT": "ግዜ ምብራቕ ኣፍሪቃ", "ECT": "ግዜ ኤኳዶር", "EDT": "ናይ መዓልቲ ግዘ ምብራቓዊ አመሪካ", "EGDT": "ናይ መዓልቲ ምብራቓዊ ግዘ ግሪንላንድ", "EGST": "ናይ መደበኛ ምብራቓዊ ግዘ ግሪንላንድ", "EST": "ናይ መደበኛ ግዘ ምብራቓዊ ኣመሪካ", "FEET": "ናይ ርሑቕ-ምብራቕ ኤውሮጳዊ ግዘ", "FJT": "ናይ መደበኛ ፊጂ ግዘ", "FJT Summer": "ናይ ክረምቲ ፊጂ ግዘ", "FKST": "ግዜ ከረምቲ ደሴታት ፎክላንድ", "FKT": "ናይ መደበኛ ግዘ ደሴታት ፎክላንድ", "FNST": "ግዜ ክረምቲ ፈርናንዶ ደ ኖሮንያ", "FNT": "ናይ መደበኛ ግዘ ፈርናንዶ ደ ኖሮንያ", "GALT": "ግዜ ጋላፓጎስ", "GAMT": "ናይ ጋምቢየር ግዘ", "GEST": "ናይ ክረምቲ ጆርጂያ ግዘ", "GET": "ናይ መደበኛ ጆርጂያ ግዘ", "GFT": "ግዜ ፈረንሳዊት ጊያና", "GIT": "ናይ ጊልበርት ደሴታት ግዘ", "GMT": "GMT", "GNSST": "GNSST", "GNST": "GNST", "GST": "ግዜ ደቡብ ጆርጅያ", "GST Guam": "GST Guam", "GYT": "ግዜ ጉያና", "HADT": "ናይ መዓልቲ ሃዋይ-ኣሌውቲያን ግዘ", "HAST": "ናይ መደበኛ ሃዋይ-ኣሌውቲያን ግዘ", "HKST": "ናይ ክረምቲ ሆንግ ኮንግ ግዘ", "HKT": "ናይ መደበኛ ሆንግ ኮንግ ግዘ", "HOVST": "ናይ ክረምቲ ሆቭድ ግዘ", "HOVT": "ናይ መደበኛ ሆቭድ ግዘ", "ICT": "ናይ ኢንዶቻይና ግዘ", "IDT": "ናይ መዓልቲ እስራኤል ግዘ", "IOT": "ግዜ ህንዳዊ ውቅያኖስ", "IRKST": "ናይ ክረምቲ ኢርኩትስክ ግዘ", "IRKT": "ናይ መደበኛ ኢርኩትስክ ግዘ", "IRST": "ናይ መደበኛ ኢራን ግዘ", "IRST DST": "ናይ መዓልቲ ኢራን ግዘ", "IST": "ናይ መደበኛ ህንድ ግዘ", "IST Israel": "ናይ መደበኛ እስራኤል ግዘ", "JDT": "ናይ መዓልቲ ጃፓን ግዘ", "JST": "ናይ መደበኛ ጃፓን ግዘ", "KOST": "ናይ ኮርሳይ ግዘ", "KRAST": "ናይ ክረምቲ ክራንስኖያርክ ግዘ", "KRAT": "ናይ መደበኛ ክራንስኖያርክ ግዘ", "KST": "ናይ መደበኛ ኮሪያን ግዘ", "KST DST": "ናይ መዓልቲ ኮሪያን ግዘ", "LHDT": "ናይ መዓልቲ ሎርድ ሆው ግዘ", "LHST": "ናይ መድበኛ ሎርድ ሆው ግዘ", "LINT": "ናይ ላይን ደሴታት ግዘ", "MAGST": "ናይ ክረምቲ ሜጋዳን ግዘ", "MAGT": "ናይ መደበኛ ሜጋዳን ግዘ", "MART": "ናይ ማርኩዌሳስ ግዘ", "MAWT": "ናይ ማውሶን ግዘ", "MDT": "MDT", "MESZ": "ግዜ ክረምቲ ኤውሮጳ", "MEZ": "ናይ መደበኛ ግዘ ማእከላይ ኤውሮጳ", "MHT": "ናይ ማርሻል ደሴታት ግዘ", "MMT": "ናይ ምያንማር ግዘ", "MSD": "ናይ ክረምቲ ሞስኮው ግዘ", "MST": "MST", "MUST": "ግዜ ክረምቲ ማውሪሸስ", "MUT": "ናይ መደበኛ ግዘ ማውሪሸስ", "MVT": "ናይ ሞልዲቭስ ግዘ", "MYT": "ናይ ማሌዢያ ግዘ", "NCT": "ናይ መደበኛ ኒው ካሌዶኒያ ግዘ", "NDT": "ናይ መዓልቲ ኒውፋውንድላንድ ግዘ", "NDT New Caledonia": "ናይ ክረምቲ ኒው ካሌዶኒያ ግዘ", "NFDT": "ናይ መዓልቲ ኖርፎልክ ደሴት ግዘ", "NFT": "ናይ መደበኛ ኖርፎልክ ደሴት ግዘ", "NOVST": "ናይ ክረምቲ ኖቮሲሪስክ ግዘ", "NOVT": "ናይ መደበኛ ኖቮሲሪስክ ግዘ", "NPT": "ናይ ኔፓል ግዘ", "NRT": "ናይ ናውሩ ግዘ", "NST": "ናይ መደበኛ ኒውፋውንድላንድ ግዘ", "NUT": "ናይ ኒዌ ግዘ", "NZDT": "ናይ መዓልቲ ኒው ዚላንድ ግዘ", "NZST": "ናይ መደበኛ ኒው ዚላንድ ግዘ", "OESZ": "ግዜ ክረምቲ ምብራቕ ኤውሮጳ", "OEZ": "ናይ መደበኛ ግዘ ምብራቕ ኤውሮጳ", "OMSST": "ናይ ክረምቲ ኦምስክ ግዘ", "OMST": "ናይ መደበኛ ኦምስክ ግዘ", "PDT": "ናይ መዓልቲ ግዘ ፓስፊክ", "PDTM": "ናይ መዓልቲ ሜክሲኮ ፓስፊክ ግዘ", "PETDT": "PETDT", "PETST": "PETST", "PGT": "ናይ ፓፗ ኒው ጊኒ ግዘ", "PHOT": "ናይ ፊኒክስ ደሴታት ግዘ", "PKT": "ናይ መደበኛ ፓኪስታን ግዘ", "PKT DST": "ናይ ክረምቲ ፓኪስታን ግዘ", "PMDT": "ናይ መዓልቲ ቅዱስ ፒየርን ሚከሎን ግዘ", "PMST": "ናይ መደበኛ ቅዱስ ፒየርን ሚከሎን ግዘ", "PONT": "ናይ ፖናፔ ግዘ", "PST": "ናይ መደበኛ ግዘ ፓስፊክ", "PST Philippine": "ናይ መደበኛ ፊሊፒን ግዘ", "PST Philippine DST": "ናይ ክረምቲ ፊሊፒን ግዘ", "PST Pitcairn": "ናይ ፒትቻይርን ግዘ", "PSTM": "ናይ መደበኛ ሜክሲኮ ፓስፊክ ግዘ", "PWT": "ናይ ፓላው ግዘ", "PYST": "ግዜ ክረምቲ ፓራጓይ", "PYT": "ናይ መደበኛ ግዘ ፓራጓይ", "PYT Korea": "ናይ ፕዮንግያንግ ግዘ", "RET": "ግዜ ርዩንየን", "ROTT": "ናይ ሮቴራ ግዘ", "SAKST": "ናይ ክረምቲ ሳክሃሊን ግዘ", "SAKT": "ናይ መደበኛ ሳክሃሊን ግዘ", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "ግዜ ደቡብ ኣፍሪቃ", "SBT": "ናይ ሶሎሞን ደሴታት ግዘ", "SCT": "ግዜ ሲሸልስ", "SGT": "ናይ መደበኛ ሲጋፖር ግዘ", "SLST": "SLST", "SRT": "ግዜ ሱሪናም", "SST Samoa": "ናይ መደበኛ ሳሞዋ ግዘ", "SST Samoa Apia": "ናይ መደበኛ አፒያ ግዘ", "SST Samoa Apia DST": "ናይ መዓልቲ አፒያ ግዘ", "SST Samoa DST": "ናይ መዓልቲ ሳሞዋ ግዘ", "SYOT": "ናይ ስዮዋ ግዘ", "TAAF": "ናይ ደቡባዊን ኣንታርቲክ ግዘ", "TAHT": "ናይ ቲሂቲ ግዘ", "TJT": "ናይ ታጃክስታን ግዘ", "TKT": "ናይ ቶኬላው ግዘ", "TLT": "ናይ ምብራቅ ቲሞር ግዘ", "TMST": "ናይ ክረምቲ ቱርክሜኒስታን ግዘ", "TMT": "ናይ መደበኛ ቱርክሜኒስታን ግዘ", "TOST": "ናይ ክረምቲ ቶንጋ ግዘ", "TOT": "ናይ መደበኛ ቶንጋ ግዘ", "TVT": "ናይ ቱቫሉ ግዘ", "TWT": "ናይ መደበኛ ቴፒ ግዘ", "TWT DST": "ናይ መዓልቲ ቴፒ ግዘ", "ULAST": "ናይ ክረምቲ ኡላንባታር ግዘ", "ULAT": "ናይ መደበኛ ኡላንባታር ግዘ", "UYST": "ግዜ ክረምቲ ኡራጓይ", "UYT": "ናይ መደበኛ ግዘ ኡራጓይ", "UZT": "ናይ መደበኛ ኡዝቤኪስታን ግዘ", "UZT DST": "ናይ ክረምቲ ኡዝቤኪስታን ግዘ", "VET": "ግዜ ቬኔዝዌላ", "VLAST": "ናይ ክረምቲ ቭላዲቮስቶክ ግዘ", "VLAT": "ናይ መደበኛ ቭላዲቮስቶክ ግዘ", "VOLST": "ናይ ክረምቲ ቮልጎግራድ ግዘ", "VOLT": "ናይ መደበኛ ቮልጎግራድ ግዘ", "VOST": "ናይ ቮስቶክ ግዘ", "VUT": "ናይ መደበኛ ቫኗታው ግዘ", "VUT DST": "ናይ ክረምቲ ቫኗታው ግዘ", "WAKT": "ናይ ዌክ ደሴት ግዘ", "WARST": "ግዜ ክረምቲ ምዕራባዊ ኣርጀንቲና", "WART": "ናይ መደበኛ ግዘ ምዕራባዊ ኣርጀንቲና", "WAST": "ግዜ ምዕራብ ኣፍሪቃ", "WAT": "ግዜ ምዕራብ ኣፍሪቃ", "WESZ": "ናይ ክረምቲ ምዕራባዊ ኤውሮጳዊ ግዘ", "WEZ": "ናይ መደበኛ ምዕራባዊ ኤውሮጳዊ ግዘ", "WFT": "ናይ ዌልስን ፉቷ ግዘ", "WGST": "ናይ መዓልቲ ምዕራብ ግሪንላንድ ግዘ", "WGT": "ናይ መደበኛ ምዕራብ ግሪንላንድ ግዘ", "WIB": "ናይ ምዕራባዊ ኢንዶነዥያ ግዘ", "WIT": "ናይ ምብራቓዊ ኢንዶነዥያ ግዘ", "WITA": "ናይ ማእከላይ ኢንዶነዥያ ግዘ", "YAKST": "ናይ ክረምቲ ያኩትስክ ግዘ", "YAKT": "ናይ መደበኛ ያኩትስክ ግዘ", "YEKST": "ናይ ክረምቲ ያክተርኒበርግ ግዘ", "YEKT": "ናይ መደበኛ ያክተርኒበርግ ግዘ", "YST": "ናይ ዩኮን ግዘ", "МСК": "ናይ መደበኛ ሞስኮው ግዘ", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "ናይ ምዕራብ ካዛኪስታን ግዘ", "شىعىش قازاق ەلى": "ናይ ምብራቅ ካዛኪስታን ግዘ", "قازاق ەلى": "ናይ ካዛኪስታን ግዘ", "قىرعىزستان": "ናይ ክርጅስታን ግዘ", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "ናይ ክረምቲ አዞረስ ግዘ"},
 	}
 }
 
@@ -201,73 +192,13 @@ func (ti *ti_ER) Minus() string {
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ti_ER' and handles both Whole and Real numbers based on 'v'
 func (ti *ti_ER) FmtNumber(num float64, v uint64) string {
 
-	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
-	count := 0
-	inWhole := v == 0
-	b := make([]byte, 0, l)
-
-	for i := len(s) - 1; i >= 0; i-- {
-
-		if s[i] == '.' {
-			b = append(b, ti.decimal[0])
-			inWhole = true
-			continue
-		}
-
-		if inWhole {
-			if count == 3 {
-				b = append(b, ti.group[0])
-				count = 1
-			} else {
-				count++
-			}
-		}
-
-		b = append(b, s[i])
-	}
-
-	if num < 0 {
-		b = append(b, ti.minus[0])
-	}
-
-	// reverse
-	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
-		b[i], b[j] = b[j], b[i]
-	}
-
-	return string(b)
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'ti_ER' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (ti *ti_ER) FmtPercent(num float64, v uint64) string {
-	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 3
-	b := make([]byte, 0, l)
-
-	for i := len(s) - 1; i >= 0; i-- {
-
-		if s[i] == '.' {
-			b = append(b, ti.decimal[0])
-			continue
-		}
-
-		b = append(b, s[i])
-	}
-
-	if num < 0 {
-		b = append(b, ti.minus[0])
-	}
-
-	// reverse
-	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
-		b[i], b[j] = b[j], b[i]
-	}
-
-	b = append(b, ti.percent...)
-
-	return string(b)
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ti_ER'
@@ -275,7 +206,7 @@ func (ti *ti_ER) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ti.currencies[currency]
-	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 0
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -333,7 +264,7 @@ func (ti *ti_ER) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ti.currencies[currency]
-	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 0
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -398,19 +329,9 @@ func (ti *ti_ER) FmtDateShort(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	if t.Day() < 10 {
-		b = append(b, '0')
-	}
-
-	b = strconv.AppendInt(b, int64(t.Day()), 10)
-	b = append(b, []byte{0x2f}...)
-
-	if t.Month() < 10 {
-		b = append(b, '0')
-	}
-
 	b = strconv.AppendInt(b, int64(t.Month()), 10)
-
+	b = append(b, []byte{0x2f}...)
+	b = strconv.AppendInt(b, int64(t.Day()), 10)
 	b = append(b, []byte{0x2f}...)
 
 	if t.Year() > 9 {
@@ -427,14 +348,10 @@ func (ti *ti_ER) FmtDateMedium(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	if t.Day() < 10 {
-		b = append(b, '0')
-	}
-
-	b = strconv.AppendInt(b, int64(t.Day()), 10)
-	b = append(b, []byte{0x2d}...)
 	b = append(b, ti.monthsAbbreviated[t.Month()]...)
-	b = append(b, []byte{0x2d}...)
+	b = append(b, []byte{0x20}...)
+	b = strconv.AppendInt(b, int64(t.Day()), 10)
+	b = append(b, []byte{0x2c, 0x20}...)
 
 	if t.Year() > 0 {
 		b = strconv.AppendInt(b, int64(t.Year()), 10)
@@ -450,14 +367,10 @@ func (ti *ti_ER) FmtDateLong(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	if t.Day() < 10 {
-		b = append(b, '0')
-	}
-
-	b = strconv.AppendInt(b, int64(t.Day()), 10)
-	b = append(b, []byte{0x20}...)
 	b = append(b, ti.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
+	b = strconv.AppendInt(b, int64(t.Day()), 10)
+	b = append(b, []byte{0x2c, 0x20}...)
 
 	if t.Year() > 0 {
 		b = strconv.AppendInt(b, int64(t.Year()), 10)
@@ -475,28 +388,15 @@ func (ti *ti_ER) FmtDateFull(t time.Time) string {
 
 	b = append(b, ti.daysWide[t.Weekday()]...)
 	b = append(b, []byte{0xe1, 0x8d, 0xa3, 0x20}...)
-
-	if t.Day() < 10 {
-		b = append(b, '0')
-	}
-
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
 	b = append(b, []byte{0x20}...)
 	b = append(b, ti.monthsWide[t.Month()]...)
-	b = append(b, []byte{0x20, 0xe1, 0x88, 0x98, 0xe1, 0x8b, 0x93, 0xe1, 0x88, 0x8d, 0xe1, 0x89, 0xb2, 0x20}...)
+	b = append(b, []byte{0x20}...)
 
 	if t.Year() > 0 {
 		b = strconv.AppendInt(b, int64(t.Year()), 10)
 	} else {
 		b = strconv.AppendInt(b, int64(-t.Year()), 10)
-	}
-
-	b = append(b, []byte{0x20}...)
-
-	if t.Year() < 0 {
-		b = append(b, ti.erasWide[0]...)
-	} else {
-		b = append(b, ti.erasWide[1]...)
 	}
 
 	return string(b)

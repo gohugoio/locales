@@ -48,30 +48,21 @@ func New() locales.Translator {
 		pluralsCardinal:        []locales.PluralRule{2, 6},
 		pluralsOrdinal:         []locales.PluralRule{2, 3, 4, 5, 6},
 		pluralsRange:           []locales.PluralRule{2, 6},
-		decimal:                ".",
-		group:                  ",",
-		minus:                  "-",
-		percent:                "%",
-		perMille:               "‰",
 		timeSeparator:          ":",
-		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
 		currencyNegativePrefix: "(",
 		currencyNegativeSuffix: ")",
-		monthsAbbreviated:      []string{"", "ଜାନୁଆରୀ", "ଫେବୃଆରୀ", "ମାର୍ଚ୍ଚ", "ଅପ୍ରେଲ", "ମଇ", "ଜୁନ", "ଜୁଲାଇ", "ଅଗଷ୍ଟ", "ସେପ୍ଟେମ୍ବର", "ଅକ୍ଟୋବର", "ନଭେମ୍ବର", "ଡିସେମ୍ବର"},
 		monthsNarrow:           []string{"", "ଜା", "ଫେ", "ମା", "ଅ", "ମଇ", "ଜୁ", "ଜୁ", "ଅ", "ସେ", "ଅ", "ନ", "ଡି"},
 		monthsWide:             []string{"", "ଜାନୁଆରୀ", "ଫେବୃଆରୀ", "ମାର୍ଚ୍ଚ", "ଅପ୍ରେଲ", "ମଇ", "ଜୁନ", "ଜୁଲାଇ", "ଅଗଷ୍ଟ", "ସେପ୍ଟେମ୍ବର", "ଅକ୍ଟୋବର", "ନଭେମ୍ବର", "ଡିସେମ୍ବର"},
 		daysAbbreviated:        []string{"ରବି", "ସୋମ", "ମଙ୍ଗଳ", "ବୁଧ", "ଗୁରୁ", "ଶୁକ୍ର", "ଶନି"},
 		daysNarrow:             []string{"ର", "ସୋ", "ମ", "ବୁ", "ଗୁ", "ଶୁ", "ଶ"},
-		daysShort:              []string{"ରବି", "ସୋମ", "ମଙ୍ଗଳ", "ବୁଧ", "ଗୁରୁ", "ଶୁକ୍ର", "ଶନି"},
 		daysWide:               []string{"ରବିବାର", "ସୋମବାର", "ମଙ୍ଗଳବାର", "ବୁଧବାର", "ଗୁରୁବାର", "ଶୁକ୍ରବାର", "ଶନିବାର"},
-		periodsAbbreviated:     []string{"AM", "PM"},
-		periodsNarrow:          []string{"ପୂ", "ଅ"},
+		periodsNarrow:          []string{"AM", "PM"},
 		periodsWide:            []string{"AM", "PM"},
 		erasAbbreviated:        []string{"BC", "AD"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"ଖ୍ରୀଷ୍ଟପୂର୍ବ", "ଖ୍ରୀଷ୍ଟାବ୍ଦ"},
-		timezones:              map[string]string{"ACDT": "ଅଷ୍ଟ୍ରେଲିୟ ମଧ୍ୟ ଦିବାଲୋକ ସମୟ", "ACST": "ଅଷ୍ଟ୍ରେଲିୟ ମଧ୍ୟ ମାନାଙ୍କ ସମୟ", "ACWDT": "ଅଷ୍ଟ୍ରେଲିୟ ମଧ୍ୟ ପଶ୍ଚିମ ଦିବାଲୋକ ସମୟ", "ACWST": "ଅଷ୍ଟ୍ରେଲିୟ ମଧ୍ୟ ପଶ୍ଚିମ ମାନାଙ୍କ ସମୟ", "ADT": "ଆଟଲାଣ୍ଟିକ୍ ଦିବାଲୋକ ସମୟ", "AEDT": "ଅଷ୍ଟ୍ରେଲିୟ ପୂର୍ବ ଦିବାଲୋକ ସମୟ", "AEST": "ଅଷ୍ଟ୍ରେଲିୟ ପୂର୍ବ ମାନାଙ୍କ ସମୟ", "AKDT": "ଆଲାସ୍କା ଦିବାଲୋକ ସମୟ", "AKST": "ଆଲାସ୍କା ମାନାଙ୍କ ସମୟ", "ARST": "ଆର୍ଜେଣ୍ଟିନା ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "ART": "ଆର୍ଜେଣ୍ଟିନା ମାନାଙ୍କ ସମୟ", "AST": "ଆଟଲାଣ୍ଟିକ୍ ମାନାଙ୍କ ସମୟ", "AWDT": "ଅଷ୍ଟ୍ରେଲିୟ ପଶ୍ଚିମ ଦିବାଲୋକ ସମୟ", "AWST": "ଅଷ୍ଟ୍ରେଲିୟ ପଶ୍ଚିମ ମାନାଙ୍କ ସମୟ", "BOT": "ବଲିଭିଆ ସମୟ", "BT": "ଭୁଟାନ ସମୟ", "CAT": "ମଧ୍ୟ ଆଫ୍ରିକା ସମୟ", "CDT": "କେନ୍ଦ୍ରୀୟ ଦିବାଲୋକ ସମୟ", "CHADT": "ଚାଥାମ୍\u200c ଦିବାଲୋକ ସମୟ", "CHAST": "ଚାଥାମ୍\u200c ମାନାଙ୍କ ସମୟ", "CLST": "ଚିଲି ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "CLT": "ଚିଲି ମାନାଙ୍କ ସମୟ", "COST": "କଲମ୍ବିଆ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "COT": "କଲମ୍ବିଆ ମାନାଙ୍କ ସମୟ", "CST": "କେନ୍ଦ୍ରୀୟ ମାନାଙ୍କ ସମୟ", "ChST": "ଚାମୋରୋ ମାନାଙ୍କ ସମୟ", "EAT": "ପୂର୍ବ ଆଫ୍ରିକା ସମୟ", "ECT": "ଇକ୍ୱେଡର ସମୟ", "EDT": "ପୂର୍ବାଞ୍ଚଳ ଦିବାଲୋକ ସମୟ", "EST": "ପୂର୍ବାଞ୍ଚଳ ମାନାଙ୍କ ସମୟ", "GFT": "ଫ୍ରେଞ୍ଚ ଗୁଆନା ସମୟ", "GMT": "ଗ୍ରୀନୱିଚ୍ ମିନ୍ ସମୟ", "GST": "ଗଲ୍ଫ ମାନାଙ୍କ ସମୟ", "GYT": "ଗୁଏନା ସମୟ", "HADT": "ହୱାଇ-ଆଲେଉଟିୟ ଦିବାଲୋକ ସମୟ", "HAST": "ହୱାଇ-ଆଲେଉଟିୟ ମାନାଙ୍କ ସମୟ", "HAT": "ନ୍ୟୁଫାଉଣ୍ଡଲ୍ୟାଣ୍ଡ୍ ଦିବାଲୋକ ସମୟ", "HECU": "କ୍ୟୁବା ଦିବାଲୋକ ସମୟ", "HEEG": "ପୂର୍ବ ଗ୍ରୀନଲ୍ୟାଣ୍ଡ୍ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "HENOMX": "ଉତ୍ତରପଶ୍ଚିମ ମେକ୍ସିକୋ ଦିବାଲୋକ ସମୟ", "HEOG": "ପଶ୍ଚିମ ଗ୍ରୀନଲ୍ୟାଣ୍ଡ୍ ଗ୍ରୀଷ୍ମ ସମୟ", "HEPM": "ସେଣ୍ଟ. ପିଏରେ ଏବଂ ମିକ୍ୟୁଲୋନ୍ ଦିବାଲୋକ ସମୟ", "HEPMX": "ମେକ୍ସିକାନ୍ ପାସିଫିକ୍ ଦିବାଲୋକ ସମୟ", "HKST": "ହଂ କଂ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "HKT": "ହଂ କଂ ମାନାଙ୍କ ସମୟ", "HNCU": "କ୍ୟୁବା ମାନାଙ୍କ ସମୟ", "HNEG": "ପୂର୍ବ ଗ୍ରୀନଲ୍ୟାଣ୍ଡ୍ ମାନାଙ୍କ ସମୟ", "HNNOMX": "ଉତ୍ତରପଶ୍ଚିମ ମେକ୍ସିକୋ ମାନାଙ୍କ ସମୟ", "HNOG": "ପଶ୍ଚିମ ଗ୍ରୀନଲ୍ୟାଣ୍ଡ୍ ମାନାଙ୍କ ସମୟ", "HNPM": "ସେଣ୍ଟ. ପିଏରେ ଏବଂ ମିକ୍ୟୁଲୋନ୍ ମାନାଙ୍କ ସମୟ", "HNPMX": "ମେକ୍ସିକାନ୍ ପାସିଫିକ୍ ମାନାଙ୍କ ସମୟ", "HNT": "ନ୍ୟୁଫାଉଣ୍ଡଲ୍ୟାଣ୍ଡ୍ ମାନାଙ୍କ ସମୟ", "IST": "ଭାରତ ମାନାଙ୍କ ସମୟ", "JDT": "ଜାପାନ ଦିବାଲୋକ ସମୟ", "JST": "ଜାପାନ ମାନାଙ୍କ ସମୟ", "LHDT": "ଲର୍ଡ ହୋୱେ ଦିବାଲୋକ ସମୟ", "LHST": "ଲର୍ଡ ହୋୱେ ମାନାଙ୍କ ସମୟ", "MDT": "ପାର୍ବତ୍ୟ ଦିବାଲୋକ ସମୟ", "MESZ": "କେନ୍ଦ୍ରୀୟ ୟୁରୋପୀୟ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "MEZ": "କେନ୍ଦ୍ରୀୟ ୟୁରୋପୀୟ ମାନାଙ୍କ ସମୟ", "MST": "ପାର୍ବତ୍ୟ ମାନାଙ୍କ ସମୟ", "MYT": "ମାଲେସିଆ ସମୟ", "NZDT": "ନ୍ୟୁଜିଲାଣ୍ଡ ଦିବାଲୋକ ସମୟ", "NZST": "ନ୍ୟୁଜିଲାଣ୍ଡ ମାନାଙ୍କ ସମୟ", "OESZ": "ପୂର୍ବାଞ୍ଚଳ ୟୁରୋପୀୟ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "OEZ": "ପୂର୍ବାଞ୍ଚଳ ୟୁରୋପୀୟ ମାନାଙ୍କ ସମୟ", "PDT": "ପାସିଫିକ୍ ଦିବାଲୋକ ସମୟ", "PST": "ପାସିଫିକ୍ ମାନାଙ୍କ ସମୟ", "SAST": "ଦକ୍ଷିଣ ଆଫ୍ରିକା ମାନାଙ୍କ ସମୟ", "SGT": "ସିଙ୍ଗାପୁର୍\u200c ମାନାଙ୍କ ସମୟ", "SRT": "ସୁରିନେମ୍\u200c ସମୟ", "TMST": "ତୁର୍କମେନିସ୍ତାନ ଖରାଦିନ ସମୟ", "TMT": "ତୁର୍କମେନିସ୍ତାନ ମାନାଙ୍କ ସମୟ", "UYST": "ଉରୁଗୁଏ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "UYT": "ଉରୁଗୁଏ ମାନାଙ୍କ ସମୟ", "VET": "ଭେନିଜୁଏଲା ସମୟ", "WARST": "ପଶ୍ଚିମ ଆର୍ଜେଣ୍ଟିନା ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "WART": "ପଶ୍ଚିମ ଆର୍ଜେଣ୍ଟିନା ମାନାଙ୍କ ସମୟ", "WAST": "ପଶ୍ଚିମ ଆଫ୍ରିକା ଖରାଦିନ ସମୟ", "WAT": "ପଶ୍ଚିମ ଆଫ୍ରିକା ମାନାଙ୍କ ସମୟ", "WESZ": "ପଶ୍ଚିମାଞ୍ଚଳ ୟୁରୋପୀୟ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "WEZ": "ପଶ୍ଚିମାଞ୍ଚଳ ୟୁରୋପୀୟ ମାନାଙ୍କ ସମୟ", "WIB": "ପଶ୍ଚିମ ଇଣ୍ଡୋନେସିଆ ସମୟ", "WIT": "ପୂର୍ବ ଇଣ୍ଡୋନେସିଆ ସମୟ", "WITA": "ମଧ୍ୟ ଇଣ୍ଡୋନେସିଆ ସମୟ", "∅∅∅": "ବ୍ରାସିଲିଆ ଗ୍ରୀଷ୍ମକାଳ ସମୟ"},
+		timezones:              map[string]string{"ACDT": "ଅଷ୍ଟ୍ରେଲିୟ ମଧ୍ୟ ଦିବାଲୋକ ସମୟ", "ACST": "ଆକା ଗ୍ରୀଷ୍ମ ସମୟ", "ACT": "ଆକା ମାନକ ସମୟ", "ACWDT": "ଅଷ୍ଟ୍ରେଲିୟ ମଧ୍ୟ ପଶ୍ଚିମ ଦିବାଲୋକ ସମୟ", "ACWST": "ଅଷ୍ଟ୍ରେଲିୟ ମଧ୍ୟ ପଶ୍ଚିମ ମାନାଙ୍କ ସମୟ", "ADT": "ଆଟଲାଣ୍ଟିକ୍ ଦିବାଲୋକ ସମୟ", "ADT Arabia": "ଆରବୀୟ ଦିବାଲୋକ ସମୟ", "AEDT": "ଅଷ୍ଟ୍ରେଲିୟ ପୂର୍ବ ଦିବାଲୋକ ସମୟ", "AEST": "ଅଷ୍ଟ୍ରେଲିୟ ପୂର୍ବ ମାନାଙ୍କ ସମୟ", "AFT": "ଆଫଗାନିସ୍ତାନ ସମୟ", "AKDT": "ଆଲାସ୍କା ଦିବାଲୋକ ସମୟ", "AKST": "ଆଲାସ୍କା ମାନାଙ୍କ ସମୟ", "AMST": "ଆମାଜନ୍ ଗ୍ରୀଷ୍ମକାଳୀନ ସମୟ", "AMST Armenia": "ଆର୍ମେନିଆ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "AMT": "ଆମାଜନ୍ ମାନାଙ୍କ ସମୟ", "AMT Armenia": "ଆର୍ମେନିଆ ମାନାଙ୍କ ସମୟ", "ANAST": "ଅନାଡିର୍ ଗ୍ରୀଷ୍ମ ସମୟ", "ANAT": "ଅନାଡିର୍ ମାନକ ସମୟ", "ARST": "ଆର୍ଜେଣ୍ଟିନା ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "ART": "ଆର୍ଜେଣ୍ଟିନା ମାନାଙ୍କ ସମୟ", "AST": "ଆଟଲାଣ୍ଟିକ୍ ମାନାଙ୍କ ସମୟ", "AST Arabia": "ଆରବୀୟ ମାନାଙ୍କ ସମୟ", "AWDT": "ଅଷ୍ଟ୍ରେଲିୟ ପଶ୍ଚିମ ଦିବାଲୋକ ସମୟ", "AWST": "ଅଷ୍ଟ୍ରେଲିୟ ପଶ୍ଚିମ ମାନାଙ୍କ ସମୟ", "AZST": "ଆଜେରବାଇଜାନ ଖରାଦିନ ସମୟ", "AZT": "ଆଜେରବାଇଜାନ ମାନଙ୍କ ସମୟ", "BDT Bangladesh": "ବାଂଲାଦେଶ ଗ୍ରୀଷ୍ମକାଳୀନ ସମୟ", "BNT": "ବ୍ରୁନେଇ ଡାରୁସାଲାମ ସମୟ", "BOT": "ବଲିଭିଆ ସମୟ", "BRST": "ବ୍ରାସିଲିଆ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "BRT": "ବ୍ରାସିଲିଆ ମାନାଙ୍କ ସମୟ", "BST Bangladesh": "ବାଂଲାଦେଶ ମାନାଙ୍କ ସମୟ", "BT": "ଭୁଟାନ ସମୟ", "CAST": "CAST", "CAT": "ମଧ୍ୟ ଆଫ୍ରିକା ସମୟ", "CCT": "କୋକୋସ୍\u200c ଦ୍ୱୀପପୁଞ୍ଜ ସମୟ", "CDT": "କେନ୍ଦ୍ରୀୟ ଦିବାଲୋକ ସମୟ", "CHADT": "ଚାଥାମ୍\u200c ଦିବାଲୋକ ସମୟ", "CHAST": "ଚାଥାମ୍\u200c ମାନାଙ୍କ ସମୟ", "CHUT": "ଚୂକ୍\u200c ସମୟ", "CKT": "କୁକ୍\u200c ଦ୍ୱୀପପୁଞ୍ଜ ମାନକ ସମୟ", "CKT DST": "କୁକ୍\u200c ଦ୍ୱୀପପୁଞ୍ଜ ଅର୍ଦ୍ଧ ଗୀଷ୍ମକାଳୀନ ସମୟ", "CLST": "ଚିଲି ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "CLT": "ଚିଲି ମାନାଙ୍କ ସମୟ", "COST": "କଲମ୍ବିଆ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "COT": "କଲମ୍ବିଆ ମାନକ ସମୟ", "CST": "କେନ୍ଦ୍ରୀୟ ମାନାଙ୍କ ସମୟ", "CST China": "ଚୀନ ମାନକ ସମୟ", "CST China DST": "ଚୀନ ଦିବାଲୋକ ସମୟ", "CVST": "କେପ୍\u200c ଭର୍ଦେ ଗ୍ରୀଷ୍ମକାଳୀନ ସମୟ", "CVT": "କେପ୍\u200c ଭର୍ଦେ ମାନାଙ୍କ ସମୟ", "CXT": "ଖ୍ରୀଷ୍ଟମାସ ଦ୍ୱୀପ ସମୟ", "ChST": "ଚାମୋରୋ ମାନକ ସମୟ", "ChST NMI": "ଉତ୍ତର ମେରିଆନା ଆଇଲ୍ୟାଣ୍ଡ ସମୟ", "CuDT": "କ୍ୟୁବା ଦିବାଲୋକ ସମୟ", "CuST": "କ୍ୟୁବା ମାନାଙ୍କ ସମୟ", "DAVT": "ଡେଭିସ୍\u200c ସମୟ", "DDUT": "ଡୁମୋଣ୍ଟ-ଡି‘ଉରଭିଲ୍ଲେ ସମୟ", "EASST": "ଇଷ୍ଟର୍\u200c ଆଇଲ୍ୟାଣ୍ଡ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "EAST": "ଇଷ୍ଟର୍\u200c ଆଇଲ୍ୟାଣ୍ଡ ମାନାଙ୍କ ସମୟ", "EAT": "ପୂର୍ବ ଆଫ୍ରିକା ସମୟ", "ECT": "ଇକ୍ୱେଡର ସମୟ", "EDT": "ପୂର୍ବାଞ୍ଚଳ ଦିବାଲୋକ ସମୟ", "EGDT": "ପୂର୍ବ ଗ୍ରୀନଲ୍ୟାଣ୍ଡ୍ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "EGST": "ପୂର୍ବ ଗ୍ରୀନଲ୍ୟାଣ୍ଡ୍ ମାନାଙ୍କ ସମୟ", "EST": "ପୂର୍ବାଞ୍ଚଳ ମାନାଙ୍କ ସମୟ", "FEET": "ପରବର୍ତ୍ତୀ-ପୂର୍ବାଞ୍ଚଳ ୟୁରୋପୀୟ ସମୟ", "FJT": "ଫିଜି ମାନକ ସମୟ", "FJT Summer": "ଫିଜି ଗ୍ରୀଷ୍ମକାଳୀନ ସମୟ", "FKST": "ଫକଲ୍ୟାଣ୍ଡ ଦ୍ୱୀପପୁଞ୍ଜ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "FKT": "ଫକଲ୍ୟାଣ୍ଡ ଦ୍ୱୀପପୁଞ୍ଜ ମାନକ ସମୟ", "FNST": "ଫର୍ଣ୍ଣାଣ୍ଡୋ ଡି ନୋରୋନ୍ନା ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "FNT": "ଫର୍ଣ୍ଣାଣ୍ଡୋ ଡି ନୋରୋନ୍ନା ମାନାଙ୍କ ସମୟ", "GALT": "ଗାଲାପାଗୋସ୍ ସମୟ", "GAMT": "ଗାମ୍ବିୟର୍ ସମୟ", "GEST": "ଜର୍ଜିଆ ଖରାଦିନ ସମୟ", "GET": "ଜର୍ଜିଆ ମାନାଙ୍କ ସମୟ", "GFT": "ଫ୍ରେଞ୍ଚ ଗୁଆନା ସମୟ", "GIT": "ଗିଲବର୍ଟ୍\u200c ଦ୍ୱୀପପୁଞ୍ଜ ସମୟ", "GMT": "ଗ୍ରୀନୱିଚ୍ ମିନ୍ ସମୟ", "GNSST": "GNSST", "GNST": "GNST", "GST": "ଦକ୍ଷିଣ ଜର୍ଜିଆ ସମୟ", "GST Guam": "GST Guam", "GYT": "ଗୁଏନା ସମୟ", "HADT": "ହୱାଇ-ଆଲେଉଟିୟ ଦିବାଲୋକ ସମୟ", "HAST": "ହୱାଇ-ଆଲେଉଟିୟ ମାନାଙ୍କ ସମୟ", "HKST": "ହଂ କଂ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "HKT": "ହଂ କଂ ମାନକ ସମୟ", "HOVST": "ହୋଭଡ୍\u200c ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "HOVT": "ହୋଭଡ୍\u200c ମାନକ ସମୟ", "ICT": "ଇଣ୍ଡୋଚାଇନା ସମୟ", "IDT": "ଇସ୍ରାଏଲ ଦିବାଲୋକ ସମୟ", "IOT": "ଭାରତ ମାହାସାଗର ସମୟ", "IRKST": "ଇର୍କୁଟସ୍କ୍ ଗ୍ରୀଷ୍ମକାଳୀନ ସମୟ", "IRKT": "ଇର୍କୁଟସ୍କ୍ ମାନକ ସମୟ", "IRST": "ଇରାନ ମାନକ ସମୟ", "IRST DST": "ଇରାନ ଦିବାଲୋକ ସମୟ", "IST": "ଭାରତୀୟ ମାନକ ସମୟ", "IST Israel": "ଇସ୍ରାଏଲ ମାନାଙ୍କ ସମୟ", "JDT": "ଜାପାନ ଦିବାଲୋକ ସମୟ", "JST": "ଜାପାନ ମାନକ ସମୟ", "KOST": "କୋସରେଇ ସମୟ", "KRAST": "କ୍ରାସନୋୟାରସ୍କ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "KRAT": "କ୍ରାସନୋୟାରସ୍କ ମାନାଙ୍କ ସମୟ", "KST": "କୋରିୟ ମାନକ ସମୟ", "KST DST": "କୋରିୟ ଦିବାଲୋକ ସମୟ", "LHDT": "ଲର୍ଡ ହୋୱେ ଦିବାଲୋକ ସମୟ", "LHST": "ଲର୍ଡ ହୋୱେ ମାନାଙ୍କ ସମୟ", "LINT": "ଲାଇନ୍\u200c ଦ୍ୱୀପପୁଞ୍ଜ ସମୟ", "MAGST": "ମାଗାଡାନ୍ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "MAGT": "ମାଗାଡାନ୍ ମାନାଙ୍କ ସମୟ", "MART": "ମାର୍କ୍ୱେସାସ୍\u200c ସମୟ", "MAWT": "ମାୱସନ୍\u200c ସମୟ", "MDT": "ମକାଓ ଗ୍ରୀଷ୍ମ ସମୟ", "MESZ": "କେନ୍ଦ୍ରୀୟ ୟୁରୋପୀୟ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "MEZ": "କେନ୍ଦ୍ର ୟୁରୋପୀୟ ମାନକ ସମୟ", "MHT": "ମାର୍ଶାଲ୍\u200c ଦ୍ୱୀପପୁଞ୍ଜ ସମୟ", "MMT": "ମିଆଁମାର୍\u200c ସମୟ", "MSD": "ମସ୍କୋ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "MST": "ମକାଓ ମାନକ ସମୟ", "MUST": "ମୌରିସସ୍\u200c ଖରାଦିନ ସମୟ", "MUT": "ମୌରିସସ୍\u200c ମାନାଙ୍କ ସମୟ", "MVT": "ମାଳଦ୍ୱୀପ ସମୟ", "MYT": "ମାଲେସିଆ ସମୟ", "NCT": "ନ୍ୟୁ କାଲେଡୋନିଆ ମାନାଙ୍କ ସମୟ", "NDT": "ନ୍ୟୁଫାଉଣ୍ଡଲ୍ୟାଣ୍ଡ୍ ଦିବାଲୋକ ସମୟ", "NDT New Caledonia": "ନ୍ୟୁ କାଲେଡୋନିଆ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "NFDT": "ନରଫୋକ୍\u200c ଦ୍ୱୀପ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "NFT": "ନରଫୋକ୍\u200c ଦ୍ୱୀପ ମାନାଙ୍କ ସମୟ", "NOVST": "ନୋଭୋସିବିରସ୍କ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "NOVT": "ନୋଭୋସିବିରସ୍କ ମାନାଙ୍କ ସମୟ", "NPT": "ନେପାଳ ସମୟ", "NRT": "ନାଉରୁ ସମୟ", "NST": "ନ୍ୟୁଫାଉଣ୍ଡଲ୍ୟାଣ୍ଡ୍ ମାନାଙ୍କ ସମୟ", "NUT": "ନିୟୁ ସମୟ", "NZDT": "ନ୍ୟୁଜିଲାଣ୍ଡ ଦିବାଲୋକ ସମୟ", "NZST": "ନ୍ୟୁଜିଲାଣ୍ଡ ମାନାଙ୍କ ସମୟ", "OESZ": "ପୂର୍ବାଞ୍ଚଳ ୟୁରୋପୀୟ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "OEZ": "ପୂର୍ବାଞ୍ଚଳ ୟୁରୋପୀୟ ମାନାଙ୍କ ସମୟ", "OMSST": "ଓମସ୍କ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "OMST": "ଓମସ୍କ ମାନାଙ୍କ ସମୟ", "PDT": "ପାସିଫିକ୍ ଦିବାଲୋକ ସମୟ", "PDTM": "ମେକ୍ସିକାନ୍ ପାସିଫିକ୍ ଦିବାଲୋକ ସମୟ", "PETDT": "ପେଟ୍ରୋପାଭଲୋଭ୍ସକ-କମଚଟସ୍କି ଗ୍ରୀଷ୍ମ ସମୟ", "PETST": "ପେଟ୍ରୋପାଭଲୋଭ୍ସକ-କମଚଟସ୍କି ମାନକ ସମୟ", "PGT": "ପପୁଆ ନ୍ୟୁ ଗିନି ସମୟ", "PHOT": "ଫିନିକ୍ସ ଦ୍ୱୀପପୁଞ୍ଜ ସମୟ", "PKT": "ପାକିସ୍ତାନ ମାନକ ସମୟ", "PKT DST": "ପାକିସ୍ତାନ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "PMDT": "ସେଣ୍ଟ. ପିଏରେ ଏବଂ ମିକ୍ୟୁଲୋନ୍ ଦିବାଲୋକ ସମୟ", "PMST": "ସେଣ୍ଟ. ପିଏରେ ଏବଂ ମିକ୍ୟୁଲୋନ୍ ମାନାଙ୍କ ସମୟ", "PONT": "ପୋନାପେ ସମୟ", "PST": "ପାସିଫିକ୍ ମାନାଙ୍କ ସମୟ", "PST Philippine": "ଫିଲିପାଇନ୍\u200c ମାନାଙ୍କ ସମୟ", "PST Philippine DST": "ଫିଲିପାଇନ୍\u200c ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "PST Pitcairn": "ପିଟକେର୍ନ୍\u200c ସମୟ", "PSTM": "ମେକ୍ସିକାନ୍ ପାସିଫିକ୍ ମାନାଙ୍କ ସମୟ", "PWT": "ପାଲାଉ ସମୟ", "PYST": "ପାରାଗୁଏ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "PYT": "ପାରାଗୁଏ ମାନାଙ୍କ ସମୟ", "PYT Korea": "ପୋୟଙ୍ଗୟାଙ୍ଗ ସମୟ", "RET": "ରିୟୁନିଅନ୍\u200c ସମୟ", "ROTT": "ରୋଥେରା ସମୟ", "SAKST": "ସଖାଲିନ୍ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "SAKT": "ସଖାଲିନ୍ ମାନାଙ୍କ ସମୟ", "SAMST": "ସମାରା ଗ୍ରୀଷ୍ମ ସମୟ", "SAMT": "ସମାରା ମାନକ ସମୟ", "SAST": "ଦକ୍ଷିଣ ଆଫ୍ରିକା ମାନାଙ୍କ ସମୟ", "SBT": "ସୋଲୋମନ ଦ୍ୱୀପପୁଞ୍ଜ ସମୟ", "SCT": "ସେଚେଲ୍ଲେସ୍\u200c ସମୟ", "SGT": "ସିଙ୍ଗାପୁର୍\u200c ମାନକ ସମୟ", "SLST": "ଲଙ୍କା ସମୟ", "SRT": "ସୁରିନେମ୍\u200c ସମୟ", "SST Samoa": "ସାମୋଆ ମାନକ ସମୟ", "SST Samoa Apia": "ଆପିଆ ମାନାଙ୍କ ସମୟ", "SST Samoa Apia DST": "ଆପିଆ ଦିବାଲୋକ ସମୟ", "SST Samoa DST": "ସାମୋଆ ଦିବାଲୋକ ସମୟ", "SYOT": "ସୋୱା ସମୟ", "TAAF": "ଫ୍ରେଞ୍ଚ ଦକ୍ଷିଣ ଏବଂ ଆଣ୍ଟାର୍କାଟିକ୍\u200c ସମୟ", "TAHT": "ତାହିତି ସମୟ", "TJT": "ତାଜିକିସ୍ତାନ ସମୟ", "TKT": "ଟୋକେଲାଉ ସମୟ", "TLT": "ପୂର୍ବ ତିମୋର୍\u200c ସମୟ", "TMST": "ତୁର୍କମେନିସ୍ତାନ ଖରାଦିନ ସମୟ", "TMT": "ତୁର୍କମେନିସ୍ତାନ ମାନାଙ୍କ ସମୟ", "TOST": "ଟୋଙ୍ଗା ଗ୍ରୀଷ୍ମକାଳୀନ ସମୟ", "TOT": "ଟୋଙ୍ଗା ମାନକ ସମୟ", "TVT": "ତୁଭାଲୁ ସମୟ", "TWT": "ତାଇପେଇ ମାନକ ସମୟ", "TWT DST": "ତାଇପେଇ ଦିବାଲୋକ ସମୟ", "ULAST": "ଉଲାନ୍\u200cବାଟର୍\u200c ଗ୍ରୀଷ୍ମକାଳୀନ ସମୟ", "ULAT": "ଉଲାନ୍\u200cବାଟର୍\u200c ମାନକ ସମୟ", "UYST": "ଉରୁଗୁଏ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "UYT": "ଉରୁଗୁଏ ମାନାଙ୍କ ସମୟ", "UZT": "ଉଜବେକିସ୍ତାନ ମାନକ ସମୟ", "UZT DST": "ଉଜବେକିସ୍ତାନ ଗ୍ରୀଷ୍ମକାଳୀନ ସମୟ", "VET": "ଭେନିଜୁଏଲା ସମୟ", "VLAST": "ଭ୍ଲାଡିଭୋଷ୍ଟୋକ୍ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "VLAT": "ଭ୍ଲାଡିଭୋଷ୍ଟୋକ୍ ମାନାଙ୍କ ସମୟ", "VOLST": "ଭୋଲଗୋଗ୍ରାଡ୍ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "VOLT": "ଭୋଲଗୋଗ୍ରାଡ୍ ମାନାଙ୍କ ସମୟ", "VOST": "ଭୋଷ୍ଟୋକ୍\u200c ସମୟ", "VUT": "ଭାନୁଆଟୁ ମାନକ ସମୟ", "VUT DST": "ଭାନୁଆଟୁ ଗ୍ରୀଷ୍ମକାଳୀନ ସମୟ", "WAKT": "ୱେକ୍\u200c ଦ୍ୱୀପ ସମୟ", "WARST": "ପଶ୍ଚିମ ଆର୍ଜେଣ୍ଟିନା ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "WART": "ପଶ୍ଚିମ ଆର୍ଜେଣ୍ଟିନା ମାନାଙ୍କ ସମୟ", "WAST": "ପଶ୍ଚିମ ଆଫ୍ରିକା ସମୟ", "WAT": "ପଶ୍ଚିମ ଆଫ୍ରିକା ସମୟ", "WESZ": "ପଶ୍ଚିମାଞ୍ଚଳ ୟୁରୋପୀୟ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "WEZ": "ପଶ୍ଚିମାଞ୍ଚଳ ୟୁରୋପୀୟ ମାନାଙ୍କ ସମୟ", "WFT": "ୱାଲିସ୍\u200c ଏବଂ ଫୁଟୁନା ସମୟ", "WGST": "ପଶ୍ଚିମ ଗ୍ରୀନଲ୍ୟାଣ୍ଡ୍ ଗ୍ରୀଷ୍ମ ସମୟ", "WGT": "ପଶ୍ଚିମ ଗ୍ରୀନଲ୍ୟାଣ୍ଡ୍ ମାନାଙ୍କ ସମୟ", "WIB": "ପଶ୍ଚିମ ଇଣ୍ଡୋନେସିଆ ସମୟ", "WIT": "ପୂର୍ବ ଇଣ୍ଡୋନେସିଆ ସମୟ", "WITA": "ମଧ୍ୟ ଇଣ୍ଡୋନେସିଆ ସମୟ", "YAKST": "ୟାକୁଟସ୍କ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "YAKT": "ୟାକୁଟସ୍କ ମାନାଙ୍କ ସମୟ", "YEKST": "ୟେକାଟେରିନବର୍ଗ୍ ଗ୍ରୀଷ୍ମକାଳ ସମୟ", "YEKT": "ୟେକାଟେରିନବର୍ଗ୍ ମାନାଙ୍କ ସମୟ", "YST": "ୟୁକୋନ୍ ସମୟ", "МСК": "ମସ୍କୋ ମାନାଙ୍କ ସମୟ", "اقتاۋ": "ଅକତୌ ମାନକ ସମୟ", "اقتاۋ قالاسى": "ଅକତୌ ଗ୍ରୀଷ୍ମ ସମୟ", "اقتوبە": "ଅକ୍ତୋବ ମାନକ ସମୟ", "اقتوبە قالاسى": "ଅକ୍ତୋବ ଗ୍ରୀଷ୍ମ ସମୟ", "الماتى": "ଅଲମାଟୀ ମାନକ ସମୟ", "الماتى قالاسى": "ଅଲମାଟୀ ଗ୍ରୀଷ୍ମ ସମୟ", "باتىس قازاق ەلى": "ପଶ୍ଚିମ କାଜାକସ୍ତାନ ସମୟ", "شىعىش قازاق ەلى": "ପୂର୍ବ କାଜାକସ୍ତାନ୍ ସମୟ", "قازاق ەلى": "କାଜାକସ୍ତାନ୍ ସମୟ", "قىرعىزستان": "କିର୍ଗିସ୍ତାନ ସମୟ", "قىزىلوردا": "କାଜିଲୋର୍ଡା ମାନକ ସମୟ", "قىزىلوردا قالاسى": "କାଜିଲୋର୍ଡା ଗ୍ରୀଷ୍ମ ସମୟ", "∅∅∅": "ଆଜୋରେସ୍ ଗ୍ରୀଷ୍ମକାଳ ସମୟ"},
 	}
 }
 
@@ -150,7 +141,7 @@ func (or *or_IN) MonthAbbreviated(month time.Month) string {
 
 // MonthsAbbreviated returns the locales abbreviated months
 func (or *or_IN) MonthsAbbreviated() []string {
-	return or.monthsAbbreviated[1:]
+	return nil
 }
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
@@ -232,7 +223,7 @@ func (or *or_IN) Minus() string {
 func (or *or_IN) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 0
 	count := 0
 	inWhole := v == 0
 	inSecondary := false
@@ -281,32 +272,7 @@ func (or *or_IN) FmtNumber(num float64, v uint64) string {
 // FmtPercent returns 'num' with digits/precision of 'v' for 'or_IN' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (or *or_IN) FmtPercent(num float64, v uint64) string {
-	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 3
-	b := make([]byte, 0, l)
-
-	for i := len(s) - 1; i >= 0; i-- {
-
-		if s[i] == '.' {
-			b = append(b, or.decimal[0])
-			continue
-		}
-
-		b = append(b, s[i])
-	}
-
-	if num < 0 {
-		b = append(b, or.minus[0])
-	}
-
-	// reverse
-	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
-		b[i], b[j] = b[j], b[i]
-	}
-
-	b = append(b, or.percent...)
-
-	return string(b)
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'or_IN'
@@ -314,7 +280,7 @@ func (or *or_IN) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := or.currencies[currency]
-	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 0
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -372,7 +338,7 @@ func (or *or_IN) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := or.currencies[currency]
-	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

@@ -55,23 +55,23 @@ func New() locales.Translator {
 		perMille:               "‰",
 		timeSeparator:          ":",
 		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "₼", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		currencyPositiveSuffix: " ",
-		currencyNegativeSuffix: " ",
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "₼", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		currencyPositiveSuffix: " ",
+		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "јан", "фев", "мар", "апр", "май", "ијн", "ијл", "авг", "сен", "окт", "ној", "дек"},
 		monthsNarrow:           []string{"", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"},
 		monthsWide:             []string{"", "јанвар", "феврал", "март", "апрел", "май", "ијун", "ијул", "август", "сентјабр", "октјабр", "нојабр", "декабр"},
 		daysAbbreviated:        []string{"Б.", "Б.Е.", "Ч.А.", "Ч.", "Ҹ.А.", "Ҹ.", "Ш."},
 		daysNarrow:             []string{"7", "1", "2", "3", "4", "5", "6"},
-		daysShort:              []string{"Б.", "Б.Е.", "Ч.А.", "Ч.", "Ҹ.А.", "Ҹ.", "Ш."},
+		daysShort:              []string{"B.", "B.E.", "Ç.A.", "Ç.", "C.A.", "C.", "Ş."},
 		daysWide:               []string{"базар", "базар ертәси", "чәршәнбә ахшамы", "чәршәнбә", "ҹүмә ахшамы", "ҹүмә", "шәнбә"},
 		periodsAbbreviated:     []string{"АМ", "ПМ"},
 		periodsNarrow:          []string{"а", "п"},
-		periodsWide:            []string{"АМ", "ПМ"},
+		periodsWide:            []string{"", ""},
 		erasAbbreviated:        []string{"е.ә.", "ј.е."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"ерамыздан әввәл", "јени ера"},
-		timezones:              map[string]string{"ACDT": "Mərkəzi Avstraliya Yay Vaxtı", "ACST": "Mərkəzi Avstraliya Standart Vaxtı", "ACWDT": "Mərkəzi Qərbi Avstraliya Yay Vaxtı", "ACWST": "Mərkəzi Qərbi Avstraliya Standart Vaxtı", "ADT": "Atlantik Yay Vaxtı", "AEDT": "Şərqi Avstraliya Yay Vaxtı", "AEST": "Şərqi Avstraliya Standart Vaxtı", "AKDT": "Alyaska Yay Vaxtı", "AKST": "Alyaska Standart Vaxtı", "ARST": "Argentina Yay Vaxtı", "ART": "Argentina Standart Vaxtı", "AST": "Atlantik Standart Vaxt", "AWDT": "Qərbi Avstraliya Yay Vaxtı", "AWST": "Qərbi Avstraliya Standart Vaxtı", "BOT": "Boliviya Vaxtı", "BT": "Butan Vaxtı", "CAT": "Mərkəzi Afrika Vaxtı", "CDT": "Şimali Mərkəzi Amerika Yay Vaxtı", "CHADT": "Çatham Yay Vaxtı", "CHAST": "Çatham Standart Vaxtı", "CLST": "Çili Yay Vaxtı", "CLT": "Çili Standart Vaxtı", "COST": "Kolumbiya Yay Vaxtı", "COT": "Kolumbiya Standart Vaxtı", "CST": "Şimali Mərkəzi Amerika Standart Vaxtı", "ChST": "Çamorro Vaxtı", "EAT": "Şərqi Afrika Vaxtı", "ECT": "Ekvador Vaxtı", "EDT": "Şimali Şərqi Amerika Yay Vaxtı", "EST": "Şimali Şərqi Amerika Standart Vaxtı", "GFT": "Fransız Qvianası Vaxtı", "GMT": "Qrinviç Orta Vaxtı", "GST": "Körfəz Vaxtı", "GYT": "Qayana Vaxtı", "HADT": "Havay-Aleut Yay Vaxtı", "HAST": "Havay-Aleut Standart Vaxtı", "HAT": "Nyufaundlend Yay Vaxtı", "HECU": "Kuba Yay Vaxtı", "HEEG": "Şərqi Qrenlandiya Yay Vaxtı", "HENOMX": "Şimal-Qərbi Meksika Yay Vaxtı", "HEOG": "Qərbi Qrenlandiya Yay Vaxtı", "HEPM": "Müqəddəs Pyer və Mikelon Yay Vaxtı", "HEPMX": "Meksika Sakit Okean Yay Vaxtı", "HKST": "Honq Konq Yay Vaxtı", "HKT": "Honq Konq Standart Vaxtı", "HNCU": "Kuba Standart Vaxtı", "HNEG": "Şərqi Qrenlandiya Standart Vaxtı", "HNNOMX": "Şimal-Qərbi Meksika Standart Vaxtı", "HNOG": "Qərbi Qrenlandiya Standart Vaxtı", "HNPM": "Müqəddəs Pyer və Mikelon Standart Vaxtı", "HNPMX": "Meksika Sakit Okean Standart Vaxtı", "HNT": "Nyufaundlend Standart Vaxtı", "IST": "Hindistan Vaxtı", "JDT": "Yaponiya Yay Vaxtı", "JST": "Yaponiya Standart Vaxtı", "LHDT": "Lord Hau Yay vaxtı", "LHST": "Lord Hau Standart Vaxtı", "MDT": "Şimali Dağlıq Amerika Yay Vaxtı", "MESZ": "Mərkəzi Avropa Yay Vaxtı", "MEZ": "Mərkəzi Avropa Standart Vaxtı", "MST": "Şimali Dağlıq Amerika Standart Vaxtı", "MYT": "Malayziya Vaxtı", "NZDT": "Yeni Zelandiya Yay Vaxtı", "NZST": "Yeni Zelandiya Standart Vaxtı", "OESZ": "Şərqi Avropa Yay Vaxtı", "OEZ": "Şərqi Avropa Standart Vaxtı", "PDT": "Şimali Amerika Sakit Okean Yay Vaxtı", "PST": "Şimali Amerika Sakit Okean Standart Vaxtı", "SAST": "Cənubi Afrika Vaxtı", "SGT": "Sinqapur Vaxtı", "SRT": "Surinam Vaxtı", "TMST": "Türkmənistan Yay Vaxtı", "TMT": "Türkmənistan Standart Vaxtı", "UYST": "Uruqvay Yay Vaxtı", "UYT": "Uruqvay Standart Vaxtı", "VET": "Venesuela Vaxtı", "WARST": "Qərbi Argentina Yay Vaxtı", "WART": "Qərbi Argentina Standart Vaxtı", "WAST": "Qərbi Afrika Yay Vaxtı", "WAT": "Qərbi Afrika Standart Vaxtı", "WESZ": "Qərbi Avropa Yay Vaxtı", "WEZ": "Qərbi Avropa Standart Vaxtı", "WIB": "Qərbi İndoneziya Vaxtı", "WIT": "Şərqi İndoneziya Vaxtı", "WITA": "Mərkəzi İndoneziya Vaxtı", "∅∅∅": "Azor Yay Vaxtı"},
+		timezones:              map[string]string{"ACDT": "Mərkəzi Avstraliya Yay Vaxtı", "ACST": "ACST", "ACT": "ACT", "ACWDT": "Mərkəzi Qərbi Avstraliya Yay Vaxtı", "ACWST": "Mərkəzi Qərbi Avstraliya Standart Vaxtı", "ADT": "Atlantik Yay Vaxtı", "ADT Arabia": "Ərəbistan Yay Vaxtı", "AEDT": "Şərqi Avstraliya Yay Vaxtı", "AEST": "Şərqi Avstraliya Standart Vaxtı", "AFT": "Əfqanıstan Vaxtı", "AKDT": "Alyaska Yay Vaxtı", "AKST": "Alyaska Standart Vaxtı", "AMST": "Amazon Yay Vaxtı", "AMST Armenia": "Ermənistan Yay Vaxtı", "AMT": "Amazon Standart Vaxtı", "AMT Armenia": "Ermənistan Standart Vaxtı", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "Argentina Yay Vaxtı", "ART": "Argentina Standart Vaxtı", "AST": "Atlantik Standart Vaxt", "AST Arabia": "Ərəbistan Standart Vaxtı", "AWDT": "Qərbi Avstraliya Yay Vaxtı", "AWST": "Qərbi Avstraliya Standart Vaxtı", "AZST": "Azərbaycan Yay Vaxtı", "AZT": "Azərbaycan Standart Vaxtı", "BDT Bangladesh": "Banqladeş Yay Vaxtı", "BNT": "Brunei Darussalam vaxtı", "BOT": "Boliviya Vaxtı", "BRST": "Braziliya Yay Vaxtı", "BRT": "Braziliya Standart Vaxtı", "BST Bangladesh": "Banqladeş Standart Vaxtı", "BT": "Butan Vaxtı", "CAST": "CAST", "CAT": "Mərkəzi Afrika Vaxtı", "CCT": "Kokos Adaları Vaxtı", "CDT": "Mərkəzi Amerika yay vaxtı", "CHADT": "Çatham Yay Vaxtı", "CHAST": "Çatham Standart Vaxtı", "CHUT": "Çuuk Vaxtı", "CKT": "Kuk Adaları Standart Vaxtı", "CKT DST": "Kuk Adaları Yarım Yay Vaxtı", "CLST": "Çili Yay Vaxtı", "CLT": "Çili Standart Vaxtı", "COST": "Kolumbiya Yay Vaxtı", "COT": "Kolumbiya Standart Vaxtı", "CST": "Mərkəzi Amerika Standart Vaxtı", "CST China": "Çin Standart Vaxtı", "CST China DST": "Çin Yay Vaxtı", "CVST": "Kape Verde Yay Vaxtı", "CVT": "Kape Verde Standart Vaxtı", "CXT": "Milad Adası Vaxtı", "ChST": "Çamorro Vaxtı", "ChST NMI": "ChST NMI", "CuDT": "Kuba Yay Vaxtı", "CuST": "Kuba Standart Vaxtı", "DAVT": "Devis Vaxtı", "DDUT": "Dümon-d’Ürvil Vaxtı", "EASST": "Pasxa Adası Yay Vaxtı", "EAST": "Pasxa Adası Standart Vaxtı", "EAT": "Şərqi Afrika Vaxtı", "ECT": "Ekvador Vaxtı", "EDT": "Şimali Şərqi Amerika Yay Vaxtı", "EGDT": "Şərqi Qrenlandiya Yay Vaxtı", "EGST": "Şərqi Qrenlandiya Standart Vaxtı", "EST": "Şimali Şərqi Amerika Standart Vaxtı", "FEET": "Kənar Şərqi Avropa Vaxtı", "FJT": "Fici Standart Vaxtı", "FJT Summer": "Fici Yay Vaxtı", "FKST": "Folklend Adaları Yay Vaxtı", "FKT": "Folklend Adaları Standart Vaxtı", "FNST": "Fernando de Noronya Yay Vaxtı", "FNT": "Fernando de Noronya Standart Vaxtı", "GALT": "Qalapaqos Vaxtı", "GAMT": "Qambier Vaxtı", "GEST": "Gurcüstan Yay Vaxtı", "GET": "Gurcüstan Standart Vaxtı", "GFT": "Fransız Qvianası Vaxtı", "GIT": "Gilbert Adaları Vaxtı", "GMT": "Qrinviç Orta Vaxtı", "GNSST": "GNSST", "GNST": "GNST", "GST": "Cənubi Corciya Vaxtı", "GST Guam": "GST Guam", "GYT": "Qayana Vaxtı", "HADT": "Havay-Aleut Yay Vaxtı", "HAST": "Havay-Aleut Standart Vaxtı", "HKST": "Honq Konq Yay Vaxtı", "HKT": "Honq Konq Standart Vaxtı", "HOVST": "Hovd Yay Vaxtı", "HOVT": "Hovd Standart Vaxtı", "ICT": "Hindçin Vaxtı", "IDT": "İsrail Yay Vaxtı", "IOT": "Hind Okeanı Vaxtı", "IRKST": "İrkutsk Yay Vaxtı", "IRKT": "İrkutsk Standart Vaxtı", "IRST": "İran Standart Vaxtı", "IRST DST": "İran Yay Vaxtı", "IST": "Hindistan Vaxtı", "IST Israel": "İsrail Standart Vaxtı", "JDT": "Yaponiya Yay Vaxtı", "JST": "Yaponiya Standart Vaxtı", "KOST": "Korse Vaxtı", "KRAST": "Krasnoyarsk Yay Vaxtı", "KRAT": "Krasnoyarsk Standart Vaxtı", "KST": "Koreya Standart Vaxtı", "KST DST": "Koreya Yay Vaxtı", "LHDT": "Lord Hau Yay vaxtı", "LHST": "Lord Hau Standart Vaxtı", "LINT": "Layn Adaları Vaxtı", "MAGST": "Maqadan Yay Vaxtı", "MAGT": "Maqadan Standart Vaxtı", "MART": "Markesas Vaxtı", "MAWT": "Mouson Vaxtı", "MDT": "MDT", "MESZ": "Mərkəzi Avropa Yay Vaxtı", "MEZ": "Mərkəzi Avropa Standart Vaxtı", "MHT": "Marşal Adaları Vaxtı", "MMT": "Myanma Vaxtı", "MSD": "Moskva Yay vaxtı", "MST": "MST", "MUST": "Mavriki Yay Vaxtı", "MUT": "Mavriki Standart Vaxtı", "MVT": "Maldiv Vaxtı", "MYT": "Malayziya Vaxtı", "NCT": "Yeni Kaledoniya Standart Vaxtı", "NDT": "Nyufaundlend Yay Vaxtı", "NDT New Caledonia": "Yeni Kaledoniya Yay Vaxtı", "NFDT": "Norfolk Adası Yay Vaxtı", "NFT": "Norfolk Adası Standart Vaxtı", "NOVST": "Novosibirsk Yay Vaxtı", "NOVT": "Novosibirsk Standart Vaxtı", "NPT": "Nepal vaxtı", "NRT": "Nauru Vaxtı", "NST": "Nyufaundlend Standart Vaxtı", "NUT": "Niue Vaxtı", "NZDT": "Yeni Zelandiya Yay Vaxtı", "NZST": "Yeni Zelandiya Standart Vaxtı", "OESZ": "Şərqi Avropa Yay Vaxtı", "OEZ": "Şərqi Avropa Standart Vaxtı", "OMSST": "Omsk Yay Vaxtı", "OMST": "Omsk Standart Vaxtı", "PDT": "Şimali Amerika Sakit Okean Yay Vaxtı", "PDTM": "Meksika Sakit Okean Yay Vaxtı", "PETDT": "PETDT", "PETST": "PETST", "PGT": "Papua Yeni Qvineya Vaxtı", "PHOT": "Feniks Adaları Vaxtı", "PKT": "Pakistan Standart vaxtı", "PKT DST": "Pakistan Yay Vaxtı", "PMDT": "Müqəddəs Pyer və Mikelon Yay Vaxtı", "PMST": "Müqəddəs Pyer və Mikelon Standart Vaxtı", "PONT": "Ponape Vaxtı", "PST": "Şimali Amerika Sakit Okean Standart Vaxtı", "PST Philippine": "Filippin Standart Vaxtı", "PST Philippine DST": "Filippin Yay Vaxtı", "PST Pitcairn": "Pitkern Vaxtı", "PSTM": "Meksika Sakit Okean Standart Vaxtı", "PWT": "Palau Vaxtı", "PYST": "Paraqvay Yay Vaxtı", "PYT": "Paraqvay Standart Vaxtı", "PYT Korea": "Pxenyan Vaxtı", "RET": "Reyunyon", "ROTT": "Rotera Vaxtı", "SAKST": "Saxalin Yay Vaxtı", "SAKT": "Saxalin Standart Vaxtı", "SAMST": "Samara yay vaxtı", "SAMT": "Samara standart vaxtı", "SAST": "Cənubi Afrika Vaxtı", "SBT": "Solomon Adaları Vaxtı", "SCT": "Seyşel Adaları Vaxtı", "SGT": "Sinqapur Vaxtı", "SLST": "SLST", "SRT": "Surinam Vaxtı", "SST Samoa": "Samoa Standart Vaxtı", "SST Samoa Apia": "Apia Standart Vaxtı", "SST Samoa Apia DST": "Apia Yay Vaxtı", "SST Samoa DST": "Samoa Yay Vaxtı", "SYOT": "Syova Vaxtı", "TAAF": "Fransız Cənubi və Antarktik Vaxtı", "TAHT": "Tahiti Vaxtı", "TJT": "Tacikistan Vaxtı", "TKT": "Tokelau Vaxtı", "TLT": "Şərqi Timor Vaxtı", "TMST": "Türkmənistan Yay Vaxtı", "TMT": "Türkmənistan Standart Vaxtı", "TOST": "Tonqa Yay Vaxtı", "TOT": "Tonqa Standart Vaxtı", "TVT": "Tuvalu Vaxtı", "TWT": "Taybey Standart Vaxtı", "TWT DST": "Taybey Yay Vaxtı", "ULAST": "Ulanbator Yay Vaxtı", "ULAT": "Ulanbator Standart Vaxtı", "UYST": "Uruqvay Yay Vaxtı", "UYT": "Uruqvay Standart Vaxtı", "UZT": "Özbəkistan Standart Vaxtı", "UZT DST": "Özbəkistan Yay Vaxtı", "VET": "Venesuela Vaxtı", "VLAST": "Vladivostok Yay Vaxtı", "VLAT": "Vladivostok Standart Vaxtı", "VOLST": "Volqoqrad Yay Vaxtı", "VOLT": "Volqoqrad Standart Vaxtı", "VOST": "Vostok Vaxtı", "VUT": "Vanuatu Standart Vaxtı", "VUT DST": "Vaunatu Yay Vaxtı", "WAKT": "Ueyk Vaxtı", "WARST": "Qərbi Argentina Yay Vaxtı", "WART": "Qərbi Argentina Standart Vaxtı", "WAST": "Qərbi Afrika Vaxtı", "WAT": "Qərbi Afrika Vaxtı", "WESZ": "Qərbi Avropa Yay Vaxtı", "WEZ": "Qərbi Avropa Standart Vaxtı", "WFT": "Uollis və Futuna Vaxtı", "WGST": "Qərbi Qrenlandiya Yay Vaxtı", "WGT": "Qərbi Qrenlandiya Standart Vaxtı", "WIB": "Qərbi İndoneziya Vaxtı", "WIT": "Şərqi İndoneziya Vaxtı", "WITA": "Mərkəzi İndoneziya Vaxtı", "YAKST": "Yakutsk Yay Vaxtı", "YAKT": "Yakutsk Standart Vaxtı", "YEKST": "Yekaterinburq Yay Vaxtı", "YEKT": "Yekaterinburq Standart Vaxtı", "YST": "Yukon Vaxtı", "МСК": "Moskva Standart Vaxtı", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "Qərbi Qazaxıstan Vaxtı", "شىعىش قازاق ەلى": "Şərqi Qazaxıstan Vaxtı", "قازاق ەلى": "Qazaxıstan vaxtı", "قىرعىزستان": "Qırğızıstan Vaxtı", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Azor Yay Vaxtı"},
 	}
 }
 
@@ -112,9 +112,9 @@ func (az *az_Cyrl) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
 	i := int64(n)
+	iMod1000 := i % 1000
 	iMod10 := i % 10
 	iMod100 := i % 100
-	iMod1000 := i % 1000
 
 	if (iMod10 == 1 || iMod10 == 2 || iMod10 == 5 || iMod10 == 7 || iMod10 == 8) || (iMod100 == 20 || iMod100 == 50 || iMod100 == 70 || iMod100 == 80) {
 		return locales.PluralRuleOne
@@ -232,26 +232,15 @@ func (az *az_Cyrl) Minus() string {
 func (az *az_Cyrl) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
-	count := 0
-	inWhole := v == 0
+	l := len(s) + 2
+
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
 			b = append(b, az.decimal[0])
-			inWhole = true
 			continue
-		}
-
-		if inWhole {
-			if count == 3 {
-				b = append(b, az.group[0])
-				count = 1
-			} else {
-				count++
-			}
 		}
 
 		b = append(b, s[i])
@@ -272,32 +261,7 @@ func (az *az_Cyrl) FmtNumber(num float64, v uint64) string {
 // FmtPercent returns 'num' with digits/precision of 'v' for 'az_Cyrl' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (az *az_Cyrl) FmtPercent(num float64, v uint64) string {
-	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 3
-	b := make([]byte, 0, l)
-
-	for i := len(s) - 1; i >= 0; i-- {
-
-		if s[i] == '.' {
-			b = append(b, az.decimal[0])
-			continue
-		}
-
-		b = append(b, s[i])
-	}
-
-	if num < 0 {
-		b = append(b, az.minus[0])
-	}
-
-	// reverse
-	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
-		b[i], b[j] = b[j], b[i]
-	}
-
-	b = append(b, az.percent...)
-
-	return string(b)
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'az_Cyrl'

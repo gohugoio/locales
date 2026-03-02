@@ -50,16 +50,13 @@ func New() locales.Translator {
 		pluralsOrdinal:         nil,
 		pluralsRange:           nil,
 		decimal:                ",",
-		group:                  " ",
+		group:                  " ",
 		minus:                  "−",
-		percent:                "%",
-		perMille:               "‰",
 		timeSeparator:          ":",
-		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		percentSuffix:          " ",
-		currencyPositiveSuffix: " ",
-		currencyNegativeSuffix: " ",
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		percentSuffix:          " ",
+		currencyPositiveSuffix: " ",
+		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "cuoŋ"},
 		monthsNarrow:           []string{"", "O", "G", "N", "C", "M", "G", "S", "B", "Č", "G", "S", "J"},
 		monthsWide:             []string{"", "ođđajagemánnu", "guovvamánnu", "njukčamánnu", "cuoŋománnu", "miessemánnu", "geassemánnu", "suoidnemánnu", "borgemánnu", "čakčamánnu", "golggotmánnu", "skábmamánnu", "juovlamánnu"},
@@ -73,7 +70,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"oKr.", "mKr."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"ovdal Kristusa", "maŋŋel Kristusa"},
-		timezones:              map[string]string{"ACDT": "Gaska-Austrália geasseáigi", "ACST": "Gaska-Austrália dálveáigi", "ACWDT": "Gaska-Austrália oarjjabeali geasseáigi", "ACWST": "Gaska-Austrália oarjjabeali dálveáigi", "ADT": "atlántalaš geasseáigi", "AEDT": "Nuorta-Austrália geasseáigi", "AEST": "Nuorta-Austrália dálveáigi", "AKDT": "Alaska geasseáigi", "AKST": "Alaska dálveáigi", "ARST": "Argentina geasseáigi", "ART": "Argentina dálveáigi", "AST": "atlántalaš dálveáigi", "AWDT": "Oarje-Austrália geasseáigi", "AWST": "Oarje-Austrália dálveáigi", "BOT": "Bolivia áigi", "BT": "Bhutana áigi", "CAT": "Gaska-Afrihká áigi", "CDT": "dábálaš geasseáigi", "CHADT": "Chathama geasseáigi", "CHAST": "Chathama dálveáigi", "CLST": "Chile geasseáigi", "CLT": "Chile dálveáigi", "COST": "Colombia geasseáigi", "COT": "Colombia dálveáigi", "CST": "dábálaš dálveáigi", "ChST": "Čamorro dálveáigi", "EAT": "Nuorta-Afrihká áigi", "ECT": "Ecuadora áigi", "EDT": "geasseáigi nuortan", "EST": "dálveáigi nuortan", "GFT": "Frankriikka Guyana áigi", "GMT": "Greenwicha áigi", "GST": "Golfa dálveáigi", "GYT": "Guyana áigi", "HADT": "Hawaii-aleuhtalaš geasseáigi", "HAST": "Hawaii-aleuhtalaš dálveáigi", "HAT": "Newfoundlanda geasseáigi", "HECU": "Cuba geasseáigi", "HEEG": "Nuorta-Ruonáeatnama geasseáigi", "HENOMX": "Oarjedavvi-Meksiko geasseáigi", "HEOG": "Oarje-Ruonáeatnama geasseáigi", "HEPM": "St. Pierre & Miquelo geasseáigi", "HEPMX": "Meksiko Jáskesábi geasseáigi", "HKST": "Hong Konga geasseáigi", "HKT": "Hong Konga dálveáigi", "HNCU": "Cuba dálveáigi", "HNEG": "Nuorta-Ruonáeatnama dálveáigi", "HNNOMX": "Oarjedavvi-Meksiko dálveáigi", "HNOG": "Oarje-Ruonáeatnama dálveáigi", "HNPM": "St. Pierre & Miquelo dálveáigi", "HNPMX": "Meksiko Jáskesábi dálveáigi", "HNT": "Newfoundlanda dálveáigi", "IST": "India dálveáigi", "JDT": "Japána geasseáigi", "JST": "Japána dálveáigi", "LHDT": "Lord Howe geasseáigi", "LHST": "Lord Howe dálveáigi", "MDT": "geasseduottaráigi", "MESZ": "Gaska-Eurohpá geasseáigi", "MEZ": "Gaska-Eurohpá dálveáigi", "MST": "dálveduottaráigi", "MYT": "Malesia áigi", "NZDT": "Ođđa-Selánda geasseáigi", "NZST": "Ođđa-Selánda dálveáigi", "OESZ": "Nuorta-Eurohpa geasseáigi", "OEZ": "Nuorta-Eurohpa dálveáigi", "PDT": "Jaskesábi geasseáigi", "PST": "Jaskesábi dálveáigi", "SAST": "Lulli-Afrihká dálveáigi", "SGT": "Singapore dálveáigi", "SRT": "Suriname áigi", "TMST": "Turkmenistana geasseáigi", "TMT": "Turkmenistana dálveáigi", "UYST": "Uruguaya geasseáigi", "UYT": "Uruguaya dálveáigi", "VET": "Venezuela áigi", "WARST": "Oarje-Argentina geasseáigi", "WART": "Oarje-Argentina dálveáigi", "WAST": "Oarje-Afrihká geasseáigi", "WAT": "Oarje-Afrihká dálveáigi", "WESZ": "Oarje-Eurohpá geasseáigi", "WEZ": "Oarje-Eurohpá dálveáigi", "WIB": "Oarje-Indonesia áigi", "WIT": "Nuorta-Indonesia áigi", "WITA": "Gaska-Indonesia áigi", "∅∅∅": "Peru geasseáigi"},
+		timezones:              map[string]string{"ACDT": "Gaska-Austrália geasseáigi", "ACST": "Gaska-Austrália dálveáigi", "ACT": "ACT", "ACWDT": "Gaska-Austrália oarjjabeali geasseáigi", "ACWST": "Gaska-Austrália oarjjabeali dálveáigi", "ADT": "atlántalaš geasseáigi", "ADT Arabia": "Arábia geasseáigi", "AEDT": "Nuorta-Austrália geasseáigi", "AEST": "Nuorta-Austrália dálveáigi", "AFT": "Afganisthana áigi", "AKDT": "Alaska geasseáigi", "AKST": "Alaska dálveáigi", "AMST": "Amazona geasseáigi", "AMST Armenia": "Armenia geasseáigi", "AMT": "Amazona dálveáigi", "AMT Armenia": "Armenia dálveáigi", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "Argentina geasseáigi", "ART": "Argentina dálveáigi", "AST": "atlántalaš dálveáigi", "AST Arabia": "Arábia dálveáigi", "AWDT": "Oarje-Austrália geasseáigi", "AWST": "Oarje-Austrália dálveáigi", "AZST": "Aserbaižana geasseáigi", "AZT": "Aserbaižana dálveáigi", "BDT Bangladesh": "Bangladesha geasseáigi", "BNT": "Brunei Darussalama áigi", "BOT": "Bolivia áigi", "BRST": "Brasilia geasseáigi", "BRT": "Brasilia dálveáigi", "BST Bangladesh": "Bangladesha dálveáigi", "BT": "Bhutana áigi", "CAST": "CAST", "CAT": "Gaska-Afrihká áigi", "CCT": "Kokossulloid áigi", "CDT": "dábálaš geasseáigi", "CHADT": "Chathama geasseáigi", "CHAST": "Chathama dálveáigi", "CHUT": "Chuuka áigi", "CKT": "Cooksulloid dálveáigi", "CKT DST": "Cooksulloid geasi beallemuttu áigi", "CLST": "Chile geasseáigi", "CLT": "Chile dálveáigi", "COST": "Colombia geasseáigi", "COT": "Colombia dálveáigi", "CST": "dábálaš dálveáigi", "CST China": "Kiinná dálveáigi", "CST China DST": "Kiinná geasseáigi", "CVST": "Kap Verde geasseáigi", "CVT": "Kap Verde dálveáigi", "CXT": "Juovlasullo áigi", "ChST": "Čamorro dálveáigi", "ChST NMI": "ChST NMI", "CuDT": "Cuba geasseáigi", "CuST": "Cuba dálveáigi", "DAVT": "Davisa áigi", "DDUT": "Dumont-d’Urville áigi", "EASST": "Beassášsullo geasseáigi", "EAST": "Beassášsullo dálveáigi", "EAT": "Nuorta-Afrihká áigi", "ECT": "Ecuadora áigi", "EDT": "geasseáigi nuortan", "EGDT": "Nuorta-Ruonáeatnama geasseáigi", "EGST": "Nuorta-Ruonáeatnama dálveáigi", "EST": "dálveáigi nuortan", "FEET": "Gáiddus-Nuortti eurohpalaš áigi", "FJT": "Fiji dálveáigi", "FJT Summer": "Fiji geasseáigi", "FKST": "Falklandsulluid geasseáigi", "FKT": "Falklandsulluid dálveáigi", "FNST": "Fernando de Noronha geasseáigi", "FNT": "Fernando de Noronha dálveáigi", "GALT": "Galapagosa áigi", "GAMT": "Gambiera áigi", "GEST": "Georgia geasseáigi", "GET": "Georgia dálveáigi", "GFT": "Frankriikka Guyana áigi", "GIT": "Gilbertsulloid áigi", "GMT": "Greenwicha áigi", "GNSST": "GNSST", "GNST": "GNST", "GST": "Lulli-Georgia áigi", "GST Guam": "GST Guam", "GYT": "Guyana áigi", "HADT": "Hawaii-aleuhtalaš geasseáigi", "HAST": "Hawaii-aleuhtalaš dálveáigi", "HKST": "Hong Konga geasseáigi", "HKT": "Hong Konga dálveáigi", "HOVST": "Hovda geasseáigi", "HOVT": "Hovda dálveáigi", "ICT": "Indokiinná áigi", "IDT": "Israela geasseáigi", "IOT": "Indiaábi áigi", "IRKST": "Irkucka geasseáigi", "IRKT": "Irkucka dálveáigi", "IRST": "Irana dálveáigi", "IRST DST": "Irana geasseáigi", "IST": "India dálveáigi", "IST Israel": "Israela dálveáigi", "JDT": "Japána geasseáigi", "JST": "Japána dálveáigi", "KOST": "Kosraea áigi", "KRAST": "Krasnojarska geasseáigi", "KRAT": "Krasnojarska dálveáigi", "KST": "Korea dálveáigi", "KST DST": "Korea geasseáigi", "LHDT": "Lord Howe geasseáigi", "LHST": "Lord Howe dálveáigi", "LINT": "Linesulloid áigi", "MAGST": "Magadana geasseáigi", "MAGT": "Magadana dálveáigi", "MART": "Marquesasiid áigi", "MAWT": "Mawsona áigi", "MDT": "geasseduottaráigi", "MESZ": "Gaska-Eurohpá geasseáigi", "MEZ": "Gaska-Eurohpá dálveáigi", "MHT": "Marshallsulloid áigi", "MMT": "Myanmara áigi", "MSD": "Moskva geasseáigi", "MST": "dálveduottaráigi", "MUST": "Mauritiusa geasseáigi", "MUT": "Mauritiusa dálveáigi", "MVT": "Malediivvaid áigi", "MYT": "Malesia áigi", "NCT": "Ođđa-Kaledonia dálveáigi", "NDT": "Newfoundlanda geasseáigi", "NDT New Caledonia": "Ođđa-Kaledonia geasseáigi", "NFDT": "Norfolksullo áigi", "NFT": "Norfolksullo áigi", "NOVST": "Novosibirska geasseáigi", "NOVT": "Novosibirska dálveáigi", "NPT": "Nepala áigi", "NRT": "Nauru áigi", "NST": "Newfoundlanda dálveáigi", "NUT": "Niuea áigi", "NZDT": "Ođđa-Selánda geasseáigi", "NZST": "Ođđa-Selánda dálveáigi", "OESZ": "Nuorta-Eurohpa geasseáigi", "OEZ": "Nuorta-Eurohpa dálveáigi", "OMSST": "Omska geasseáigi", "OMST": "Omska dálveáigi", "PDT": "Jaskesábi geasseáigi", "PDTM": "Meksiko Jáskesábi geasseáigi", "PETDT": "PETDT", "PETST": "PETST", "PGT": "Papua Ođđa-Guinea áigi", "PHOT": "Phoenixsulloid áigi", "PKT": "Pakistana dálveáigi", "PKT DST": "Pakistana geasseáigi", "PMDT": "St. Pierre & Miquelo geasseáigi", "PMST": "St. Pierre & Miquelo dálveáigi", "PONT": "Ponape áigi", "PST": "Jaskesábi dálveáigi", "PST Philippine": "Filippiinnaid dálveáigi", "PST Philippine DST": "Filippiinnaid geasseáigi", "PST Pitcairn": "Pitcairnsulloid áigi", "PSTM": "Meksiko Jáskesábi dálveáigi", "PWT": "Palaua áigi", "PYST": "Paraguaya geasseáigi", "PYT": "Paraguaya dálveáigi", "PYT Korea": "Pyongyanga áigi", "RET": "Reuniona áigi", "ROTT": "Rothera áigi", "SAKST": "Sahalina geasseáigi", "SAKT": "Sahalina dálveáigi", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "Lulli-Afrihká dálveáigi", "SBT": "Salomonsulloid áigi", "SCT": "Seychellaid áigi", "SGT": "Singapore dálveáigi", "SLST": "SLST", "SRT": "Suriname áigi", "SST Samoa": "Samoa dálveáigi", "SST Samoa Apia": "Apia dálveáigi", "SST Samoa Apia DST": "Apia geasseáigi", "SST Samoa DST": "Samoa geasseáigi", "SYOT": "Syowa áigi", "TAAF": "Frankriikka lulli & antárktisa áigi", "TAHT": "Tahiti áigi", "TJT": "Tažikistana áigi", "TKT": "Tokelaua áigi", "TLT": "Nuorta-Timora áigi", "TMST": "Turkmenistana geasseáigi", "TMT": "Turkmenistana dálveáigi", "TOST": "Tonga geasseáigi", "TOT": "Tonga dálveáigi", "TVT": "Tuvalu áigi", "TWT": "Taipeia dálveáigi", "TWT DST": "Taipeia geasseáigi", "ULAST": "Ulan-Batora geasseáigi", "ULAT": "Ulan-Batora dálveáigi", "UYST": "Uruguaya geasseáigi", "UYT": "Uruguaya dálveáigi", "UZT": "Usbekistana dálveáigi", "UZT DST": "Usbekistana geasseáigi", "VET": "Venezuela áigi", "VLAST": "Vladivostoka geasseáigi", "VLAT": "Vladivostoka dálveáigi", "VOLST": "Volgograda geasseáigi", "VOLT": "Volgograda dálveáigi", "VOST": "Vostoka áigi", "VUT": "Vanuatu dálveáigi", "VUT DST": "Vanuatu geasseáigi", "WAKT": "Wakesullo áigi", "WARST": "Oarje-Argentina geasseáigi", "WART": "Oarje-Argentina dálveáigi", "WAST": "Oarje-Afrihká áigi", "WAT": "Oarje-Afrihká áigi", "WESZ": "Oarje-Eurohpá geasseáigi", "WEZ": "Oarje-Eurohpá dálveáigi", "WFT": "Wallis- ja Futuna áigi", "WGST": "Oarje-Ruonáeatnama geasseáigi", "WGT": "Oarje-Ruonáeatnama dálveáigi", "WIB": "Oarje-Indonesia áigi", "WIT": "Nuorta-Indonesia áigi", "WITA": "Gaska-Indonesia áigi", "YAKST": "Jakucka geasseáigi", "YAKT": "Jakucka dálveáigi", "YEKST": "Jekaterinburga geasseáigi", "YEKT": "Jekaterinburga dálveáigi", "YST": "YST", "МСК": "Moskva dálveáigi", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "Oarje-Kasakstana áigi", "شىعىش قازاق ەلى": "Nuorta-Kasakstana áigi", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "Kirgisia áigi", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Azoraid geasseáigi"},
 	}
 }
 
@@ -209,53 +206,14 @@ func (se *se_FI) Minus() string {
 // FmtNumber returns 'num' with digits/precision of 'v' for 'se_FI' and handles both Whole and Real numbers based on 'v'
 func (se *se_FI) FmtNumber(num float64, v uint64) string {
 
-	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 4 + 2*len(s[:len(s)-int(v)-1])/3
-	count := 0
-	inWhole := v == 0
-	b := make([]byte, 0, l)
-
-	for i := len(s) - 1; i >= 0; i-- {
-
-		if s[i] == '.' {
-			b = append(b, se.decimal[0])
-			inWhole = true
-			continue
-		}
-
-		if inWhole {
-			if count == 3 {
-				for j := len(se.group) - 1; j >= 0; j-- {
-					b = append(b, se.group[j])
-				}
-				count = 1
-			} else {
-				count++
-			}
-		}
-
-		b = append(b, s[i])
-	}
-
-	if num < 0 {
-		for j := len(se.minus) - 1; j >= 0; j-- {
-			b = append(b, se.minus[j])
-		}
-	}
-
-	// reverse
-	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
-		b[i], b[j] = b[j], b[i]
-	}
-
-	return string(b)
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'se_FI' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (se *se_FI) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 7
+	l := len(s) + 6
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -509,19 +467,6 @@ func (se *se_FI) FmtTimeShort(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	if t.Hour() < 10 {
-		b = append(b, '0')
-	}
-
-	b = strconv.AppendInt(b, int64(t.Hour()), 10)
-	b = append(b, se.timeSeparator...)
-
-	if t.Minute() < 10 {
-		b = append(b, '0')
-	}
-
-	b = strconv.AppendInt(b, int64(t.Minute()), 10)
-
 	return string(b)
 }
 
@@ -529,26 +474,6 @@ func (se *se_FI) FmtTimeShort(t time.Time) string {
 func (se *se_FI) FmtTimeMedium(t time.Time) string {
 
 	b := make([]byte, 0, 32)
-
-	if t.Hour() < 10 {
-		b = append(b, '0')
-	}
-
-	b = strconv.AppendInt(b, int64(t.Hour()), 10)
-	b = append(b, se.timeSeparator...)
-
-	if t.Minute() < 10 {
-		b = append(b, '0')
-	}
-
-	b = strconv.AppendInt(b, int64(t.Minute()), 10)
-	b = append(b, se.timeSeparator...)
-
-	if t.Second() < 10 {
-		b = append(b, '0')
-	}
-
-	b = strconv.AppendInt(b, int64(t.Second()), 10)
 
 	return string(b)
 }
@@ -558,30 +483,6 @@ func (se *se_FI) FmtTimeLong(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	if t.Hour() < 10 {
-		b = append(b, '0')
-	}
-
-	b = strconv.AppendInt(b, int64(t.Hour()), 10)
-	b = append(b, se.timeSeparator...)
-
-	if t.Minute() < 10 {
-		b = append(b, '0')
-	}
-
-	b = strconv.AppendInt(b, int64(t.Minute()), 10)
-	b = append(b, se.timeSeparator...)
-
-	if t.Second() < 10 {
-		b = append(b, '0')
-	}
-
-	b = strconv.AppendInt(b, int64(t.Second()), 10)
-	b = append(b, []byte{0x20}...)
-
-	tz, _ := t.Zone()
-	b = append(b, tz...)
-
 	return string(b)
 }
 
@@ -589,35 +490,6 @@ func (se *se_FI) FmtTimeLong(t time.Time) string {
 func (se *se_FI) FmtTimeFull(t time.Time) string {
 
 	b := make([]byte, 0, 32)
-
-	if t.Hour() < 10 {
-		b = append(b, '0')
-	}
-
-	b = strconv.AppendInt(b, int64(t.Hour()), 10)
-	b = append(b, se.timeSeparator...)
-
-	if t.Minute() < 10 {
-		b = append(b, '0')
-	}
-
-	b = strconv.AppendInt(b, int64(t.Minute()), 10)
-	b = append(b, se.timeSeparator...)
-
-	if t.Second() < 10 {
-		b = append(b, '0')
-	}
-
-	b = strconv.AppendInt(b, int64(t.Second()), 10)
-	b = append(b, []byte{0x20}...)
-
-	tz, _ := t.Zone()
-
-	if btz, ok := se.timezones[tz]; ok {
-		b = append(b, btz...)
-	} else {
-		b = append(b, tz...)
-	}
 
 	return string(b)
 }

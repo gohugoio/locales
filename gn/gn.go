@@ -1,0 +1,270 @@
+package gn
+
+import (
+	"math"
+	"strconv"
+	"time"
+
+	"github.com/gohugoio/locales"
+	"github.com/gohugoio/locales/currency"
+)
+
+type gn struct {
+	locale             string
+	pluralsCardinal    []locales.PluralRule
+	pluralsOrdinal     []locales.PluralRule
+	pluralsRange       []locales.PluralRule
+	decimal            string
+	group              string
+	minus              string
+	percent            string
+	perMille           string
+	timeSeparator      string
+	inifinity          string
+	currencies         []string // idx = enum of currency code
+	monthsAbbreviated  []string
+	monthsNarrow       []string
+	monthsWide         []string
+	daysAbbreviated    []string
+	daysNarrow         []string
+	daysShort          []string
+	daysWide           []string
+	periodsAbbreviated []string
+	periodsNarrow      []string
+	periodsShort       []string
+	periodsWide        []string
+	erasAbbreviated    []string
+	erasNarrow         []string
+	erasWide           []string
+	timezones          map[string]string
+}
+
+// New returns a new instance of translator for the 'gn' locale
+func New() locales.Translator {
+	return &gn{
+		locale:          "gn",
+		pluralsCardinal: nil,
+		pluralsOrdinal:  nil,
+		pluralsRange:    nil,
+		decimal:         ",",
+		group:           ".",
+		timeSeparator:   ":",
+		currencies:      []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "₲", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		monthsWide:      []string{"", "Jasyteĩ", "Jasykõi", "Jasyapy", "Jasyrundy", "Jasypo", "Jasypoteĩ", "Jasypokõi", "Jasypoapy", "Jasyporundy", "Jasypa", "Jasypateĩ", "Jasypakõi"},
+		daysWide:        []string{"Arateĩ", "Arakõi", "Araapy", "Ararundy", "Arapo", "Arapoteĩ", "Arapokõi"},
+		timezones:       map[string]string{"ACDT": "ACDT", "ACST": "ACST", "ACT": "ACT", "ACWDT": "ACWDT", "ACWST": "ACWST", "ADT": "ADT", "ADT Arabia": "ADT Arabia", "AEDT": "AEDT", "AEST": "AEST", "AFT": "AFT", "AKDT": "AKDT", "AKST": "AKST", "AMST": "AMST", "AMST Armenia": "AMST Armenia", "AMT": "AMT", "AMT Armenia": "AMT Armenia", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "ARST", "ART": "ART", "AST": "AST", "AST Arabia": "AST Arabia", "AWDT": "AWDT", "AWST": "AWST", "AZST": "AZST", "AZT": "AZT", "BDT Bangladesh": "BDT Bangladesh", "BNT": "BNT", "BOT": "Bolivia óra", "BRST": "BRST", "BRT": "BRT", "BST Bangladesh": "BST Bangladesh", "BT": "BT", "CAST": "CAST", "CAT": "CAT", "CCT": "CCT", "CDT": "CDT", "CHADT": "CHADT", "CHAST": "CHAST", "CHUT": "CHUT", "CKT": "CKT", "CKT DST": "CKT DST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "CST", "CST China": "CST China", "CST China DST": "CST China DST", "CVST": "CVST", "CVT": "CVT", "CXT": "CXT", "ChST": "ChST", "ChST NMI": "ChST NMI", "CuDT": "CuDT", "CuST": "CuST", "DAVT": "DAVT", "DDUT": "DDUT", "EASST": "EASST", "EAST": "EAST", "EAT": "EAT", "ECT": "Ecuador óra", "EDT": "EDT", "EGDT": "EGDT", "EGST": "EGST", "EST": "EST", "FEET": "FEET", "FJT": "FJT", "FJT Summer": "FJT Summer", "FKST": "FKST", "FKT": "FKT", "FNST": "FNST", "FNT": "FNT", "GALT": "Galápagos óra", "GAMT": "GAMT", "GEST": "GEST", "GET": "GET", "GFT": "GFT", "GIT": "GIT", "GMT": "GMT", "GNSST": "GNSST", "GNST": "GNST", "GST": "GST", "GST Guam": "GST Guam", "GYT": "GYT", "HADT": "HADT", "HAST": "HAST", "HKST": "HKST", "HKT": "HKT", "HOVST": "HOVST", "HOVT": "HOVT", "ICT": "ICT", "IDT": "IDT", "IOT": "IOT", "IRKST": "IRKST", "IRKT": "IRKT", "IRST": "IRST", "IRST DST": "IRST DST", "IST": "IST", "IST Israel": "IST Israel", "JDT": "JDT", "JST": "JST", "KOST": "KOST", "KRAST": "KRAST", "KRAT": "KRAT", "KST": "KST", "KST DST": "KST DST", "LHDT": "LHDT", "LHST": "LHST", "LINT": "LINT", "MAGST": "MAGST", "MAGT": "MAGT", "MART": "MART", "MAWT": "MAWT", "MDT": "MDT", "MESZ": "MESZ", "MEZ": "MEZ", "MHT": "MHT", "MMT": "MMT", "MSD": "MSD", "MST": "MST", "MUST": "MUST", "MUT": "MUT", "MVT": "MVT", "MYT": "MYT", "NCT": "NCT", "NDT": "NDT", "NDT New Caledonia": "NDT New Caledonia", "NFDT": "NFDT", "NFT": "NFT", "NOVST": "NOVST", "NOVT": "NOVT", "NPT": "NPT", "NRT": "NRT", "NST": "NST", "NUT": "NUT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "OESZ", "OEZ": "OEZ", "OMSST": "OMSST", "OMST": "OMST", "PDT": "PDT", "PDTM": "PDTM", "PETDT": "PETDT", "PETST": "PETST", "PGT": "PGT", "PHOT": "PHOT", "PKT": "PKT", "PKT DST": "PKT DST", "PMDT": "PMDT", "PMST": "PMST", "PONT": "PONT", "PST": "PST", "PST Philippine": "PST Philippine", "PST Philippine DST": "PST Philippine DST", "PST Pitcairn": "PST Pitcairn", "PSTM": "PSTM", "PWT": "PWT", "PYST": "PYST", "PYT": "PYT", "PYT Korea": "PYT Korea", "RET": "RET", "ROTT": "ROTT", "SAKST": "SAKST", "SAKT": "SAKT", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "SAST", "SBT": "SBT", "SCT": "SCT", "SGT": "SGT", "SLST": "SLST", "SRT": "SRT", "SST Samoa": "SST Samoa", "SST Samoa Apia": "SST Samoa Apia", "SST Samoa Apia DST": "SST Samoa Apia DST", "SST Samoa DST": "SST Samoa DST", "SYOT": "SYOT", "TAAF": "TAAF", "TAHT": "TAHT", "TJT": "TJT", "TKT": "TKT", "TLT": "TLT", "TMST": "TMST", "TMT": "TMT", "TOST": "TOST", "TOT": "TOT", "TVT": "TVT", "TWT": "TWT", "TWT DST": "TWT DST", "ULAST": "ULAST", "ULAT": "ULAT", "UYST": "UYST", "UYT": "UYT", "UZT": "UZT", "UZT DST": "UZT DST", "VET": "Venezuela óra", "VLAST": "VLAST", "VLAT": "VLAT", "VOLST": "VOLST", "VOLT": "VOLT", "VOST": "VOST", "VUT": "VUT", "VUT DST": "VUT DST", "WAKT": "WAKT", "WARST": "WARST", "WART": "WART", "WAST": "WAST", "WAT": "WAT", "WESZ": "WESZ", "WEZ": "WEZ", "WFT": "WFT", "WGST": "WGST", "WGT": "WGT", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "YAKST": "YAKST", "YAKT": "YAKT", "YEKST": "YEKST", "YEKT": "YEKT", "YST": "YST", "МСК": "МСК", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "باتىس قازاق ەلى", "شىعىش قازاق ەلى": "شىعىش قازاق ەلى", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "قىرعىزستان", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "∅∅∅"},
+	}
+}
+
+// Locale returns the current translators string locale
+func (gn *gn) Locale() string {
+	return gn.locale
+}
+
+// PluralsCardinal returns the list of cardinal plural rules associated with 'gn'
+func (gn *gn) PluralsCardinal() []locales.PluralRule {
+	return gn.pluralsCardinal
+}
+
+// PluralsOrdinal returns the list of ordinal plural rules associated with 'gn'
+func (gn *gn) PluralsOrdinal() []locales.PluralRule {
+	return gn.pluralsOrdinal
+}
+
+// PluralsRange returns the list of range plural rules associated with 'gn'
+func (gn *gn) PluralsRange() []locales.PluralRule {
+	return gn.pluralsRange
+}
+
+// CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'gn'
+func (gn *gn) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
+	return locales.PluralRuleUnknown
+}
+
+// OrdinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for 'gn'
+func (gn *gn) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
+	return locales.PluralRuleUnknown
+}
+
+// RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'gn'
+func (gn *gn) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
+	return locales.PluralRuleUnknown
+}
+
+// MonthAbbreviated returns the locales abbreviated month given the 'month' provided
+func (gn *gn) MonthAbbreviated(month time.Month) string {
+	return gn.monthsAbbreviated[month]
+}
+
+// MonthsAbbreviated returns the locales abbreviated months
+func (gn *gn) MonthsAbbreviated() []string {
+	return nil
+}
+
+// MonthNarrow returns the locales narrow month given the 'month' provided
+func (gn *gn) MonthNarrow(month time.Month) string {
+	return gn.monthsNarrow[month]
+}
+
+// MonthsNarrow returns the locales narrow months
+func (gn *gn) MonthsNarrow() []string {
+	return nil
+}
+
+// MonthWide returns the locales wide month given the 'month' provided
+func (gn *gn) MonthWide(month time.Month) string {
+	return gn.monthsWide[month]
+}
+
+// MonthsWide returns the locales wide months
+func (gn *gn) MonthsWide() []string {
+	return gn.monthsWide[1:]
+}
+
+// WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
+func (gn *gn) WeekdayAbbreviated(weekday time.Weekday) string {
+	return gn.daysAbbreviated[weekday]
+}
+
+// WeekdaysAbbreviated returns the locales abbreviated weekdays
+func (gn *gn) WeekdaysAbbreviated() []string {
+	return gn.daysAbbreviated
+}
+
+// WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
+func (gn *gn) WeekdayNarrow(weekday time.Weekday) string {
+	return gn.daysNarrow[weekday]
+}
+
+// WeekdaysNarrow returns the locales narrow weekdays
+func (gn *gn) WeekdaysNarrow() []string {
+	return gn.daysNarrow
+}
+
+// WeekdayShort returns the locales short weekday given the 'weekday' provided
+func (gn *gn) WeekdayShort(weekday time.Weekday) string {
+	return gn.daysShort[weekday]
+}
+
+// WeekdaysShort returns the locales short weekdays
+func (gn *gn) WeekdaysShort() []string {
+	return gn.daysShort
+}
+
+// WeekdayWide returns the locales wide weekday given the 'weekday' provided
+func (gn *gn) WeekdayWide(weekday time.Weekday) string {
+	return gn.daysWide[weekday]
+}
+
+// WeekdaysWide returns the locales wide weekdays
+func (gn *gn) WeekdaysWide() []string {
+	return gn.daysWide
+}
+
+// Decimal returns the decimal point of number
+func (gn *gn) Decimal() string {
+	return gn.decimal
+}
+
+// Group returns the group of number
+func (gn *gn) Group() string {
+	return gn.group
+}
+
+// Group returns the minus sign of number
+func (gn *gn) Minus() string {
+	return gn.minus
+}
+
+// FmtNumber returns 'num' with digits/precision of 'v' for 'gn' and handles both Whole and Real numbers based on 'v'
+func (gn *gn) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+}
+
+// FmtPercent returns 'num' with digits/precision of 'v' for 'gn' and handles both Whole and Real numbers based on 'v'
+// NOTE: 'num' passed into FmtPercent is assumed to be in percent already
+func (gn *gn) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+}
+
+// FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'gn'
+func (gn *gn) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	symbol := gn.currencies[currency]
+	return string(append(append([]byte{}, symbol...), s...))
+}
+
+// FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'gn'
+// in accounting notation.
+func (gn *gn) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	symbol := gn.currencies[currency]
+	return string(append(append([]byte{}, symbol...), s...))
+}
+
+// FmtDateShort returns the short date representation of 't' for 'gn'
+func (gn *gn) FmtDateShort(t time.Time) string {
+
+	b := make([]byte, 0, 32)
+
+	return string(b)
+}
+
+// FmtDateMedium returns the medium date representation of 't' for 'gn'
+func (gn *gn) FmtDateMedium(t time.Time) string {
+
+	b := make([]byte, 0, 32)
+
+	return string(b)
+}
+
+// FmtDateLong returns the long date representation of 't' for 'gn'
+func (gn *gn) FmtDateLong(t time.Time) string {
+
+	b := make([]byte, 0, 32)
+
+	return string(b)
+}
+
+// FmtDateFull returns the full date representation of 't' for 'gn'
+func (gn *gn) FmtDateFull(t time.Time) string {
+
+	b := make([]byte, 0, 32)
+
+	return string(b)
+}
+
+// FmtTimeShort returns the short time representation of 't' for 'gn'
+func (gn *gn) FmtTimeShort(t time.Time) string {
+
+	b := make([]byte, 0, 32)
+
+	return string(b)
+}
+
+// FmtTimeMedium returns the medium time representation of 't' for 'gn'
+func (gn *gn) FmtTimeMedium(t time.Time) string {
+
+	b := make([]byte, 0, 32)
+
+	return string(b)
+}
+
+// FmtTimeLong returns the long time representation of 't' for 'gn'
+func (gn *gn) FmtTimeLong(t time.Time) string {
+
+	b := make([]byte, 0, 32)
+
+	return string(b)
+}
+
+// FmtTimeFull returns the full time representation of 't' for 'gn'
+func (gn *gn) FmtTimeFull(t time.Time) string {
+
+	b := make([]byte, 0, 32)
+
+	return string(b)
+}

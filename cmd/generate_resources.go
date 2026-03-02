@@ -9,12 +9,11 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+	"text/template"
 
 	"github.com/gohugoio/locales"
 
 	"golang.org/x/text/unicode/cldr"
-
-	"text/template"
 )
 
 const (
@@ -53,6 +52,7 @@ var (
 		"w": "w := locales.W(n, v)\n",
 		"f": "f := locales.F(n, v)\n",
 		"t": "t := locales.T(n, v)\n",
+		"e": "e := int64(0)\n",
 	}
 
 	translators            = make(map[string]*translator)
@@ -66,6 +66,7 @@ var (
 	wModRegex              = regexp.MustCompile("(w%[0-9]+)")
 	fModRegex              = regexp.MustCompile("(f%[0-9]+)")
 	tModRegex              = regexp.MustCompile("(t%[0-9]+)")
+	eModRegex              = regexp.MustCompile("(e%[0-9]+)")
 	groupLenRegex          = regexp.MustCompile(",([0-9#]+)\\.")
 	groupLenPercentRegex   = regexp.MustCompile(",([0-9#]+)$")
 	secondaryGroupLenRegex = regexp.MustCompile(",([0-9#]+),")
@@ -73,7 +74,8 @@ var (
 	requiredDecimalRegex   = regexp.MustCompile("\\.([0-9]+)")
 
 	enInheritance = map[string]string{
-		"en_150": "en_001", "en_AG": "en_001", "en_AI": "en_001", "en_AU": "en_001", "en_BB": "en_001", "en_BE": "en_001", "en_BM": "en_001", "en_BS": "en_001", "en_BW": "en_001", "en_BZ": "en_001", "en_CA": "en_001", "en_CC": "en_001", "en_CK": "en_001", "en_CM": "en_001", "en_CX": "en_001", "en_CY": "en_001", "en_DG": "en_001", "en_DM": "en_001", "en_ER": "en_001", "en_FJ": "en_001", "en_FK": "en_001", "en_FM": "en_001", "en_GB": "en_001", "en_GD": "en_001", "en_GG": "en_001", "en_GH": "en_001", "en_GI": "en_001", "en_GM": "en_001", "en_GY": "en_001", "en_HK": "en_001", "en_IE": "en_001", "en_IL": "en_001", "en_IM": "en_001", "en_IN": "en_001", "en_IO": "en_001", "en_JE": "en_001", "en_JM": "en_001", "en_KE": "en_001", "en_KI": "en_001", "en_KN": "en_001", "en_KY": "en_001", "en_LC": "en_001", "en_LR": "en_001", "en_LS": "en_001", "en_MG": "en_001", "en_MO": "en_001", "en_MS": "en_001", "en_MT": "en_001", "en_MU": "en_001", "en_MW": "en_001", "en_MY": "en_001", "en_NA": "en_001", "en_NF": "en_001", "en_NG": "en_001", "en_NR": "en_001", "en_NU": "en_001", "en_NZ": "en_001", "en_PG": "en_001", "en_PH": "en_001", "en_PK": "en_001", "en_PN": "en_001", "en_PW": "en_001", "en_RW": "en_001", "en_SB": "en_001", "en_SC": "en_001", "en_SD": "en_001", "en_SG": "en_001", "en_SH": "en_001", "en_SL": "en_001", "en_SS": "en_001", "en_SX": "en_001", "en_SZ": "en_001", "en_TC": "en_001", "en_TK": "en_001", "en_TO": "en_001", "en_TT": "en_001", "en_TV": "en_001", "en_TZ": "en_001", "en_UG": "en_001", "en_VC": "en_001", "en_VG": "en_001", "en_VU": "en_001", "en_WS": "en_001", "en_ZA": "en_001", "en_ZM": "en_001", "en_ZW": "en_001", }
+		"en_150": "en_001", "en_AG": "en_001", "en_AI": "en_001", "en_AU": "en_001", "en_BB": "en_001", "en_BE": "en_001", "en_BM": "en_001", "en_BS": "en_001", "en_BW": "en_001", "en_BZ": "en_001", "en_CA": "en_001", "en_CC": "en_001", "en_CK": "en_001", "en_CM": "en_001", "en_CX": "en_001", "en_CY": "en_001", "en_DG": "en_001", "en_DM": "en_001", "en_ER": "en_001", "en_FJ": "en_001", "en_FK": "en_001", "en_FM": "en_001", "en_GB": "en_001", "en_GD": "en_001", "en_GG": "en_001", "en_GH": "en_001", "en_GI": "en_001", "en_GM": "en_001", "en_GY": "en_001", "en_HK": "en_001", "en_IE": "en_001", "en_IL": "en_001", "en_IM": "en_001", "en_IN": "en_001", "en_IO": "en_001", "en_JE": "en_001", "en_JM": "en_001", "en_KE": "en_001", "en_KI": "en_001", "en_KN": "en_001", "en_KY": "en_001", "en_LC": "en_001", "en_LR": "en_001", "en_LS": "en_001", "en_MG": "en_001", "en_MO": "en_001", "en_MS": "en_001", "en_MT": "en_001", "en_MU": "en_001", "en_MW": "en_001", "en_MY": "en_001", "en_NA": "en_001", "en_NF": "en_001", "en_NG": "en_001", "en_NR": "en_001", "en_NU": "en_001", "en_NZ": "en_001", "en_PG": "en_001", "en_PH": "en_001", "en_PK": "en_001", "en_PN": "en_001", "en_PW": "en_001", "en_RW": "en_001", "en_SB": "en_001", "en_SC": "en_001", "en_SD": "en_001", "en_SG": "en_001", "en_SH": "en_001", "en_SL": "en_001", "en_SS": "en_001", "en_SX": "en_001", "en_SZ": "en_001", "en_TC": "en_001", "en_TK": "en_001", "en_TO": "en_001", "en_TT": "en_001", "en_TV": "en_001", "en_TZ": "en_001", "en_UG": "en_001", "en_VC": "en_001", "en_VG": "en_001", "en_VU": "en_001", "en_WS": "en_001", "en_ZA": "en_001", "en_ZM": "en_001", "en_ZW": "en_001",
+	}
 	en150Inheritance = map[string]string{"en_AT": "en_150", "en_CH": "en_150", "en_DE": "en_150", "en_DK": "en_150", "en_FI": "en_150", "en_NL": "en_150", "en_SE": "en_150", "en_SI": "en_150"}
 	es419Inheritance = map[string]string{
 		"es_AR": "es_419", "es_BO": "es_419", "es_BR": "es_419", "es_BZ": "es_419", "es_CL": "es_419", "es_CO": "es_419", "es_CR": "es_419", "es_CU": "es_419", "es_DO": "es_419", "es_EC": "es_419", "es_GT": "es_419", "es_HN": "es_419", "es_MX": "es_419", "es_NI": "es_419", "es_PA": "es_419", "es_PE": "es_419", "es_PR": "es_419", "es_PY": "es_419", "es_SV": "es_419", "es_US": "es_419", "es_UY": "es_419", "es_VE": "es_419",
@@ -88,7 +90,7 @@ var (
 		"zh_Hant_MO": "zh_Hant_HK",
 	}
 
-	inheritMaps = []map[string]string{ enInheritance, en150Inheritance, es419Inheritance, rootInheritance, ptPtInheritance, zhHantHKInheritance}
+	inheritMaps = []map[string]string{enInheritance, en150Inheritance, es419Inheritance, rootInheritance, ptPtInheritance, zhHantHKInheritance}
 )
 
 type translator struct {
@@ -194,7 +196,6 @@ type zoneAbbrev struct {
 var timezones = map[string]*zoneAbbrev{} // key = type eg. America_Eastern zone Abbrev eg. EST & EDT
 
 func main() {
-
 	var err error
 
 	// load template
@@ -205,6 +206,7 @@ func main() {
 
 	// load CLDR recourses
 	var decoder cldr.Decoder
+	decoder.SetDirFilter("main", "supplemental")
 
 	cldr, err := decoder.DecodePath("data/core")
 	if err != nil {
@@ -226,7 +228,7 @@ func main() {
 		currencies += curr + "\n"
 	}
 
-	if err = os.MkdirAll(fmt.Sprintf(locDir, "currency"), 0777); err != nil {
+	if err = os.MkdirAll(fmt.Sprintf(locDir, "currency"), 0o777); err != nil {
 		log.Fatal(err)
 	}
 
@@ -258,7 +260,7 @@ func main() {
 	for _, trans := range translators {
 		fmt.Println("Writing Data:", trans.Locale)
 
-		if err = os.MkdirAll(fmt.Sprintf(locDir, trans.Locale), 0777); err != nil {
+		if err = os.MkdirAll(fmt.Sprintf(locDir, trans.Locale), 0o777); err != nil {
 			log.Fatal(err)
 		}
 
@@ -322,16 +324,13 @@ func main() {
 }
 
 func applyOverrides(trans *translator) {
-
 	if trans.BaseLocale == "ru" {
 		trans.PercentNumberFormat = "#,##0%"
 	}
 }
 
 func postProcess(cldr *cldr.CLDR) {
-
 	for _, v := range timezones {
-
 		// no DST
 		if len(v.daylight) == 0 {
 			v.daylight = v.standard
@@ -349,7 +348,7 @@ func postProcess(cldr *cldr.CLDR) {
 		// cardinal plural rules
 		trans.CardinalFunc, trans.Plurals = parseCardinalPluralRuleFunc(cldr, trans.Locale, trans.BaseLocale)
 
-		//ordinal plural rules
+		// ordinal plural rules
 		trans.OrdinalFunc, trans.PluralsOrdinal = parseOrdinalPluralRuleFunc(cldr, trans.BaseLocale)
 
 		// range plural rules
@@ -363,10 +362,10 @@ func postProcess(cldr *cldr.CLDR) {
 
 			inheritedFound = false
 
-			for _, inheritMap := range(inheritMaps) {
+			for _, inheritMap := range inheritMaps {
 				if inherit, found := inheritMap[trans.Locale]; found {
 					inherited, inheritedFound = translators[inherit]
-					break;
+					break
 				}
 			}
 
@@ -708,7 +707,6 @@ func postProcess(cldr *cldr.CLDR) {
 
 		// some just have no data...
 		if ldml.Numbers != nil {
-
 			if ldml.Numbers.Currencies != nil {
 				for _, currency := range ldml.Numbers.Currencies.Currency {
 
@@ -814,7 +812,6 @@ func postProcess(cldr *cldr.CLDR) {
 
 // preprocesses maps, array etc... just requires multiple passes no choice....
 func preProcess(cldrVar *cldr.CLDR) {
-
 	for _, l := range cldrVar.Locales() {
 
 		fmt.Println("Pre Processing:", l)
@@ -896,7 +893,6 @@ func preProcess(cldrVar *cldr.CLDR) {
 			}
 
 			if ldml.Numbers.Currencies != nil {
-
 				for _, currency := range ldml.Numbers.Currencies.Currency {
 
 					if len(strings.TrimSpace(currency.Type)) == 0 {
@@ -908,7 +904,6 @@ func preProcess(cldrVar *cldr.CLDR) {
 			}
 
 			if len(ldml.Numbers.DecimalFormats) > 0 && len(ldml.Numbers.DecimalFormats[0].DecimalFormatLength) > 0 {
-
 				for _, dfl := range ldml.Numbers.DecimalFormats[0].DecimalFormatLength {
 					if len(dfl.Type) == 0 {
 						trans.DecimalNumberFormat = dfl.DecimalFormat[0].Pattern[0].Data()
@@ -918,7 +913,6 @@ func preProcess(cldrVar *cldr.CLDR) {
 			}
 
 			if len(ldml.Numbers.PercentFormats) > 0 && len(ldml.Numbers.PercentFormats[0].PercentFormatLength) > 0 {
-
 				for _, dfl := range ldml.Numbers.PercentFormats[0].PercentFormatLength {
 					if len(dfl.Type) == 0 {
 						trans.PercentNumberFormat = dfl.PercentFormat[0].Pattern[0].Data()
@@ -928,7 +922,6 @@ func preProcess(cldrVar *cldr.CLDR) {
 			}
 
 			if len(ldml.Numbers.CurrencyFormats) > 0 && len(ldml.Numbers.CurrencyFormats[0].CurrencyFormatLength) > 0 {
-
 				if len(ldml.Numbers.CurrencyFormats[0].CurrencyFormatLength[0].CurrencyFormat) > 1 {
 
 					split := strings.SplitN(ldml.Numbers.CurrencyFormats[0].CurrencyFormatLength[0].CurrencyFormat[1].Pattern[0].Data(), ";", 2)
@@ -950,7 +943,6 @@ func preProcess(cldrVar *cldr.CLDR) {
 		if ldml.Dates != nil {
 
 			if ldml.Dates.TimeZoneNames != nil {
-
 				for _, zone := range ldml.Dates.TimeZoneNames.Metazone {
 
 					for _, short := range zone.Short {
@@ -1017,9 +1009,7 @@ func preProcess(cldrVar *cldr.CLDR) {
 				if calendar != nil {
 
 					if calendar.DateFormats != nil {
-
 						for _, datefmt := range calendar.DateFormats.DateFormatLength {
-
 							switch datefmt.Type {
 							case "full":
 								trans.FmtDateFull = datefmt.DateFormat[0].Pattern[0].Data()
@@ -1037,9 +1027,7 @@ func preProcess(cldrVar *cldr.CLDR) {
 					}
 
 					if calendar.TimeFormats != nil {
-
 						for _, datefmt := range calendar.TimeFormats.TimeFormatLength {
-
 							switch datefmt.Type {
 							case "full":
 								trans.FmtTimeFull = datefmt.TimeFormat[0].Pattern[0].Data()
@@ -1061,7 +1049,6 @@ func preProcess(cldrVar *cldr.CLDR) {
 						var abbrSet, narrSet, wideSet bool
 
 						for _, monthctx := range calendar.Months.MonthContext {
-
 							for _, months := range monthctx.MonthWidth {
 
 								var monthData []string
@@ -1137,13 +1124,11 @@ func preProcess(cldrVar *cldr.CLDR) {
 						var abbrSet, narrSet, shortSet, wideSet bool
 
 						for _, dayctx := range calendar.Days.DayContext {
-
 							for _, days := range dayctx.DayWidth {
 
 								var dayData []string
 
 								for _, d := range days.Day {
-
 									switch d.Type {
 									case "sun":
 										dayData = append(dayData, d.Data())
@@ -1198,7 +1183,6 @@ func preProcess(cldrVar *cldr.CLDR) {
 						var abbrSet, narrSet, shortSet, wideSet bool
 
 						for _, ctx := range calendar.DayPeriods.DayPeriodContext {
-
 							for _, width := range ctx.DayPeriodWidth {
 
 								// [0] = AM
@@ -1252,7 +1236,6 @@ func preProcess(cldrVar *cldr.CLDR) {
 						wide := make([]string, 2, 2)
 
 						if calendar.Eras.EraAbbr != nil {
-
 							if len(calendar.Eras.EraAbbr.Era) == 4 {
 								abbrev[0] = calendar.Eras.EraAbbr.Era[0].Data()
 								abbrev[1] = calendar.Eras.EraAbbr.Era[2].Data()
@@ -1263,7 +1246,6 @@ func preProcess(cldrVar *cldr.CLDR) {
 						}
 
 						if calendar.Eras.EraNarrow != nil {
-
 							if len(calendar.Eras.EraNarrow.Era) == 4 {
 								narr[0] = calendar.Eras.EraNarrow.Era[0].Data()
 								narr[1] = calendar.Eras.EraNarrow.Era[2].Data()
@@ -1274,7 +1256,6 @@ func preProcess(cldrVar *cldr.CLDR) {
 						}
 
 						if calendar.Eras.EraNames != nil {
-
 							if len(calendar.Eras.EraNames.Era) == 4 {
 								wide[0] = calendar.Eras.EraNames.Era[0].Data()
 								wide[1] = calendar.Eras.EraNames.Era[2].Data()
@@ -1305,7 +1286,6 @@ func preProcess(cldrVar *cldr.CLDR) {
 }
 
 func parseDateFormats(trans *translator, shortFormat, mediumFormat, longFormat, fullFormat string) (short, medium, long, full string) {
-
 	// Short Date Parsing
 
 	short = parseDateTimeFormat(trans.BaseLocale, shortFormat, 2)
@@ -1319,7 +1299,6 @@ func parseDateFormats(trans *translator, shortFormat, mediumFormat, longFormat, 
 }
 
 func parseDateTimeFormat(baseLocale, format string, eraScore uint8) (results string) {
-
 	// rules:
 	// y = four digit year
 	// yy = two digit year
@@ -1330,7 +1309,6 @@ func parseDateTimeFormat(baseLocale, format string, eraScore uint8) (results str
 	var start int
 
 	for i := 0; i < len(format); i++ {
-
 		switch format[i] {
 
 		// time separator
@@ -1364,7 +1342,6 @@ func parseDateTimeFormat(baseLocale, format string, eraScore uint8) (results str
 			// not '' so whatever comes between '' is constant
 
 			if len(format) != i {
-
 				// advance i to the next single quote + 1
 				for ; i < len(format); i++ {
 					if format[i] == '\'' {
@@ -1544,7 +1521,6 @@ func parseDateTimeFormat(baseLocale, format string, eraScore uint8) (results str
 			// using the timezone on the Go time object, eg. EST, EDT, MST.....
 
 			if count < 4 {
-
 				results += `
 
 					tz, _ := t.Zone()
@@ -1552,7 +1528,6 @@ func parseDateTimeFormat(baseLocale, format string, eraScore uint8) (results str
 
 				`
 			} else {
-
 				results += `
 					tz, _ := t.Zone()
 
@@ -1777,7 +1752,6 @@ func parseDateTimeFormat(baseLocale, format string, eraScore uint8) (results str
 }
 
 func parseCurrencyNumberFormat(trans *translator) {
-
 	if len(trans.CurrencyNumberFormat) == 0 {
 		return
 	}
@@ -1930,7 +1904,6 @@ func parseCurrencyNumberFormat(trans *translator) {
 }
 
 func parsePercentNumberFormat(trans *translator) {
-
 	if len(trans.PercentNumberFormat) == 0 {
 		return
 	}
@@ -2013,7 +1986,6 @@ func parsePercentNumberFormat(trans *translator) {
 }
 
 func parseDecimalNumberFormat(trans *translator) {
-
 	if len(trans.DecimalNumberFormat) == 0 {
 		return
 	}
@@ -2060,7 +2032,6 @@ func (a ByPluralRule) Less(i, j int) bool { return a[i] < a[j] }
 // TODO: refine generated code a bit, some combinations end up with same plural rule,
 // could check all at once; but it works and that's step 1 complete
 func parseRangePluralRuleFunc(current *cldr.CLDR, baseLocale string) (results string, plurals string) {
-
 	var pluralRange *struct {
 		cldr.Common
 		Locales     string `xml:"locales,attr"`
@@ -2079,7 +2050,6 @@ func parseRangePluralRuleFunc(current *cldr.CLDR, baseLocale string) (results st
 		locs := strings.Split(pr.Locales, " ")
 
 		for _, loc := range locs {
-
 			if loc == baseLocale {
 				pluralRange = pr
 			}
@@ -2166,13 +2136,11 @@ func parseRangePluralRuleFunc(current *cldr.CLDR, baseLocale string) (results st
 	}
 
 	return
-
 }
 
 // TODO: cleanup function logic perhaps write a lexer... but it's working right now, and
 // I'm already farther down the rabbit hole than I'd like and so pulling the chute here.
 func parseOrdinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results string, plurals string) {
-
 	var prOrdinal *struct {
 		cldr.Common
 		Locales    string "xml:\"locales,attr\""
@@ -2190,9 +2158,7 @@ func parseOrdinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results 
 		locs := strings.Split(pr.Locales, " ")
 
 		for _, loc := range locs {
-
 			if loc == baseLocale {
-
 				prOrdinal = pr
 				// for _, pl := range pr.PluralRule {
 				// 	fmt.Println(pl.Count, pl.Common.Data())
@@ -2222,11 +2188,8 @@ func parseOrdinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results 
 
 		if len(data) == 0 {
 			if len(prOrdinal.PluralRule) == 1 {
-
 				results = "return locales." + ps1
-
 			} else {
-
 				results += "\n\nreturn locales." + ps1
 				// results += "else {\nreturn locales." + locales.PluralStringToString(rule.Count) + ", nil\n}"
 			}
@@ -2258,6 +2221,10 @@ func parseOrdinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results 
 
 		if strings.Contains(data, "t") {
 			vals[prVarFuncs["t"]] = struct{}{}
+		}
+
+		if strings.Contains(data, "e") {
+			vals[prVarFuncs["e"]] = struct{}{}
 		}
 
 		if first {
@@ -2421,6 +2388,11 @@ func parseOrdinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results 
 				Value: prVarFuncs["t"],
 				Rank:  5,
 			})
+		case "e":
+			sorted = append(sorted, sortRank{
+				Value: prVarFuncs["e"],
+				Rank:  6,
+			})
 		}
 	}
 
@@ -2433,7 +2405,6 @@ func parseOrdinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results 
 	if len(results) == 0 {
 		results = "return locales.PluralRuleUnknown"
 	} else {
-
 		if !strings.HasPrefix(results, "return") {
 
 			results = manyToSingleVars(results)
@@ -2456,7 +2427,6 @@ func parseOrdinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results 
 //
 // updated to also accept actual locale as 'pt_PT' exists in cardinal rules different from 'pt'
 func parseCardinalPluralRuleFunc(current *cldr.CLDR, locale, baseLocale string) (results string, plurals string) {
-
 	var prCardinal *struct {
 		cldr.Common
 		Locales    string "xml:\"locales,attr\""
@@ -2477,7 +2447,6 @@ FIND:
 		locs := strings.Split(pr.Locales, " ")
 
 		for _, loc := range locs {
-
 			if loc == l {
 				prCardinal = pr
 			}
@@ -2512,11 +2481,8 @@ FIND:
 
 		if len(data) == 0 {
 			if len(prCardinal.PluralRule) == 1 {
-
 				results = "return locales." + ps1
-
 			} else {
-
 				results += "\n\nreturn locales." + ps1
 				// results += "else {\nreturn locales." + locales.PluralStringToString(rule.Count) + ", nil\n}"
 			}
@@ -2548,6 +2514,10 @@ FIND:
 
 		if strings.Contains(data, "t") {
 			vals[prVarFuncs["t"]] = struct{}{}
+		}
+
+		if strings.Contains(data, "e") {
+			vals[prVarFuncs["e"]] = struct{}{}
 		}
 
 		if first {
@@ -2711,6 +2681,11 @@ FIND:
 				Value: prVarFuncs["t"],
 				Rank:  5,
 			})
+		case "e":
+			sorted = append(sorted, sortRank{
+				Value: prVarFuncs["e"],
+				Rank:  6,
+			})
 		}
 	}
 
@@ -2723,7 +2698,6 @@ FIND:
 	if len(results) == 0 {
 		results = "return locales.PluralRuleUnknown"
 	} else {
-
 		if !strings.HasPrefix(results, "return") {
 
 			results = manyToSingleVars(results)
@@ -2742,7 +2716,6 @@ FIND:
 }
 
 func manyToSingleVars(input string) (results string) {
-
 	matches := nModRegex.FindAllString(input, -1)
 	mp := make(map[string][]string) // map of formula to variable
 	var found bool
@@ -2846,6 +2819,26 @@ func manyToSingleVars(input string) (results string) {
 		input = strings.Replace(input, k, variable, -1)
 	}
 
+	matches = eModRegex.FindAllString(input, -1)
+	mp = make(map[string][]string) // map of formula to variable
+
+	for _, formula := range matches {
+
+		if _, found = mp[formula]; found {
+			continue
+		}
+
+		split = strings.SplitN(formula, "%", 2)
+
+		mp[formula] = []string{split[1], formula}
+	}
+
+	for k, v := range mp {
+		variable = "eMod" + v[0]
+		results += variable + " := " + v[1] + "\n"
+		input = strings.Replace(input, k, variable, -1)
+	}
+
 	results = results + "\n" + input
 
 	return
@@ -2853,7 +2846,6 @@ func manyToSingleVars(input string) (results string) {
 
 // pluralStringToInt returns the enum value of 'plural' provided
 func pluralStringToInt(plural string) locales.PluralRule {
-
 	switch plural {
 	case "zero":
 		return locales.PluralRuleZero
@@ -2873,7 +2865,6 @@ func pluralStringToInt(plural string) locales.PluralRule {
 }
 
 func pluralStringToString(pr string) string {
-
 	pr = strings.TrimSpace(pr)
 
 	switch pr {

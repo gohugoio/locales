@@ -18,12 +18,11 @@ type rm struct {
 	group                  string
 	minus                  string
 	percent                string
-	percentSuffix          string
 	perMille               string
 	timeSeparator          string
 	inifinity              string
 	currencies             []string // idx = enum of currency code
-	currencyPositiveSuffix string
+	currencyNegativePrefix string
 	currencyNegativeSuffix string
 	monthsAbbreviated      []string
 	monthsNarrow           []string
@@ -49,31 +48,23 @@ func New() locales.Translator {
 		pluralsCardinal:        []locales.PluralRule{2, 6},
 		pluralsOrdinal:         nil,
 		pluralsRange:           nil,
-		decimal:                ".",
-		group:                  "’",
-		minus:                  "−",
-		percent:                "%",
-		perMille:               "‰",
+		decimal:                ",",
+		group:                  " ",
 		timeSeparator:          ":",
-		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "A$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "$", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		percentSuffix:          " ",
-		currencyPositiveSuffix: " ",
-		currencyNegativeSuffix: " ",
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "$", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		currencyNegativePrefix: "(",
+		currencyNegativeSuffix: ")",
 		monthsAbbreviated:      []string{"", "schan.", "favr.", "mars", "avr.", "matg", "zercl.", "fan.", "avust", "sett.", "oct.", "nov.", "dec."},
 		monthsNarrow:           []string{"", "S", "F", "M", "A", "M", "Z", "F", "A", "S", "O", "N", "D"},
 		monthsWide:             []string{"", "da schaner", "da favrer", "da mars", "d’avrigl", "da matg", "da zercladur", "da fanadur", "d’avust", "da settember", "d’october", "da november", "da december"},
 		daysAbbreviated:        []string{"du", "gli", "ma", "me", "gie", "ve", "so"},
 		daysNarrow:             []string{"D", "G", "M", "M", "G", "V", "S"},
-		daysShort:              []string{"du", "gli", "ma", "me", "gie", "ve", "so"},
 		daysWide:               []string{"dumengia", "glindesdi", "mardi", "mesemna", "gievgia", "venderdi", "sonda"},
-		periodsAbbreviated:     []string{"AM", "PM"},
-		periodsNarrow:          []string{"AM", "PM"},
-		periodsWide:            []string{"AM", "PM"},
-		erasAbbreviated:        []string{"av. Cr.", "s. Cr."},
+		periodsNarrow:          []string{"a", "p"},
+		erasAbbreviated:        []string{"a.Cr.", "s.C."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"avant Cristus", "suenter Cristus"},
-		timezones:              map[string]string{"ACDT": "ACDT", "ACST": "ACST", "ACWDT": "ACWDT", "ACWST": "ACWST", "ADT": "ADT", "AEDT": "AEDT", "AEST": "AEST", "AKDT": "AKDT", "AKST": "AKST", "ARST": "ARST", "ART": "ART", "AST": "AST", "AWDT": "AWDT", "AWST": "AWST", "BOT": "BOT", "BT": "BT", "CAT": "CAT", "CDT": "CDT", "CHADT": "CHADT", "CHAST": "CHAST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "CST", "ChST": "ChST", "EAT": "EAT", "ECT": "ECT", "EDT": "EDT", "EST": "EST", "GFT": "GFT", "GMT": "GMT", "GST": "GST", "GYT": "GYT", "HADT": "HADT", "HAST": "HAST", "HAT": "HAT", "HECU": "HECU", "HEEG": "HEEG", "HENOMX": "HENOMX", "HEOG": "HEOG", "HEPM": "HEPM", "HEPMX": "HEPMX", "HKST": "HKST", "HKT": "HKT", "HNCU": "HNCU", "HNEG": "HNEG", "HNNOMX": "HNNOMX", "HNOG": "HNOG", "HNPM": "HNPM", "HNPMX": "HNPMX", "HNT": "HNT", "IST": "IST", "JDT": "JDT", "JST": "JST", "LHDT": "LHDT", "LHST": "LHST", "MDT": "MDT", "MESZ": "MESZ", "MEZ": "MEZ", "MST": "MST", "MYT": "MYT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "OESZ", "OEZ": "OEZ", "PDT": "PDT", "PST": "PST", "SAST": "SAST", "SGT": "SGT", "SRT": "SRT", "TMST": "TMST", "TMT": "TMT", "UYST": "UYST", "UYT": "UYT", "VET": "VET", "WARST": "WARST", "WART": "WART", "WAST": "WAST", "WAT": "WAT", "WESZ": "WESZ", "WEZ": "WEZ", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "∅∅∅": "∅∅∅"},
+		timezones:              map[string]string{"ACDT": "temp da stad dal center da l’Australia", "ACST": "ACST", "ACT": "ACT", "ACWDT": "temp da stad dal center-vest da l’Australia", "ACWST": "temp normal dal center-vest da l’Australia", "ADT": "temp da stad da l’Atlantic USA", "ADT Arabia": "temp da stad arab", "AEDT": "temp da stad da l’ost da l’Australia", "AEST": "temp normal da l’ost da l’Australia", "AFT": "temp da l’Afganistan", "AKDT": "temp da stad da l’Alasca", "AKST": "temp normal da l’Alasca", "AMST": "temp da stad da l’Amazonas", "AMST Armenia": "temp da stad da l’Armenia", "AMT": "temp normal da l’Amazonas", "AMT Armenia": "temp normal da l’Armenia", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "temp da stad da l’Argentina", "ART": "temp normal da l’Argentina", "AST": "temp normal da l’Atlantic USA", "AST Arabia": "temp normal arab", "AWDT": "temp da stad dal vest da l’Australia", "AWST": "temp normal dal vest da l’Australia", "AZST": "temp da stad da l’Aserbaidschan", "AZT": "temp normal da l’Aserbaidschan", "BDT Bangladesh": "temp da stad dal Bangladesch", "BNT": "temp dal Brunei", "BOT": "temp da la Bolivia", "BRST": "temp da stad da la Brasilia", "BRT": "temp normal da la Brasilia", "BST Bangladesh": "temp normal dal Bangladesch", "BT": "temp dal Butan", "CAST": "CAST", "CAT": "temp da l’Africa Centrala", "CCT": "temp da las Inslas Cocos", "CDT": "temp da stad dal center USA", "CHADT": "temp da stad da las Inslas Chatham", "CHAST": "temp normal da las Inslas Chatham", "CHUT": "temp da Chuuk", "CKT": "temp normal da las Inslas Cook", "CKT DST": "temp da stad da las Inslas Cook", "CLST": "temp da stad dal Chile", "CLT": "temp normal dal Chile", "COST": "temp da stad da la Columbia", "COT": "temp normal da la Columbia", "CST": "temp normal dal center USA", "CST China": "temp normal da la China", "CST China DST": "temp da stad da la China", "CVST": "temp da stad dal Cap Verd", "CVT": "temp normal dal Cap Verd", "CXT": "temp da l’Insla da Nadal", "ChST": "temp dals Chamorro", "ChST NMI": "ChST NMI", "CuDT": "temp da stad da la Cuba", "CuST": "temp normal da la Cuba", "DAVT": "temp da Davis", "DDUT": "temp da Dumont d’Urville", "EASST": "temp da stad da l’Insla da Pasca", "EAST": "temp normal da l’Insla da Pasca", "EAT": "temp da l’Africa Orientala", "ECT": "temp da l’Ecuador", "EDT": "temp da stad da l’ost USA", "EGDT": "temp da stad da la Grönlanda orientala", "EGST": "temp normal da la Grönlanda orientala", "EST": "temp normal da l’ost USA", "FEET": "temp da l’extrem orient da l’Europa", "FJT": "temp normal dal Fidschi", "FJT Summer": "temp da stad dal Fidschi", "FKST": "temp da stad da las Inslas Falkland", "FKT": "temp normal da las Inslas Falkland", "FNST": "temp da stad da Fernando de Noronha", "FNT": "temp normal da Fernando de Noronha", "GALT": "temp da las Inslas Galápagos", "GAMT": "temp da las Inslas Gambier", "GEST": "temp da stad da la Georgia", "GET": "temp normal da la Georgia", "GFT": "temp da la Guyana Franzosa", "GIT": "temp da las Inslas Gilbert", "GMT": "temp dal meridian da Greenwich", "GNSST": "GNSST", "GNST": "GNST", "GST": "temp da la Georgia dal Sid", "GST Guam": "GST Guam", "GYT": "temp da la Guyana", "HADT": "temp da stad dal Hawai e da las Aleutinas", "HAST": "temp normal dal Hawai e las Aleutinas", "HKST": "temp da stad dal Hongkong", "HKT": "temp normal dal Hongkong", "HOVST": "temp da stad da Hovd", "HOVT": "temp normal da Hovd", "ICT": "temp da l’Indochina", "IDT": "temp da stad da l’Israel", "IOT": "temp da l’Ocean Indic", "IRKST": "temp da stad dad Irkutsk", "IRKT": "temp normal dad Irkutsk", "IRST": "temp normal da l’Iran", "IRST DST": "temp da stad da l’Iran", "IST": "temp normal da l’India", "IST Israel": "temp normal da l’Israel", "JDT": "temp da stad dal Giapun", "JST": "temp normal dal Giapun", "KOST": "temp da Kosrae", "KRAST": "temp da stad da Krasnojarsk", "KRAT": "temp normal da Krasnojarsk", "KST": "temp normal da la Corea", "KST DST": "temp da stad da la Corea", "LHDT": "temp da stad da Lord Howe", "LHST": "temp normal da Lord Howe", "LINT": "temp da las Inslas da la Lingia", "MAGST": "temp da stad da Magadan", "MAGT": "temp normal da Magadan", "MART": "temp da las Inslas Marquesas", "MAWT": "temp da Mawson", "MDT": "temp da stad dals Rocky Mountains", "MESZ": "temp da stad da l’Europa Centrala", "MEZ": "temp normal da l’Europa Centrala", "MHT": "temp da las Inslas da Marshall", "MMT": "temp dal Myanmar", "MSD": "temp da stad da Moscau", "MST": "temp normal dals Rocky Mountains", "MUST": "temp da stad dal Mauritius", "MUT": "temp normal dal Mauritius", "MVT": "temp da las Maledivas", "MYT": "temp da la Malaisia", "NCT": "temp normal da la Nova Caledonia", "NDT": "temp da stad da la Terranova", "NDT New Caledonia": "temp da stad da la Nova Caledonia", "NFDT": "temp da stad da l’Insla Norfolk", "NFT": "temp normal da l’Insla Norfolk", "NOVST": "temp da stad da Novosibirsk", "NOVT": "temp normal da Novosibirsk", "NPT": "temp dal Nepal", "NRT": "temp da Nauru", "NST": "temp normal da la Terranova", "NUT": "temp da Niue", "NZDT": "temp da stad da la Nova Zelanda", "NZST": "temp normal da la Nova Zelanda", "OESZ": "temp da stad da l’Europa Orientala", "OEZ": "temp normal da l’Europa Orientala", "OMSST": "temp da stad dad Omsk", "OMST": "temp normal dad Omsk", "PDT": "temp da stad dal Pacific USA", "PDTM": "temp da stad mexican dal Pacific", "PETDT": "PETDT", "PETST": "PETST", "PGT": "temp da la Papua Nova Guinea", "PHOT": "temp da las Inslas Fenix", "PKT": "temp normal dal Pakistan", "PKT DST": "temp da stad dal Pakistan", "PMDT": "temp da stad da Saint Pierre e Miquelon", "PMST": "temp normal da Saint Pierre e Miquelon", "PONT": "temp da Pohnpei", "PST": "temp normal dal Pacific USA", "PST Philippine": "temp normal da las Filippinas", "PST Philippine DST": "temp da stad da las Filippinas", "PST Pitcairn": "temp da las Inslas Pitcairn", "PSTM": "temp normal mexican dal Pacific", "PWT": "temp da Palau", "PYST": "temp da stad dal Paraguai", "PYT": "temp normal dal Paraguai", "PYT Korea": "temp da la Corea dal Nord", "RET": "temp da la Réunion", "ROTT": "temp da Rothera", "SAKST": "temp da stad da Sachalin", "SAKT": "temp normal da Sachalin", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "temp normal da l’Africa Meridiunala", "SBT": "temp da las Inslas da Salomon", "SCT": "temp da las Seychellas", "SGT": "temp normal dal Singapur", "SLST": "SLST", "SRT": "temp dal Surinam", "SST Samoa": "temp normal da la Samoa Americana", "SST Samoa Apia": "temp normal da la Samoa", "SST Samoa Apia DST": "temp da stad da la Samoa", "SST Samoa DST": "temp da stad da la Samoa Americana", "SYOT": "temp da Shōwa", "TAAF": "temp dals Territoris Franzos Meridiunals ed Antarctics", "TAHT": "temp da Tahiti", "TJT": "temp dal Tadschikistan", "TKT": "temp da Tokelau", "TLT": "temp dal Timor da l’Ost", "TMST": "temp da stad dal Turkmenistan", "TMT": "temp normal dal Turkmenistan", "TOST": "temp da stad da Tonga", "TOT": "temp normal da Tonga", "TVT": "temp da las Inslas da Tuvalu", "TWT": "temp normal dal Taiwan", "TWT DST": "temp da stad dal Taiwan", "ULAST": "temp da stad dad Ulaanbaatar", "ULAT": "temp normal dad Ulaanbaatar", "UYST": "temp da stad da l’Uruguai", "UYT": "temp normal da l’Uruguai", "UZT": "temp normal da l’Usbekistan", "UZT DST": "temp da stad da l’Usbekistan", "VET": "temp da la Venezuela", "VLAST": "temp da stad da Vladivostok", "VLAT": "temp normal da Vladivostok", "VOLST": "temp da stad da Volgograd", "VOLT": "temp normal da Volgograd", "VOST": "temp da Vostok", "VUT": "temp normal dal Vanuatu", "VUT DST": "temp da stad dal Vanuatu", "WAKT": "temp da l’Insla Wake", "WARST": "temp da stad da l’Argentina occidentala", "WART": "temp normal da l’Argentina occidentala", "WAST": "temp da l’Africa Occidentala", "WAT": "temp da l’Africa Occidentala", "WESZ": "temp da stad da l’Europa dal Vest", "WEZ": "temp normal da l’Europa dal Vest", "WFT": "temp da Wallis e Futuna", "WGST": "temp da stad da la Grönlanda occidentala", "WGT": "temp normal da la Grönlanda occidentala", "WIB": "temp dal vest da l’Indonesia", "WIT": "temp da l’ost da l’Indonesia", "WITA": "temp dal center da l’Indonesia", "YAKST": "temp da stad da Jakutsk", "YAKT": "temp normal da Jakutsk", "YEKST": "temp da stad da Jekaterinburg", "YEKT": "temp normal da Jekaterinburg", "YST": "temp dal Yukon", "МСК": "temp normal da Moscau", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "temp dal Kasachstan occidental", "شىعىش قازاق ەلى": "temp dal Kasachstan oriental", "قازاق ەلى": "temp dal Kasachstan", "قىرعىزستان": "temp dal Kirghistan", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "temp da stad da las Azoras"},
 	}
 }
 
@@ -207,81 +198,13 @@ func (rm *rm) Minus() string {
 // FmtNumber returns 'num' with digits/precision of 'v' for 'rm' and handles both Whole and Real numbers based on 'v'
 func (rm *rm) FmtNumber(num float64, v uint64) string {
 
-	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 4 + 3*len(s[:len(s)-int(v)-1])/3
-	count := 0
-	inWhole := v == 0
-	b := make([]byte, 0, l)
-
-	for i := len(s) - 1; i >= 0; i-- {
-
-		if s[i] == '.' {
-			b = append(b, rm.decimal[0])
-			inWhole = true
-			continue
-		}
-
-		if inWhole {
-			if count == 3 {
-				for j := len(rm.group) - 1; j >= 0; j-- {
-					b = append(b, rm.group[j])
-				}
-				count = 1
-			} else {
-				count++
-			}
-		}
-
-		b = append(b, s[i])
-	}
-
-	if num < 0 {
-		for j := len(rm.minus) - 1; j >= 0; j-- {
-			b = append(b, rm.minus[j])
-		}
-	}
-
-	// reverse
-	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
-		b[i], b[j] = b[j], b[i]
-	}
-
-	return string(b)
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'rm' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (rm *rm) FmtPercent(num float64, v uint64) string {
-	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 7
-	b := make([]byte, 0, l)
-
-	for i := len(s) - 1; i >= 0; i-- {
-
-		if s[i] == '.' {
-			b = append(b, rm.decimal[0])
-			continue
-		}
-
-		b = append(b, s[i])
-	}
-
-	if num < 0 {
-		for j := len(rm.minus) - 1; j >= 0; j-- {
-			b = append(b, rm.minus[j])
-		}
-	}
-
-	// reverse
-	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
-		b[i], b[j] = b[j], b[i]
-	}
-
-	b = append(b, rm.percentSuffix...)
-
-	b = append(b, rm.percent...)
-
-	return string(b)
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'rm'
@@ -289,7 +212,7 @@ func (rm *rm) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := rm.currencies[currency]
-	l := len(s) + len(symbol) + 6 + 3*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 1 + 3*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -316,10 +239,12 @@ func (rm *rm) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 		b = append(b, s[i])
 	}
 
+	for j := len(symbol) - 1; j >= 0; j-- {
+		b = append(b, symbol[j])
+	}
+
 	if num < 0 {
-		for j := len(rm.minus) - 1; j >= 0; j-- {
-			b = append(b, rm.minus[j])
-		}
+		b = append(b, rm.minus[0])
 	}
 
 	// reverse
@@ -338,10 +263,6 @@ func (rm *rm) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 		}
 	}
 
-	b = append(b, rm.currencyPositiveSuffix...)
-
-	b = append(b, symbol...)
-
 	return string(b)
 }
 
@@ -351,7 +272,7 @@ func (rm *rm) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := rm.currencies[currency]
-	l := len(s) + len(symbol) + 6 + 3*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 3 + 3*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -380,8 +301,16 @@ func (rm *rm) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	if num < 0 {
 
-		for j := len(rm.minus) - 1; j >= 0; j-- {
-			b = append(b, rm.minus[j])
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
+		}
+
+		b = append(b, rm.currencyNegativePrefix[0])
+
+	} else {
+
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
 		}
 
 	}
@@ -404,11 +333,6 @@ func (rm *rm) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	if num < 0 {
 		b = append(b, rm.currencyNegativeSuffix...)
-		b = append(b, symbol...)
-	} else {
-
-		b = append(b, rm.currencyPositiveSuffix...)
-		b = append(b, symbol...)
 	}
 
 	return string(b)
