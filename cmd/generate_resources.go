@@ -97,23 +97,52 @@ var (
 	requiredDecimalRegex   = regexp.MustCompile(`\.([0-9]+)`)
 
 	enInheritance = map[string]string{
-		"en_150": "en_001", "en_AG": "en_001", "en_AI": "en_001", "en_AU": "en_001", "en_BB": "en_001", "en_BE": "en_001", "en_BM": "en_001", "en_BS": "en_001", "en_BW": "en_001", "en_BZ": "en_001", "en_CA": "en_001", "en_CC": "en_001", "en_CK": "en_001", "en_CM": "en_001", "en_CX": "en_001", "en_CY": "en_001", "en_DG": "en_001", "en_DM": "en_001", "en_ER": "en_001", "en_FJ": "en_001", "en_FK": "en_001", "en_FM": "en_001", "en_GB": "en_001", "en_GD": "en_001", "en_GG": "en_001", "en_GH": "en_001", "en_GI": "en_001", "en_GM": "en_001", "en_GY": "en_001", "en_HK": "en_001", "en_IE": "en_001", "en_IL": "en_001", "en_IM": "en_001", "en_IN": "en_001", "en_IO": "en_001", "en_JE": "en_001", "en_JM": "en_001", "en_KE": "en_001", "en_KI": "en_001", "en_KN": "en_001", "en_KY": "en_001", "en_LC": "en_001", "en_LR": "en_001", "en_LS": "en_001", "en_MG": "en_001", "en_MO": "en_001", "en_MS": "en_001", "en_MT": "en_001", "en_MU": "en_001", "en_MW": "en_001", "en_MY": "en_001", "en_NA": "en_001", "en_NF": "en_001", "en_NG": "en_001", "en_NR": "en_001", "en_NU": "en_001", "en_NZ": "en_001", "en_PG": "en_001", "en_PH": "en_001", "en_PK": "en_001", "en_PN": "en_001", "en_PW": "en_001", "en_RW": "en_001", "en_SB": "en_001", "en_SC": "en_001", "en_SD": "en_001", "en_SG": "en_001", "en_SH": "en_001", "en_SL": "en_001", "en_SS": "en_001", "en_SX": "en_001", "en_SZ": "en_001", "en_TC": "en_001", "en_TK": "en_001", "en_TO": "en_001", "en_TT": "en_001", "en_TV": "en_001", "en_TZ": "en_001", "en_UG": "en_001", "en_VC": "en_001", "en_VG": "en_001", "en_VU": "en_001", "en_WS": "en_001", "en_ZA": "en_001", "en_ZM": "en_001", "en_ZW": "en_001",
+		"en_150": "en_001", "en_AG": "en_001", "en_AI": "en_001", "en_AU": "en_001", "en_BB": "en_001", "en_BM": "en_001", "en_BS": "en_001", "en_BW": "en_001", "en_BZ": "en_001", "en_CA": "en_001", "en_CC": "en_001", "en_CK": "en_001", "en_CM": "en_001", "en_CX": "en_001", "en_CY": "en_001", "en_DG": "en_001", "en_DM": "en_001", "en_ER": "en_001", "en_FJ": "en_001", "en_FK": "en_001", "en_FM": "en_001", "en_GB": "en_001", "en_GD": "en_001", "en_GG": "en_001", "en_GH": "en_001", "en_GI": "en_001", "en_GM": "en_001", "en_GS": "en_001", "en_GY": "en_001", "en_HK": "en_001", "en_ID": "en_001", "en_IE": "en_001", "en_IL": "en_001", "en_IM": "en_001", "en_IN": "en_001", "en_IO": "en_001", "en_JE": "en_001", "en_JM": "en_001", "en_KE": "en_001", "en_KI": "en_001", "en_KN": "en_001", "en_KY": "en_001", "en_LC": "en_001", "en_LR": "en_001", "en_LS": "en_001", "en_MG": "en_001", "en_MO": "en_001", "en_MS": "en_001", "en_MT": "en_001", "en_MU": "en_001", "en_MV": "en_001", "en_MW": "en_001", "en_MY": "en_001", "en_NA": "en_001", "en_NF": "en_001", "en_NG": "en_001", "en_NR": "en_001", "en_NU": "en_001", "en_NZ": "en_001", "en_PG": "en_001", "en_PK": "en_001", "en_PN": "en_001", "en_PW": "en_001", "en_RW": "en_001", "en_SB": "en_001", "en_SC": "en_001", "en_SD": "en_001", "en_SG": "en_001", "en_SH": "en_001", "en_SL": "en_001", "en_SS": "en_001", "en_SX": "en_001", "en_SZ": "en_001", "en_TC": "en_001", "en_TK": "en_001", "en_TO": "en_001", "en_TT": "en_001", "en_TV": "en_001", "en_TZ": "en_001", "en_UG": "en_001", "en_VC": "en_001", "en_VG": "en_001", "en_VU": "en_001", "en_WS": "en_001", "en_ZA": "en_001", "en_ZM": "en_001", "en_ZW": "en_001",
 	}
-	en150Inheritance = map[string]string{"en_AT": "en_150", "en_CH": "en_150", "en_DE": "en_150", "en_DK": "en_150", "en_FI": "en_150", "en_NL": "en_150", "en_SE": "en_150", "en_SI": "en_150"}
+	en150Inheritance = map[string]string{
+		"en_AT": "en_150", "en_BE": "en_150", "en_CH": "en_150", "en_CZ": "en_150",
+		"en_DE": "en_150", "en_DK": "en_150", "en_EE": "en_150", "en_ES": "en_150",
+		"en_FI": "en_150", "en_FR": "en_150", "en_GE": "en_150", "en_HU": "en_150",
+		"en_IT": "en_150", "en_LT": "en_150", "en_LV": "en_150", "en_NL": "en_150",
+		"en_NO": "en_150", "en_PL": "en_150", "en_PT": "en_150", "en_RO": "en_150",
+		"en_SE": "en_150", "en_SI": "en_150", "en_SK": "en_150", "en_UA": "en_150",
+	}
 	es419Inheritance = map[string]string{
-		"es_AR": "es_419", "es_BO": "es_419", "es_BR": "es_419", "es_BZ": "es_419", "es_CL": "es_419", "es_CO": "es_419", "es_CR": "es_419", "es_CU": "es_419", "es_DO": "es_419", "es_EC": "es_419", "es_GT": "es_419", "es_HN": "es_419", "es_MX": "es_419", "es_NI": "es_419", "es_PA": "es_419", "es_PE": "es_419", "es_PR": "es_419", "es_PY": "es_419", "es_SV": "es_419", "es_US": "es_419", "es_UY": "es_419", "es_VE": "es_419",
+		"es_AR": "es_419", "es_BO": "es_419", "es_BR": "es_419", "es_BZ": "es_419", "es_CL": "es_419", "es_CO": "es_419", "es_CR": "es_419", "es_CU": "es_419", "es_DO": "es_419", "es_EC": "es_419", "es_GT": "es_419", "es_HN": "es_419", "es_JP": "es_419", "es_MX": "es_419", "es_NI": "es_419", "es_PA": "es_419", "es_PE": "es_419", "es_PR": "es_419", "es_PY": "es_419", "es_SV": "es_419", "es_US": "es_419", "es_UY": "es_419", "es_VE": "es_419",
 	}
 	rootInheritance = map[string]string{
-		"az_Arab": "root", "az_Cyrl": "root", "bm_Nkoo": "root", "bs_Cyrl": "root", "en_Dsrt": "root", "en_Shaw": "root", "ha_Arab": "root", "iu_Latn": "root", "mn_Mong": "root", "ms_Arab": "root", "pa_Arab": "root", "shi_Latn": "root", "sr_Latn": "root", "uz_Arab": "root", "uz_Cyrl": "root", "vai_Latn": "root", "zh_Hant": "root", "yue_Hans": "root",
+		"az_Arab": "root", "az_Cyrl": "root", "bal_Latn": "root", "blt_Latn": "root",
+		"bm_Nkoo": "root", "bs_Cyrl": "root", "byn_Latn": "root", "cu_Glag": "root",
+		"dje_Arab": "root", "dyo_Arab": "root", "en_Dsrt": "root", "en_Shaw": "root",
+		"ff_Adlm": "root", "ff_Arab": "root", "ha_Arab": "root", "iu_Latn": "root",
+		"kaa_Latn": "root", "kk_Arab": "root", "kok_Latn": "root", "ks_Deva": "root",
+		"ku_Arab": "root", "kxv_Deva": "root", "kxv_Orya": "root", "kxv_Telu": "root",
+		"ky_Arab": "root", "ky_Latn": "root", "ml_Arab": "root", "mn_Mong": "root",
+		"mni_Mtei": "root", "ms_Arab": "root", "pa_Arab": "root", "sat_Deva": "root",
+		"sd_Deva": "root", "sd_Khoj": "root", "sd_Sind": "root", "shi_Latn": "root",
+		"so_Arab": "root", "sr_Latn": "root", "suz_Sunu": "root", "sw_Arab": "root",
+		"tg_Arab": "root", "ug_Cyrl": "root", "uz_Arab": "root", "uz_Cyrl": "root",
+		"vai_Latn": "root", "wo_Arab": "root", "yo_Arab": "root", "yue_Hans": "root",
+		"zh_Hant": "root",
 	}
 	ptPtInheritance = map[string]string{
-		"pt_AO": "pt_PT", "pt_CH": "pt_PT", "pt_CV": "pt_PT", "pt_GQ": "pt_PT", "pt_GW": "pt_PT", "pt_LU": "pt_PT", "pt_MO": "pt_PT", "pt_MZ": "pt_PT", "pt_ST": "pt_PT", "pt_TL": "pt_PT",
+		"pt_AO": "pt_PT", "pt_CH": "pt_PT", "pt_CV": "pt_PT", "pt_FR": "pt_PT", "pt_GQ": "pt_PT", "pt_GW": "pt_PT", "pt_LU": "pt_PT", "pt_MO": "pt_PT", "pt_MZ": "pt_PT", "pt_ST": "pt_PT", "pt_TL": "pt_PT",
 	}
 	zhHantHKInheritance = map[string]string{
 		"zh_Hant_MO": "zh_Hant_HK",
 	}
+	noInheritance = map[string]string{
+		"nb": "no", "nn": "no", "no_NO": "no",
+		"nb_NO": "no", "nb_SJ": "no", "nn_NO": "no",
+	}
+	frHTInheritance = map[string]string{
+		"ht": "fr_HT", "ht_HT": "fr_HT",
+	}
+	enINInheritance = map[string]string{
+		"hi_Latn": "en_IN", "hi_Latn_IN": "en_IN",
+	}
 
-	inheritMaps = []map[string]string{enInheritance, en150Inheritance, es419Inheritance, rootInheritance, ptPtInheritance, zhHantHKInheritance}
+	inheritMaps = []map[string]string{enInheritance, en150Inheritance, es419Inheritance, rootInheritance, ptPtInheritance, zhHantHKInheritance, noInheritance, frHTInheritance, enINInheritance}
 )
 
 type translator struct {
@@ -380,21 +409,18 @@ func postProcess(cldr *cldr.CLDR) {
 		// range plural rules
 		trans.RangeFunc, trans.PluralsRange = parseRangePluralRuleFunc(cldr, trans.BaseLocale)
 
-		// ignore base locales
+		// Check inherit maps for ALL locales (including base locales like nn -> no)
+		inheritedFound = false
+		for _, inheritMap := range inheritMaps {
+			if inherit, found := inheritMap[trans.Locale]; found {
+				inherited, inheritedFound = translators[inherit]
+				break
+			}
+		}
+
 		if trans.BaseLocale == trans.Locale {
-			inheritedFound = false
 			baseFound = false
 		} else {
-
-			inheritedFound = false
-
-			for _, inheritMap := range inheritMaps {
-				if inherit, found := inheritMap[trans.Locale]; found {
-					inherited, inheritedFound = translators[inherit]
-					break
-				}
-			}
-
 			base, baseFound = baseTranslators[trans.BaseLocale]
 		}
 
