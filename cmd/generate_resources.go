@@ -133,7 +133,7 @@ var (
 	}
 	noInheritance = map[string]string{
 		"nb": "no", "nn": "no", "no_NO": "no",
-		"nb_NO": "no", "nb_SJ": "no", "nn_NO": "no",
+		"nb_NO": "nb", "nb_SJ": "nb", "nn_NO": "nn",
 	}
 	frHTInheritance = map[string]string{
 		"ht": "fr_HT", "ht_HT": "fr_HT",
@@ -396,7 +396,13 @@ func postProcess(cldr *cldr.CLDR) {
 	var base *translator
 	var inheritedFound, baseFound bool
 
-	for _, trans := range translators {
+	// Sort locales in dependency order: a locale's inherited parent and base
+	// locale must be processed before the locale itself, so that fields like
+	// Currencies are already resolved when children need them.
+	sortedLocales := topoSortLocales(translators, inheritMaps)
+
+	for _, locale := range sortedLocales {
+		trans := translators[locale]
 
 		fmt.Println("Post Processing:", trans.Locale)
 
@@ -787,34 +793,24 @@ func postProcess(cldr *cldr.CLDR) {
 			}
 		}
 
-		// inherit currency symbols from parent locale
-		if inheritedFound {
-			inheritedLdml := cldr.RawLDML(inherited.Locale)
-			if inheritedLdml.Numbers != nil && inheritedLdml.Numbers.Currencies != nil {
-				for _, currency := range inheritedLdml.Numbers.Currencies.Currency {
-					if len(currency.Symbol) == 0 || len(currency.Symbol[0].Data()) == 0 || len(currency.Type) == 0 {
-						continue
-					}
-					idx := globCurrencyIdxMap[currency.Type]
-					// Only inherit if the current locale still has the default (currency code)
-					if currencies[idx] == currency.Type {
-						currencies[idx] = currency.Symbol[0].Data()
-					}
+		// Inherit currency symbols from the already-resolved parent locale.
+		// Because we process locales in sorted order (shorter first), the
+		// inherited/base translator's Currencies field is already fully resolved,
+		// including any symbols it inherited from its own parents.
+		if inheritedFound && len(inherited.Currencies) > 0 {
+			inheritedCurrencies := parseCurrenciesString(inherited.Currencies)
+			for i, sym := range inheritedCurrencies {
+				if currencies[i] == globalCurrencies[i] && sym != globalCurrencies[i] {
+					currencies[i] = sym
 				}
 			}
 		}
 
-		if baseFound {
-			baseLdml := cldr.RawLDML(base.Locale)
-			if baseLdml.Numbers != nil && baseLdml.Numbers.Currencies != nil {
-				for _, currency := range baseLdml.Numbers.Currencies.Currency {
-					if len(currency.Symbol) == 0 || len(currency.Symbol[0].Data()) == 0 || len(currency.Type) == 0 {
-						continue
-					}
-					idx := globCurrencyIdxMap[currency.Type]
-					if currencies[idx] == currency.Type {
-						currencies[idx] = currency.Symbol[0].Data()
-					}
+		if baseFound && len(base.Currencies) > 0 {
+			baseCurrencies := parseCurrenciesString(base.Currencies)
+			for i, sym := range baseCurrencies {
+				if currencies[i] == globalCurrencies[i] && sym != globalCurrencies[i] {
+					currencies[i] = sym
 				}
 			}
 		}
@@ -1435,6 +1431,77 @@ func parseDateFormats(trans *translator, shortFormat, mediumFormat, longFormat, 
 	// End Short Data Parsing
 
 	return
+}
+
+// topoSortLocales returns locale keys in dependency order: if locale A
+// inherits from locale B (via inheritMaps or baseLocale), B appears before A.
+func topoSortLocales(translators map[string]*translator, inheritMaps []map[string]string) []string {
+	// Build dependency graph: locale -> parent it depends on.
+	deps := make(map[string]string) // at most one parent per locale
+	for locale, trans := range translators {
+		// Check inheritMaps first.
+		for _, m := range inheritMaps {
+			if parent, ok := m[locale]; ok {
+				if _, exists := translators[parent]; exists {
+					deps[locale] = parent
+				}
+				break
+			}
+		}
+		// If no inheritMap parent, use baseLocale (if different and exists).
+		if _, ok := deps[locale]; !ok {
+			if trans.BaseLocale != locale {
+				if _, exists := translators[trans.BaseLocale]; exists {
+					deps[locale] = trans.BaseLocale
+				}
+			}
+		}
+	}
+
+	// Kahn's algorithm for topological sort.
+	sorted := make([]string, 0, len(translators))
+	visited := make(map[string]bool, len(translators))
+
+	var visit func(string)
+	visit = func(locale string) {
+		if visited[locale] {
+			return
+		}
+		if parent, ok := deps[locale]; ok {
+			visit(parent)
+		}
+		visited[locale] = true
+		sorted = append(sorted, locale)
+	}
+
+	// Visit in alphabetical order for determinism.
+	keys := make([]string, 0, len(translators))
+	for k := range translators {
+		keys = append(keys, k)
+	}
+	sort.Strings(keys)
+	for _, k := range keys {
+		visit(k)
+	}
+
+	return sorted
+}
+
+// parseCurrenciesString parses a Currencies string produced by fmt.Sprintf("%#v", currencies)
+// back into a []string.
+func parseCurrenciesString(s string) []string {
+	// Format is: []string{"val1", "val2", ...}
+	s = strings.TrimPrefix(s, "[]string{")
+	s = strings.TrimSuffix(s, "}")
+	if len(s) == 0 {
+		return nil
+	}
+	parts := strings.Split(s, ", ")
+	result := make([]string, len(parts))
+	for i, p := range parts {
+		result[i] = strings.Trim(p, "\"")
+	}
+	return result
 }
 
 func parseDateTimeFormat(baseLocale, format string, eraScore uint8) (results string) {
