@@ -46,8 +46,8 @@ func New() locales.Translator {
 		percent:                "%",
 		timeSeparator:          ":",
 		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
-		currencyPositiveSuffix: " ",
-		currencyNegativeSuffix: " ",
+		currencyPositiveSuffix: " ",
+		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "Jan", "Feb", "Mas", "Epr", "Me", "Jun", "Jul", "Oga", "Sep", "Okt", "Nov", "Des"},
 		monthsWide:             []string{"", "Janueri", "Februeri", "Mas", "Epril", "Me", "Jun", "Julai", "Ogas", "Septemba", "Oktoba", "Novemba", "Desemba"},
 		daysAbbreviated:        []string{"San", "Man", "Tun", "Tri", "Fon", "Fra", "Sar"},
@@ -199,6 +199,7 @@ func (tpi *tpi) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'tpi' and handles both Whole and Real numbers based on 'v'
 func (tpi *tpi) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -270,6 +271,7 @@ func (tpi *tpi) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'tpi'
 func (tpi *tpi) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := tpi.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -327,6 +329,7 @@ func (tpi *tpi) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'tpi'
 // in accounting notation.
 func (tpi *tpi) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := tpi.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -355,7 +358,9 @@ func (tpi *tpi) FmtAccounting(num float64, v uint64, currency currency.Type) str
 	}
 
 	if num < 0 {
+
 		b = append(b, tpi.minus[0])
+
 	}
 
 	// reverse
@@ -388,6 +393,7 @@ func (tpi *tpi) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 // FmtDateShort returns the short date representation of 't' for 'tpi'
 func (tpi *tpi) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -416,6 +422,7 @@ func (tpi *tpi) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'tpi'
 func (tpi *tpi) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -438,6 +445,7 @@ func (tpi *tpi) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'tpi'
 func (tpi *tpi) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -460,6 +468,7 @@ func (tpi *tpi) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'tpi'
 func (tpi *tpi) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, tpi.daysAbbreviated[t.Weekday()]...)
@@ -485,6 +494,7 @@ func (tpi *tpi) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'tpi'
 func (tpi *tpi) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -518,6 +528,7 @@ func (tpi *tpi) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'tpi'
 func (tpi *tpi) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -558,6 +569,7 @@ func (tpi *tpi) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'tpi'
 func (tpi *tpi) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -603,6 +615,7 @@ func (tpi *tpi) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'tpi'
 func (tpi *tpi) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

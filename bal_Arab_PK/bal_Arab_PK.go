@@ -43,12 +43,12 @@ func New() locales.Translator {
 		minus:             "-",
 		percent:           "%",
 		timeSeparator:     ":",
-		currencies:        []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		currencies:        []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "ریال", "ISJ", "ISK", "ITL", "JMD", "JOD", "¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "Rs", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "₽", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "$", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
 		monthsAbbreviated: []string{"", "جن", "پر", "مار", "اپر", "مئیی", "جون", "جۆل", "اگست", "ستم", "اکت", "نئوم", "دسم"},
 		monthsWide:        []string{"", "جنوری", "پروری", "مارچ", "اپرێل", "مئیی", "جون", "جۆلایی", "اگست", "ستمبر", "اکتوبر", "نئومبر", "دسمبر"},
 		daysAbbreviated:   []string{"یک", "دو", "سئے", "چار", "پنچ", "جمه", "شم"},
 		daysWide:          []string{"یکشمبه", "دوشمبه", "سئیشمبه", "چارشمبه", "پنچشمبه", "جمه", "شمبه"},
-		timezones:         map[string]string{"ACDT": "نیامی اُسترالیائے گرماگی ساهت", "ACST": "نیامی اُسترالیائے گیشّتگێن ساهت", "ACT": "ACT", "ACWDT": "نیام\u200cرۆنندی اُسترالیائے گرماگی ساهت", "ACWST": "نیام\u200cرۆنندی اُسترالیائے گیشّتگێن ساهت", "ADT": "ADT", "ADT Arabia": "ADT Arabia", "AEDT": "رۆدراتکی اُسترالیائے گرماگی ساهت", "AEST": "رۆدراتکی اُسترالیائے گیشّتگێن ساهت", "AFT": "AFT", "AKDT": "اَلاسکائے گرماگی ساهت", "AKST": "اَلاسکائے گیشّتگێن ساهت", "AMST": "امازۆنئے گرماگی ساهت", "AMST Armenia": "AMST Armenia", "AMT": "امازۆنئے گیشّتگێن ساهت", "AMT Armenia": "AMT Armenia", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "ارجنتینائے گرماگی ساهت", "ART": "ارجنتینائے گیشّتگێن ساهت", "AST": "AST", "AST Arabia": "AST Arabia", "AWDT": "رۆنندی اُسترالیائے گرماگی ساهت", "AWST": "رۆنندی اُسترالیائے گیشّتگێن ساهت", "AZST": "AZST", "AZT": "AZT", "BDT Bangladesh": "BDT Bangladesh", "BNT": "BNT", "BOT": "BOT", "BRST": "برازیلئے گرماگی ساهت", "BRT": "برازیلئے گیشّتگێن ساهت", "BST Bangladesh": "BST Bangladesh", "BT": "BT", "CAST": "CAST", "CAT": "CAT", "CCT": "CCT", "CDT": "نیامی امریکائے گرماگی ساهت", "CHADT": "CHADT", "CHAST": "CHAST", "CHUT": "CHUT", "CKT": "CKT", "CKT DST": "CKT DST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "نیامی امریکائے گیشّتگێن ساهت", "CST China": "CST China", "CST China DST": "CST China DST", "CVST": "CVST", "CVT": "CVT", "CXT": "CXT", "ChST": "ChST", "ChST NMI": "ChST NMI", "CuDT": "CuDT", "CuST": "CuST", "DAVT": "DAVT", "DDUT": "DDUT", "EASST": "EASST", "EAST": "EAST", "EAT": "EAT", "ECT": "ECT", "EDT": "رۆدراتکی امریکائے گرماگی ساهت", "EGDT": "EGDT", "EGST": "EGST", "EST": "رۆدراتکی امریکائے گیشّتگێن ساهت", "FEET": "دێمتری رۆدراتکی یورپئے گیشّتگێن ساهت", "FJT": "FJT", "FJT Summer": "FJT Summer", "FKST": "FKST", "FKT": "FKT", "FNST": "نُرُنهائے گرماگی ساهت", "FNT": "نُرُنهائے گیشّتگێن ساهت", "GALT": "GALT", "GAMT": "GAMT", "GEST": "GEST", "GET": "GET", "GFT": "GFT", "GIT": "GIT", "GMT": "گرین\u200cوِچ مین ٹائم", "GNSST": "GNSST", "GNST": "GNST", "GST": "GST", "GST Guam": "GST Guam", "GYT": "GYT", "HADT": "هئواییئے گرماگی ساهت", "HAST": "هئواییئے گیشّتگێن ساهت", "HKST": "HKST", "HKT": "HKT", "HOVST": "HOVST", "HOVT": "HOVT", "ICT": "ICT", "IDT": "IDT", "IOT": "IOT", "IRKST": "ایرکوتسکئے گرماگی ساهت", "IRKT": "ایرکوتسکئے گیشّتگێن ساهت", "IRST": "IRST", "IRST DST": "IRST DST", "IST": "IST", "IST Israel": "IST Israel", "JDT": "JDT", "JST": "JST", "KOST": "KOST", "KRAST": "کرانسنُیارسکئے گرماگی ساهت", "KRAT": "کرانسنُیارسکئے گیشّتگێن ساهت", "KST": "KST", "KST DST": "KST DST", "LHDT": "لۆرڈ هئو اُسترالیائے گرماگی ساهت", "LHST": "لۆرڈ هئو اُسترالیائے گیشّتگێن ساهت", "LINT": "LINT", "MAGST": "مَگَدَنئے گرماگی ساهت", "MAGT": "مَگَدَنئے گیشّتگێن ساهت", "MART": "MART", "MAWT": "MAWT", "MDT": "MDT", "MESZ": "نیامی یورپئے گرماگی ساهت", "MEZ": "نیامی یورپئے گیشّتگێن ساهت", "MHT": "MHT", "MMT": "MMT", "MSD": "ماسکۆئے گرماگی ساهت", "MST": "MST", "MUST": "MUST", "MUT": "MUT", "MVT": "MVT", "MYT": "MYT", "NCT": "NCT", "NDT": "نیوفاوونڈلئینڈئے گرماگی ساهت", "NDT New Caledonia": "NDT New Caledonia", "NFDT": "NFDT", "NFT": "NFT", "NOVST": "نۆوۆسیبیرسکئے گرماگی ساهت", "NOVT": "نۆوۆسیبیرسکئے گیشّتگێن ساهت", "NPT": "NPT", "NRT": "NRT", "NST": "نیوفاوونڈلئینڈئے گیشّتگێن ساهت", "NUT": "NUT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "رۆدراتکی یورپئے گرماگی ساهت", "OEZ": "رۆدراتکی یورپئے گیشّتگێن ساهت", "OMSST": "اۆمسکئے گرماگی ساهت", "OMST": "اۆمسکئے گیشّتگێن ساهت", "PDT": "آرامزِری امریکائے گرماگی ساهت", "PDTM": "آرامزِری مِکسیکۆئے گرماگی ساهت", "PETDT": "PETDT", "PETST": "PETST", "PGT": "PGT", "PHOT": "PHOT", "PKT": "PKT", "PKT DST": "PKT DST", "PMDT": "PMDT", "PMST": "PMST", "PONT": "PONT", "PST": "آرامزِری امریکائے گیشّتگێن ساهت", "PST Philippine": "PST Philippine", "PST Philippine DST": "PST Philippine DST", "PST Pitcairn": "PST Pitcairn", "PSTM": "آرامزِری مِکسیکۆئے گیشّتگێن ساهت", "PWT": "PWT", "PYST": "PYST", "PYT": "PYT", "PYT Korea": "PYT Korea", "RET": "RET", "ROTT": "ROTT", "SAKST": "SAKST", "SAKT": "SAKT", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "SAST", "SBT": "SBT", "SCT": "SCT", "SGT": "SGT", "SLST": "SLST", "SRT": "SRT", "SST Samoa": "SST Samoa", "SST Samoa Apia": "SST Samoa Apia", "SST Samoa Apia DST": "SST Samoa Apia DST", "SST Samoa DST": "SST Samoa DST", "SYOT": "SYOT", "TAAF": "TAAF", "TAHT": "TAHT", "TJT": "TJT", "TKT": "TKT", "TLT": "TLT", "TMST": "TMST", "TMT": "TMT", "TOST": "TOST", "TOT": "TOT", "TVT": "TVT", "TWT": "TWT", "TWT DST": "TWT DST", "ULAST": "ULAST", "ULAT": "ULAT", "UYST": "UYST", "UYT": "UYT", "UZT": "UZT", "UZT DST": "UZT DST", "VET": "VET", "VLAST": "ولادیوُستُکئے گرماگی ساهت", "VLAT": "ولادیوُستُکئے گیشّتگێن ساهت", "VOLST": "VOLST", "VOLT": "VOLT", "VOST": "VOST", "VUT": "VUT", "VUT DST": "VUT DST", "WAKT": "WAKT", "WARST": "رۆنندی ارجنتینائے گرماگی ساهت", "WART": "رۆنندی ارجنتینائے گیشّتگێن ساهت", "WAST": "WAST", "WAT": "WAT", "WESZ": "رۆنندی یورپئے گرماگی ساهت", "WEZ": "رۆنندی یورپئے گیشّتگێن ساهت", "WFT": "WFT", "WGST": "WGST", "WGT": "WGT", "WIB": "رۆنندی اندۆنیزیائے گیشّتگێن ساهت", "WIT": "رۆدراتکی اندۆنیزیائے گیشّتگێن ساهت", "WITA": "نیامی اندۆنیزیائے گیشّتگێن ساهت", "YAKST": "یاکوتسکئے گرماگی ساهت", "YAKT": "یاکوتسکئے گیشّتگێن ساهت", "YEKST": "یێکاترینبورگئے گرماگی ساهت", "YEKT": "یێکاترینبورگئے گیشّتگێن ساهت", "YST": "YST", "МСК": "ماسکۆئے گیشّتگێن ساهت", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "رۆنندی کازکستانئے گیشّتگێن ساهت", "شىعىش قازاق ەلى": "رۆدراتکی کازکستانئے گیشّتگێن ساهت", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "قىرعىزستان", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "∅∅∅"},
+		timezones:         map[string]string{"ACDT": "نیامی اُسترالیائے گرماگی ساهت", "ACST": "ACST", "ACT": "ACT", "ACWDT": "نیام\u200cرۆنندی اُسترالیائے گرماگی ساهت", "ACWST": "نیام\u200cرۆنندی اُسترالیائے گیشّتگێن ساهت", "ADT": "ADT", "ADT Arabia": "ADT Arabia", "AEDT": "رۆدراتکی اُسترالیائے گرماگی ساهت", "AEST": "رۆدراتکی اُسترالیائے گیشّتگێن ساهت", "AFT": "AFT", "AKDT": "اَلاسکائے گرماگی ساهت", "AKST": "اَلاسکائے گیشّتگێن ساهت", "AMST": "امازۆنئے گرماگی ساهت", "AMST Armenia": "AMST Armenia", "AMT": "امازۆنئے گیشّتگێن ساهت", "AMT Armenia": "AMT Armenia", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "ارجنتینائے گرماگی ساهت", "ART": "ارجنتینائے گیشّتگێن ساهت", "AST": "AST", "AST Arabia": "AST Arabia", "AWDT": "رۆنندی اُسترالیائے گرماگی ساهت", "AWST": "رۆنندی اُسترالیائے گیشّتگێن ساهت", "AZST": "AZST", "AZT": "AZT", "BDT Bangladesh": "BDT Bangladesh", "BNT": "BNT", "BOT": "BOT", "BRST": "برازیلئے گرماگی ساهت", "BRT": "برازیلئے گیشّتگێن ساهت", "BST Bangladesh": "BST Bangladesh", "BT": "BT", "CAST": "CAST", "CAT": "CAT", "CCT": "CCT", "CDT": "نیامی امریکائے گرماگی ساهت", "CHADT": "CHADT", "CHAST": "CHAST", "CHUT": "CHUT", "CKT": "CKT", "CKT DST": "CKT DST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "نیامی امریکائے گیشّتگێن ساهت", "CST China": "CST China", "CST China DST": "CST China DST", "CVST": "CVST", "CVT": "CVT", "CXT": "CXT", "ChST": "ChST", "ChST NMI": "ChST NMI", "CuDT": "CuDT", "CuST": "CuST", "DAVT": "DAVT", "DDUT": "DDUT", "EASST": "EASST", "EAST": "EAST", "EAT": "EAT", "ECT": "ECT", "EDT": "رۆدراتکی امریکائے گرماگی ساهت", "EGDT": "EGDT", "EGST": "EGST", "EST": "رۆدراتکی امریکائے گیشّتگێن ساهت", "FEET": "دێمتری رۆدراتکی یورپئے گیشّتگێن ساهت", "FJT": "FJT", "FJT Summer": "FJT Summer", "FKST": "FKST", "FKT": "FKT", "FNST": "نُرُنهائے گرماگی ساهت", "FNT": "نُرُنهائے گیشّتگێن ساهت", "GALT": "GALT", "GAMT": "GAMT", "GEST": "GEST", "GET": "GET", "GFT": "GFT", "GIT": "GIT", "GMT": "گرین\u200cوِچ مین ٹائم", "GNSST": "GNSST", "GNST": "GNST", "GST": "GST", "GST Guam": "GST Guam", "GYT": "GYT", "HADT": "هئواییئے گرماگی ساهت", "HAST": "هئواییئے گیشّتگێن ساهت", "HKST": "HKST", "HKT": "HKT", "HOVST": "HOVST", "HOVT": "HOVT", "ICT": "ICT", "IDT": "IDT", "IOT": "IOT", "IRKST": "ایرکوتسکئے گرماگی ساهت", "IRKT": "ایرکوتسکئے گیشّتگێن ساهت", "IRST": "IRST", "IRST DST": "IRST DST", "IST": "IST", "IST Israel": "IST Israel", "JDT": "JDT", "JST": "JST", "KOST": "KOST", "KRAST": "کرانسنُیارسکئے گرماگی ساهت", "KRAT": "کرانسنُیارسکئے گیشّتگێن ساهت", "KST": "KST", "KST DST": "KST DST", "LHDT": "لۆرڈ هئو اُسترالیائے گرماگی ساهت", "LHST": "لۆرڈ هئو اُسترالیائے گیشّتگێن ساهت", "LINT": "LINT", "MAGST": "مَگَدَنئے گرماگی ساهت", "MAGT": "مَگَدَنئے گیشّتگێن ساهت", "MART": "MART", "MAWT": "MAWT", "MDT": "MDT", "MESZ": "نیامی یورپئے گرماگی ساهت", "MEZ": "نیامی یورپئے گیشّتگێن ساهت", "MHT": "MHT", "MMT": "MMT", "MSD": "ماسکۆئے گرماگی ساهت", "MST": "MST", "MUST": "MUST", "MUT": "MUT", "MVT": "MVT", "MYT": "MYT", "NCT": "NCT", "NDT": "نیوفاوونڈلئینڈئے گرماگی ساهت", "NDT New Caledonia": "NDT New Caledonia", "NFDT": "NFDT", "NFT": "NFT", "NOVST": "نۆوۆسیبیرسکئے گرماگی ساهت", "NOVT": "نۆوۆسیبیرسکئے گیشّتگێن ساهت", "NPT": "NPT", "NRT": "NRT", "NST": "نیوفاوونڈلئینڈئے گیشّتگێن ساهت", "NUT": "NUT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "رۆدراتکی یورپئے گرماگی ساهت", "OEZ": "رۆدراتکی یورپئے گیشّتگێن ساهت", "OMSST": "اۆمسکئے گرماگی ساهت", "OMST": "اۆمسکئے گیشّتگێن ساهت", "PDT": "آرامزِری امریکائے گرماگی ساهت", "PDTM": "آرامزِری مِکسیکۆئے گرماگی ساهت", "PETDT": "PETDT", "PETST": "PETST", "PGT": "PGT", "PHOT": "PHOT", "PKT": "PKT", "PKT DST": "PKT DST", "PMDT": "PMDT", "PMST": "PMST", "PONT": "PONT", "PST": "آرامزِری امریکائے گیشّتگێن ساهت", "PST Philippine": "PST Philippine", "PST Philippine DST": "PST Philippine DST", "PST Pitcairn": "PST Pitcairn", "PSTM": "آرامزِری مِکسیکۆئے گیشّتگێن ساهت", "PWT": "PWT", "PYST": "PYST", "PYT": "PYT", "PYT Korea": "PYT Korea", "RET": "RET", "ROTT": "ROTT", "SAKST": "SAKST", "SAKT": "SAKT", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "SAST", "SBT": "SBT", "SCT": "SCT", "SGT": "SGT", "SLST": "SLST", "SRT": "SRT", "SST Samoa": "SST Samoa", "SST Samoa Apia": "SST Samoa Apia", "SST Samoa Apia DST": "SST Samoa Apia DST", "SST Samoa DST": "SST Samoa DST", "SYOT": "SYOT", "TAAF": "TAAF", "TAHT": "TAHT", "TJT": "TJT", "TKT": "TKT", "TLT": "TLT", "TMST": "TMST", "TMT": "TMT", "TOST": "TOST", "TOT": "TOT", "TVT": "TVT", "TWT": "TWT", "TWT DST": "TWT DST", "ULAST": "ULAST", "ULAT": "ULAT", "UYST": "UYST", "UYT": "UYT", "UZT": "UZT", "UZT DST": "UZT DST", "VET": "VET", "VLAST": "ولادیوُستُکئے گرماگی ساهت", "VLAT": "ولادیوُستُکئے گیشّتگێن ساهت", "VOLST": "VOLST", "VOLT": "VOLT", "VOST": "VOST", "VUT": "VUT", "VUT DST": "VUT DST", "WAKT": "WAKT", "WARST": "رۆنندی ارجنتینائے گرماگی ساهت", "WART": "رۆنندی ارجنتینائے گیشّتگێن ساهت", "WAST": "WAST", "WAT": "WAT", "WESZ": "رۆنندی یورپئے گرماگی ساهت", "WEZ": "رۆنندی یورپئے گیشّتگێن ساهت", "WFT": "WFT", "WGST": "WGST", "WGT": "WGT", "WIB": "رۆنندی اندۆنیزیائے گیشّتگێن ساهت", "WIT": "رۆدراتکی اندۆنیزیائے گیشّتگێن ساهت", "WITA": "نیامی اندۆنیزیائے گیشّتگێن ساهت", "YAKST": "یاکوتسکئے گرماگی ساهت", "YAKT": "یاکوتسکئے گیشّتگێن ساهت", "YEKST": "یێکاترینبورگئے گرماگی ساهت", "YEKT": "یێکاترینبورگئے گیشّتگێن ساهت", "YST": "YST", "МСК": "ماسکۆئے گیشّتگێن ساهت", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "رۆنندی کازکستانئے گیشّتگێن ساهت", "شىعىش قازاق ەلى": "رۆدراتکی کازکستانئے گیشّتگێن ساهت", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "قىرعىزستان", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "∅∅∅"},
 	}
 }
 
@@ -74,6 +74,7 @@ func (bal *bal_Arab_PK) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'bal_Arab_PK'
 func (bal *bal_Arab_PK) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -85,6 +86,7 @@ func (bal *bal_Arab_PK) CardinalPluralRule(num float64, v uint64) locales.Plural
 
 // OrdinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for 'bal_Arab_PK'
 func (bal *bal_Arab_PK) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -207,6 +209,7 @@ func (bal *bal_Arab_PK) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'bal_Arab_PK' and handles both Whole and Real numbers based on 'v'
 func (bal *bal_Arab_PK) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -278,6 +281,7 @@ func (bal *bal_Arab_PK) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'bal_Arab_PK'
 func (bal *bal_Arab_PK) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := bal.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -286,6 +290,7 @@ func (bal *bal_Arab_PK) FmtCurrency(num float64, v uint64, currency currency.Typ
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'bal_Arab_PK'
 // in accounting notation.
 func (bal *bal_Arab_PK) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := bal.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -293,6 +298,7 @@ func (bal *bal_Arab_PK) FmtAccounting(num float64, v uint64, currency currency.T
 
 // FmtDateShort returns the short date representation of 't' for 'bal_Arab_PK'
 func (bal *bal_Arab_PK) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -311,6 +317,7 @@ func (bal *bal_Arab_PK) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'bal_Arab_PK'
 func (bal *bal_Arab_PK) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -329,6 +336,7 @@ func (bal *bal_Arab_PK) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'bal_Arab_PK'
 func (bal *bal_Arab_PK) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -347,6 +355,7 @@ func (bal *bal_Arab_PK) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'bal_Arab_PK'
 func (bal *bal_Arab_PK) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, bal.daysWide[t.Weekday()]...)
@@ -367,6 +376,7 @@ func (bal *bal_Arab_PK) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'bal_Arab_PK'
 func (bal *bal_Arab_PK) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -400,6 +410,7 @@ func (bal *bal_Arab_PK) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'bal_Arab_PK'
 func (bal *bal_Arab_PK) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -440,6 +451,7 @@ func (bal *bal_Arab_PK) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'bal_Arab_PK'
 func (bal *bal_Arab_PK) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -485,6 +497,7 @@ func (bal *bal_Arab_PK) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'bal_Arab_PK'
 func (bal *bal_Arab_PK) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

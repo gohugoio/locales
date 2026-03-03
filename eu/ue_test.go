@@ -11,22 +11,22 @@ func TestPercent(t *testing.T) {
 		{
 			num:      23,
 			v:        0,
-			expected: "%\u00a023",
+			expected: "% 23",
 		},
 		{
 			num:      23.45,
 			v:        2,
-			expected: "%\u00a023,45",
+			expected: "% 23,45",
 		},
 		{
 			num:      1023.45,
 			v:        2,
-			expected: "%\u00a01.023,45",
+			expected: "% 1.023,45",
 		},
 		{
 			num:      -1023.45,
 			v:        2,
-			expected: "%\u00a0−1.023,45",
+			expected: "% \u2212" + "1.023,45",
 		},
 	}
 

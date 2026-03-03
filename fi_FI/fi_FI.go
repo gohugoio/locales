@@ -41,21 +41,21 @@ func New() locales.Translator {
 		pluralsOrdinal:         []locales.PluralRule{6},
 		pluralsRange:           []locales.PluralRule{6},
 		decimal:                ",",
-		group:                  " ",
+		group:                  " ",
 		minus:                  "−",
 		percent:                "%",
 		timeSeparator:          ".",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
-		percentSuffix:          " ",
-		currencyPositiveSuffix: " ",
-		currencyNegativeSuffix: " ",
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "mk", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "$", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		percentSuffix:          " ",
+		currencyPositiveSuffix: " ",
+		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "tammi", "helmi", "maalis", "huhti", "touko", "kesä", "heinä", "elo", "syys", "loka", "marras", "joulu"},
 		monthsNarrow:           []string{"", "T", "H", "M", "H", "T", "K", "H", "E", "S", "L", "M", "J"},
 		monthsWide:             []string{"", "tammikuuta", "helmikuuta", "maaliskuuta", "huhtikuuta", "toukokuuta", "kesäkuuta", "heinäkuuta", "elokuuta", "syyskuuta", "lokakuuta", "marraskuuta", "joulukuuta"},
 		daysAbbreviated:        []string{"su", "ma", "ti", "ke", "to", "pe", "la"},
 		daysNarrow:             []string{"S", "M", "T", "K", "T", "P", "L"},
 		daysWide:               []string{"sunnuntaina", "maanantaina", "tiistaina", "keskiviikkona", "torstaina", "perjantaina", "lauantaina"},
-		timezones:              map[string]string{"ACDT": "Keski-Australian kesäaika", "ACST": "Keski-Australian normaaliaika", "ACT": "Acren normaaliaika", "ACWDT": "Läntisen Keski-Australian kesäaika", "ACWST": "Läntisen Keski-Australian normaaliaika", "ADT": "Kanadan Atlantin kesäaika", "ADT Arabia": "Saudi-Arabian kesäaika", "AEDT": "Itä-Australian kesäaika", "AEST": "Itä-Australian normaaliaika", "AFT": "Afganistanin aika", "AKDT": "Alaskan kesäaika", "AKST": "Alaskan normaaliaika", "AMST": "Amazonin kesäaika", "AMST Armenia": "Armenian kesäaika", "AMT": "Amazonin normaaliaika", "AMT Armenia": "Armenian normaaliaika", "ANAST": "Anadyrin kesäaika", "ANAT": "Anadyrin normaaliaika", "ARST": "Argentiinan kesäaika", "ART": "Argentiinan normaaliaika", "AST": "Kanadan Atlantin normaaliaika", "AST Arabia": "Saudi-Arabian normaaliaika", "AWDT": "Länsi-Australian kesäaika", "AWST": "Länsi-Australian normaaliaika", "AZST": "Azerbaidžanin kesäaika", "AZT": "Azerbaidžanin normaaliaika", "BDT Bangladesh": "Bangladeshin kesäaika", "BNT": "Brunein aika", "BOT": "Bolivian aika", "BRST": "Brasilian kesäaika", "BRT": "Brasilian normaaliaika", "BST Bangladesh": "Bangladeshin normaaliaika", "BT": "Bhutanin aika", "CAST": "Caseyn aika", "CAT": "Keski-Afrikan aika", "CCT": "Kookossaarten aika", "CDT": "Yhdysvaltain keskinen kesäaika", "CHADT": "Chathamin kesäaika", "CHAST": "Chathamin normaaliaika", "CHUT": "Chuukin aika", "CKT": "Cookinsaarten normaaliaika", "CKT DST": "Cookinsaarten kesäaika", "CLST": "Chilen kesäaika", "CLT": "Chilen normaaliaika", "COST": "Kolumbian kesäaika", "COT": "Kolumbian normaaliaika", "CST": "Yhdysvaltain keskinen normaaliaika", "CST China": "Kiinan normaaliaika", "CST China DST": "Kiinan kesäaika", "CVST": "Kap Verden kesäaika", "CVT": "Kap Verden normaaliaika", "CXT": "Joulusaaren aika", "ChST": "Tšamorron aika", "ChST NMI": "Pohjois-Mariaanien aika", "CuDT": "Kuuban kesäaika", "CuST": "Kuuban normaaliaika", "DAVT": "Davisin aika", "DDUT": "Dumont d’Urvillen aika", "EASST": "Pääsiäissaaren kesäaika", "EAST": "Pääsiäissaaren normaaliaika", "EAT": "Itä-Afrikan aika", "ECT": "Ecuadorin aika", "EDT": "Yhdysvaltain itäinen kesäaika", "EGDT": "Itä-Grönlannin kesäaika", "EGST": "Itä-Grönlannin normaaliaika", "EST": "Yhdysvaltain itäinen normaaliaika", "FEET": "Itäisemmän Euroopan aika", "FJT": "Fidžin normaaliaika", "FJT Summer": "Fidžin kesäaika", "FKST": "Falklandinsaarten kesäaika", "FKT": "Falklandinsaarten normaaliaika", "FNST": "Fernando de Noronhan kesäaika", "FNT": "Fernando de Noronhan normaaliaika", "GALT": "Galápagossaarten aika", "GAMT": "Gambiersaarten aika", "GEST": "Georgian kesäaika", "GET": "Georgian normaaliaika", "GFT": "Ranskan Guayanan aika", "GIT": "Gilbertsaarten aika", "GMT": "Greenwichin normaaliaika", "GNSST": "GNSST", "GNST": "GNST", "GST": "Arabiemiirikuntien normaaliaika", "GST Guam": "Guamin aika", "GYT": "Guyanan aika", "HADT": "Havaijin-Aleuttien kesäaika", "HAST": "Havaijin-Aleuttien normaaliaika", "HKST": "Hongkongin kesäaika", "HKT": "Hongkongin normaaliaika", "HOVST": "Hovdin kesäaika", "HOVT": "Hovdin normaaliaika", "ICT": "Indokiinan aika", "IDT": "Israelin kesäaika", "IOT": "Intian valtameren aika", "IRKST": "Irkutskin kesäaika", "IRKT": "Irkutskin normaaliaika", "IRST": "Iranin normaaliaika", "IRST DST": "Iranin kesäaika", "IST": "Intian aika", "IST Israel": "Israelin normaaliaika", "JDT": "Japanin kesäaika", "JST": "Japanin normaaliaika", "KOST": "Kosraen aika", "KRAST": "Krasnojarskin kesäaika", "KRAT": "Krasnojarskin normaaliaika", "KST": "Korean normaaliaika", "KST DST": "Korean kesäaika", "LHDT": "Lord Howen kesäaika", "LHST": "Lord Howen normaaliaika", "LINT": "Linesaarten aika", "MAGST": "Magadanin kesäaika", "MAGT": "Magadanin normaaliaika", "MART": "Marquesassaarten aika", "MAWT": "Mawsonin aika", "MDT": "Macaon kesäaika", "MESZ": "Keski-Euroopan kesäaika", "MEZ": "Keski-Euroopan normaaliaika", "MHT": "Marshallinsaarten aika", "MMT": "Myanmarin aika", "MSD": "Moskovan kesäaika", "MST": "Macaon normaaliaika", "MUST": "Mauritiuksen kesäaika", "MUT": "Mauritiuksen normaaliaika", "MVT": "Malediivien aika", "MYT": "Malesian aika", "NCT": "Uuden-Kaledonian normaaliaika", "NDT": "Newfoundlandin kesäaika", "NDT New Caledonia": "Uuden-Kaledonian kesäaika", "NFDT": "Norfolkinsaaren kesäaika", "NFT": "Norfolkinsaaren normaaliaika", "NOVST": "Novosibirskin kesäaika", "NOVT": "Novosibirskin normaaliaika", "NPT": "Nepalin aika", "NRT": "Naurun aika", "NST": "Newfoundlandin normaaliaika", "NUT": "Niuen aika", "NZDT": "Uuden-Seelannin kesäaika", "NZST": "Uuden-Seelannin normaaliaika", "OESZ": "Itä-Euroopan kesäaika", "OEZ": "Itä-Euroopan normaaliaika", "OMSST": "Omskin kesäaika", "OMST": "Omskin normaaliaika", "PDT": "Yhdysvaltain Tyynenmeren kesäaika", "PDTM": "Meksikon Tyynenmeren kesäaika", "PETDT": "Kamtšatkan kesäaika", "PETST": "Kamtšatkan normaaliaika", "PGT": "Papua-Uuden-Guinean aika", "PHOT": "Phoenixsaarten aika", "PKT": "Pakistanin normaaliaika", "PKT DST": "Pakistanin kesäaika", "PMDT": "Saint-Pierren ja Miquelonin kesäaika", "PMST": "Saint-Pierren ja Miquelonin normaaliaika", "PONT": "Pohnpein aika", "PST": "Yhdysvaltain Tyynenmeren normaaliaika", "PST Philippine": "Filippiinien normaaliaika", "PST Philippine DST": "Filippiinien kesäaika", "PST Pitcairn": "Pitcairnin aika", "PSTM": "Meksikon Tyynenmeren normaaliaika", "PWT": "Palaun aika", "PYST": "Paraguayn kesäaika", "PYT": "Paraguayn normaaliaika", "PYT Korea": "Pjongjangin aika", "RET": "Réunionin aika", "ROTT": "Rotheran aika", "SAKST": "Sahalinin kesäaika", "SAKT": "Sahalinin normaaliaika", "SAMST": "Samaran kesäaika", "SAMT": "Samaran normaaliaika", "SAST": "Etelä-Afrikan aika", "SBT": "Salomonsaarten aika", "SCT": "Seychellien aika", "SGT": "Singaporen aika", "SLST": "Sri Lankan aika", "SRT": "Surinamen aika", "SST Samoa": "Samoan normaaliaika", "SST Samoa Apia": "Apian normaaliaika", "SST Samoa Apia DST": "Apian kesäaika", "SST Samoa DST": "Samoan kesäaika", "SYOT": "Syowan aika", "TAAF": "Ranskan eteläisten ja antarktisten alueiden aika", "TAHT": "Tahitin aika", "TJT": "Tadžikistanin aika", "TKT": "Tokelaun aika", "TLT": "Itä-Timorin aika", "TMST": "Turkmenistanin kesäaika", "TMT": "Turkmenistanin normaaliaika", "TOST": "Tongan kesäaika", "TOT": "Tongan normaaliaika", "TVT": "Tuvalun aika", "TWT": "Taipein normaaliaika", "TWT DST": "Taipein kesäaika", "ULAST": "Ulan Batorin kesäaika", "ULAT": "Ulan Batorin normaaliaika", "UYST": "Uruguayn kesäaika", "UYT": "Uruguayn normaaliaika", "UZT": "Uzbekistanin normaaliaika", "UZT DST": "Uzbekistanin kesäaika", "VET": "Venezuelan aika", "VLAST": "Vladivostokin kesäaika", "VLAT": "Vladivostokin normaaliaika", "VOLST": "Volgogradin kesäaika", "VOLT": "Volgogradin normaaliaika", "VOST": "Vostokin aika", "VUT": "Vanuatun normaaliaika", "VUT DST": "Vanuatun kesäaika", "WAKT": "Waken aika", "WARST": "Länsi-Argentiinan kesäaika", "WART": "Länsi-Argentiinan normaaliaika", "WAST": "Länsi-Afrikan aika", "WAT": "Länsi-Afrikan aika", "WESZ": "Länsi-Euroopan kesäaika", "WEZ": "Länsi-Euroopan normaaliaika", "WFT": "Wallisin ja Futunan aika", "WGST": "Länsi-Grönlannin kesäaika", "WGT": "Länsi-Grönlannin normaaliaika", "WIB": "Länsi-Indonesian aika", "WIT": "Itä-Indonesian aika", "WITA": "Keski-Indonesian aika", "YAKST": "Jakutskin kesäaika", "YAKT": "Jakutskin normaaliaika", "YEKST": "Jekaterinburgin kesäaika", "YEKT": "Jekaterinburgin normaaliaika", "YST": "Yukonin aika", "МСК": "Moskovan normaaliaika", "اقتاۋ": "Aqtaw’n normaaliaika", "اقتاۋ قالاسى": "Aqtaw’n kesäaika", "اقتوبە": "Aqtöben normaaliaika", "اقتوبە قالاسى": "Aqtöben kesäaika", "الماتى": "Almatyn normaaliaika", "الماتى قالاسى": "Almatyn kesäaika", "باتىس قازاق ەلى": "Länsi-Kazakstanin aika", "شىعىش قازاق ەلى": "Itä-Kazakstanin aika", "قازاق ەلى": "Kazakstanin aika", "قىرعىزستان": "Kirgisian aika", "قىزىلوردا": "Qızılordan normaaliaika", "قىزىلوردا قالاسى": "Qızılordan kesäaika", "∅∅∅": "Azorien kesäaika"},
+		timezones:              map[string]string{"ACDT": "Keski-Australian kesäaika", "ACST": "Acren kesäaika", "ACT": "Acren normaaliaika", "ACWDT": "Läntisen Keski-Australian kesäaika", "ACWST": "Läntisen Keski-Australian normaaliaika", "ADT": "Kanadan Atlantin kesäaika", "ADT Arabia": "Saudi-Arabian kesäaika", "AEDT": "Itä-Australian kesäaika", "AEST": "Itä-Australian normaaliaika", "AFT": "Afganistanin aika", "AKDT": "Alaskan kesäaika", "AKST": "Alaskan normaaliaika", "AMST": "Amazonin kesäaika", "AMST Armenia": "Armenian kesäaika", "AMT": "Amazonin normaaliaika", "AMT Armenia": "Armenian normaaliaika", "ANAST": "Anadyrin kesäaika", "ANAT": "Anadyrin normaaliaika", "ARST": "Argentiinan kesäaika", "ART": "Argentiinan normaaliaika", "AST": "Kanadan Atlantin normaaliaika", "AST Arabia": "Saudi-Arabian normaaliaika", "AWDT": "Länsi-Australian kesäaika", "AWST": "Länsi-Australian normaaliaika", "AZST": "Azerbaidžanin kesäaika", "AZT": "Azerbaidžanin normaaliaika", "BDT Bangladesh": "Bangladeshin kesäaika", "BNT": "Brunein aika", "BOT": "Bolivian aika", "BRST": "Brasilian kesäaika", "BRT": "Brasilian normaaliaika", "BST Bangladesh": "Bangladeshin normaaliaika", "BT": "Bhutanin aika", "CAST": "Caseyn aika", "CAT": "Keski-Afrikan aika", "CCT": "Kookossaarten aika", "CDT": "Yhdysvaltain keskinen kesäaika", "CHADT": "Chathamin kesäaika", "CHAST": "Chathamin normaaliaika", "CHUT": "Chuukin aika", "CKT": "Cookinsaarten normaaliaika", "CKT DST": "Cookinsaarten kesäaika", "CLST": "Chilen kesäaika", "CLT": "Chilen normaaliaika", "COST": "Kolumbian kesäaika", "COT": "Kolumbian normaaliaika", "CST": "Yhdysvaltain keskinen normaaliaika", "CST China": "Kiinan normaaliaika", "CST China DST": "Kiinan kesäaika", "CVST": "Kap Verden kesäaika", "CVT": "Kap Verden normaaliaika", "CXT": "Joulusaaren aika", "ChST": "Tšamorron aika", "ChST NMI": "Pohjois-Mariaanien aika", "CuDT": "Kuuban kesäaika", "CuST": "Kuuban normaaliaika", "DAVT": "Davisin aika", "DDUT": "Dumont d’Urvillen aika", "EASST": "Pääsiäissaaren kesäaika", "EAST": "Pääsiäissaaren normaaliaika", "EAT": "Itä-Afrikan aika", "ECT": "Ecuadorin aika", "EDT": "Yhdysvaltain itäinen kesäaika", "EGDT": "Itä-Grönlannin kesäaika", "EGST": "Itä-Grönlannin normaaliaika", "EST": "Yhdysvaltain itäinen normaaliaika", "FEET": "Itäisemmän Euroopan aika", "FJT": "Fidžin normaaliaika", "FJT Summer": "Fidžin kesäaika", "FKST": "Falklandinsaarten kesäaika", "FKT": "Falklandinsaarten normaaliaika", "FNST": "Fernando de Noronhan kesäaika", "FNT": "Fernando de Noronhan normaaliaika", "GALT": "Galápagossaarten aika", "GAMT": "Gambiersaarten aika", "GEST": "Georgian kesäaika", "GET": "Georgian normaaliaika", "GFT": "Ranskan Guayanan aika", "GIT": "Gilbertsaarten aika", "GMT": "Greenwichin normaaliaika", "GNSST": "GNSST", "GNST": "GNST", "GST": "Etelä-Georgian aika", "GST Guam": "Guamin aika", "GYT": "Guyanan aika", "HADT": "Havaijin-Aleuttien kesäaika", "HAST": "Havaijin-Aleuttien normaaliaika", "HKST": "Hongkongin kesäaika", "HKT": "Hongkongin normaaliaika", "HOVST": "Hovdin kesäaika", "HOVT": "Hovdin normaaliaika", "ICT": "Indokiinan aika", "IDT": "Israelin kesäaika", "IOT": "Intian valtameren aika", "IRKST": "Irkutskin kesäaika", "IRKT": "Irkutskin normaaliaika", "IRST": "Iranin normaaliaika", "IRST DST": "Iranin kesäaika", "IST": "Intian aika", "IST Israel": "Israelin normaaliaika", "JDT": "Japanin kesäaika", "JST": "Japanin normaaliaika", "KOST": "Kosraen aika", "KRAST": "Krasnojarskin kesäaika", "KRAT": "Krasnojarskin normaaliaika", "KST": "Korean normaaliaika", "KST DST": "Korean kesäaika", "LHDT": "Lord Howen kesäaika", "LHST": "Lord Howen normaaliaika", "LINT": "Linesaarten aika", "MAGST": "Magadanin kesäaika", "MAGT": "Magadanin normaaliaika", "MART": "Marquesassaarten aika", "MAWT": "Mawsonin aika", "MDT": "Macaon kesäaika", "MESZ": "Keski-Euroopan kesäaika", "MEZ": "Keski-Euroopan normaaliaika", "MHT": "Marshallinsaarten aika", "MMT": "Myanmarin aika", "MSD": "Moskovan kesäaika", "MST": "Macaon normaaliaika", "MUST": "Mauritiuksen kesäaika", "MUT": "Mauritiuksen normaaliaika", "MVT": "Malediivien aika", "MYT": "Malesian aika", "NCT": "Uuden-Kaledonian normaaliaika", "NDT": "Newfoundlandin kesäaika", "NDT New Caledonia": "Uuden-Kaledonian kesäaika", "NFDT": "Norfolkinsaaren kesäaika", "NFT": "Norfolkinsaaren normaaliaika", "NOVST": "Novosibirskin kesäaika", "NOVT": "Novosibirskin normaaliaika", "NPT": "Nepalin aika", "NRT": "Naurun aika", "NST": "Newfoundlandin normaaliaika", "NUT": "Niuen aika", "NZDT": "Uuden-Seelannin kesäaika", "NZST": "Uuden-Seelannin normaaliaika", "OESZ": "Itä-Euroopan kesäaika", "OEZ": "Itä-Euroopan normaaliaika", "OMSST": "Omskin kesäaika", "OMST": "Omskin normaaliaika", "PDT": "Yhdysvaltain Tyynenmeren kesäaika", "PDTM": "Meksikon Tyynenmeren kesäaika", "PETDT": "Kamtšatkan kesäaika", "PETST": "Kamtšatkan normaaliaika", "PGT": "Papua-Uuden-Guinean aika", "PHOT": "Phoenixsaarten aika", "PKT": "Pakistanin normaaliaika", "PKT DST": "Pakistanin kesäaika", "PMDT": "Saint-Pierren ja Miquelonin kesäaika", "PMST": "Saint-Pierren ja Miquelonin normaaliaika", "PONT": "Pohnpein aika", "PST": "Yhdysvaltain Tyynenmeren normaaliaika", "PST Philippine": "Filippiinien normaaliaika", "PST Philippine DST": "Filippiinien kesäaika", "PST Pitcairn": "Pitcairnin aika", "PSTM": "Meksikon Tyynenmeren normaaliaika", "PWT": "Palaun aika", "PYST": "Paraguayn kesäaika", "PYT": "Paraguayn normaaliaika", "PYT Korea": "Pjongjangin aika", "RET": "Réunionin aika", "ROTT": "Rotheran aika", "SAKST": "Sahalinin kesäaika", "SAKT": "Sahalinin normaaliaika", "SAMST": "Samaran kesäaika", "SAMT": "Samaran normaaliaika", "SAST": "Etelä-Afrikan aika", "SBT": "Salomonsaarten aika", "SCT": "Seychellien aika", "SGT": "Singaporen aika", "SLST": "Sri Lankan aika", "SRT": "Surinamen aika", "SST Samoa": "Samoan normaaliaika", "SST Samoa Apia": "Apian normaaliaika", "SST Samoa Apia DST": "Apian kesäaika", "SST Samoa DST": "Samoan kesäaika", "SYOT": "Syowan aika", "TAAF": "Ranskan eteläisten ja antarktisten alueiden aika", "TAHT": "Tahitin aika", "TJT": "Tadžikistanin aika", "TKT": "Tokelaun aika", "TLT": "Itä-Timorin aika", "TMST": "Turkmenistanin kesäaika", "TMT": "Turkmenistanin normaaliaika", "TOST": "Tongan kesäaika", "TOT": "Tongan normaaliaika", "TVT": "Tuvalun aika", "TWT": "Taipein normaaliaika", "TWT DST": "Taipein kesäaika", "ULAST": "Ulan Batorin kesäaika", "ULAT": "Ulan Batorin normaaliaika", "UYST": "Uruguayn kesäaika", "UYT": "Uruguayn normaaliaika", "UZT": "Uzbekistanin normaaliaika", "UZT DST": "Uzbekistanin kesäaika", "VET": "Venezuelan aika", "VLAST": "Vladivostokin kesäaika", "VLAT": "Vladivostokin normaaliaika", "VOLST": "Volgogradin kesäaika", "VOLT": "Volgogradin normaaliaika", "VOST": "Vostokin aika", "VUT": "Vanuatun normaaliaika", "VUT DST": "Vanuatun kesäaika", "WAKT": "Waken aika", "WARST": "Länsi-Argentiinan kesäaika", "WART": "Länsi-Argentiinan normaaliaika", "WAST": "Länsi-Afrikan aika", "WAT": "Länsi-Afrikan aika", "WESZ": "Länsi-Euroopan kesäaika", "WEZ": "Länsi-Euroopan normaaliaika", "WFT": "Wallisin ja Futunan aika", "WGST": "Länsi-Grönlannin kesäaika", "WGT": "Länsi-Grönlannin normaaliaika", "WIB": "Länsi-Indonesian aika", "WIT": "Itä-Indonesian aika", "WITA": "Keski-Indonesian aika", "YAKST": "Jakutskin kesäaika", "YAKT": "Jakutskin normaaliaika", "YEKST": "Jekaterinburgin kesäaika", "YEKT": "Jekaterinburgin normaaliaika", "YST": "Yukonin aika", "МСК": "Moskovan normaaliaika", "اقتاۋ": "Aqtaw’n normaaliaika", "اقتاۋ قالاسى": "Aqtaw’n kesäaika", "اقتوبە": "Aqtöben normaaliaika", "اقتوبە قالاسى": "Aqtöben kesäaika", "الماتى": "Almatyn normaaliaika", "الماتى قالاسى": "Almatyn kesäaika", "باتىس قازاق ەلى": "Länsi-Kazakstanin aika", "شىعىش قازاق ەلى": "Itä-Kazakstanin aika", "قازاق ەلى": "Kazakstanin aika", "قىرعىزستان": "Kirgisian aika", "قىزىلوردا": "Qızılordan normaaliaika", "قىزىلوردا قالاسى": "Qızılordan kesäaika", "∅∅∅": "Azorien kesäaika"},
 	}
 }
 
@@ -81,6 +81,7 @@ func (fi *fi_FI) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'fi_FI'
 func (fi *fi_FI) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 	i := int64(n)
 
@@ -209,6 +210,7 @@ func (fi *fi_FI) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'fi_FI' and handles both Whole and Real numbers based on 'v'
 func (fi *fi_FI) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -288,6 +290,7 @@ func (fi *fi_FI) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'fi_FI'
 func (fi *fi_FI) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := fi.currencies[currency]
 	l := len(s) + len(symbol) + 6 + 2*len(s[:len(s)-int(v)-1])/3
@@ -349,6 +352,7 @@ func (fi *fi_FI) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'fi_FI'
 // in accounting notation.
 func (fi *fi_FI) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := fi.currencies[currency]
 	l := len(s) + len(symbol) + 6 + 2*len(s[:len(s)-int(v)-1])/3
@@ -379,9 +383,11 @@ func (fi *fi_FI) FmtAccounting(num float64, v uint64, currency currency.Type) st
 	}
 
 	if num < 0 {
+
 		for j := len(fi.minus) - 1; j >= 0; j-- {
 			b = append(b, fi.minus[j])
 		}
+
 	}
 
 	// reverse
@@ -414,6 +420,7 @@ func (fi *fi_FI) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 // FmtDateShort returns the short date representation of 't' for 'fi_FI'
 func (fi *fi_FI) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -432,6 +439,7 @@ func (fi *fi_FI) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'fi_FI'
 func (fi *fi_FI) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -450,6 +458,7 @@ func (fi *fi_FI) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'fi_FI'
 func (fi *fi_FI) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -468,6 +477,7 @@ func (fi *fi_FI) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'fi_FI'
 func (fi *fi_FI) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, []byte{0x63, 0x63, 0x63, 0x63, 0x20}...)
@@ -487,6 +497,7 @@ func (fi *fi_FI) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'fi_FI'
 func (fi *fi_FI) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
@@ -503,6 +514,7 @@ func (fi *fi_FI) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'fi_FI'
 func (fi *fi_FI) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
@@ -526,6 +538,7 @@ func (fi *fi_FI) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'fi_FI'
 func (fi *fi_FI) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
@@ -553,6 +566,7 @@ func (fi *fi_FI) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'fi_FI'
 func (fi *fi_FI) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)

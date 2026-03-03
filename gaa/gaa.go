@@ -20,7 +20,7 @@ type gaa struct {
 	percent                string
 	timeSeparator          string
 	currencies             []string // idx = enum of currency code
-	currencyPositiveSuffix string
+	currencyNegativePrefix string
 	currencyNegativeSuffix string
 	monthsAbbreviated      []string
 	monthsNarrow           []string
@@ -46,7 +46,7 @@ func New() locales.Translator {
 		percent:                "%",
 		timeSeparator:          ":",
 		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "KA$", "KDF", "CHE", "SZF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "KOP", "COU", "KRK", "CSD", "CSK", "KUK", "KUP", "CVE", "CYP", "TSK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTK", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MZ$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "K$", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SSR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGS", "$", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "KB$", "XCG", "XDR", "XEU", "XFO", "XFU", "SFA", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
-		currencyPositiveSuffix: ")",
+		currencyNegativePrefix: "(",
 		currencyNegativeSuffix: ")",
 		monthsAbbreviated:      []string{"", "Aha", "Ofl", "Ots", "Abe", "Agb", "Otu", "Maa", "Man", "Gbo", "Ant", "Ale", "Afu"},
 		monthsNarrow:           []string{"", "A", "O", "O", "A", "A", "O", "M", "M", "G", "A", "A", "A"},
@@ -55,7 +55,7 @@ func New() locales.Translator {
 		daysNarrow:             []string{"H", "J", "J", "S", "S", "S", "H"},
 		daysWide:               []string{"Hɔgbaa", "Ju", "Jufɔ", "Shɔ", "Soo", "Sohaa", "Hɔɔ"},
 		periodsAbbreviated:     []string{"LB", "SN"},
-		timezones:              map[string]string{"ACDT": "ACDT", "ACST": "ACST", "ACT": "ACT", "ACWDT": "ACWDT", "ACWST": "ACWST", "ADT": "Atlantik Be Yɛ Latsa Beiaŋ", "ADT Arabia": "ADT Arabia", "AEDT": "AEDT", "AEST": "AEST", "AFT": "AFT", "AKDT": "Alaska Be Yɛ Latsa Beiaŋ", "AKST": "Alaska Be Yɛ Fɛi Beiaŋ", "AMST": "AMST", "AMST Armenia": "AMST Armenia", "AMT": "AMT", "AMT Armenia": "AMT Armenia", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "ARST", "ART": "ART", "AST": "Atlantik Be Yɛ Fɛi Beiaŋ", "AST Arabia": "AST Arabia", "AWDT": "AWDT", "AWST": "AWST", "AZST": "AZST", "AZT": "AZT", "BDT Bangladesh": "BDT Bangladesh", "BNT": "BNT", "BOT": "BOT", "BRST": "BRST", "BRT": "BRT", "BST Bangladesh": "BST Bangladesh", "BT": "BT", "CAST": "CAST", "CAT": "Afrika Teŋgbɛ Be", "CCT": "CCT", "CDT": "Amerika Teŋgbɛbii Abe Yɛ Latsa Beiaŋ", "CHADT": "CHADT", "CHAST": "CHAST", "CHUT": "CHUT", "CKT": "CKT", "CKT DST": "CKT DST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "Amerika Teŋgbɛbii Abe Yɛ Fɛi Beiaŋ", "CST China": "CST China", "CST China DST": "CST China DST", "CVST": "Kape Verde Be Yɛ Latsa Beiaŋ", "CVT": "Kape Verde Be Yɛ Fɛi Beiaŋ", "CXT": "CXT", "ChST": "ChST", "ChST NMI": "ChST NMI", "CuDT": "Kuba Be Yɛ Latsa Beiaŋ", "CuST": "Kuba Be Yɛ Fɛi Beiaŋ", "DAVT": "DAVT", "DDUT": "DDUT", "EASST": "EASST", "EAST": "EAST", "EAT": "Afrika Bokagbɛ Be", "ECT": "ECT", "EDT": "Amerika Bokãgbɛbii Abe Yɛ Latsa Beiaŋ", "EGDT": "Greenland Bokãgbɛ Be Yɛ Latsa Beiaŋ", "EGST": "Greenland Bokãgbɛ Be Yɛ Fɛi Beiaŋ", "EST": "Amerika Bokãgbɛbii Abe Yɛ Fɛi Beiaŋ", "FEET": "FEET", "FJT": "FJT", "FJT Summer": "FJT Summer", "FKST": "FKST", "FKT": "FKT", "FNST": "FNST", "FNT": "FNT", "GALT": "GALT", "GAMT": "GAMT", "GEST": "GEST", "GET": "GET", "GFT": "GFT", "GIT": "GIT", "GMT": "Betsɔɔmɔ ni ka ŋɛlɛ kome nɔ", "GNSST": "GNSST", "GNST": "GNST", "GST": "GST", "GST Guam": "GST Guam", "GYT": "GYT", "HADT": "Hawaii-Aleutia Be Yɛ Latsa Beiaŋ", "HAST": "Hawaii-Aleutia Be Yɛ Fɛi Beiaŋ", "HKST": "HKST", "HKT": "HKT", "HOVST": "HOVST", "HOVT": "HOVT", "ICT": "ICT", "IDT": "IDT", "IOT": "Indian Ŋshɔ Lɛ Be", "IRKST": "IRKST", "IRKT": "IRKT", "IRST": "IRST", "IRST DST": "IRST DST", "IST": "IST", "IST Israel": "IST Israel", "JDT": "JDT", "JST": "JST", "KOST": "KOST", "KRAST": "KRAST", "KRAT": "KRAT", "KST": "KST", "KST DST": "KST DST", "LHDT": "LHDT", "LHST": "LHST", "LINT": "LINT", "MAGST": "MAGST", "MAGT": "MAGT", "MART": "MART", "MAWT": "MAWT", "MDT": "MDT", "MESZ": "MESZ", "MEZ": "MEZ", "MHT": "MHT", "MMT": "MMT", "MSD": "MSD", "MST": "MST", "MUST": "Mauritius Be Yɛ Latsa Beiaŋ", "MUT": "Mauritius Be Yɛ Fɛi Beiaŋ", "MVT": "MVT", "MYT": "MYT", "NCT": "NCT", "NDT": "Newfoundland Be Yɛ Latsa Beiaŋ", "NDT New Caledonia": "NDT New Caledonia", "NFDT": "NFDT", "NFT": "NFT", "NOVST": "NOVST", "NOVT": "NOVT", "NPT": "NPT", "NRT": "NRT", "NST": "Newfoundland Be Yɛ Fɛi Beiaŋ", "NUT": "NUT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "OESZ", "OEZ": "OEZ", "OMSST": "OMSST", "OMST": "OMST", "PDT": "Pasifik Be Yɛ Latsa Beiaŋ", "PDTM": "Meziko Pasifik Be Yɛ Latsa Beiaŋ", "PETDT": "PETDT", "PETST": "PETST", "PGT": "PGT", "PHOT": "PHOT", "PKT": "PKT", "PKT DST": "PKT DST", "PMDT": "St. Pierre Kɛ Mikelon Be Yɛ Latsa Beiaŋ", "PMST": "St. Pierre Kɛ Mikelon Be Yɛ Fɛi Beiaŋ", "PONT": "PONT", "PST": "Pasifik Be Yɛ Fɛi Beiaŋ", "PST Philippine": "PST Philippine", "PST Philippine DST": "PST Philippine DST", "PST Pitcairn": "PST Pitcairn", "PSTM": "Meziko Pasifik Be Yɛ Fɛi Beiaŋ", "PWT": "PWT", "PYST": "PYST", "PYT": "PYT", "PYT Korea": "PYT Korea", "RET": "Réunion Be", "ROTT": "ROTT", "SAKST": "SAKST", "SAKT": "SAKT", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "South Afrika Be", "SBT": "SBT", "SCT": "Seyshelles Be", "SGT": "SGT", "SLST": "SLST", "SRT": "SRT", "SST Samoa": "SST Samoa", "SST Samoa Apia": "SST Samoa Apia", "SST Samoa Apia DST": "SST Samoa Apia DST", "SST Samoa DST": "SST Samoa DST", "SYOT": "SYOT", "TAAF": "Antarktik Kɛ Wuoyigbɛbii Ni Wieɔ Frɛntsi Be", "TAHT": "TAHT", "TJT": "TJT", "TKT": "TKT", "TLT": "TLT", "TMST": "TMST", "TMT": "TMT", "TOST": "TOST", "TOT": "TOT", "TVT": "TVT", "TWT": "TWT", "TWT DST": "TWT DST", "ULAST": "ULAST", "ULAT": "ULAT", "UYST": "UYST", "UYT": "UYT", "UZT": "UZT", "UZT DST": "UZT DST", "VET": "VET", "VLAST": "VLAST", "VLAT": "VLAT", "VOLST": "VOLST", "VOLT": "VOLT", "VOST": "VOST", "VUT": "VUT", "VUT DST": "VUT DST", "WAKT": "WAKT", "WARST": "WARST", "WART": "WART", "WAST": "Afrika Anaigbɛ Be", "WAT": "Afrika Anaigbɛ Be", "WESZ": "WESZ", "WEZ": "WEZ", "WFT": "WFT", "WGST": "Greenland Anaigbɛ Be Yɛ Latsa Beiaŋ", "WGT": "Greenland Anaigbɛ Be Yɛ Fɛi Beiaŋ", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "YAKST": "YAKST", "YAKT": "YAKT", "YEKST": "YEKST", "YEKT": "YEKT", "YST": "YST", "МСК": "МСК", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "باتىس قازاق ەلى", "شىعىش قازاق ەلى": "شىعىش قازاق ەلى", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "قىرعىزستان", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Azores Be Yɛ Latsa Beiaŋ"},
+		timezones:              map[string]string{"ACDT": "ACDT", "ACST": "ACST", "ACT": "ACT", "ACWDT": "ACWDT", "ACWST": "ACWST", "ADT": "Atlantik Be Yɛ Latsa Beiaŋ", "ADT Arabia": "ADT Arabia", "AEDT": "AEDT", "AEST": "AEST", "AFT": "AFT", "AKDT": "Alaska Be Yɛ Latsa Beiaŋ", "AKST": "Alaska Be Yɛ Fɛi Beiaŋ", "AMST": "AMST", "AMST Armenia": "AMST Armenia", "AMT": "AMT", "AMT Armenia": "AMT Armenia", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "ARST", "ART": "ART", "AST": "Atlantik Be Yɛ Fɛi Beiaŋ", "AST Arabia": "AST Arabia", "AWDT": "AWDT", "AWST": "AWST", "AZST": "AZST", "AZT": "AZT", "BDT Bangladesh": "BDT Bangladesh", "BNT": "BNT", "BOT": "BOT", "BRST": "BRST", "BRT": "BRT", "BST Bangladesh": "BST Bangladesh", "BT": "BT", "CAST": "CAST", "CAT": "Afrika Teŋgbɛ Be", "CCT": "CCT", "CDT": "Amerika Teŋgbɛbii Abe Yɛ Latsa Beiaŋ", "CHADT": "CHADT", "CHAST": "CHAST", "CHUT": "CHUT", "CKT": "CKT", "CKT DST": "CKT DST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "Amerika Teŋgbɛbii Abe Yɛ Fɛi Beiaŋ", "CST China": "CST China", "CST China DST": "CST China DST", "CVST": "Kape Verde Be Yɛ Latsa Beiaŋ", "CVT": "Kape Verde Be Yɛ Fɛi Beiaŋ", "CXT": "CXT", "ChST": "ChST", "ChST NMI": "ChST NMI", "CuDT": "Kuba Be Yɛ Latsa Beiaŋ", "CuST": "Kuba Be Yɛ Fɛi Beiaŋ", "DAVT": "DAVT", "DDUT": "DDUT", "EASST": "EASST", "EAST": "EAST", "EAT": "Afrika Bokagbɛ Be", "ECT": "ECT", "EDT": "Amerika Bokãgbɛbii Abe Yɛ Latsa Beiaŋ", "EGDT": "Greenland Bokãgbɛ Be Yɛ Latsa Beiaŋ", "EGST": "Greenland Bokãgbɛ Be Yɛ Fɛi Beiaŋ", "EST": "Amerika Bokãgbɛbii Abe Yɛ Fɛi Beiaŋ", "FEET": "FEET", "FJT": "FJT", "FJT Summer": "FJT Summer", "FKST": "FKST", "FKT": "FKT", "FNST": "FNST", "FNT": "FNT", "GALT": "GALT", "GAMT": "GAMT", "GEST": "GEST", "GET": "GET", "GFT": "GFT", "GIT": "GIT", "GMT": "Betsɔɔmɔ ni ka ŋɛlɛ kome nɔ", "GNSST": "GNSST", "GNST": "GNST", "GST": "GST", "GST Guam": "GST Guam", "GYT": "GYT", "HADT": "Hawaii-Aleutia Be Yɛ Latsa Beiaŋ", "HAST": "Hawaii-Aleutia Be Yɛ Fɛi Beiaŋ", "HKST": "HKST", "HKT": "HKT", "HOVST": "HOVST", "HOVT": "HOVT", "ICT": "ICT", "IDT": "IDT", "IOT": "Indian Ŋshɔ Lɛ Be", "IRKST": "IRKST", "IRKT": "IRKT", "IRST": "IRST", "IRST DST": "IRST DST", "IST": "IST", "IST Israel": "IST Israel", "JDT": "JDT", "JST": "JST", "KOST": "KOST", "KRAST": "KRAST", "KRAT": "KRAT", "KST": "KST", "KST DST": "KST DST", "LHDT": "LHDT", "LHST": "LHST", "LINT": "LINT", "MAGST": "MAGST", "MAGT": "MAGT", "MART": "MART", "MAWT": "MAWT", "MDT": "MDT", "MESZ": "MESZ", "MEZ": "MEZ", "MHT": "MHT", "MMT": "MMT", "MSD": "MSD", "MST": "MST", "MUST": "Mauritius Be Yɛ Latsa Beiaŋ", "MUT": "Mauritius Be Yɛ Fɛi Beiaŋ", "MVT": "MVT", "MYT": "MYT", "NCT": "NCT", "NDT": "Newfoundland Be Yɛ Latsa Beiaŋ", "NDT New Caledonia": "NDT New Caledonia", "NFDT": "NFDT", "NFT": "NFT", "NOVST": "NOVST", "NOVT": "NOVT", "NPT": "NPT", "NRT": "NRT", "NST": "Newfoundland Be Yɛ Fɛi Beiaŋ", "NUT": "NUT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "OESZ", "OEZ": "OEZ", "OMSST": "OMSST", "OMST": "OMST", "PDT": "Pasifik Be Yɛ Latsa Beiaŋ", "PDTM": "Meziko Pasifik Be Yɛ Latsa Beiaŋ", "PETDT": "PETDT", "PETST": "PETST", "PGT": "PGT", "PHOT": "PHOT", "PKT": "PKT", "PKT DST": "PKT DST", "PMDT": "St. Pierre Kɛ Mikelon Be Yɛ Latsa Beiaŋ", "PMST": "St. Pierre Kɛ Mikelon Be Yɛ Fɛi Beiaŋ", "PONT": "PONT", "PST": "Pasifik Be Yɛ Fɛi Beiaŋ", "PST Philippine": "PST Philippine", "PST Philippine DST": "PST Philippine DST", "PST Pitcairn": "PST Pitcairn", "PSTM": "Meziko Pasifik Be Yɛ Fɛi Beiaŋ", "PWT": "PWT", "PYST": "PYST", "PYT": "PYT", "PYT Korea": "PYT Korea", "RET": "Réunion Be", "ROTT": "ROTT", "SAKST": "SAKST", "SAKT": "SAKT", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "South Afrika Be", "SBT": "SBT", "SCT": "Seyshelles Be", "SGT": "SGT", "SLST": "SLST", "SRT": "SRT", "SST Samoa": "SST Samoa", "SST Samoa Apia": "SST Samoa Apia", "SST Samoa Apia DST": "SST Samoa Apia DST", "SST Samoa DST": "SST Samoa DST", "SYOT": "SYOT", "TAAF": "Antarktik Kɛ Wuoyigbɛbii Ni Wieɔ Frɛntsi Be", "TAHT": "TAHT", "TJT": "TJT", "TKT": "TKT", "TLT": "TLT", "TMST": "TMST", "TMT": "TMT", "TOST": "TOST", "TOT": "TOT", "TVT": "TVT", "TWT": "TWT", "TWT DST": "TWT DST", "ULAST": "ULAST", "ULAT": "ULAT", "UYST": "UYST", "UYT": "UYT", "UZT": "UZT", "UZT DST": "UZT DST", "VET": "VET", "VLAST": "VLAST", "VLAT": "VLAT", "VOLST": "VOLST", "VOLT": "VOLT", "VOST": "VOST", "VUT": "VUT", "VUT DST": "VUT DST", "WAKT": "WAKT", "WARST": "WARST", "WART": "WART", "WAST": "Afrika Anaigbɛ Be", "WAT": "Afrika Anaigbɛ Be", "WESZ": "WESZ", "WEZ": "WEZ", "WFT": "WFT", "WGST": "Greenland Anaigbɛ Be Yɛ Latsa Beiaŋ", "WGT": "Greenland Anaigbɛ Be Yɛ Fɛi Beiaŋ", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "YAKST": "YAKST", "YAKT": "YAKT", "YEKST": "YEKST", "YEKT": "YEKT", "YST": "YST", "МСК": "МСК", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "باتىس قازاق ەلى", "شىعىش قازاق ەلى": "شىعىش قازاق ەلى", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "قىرعىزستان", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "∅∅∅"},
 	}
 }
 
@@ -202,6 +202,7 @@ func (gaa *gaa) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'gaa' and handles both Whole and Real numbers based on 'v'
 func (gaa *gaa) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -273,9 +274,10 @@ func (gaa *gaa) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'gaa'
 func (gaa *gaa) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gaa.currencies[currency]
-	l := len(s) + len(symbol) + 3 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -324,17 +326,16 @@ func (gaa *gaa) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 		}
 	}
 
-	b = append(b, gaa.currencyPositiveSuffix...)
-
 	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'gaa'
 // in accounting notation.
 func (gaa *gaa) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gaa.currencies[currency]
-	l := len(s) + len(symbol) + 3 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -365,9 +366,10 @@ func (gaa *gaa) FmtAccounting(num float64, v uint64, currency currency.Type) str
 			b = append(b, symbol[j])
 		}
 
-		b = append(b, gaa.minus[0])
+		b = append(b, gaa.currencyNegativePrefix[0])
 
 	} else {
+
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
@@ -391,8 +393,6 @@ func (gaa *gaa) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 	if num < 0 {
 		b = append(b, gaa.currencyNegativeSuffix...)
-	} else {
-		b = append(b, gaa.currencyPositiveSuffix...)
 	}
 
 	return string(b)
@@ -400,6 +400,7 @@ func (gaa *gaa) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 // FmtDateShort returns the short date representation of 't' for 'gaa'
 func (gaa *gaa) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Month()), 10)
@@ -418,6 +419,7 @@ func (gaa *gaa) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'gaa'
 func (gaa *gaa) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, gaa.monthsAbbreviated[t.Month()]...)
@@ -436,6 +438,7 @@ func (gaa *gaa) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'gaa'
 func (gaa *gaa) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, gaa.monthsWide[t.Month()]...)
@@ -454,6 +457,7 @@ func (gaa *gaa) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'gaa'
 func (gaa *gaa) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, gaa.daysWide[t.Weekday()]...)
@@ -474,6 +478,7 @@ func (gaa *gaa) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'gaa'
 func (gaa *gaa) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -503,6 +508,7 @@ func (gaa *gaa) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'gaa'
 func (gaa *gaa) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -539,6 +545,7 @@ func (gaa *gaa) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'gaa'
 func (gaa *gaa) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -580,6 +587,7 @@ func (gaa *gaa) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'gaa'
 func (gaa *gaa) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

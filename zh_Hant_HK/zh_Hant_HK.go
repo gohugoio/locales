@@ -45,7 +45,7 @@ func New() locales.Translator {
 		minus:                  "-",
 		percent:                "%",
 		timeSeparator:          ":",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "₩", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AU$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "р.", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILS", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "₩", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "р.", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
 		currencyPositiveSuffix: "K",
 		currencyNegativeSuffix: "K",
 		monthsAbbreviated:      []string{"", "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"},
@@ -54,7 +54,7 @@ func New() locales.Translator {
 		daysNarrow:             []string{"日", "一", "二", "三", "四", "五", "六"},
 		daysWide:               []string{"星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"},
 		periodsAbbreviated:     []string{"", ""},
-		timezones:              map[string]string{"ACDT": "澳大利亚中部夏令时间", "ACST": "澳大利亚中部标准时间", "ACT": "阿克里标准时间", "ACWDT": "澳大利亚中西部夏令时间", "ACWST": "澳大利亚中西部标准时间", "ADT": "大西洋夏令时间", "ADT Arabia": "阿拉伯夏令时间", "AEDT": "澳大利亚东部夏令时间", "AEST": "澳大利亚东部标准时间", "AFT": "阿富汗时间", "AKDT": "阿拉斯加夏令时间", "AKST": "阿拉斯加标准时间", "AMST": "亚马逊夏令时间", "AMST Armenia": "亚美尼亚夏令时间", "AMT": "亚马逊标准时间", "AMT Armenia": "亚美尼亚标准时间", "ANAST": "阿纳德尔夏令时间", "ANAT": "阿纳德尔标准时间", "ARST": "阿根廷夏令时间", "ART": "阿根廷标准时间", "AST": "大西洋标准时间", "AST Arabia": "阿拉伯标准时间", "AWDT": "澳大利亚西部夏令时间", "AWST": "澳大利亚西部标准时间", "AZST": "亞塞拜疆夏令時間", "AZT": "亞塞拜疆標準時間", "BDT Bangladesh": "孟加拉夏令时间", "BNT": "文莱达鲁萨兰时间", "BOT": "玻利维亚标准时间", "BRST": "巴西利亚夏令时间", "BRT": "巴西利亚标准时间", "BST Bangladesh": "孟加拉标准时间", "BT": "不丹时间", "CAST": "凯西时间", "CAT": "中部非洲时间", "CCT": "可可斯群島時間", "CDT": "北美中部夏令時間", "CHADT": "查塔姆夏令时间", "CHAST": "查塔姆标准时间", "CHUT": "楚克时间", "CKT": "库克群岛标准时间", "CKT DST": "库克群岛仲夏时间", "CLST": "智利夏令时间", "CLT": "智利标准时间", "COST": "哥伦比亚夏令时间", "COT": "哥伦比亚标准时间", "CST": "北美中部標準時間", "CST China": "中国标准时间", "CST China DST": "中国夏令时间", "CVST": "佛得角夏令時間", "CVT": "佛得角標準時間", "CXT": "圣诞岛时间", "ChST": "查莫罗时间", "ChST NMI": "北马里亚纳群岛时间", "CuDT": "古巴夏令时间", "CuST": "古巴标准时间", "DAVT": "戴维斯时间", "DDUT": "迪蒙迪維爾時間", "EASST": "复活节岛夏令时间", "EAST": "复活节岛标准时间", "EAT": "东部非洲时间", "ECT": "厄瓜多爾時間", "EDT": "北美東部夏令時間", "EGDT": "格陵兰岛东部夏令时间", "EGST": "格陵兰岛东部标准时间", "EST": "北美東部標準時間", "FEET": "欧洲极东时间", "FJT": "斐济标准时间", "FJT Summer": "斐济夏令时间", "FKST": "福克兰群岛夏令时间", "FKT": "福克兰群岛标准时间", "FNST": "費爾南多迪諾羅尼亞夏令時間", "FNT": "費爾南多迪諾羅尼亞標準時間", "GALT": "加拉帕戈群島時間", "GAMT": "甘比尔时间", "GEST": "格魯吉亞夏令時間", "GET": "格魯吉亞標準時間", "GFT": "法属圭亚那标准时间", "GIT": "吉尔伯特群岛时间", "GMT": "格林尼治标准时间", "GNSST": "GNSST", "GNST": "GNST", "GST": "波斯灣海域時間", "GST Guam": "关岛时间", "GYT": "圭亞那時間", "HADT": "夏威夷-阿留申夏令时间", "HAST": "夏威夷-阿留申标准时间", "HKST": "香港夏令时间", "HKT": "香港标准时间", "HOVST": "科布多夏令时间", "HOVT": "科布多标准时间", "ICT": "中南半岛时间", "IDT": "以色列夏令时间", "IOT": "印度洋时间", "IRKST": "伊爾庫茨克夏令時間", "IRKT": "伊爾庫茨克標準時間", "IRST": "伊朗标准时间", "IRST DST": "伊朗夏令时间", "IST": "印度時間", "IST Israel": "以色列标准时间", "JDT": "日本夏令时间", "JST": "日本标准时间", "KOST": "科斯雷時間", "KRAST": "克拉斯诺亚尔斯克夏令时间", "KRAT": "克拉斯诺亚尔斯克标准时间", "KST": "韩国标准时间", "KST DST": "韩国夏令时间", "LHDT": "豪勋爵岛夏令时间", "LHST": "豪勋爵岛标准时间", "LINT": "莱恩群岛时间", "MAGST": "马加丹夏令时间", "MAGT": "马加丹标准时间", "MART": "馬克薩斯時間", "MAWT": "莫森时间", "MDT": "澳门夏令时间", "MESZ": "中欧夏令时间", "MEZ": "中欧标准时间", "MHT": "马绍尔群岛时间", "MMT": "缅甸时间", "MSD": "莫斯科夏令时间", "MST": "澳门标准时间", "MUST": "毛里裘斯夏令時間", "MUT": "毛里裘斯標準時間", "MVT": "馬爾代夫時間", "MYT": "马来西亚时间", "NCT": "新喀里多尼亞標準時間", "NDT": "纽芬兰夏令时间", "NDT New Caledonia": "新喀里多尼亞夏令時間", "NFDT": "诺福克岛夏令时间", "NFT": "诺福克岛标准时间", "NOVST": "新西伯利亚夏令时间", "NOVT": "新西伯利亚标准时间", "NPT": "尼泊尔时间", "NRT": "瑙魯時間", "NST": "纽芬兰标准时间", "NUT": "纽埃时间", "NZDT": "新西兰夏令时间", "NZST": "新西兰标准时间", "OESZ": "东欧夏令时间", "OEZ": "东欧标准时间", "OMSST": "鄂木斯克夏令时间", "OMST": "鄂木斯克标准时间", "PDT": "北美太平洋夏令時間", "PDTM": "墨西哥太平洋夏令时间", "PETDT": "彼得罗巴甫洛夫斯克-堪察加夏令时间", "PETST": "彼得罗巴甫洛夫斯克-堪察加标准时间", "PGT": "巴布亞新畿內亞時間", "PHOT": "菲尼克斯群岛时间", "PKT": "巴基斯坦标准时间", "PKT DST": "巴基斯坦夏令时间", "PMDT": "圣皮埃尔和密克隆群岛夏令时间", "PMST": "圣皮埃尔和密克隆群岛标准时间", "PONT": "波纳佩时间", "PST": "北美太平洋標準時間", "PST Philippine": "菲律宾标准时间", "PST Philippine DST": "菲律宾夏令时间", "PST Pitcairn": "皮特康時間", "PSTM": "墨西哥太平洋标准时间", "PWT": "帕劳时间", "PYST": "巴拉圭夏令时间", "PYT": "巴拉圭标准时间", "PYT Korea": "平壤时间", "RET": "留尼汪时间", "ROTT": "罗瑟拉时间", "SAKST": "库页岛夏令时间", "SAKT": "库页岛标准时间", "SAMST": "萨马拉夏令时间", "SAMT": "萨马拉标准时间", "SAST": "南非時間", "SBT": "所羅門群島時間", "SCT": "塞舌爾時間", "SGT": "新加坡時間", "SLST": "兰卡时间", "SRT": "蘇里南時間", "SST Samoa": "萨摩亚标准时间", "SST Samoa Apia": "阿皮亚标准时间", "SST Samoa Apia DST": "阿皮亚夏令时间", "SST Samoa DST": "萨摩亚夏令时间", "SYOT": "昭和时间", "TAAF": "法属南方和南极领地时间", "TAHT": "塔希提岛时间", "TJT": "塔吉克斯坦时间", "TKT": "托克劳时间", "TLT": "东帝汶时间", "TMST": "土库曼斯坦夏令时间", "TMT": "土库曼斯坦标准时间", "TOST": "湯加夏令時間", "TOT": "湯加標準時間", "TVT": "圖瓦盧時間", "TWT": "台北标准时间", "TWT DST": "台北夏令时间", "ULAST": "乌兰巴托夏令时间", "ULAT": "乌兰巴托标准时间", "UYST": "乌拉圭夏令时间", "UYT": "乌拉圭标准时间", "UZT": "乌兹别克斯坦标准时间", "UZT DST": "乌兹别克斯坦夏令时间", "VET": "委内瑞拉时间", "VLAST": "海参崴夏令时间", "VLAT": "海参崴标准时间", "VOLST": "伏尔加格勒夏令时间", "VOLT": "伏尔加格勒标准时间", "VOST": "沃斯托克时间", "VUT": "瓦努阿圖標準時間", "VUT DST": "瓦努阿圖夏令時間", "WAKT": "威克岛时间", "WARST": "阿根廷西部夏令时间", "WART": "阿根廷西部标准时间", "WAST": "西部非洲时间", "WAT": "西部非洲时间", "WESZ": "西欧夏令时间", "WEZ": "西欧标准时间", "WFT": "瓦利斯和富图纳时间", "WGST": "格陵兰岛西部夏令时间", "WGT": "格陵兰岛西部标准时间", "WIB": "印度尼西亚西部时间", "WIT": "印度尼西亚东部时间", "WITA": "印度尼西亚中部时间", "YAKST": "雅庫茨克夏令時間", "YAKT": "雅庫茨克標準時間", "YEKST": "叶卡捷琳堡夏令时间", "YEKT": "叶卡捷琳堡标准时间", "YST": "育空时间", "МСК": "莫斯科标准时间", "اقتاۋ": "阿克套标准时间", "اقتاۋ قالاسى": "阿克套夏令时间", "اقتوبە": "阿克托别标准时间", "اقتوبە قالاسى": "阿克托别夏令时间", "الماتى": "阿拉木图标准时间", "الماتى قالاسى": "阿拉木图夏令时间", "باتىس قازاق ەلى": "哈萨克斯坦西部时间", "شىعىش قازاق ەلى": "哈萨克斯坦东部时间", "قازاق ەلى": "哈萨克斯坦时间", "قىرعىزستان": "吉尔吉斯斯坦时间", "قىزىلوردا": "克孜洛尔达标准时间", "قىزىلوردا قالاسى": "克孜洛尔达夏令时间", "∅∅∅": "亚速尔群岛夏令时间"},
+		timezones:              map[string]string{"ACDT": "澳大利亚中部夏令时间", "ACST": "阿克里夏令时间", "ACT": "阿克里标准时间", "ACWDT": "澳大利亚中西部夏令时间", "ACWST": "澳大利亚中西部标准时间", "ADT": "大西洋夏令时间", "ADT Arabia": "阿拉伯夏令时间", "AEDT": "澳大利亚东部夏令时间", "AEST": "澳大利亚东部标准时间", "AFT": "阿富汗时间", "AKDT": "阿拉斯加夏令时间", "AKST": "阿拉斯加标准时间", "AMST": "亚马逊夏令时间", "AMST Armenia": "亚美尼亚夏令时间", "AMT": "亚马逊标准时间", "AMT Armenia": "亚美尼亚标准时间", "ANAST": "阿纳德尔夏令时间", "ANAT": "阿纳德尔标准时间", "ARST": "阿根廷夏令时间", "ART": "阿根廷标准时间", "AST": "大西洋标准时间", "AST Arabia": "阿拉伯标准时间", "AWDT": "澳大利亚西部夏令时间", "AWST": "澳大利亚西部标准时间", "AZST": "亞塞拜疆夏令時間", "AZT": "亞塞拜疆標準時間", "BDT Bangladesh": "孟加拉夏令时间", "BNT": "文莱达鲁萨兰时间", "BOT": "玻利维亚标准时间", "BRST": "巴西利亚夏令时间", "BRT": "巴西利亚标准时间", "BST Bangladesh": "孟加拉标准时间", "BT": "不丹时间", "CAST": "凯西时间", "CAT": "中部非洲时间", "CCT": "可可斯群島時間", "CDT": "北美中部夏令時間", "CHADT": "查塔姆夏令时间", "CHAST": "查塔姆标准时间", "CHUT": "楚克时间", "CKT": "库克群岛标准时间", "CKT DST": "库克群岛仲夏时间", "CLST": "智利夏令时间", "CLT": "智利标准时间", "COST": "哥伦比亚夏令时间", "COT": "哥伦比亚标准时间", "CST": "北美中部標準時間", "CST China": "中国标准时间", "CST China DST": "中国夏令时间", "CVST": "佛得角夏令時間", "CVT": "佛得角標準時間", "CXT": "圣诞岛时间", "ChST": "查莫罗时间", "ChST NMI": "北马里亚纳群岛时间", "CuDT": "古巴夏令时间", "CuST": "古巴标准时间", "DAVT": "戴维斯时间", "DDUT": "迪蒙迪維爾時間", "EASST": "复活节岛夏令时间", "EAST": "复活节岛标准时间", "EAT": "东部非洲时间", "ECT": "厄瓜多爾時間", "EDT": "北美東部夏令時間", "EGDT": "格陵兰岛东部夏令时间", "EGST": "格陵兰岛东部标准时间", "EST": "北美東部標準時間", "FEET": "欧洲极东时间", "FJT": "斐济标准时间", "FJT Summer": "斐济夏令时间", "FKST": "福克兰群岛夏令时间", "FKT": "福克兰群岛标准时间", "FNST": "費爾南多迪諾羅尼亞夏令時間", "FNT": "費爾南多迪諾羅尼亞標準時間", "GALT": "加拉帕戈群島時間", "GAMT": "甘比尔时间", "GEST": "格魯吉亞夏令時間", "GET": "格魯吉亞標準時間", "GFT": "法属圭亚那标准时间", "GIT": "吉尔伯特群岛时间", "GMT": "格林尼治标准时间", "GNSST": "GNSST", "GNST": "GNST", "GST": "南乔治亚岛时间", "GST Guam": "关岛时间", "GYT": "圭亞那時間", "HADT": "夏威夷-阿留申标准时间", "HAST": "夏威夷-阿留申标准时间", "HKST": "香港夏令时间", "HKT": "香港标准时间", "HOVST": "科布多夏令时间", "HOVT": "科布多标准时间", "ICT": "中南半岛时间", "IDT": "以色列夏令时间", "IOT": "印度洋时间", "IRKST": "伊爾庫茨克夏令時間", "IRKT": "伊爾庫茨克標準時間", "IRST": "伊朗标准时间", "IRST DST": "伊朗夏令时间", "IST": "印度時間", "IST Israel": "以色列标准时间", "JDT": "日本夏令时间", "JST": "日本标准时间", "KOST": "科斯雷時間", "KRAST": "克拉斯诺亚尔斯克夏令时间", "KRAT": "克拉斯诺亚尔斯克标准时间", "KST": "韩国标准时间", "KST DST": "韩国夏令时间", "LHDT": "豪勋爵岛夏令时间", "LHST": "豪勋爵岛标准时间", "LINT": "莱恩群岛时间", "MAGST": "马加丹夏令时间", "MAGT": "马加丹标准时间", "MART": "馬克薩斯時間", "MAWT": "莫森时间", "MDT": "澳门夏令时间", "MESZ": "中欧夏令时间", "MEZ": "中欧标准时间", "MHT": "马绍尔群岛时间", "MMT": "缅甸时间", "MSD": "莫斯科夏令时间", "MST": "澳门标准时间", "MUST": "毛里裘斯夏令時間", "MUT": "毛里裘斯標準時間", "MVT": "馬爾代夫時間", "MYT": "马来西亚时间", "NCT": "新喀里多尼亞標準時間", "NDT": "纽芬兰夏令时间", "NDT New Caledonia": "新喀里多尼亞夏令時間", "NFDT": "诺福克岛夏令时间", "NFT": "诺福克岛标准时间", "NOVST": "新西伯利亚夏令时间", "NOVT": "新西伯利亚标准时间", "NPT": "尼泊尔时间", "NRT": "瑙魯時間", "NST": "纽芬兰标准时间", "NUT": "纽埃时间", "NZDT": "新西兰夏令时间", "NZST": "新西兰标准时间", "OESZ": "东欧夏令时间", "OEZ": "东欧标准时间", "OMSST": "鄂木斯克夏令时间", "OMST": "鄂木斯克标准时间", "PDT": "北美太平洋夏令時間", "PDTM": "墨西哥太平洋夏令时间", "PETDT": "彼得罗巴甫洛夫斯克-堪察加夏令时间", "PETST": "彼得罗巴甫洛夫斯克-堪察加标准时间", "PGT": "巴布亞新畿內亞時間", "PHOT": "菲尼克斯群岛时间", "PKT": "巴基斯坦标准时间", "PKT DST": "巴基斯坦夏令时间", "PMDT": "圣皮埃尔和密克隆群岛夏令时间", "PMST": "圣皮埃尔和密克隆群岛标准时间", "PONT": "波纳佩时间", "PST": "北美太平洋標準時間", "PST Philippine": "菲律宾标准时间", "PST Philippine DST": "菲律宾夏令时间", "PST Pitcairn": "皮特康時間", "PSTM": "墨西哥太平洋标准时间", "PWT": "帕劳时间", "PYST": "巴拉圭夏令时间", "PYT": "巴拉圭标准时间", "PYT Korea": "平壤时间", "RET": "留尼汪时间", "ROTT": "罗瑟拉时间", "SAKST": "库页岛夏令时间", "SAKT": "库页岛标准时间", "SAMST": "萨马拉夏令时间", "SAMT": "萨马拉标准时间", "SAST": "南非時間", "SBT": "所羅門群島時間", "SCT": "塞舌爾時間", "SGT": "新加坡時間", "SLST": "兰卡时间", "SRT": "蘇里南時間", "SST Samoa": "萨摩亚标准时间", "SST Samoa Apia": "阿皮亚标准时间", "SST Samoa Apia DST": "阿皮亚夏令时间", "SST Samoa DST": "萨摩亚夏令时间", "SYOT": "昭和时间", "TAAF": "法属南方和南极领地时间", "TAHT": "塔希提岛时间", "TJT": "塔吉克斯坦时间", "TKT": "托克劳时间", "TLT": "东帝汶时间", "TMST": "土库曼斯坦夏令时间", "TMT": "土库曼斯坦标准时间", "TOST": "湯加夏令時間", "TOT": "湯加標準時間", "TVT": "圖瓦盧時間", "TWT": "台北标准时间", "TWT DST": "台北夏令时间", "ULAST": "乌兰巴托夏令时间", "ULAT": "乌兰巴托标准时间", "UYST": "乌拉圭夏令时间", "UYT": "乌拉圭标准时间", "UZT": "乌兹别克斯坦标准时间", "UZT DST": "乌兹别克斯坦夏令时间", "VET": "委内瑞拉时间", "VLAST": "海参崴夏令时间", "VLAT": "海参崴标准时间", "VOLST": "伏尔加格勒夏令时间", "VOLT": "伏尔加格勒标准时间", "VOST": "沃斯托克时间", "VUT": "瓦努阿圖標準時間", "VUT DST": "瓦努阿圖夏令時間", "WAKT": "威克岛时间", "WARST": "阿根廷西部夏令时间", "WART": "阿根廷西部标准时间", "WAST": "西部非洲时间", "WAT": "西部非洲时间", "WESZ": "西欧夏令时间", "WEZ": "西欧标准时间", "WFT": "瓦利斯和富图纳时间", "WGST": "格陵兰岛西部夏令时间", "WGT": "格陵兰岛西部标准时间", "WIB": "印度尼西亚西部时间", "WIT": "印度尼西亚东部时间", "WITA": "印度尼西亚中部时间", "YAKST": "雅庫茨克夏令時間", "YAKT": "雅庫茨克標準時間", "YEKST": "叶卡捷琳堡夏令时间", "YEKT": "叶卡捷琳堡标准时间", "YST": "育空时间", "МСК": "莫斯科标准时间", "اقتاۋ": "阿克套标准时间", "اقتاۋ قالاسى": "阿克套夏令时间", "اقتوبە": "阿克托别标准时间", "اقتوبە قالاسى": "阿克托别夏令时间", "الماتى": "阿拉木图标准时间", "الماتى قالاسى": "阿拉木图夏令时间", "باتىس قازاق ەلى": "哈萨克斯坦西部时间", "شىعىش قازاق ەلى": "哈萨克斯坦东部时间", "قازاق ەلى": "哈萨克斯坦时间", "قىرعىزستان": "吉尔吉斯斯坦时间", "قىزىلوردا": "克孜洛尔达标准时间", "قىزىلوردا قالاسى": "克孜洛尔达夏令时间", "∅∅∅": "亚速尔群岛夏令时间"},
 	}
 }
 
@@ -201,6 +201,7 @@ func (zh *zh_Hant_HK) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'zh_Hant_HK' and handles both Whole and Real numbers based on 'v'
 func (zh *zh_Hant_HK) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -272,6 +273,7 @@ func (zh *zh_Hant_HK) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'zh_Hant_HK'
 func (zh *zh_Hant_HK) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := zh.currencies[currency]
 	l := len(s) + len(symbol) + 3
@@ -309,6 +311,7 @@ func (zh *zh_Hant_HK) FmtCurrency(num float64, v uint64, currency currency.Type)
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'zh_Hant_HK'
 // in accounting notation.
 func (zh *zh_Hant_HK) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := zh.currencies[currency]
 	l := len(s) + len(symbol) + 3
@@ -334,6 +337,7 @@ func (zh *zh_Hant_HK) FmtAccounting(num float64, v uint64, currency currency.Typ
 		b = append(b, zh.minus[0])
 
 	} else {
+
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
@@ -347,6 +351,7 @@ func (zh *zh_Hant_HK) FmtAccounting(num float64, v uint64, currency currency.Typ
 	if num < 0 {
 		b = append(b, zh.currencyNegativeSuffix...)
 	} else {
+
 		b = append(b, zh.currencyPositiveSuffix...)
 	}
 
@@ -355,6 +360,7 @@ func (zh *zh_Hant_HK) FmtAccounting(num float64, v uint64, currency currency.Typ
 
 // FmtDateShort returns the short date representation of 't' for 'zh_Hant_HK'
 func (zh *zh_Hant_HK) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -373,6 +379,7 @@ func (zh *zh_Hant_HK) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'zh_Hant_HK'
 func (zh *zh_Hant_HK) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -392,6 +399,7 @@ func (zh *zh_Hant_HK) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'zh_Hant_HK'
 func (zh *zh_Hant_HK) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -411,6 +419,7 @@ func (zh *zh_Hant_HK) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'zh_Hant_HK'
 func (zh *zh_Hant_HK) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -431,6 +440,7 @@ func (zh *zh_Hant_HK) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'zh_Hant_HK'
 func (zh *zh_Hant_HK) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 12 {
@@ -459,6 +469,7 @@ func (zh *zh_Hant_HK) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'zh_Hant_HK'
 func (zh *zh_Hant_HK) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 12 {
@@ -494,6 +505,7 @@ func (zh *zh_Hant_HK) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'zh_Hant_HK'
 func (zh *zh_Hant_HK) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 12 {
@@ -535,6 +547,7 @@ func (zh *zh_Hant_HK) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'zh_Hant_HK'
 func (zh *zh_Hant_HK) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 12 {

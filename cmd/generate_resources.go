@@ -46,6 +46,7 @@ var (
 		},
 		"escape_str": func(s string) string {
 			r := strings.NewReplacer(
+				"\u00a0", " ", // NBSP -> regular space
 				"\u200e", `\u200e`,
 				"\u200f", `\u200f`,
 				"\u200b", `\u200b`,
@@ -787,6 +788,38 @@ func postProcess(cldr *cldr.CLDR) {
 			}
 		}
 
+		// inherit currency symbols from parent locale
+		if inheritedFound {
+			inheritedLdml := cldr.RawLDML(inherited.Locale)
+			if inheritedLdml.Numbers != nil && inheritedLdml.Numbers.Currencies != nil {
+				for _, currency := range inheritedLdml.Numbers.Currencies.Currency {
+					if len(currency.Symbol) == 0 || len(currency.Symbol[0].Data()) == 0 || len(currency.Type) == 0 {
+						continue
+					}
+					idx := globCurrencyIdxMap[currency.Type]
+					// Only inherit if the current locale still has the default (currency code)
+					if currencies[idx] == currency.Type {
+						currencies[idx] = currency.Symbol[0].Data()
+					}
+				}
+			}
+		}
+
+		if baseFound {
+			baseLdml := cldr.RawLDML(base.Locale)
+			if baseLdml.Numbers != nil && baseLdml.Numbers.Currencies != nil {
+				for _, currency := range baseLdml.Numbers.Currencies.Currency {
+					if len(currency.Symbol) == 0 || len(currency.Symbol[0].Data()) == 0 || len(currency.Type) == 0 {
+						continue
+					}
+					idx := globCurrencyIdxMap[currency.Type]
+					if currencies[idx] == currency.Type {
+						currencies[idx] = currency.Symbol[0].Data()
+					}
+				}
+			}
+		}
+
 		trans.Currencies = fmt.Sprintf("%#v", currencies)
 
 		// timezones
@@ -918,19 +951,19 @@ func preProcess(cldrVar *cldr.CLDR) {
 		// some just have no data...
 		if ldml.Numbers != nil {
 
+			// Determine the default numbering system for this locale
+			dns := "latn" // default per CLDR root
+			if systems := ldml.Numbers.DefaultNumberingSystem; len(systems) > 0 {
+				if d := systems[0].Data(); d != "" {
+					dns = d
+				}
+			}
+
 			if len(ldml.Numbers.Symbols) > 0 {
 
 				symbol := ldml.Numbers.Symbols[0]
 
-				// Try to get the default numbering system instead of the first one
-				systems := ldml.Numbers.DefaultNumberingSystem
-				// There shouldn't really be more than one DefaultNumberingSystem
-				dns := "latn" // default per CLDR root
-				if len(systems) > 0 {
-					if d := systems[0].Data(); d != "" {
-						dns = d
-					}
-				}
+				// Use the symbol set matching the default numbering system
 				for k := range ldml.Numbers.Symbols {
 					if ldml.Numbers.Symbols[k].NumberSystem == dns {
 						symbol = ldml.Numbers.Symbols[k]
@@ -955,7 +988,13 @@ func preProcess(cldrVar *cldr.CLDR) {
 				}
 
 				if len(symbol.TimeSeparator) > 0 {
-					trans.TimeSeparator = symbol.TimeSeparator[0].Data()
+					// Only use the default timeSeparator, skip alt="variant" entries
+					for _, ts := range symbol.TimeSeparator {
+						if ts.Alt == "" {
+							trans.TimeSeparator = ts.Data()
+							break
+						}
+					}
 				}
 
 				if len(symbol.Infinity) > 0 {
@@ -974,39 +1013,69 @@ func preProcess(cldrVar *cldr.CLDR) {
 				}
 			}
 
-			if len(ldml.Numbers.DecimalFormats) > 0 && len(ldml.Numbers.DecimalFormats[0].DecimalFormatLength) > 0 {
-				for _, dfl := range ldml.Numbers.DecimalFormats[0].DecimalFormatLength {
-					if len(dfl.Type) == 0 {
-						trans.DecimalNumberFormat = dfl.DecimalFormat[0].Pattern[0].Data()
+			// Find the DecimalFormats entry matching the default numbering system
+			if len(ldml.Numbers.DecimalFormats) > 0 {
+				decFmt := ldml.Numbers.DecimalFormats[0]
+				for k := range ldml.Numbers.DecimalFormats {
+					if ldml.Numbers.DecimalFormats[k].NumberSystem == dns {
+						decFmt = ldml.Numbers.DecimalFormats[k]
 						break
+					}
+				}
+				if len(decFmt.DecimalFormatLength) > 0 {
+					for _, dfl := range decFmt.DecimalFormatLength {
+						if len(dfl.Type) == 0 && len(dfl.DecimalFormat) > 0 && len(dfl.DecimalFormat[0].Pattern) > 0 {
+							trans.DecimalNumberFormat = dfl.DecimalFormat[0].Pattern[0].Data()
+							break
+						}
 					}
 				}
 			}
 
-			if len(ldml.Numbers.PercentFormats) > 0 && len(ldml.Numbers.PercentFormats[0].PercentFormatLength) > 0 {
-				for _, dfl := range ldml.Numbers.PercentFormats[0].PercentFormatLength {
-					if len(dfl.Type) == 0 {
-						trans.PercentNumberFormat = dfl.PercentFormat[0].Pattern[0].Data()
+			// Find the PercentFormats entry matching the default numbering system
+			if len(ldml.Numbers.PercentFormats) > 0 {
+				pctFmt := ldml.Numbers.PercentFormats[0]
+				for k := range ldml.Numbers.PercentFormats {
+					if ldml.Numbers.PercentFormats[k].NumberSystem == dns {
+						pctFmt = ldml.Numbers.PercentFormats[k]
 						break
+					}
+				}
+				if len(pctFmt.PercentFormatLength) > 0 {
+					for _, dfl := range pctFmt.PercentFormatLength {
+						if len(dfl.Type) == 0 && len(dfl.PercentFormat) > 0 && len(dfl.PercentFormat[0].Pattern) > 0 {
+							trans.PercentNumberFormat = dfl.PercentFormat[0].Pattern[0].Data()
+							break
+						}
 					}
 				}
 			}
 
-			if len(ldml.Numbers.CurrencyFormats) > 0 && len(ldml.Numbers.CurrencyFormats[0].CurrencyFormatLength) > 0 {
-				if len(ldml.Numbers.CurrencyFormats[0].CurrencyFormatLength[0].CurrencyFormat) > 1 {
-
-					split := strings.SplitN(ldml.Numbers.CurrencyFormats[0].CurrencyFormatLength[0].CurrencyFormat[1].Pattern[0].Data(), ";", 2)
-
+			// Find the CurrencyFormats entry matching the default numbering system
+			if len(ldml.Numbers.CurrencyFormats) > 0 {
+				curFmt := ldml.Numbers.CurrencyFormats[0]
+				for k := range ldml.Numbers.CurrencyFormats {
+					if ldml.Numbers.CurrencyFormats[k].NumberSystem == dns {
+						curFmt = ldml.Numbers.CurrencyFormats[k]
+						break
+					}
+				}
+				if len(curFmt.CurrencyFormatLength) > 0 && len(curFmt.CurrencyFormatLength[0].CurrencyFormat) > 0 && len(curFmt.CurrencyFormatLength[0].CurrencyFormat[0].Pattern) > 0 {
+					// Use the standard format (CurrencyFormat[0], type="standard") for the positive pattern
+					split := strings.SplitN(curFmt.CurrencyFormatLength[0].CurrencyFormat[0].Pattern[0].Data(), ";", 2)
 					trans.CurrencyNumberFormat = split[0]
 
-					if len(split) > 1 && len(split[1]) > 0 {
-						trans.NegativeCurrencyNumberFormat = split[1]
-					} else {
-						trans.NegativeCurrencyNumberFormat = trans.CurrencyNumberFormat
-					}
-				} else {
-					trans.CurrencyNumberFormat = ldml.Numbers.CurrencyFormats[0].CurrencyFormatLength[0].CurrencyFormat[0].Pattern[0].Data()
+					// For the negative format, prefer the accounting format (CurrencyFormat[1]) if available,
+					// as it provides proper accounting notation (e.g., parenthesized negatives).
 					trans.NegativeCurrencyNumberFormat = trans.CurrencyNumberFormat
+					if len(curFmt.CurrencyFormatLength[0].CurrencyFormat) > 1 && len(curFmt.CurrencyFormatLength[0].CurrencyFormat[1].Pattern) > 0 {
+						acctSplit := strings.SplitN(curFmt.CurrencyFormatLength[0].CurrencyFormat[1].Pattern[0].Data(), ";", 2)
+						if len(acctSplit) > 1 && len(acctSplit[1]) > 0 {
+							trans.NegativeCurrencyNumberFormat = acctSplit[1]
+						}
+					} else if len(split) > 1 && len(split[1]) > 0 {
+						trans.NegativeCurrencyNumberFormat = split[1]
+					}
 				}
 			}
 		}
@@ -1845,52 +1914,37 @@ func parseCurrencyNumberFormat(trans *translator) {
 		trans.FmtCurrencySecondaryGroupLen = len(match) - 2
 	}
 
-	idx := 0
+	// Extract prefix (everything before the first # or 0) and suffix (everything after the last # or 0)
+	// using rune-based iteration to correctly handle multi-byte characters like ¤ (U+00A4)
+	prefixEnd := strings.IndexAny(trans.CurrencyNumberFormat, "#0")
+	if prefixEnd >= 0 {
+		trans.FmtCurrencyPrefix = trans.CurrencyNumberFormat[:prefixEnd]
+	}
 
-	for idx = 0; idx < len(trans.CurrencyNumberFormat); idx++ {
-		if trans.CurrencyNumberFormat[idx] == '#' || trans.CurrencyNumberFormat[idx] == '0' {
-			trans.FmtCurrencyPrefix = trans.CurrencyNumberFormat[:idx]
-			break
+	suffixStart := strings.LastIndexAny(trans.CurrencyNumberFormat, "#0")
+	if suffixStart >= 0 {
+		trans.FmtCurrencySuffix = trans.CurrencyNumberFormat[suffixStart+1:]
+	}
+
+	if idx := strings.Index(trans.FmtCurrencyPrefix, "¤"); idx >= 0 {
+		trans.FmtCurrencyInPrefix = true
+		trans.FmtCurrencyPrefix = strings.Replace(trans.FmtCurrencyPrefix, "¤", "", 1)
+
+		if idx == 0 {
+			trans.FmtCurrencyLeft = true
+		} else {
+			trans.FmtCurrencyLeft = false
 		}
 	}
 
-	for idx = len(trans.CurrencyNumberFormat) - 1; idx >= 0; idx-- {
-		if trans.CurrencyNumberFormat[idx] == '#' || trans.CurrencyNumberFormat[idx] == '0' {
-			idx++
-			trans.FmtCurrencySuffix = trans.CurrencyNumberFormat[idx:]
-			break
-		}
-	}
+	if idx := strings.Index(trans.FmtCurrencySuffix, "¤"); idx >= 0 {
+		trans.FmtCurrencyInPrefix = false
+		trans.FmtCurrencySuffix = strings.Replace(trans.FmtCurrencySuffix, "¤", "", 1)
 
-	for idx = 0; idx < len(trans.FmtCurrencyPrefix); idx++ {
-		if trans.FmtCurrencyPrefix[idx] == '¤' {
-
-			trans.FmtCurrencyInPrefix = true
-			trans.FmtCurrencyPrefix = strings.Replace(trans.FmtCurrencyPrefix, string(trans.FmtCurrencyPrefix[idx]), "", 1)
-
-			if idx == 0 {
-				trans.FmtCurrencyLeft = true
-			} else {
-				trans.FmtCurrencyLeft = false
-			}
-
-			break
-		}
-	}
-
-	for idx = 0; idx < len(trans.FmtCurrencySuffix); idx++ {
-		if trans.FmtCurrencySuffix[idx] == '¤' {
-
-			trans.FmtCurrencyInPrefix = false
-			trans.FmtCurrencySuffix = strings.Replace(trans.FmtCurrencySuffix, string(trans.FmtCurrencySuffix[idx]), "", 1)
-
-			if idx == 0 {
-				trans.FmtCurrencyLeft = true
-			} else {
-				trans.FmtCurrencyLeft = false
-			}
-
-			break
+		if idx == 0 {
+			trans.FmtCurrencyLeft = true
+		} else {
+			trans.FmtCurrencyLeft = false
 		}
 	}
 
@@ -1915,51 +1969,35 @@ func parseCurrencyNumberFormat(trans *translator) {
 
 	trans.FmtCurrencyNegativeExists = true
 
-	for idx = 0; idx < len(trans.NegativeCurrencyNumberFormat); idx++ {
-		if trans.NegativeCurrencyNumberFormat[idx] == '#' || trans.NegativeCurrencyNumberFormat[idx] == '0' {
+	negPrefixEnd := strings.IndexAny(trans.NegativeCurrencyNumberFormat, "#0")
+	if negPrefixEnd >= 0 {
+		trans.FmtCurrencyNegativePrefix = trans.NegativeCurrencyNumberFormat[:negPrefixEnd]
+	}
 
-			trans.FmtCurrencyNegativePrefix = trans.NegativeCurrencyNumberFormat[:idx]
-			break
+	negSuffixStart := strings.LastIndexAny(trans.NegativeCurrencyNumberFormat, "#0")
+	if negSuffixStart >= 0 {
+		trans.FmtCurrencyNegativeSuffix = trans.NegativeCurrencyNumberFormat[negSuffixStart+1:]
+	}
+
+	if idx := strings.Index(trans.FmtCurrencyNegativePrefix, "¤"); idx >= 0 {
+		trans.FmtCurrencyNegativeInPrefix = true
+		trans.FmtCurrencyNegativePrefix = strings.Replace(trans.FmtCurrencyNegativePrefix, "¤", "", 1)
+
+		if idx == 0 {
+			trans.FmtCurrencyNegativeLeft = true
+		} else {
+			trans.FmtCurrencyNegativeLeft = false
 		}
 	}
 
-	for idx = len(trans.NegativeCurrencyNumberFormat) - 1; idx >= 0; idx-- {
-		if trans.NegativeCurrencyNumberFormat[idx] == '#' || trans.NegativeCurrencyNumberFormat[idx] == '0' {
-			idx++
-			trans.FmtCurrencyNegativeSuffix = trans.NegativeCurrencyNumberFormat[idx:]
-			break
-		}
-	}
+	if idx := strings.Index(trans.FmtCurrencyNegativeSuffix, "¤"); idx >= 0 {
+		trans.FmtCurrencyNegativeInPrefix = false
+		trans.FmtCurrencyNegativeSuffix = strings.Replace(trans.FmtCurrencyNegativeSuffix, "¤", "", 1)
 
-	for idx = 0; idx < len(trans.FmtCurrencyNegativePrefix); idx++ {
-		if trans.FmtCurrencyNegativePrefix[idx] == '¤' {
-
-			trans.FmtCurrencyNegativeInPrefix = true
-			trans.FmtCurrencyNegativePrefix = strings.Replace(trans.FmtCurrencyNegativePrefix, string(trans.FmtCurrencyNegativePrefix[idx]), "", 1)
-
-			if idx == 0 {
-				trans.FmtCurrencyNegativeLeft = true
-			} else {
-				trans.FmtCurrencyNegativeLeft = false
-			}
-
-			break
-		}
-	}
-
-	for idx = 0; idx < len(trans.FmtCurrencyNegativeSuffix); idx++ {
-		if trans.FmtCurrencyNegativeSuffix[idx] == '¤' {
-
-			trans.FmtCurrencyNegativeInPrefix = false
-			trans.FmtCurrencyNegativeSuffix = strings.Replace(trans.FmtCurrencyNegativeSuffix, string(trans.FmtCurrencyNegativeSuffix[idx]), "", 1)
-
-			if idx == 0 {
-				trans.FmtCurrencyNegativeLeft = true
-			} else {
-				trans.FmtCurrencyNegativeLeft = false
-			}
-
-			break
+		if idx == 0 {
+			trans.FmtCurrencyNegativeLeft = true
+		} else {
+			trans.FmtCurrencyNegativeLeft = false
 		}
 	}
 

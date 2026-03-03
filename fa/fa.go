@@ -22,6 +22,7 @@ type fa struct {
 	currencies             []string // idx = enum of currency code
 	currencyPositivePrefix string
 	currencyNegativePrefix string
+	currencyNegativeSuffix string
 	monthsAbbreviated      []string
 	monthsNarrow           []string
 	monthsWide             []string
@@ -45,15 +46,16 @@ func New() locales.Translator {
 		percent:                "%",
 		timeSeparator:          ":",
 		currencies:             []string{"ADP", "AED", "AFA", "؋", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "Br", "BYR", "BZD", "$CA", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "¥CN", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "$HK", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "ریال", "ISJ", "ISK", "ITL", "JMD", "JOD", "¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "$MX", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "$NZ", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "₽", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "$", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "$EC", "XCG", "XDR", "XEU", "XFO", "XFU", "فرانک\u202fCFA", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
-		currencyPositivePrefix: "\u200e ",
-		currencyNegativePrefix: "\u200e ",
+		currencyPositivePrefix: "\u200e",
+		currencyNegativePrefix: "\u200e( ",
+		currencyNegativeSuffix: ")",
 		monthsAbbreviated:      []string{"", "ژانویه", "فوریه", "مارس", "آوریل", "مه", "ژوئن", "ژوئیه", "اوت", "سپتامبر", "اکتبر", "نوامبر", "دسامبر"},
 		monthsNarrow:           []string{"", "ژ", "ف", "م", "آ", "م", "ژ", "ژ", "ا", "س", "ا", "ن", "د"},
 		monthsWide:             []string{"", "ژانویهٔ", "فوریهٔ", "مارس", "آوریل", "مهٔ", "ژوئن", "ژوئیهٔ", "اوت", "سپتامبر", "اکتبر", "نوامبر", "دسامبر"},
 		daysNarrow:             []string{"ی", "د", "س", "چ", "پ", "ج", "ش"},
 		daysShort:              []string{"۱ش", "۲ش", "۳ش", "۴ش", "۵ش", "ج", "ش"},
 		daysWide:               []string{"یکشنبه", "دوشنبه", "سه\u200cشنبه", "چهارشنبه", "پنجشنبه", "جمعه", "شنبه"},
-		timezones:              map[string]string{"ACDT": "وقت تابستانی مرکز استرالیا", "ACST": "ACST", "ACT": "ACT", "ACWDT": "وقت تابستانی مرکز استرالیای غربی", "ACWST": "وقت عادی مرکز استرالیای غربی", "ADT": "وقت تابستانی آتلانتیک", "ADT Arabia": "وقت تابستانی عربستان", "AEDT": "وقت تابستانی استرالیای شرقی", "AEST": "وقت عادی استرالیای شرقی", "AFT": "وقت افغانستان", "AKDT": "وقت تابستانی آلاسکا", "AKST": "وقت عادی آلاسکا", "AMST": "وقت تابستانی آمازون", "AMST Armenia": "وقت تابستانی ارمنستان", "AMT": "وقت عادی آمازون", "AMT Armenia": "وقت عادی ارمنستان", "ANAST": "وقت تابستانی آنادیر", "ANAT": "وقت عادی آنادیر", "ARST": "وقت تابستانی آرژانتین", "ART": "وقت عادی آرژانتین", "AST": "وقت عادی آتلانتیک", "AST Arabia": "وقت عادی عربستان", "AWDT": "وقت تابستانی استرالیای غربی", "AWST": "وقت عادی استرالیای غربی", "AZST": "وقت تابستانی جمهوری آذربایجان", "AZT": "وقت عادی جمهوری آذربایجان", "BDT Bangladesh": "وقت تابستانی بنگلادش", "BNT": "وقت برونئی دارالسلام", "BOT": "وقت بولیوی", "BRST": "وقت تابستانی برازیلیا", "BRT": "وقت عادی برازیلیا", "BST Bangladesh": "وقت عادی بنگلادش", "BT": "وقت بوتان", "CAST": "CAST", "CAT": "وقت مرکز آفریقا", "CCT": "وقت جزایر کوکوس", "CDT": "وقت تابستانی مرکز امریکا", "CHADT": "وقت تابستانی چت\u200cهام", "CHAST": "وقت عادی چت\u200cهام", "CHUT": "وقت چوئوک", "CKT": "وقت عادی جزایر کوک", "CKT DST": "وقت تابستانی جزایر کوک", "CLST": "وقت تابستانی شیلی", "CLT": "وقت عادی شیلی", "COST": "وقت تابستانی کلمبیا", "COT": "وقت عادی کلمبیا", "CST": "وقت عادی مرکز امریکا", "CST China": "وقت عادی چین", "CST China DST": "وقت تابستانی چین", "CVST": "وقت تابستانی کیپ\u200cورد", "CVT": "وقت عادی کیپ\u200cورد", "CXT": "وقت جزیرهٔ کریسمس", "ChST": "وقت عادی چامورو", "ChST NMI": "وقت جزایر ماریانای شمالی", "CuDT": "وقت تابستانی کوبا", "CuST": "وقت عادی کوبا", "DAVT": "وقت دیویس", "DDUT": "وقت دومون دورویل", "EASST": "وقت تابستانی جزیرهٔ ایستر", "EAST": "وقت عادی جزیرهٔ ایستر", "EAT": "وقت شرق افریقا", "ECT": "وقت اکوادور", "EDT": "وقت تابستانی شرق امریکا", "EGDT": "وقت تابستانی شرق گرینلند", "EGST": "وقت عادی شرق گرینلند", "EST": "وقت عادی شرق امریکا", "FEET": "وقت تابستانی مکان\u200cهای دیگر شرق اروپا", "FJT": "وقت عادی فیجی", "FJT Summer": "وقت تابستانی فیجی", "FKST": "وقت تابستانی جزایر فالکلند", "FKT": "وقت عادی جزایر فالکلند", "FNST": "وقت تابستانی فرناندو دی نورونیا", "FNT": "وقت عادی فرناندو دی نورونیا", "GALT": "وقت گالاپاگوس", "GAMT": "وقت گامبیه", "GEST": "وقت تابستانی گرجستان", "GET": "وقت عادی گرجستان", "GFT": "وقت گویان فرانسه", "GIT": "وقت جزایر گیلبرت", "GMT": "وقت گرینویچ", "GNSST": "GNSST", "GNST": "GNST", "GST": "وقت عادی خلیج فارس", "GST Guam": "وقت عادی گوام", "GYT": "وقت گویان", "HADT": "وقت تابستانی هاوایی‐الوشن", "HAST": "وقت عادی هاوایی‐الوشن", "HKST": "وقت تابستانی هنگ\u200cکنگ", "HKT": "وقت عادی هنگ\u200cکنگ", "HOVST": "وقت تابستانی خوود", "HOVT": "وقت عادی خوود", "ICT": "وقت هندوچین", "IDT": "وقت تابستانی اسرائیل", "IOT": "وقت اقیانوس هند", "IRKST": "وقت تابستانی ایرکوتسک", "IRKT": "وقت عادی ایرکوتسک", "IRST": "وقت عادی ایران", "IRST DST": "وقت تابستانی ایران", "IST": "وقت هند", "IST Israel": "وقت عادی اسرائیل", "JDT": "وقت تابستانی ژاپن", "JST": "وقت عادی ژاپن", "KOST": "وقت کوسرای", "KRAST": "وقت تابستانی کراسنویارسک", "KRAT": "وقت عادی کراسنویارسک", "KST": "وقت عادی کره", "KST DST": "وقت تابستانی کره", "LHDT": "وقت تابستانی لردهو", "LHST": "وقت عادی لردهو", "LINT": "وقت جزایر لاین", "MAGST": "وقت تابستانی ماگادان", "MAGT": "وقت عادی ماگادان", "MART": "وقت مارکوئز", "MAWT": "وقت ماوسون", "MDT": "وقت تابستانی ماکائو", "MESZ": "وقت تابستانی مرکز اروپا", "MEZ": "وقت عادی مرکز اروپا", "MHT": "وقت جزایر مارشال", "MMT": "وقت میانمار", "MSD": "وقت تابستانی مسکو", "MST": "وقت عادی ماکائو", "MUST": "وقت تابستانی موریس", "MUT": "وقت عادی موریس", "MVT": "وقت مالدیو", "MYT": "وقت مالزی", "NCT": "وقت عادی کالدونیای جدید", "NDT": "وقت تابستانی نیوفاندلند", "NDT New Caledonia": "وقت تابستانی کالدونیای جدید", "NFDT": "وقت تابستانی جزیرهٔ نورفولک", "NFT": "وقت عادی جزیرهٔ نورفولک", "NOVST": "وقت تابستانی نووسیبیرسک", "NOVT": "وقت عادی نووسیبیرسک", "NPT": "وقت نپال", "NRT": "وقت نائورو", "NST": "وقت عادی نیوفاندلند", "NUT": "وقت نیوئه", "NZDT": "وقت تابستانی نیوزیلند", "NZST": "وقت عادی نیوزیلند", "OESZ": "وقت تابستانی شرق اروپا", "OEZ": "وقت عادی شرق اروپا", "OMSST": "وقت تابستانی اومسک", "OMST": "وقت عادی اومسک", "PDT": "وقت تابستانی غرب امریکا", "PDTM": "وقت تابستانی شرق مکزیک", "PETDT": "وقت تابستانی پتروپاولوسک‐کامچاتسکی", "PETST": "وقت عادی پتروپاولوسک‐کامچاتسکی", "PGT": "وقت پاپوا گینهٔ نو", "PHOT": "وقت جزایر فونیکس", "PKT": "وقت عادی پاکستان", "PKT DST": "وقت تابستانی پاکستان", "PMDT": "وقت تابستانی سنت\u200cپیر و میکلون", "PMST": "وقت عادی سنت\u200cپیر و میکلون", "PONT": "وقت پوناپه", "PST": "وقت عادی غرب امریکا", "PST Philippine": "وقت عادی فیلیپین", "PST Philippine DST": "وقت تابستانی فیلیپین", "PST Pitcairn": "وقت پیتکایرن", "PSTM": "وقت عادی شرق مکزیک", "PWT": "وقت پالائو", "PYST": "وقت تابستانی پاراگوئه", "PYT": "وقت عادی پاراگوئه", "PYT Korea": "وقت پیونگ\u200cیانگ", "RET": "وقت رئونیون", "ROTT": "وقت روترا", "SAKST": "وقت تابستانی ساخالین", "SAKT": "وقت عادی ساخالین", "SAMST": "وقت تابستانی سامارا", "SAMT": "وقت عادی سامارا", "SAST": "وقت عادی جنوب افریقا", "SBT": "وقت جزایر سلیمان", "SCT": "وقت سیشل", "SGT": "وقت سنگاپور", "SLST": "وقت لانکا", "SRT": "وقت سورینام", "SST Samoa": "وقت عادی ساموا", "SST Samoa Apia": "وقت عادی آپیا", "SST Samoa Apia DST": "وقت تابستانی آپیا", "SST Samoa DST": "وقت تابستانی ساموا", "SYOT": "وقت شووا", "TAAF": "وقت سرزمین\u200cهای جنوبی و جنوبگان فرانسه", "TAHT": "وقت تاهیتی", "TJT": "وقت تاجیکستان", "TKT": "وقت توکلائو", "TLT": "وقت تیمور شرقی", "TMST": "وقت تابستانی ترکمنستان", "TMT": "وقت عادی ترکمنستان", "TOST": "وقت تابستانی تونگا", "TOT": "وقت عادی تونگا", "TVT": "وقت تووالو", "TWT": "وقت عادی تایپه", "TWT DST": "وقت تابستانی تایپه", "ULAST": "وقت تابستانی اولان\u200cباتور", "ULAT": "وقت عادی اولان\u200cباتور", "UYST": "وقت تابستانی اروگوئه", "UYT": "وقت عادی اروگوئه", "UZT": "وقت عادی ازبکستان", "UZT DST": "وقت تابستانی ازبکستان", "VET": "وقت ونزوئلا", "VLAST": "وقت تابستانی ولادی\u200cوستوک", "VLAT": "وقت عادی ولادی\u200cوستوک", "VOLST": "وقت تابستانی ولگاگراد", "VOLT": "وقت عادی ولگاگراد", "VOST": "وقت وستوک", "VUT": "وقت عادی واناتو", "VUT DST": "وقت تابستانی واناتو", "WAKT": "وقت جزیرهٔ ویک", "WARST": "وقت تابستانی غرب آرژانتین", "WART": "وقت عادی غرب آرژانتین", "WAST": "وقت غرب افریقا", "WAT": "وقت غرب افریقا", "WESZ": "وقت تابستانی غرب اروپا", "WEZ": "وقت عادی غرب اروپا", "WFT": "وقت والیس و فوتونا", "WGST": "وقت تابستانی غرب گرینلند", "WGT": "وقت عادی غرب گرینلند", "WIB": "وقت غرب اندونزی", "WIT": "وقت شرق اندونزی", "WITA": "وقت مرکز اندونزی", "YAKST": "وقت تابستانی یاکوتسک", "YAKT": "وقت عادی یاکوتسک", "YEKST": "وقت تابستانی یکاترینبورگ", "YEKT": "وقت عادی یکاترینبورگ", "YST": "وقت یوکان", "МСК": "وقت عادی مسکو", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "وقت عادی آلماآتا", "الماتى قالاسى": "وقت تابستانی آلماآتا", "باتىس قازاق ەلى": "وقت غرب قزاقستان", "شىعىش قازاق ەلى": "وقت شرق قزاقستان", "قازاق ەلى": "وقت قزاقستان", "قىرعىزستان": "وقت قرقیزستان", "قىزىلوردا": "وقت عادی قیزیل\u200cاوردا", "قىزىلوردا قالاسى": "وقت تابستانی قیزیل\u200cاوردا", "∅∅∅": "وقت تابستانی پرو"},
+		timezones:              map[string]string{"ACDT": "وقت تابستانی مرکز استرالیا", "ACST": "ACST", "ACT": "ACT", "ACWDT": "وقت تابستانی مرکز استرالیای غربی", "ACWST": "وقت عادی مرکز استرالیای غربی", "ADT": "وقت تابستانی آتلانتیک", "ADT Arabia": "وقت تابستانی عربستان", "AEDT": "وقت تابستانی استرالیای شرقی", "AEST": "وقت عادی استرالیای شرقی", "AFT": "وقت افغانستان", "AKDT": "وقت تابستانی آلاسکا", "AKST": "وقت عادی آلاسکا", "AMST": "وقت تابستانی آمازون", "AMST Armenia": "وقت تابستانی ارمنستان", "AMT": "وقت عادی آمازون", "AMT Armenia": "وقت عادی ارمنستان", "ANAST": "وقت تابستانی آنادیر", "ANAT": "وقت عادی آنادیر", "ARST": "وقت تابستانی آرژانتین", "ART": "وقت عادی آرژانتین", "AST": "وقت عادی آتلانتیک", "AST Arabia": "وقت عادی عربستان", "AWDT": "وقت تابستانی استرالیای غربی", "AWST": "وقت عادی استرالیای غربی", "AZST": "وقت تابستانی جمهوری آذربایجان", "AZT": "وقت عادی جمهوری آذربایجان", "BDT Bangladesh": "وقت تابستانی بنگلادش", "BNT": "وقت برونئی دارالسلام", "BOT": "وقت بولیوی", "BRST": "وقت تابستانی برازیلیا", "BRT": "وقت عادی برازیلیا", "BST Bangladesh": "وقت عادی بنگلادش", "BT": "وقت بوتان", "CAST": "CAST", "CAT": "وقت مرکز آفریقا", "CCT": "وقت جزایر کوکوس", "CDT": "وقت تابستانی مرکز امریکا", "CHADT": "وقت تابستانی چت\u200cهام", "CHAST": "وقت عادی چت\u200cهام", "CHUT": "وقت چوئوک", "CKT": "وقت عادی جزایر کوک", "CKT DST": "وقت تابستانی جزایر کوک", "CLST": "وقت تابستانی شیلی", "CLT": "وقت عادی شیلی", "COST": "وقت تابستانی کلمبیا", "COT": "وقت عادی کلمبیا", "CST": "وقت عادی مرکز امریکا", "CST China": "وقت عادی چین", "CST China DST": "وقت تابستانی چین", "CVST": "وقت تابستانی کیپ\u200cورد", "CVT": "وقت عادی کیپ\u200cورد", "CXT": "وقت جزیرهٔ کریسمس", "ChST": "وقت عادی چامورو", "ChST NMI": "وقت جزایر ماریانای شمالی", "CuDT": "وقت تابستانی کوبا", "CuST": "وقت عادی کوبا", "DAVT": "وقت دیویس", "DDUT": "وقت دومون دورویل", "EASST": "وقت تابستانی جزیرهٔ ایستر", "EAST": "وقت عادی جزیرهٔ ایستر", "EAT": "وقت شرق افریقا", "ECT": "وقت اکوادور", "EDT": "وقت تابستانی شرق امریکا", "EGDT": "وقت تابستانی شرق گرینلند", "EGST": "وقت عادی شرق گرینلند", "EST": "وقت عادی شرق امریکا", "FEET": "وقت تابستانی مکان\u200cهای دیگر شرق اروپا", "FJT": "وقت عادی فیجی", "FJT Summer": "وقت تابستانی فیجی", "FKST": "وقت تابستانی جزایر فالکلند", "FKT": "وقت عادی جزایر فالکلند", "FNST": "وقت تابستانی فرناندو دی نورونیا", "FNT": "وقت عادی فرناندو دی نورونیا", "GALT": "وقت گالاپاگوس", "GAMT": "وقت گامبیه", "GEST": "وقت تابستانی گرجستان", "GET": "وقت عادی گرجستان", "GFT": "وقت گویان فرانسه", "GIT": "وقت جزایر گیلبرت", "GMT": "وقت گرینویچ", "GNSST": "GNSST", "GNST": "GNST", "GST": "وقت جورجیای جنوبی", "GST Guam": "وقت عادی گوام", "GYT": "وقت گویان", "HADT": "وقت عادی هاوایی‐الوشن", "HAST": "وقت عادی هاوایی‐الوشن", "HKST": "وقت تابستانی هنگ\u200cکنگ", "HKT": "وقت عادی هنگ\u200cکنگ", "HOVST": "وقت تابستانی خوود", "HOVT": "وقت عادی خوود", "ICT": "وقت هندوچین", "IDT": "وقت تابستانی اسرائیل", "IOT": "وقت اقیانوس هند", "IRKST": "وقت تابستانی ایرکوتسک", "IRKT": "وقت عادی ایرکوتسک", "IRST": "وقت عادی ایران", "IRST DST": "وقت تابستانی ایران", "IST": "وقت هند", "IST Israel": "وقت عادی اسرائیل", "JDT": "وقت تابستانی ژاپن", "JST": "وقت عادی ژاپن", "KOST": "وقت کوسرای", "KRAST": "وقت تابستانی کراسنویارسک", "KRAT": "وقت عادی کراسنویارسک", "KST": "وقت عادی کره", "KST DST": "وقت تابستانی کره", "LHDT": "وقت تابستانی لردهو", "LHST": "وقت عادی لردهو", "LINT": "وقت جزایر لاین", "MAGST": "وقت تابستانی ماگادان", "MAGT": "وقت عادی ماگادان", "MART": "وقت مارکوئز", "MAWT": "وقت ماوسون", "MDT": "وقت تابستانی ماکائو", "MESZ": "وقت تابستانی مرکز اروپا", "MEZ": "وقت عادی مرکز اروپا", "MHT": "وقت جزایر مارشال", "MMT": "وقت میانمار", "MSD": "وقت تابستانی مسکو", "MST": "وقت عادی ماکائو", "MUST": "وقت تابستانی موریس", "MUT": "وقت عادی موریس", "MVT": "وقت مالدیو", "MYT": "وقت مالزی", "NCT": "وقت عادی کالدونیای جدید", "NDT": "وقت تابستانی نیوفاندلند", "NDT New Caledonia": "وقت تابستانی کالدونیای جدید", "NFDT": "وقت تابستانی جزیرهٔ نورفولک", "NFT": "وقت عادی جزیرهٔ نورفولک", "NOVST": "وقت تابستانی نووسیبیرسک", "NOVT": "وقت عادی نووسیبیرسک", "NPT": "وقت نپال", "NRT": "وقت نائورو", "NST": "وقت عادی نیوفاندلند", "NUT": "وقت نیوئه", "NZDT": "وقت تابستانی نیوزیلند", "NZST": "وقت عادی نیوزیلند", "OESZ": "وقت تابستانی شرق اروپا", "OEZ": "وقت عادی شرق اروپا", "OMSST": "وقت تابستانی اومسک", "OMST": "وقت عادی اومسک", "PDT": "وقت تابستانی غرب امریکا", "PDTM": "وقت تابستانی شرق مکزیک", "PETDT": "وقت تابستانی پتروپاولوسک‐کامچاتسکی", "PETST": "وقت عادی پتروپاولوسک‐کامچاتسکی", "PGT": "وقت پاپوا گینهٔ نو", "PHOT": "وقت جزایر فونیکس", "PKT": "وقت عادی پاکستان", "PKT DST": "وقت تابستانی پاکستان", "PMDT": "وقت تابستانی سنت\u200cپیر و میکلون", "PMST": "وقت عادی سنت\u200cپیر و میکلون", "PONT": "وقت پوناپه", "PST": "وقت عادی غرب امریکا", "PST Philippine": "وقت عادی فیلیپین", "PST Philippine DST": "وقت تابستانی فیلیپین", "PST Pitcairn": "وقت پیتکایرن", "PSTM": "وقت عادی شرق مکزیک", "PWT": "وقت پالائو", "PYST": "وقت تابستانی پاراگوئه", "PYT": "وقت عادی پاراگوئه", "PYT Korea": "وقت پیونگ\u200cیانگ", "RET": "وقت رئونیون", "ROTT": "وقت روترا", "SAKST": "وقت تابستانی ساخالین", "SAKT": "وقت عادی ساخالین", "SAMST": "وقت تابستانی سامارا", "SAMT": "وقت عادی سامارا", "SAST": "وقت عادی جنوب افریقا", "SBT": "وقت جزایر سلیمان", "SCT": "وقت سیشل", "SGT": "وقت سنگاپور", "SLST": "وقت لانکا", "SRT": "وقت سورینام", "SST Samoa": "وقت عادی ساموا", "SST Samoa Apia": "وقت عادی آپیا", "SST Samoa Apia DST": "وقت تابستانی آپیا", "SST Samoa DST": "وقت تابستانی ساموا", "SYOT": "وقت شووا", "TAAF": "وقت سرزمین\u200cهای جنوبی و جنوبگان فرانسه", "TAHT": "وقت تاهیتی", "TJT": "وقت تاجیکستان", "TKT": "وقت توکلائو", "TLT": "وقت تیمور شرقی", "TMST": "وقت تابستانی ترکمنستان", "TMT": "وقت عادی ترکمنستان", "TOST": "وقت تابستانی تونگا", "TOT": "وقت عادی تونگا", "TVT": "وقت تووالو", "TWT": "وقت عادی تایپه", "TWT DST": "وقت تابستانی تایپه", "ULAST": "وقت تابستانی اولان\u200cباتور", "ULAT": "وقت عادی اولان\u200cباتور", "UYST": "وقت تابستانی اروگوئه", "UYT": "وقت عادی اروگوئه", "UZT": "وقت عادی ازبکستان", "UZT DST": "وقت تابستانی ازبکستان", "VET": "وقت ونزوئلا", "VLAST": "وقت تابستانی ولادی\u200cوستوک", "VLAT": "وقت عادی ولادی\u200cوستوک", "VOLST": "وقت تابستانی ولگاگراد", "VOLT": "وقت عادی ولگاگراد", "VOST": "وقت وستوک", "VUT": "وقت عادی واناتو", "VUT DST": "وقت تابستانی واناتو", "WAKT": "وقت جزیرهٔ ویک", "WARST": "وقت تابستانی غرب آرژانتین", "WART": "وقت عادی غرب آرژانتین", "WAST": "وقت غرب افریقا", "WAT": "وقت غرب افریقا", "WESZ": "وقت تابستانی غرب اروپا", "WEZ": "وقت عادی غرب اروپا", "WFT": "وقت والیس و فوتونا", "WGST": "وقت تابستانی غرب گرینلند", "WGT": "وقت عادی غرب گرینلند", "WIB": "وقت غرب اندونزی", "WIT": "وقت شرق اندونزی", "WITA": "وقت مرکز اندونزی", "YAKST": "وقت تابستانی یاکوتسک", "YAKT": "وقت عادی یاکوتسک", "YEKST": "وقت تابستانی یکاترینبورگ", "YEKT": "وقت عادی یکاترینبورگ", "YST": "وقت یوکان", "МСК": "وقت عادی مسکو", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "وقت عادی آلماآتا", "الماتى قالاسى": "وقت تابستانی آلماآتا", "باتىس قازاق ەلى": "وقت غرب قزاقستان", "شىعىش قازاق ەلى": "وقت شرق قزاقستان", "قازاق ەلى": "وقت قزاقستان", "قىرعىزستان": "وقت قرقیزستان", "قىزىلوردا": "وقت عادی قیزیل\u200cاوردا", "قىزىلوردا قالاسى": "وقت تابستانی قیزیل\u200cاوردا", "∅∅∅": "وقت تابستانی آزور"},
 	}
 }
 
@@ -79,6 +81,7 @@ func (fa *fa) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'fa'
 func (fa *fa) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 	i := int64(n)
 
@@ -96,6 +99,7 @@ func (fa *fa) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'fa'
 func (fa *fa) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
+
 	start := fa.CardinalPluralRule(num1, v1)
 	end := fa.CardinalPluralRule(num2, v2)
 
@@ -108,6 +112,7 @@ func (fa *fa) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) 
 	}
 
 	return locales.PluralRuleOther
+
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -218,6 +223,7 @@ func (fa *fa) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'fa' and handles both Whole and Real numbers based on 'v'
 func (fa *fa) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 7 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -293,9 +299,10 @@ func (fa *fa) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'fa'
 func (fa *fa) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := fa.currencies[currency]
-	l := len(s) + len(symbol) + 12 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 10 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -356,9 +363,10 @@ func (fa *fa) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'fa'
 // in accounting notation.
 func (fa *fa) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := fa.currencies[currency]
-	l := len(s) + len(symbol) + 12 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 14 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -393,10 +401,6 @@ func (fa *fa) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 			b = append(b, fa.currencyNegativePrefix[j])
 		}
 
-		for j := len(fa.minus) - 1; j >= 0; j-- {
-			b = append(b, fa.minus[j])
-		}
-
 	} else {
 
 		for j := len(symbol) - 1; j >= 0; j-- {
@@ -425,11 +429,16 @@ func (fa *fa) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 		}
 	}
 
+	if num < 0 {
+		b = append(b, fa.currencyNegativeSuffix...)
+	}
+
 	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'fa'
 func (fa *fa) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -448,6 +457,7 @@ func (fa *fa) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'fa'
 func (fa *fa) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -466,6 +476,7 @@ func (fa *fa) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'fa'
 func (fa *fa) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -484,6 +495,7 @@ func (fa *fa) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'fa'
 func (fa *fa) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, fa.daysWide[t.Weekday()]...)
@@ -504,6 +516,7 @@ func (fa *fa) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'fa'
 func (fa *fa) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
@@ -520,6 +533,7 @@ func (fa *fa) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'fa'
 func (fa *fa) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
@@ -543,6 +557,7 @@ func (fa *fa) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'fa'
 func (fa *fa) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)
@@ -572,6 +587,7 @@ func (fa *fa) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'fa'
 func (fa *fa) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Hour()), 10)

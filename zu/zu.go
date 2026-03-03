@@ -53,7 +53,7 @@ func New() locales.Translator {
 		daysAbbreviated:        []string{"Son", "Mso", "Bil", "Tha", "Sin", "Hla", "Mgq"},
 		daysNarrow:             []string{"S", "M", "B", "T", "S", "H", "M"},
 		daysWide:               []string{"ISonto", "UMsombuluko", "ULwesibili", "ULwesithathu", "ULwesine", "ULwesihlanu", "UMgqibelo"},
-		timezones:              map[string]string{"ACDT": "Isikhathi sase-Australian Central sasemini", "ACST": "Isikhathi sase-Australian Central esivamile", "ACT": "ACT", "ACWDT": "Isikhathi sasemini sase-Australian Central West", "ACWST": "Isikhathi sase-Australian Central West esivamile", "ADT": "Isikhathi sase-Atlantic sasemini", "ADT Arabia": "Isikhathi semini sase-Arabian", "AEDT": "Isikhathi sasemini sase-Australian East", "AEST": "Isikhathi esivamile sase-Australian East", "AFT": "Isikhathi sase-Afghanistan", "AKDT": "Isikhathi sase-Alaska sasemini", "AKST": "Isikhathi sase-Alaska esijwayelekile", "AMST": "Isikhathi sase-Amazon sasehlobo", "AMST Armenia": "Isikhathi sehlobo sase-Armenia", "AMT": "Isikhathi sase-Amazon esijwayelekile", "AMT Armenia": "Isikhathi esivamile sase-Armenia", "ANAST": "esase-Anadyr Summer Time", "ANAT": "esase-Anadyr Standard Time", "ARST": "Isikhathi sase-Argentina sasehlobo", "ART": "Isikhathi sase-Argentina esijwayelekile", "AST": "Isikhathi sase-Atlantic esijwayelekile", "AST Arabia": "Isikhathi esivamile sase-Arabian", "AWDT": "Isikhathi sase-Australian Western sasemini", "AWST": "Isikhathi sase-Australian Western esivamile", "AZST": "Isikhathi sehlobo sase-Azerbaijan", "AZT": "Isikhathi esivamile sase-Azerbaijan", "BDT Bangladesh": "Isikhathi sase-Bangladesh sasehlobo", "BNT": "Isikhathi sase-Brunei Darussalam", "BOT": "Isikhathi sase-Bolivia", "BRST": "Isikhathi sase-Brasilia sasehlobo", "BRT": "Isikhathi sase-Brasilia esijwayelekile", "BST Bangladesh": "Isikhathi sase-Bangladesh esivamile", "BT": "Isikhathi sase-Bhutan", "CAST": "CAST", "CAT": "Isikhathi sase-Central Africa", "CCT": "Isikhathi sase-Cocos Islands", "CDT": "Isikhathi sase-North American Central sasemini", "CHADT": "Isikhathi sasemini sase-Chatham", "CHAST": "Isikhathi esivamile sase-Chatham", "CHUT": "Isikhathi sase-Chuuk", "CKT": "Isikhathi esivamile sase-Cook Islands", "CKT DST": "Isikhathi esiyingxenye yasehlobo sase-Cook Islands", "CLST": "Isikhathi sase-Chile sasehlobo", "CLT": "Isikhathi sase-Chile esijwayelekile", "COST": "Isikhathi sase-Colombia sasehlobo", "COT": "Isikhathi sase-Colombia esijwayelekile", "CST": "Isikhathi sase-North American Central esijwayelekile", "CST China": "Isikhathi esivamile sase-China", "CST China DST": "Isikhathi semini sase-China", "CVST": "Isikhathi sehlobo sase-Cape Verde", "CVT": "Isikhathi esezingeni sase-Cape Verde", "CXT": "Isikhathi sase-Christmas Island", "ChST": "Isikhathi esivamile sase-Chamorro", "ChST NMI": "ChST NMI", "CuDT": "Isikhathi sase-Cuba sasemini", "CuST": "Isikhathi sase-Cuba esijwayelekile", "DAVT": "Isikhathi sase-Davis", "DDUT": "Isikhathi sase-Dumont-d’Urville", "EASST": "Isikhathi sase-Easter Island sasehlobo", "EAST": "Isikhathi sase-Easter Island esijwayelekile", "EAT": "Isikhathi saseMpumalanga Afrika", "ECT": "Isikhathi sase-Ecuador", "EDT": "Isikhathi sase-North American East sasemini", "EGDT": "Isikhathi sase-East Greenland sasemini", "EGST": "Isikhathi sase-East Greenland esijwayelekile", "EST": "Isikhathi sase-North American East esijwayelekile", "FEET": "Isikhathi sase-Further-eastern Europe", "FJT": "Isikhathi esivamile sase-Fiji", "FJT Summer": "Isikhathi sehlobo sase-Fiji", "FKST": "Isikhathi sase-Falkland Islands sasehlobo", "FKT": "Isikhathi sase-Falkland Islands esijwayelekile", "FNST": "Isikhathi sase-Fernando de Noronha sasehlobo", "FNT": "Isikhathi sase-Fernando de Noronha esivamile", "GALT": "Isikhathi sase-Galapagos", "GAMT": "Isikhathi sase-Gambier", "GEST": "Isikhathi sehlobo sase-Georgia", "GET": "Isikhathi esivamile sase-Georgia", "GFT": "Isikhathi sase-French Guiana", "GIT": "Isikhathi sase-Gilbert Islands", "GMT": "Isikhathi sase-Greenwich Mean", "GNSST": "GNSST", "GNST": "GNST", "GST": "Isikhathi esivamile sase-Gulf", "GST Guam": "GST Guam", "GYT": "Isikhathi sase-Guyana", "HADT": "Isikhathi sase-Hawaii-Aleutia sasemini", "HAST": "Isikhathi sase-Hawaii-Aleutia esijwayelekile", "HKST": "Isikhathi sehlobo sase-Hong Kong", "HKT": "Isikhathi esivamile sase-Hong Kong", "HOVST": "Isikhathi sehlobo e-Hovd", "HOVT": "Isikhathi Esimisiwe sase-Hovd", "ICT": "Isikhathi sase-Indochina", "IDT": "Isikhathi sasemini sakwa-Israel", "IOT": "Isikhathi sase-Indian Ocean", "IRKST": "Isikhathi sasehlobo e-Irkutsk", "IRKT": "Isikhathi Esivamile sase-Irkutsk", "IRST": "Isikhathi sase-Iran esivamile", "IRST DST": "Isikhathi sase-Iran sasemini", "IST": "Isikhathi sase-India esivamile", "IST Israel": "Isikhathi esivamile sase-Israel", "JDT": "Isikhathi semini sase-Japan", "JST": "Isikhathi esivamile sase-Japan", "KOST": "Isikhathi sase-Kosrae", "KRAST": "Isikhathi sasehlobo e-Krasnoyarsk", "KRAT": "Isikhathi Esivamile sase-Krasnoyarsk", "KST": "Isikhathi Esivamile sase-Korea", "KST DST": "Isikhathi semini sase-Korea", "LHDT": "Isikhathi sase-Lord Howe sasemini", "LHST": "Isikhathi sase-Lord Howe esivamile", "LINT": "Isikhathi sase-Line Islands", "MAGST": "Isikhathi sasehlobo e-Magadan", "MAGT": "Isikhathi Esivamile sase-Magadan", "MART": "Isikhathi sase-Marquesas", "MAWT": "Isikhathi sase-Mawson", "MDT": "MDT", "MESZ": "Isikhathi sasehlobo sase-Central Europe", "MEZ": "Isikhathi esijwayelekile sase-Central Europe", "MHT": "Isikhathi sase-Marshall Islands", "MMT": "Isikhathi sase-Myanmar", "MSD": "Isikhathi sasehlobo e-Moscow", "MST": "MST", "MUST": "Isikhathi sehlobo sase-Mauritius", "MUT": "Isikhathi esivamile sase-Mauritius", "MVT": "Isikhathi sase-Maldives", "MYT": "Isikhathi sase-Malaysia", "NCT": "Isikhathi sase-New Caledonia esivamile", "NDT": "Isikhathi sase-Newfoundland sasemini", "NDT New Caledonia": "Isikhathi sase-New Caledonia sasehlobo", "NFDT": "Isikhathi sase-Norfolk Islands sasehlobo", "NFT": "Isikhathi sase-Norfolk Islands esivamile", "NOVST": "Isikhathi sasehlobo sase-Novosibirsk", "NOVT": "Isikhathi Esivamile sase-Novosibirsk", "NPT": "Isikhathi sase-Nepal", "NRT": "Isikhathi sase-Nauru", "NST": "Isikhathi sase-Newfoundland esijwayelekile", "NUT": "Isikhathi sase-Niue", "NZDT": "Isikhathi sasemini sase-New Zealand", "NZST": "Isikhathi esivamile sase-New Zealand", "OESZ": "Isikhathi sasehlobo sase-Eastern Europe", "OEZ": "Isikhathi esijwayelekile sase-Eastern Europe", "OMSST": "Isikhathi sasehlobo sase-Omsk", "OMST": "Isikhathi Esivamile sase-Omsk", "PDT": "Isikhathi sase-North American Pacific sasemini", "PDTM": "Isikhathi sase-Mexican Pacific sasemini", "PETDT": "esase-Petropavlovsk-Kamchatski Summer Time", "PETST": "esase-Petropavlovsk-Kamchatski Standard Time", "PGT": "Isikhathi sase-Papua New Guinea", "PHOT": "Isikhathi sase-Phoenix Islands", "PKT": "Isikhathi sase-Pakistan esivamile", "PKT DST": "Isikhathi sase-Pakistan sasehlobo", "PMDT": "Isikhathi sase-Saint Pierre nase-Miquelon sasemini", "PMST": "Iikhathi sase-Saint Pierre nase-Miquelon esijwayelekile", "PONT": "Isikhathi sase-Ponape", "PST": "Isikhathi sase-North American Pacific esijwayelekile", "PST Philippine": "Isikhathi esivamile sase-Philippine", "PST Philippine DST": "Isikhathi sehlobo sase-Philippine", "PST Pitcairn": "Isikhathi sase-Pitcairn", "PSTM": "Isikhathi sase-Mexican Pacific esijwayelekile", "PWT": "Isikhathi sase-Palau", "PYST": "Isikhathi sase-Paraguay sasehlobo", "PYT": "Isikhathi sase-Paraguay esivamile", "PYT Korea": "Isikhathi sase-Pyongyang", "RET": "Isikhathi sase-Reunion", "ROTT": "Isikhathi sase-Rothera", "SAKST": "Isikhathi sasehlobo e-Sakhalin", "SAKT": "Isikhathi Esivamile sase-Sakhalin", "SAMST": "esase-Samara Summer Time", "SAMT": "esase-Samara Standard Time", "SAST": "Isikhathi esivamile saseNingizimu Afrika", "SBT": "Isikhathi sase-Solomon Islands", "SCT": "Isikhathi sase-Seychelles", "SGT": "Isikhathi esivamile sase-Singapore", "SLST": "SLST", "SRT": "Isikhathi sase-Suriname", "SST Samoa": "Isikhathi sase-Samoa esivamile", "SST Samoa Apia": "Isikhathi sase-Apia esivamile", "SST Samoa Apia DST": "Isikhathi sase-Apia sasemini", "SST Samoa DST": "Isikhathi sase-Samoa sasemini", "SYOT": "Isikhathi sase-Syowa", "TAAF": "Isikhathi sase-French Southern nase-Antarctic", "TAHT": "Isikhathi sase-Tahiti", "TJT": "Isikhathi sase-Tajikistan", "TKT": "Isikhathi sase-Tokelau", "TLT": "Isikhathi sase-East Timor", "TMST": "Isikhathi sehlobo sase-Turkmenistan", "TMT": "Isikhathi esivamile sase-Turkmenistan", "TOST": "Isikhathi sase-Tonga sasehlobo", "TOT": "Isikhathi sase-Tonga esivamile", "TVT": "Isikhathi sase-Tuvalu", "TWT": "Isikhathi esivamile sase-Taipei", "TWT DST": "Isikhathi semini sase-Taipei", "ULAST": "Isikhathi sehlobo e-Ulan Bator", "ULAT": "Isikhathi Esimisiwe sase-Ulan Bator", "UYST": "Isikhathi sase-Uruguay sasehlobo", "UYT": "Isikhathi sase-Uruguay esijwayelekile", "UZT": "Isikhathi esivamile sase-Uzbekistan", "UZT DST": "Isikhathi sehlobo sase-Uzbekistan", "VET": "Isikhathi sase-Venezuela", "VLAST": "Isikhathi sasehlobo e-Vladivostok", "VLAT": "Isikhathi Esivamile sase-Vladivostok", "VOLST": "Isikhathi sase-Volgograd sasehlobo", "VOLT": "Isikhathi Esivamile sase-Volgograd", "VOST": "Isikhathi sase-Vostok", "VUT": "Isikhathi sase-Vanuatu esijwayelekile", "VUT DST": "Isikhathi sase-Vanuatu sasehlobo", "WAKT": "Isikhathi sase-Wake Island", "WARST": "Isikhathi saseNyakatho ne-Argentina sasehlobo", "WART": "Isikhathi saseNyakatho ne-Argentina esijwayelekile", "WAST": "Isikhathi saseNtshonalanga Afrika", "WAT": "Isikhathi saseNtshonalanga Afrika", "WESZ": "Isikhathi sasehlobo sase-Western Europe", "WEZ": "Isikhathi esijwayelekile sase-Western Europe", "WFT": "Isikhathi sase-Wallis nase-Futuna", "WGST": "Isikhathi sase-West Greenland sasehlobo", "WGT": "Isikhathi sase-West Greenland esijwayelekile", "WIB": "Isikhathi sase-Western Indonesia", "WIT": "Isikhathi sase-Eastern Indonesia", "WITA": "Isikhathi sase-Central Indonesia", "YAKST": "Isikhathi sasehlobo e-Yakutsk", "YAKT": "Isikhathi Esivamile sase-Yakutsk", "YEKST": "Isikhathi sasehlobo e-Yekaterinburg", "YEKT": "Isikhathi Esivamile sase-Yekaterinburg", "YST": "Yukon Time", "МСК": "Isikhathi sase-Moscow esijwayelekile", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "Isikhathi saseNtshonalanga ne-Kazakhstan", "شىعىش قازاق ەلى": "Isikhathi sase-Mpumalanga ne-Kazakhstan", "قازاق ەلى": "Isikhathi saseKazakhstan", "قىرعىزستان": "Isikhathi sase-Kyrgystan", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Isikhathi sasehlobo sase-Azores"},
+		timezones:              map[string]string{"ACDT": "Isikhathi sase-Australian Central sasemini", "ACST": "ACST", "ACT": "ACT", "ACWDT": "Isikhathi sasemini sase-Australian Central West", "ACWST": "Isikhathi sase-Australian Central West esivamile", "ADT": "Isikhathi sase-Atlantic sasemini", "ADT Arabia": "Isikhathi semini sase-Arabian", "AEDT": "Isikhathi sasemini sase-Australian East", "AEST": "Isikhathi esivamile sase-Australian East", "AFT": "Isikhathi sase-Afghanistan", "AKDT": "Isikhathi sase-Alaska sasemini", "AKST": "Isikhathi sase-Alaska esijwayelekile", "AMST": "Isikhathi sase-Amazon sasehlobo", "AMST Armenia": "Isikhathi sehlobo sase-Armenia", "AMT": "Isikhathi sase-Amazon esijwayelekile", "AMT Armenia": "Isikhathi esivamile sase-Armenia", "ANAST": "esase-Anadyr Summer Time", "ANAT": "esase-Anadyr Standard Time", "ARST": "Isikhathi sase-Argentina sasehlobo", "ART": "Isikhathi sase-Argentina esijwayelekile", "AST": "Isikhathi sase-Atlantic esijwayelekile", "AST Arabia": "Isikhathi esivamile sase-Arabian", "AWDT": "Isikhathi sase-Australian Western sasemini", "AWST": "Isikhathi sase-Australian Western esivamile", "AZST": "Isikhathi sehlobo sase-Azerbaijan", "AZT": "Isikhathi esivamile sase-Azerbaijan", "BDT Bangladesh": "Isikhathi sase-Bangladesh sasehlobo", "BNT": "Isikhathi sase-Brunei Darussalam", "BOT": "Isikhathi sase-Bolivia", "BRST": "Isikhathi sase-Brasilia sasehlobo", "BRT": "Isikhathi sase-Brasilia esijwayelekile", "BST Bangladesh": "Isikhathi sase-Bangladesh esivamile", "BT": "Isikhathi sase-Bhutan", "CAST": "CAST", "CAT": "Isikhathi sase-Central Africa", "CCT": "Isikhathi sase-Cocos Islands", "CDT": "Isikhathi sase-North American Central sasemini", "CHADT": "Isikhathi sasemini sase-Chatham", "CHAST": "Isikhathi esivamile sase-Chatham", "CHUT": "Isikhathi sase-Chuuk", "CKT": "Isikhathi esivamile sase-Cook Islands", "CKT DST": "Isikhathi esiyingxenye yasehlobo sase-Cook Islands", "CLST": "Isikhathi sase-Chile sasehlobo", "CLT": "Isikhathi sase-Chile esijwayelekile", "COST": "Isikhathi sase-Colombia sasehlobo", "COT": "Isikhathi sase-Colombia esijwayelekile", "CST": "Isikhathi sase-North American Central esijwayelekile", "CST China": "Isikhathi esivamile sase-China", "CST China DST": "Isikhathi semini sase-China", "CVST": "Isikhathi sehlobo sase-Cape Verde", "CVT": "Isikhathi esezingeni sase-Cape Verde", "CXT": "Isikhathi sase-Christmas Island", "ChST": "Isikhathi esivamile sase-Chamorro", "ChST NMI": "ChST NMI", "CuDT": "Isikhathi sase-Cuba sasemini", "CuST": "Isikhathi sase-Cuba esijwayelekile", "DAVT": "Isikhathi sase-Davis", "DDUT": "Isikhathi sase-Dumont-d’Urville", "EASST": "Isikhathi sase-Easter Island sasehlobo", "EAST": "Isikhathi sase-Easter Island esijwayelekile", "EAT": "Isikhathi saseMpumalanga Afrika", "ECT": "Isikhathi sase-Ecuador", "EDT": "Isikhathi sase-North American East sasemini", "EGDT": "Isikhathi sase-East Greenland sasemini", "EGST": "Isikhathi sase-East Greenland esijwayelekile", "EST": "Isikhathi sase-North American East esijwayelekile", "FEET": "Isikhathi sase-Further-eastern Europe", "FJT": "Isikhathi esivamile sase-Fiji", "FJT Summer": "Isikhathi sehlobo sase-Fiji", "FKST": "Isikhathi sase-Falkland Islands sasehlobo", "FKT": "Isikhathi sase-Falkland Islands esijwayelekile", "FNST": "Isikhathi sase-Fernando de Noronha sasehlobo", "FNT": "Isikhathi sase-Fernando de Noronha esivamile", "GALT": "Isikhathi sase-Galapagos", "GAMT": "Isikhathi sase-Gambier", "GEST": "Isikhathi sehlobo sase-Georgia", "GET": "Isikhathi esivamile sase-Georgia", "GFT": "Isikhathi sase-French Guiana", "GIT": "Isikhathi sase-Gilbert Islands", "GMT": "Isikhathi sase-Greenwich Mean", "GNSST": "GNSST", "GNST": "GNST", "GST": "Isikhathi sase-South Georgia", "GST Guam": "GST Guam", "GYT": "Isikhathi sase-Guyana", "HADT": "Isikhathi sase-Hawaii-Aleutia sasemini", "HAST": "Isikhathi sase-Hawaii-Aleutia esijwayelekile", "HKST": "Isikhathi sehlobo sase-Hong Kong", "HKT": "Isikhathi esivamile sase-Hong Kong", "HOVST": "Isikhathi sehlobo e-Hovd", "HOVT": "Isikhathi Esimisiwe sase-Hovd", "ICT": "Isikhathi sase-Indochina", "IDT": "Isikhathi sasemini sakwa-Israel", "IOT": "Isikhathi sase-Indian Ocean", "IRKST": "Isikhathi sasehlobo e-Irkutsk", "IRKT": "Isikhathi Esivamile sase-Irkutsk", "IRST": "Isikhathi sase-Iran esivamile", "IRST DST": "Isikhathi sase-Iran sasemini", "IST": "Isikhathi sase-India esivamile", "IST Israel": "Isikhathi esivamile sase-Israel", "JDT": "Isikhathi semini sase-Japan", "JST": "Isikhathi esivamile sase-Japan", "KOST": "Isikhathi sase-Kosrae", "KRAST": "Isikhathi sasehlobo e-Krasnoyarsk", "KRAT": "Isikhathi Esivamile sase-Krasnoyarsk", "KST": "Isikhathi Esivamile sase-Korea", "KST DST": "Isikhathi semini sase-Korea", "LHDT": "Isikhathi sase-Lord Howe sasemini", "LHST": "Isikhathi sase-Lord Howe esivamile", "LINT": "Isikhathi sase-Line Islands", "MAGST": "Isikhathi sasehlobo e-Magadan", "MAGT": "Isikhathi Esivamile sase-Magadan", "MART": "Isikhathi sase-Marquesas", "MAWT": "Isikhathi sase-Mawson", "MDT": "MDT", "MESZ": "Isikhathi sasehlobo sase-Central Europe", "MEZ": "Isikhathi esijwayelekile sase-Central Europe", "MHT": "Isikhathi sase-Marshall Islands", "MMT": "Isikhathi sase-Myanmar", "MSD": "Isikhathi sasehlobo e-Moscow", "MST": "MST", "MUST": "Isikhathi sehlobo sase-Mauritius", "MUT": "Isikhathi esivamile sase-Mauritius", "MVT": "Isikhathi sase-Maldives", "MYT": "Isikhathi sase-Malaysia", "NCT": "Isikhathi sase-New Caledonia esivamile", "NDT": "Isikhathi sase-Newfoundland sasemini", "NDT New Caledonia": "Isikhathi sase-New Caledonia sasehlobo", "NFDT": "Isikhathi sase-Norfolk Islands sasehlobo", "NFT": "Isikhathi sase-Norfolk Islands esivamile", "NOVST": "Isikhathi sasehlobo sase-Novosibirsk", "NOVT": "Isikhathi Esivamile sase-Novosibirsk", "NPT": "Isikhathi sase-Nepal", "NRT": "Isikhathi sase-Nauru", "NST": "Isikhathi sase-Newfoundland esijwayelekile", "NUT": "Isikhathi sase-Niue", "NZDT": "Isikhathi sasemini sase-New Zealand", "NZST": "Isikhathi esivamile sase-New Zealand", "OESZ": "Isikhathi sasehlobo sase-Eastern Europe", "OEZ": "Isikhathi esijwayelekile sase-Eastern Europe", "OMSST": "Isikhathi sasehlobo sase-Omsk", "OMST": "Isikhathi Esivamile sase-Omsk", "PDT": "Isikhathi sase-North American Pacific sasemini", "PDTM": "Isikhathi sase-Mexican Pacific sasemini", "PETDT": "esase-Petropavlovsk-Kamchatski Summer Time", "PETST": "esase-Petropavlovsk-Kamchatski Standard Time", "PGT": "Isikhathi sase-Papua New Guinea", "PHOT": "Isikhathi sase-Phoenix Islands", "PKT": "Isikhathi sase-Pakistan esivamile", "PKT DST": "Isikhathi sase-Pakistan sasehlobo", "PMDT": "Isikhathi sase-Saint Pierre nase-Miquelon sasemini", "PMST": "Iikhathi sase-Saint Pierre nase-Miquelon esijwayelekile", "PONT": "Isikhathi sase-Ponape", "PST": "Isikhathi sase-North American Pacific esijwayelekile", "PST Philippine": "Isikhathi esivamile sase-Philippine", "PST Philippine DST": "Isikhathi sehlobo sase-Philippine", "PST Pitcairn": "Isikhathi sase-Pitcairn", "PSTM": "Isikhathi sase-Mexican Pacific esijwayelekile", "PWT": "Isikhathi sase-Palau", "PYST": "Isikhathi sase-Paraguay sasehlobo", "PYT": "Isikhathi sase-Paraguay esivamile", "PYT Korea": "Isikhathi sase-Pyongyang", "RET": "Isikhathi sase-Reunion", "ROTT": "Isikhathi sase-Rothera", "SAKST": "Isikhathi sasehlobo e-Sakhalin", "SAKT": "Isikhathi Esivamile sase-Sakhalin", "SAMST": "esase-Samara Summer Time", "SAMT": "esase-Samara Standard Time", "SAST": "Isikhathi esivamile saseNingizimu Afrika", "SBT": "Isikhathi sase-Solomon Islands", "SCT": "Isikhathi sase-Seychelles", "SGT": "Isikhathi esivamile sase-Singapore", "SLST": "SLST", "SRT": "Isikhathi sase-Suriname", "SST Samoa": "Isikhathi sase-Samoa esivamile", "SST Samoa Apia": "Isikhathi sase-Apia esivamile", "SST Samoa Apia DST": "Isikhathi sase-Apia sasemini", "SST Samoa DST": "Isikhathi sase-Samoa sasemini", "SYOT": "Isikhathi sase-Syowa", "TAAF": "Isikhathi sase-French Southern nase-Antarctic", "TAHT": "Isikhathi sase-Tahiti", "TJT": "Isikhathi sase-Tajikistan", "TKT": "Isikhathi sase-Tokelau", "TLT": "Isikhathi sase-East Timor", "TMST": "Isikhathi sehlobo sase-Turkmenistan", "TMT": "Isikhathi esivamile sase-Turkmenistan", "TOST": "Isikhathi sase-Tonga sasehlobo", "TOT": "Isikhathi sase-Tonga esivamile", "TVT": "Isikhathi sase-Tuvalu", "TWT": "Isikhathi esivamile sase-Taipei", "TWT DST": "Isikhathi semini sase-Taipei", "ULAST": "Isikhathi sehlobo e-Ulan Bator", "ULAT": "Isikhathi Esimisiwe sase-Ulan Bator", "UYST": "Isikhathi sase-Uruguay sasehlobo", "UYT": "Isikhathi sase-Uruguay esijwayelekile", "UZT": "Isikhathi esivamile sase-Uzbekistan", "UZT DST": "Isikhathi sehlobo sase-Uzbekistan", "VET": "Isikhathi sase-Venezuela", "VLAST": "Isikhathi sasehlobo e-Vladivostok", "VLAT": "Isikhathi Esivamile sase-Vladivostok", "VOLST": "Isikhathi sase-Volgograd sasehlobo", "VOLT": "Isikhathi Esivamile sase-Volgograd", "VOST": "Isikhathi sase-Vostok", "VUT": "Isikhathi sase-Vanuatu esijwayelekile", "VUT DST": "Isikhathi sase-Vanuatu sasehlobo", "WAKT": "Isikhathi sase-Wake Island", "WARST": "Isikhathi saseNyakatho ne-Argentina sasehlobo", "WART": "Isikhathi saseNyakatho ne-Argentina esijwayelekile", "WAST": "Isikhathi saseNtshonalanga Afrika", "WAT": "Isikhathi saseNtshonalanga Afrika", "WESZ": "Isikhathi sasehlobo sase-Western Europe", "WEZ": "Isikhathi esijwayelekile sase-Western Europe", "WFT": "Isikhathi sase-Wallis nase-Futuna", "WGST": "Isikhathi sase-West Greenland sasehlobo", "WGT": "Isikhathi sase-West Greenland esijwayelekile", "WIB": "Isikhathi sase-Western Indonesia", "WIT": "Isikhathi sase-Eastern Indonesia", "WITA": "Isikhathi sase-Central Indonesia", "YAKST": "Isikhathi sasehlobo e-Yakutsk", "YAKT": "Isikhathi Esivamile sase-Yakutsk", "YEKST": "Isikhathi sasehlobo e-Yekaterinburg", "YEKT": "Isikhathi Esivamile sase-Yekaterinburg", "YST": "Yukon Time", "МСК": "Isikhathi sase-Moscow esijwayelekile", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "Isikhathi saseNtshonalanga ne-Kazakhstan", "شىعىش قازاق ەلى": "Isikhathi sase-Mpumalanga ne-Kazakhstan", "قازاق ەلى": "Isikhathi saseKazakhstan", "قىرعىزستان": "Isikhathi sase-Kyrgystan", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Isikhathi sasehlobo sase-Azores"},
 	}
 }
 
@@ -79,6 +79,7 @@ func (zu *zu) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'zu'
 func (zu *zu) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 	i := int64(n)
 
@@ -96,6 +97,7 @@ func (zu *zu) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'zu'
 func (zu *zu) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
+
 	start := zu.CardinalPluralRule(num1, v1)
 	end := zu.CardinalPluralRule(num2, v2)
 
@@ -106,6 +108,7 @@ func (zu *zu) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) 
 	}
 
 	return locales.PluralRuleOther
+
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -216,6 +219,7 @@ func (zu *zu) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'zu' and handles both Whole and Real numbers based on 'v'
 func (zu *zu) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -287,6 +291,7 @@ func (zu *zu) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'zu'
 func (zu *zu) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := zu.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -344,6 +349,7 @@ func (zu *zu) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'zu'
 // in accounting notation.
 func (zu *zu) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := zu.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -380,6 +386,7 @@ func (zu *zu) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 		b = append(b, zu.currencyNegativePrefix[0])
 
 	} else {
+
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
@@ -410,6 +417,7 @@ func (zu *zu) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 // FmtDateShort returns the short date representation of 't' for 'zu'
 func (zu *zu) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Month()), 10)
@@ -428,6 +436,7 @@ func (zu *zu) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'zu'
 func (zu *zu) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, zu.monthsAbbreviated[t.Month()]...)
@@ -446,6 +455,7 @@ func (zu *zu) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'zu'
 func (zu *zu) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, zu.monthsWide[t.Month()]...)
@@ -464,6 +474,7 @@ func (zu *zu) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'zu'
 func (zu *zu) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, zu.daysWide[t.Weekday()]...)
@@ -484,6 +495,7 @@ func (zu *zu) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'zu'
 func (zu *zu) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -504,6 +516,7 @@ func (zu *zu) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'zu'
 func (zu *zu) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -531,6 +544,7 @@ func (zu *zu) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'zu'
 func (zu *zu) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -562,6 +576,7 @@ func (zu *zu) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'zu'
 func (zu *zu) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

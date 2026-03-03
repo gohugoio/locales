@@ -10,53 +10,49 @@ import (
 )
 
 type kxv_Deva struct {
-	locale                 string
-	pluralsCardinal        []locales.PluralRule
-	pluralsOrdinal         []locales.PluralRule
-	pluralsRange           []locales.PluralRule
-	decimal                string
-	group                  string
-	minus                  string
-	percent                string
-	timeSeparator          string
-	currencies             []string // idx = enum of currency code
-	currencyPositivePrefix string
-	currencyNegativePrefix string
-	monthsAbbreviated      []string
-	monthsNarrow           []string
-	monthsWide             []string
-	daysAbbreviated        []string
-	daysNarrow             []string
-	daysShort              []string
-	daysWide               []string
-	periodsAbbreviated     []string
-	timezones              map[string]string
+	locale             string
+	pluralsCardinal    []locales.PluralRule
+	pluralsOrdinal     []locales.PluralRule
+	pluralsRange       []locales.PluralRule
+	decimal            string
+	group              string
+	minus              string
+	percent            string
+	timeSeparator      string
+	currencies         []string // idx = enum of currency code
+	monthsAbbreviated  []string
+	monthsNarrow       []string
+	monthsWide         []string
+	daysAbbreviated    []string
+	daysNarrow         []string
+	daysShort          []string
+	daysWide           []string
+	periodsAbbreviated []string
+	timezones          map[string]string
 }
 
 // New returns a new instance of translator for the 'kxv_Deva' locale
 func New() locales.Translator {
 	return &kxv_Deva{
-		locale:                 "kxv_Deva",
-		pluralsCardinal:        nil,
-		pluralsOrdinal:         nil,
-		pluralsRange:           nil,
-		decimal:                ".",
-		group:                  ",",
-		minus:                  "-",
-		percent:                "%",
-		timeSeparator:          ":",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
-		currencyPositivePrefix: " ",
-		currencyNegativePrefix: " ",
-		monthsAbbreviated:      []string{"", "पुसु", "माहा", "पागु", "हिर्रे", "बेसे", "जाट्टा", "आसाड़ी", "स्राबाँ", "बाॅदो", "दासारा", "दिवी", "पान्डे"},
-		monthsNarrow:           []string{"", "पु", "मा", "पा", "हि", "बे", "जा", "आ", "स्रा", "बाॅ", "दा", "दि", "पा"},
-		monthsWide:             []string{"", "पुसु लेञ्जु", "माहाका लेञ्जु", "पागुणी लेञ्जु", "हिरे लेञ्जु", "बेसे लेञ्जु", "जाटा लेञ्जु", "आसाड़ी लेञ्जु", "स्राबाँ लेञ्जु", "बोदो लेञ्जु", "दसारा लेञ्जु", "दिवी लेञ्जु", "पान्डे लेञ्जु"},
-		daysAbbreviated:        []string{"आदि", "साॅम्मा", "मान्गा", "पूदा", "लाक्की", "सुकुरु", "सान्नि"},
-		daysNarrow:             []string{"आ", "साॅ", "मा", "पू", "ला", "सु", "सा"},
-		daysShort:              []string{"आ", "साॅ", "मा", "पू", "ला", "सु", "सा"},
-		daysWide:               []string{"आदि वारा", "साॅम्वारा", "मंगाड़ा", "पुद्दारा", "लाक्कि वारा", "सुकुरु वारा", "सान्नि वारा"},
-		periodsAbbreviated:     []string{"ए\u202fएम", "पी\u202fएम"},
-		timezones:              map[string]string{"ACDT": "ऑस्\u200dट्रेलियाति मादिनी डेलाइट बेला", "ACST": "ऑस्\u200dट्रेलियाति मादिनी मानांकॉ बेला", "ACT": "ACT", "ACWDT": "ऑस्\u200dट्रेलियाति मादिनी वेड़ा कुण्पु डेलाइट बेला", "ACWST": "ऑस्\u200dट्रेलियाति मादिनी वेड़ा कुण्पु मानांकॉ बेला", "ADT": "अटलांटिक डेलाइट बेला", "ADT Arabia": "अरब डेलाइट बेला", "AEDT": "ऑस्\u200dट्रेलियाति वेड़ा हॉपु डेलाइट बेला", "AEST": "ऑस्\u200dट्रेलियाति वेड़ा हॉपु मानांकॉ बेला", "AFT": "आपगानिस्तान बेला", "AKDT": "अलास्\u200dका डेलाइट बेला", "AKST": "अलास्\u200dका मानांकॉ बेला", "AMST": "अमेज़न काराँ मासा बेला", "AMST Armenia": "आर्मेनिया काराँ मासा बेला", "AMT": "अमेज़न मानांकॉ बेला", "AMT Armenia": "आर्मेनिया मानांकॉ बेला", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "अर्जेंटीना काराँ मासा बेला", "ART": "अर्जेंटीना मानांकॉ बेला", "AST": "अटलांटिक मानांकॉ बेला", "AST Arabia": "अरब मानांकॉ बेला", "AWDT": "ऑस्ट्रेलियाति वेड़ा कुण्पु डेलाइट बेला", "AWST": "ऑस्ट्रेलियाति वेड़ा कुण्पु मानांकॉ बेला", "AZST": "अजरबाइजान काराँ मासा बेला", "AZT": "अजरबाइजान मानांकॉ बेला", "BDT Bangladesh": "बांग्लादेस काराँ मासा बेला", "BNT": "ब्रूनेति दारूस्सलम बेला", "BOT": "बोलीविया बेला", "BRST": "ब्राज़ीलिया काराँ मासा बेला", "BRT": "ब्राज़ीलिया मानांकॉ बेला", "BST Bangladesh": "बांग्लादेस मानांकॉ बेला", "BT": "बुटान बेला", "CAST": "CAST", "CAT": "मादिनी आप्रिका बेला", "CCT": "कोकोस द्वीप बेला", "CDT": "मादिनी डेलाइट बेला", "CHADT": "च्याताम डेलाइट बेला", "CHAST": "च्याताम मानांकॉ बेला", "CHUT": "चुक बेला", "CKT": "कुक द्वीप मानांकॉ बेला", "CKT DST": "कुक द्वीप आधा काराँ मासा बेला", "CLST": "चिली काराँ मासा बेला", "CLT": "चिली मानांकॉ बेला", "COST": "कोलंबिया काराँ मासा बेला", "COT": "कोलंबिया मानांकॉ बेला", "CST": "मादिनी मानांकॉ बेला", "CST China": "चीन मानांकॉ बेला", "CST China DST": "चीन डेलाइट बेला", "CVST": "केप वर्ड काराँ मासा बेला", "CVT": "केप वर्ड मानांकॉ बेला", "CXT": "क्रिसमस द्वीप बेला", "ChST": "चामोरो मानांकॉ बेला", "ChST NMI": "ChST NMI", "CuDT": "क्यूबा डेलाइट बेला", "CuST": "क्यूबा मानांकॉ बेला", "DAVT": "डेविस बेला", "DDUT": "ड्यूमोंट डी अर्विले बेला", "EASST": "ईस्टर द्वीप काराँ मासा बेला", "EAST": "ईस्टर द्वीप मानांकॉ बेला", "EAT": "वेड़ा हॉपु आप्रिका बेला", "ECT": "इक्वाडोर बेला", "EDT": "वेड़ा हॉपु डेलाइट बेला", "EGDT": "वेड़ा हॉपु ग्रीनलेंड काराँ मासा बेला", "EGST": "वेड़ा हॉपु ग्रीनलेंड मानांकॉ बेला", "EST": "वेड़ा हॉपु मानांकॉ बेला", "FEET": "ऑरॉ वेड़ा हॉपु युरोप-ति बेला", "FJT": "प़िजी मानांकॉ बेला", "FJT Summer": "प़िजी काराँ मासा बेला", "FKST": "पाक -लेंड द्वीप काराँ मासा बेला", "FKT": "पाक -लेंड द्वीप मानांकॉ बेला", "FNST": "प़र्नांर्डो डे नोरोन्हा काराँ मासा बेला", "FNT": "प़र्नांर्डो डे नोरोन्हा मानांकॉ बेला", "GALT": "ग्यालापागोस ति बेला", "GAMT": "ग्याम्बीयर बेला", "GEST": "जॉर्जिया काराँ मासा बेला", "GET": "जॉर्जिया मानांकॉ बेला", "GFT": "प़्रेंच गुयाना बेला", "GIT": "गिल्बर्ट द्वीप बेला", "GMT": "ग्रीनविच मीन बेला", "GNSST": "GNSST", "GNST": "GNST", "GST": "गल्प मानांकॉ बेला", "GST Guam": "GST Guam", "GYT": "गुयाना बेला", "HADT": "हवाति–आल्यूसन डेलाइट बेला", "HAST": "हवाति–आल्यूसन मानांकॉ बेला", "HKST": "हाँग काँग काराँ मासा बेला", "HKT": "हाँग काँग मानांकॉ बेला", "HOVST": "होव्ड काराँ मासा बेला", "HOVT": "होव्ड मानांकॉ बेला", "ICT": "इंडोचाइना बेला", "IDT": "इज़राइल डेलाइट बेला", "IOT": "बारॉत काजा सामुद्री बेला", "IRKST": "इर्कुत्स्क काराँ मासा बेला", "IRKT": "इर्कुत्स्क मानांकॉ बेला", "IRST": "इरान मानांकॉ बेला", "IRST DST": "तिरान डेलाइट बेला", "IST": "बारतीय मानांकॉ बेला", "IST Israel": "इज़राइल मानांकॉ बेला", "JDT": "जापान डेलाइट बेला", "JST": "जापान मानांकॉ बेला", "KOST": "कोसराए बेला", "KRAST": "क्रास्नोयार्स्क काराँ मासा बेला", "KRAT": "क्रास्नोयार्स्क मानांकॉ बेला", "KST": "कोरियाति मानांकॉ बेला", "KST DST": "कोरियाति डेलाइट बेला", "LHDT": "लॉर्ड होवे डेलाइट बेला", "LHST": "लॉर्ड होवे मानांकॉ बेला", "LINT": "लाइन द्वीप बेला", "MAGST": "मागादान काराँ मासा बेला", "MAGT": "मागादान मानांकॉ बेला", "MART": "मार्केसस बेला", "MAWT": "माव्सन बेला", "MDT": "MDT", "MESZ": "मादिनी युरोप-ति काराँ मासा बेला", "MEZ": "मादिनी युरोप-ति मानांकॉ बेला", "MHT": "मार्सल द्वीप बेला", "MMT": "म्यांमार बेला", "MSD": "मॉस्को काराँ मासा बेला", "MST": "MST", "MUST": "मॉरीसस काराँ मासा बेला", "MUT": "मॉरीसस मानांकॉ बेला", "MVT": "मालदीव बेला", "MYT": "मलेसिया बेला", "NCT": "न्यू केलेडोनिया मानांकॉ बेला", "NDT": "न्यूप़ाउंडलेंड डेलाइट बेला", "NDT New Caledonia": "न्यू केलेडोनिया काराँ मासा बेला", "NFDT": "नॉरप़ॉक द्वीप डेलाइट बेला", "NFT": "नॉरप़ॉक द्वीप मानांकॉ बेला", "NOVST": "नोवोसिबिर्स्क काराँ मासा बेला", "NOVT": "नोवोसिबिर्स्क मानांकॉ बेला", "NPT": "नेपाल बेला", "NRT": "नॉउरु बेला", "NST": "न्यूप़ाउंडलेंड मानांकॉ बेला", "NUT": "नीयू बेला", "NZDT": "न्यूज़ीलेंड डेलाइट बेला", "NZST": "न्यूज़ीलेंड मानांकॉ बेला", "OESZ": "वेड़ा हॉपु युरोप-ति काराँ मासा बेला", "OEZ": "वेड़ा हॉपु युरोप-ति मानांकॉ बेला", "OMSST": "ओम्स्क काराँ मासा बेला", "OMST": "ओम्स्क मानांकॉ बेला", "PDT": "पेसिपिक डेलाइट बेला", "PDTM": "मेक्सिकोति पेसिपिक डेलाइट बेला", "PETDT": "PETDT", "PETST": "PETST", "PGT": "पापुआ न्यू गिनी बेला", "PHOT": "प़ीनिक्स द्वीप बेला", "PKT": "पाकिस्तान मानांकॉ बेला", "PKT DST": "पाकिस्तान काराँ मासा बेला", "PMDT": "सेंट पिएरे ऑड़े मिक्वेलान डेलाइट बेला", "PMST": "सेंट पिएरे ऑड़े मिक्वेलान मानांकॉ बेला", "PONT": "पोनापे बेला", "PST": "पेसिपिक मानांकॉ बेला", "PST Philippine": "प़िलिपीन मानांकॉ बेला", "PST Philippine DST": "प़िलिपीन काराँ मासा बेला", "PST Pitcairn": "पिटकेर्न बेला", "PSTM": "मेक्सिकोति पेसिपिक मानांकॉ बेला", "PWT": "पलाउ बेला", "PYST": "पैराग्वे काराँ मासा बेला", "PYT": "पैराग्वे मानांकॉ बेला", "PYT Korea": "प्योंगयांग बेला", "RET": "रीयूनियन बेला", "ROTT": "रोथेरा बेला", "SAKST": "सकालिन काराँ मासा बेला", "SAKT": "सकालिन मानांकॉ बेला", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "दक्षिण आप्रिका मानांकॉ बेला", "SBT": "सोलोमन द्वीप बेला", "SCT": "सेसेल्स बेला", "SGT": "सिंगापुर बेला", "SLST": "SLST", "SRT": "सूरीनाम बेला", "SST Samoa": "समोआ मानांकॉ बेला", "SST Samoa Apia": "एपिआ मानांकॉ बेला", "SST Samoa Apia DST": "एपिआ डेलाइट बेला", "SST Samoa DST": "समोआ डेलाइट बेला", "SYOT": "स्योवा बेला", "TAAF": "दॉकिणॉ प़्रांस ऑड़े अंटार्कटिक बेला", "TAHT": "ताहिती बेला", "TJT": "ताजिकिस्तान बेला", "TKT": "टोकेलाऊ बेला", "TLT": "वेड़ा हॉपु तिमोर बेला", "TMST": "तुर्कमेनिस्तान काराँ मासा बेला", "TMT": "तुर्कमेनिस्तान मानांकॉ बेला", "TOST": "टोंगा काराँ मासा बेला", "TOT": "टोंगा मानांकॉ बेला", "TVT": "तुवालू बेला", "TWT": "ताइपे मानांकॉ बेला", "TWT DST": "ताइपे डेलाइट बेला", "ULAST": "उलान बटोर काराँ मासा बेला", "ULAT": "उलान बटोर मानांकॉ बेला", "UYST": "उरुग्वे काराँ मासा बेला", "UYT": "उरुग्वे मानांकॉ बेला", "UZT": "उज़्बेकिस्तान मानांकॉ बेला", "UZT DST": "उज़्बेकिस्तान काराँ मासा बेला", "VET": "वेनेज़ुएला बेला", "VLAST": "व्लादिवोस्तोक काराँ मासा बेला", "VLAT": "व्लादिवोस्तोक मानांकॉ बेला", "VOLST": "वोल्गोग्राड काराँ मासा बेला", "VOLT": "वोल्गोग्राड मानांकॉ बेला", "VOST": "वोस्तोक बेला", "VUT": "वनुआतू मानांकॉ बेला", "VUT DST": "वनुआतू काराँ मासा बेला", "WAKT": "वेक द्वीप बेला", "WARST": "वेड़ा कुण्पु अर्जेंटीना काराँ मासा बेला", "WART": "वेड़ा कुण्पु अर्जेंटीना मानांकॉ बेला", "WAST": "पस्चिम आप्रिका बेला", "WAT": "पस्चिम आप्रिका बेला", "WESZ": "वेड़ा कुण्पु युरोप-ति काराँ मासा बेला", "WEZ": "वेड़ा कुण्पु युरोप-ति मानांकॉ बेला", "WFT": "वालिस ऑड़े प़्यूचूना बेला", "WGST": "वेड़ा कुण्पु ग्रीनलेंड काराँ मासा बेला", "WGT": "वेड़ा कुण्पु ग्रीनलेंड मानांकॉ बेला", "WIB": "वेड़ा कुण्पु इंडोनेसिया बेला", "WIT": "वेड़ा हॉपु इंडोनेसिया बेला", "WITA": "मध्य इंडोनेसिया बेला", "YAKST": "याकुत्स्क काराँ मासा बेला", "YAKT": "याकुत्स्क मानांकॉ बेला", "YEKST": "येकातेरिनबर्ग काराँ मासा बेला", "YEKT": "येकातेरिनबर्ग मानांकॉ बेला", "YST": "YST", "МСК": "मॉस्को मानांकॉ बेला", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "वेड़ा कुण्पु कज़ाकस्तान बेला", "شىعىش قازاق ەلى": "वेड़ा हॉपु कज़ाकस्तान बेला", "قازاق ەلى": "कज़ाकस्तान बेला", "قىرعىزستان": "किर्गिस्\u200dतान बेला", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "पेरू काराँ मासा बेला"},
+		locale:             "kxv_Deva",
+		pluralsCardinal:    nil,
+		pluralsOrdinal:     nil,
+		pluralsRange:       nil,
+		decimal:            ".",
+		group:              ",",
+		minus:              "-",
+		percent:            "%",
+		timeSeparator:      ":",
+		currencies:         []string{"ADP", "AED", "AFA", "؋", "ALK", "ALL", "֏", "ANG", "Kz", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "$", "ATS", "A$", "AWG", "AZM", "₼", "BAD", "KM", "BAN", "$", "৳", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "$", "$", "Bs", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "$", "BTN", "BUK", "P", "BYB", "BYN", "BYR", "$", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "$", "CNH", "CNX", "CN¥", "$", "COU", "₡", "CSD", "CSK", "$", "$", "CVE", "CYP", "Kč", "DDM", "DEM", "DJF", "kr", "$", "DZD", "ECS", "ECV", "EEK", "E£", "ERN", "ESA", "ESB", "₧", "ETB", "€", "FIM", "$", "£", "FRF", "£", "GEK", "₾", "GHC", "GH₵", "£", "GMD", "FG", "GNS", "GQE", "GRD", "Q", "GWE", "GWP", "$", "HK$", "L", "HRD", "kn", "HTG", "Ft", "Rp", "IEP", "ILP", "ILR", "₪", "₹", "IQD", "IRR", "ISJ", "kr", "ITL", "$", "JOD", "JP¥", "KES", "⃀", "៛", "CF", "₩", "KRH", "KRO", "₩", "KWD", "$", "₸", "₭", "L£", "Rs", "$", "LSL", "Lt", "LTT", "LUC", "LUF", "LUL", "Ls", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "Ar", "MGF", "MKD", "MKN", "MLF", "K", "₮", "MOP", "MRO", "MRU", "MTL", "MTP", "Rs", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "RM", "MZE", "MZM", "MZN", "$", "₦", "NIC", "C$", "NLG", "kr", "Rs", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "₱", "Rs", "zł", "PLZ", "PTE", "₲", "QAR", "RHD", "ROL", "lei", "RSD", "₽", "RUR", "RF", "\u20c1", "$", "SCR", "SDD", "SDG", "SDP", "kr", "$", "£", "SIT", "SKK", "SLE", "SLL", "SOS", "$", "SRG", "£", "STD", "Db", "SUR", "SVC", "£", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "T$", "TPE", "TRL", "₺", "$", "NT$", "TZS", "₴", "UAK", "UGS", "UGX", "US$", "USN", "USS", "UYI", "UYP", "$", "UYW", "UZS", "VEB", "VED", "Bs", "VES", "₫", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "Cg.", "XDR", "XEU", "XFO", "XFU", "F\u202fCFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "¤", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "R", "ZMK", "ZK", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		monthsAbbreviated:  []string{"", "पुसु", "माहा", "पागु", "हिर्रे", "बेसे", "जाट्टा", "आसाड़ी", "स्राबाँ", "बाॅदो", "दासारा", "दिवी", "पान्डे"},
+		monthsNarrow:       []string{"", "पु", "मा", "पा", "हि", "बे", "जा", "आ", "स्रा", "बाॅ", "दा", "दि", "पा"},
+		monthsWide:         []string{"", "पुसु लेञ्जु", "माहाका लेञ्जु", "पागुणी लेञ्जु", "हिरे लेञ्जु", "बेसे लेञ्जु", "जाटा लेञ्जु", "आसाड़ी लेञ्जु", "स्राबाँ लेञ्जु", "बोदो लेञ्जु", "दसारा लेञ्जु", "दिवी लेञ्जु", "पान्डे लेञ्जु"},
+		daysAbbreviated:    []string{"आदि", "साॅम्मा", "मान्गा", "पूदा", "लाक्की", "सुकुरु", "सान्नि"},
+		daysNarrow:         []string{"आ", "साॅ", "मा", "पू", "ला", "सु", "सा"},
+		daysShort:          []string{"आ", "साॅ", "मा", "पू", "ला", "सु", "सा"},
+		daysWide:           []string{"आदि वारा", "साॅम्वारा", "मंगाड़ा", "पुद्दारा", "लाक्कि वारा", "सुकुरु वारा", "सान्नि वारा"},
+		periodsAbbreviated: []string{"ए\u202fएम", "पी\u202fएम"},
+		timezones:          map[string]string{"ACDT": "ऑस्\u200dट्रेलियाति मादिनी डेलाइट बेला", "ACST": "ACST", "ACT": "ACT", "ACWDT": "ऑस्\u200dट्रेलियाति मादिनी वेड़ा कुण्पु डेलाइट बेला", "ACWST": "ऑस्\u200dट्रेलियाति मादिनी वेड़ा कुण्पु मानांकॉ बेला", "ADT": "अटलांटिक डेलाइट बेला", "ADT Arabia": "अरब डेलाइट बेला", "AEDT": "ऑस्\u200dट्रेलियाति वेड़ा हॉपु डेलाइट बेला", "AEST": "ऑस्\u200dट्रेलियाति वेड़ा हॉपु मानांकॉ बेला", "AFT": "आपगानिस्तान बेला", "AKDT": "अलास्\u200dका डेलाइट बेला", "AKST": "अलास्\u200dका मानांकॉ बेला", "AMST": "अमेज़न काराँ मासा बेला", "AMST Armenia": "आर्मेनिया काराँ मासा बेला", "AMT": "अमेज़न मानांकॉ बेला", "AMT Armenia": "आर्मेनिया मानांकॉ बेला", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "अर्जेंटीना काराँ मासा बेला", "ART": "अर्जेंटीना मानांकॉ बेला", "AST": "अटलांटिक मानांकॉ बेला", "AST Arabia": "अरब मानांकॉ बेला", "AWDT": "ऑस्ट्रेलियाति वेड़ा कुण्पु डेलाइट बेला", "AWST": "ऑस्ट्रेलियाति वेड़ा कुण्पु मानांकॉ बेला", "AZST": "अजरबाइजान काराँ मासा बेला", "AZT": "अजरबाइजान मानांकॉ बेला", "BDT Bangladesh": "बांग्लादेस काराँ मासा बेला", "BNT": "ब्रूनेति दारूस्सलम बेला", "BOT": "बोलीविया बेला", "BRST": "ब्राज़ीलिया काराँ मासा बेला", "BRT": "ब्राज़ीलिया मानांकॉ बेला", "BST Bangladesh": "बांग्लादेस मानांकॉ बेला", "BT": "बुटान बेला", "CAST": "CAST", "CAT": "मादिनी आप्रिका बेला", "CCT": "कोकोस द्वीप बेला", "CDT": "मादिनी डेलाइट बेला", "CHADT": "च्याताम डेलाइट बेला", "CHAST": "च्याताम मानांकॉ बेला", "CHUT": "चुक बेला", "CKT": "कुक द्वीप मानांकॉ बेला", "CKT DST": "कुक द्वीप आधा काराँ मासा बेला", "CLST": "चिली काराँ मासा बेला", "CLT": "चिली मानांकॉ बेला", "COST": "कोलंबिया काराँ मासा बेला", "COT": "कोलंबिया मानांकॉ बेला", "CST": "मादिनी मानांकॉ बेला", "CST China": "चीन मानांकॉ बेला", "CST China DST": "चीन डेलाइट बेला", "CVST": "केप वर्ड काराँ मासा बेला", "CVT": "केप वर्ड मानांकॉ बेला", "CXT": "क्रिसमस द्वीप बेला", "ChST": "चामोरो मानांकॉ बेला", "ChST NMI": "ChST NMI", "CuDT": "क्यूबा डेलाइट बेला", "CuST": "क्यूबा मानांकॉ बेला", "DAVT": "डेविस बेला", "DDUT": "ड्यूमोंट डी अर्विले बेला", "EASST": "ईस्टर द्वीप काराँ मासा बेला", "EAST": "ईस्टर द्वीप मानांकॉ बेला", "EAT": "वेड़ा हॉपु आप्रिका बेला", "ECT": "इक्वाडोर बेला", "EDT": "वेड़ा हॉपु डेलाइट बेला", "EGDT": "वेड़ा हॉपु ग्रीनलेंड काराँ मासा बेला", "EGST": "वेड़ा हॉपु ग्रीनलेंड मानांकॉ बेला", "EST": "वेड़ा हॉपु मानांकॉ बेला", "FEET": "ऑरॉ वेड़ा हॉपु युरोप-ति बेला", "FJT": "प़िजी मानांकॉ बेला", "FJT Summer": "प़िजी काराँ मासा बेला", "FKST": "पाक -लेंड द्वीप काराँ मासा बेला", "FKT": "पाक -लेंड द्वीप मानांकॉ बेला", "FNST": "प़र्नांर्डो डे नोरोन्हा काराँ मासा बेला", "FNT": "प़र्नांर्डो डे नोरोन्हा मानांकॉ बेला", "GALT": "ग्यालापागोस ति बेला", "GAMT": "ग्याम्बीयर बेला", "GEST": "जॉर्जिया काराँ मासा बेला", "GET": "जॉर्जिया मानांकॉ बेला", "GFT": "प़्रेंच गुयाना बेला", "GIT": "गिल्बर्ट द्वीप बेला", "GMT": "ग्रीनविच मीन बेला", "GNSST": "GNSST", "GNST": "GNST", "GST": "दक्षिणी जॉर्जिया बेला", "GST Guam": "GST Guam", "GYT": "गुयाना बेला", "HADT": "हवाति–आल्यूसन मानांकॉ बेला", "HAST": "हवाति–आल्यूसन मानांकॉ बेला", "HKST": "हाँग काँग काराँ मासा बेला", "HKT": "हाँग काँग मानांकॉ बेला", "HOVST": "होव्ड काराँ मासा बेला", "HOVT": "होव्ड मानांकॉ बेला", "ICT": "इंडोचाइना बेला", "IDT": "इज़राइल डेलाइट बेला", "IOT": "बारॉत काजा सामुद्री बेला", "IRKST": "इर्कुत्स्क काराँ मासा बेला", "IRKT": "इर्कुत्स्क मानांकॉ बेला", "IRST": "इरान मानांकॉ बेला", "IRST DST": "तिरान डेलाइट बेला", "IST": "बारतीय मानांकॉ बेला", "IST Israel": "इज़राइल मानांकॉ बेला", "JDT": "जापान डेलाइट बेला", "JST": "जापान मानांकॉ बेला", "KOST": "कोसराए बेला", "KRAST": "क्रास्नोयार्स्क काराँ मासा बेला", "KRAT": "क्रास्नोयार्स्क मानांकॉ बेला", "KST": "कोरियाति मानांकॉ बेला", "KST DST": "कोरियाति डेलाइट बेला", "LHDT": "लॉर्ड होवे डेलाइट बेला", "LHST": "लॉर्ड होवे मानांकॉ बेला", "LINT": "लाइन द्वीप बेला", "MAGST": "मागादान काराँ मासा बेला", "MAGT": "मागादान मानांकॉ बेला", "MART": "मार्केसस बेला", "MAWT": "माव्सन बेला", "MDT": "MDT", "MESZ": "मादिनी युरोप-ति काराँ मासा बेला", "MEZ": "मादिनी युरोप-ति मानांकॉ बेला", "MHT": "मार्सल द्वीप बेला", "MMT": "म्यांमार बेला", "MSD": "मॉस्को काराँ मासा बेला", "MST": "MST", "MUST": "मॉरीसस काराँ मासा बेला", "MUT": "मॉरीसस मानांकॉ बेला", "MVT": "मालदीव बेला", "MYT": "मलेसिया बेला", "NCT": "न्यू केलेडोनिया मानांकॉ बेला", "NDT": "न्यूप़ाउंडलेंड डेलाइट बेला", "NDT New Caledonia": "न्यू केलेडोनिया काराँ मासा बेला", "NFDT": "नॉरप़ॉक द्वीप डेलाइट बेला", "NFT": "नॉरप़ॉक द्वीप मानांकॉ बेला", "NOVST": "नोवोसिबिर्स्क काराँ मासा बेला", "NOVT": "नोवोसिबिर्स्क मानांकॉ बेला", "NPT": "नेपाल बेला", "NRT": "नॉउरु बेला", "NST": "न्यूप़ाउंडलेंड मानांकॉ बेला", "NUT": "नीयू बेला", "NZDT": "न्यूज़ीलेंड डेलाइट बेला", "NZST": "न्यूज़ीलेंड मानांकॉ बेला", "OESZ": "वेड़ा हॉपु युरोप-ति काराँ मासा बेला", "OEZ": "वेड़ा हॉपु युरोप-ति मानांकॉ बेला", "OMSST": "ओम्स्क काराँ मासा बेला", "OMST": "ओम्स्क मानांकॉ बेला", "PDT": "पेसिपिक डेलाइट बेला", "PDTM": "मेक्सिकोति पेसिपिक डेलाइट बेला", "PETDT": "PETDT", "PETST": "PETST", "PGT": "पापुआ न्यू गिनी बेला", "PHOT": "प़ीनिक्स द्वीप बेला", "PKT": "पाकिस्तान मानांकॉ बेला", "PKT DST": "पाकिस्तान काराँ मासा बेला", "PMDT": "सेंट पिएरे ऑड़े मिक्वेलान डेलाइट बेला", "PMST": "सेंट पिएरे ऑड़े मिक्वेलान मानांकॉ बेला", "PONT": "पोनापे बेला", "PST": "पेसिपिक मानांकॉ बेला", "PST Philippine": "प़िलिपीन मानांकॉ बेला", "PST Philippine DST": "प़िलिपीन काराँ मासा बेला", "PST Pitcairn": "पिटकेर्न बेला", "PSTM": "मेक्सिकोति पेसिपिक मानांकॉ बेला", "PWT": "पलाउ बेला", "PYST": "पैराग्वे काराँ मासा बेला", "PYT": "पैराग्वे मानांकॉ बेला", "PYT Korea": "प्योंगयांग बेला", "RET": "रीयूनियन बेला", "ROTT": "रोथेरा बेला", "SAKST": "सकालिन काराँ मासा बेला", "SAKT": "सकालिन मानांकॉ बेला", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "दक्षिण आप्रिका मानांकॉ बेला", "SBT": "सोलोमन द्वीप बेला", "SCT": "सेसेल्स बेला", "SGT": "सिंगापुर बेला", "SLST": "SLST", "SRT": "सूरीनाम बेला", "SST Samoa": "समोआ मानांकॉ बेला", "SST Samoa Apia": "एपिआ मानांकॉ बेला", "SST Samoa Apia DST": "एपिआ डेलाइट बेला", "SST Samoa DST": "समोआ डेलाइट बेला", "SYOT": "स्योवा बेला", "TAAF": "दॉकिणॉ प़्रांस ऑड़े अंटार्कटिक बेला", "TAHT": "ताहिती बेला", "TJT": "ताजिकिस्तान बेला", "TKT": "टोकेलाऊ बेला", "TLT": "वेड़ा हॉपु तिमोर बेला", "TMST": "तुर्कमेनिस्तान काराँ मासा बेला", "TMT": "तुर्कमेनिस्तान मानांकॉ बेला", "TOST": "टोंगा काराँ मासा बेला", "TOT": "टोंगा मानांकॉ बेला", "TVT": "तुवालू बेला", "TWT": "ताइपे मानांकॉ बेला", "TWT DST": "ताइपे डेलाइट बेला", "ULAST": "उलान बटोर काराँ मासा बेला", "ULAT": "उलान बटोर मानांकॉ बेला", "UYST": "उरुग्वे काराँ मासा बेला", "UYT": "उरुग्वे मानांकॉ बेला", "UZT": "उज़्बेकिस्तान मानांकॉ बेला", "UZT DST": "उज़्बेकिस्तान काराँ मासा बेला", "VET": "वेनेज़ुएला बेला", "VLAST": "व्लादिवोस्तोक काराँ मासा बेला", "VLAT": "व्लादिवोस्तोक मानांकॉ बेला", "VOLST": "वोल्गोग्राड काराँ मासा बेला", "VOLT": "वोल्गोग्राड मानांकॉ बेला", "VOST": "वोस्तोक बेला", "VUT": "वनुआतू मानांकॉ बेला", "VUT DST": "वनुआतू काराँ मासा बेला", "WAKT": "वेक द्वीप बेला", "WARST": "वेड़ा कुण्पु अर्जेंटीना काराँ मासा बेला", "WART": "वेड़ा कुण्पु अर्जेंटीना मानांकॉ बेला", "WAST": "पस्चिम आप्रिका बेला", "WAT": "पस्चिम आप्रिका बेला", "WESZ": "वेड़ा कुण्पु युरोप-ति काराँ मासा बेला", "WEZ": "वेड़ा कुण्पु युरोप-ति मानांकॉ बेला", "WFT": "वालिस ऑड़े प़्यूचूना बेला", "WGST": "वेड़ा कुण्पु ग्रीनलेंड काराँ मासा बेला", "WGT": "वेड़ा कुण्पु ग्रीनलेंड मानांकॉ बेला", "WIB": "वेड़ा कुण्पु इंडोनेसिया बेला", "WIT": "वेड़ा हॉपु इंडोनेसिया बेला", "WITA": "मध्य इंडोनेसिया बेला", "YAKST": "याकुत्स्क काराँ मासा बेला", "YAKT": "याकुत्स्क मानांकॉ बेला", "YEKST": "येकातेरिनबर्ग काराँ मासा बेला", "YEKT": "येकातेरिनबर्ग मानांकॉ बेला", "YST": "YST", "МСК": "मॉस्को मानांकॉ बेला", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "वेड़ा कुण्पु कज़ाकस्तान बेला", "شىعىش قازاق ەلى": "वेड़ा हॉपु कज़ाकस्तान बेला", "قازاق ەلى": "कज़ाकस्तान बेला", "قىرعىزستان": "किर्गिस्\u200dतान बेला", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "अज़ोरेस काराँ मासा बेला"},
 	}
 }
 
@@ -203,6 +199,7 @@ func (kxv *kxv_Deva) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'kxv_Deva' and handles both Whole and Real numbers based on 'v'
 func (kxv *kxv_Deva) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -221,6 +218,7 @@ func (kxv *kxv_Deva) FmtNumber(num float64, v uint64) string {
 		}
 
 		if inWhole {
+
 			if count == groupThreshold {
 				b = append(b, kxv.group[0])
 				count = 1
@@ -282,9 +280,10 @@ func (kxv *kxv_Deva) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'kxv_Deva'
 func (kxv *kxv_Deva) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kxv.currencies[currency]
-	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	inSecondary := false
@@ -301,6 +300,7 @@ func (kxv *kxv_Deva) FmtCurrency(num float64, v uint64, currency currency.Type) 
 		}
 
 		if inWhole {
+
 			if count == groupThreshold {
 				b = append(b, kxv.group[0])
 				count = 1
@@ -319,10 +319,6 @@ func (kxv *kxv_Deva) FmtCurrency(num float64, v uint64, currency currency.Type) 
 
 	for j := len(symbol) - 1; j >= 0; j-- {
 		b = append(b, symbol[j])
-	}
-
-	for j := len(kxv.currencyPositivePrefix) - 1; j >= 0; j-- {
-		b = append(b, kxv.currencyPositivePrefix[j])
 	}
 
 	if num < 0 {
@@ -351,9 +347,10 @@ func (kxv *kxv_Deva) FmtCurrency(num float64, v uint64, currency currency.Type) 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'kxv_Deva'
 // in accounting notation.
 func (kxv *kxv_Deva) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kxv.currencies[currency]
-	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	inSecondary := false
@@ -370,6 +367,7 @@ func (kxv *kxv_Deva) FmtAccounting(num float64, v uint64, currency currency.Type
 		}
 
 		if inWhole {
+
 			if count == groupThreshold {
 				b = append(b, kxv.group[0])
 				count = 1
@@ -392,10 +390,6 @@ func (kxv *kxv_Deva) FmtAccounting(num float64, v uint64, currency currency.Type
 			b = append(b, symbol[j])
 		}
 
-		for j := len(kxv.currencyNegativePrefix) - 1; j >= 0; j-- {
-			b = append(b, kxv.currencyNegativePrefix[j])
-		}
-
 		b = append(b, kxv.minus[0])
 
 	} else {
@@ -403,11 +397,6 @@ func (kxv *kxv_Deva) FmtAccounting(num float64, v uint64, currency currency.Type
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
-
-		for j := len(kxv.currencyPositivePrefix) - 1; j >= 0; j-- {
-			b = append(b, kxv.currencyPositivePrefix[j])
-		}
-
 	}
 
 	// reverse
@@ -431,6 +420,7 @@ func (kxv *kxv_Deva) FmtAccounting(num float64, v uint64, currency currency.Type
 
 // FmtDateShort returns the short date representation of 't' for 'kxv_Deva'
 func (kxv *kxv_Deva) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -449,6 +439,7 @@ func (kxv *kxv_Deva) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'kxv_Deva'
 func (kxv *kxv_Deva) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -467,6 +458,7 @@ func (kxv *kxv_Deva) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'kxv_Deva'
 func (kxv *kxv_Deva) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -485,6 +477,7 @@ func (kxv *kxv_Deva) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'kxv_Deva'
 func (kxv *kxv_Deva) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, kxv.daysWide[t.Weekday()]...)
@@ -505,6 +498,7 @@ func (kxv *kxv_Deva) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'kxv_Deva'
 func (kxv *kxv_Deva) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -534,6 +528,7 @@ func (kxv *kxv_Deva) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'kxv_Deva'
 func (kxv *kxv_Deva) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -570,6 +565,7 @@ func (kxv *kxv_Deva) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'kxv_Deva'
 func (kxv *kxv_Deva) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -611,6 +607,7 @@ func (kxv *kxv_Deva) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'kxv_Deva'
 func (kxv *kxv_Deva) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

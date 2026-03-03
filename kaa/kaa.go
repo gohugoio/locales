@@ -197,6 +197,7 @@ func (kaa *kaa) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'kaa' and handles both Whole and Real numbers based on 'v'
 func (kaa *kaa) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -268,6 +269,7 @@ func (kaa *kaa) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'kaa'
 func (kaa *kaa) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kaa.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -276,6 +278,7 @@ func (kaa *kaa) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'kaa'
 // in accounting notation.
 func (kaa *kaa) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kaa.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -283,6 +286,7 @@ func (kaa *kaa) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 // FmtDateShort returns the short date representation of 't' for 'kaa'
 func (kaa *kaa) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -290,6 +294,7 @@ func (kaa *kaa) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'kaa'
 func (kaa *kaa) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -297,6 +302,7 @@ func (kaa *kaa) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'kaa'
 func (kaa *kaa) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -304,6 +310,7 @@ func (kaa *kaa) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'kaa'
 func (kaa *kaa) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -311,6 +318,7 @@ func (kaa *kaa) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'kaa'
 func (kaa *kaa) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -318,6 +326,7 @@ func (kaa *kaa) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'kaa'
 func (kaa *kaa) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -325,6 +334,7 @@ func (kaa *kaa) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'kaa'
 func (kaa *kaa) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -332,6 +342,7 @@ func (kaa *kaa) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'kaa'
 func (kaa *kaa) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	return string(b)

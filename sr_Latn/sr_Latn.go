@@ -45,10 +45,10 @@ func New() locales.Translator {
 		minus:                  "-",
 		percent:                "%",
 		timeSeparator:          ":",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "KM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "r.", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "ლ", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
-		currencyPositiveSuffix: " ",
+		currencies:             []string{"ADP", "AED", "AFA", "؋", "ALK", "ALL", "֏", "ANG", "Kz", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "$", "ATS", "A$", "AWG", "AZM", "₼", "BAD", "KM", "BAN", "$", "৳", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "$", "$", "Bs", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "$", "BTN", "BUK", "P", "BYB", "r.", "BYR", "$", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "$", "CNH", "CNX", "CN¥", "$", "COU", "₡", "CSD", "CSK", "$", "$", "CVE", "CYP", "Kč", "DDM", "DEM", "DJF", "kr", "$", "DZD", "ECS", "ECV", "EEK", "E£", "ERN", "ESA", "ESB", "₧", "ETB", "€", "FIM", "$", "£", "FRF", "£", "GEK", "ლ", "GHC", "GH₵", "£", "GMD", "FG", "GNS", "GQE", "GRD", "Q", "GWE", "GWP", "$", "HK$", "L", "HRD", "kn", "HTG", "Ft", "Rp", "IEP", "ILP", "ILR", "₪", "₹", "IQD", "IRR", "ISJ", "kr", "ITL", "$", "JOD", "¥", "KES", "⃀", "៛", "CF", "₩", "KRH", "KRO", "₩", "KWD", "$", "₸", "₭", "L£", "Rs", "$", "LSL", "Lt", "LTT", "LUC", "LUF", "LUL", "Ls", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "Ar", "MGF", "MKD", "MKN", "MLF", "K", "₮", "MOP", "MRO", "MRU", "MTL", "MTP", "Rs", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "RM", "MZE", "MZM", "MZN", "$", "₦", "NIC", "C$", "NLG", "kr", "Rs", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "₱", "Rs", "zł", "PLZ", "PTE", "₲", "QAR", "RHD", "ROL", "lei", "RSD", "₽", "RUR", "RF", "\u20c1", "$", "SCR", "SDD", "SDG", "SDP", "kr", "$", "£", "SIT", "SKK", "SLE", "SLL", "SOS", "$", "SRG", "£", "STD", "Db", "SUR", "SVC", "£", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "T$", "TPE", "TRL", "₺", "$", "NT$", "TZS", "₴", "UAK", "UGS", "UGX", "US$", "USN", "USS", "UYI", "UYP", "$", "UYW", "UZS", "VEB", "VED", "Bs", "VES", "₫", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "Cg.", "XDR", "XEU", "XFO", "XFU", "F\u202fCFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "¤", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "R", "ZMK", "ZK", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		currencyPositiveSuffix: " ",
 		currencyNegativePrefix: "(",
-		currencyNegativeSuffix: " )",
+		currencyNegativeSuffix: " )",
 		monthsAbbreviated:      []string{"", "jan", "feb", "mar", "apr", "maj", "jun", "jul", "avg", "sep", "okt", "nov", "dec"},
 		monthsNarrow:           []string{"", "j", "f", "m", "a", "m", "j", "j", "a", "s", "o", "n", "d"},
 		monthsWide:             []string{"", "januar", "februar", "mart", "april", "maj", "jun", "jul", "avgust", "septembar", "oktobar", "novembar", "decembar"},
@@ -56,7 +56,7 @@ func New() locales.Translator {
 		daysNarrow:             []string{"n", "p", "u", "s", "č", "p", "s"},
 		daysShort:              []string{"ne", "po", "ut", "sr", "če", "pe", "su"},
 		daysWide:               []string{"nedelja", "ponedeljak", "utorak", "sreda", "četvrtak", "petak", "subota"},
-		timezones:              map[string]string{"ACDT": "Australijsko centralno letnje vreme", "ACST": "Akre letnje računanje vremena", "ACT": "Akre standardno vreme", "ACWDT": "Australijsko centralno zapadno letnje vreme", "ACWST": "Australijsko centralno zapadno standardno vreme", "ADT": "Atlantsko letnje vreme", "ADT Arabia": "Arabijsko letnje vreme", "AEDT": "Australijsko istočno letnje vreme", "AEST": "Australijsko istočno standardno vreme", "AFT": "Avganistan vreme", "AKDT": "Aljaska, letnje vreme", "AKST": "Aljaska, standardno vreme", "AMST": "Amazon, letnje vreme", "AMST Armenia": "Jermenija, letnje vreme", "AMT": "Amazon, standardno vreme", "AMT Armenia": "Jermenija, standardno vreme", "ANAST": "Anadir letnje računanje vremena", "ANAT": "Anadir standardno vreme", "ARST": "Argentina, letnje vreme", "ART": "Argentina, standardno vreme", "AST": "Atlantsko standardno vreme", "AST Arabia": "Arabijsko standardno vreme", "AWDT": "Australijsko zapadno letnje vreme", "AWST": "Australijsko zapadno standardno vreme", "AZST": "Azerbejdžan, letnje vreme", "AZT": "Azerbejdžan, standardno vreme", "BDT Bangladesh": "Bangladeš, letnje vreme", "BNT": "Brunej Darusalum vreme", "BOT": "Bolivija vreme", "BRST": "Brazilija, letnje vreme", "BRT": "Brazilija, standardno vreme", "BST Bangladesh": "Bangladeš, standardno vreme", "BT": "Butan vreme", "CAST": "CAST", "CAT": "Centralno-afričko vreme", "CCT": "Kokos (Keling) Ostrva vreme", "CDT": "Severnoameričko centralno letnje vreme", "CHADT": "Čatam, letnje vreme", "CHAST": "Čatam, standardno vreme", "CHUT": "Čuuk vreme", "CKT": "Kukova ostrva, standardno vreme", "CKT DST": "Kukova ostrva, polu-letnje vreme", "CLST": "Čile, letnje vreme", "CLT": "Čile, standardno vreme", "COST": "Kolumbija, letnje vreme", "COT": "Kolumbija, standardno vreme", "CST": "Severnoameričko centralno standardno vreme", "CST China": "Kinesko standardno vreme", "CST China DST": "Kina, letnje vreme", "CVST": "Zelenortska Ostrva, letnje vreme", "CVT": "Zelenortska Ostrva, standardno vreme", "CXT": "Božićno ostrvo vreme", "ChST": "Čamoro vreme", "ChST NMI": "Severna Marijanska Ostrva vreme", "CuDT": "Kuba, letnje vreme", "CuST": "Kuba, standardno vreme", "DAVT": "Dejvis vreme", "DDUT": "Dimon d’Urvil vreme", "EASST": "Uskršnja ostrva, letnje vreme", "EAST": "Uskršnja ostrva, standardno vreme", "EAT": "Istočno-afričko vreme", "ECT": "Ekvador vreme", "EDT": "Severnoameričko istočno letnje vreme", "EGDT": "Istočni Grenland, letnje vreme", "EGST": "Istočni Grenland, standardno vreme", "EST": "Severnoameričko istočno standardno vreme", "FEET": "Vreme daljeg istoka Evrope", "FJT": "Fidži, standardno vreme", "FJT Summer": "Fidži, letnje vreme", "FKST": "Folklandska Ostrva, letnje vreme", "FKT": "Folklandska Ostrva, standardno vreme", "FNST": "Fernando de Noronja, letnje vreme", "FNT": "Fernando de Noronja, standardno vreme", "GALT": "Galapagos vreme", "GAMT": "Gambije vreme", "GEST": "Gruzija, letnje vreme", "GET": "Gruzija, standardno vreme", "GFT": "Francuska Gvajana vreme", "GIT": "Gilbert ostrva vreme", "GMT": "Srednje vreme po Griniču", "GNSST": "GNSST", "GNST": "GNST", "GST": "Zalivsko vreme", "GST Guam": "Guam standardno vreme", "GYT": "Gvajana vreme", "HADT": "Havajsko-aleutsko letnje vreme", "HAST": "Havajsko-aleutsko standardno vreme", "HKST": "Hong Kong, letnje vreme", "HKT": "Hong Kong, standardno vreme", "HOVST": "Hovd, letnje vreme", "HOVT": "Hovd, standardno vreme", "ICT": "Indokina vreme", "IDT": "Izraelsko letnje vreme", "IOT": "Indijsko okeansko vreme", "IRKST": "Irkuck, letnje vreme", "IRKT": "Irkuck, standardno vreme", "IRST": "Iran, standardno vreme", "IRST DST": "Iran, letnje vreme", "IST": "Indijsko standardno vreme", "IST Israel": "Izraelsko standardno vreme", "JDT": "Japansko letnje vreme", "JST": "Japansko standardno vreme", "KOST": "Košre vreme", "KRAST": "Krasnojarsk, letnje vreme", "KRAT": "Krasnojarsk, standardno vreme", "KST": "Korejsko standardno vreme", "KST DST": "Korejsko letnje vreme", "LHDT": "Lord Hov, letnje vreme", "LHST": "Lord Hov, standardno vreme", "LINT": "Ostrva Lajn vreme", "MAGST": "Magadan, letnje vreme", "MAGT": "Magadan, standardno vreme", "MART": "Markiz vreme", "MAWT": "Moson vreme", "MDT": "Makao letnje računanje vremena", "MESZ": "Srednjeevropsko letnje vreme", "MEZ": "Srednjeevropsko standardno vreme", "MHT": "Maršalska Ostrva vreme", "MMT": "Mijanmar vreme", "MSD": "Moskva, letnje vreme", "MST": "Makao standardno vreme", "MUST": "Mauricijus, letnje vreme", "MUT": "Mauricijus, standardno vreme", "MVT": "Maldivi vreme", "MYT": "Malezija vreme", "NCT": "Nova Kaledonija, standardno vreme", "NDT": "Njufaundlend, letnje vreme", "NDT New Caledonia": "Nova Kaledonija, letnje vreme", "NFDT": "Norfolk Ostrvo, letnje vreme", "NFT": "Norfolk Ostrvo, standardno vreme", "NOVST": "Novosibirsk, letnje vreme", "NOVT": "Novosibirsk, standardno vreme", "NPT": "Nepal vreme", "NRT": "Nauru vreme", "NST": "Njufaundlend, standardno vreme", "NUT": "Niue vreme", "NZDT": "Novi Zeland, letnje vreme", "NZST": "Novi Zeland, standardno vreme", "OESZ": "Istočnoevropsko letnje vreme", "OEZ": "Istočnoevropsko standardno vreme", "OMSST": "Omsk, letnje vreme", "OMST": "Omsk, standardno vreme", "PDT": "Severnoameričko pacifičko letnje vreme", "PDTM": "Meksički Pacifik, letnje vreme", "PETDT": "Petropavlovsko-kamčatsko letnje računanje vremena", "PETST": "Petropavlovsko-kamčatsko standardno vreme", "PGT": "Papua Nova Gvineja vreme", "PHOT": "Feniks ostrva vreme", "PKT": "Pakistan, standardno vreme", "PKT DST": "Pakistan, letnje vreme", "PMDT": "Sen Pjer i Mikelon, letnje vreme", "PMST": "Sen Pjer i Mikelon, standardno vreme", "PONT": "Ponpej vreme", "PST": "Severnoameričko pacifičko standardno vreme", "PST Philippine": "Filipini, standardno vreme", "PST Philippine DST": "Filipini, letnje vreme", "PST Pitcairn": "Pitkern vreme", "PSTM": "Meksički Pacifik, standardno vreme", "PWT": "Palau vreme", "PYST": "Paragvaj, letnje vreme", "PYT": "Paragvaj, standardno vreme", "PYT Korea": "Pjongjanško vreme", "RET": "Reinion vreme", "ROTT": "Rotera vreme", "SAKST": "Sahalin, letnje vreme", "SAKT": "Sahalin, standardno vreme", "SAMST": "Samara letnje računanje vremena", "SAMT": "Samara standardno vreme", "SAST": "Južno-afričko vreme", "SBT": "Solomonska Ostrva vreme", "SCT": "Sejšeli vreme", "SGT": "Singapur, standardno vreme", "SLST": "Šri Lanka vreme", "SRT": "Surinam vreme", "SST Samoa": "Samoa, standardno vreme", "SST Samoa Apia": "Apija, standardno vreme", "SST Samoa Apia DST": "Apija, letnje vreme", "SST Samoa DST": "Samoa, letnje vreme", "SYOT": "Šova vreme", "TAAF": "Francusko južno i antarktičko vreme", "TAHT": "Tahiti vreme", "TJT": "Tadžikistan vreme", "TKT": "Tokelau vreme", "TLT": "Istočni timor vreme", "TMST": "Turkmenistan, letnje vreme", "TMT": "Turkmenistan, standardno vreme", "TOST": "Tonga, letnje vreme", "TOT": "Tonga, standardno vreme", "TVT": "Tuvalu vreme", "TWT": "Tajpej, standardno vreme", "TWT DST": "Tajpej, letnje vreme", "ULAST": "Ulan Bator, letnje vreme", "ULAT": "Ulan Bator, standardno vreme", "UYST": "Urugvaj, letnje vreme", "UYT": "Urugvaj, standardno vreme", "UZT": "Uzbekistan, standardno vreme", "UZT DST": "Uzbekistan, letnje vreme", "VET": "Venecuela vreme", "VLAST": "Vladivostok, letnje vreme", "VLAT": "Vladivostok, standardno vreme", "VOLST": "Volgograd, letnje vreme", "VOLT": "Volgograd, standardno vreme", "VOST": "Vostok vreme", "VUT": "Vanuatu, standardno vreme", "VUT DST": "Vanuatu, letnje vreme", "WAKT": "Vejk ostrvo vreme", "WARST": "Zapadna Argentina, letnje vreme", "WART": "Zapadna Argentina, standardno vreme", "WAST": "Zapadno-afričko vreme", "WAT": "Zapadno-afričko vreme", "WESZ": "Zapadnoevropsko letnje vreme", "WEZ": "Zapadnoevropsko standardno vreme", "WFT": "Valis i Futuna Ostrva vreme", "WGST": "Zapadni Grenland, letnje vreme", "WGT": "Zapadni Grenland, standardno vreme", "WIB": "Zapadno-indonezijsko vreme", "WIT": "Istočno-indonezijsko vreme", "WITA": "Centralno-indonezijsko vreme", "YAKST": "Jakutsk, letnje vreme", "YAKT": "Jakutsk, standardno vreme", "YEKST": "Jekaterinburg, letnje vreme", "YEKT": "Jekaterinburg, standardno vreme", "YST": "Jukon", "МСК": "Moskva, standardno vreme", "اقتاۋ": "Akvatau standardno vreme", "اقتاۋ قالاسى": "Akvatau letnje računanje vremena", "اقتوبە": "Akutobe standardno vreme", "اقتوبە قالاسى": "Akutobe letnje računanje vremena", "الماتى": "Almati standardno vreme", "الماتى قالاسى": "Almati letnje računanje vremena", "باتىس قازاق ەلى": "Zapadno-kazahstansko vreme", "شىعىش قازاق ەلى": "Istočno-kazahstansko vreme", "قازاق ەلى": "Kazahstansko vreme", "قىرعىزستان": "Kirgistan vreme", "قىزىلوردا": "Kizilorda standardno vreme", "قىزىلوردا قالاسى": "Kizilorda letnje računanje vremena", "∅∅∅": "Azori, letnje vreme"},
+		timezones:              map[string]string{"ACDT": "Australijsko centralno letnje vreme", "ACST": "Australijsko centralno standardno vreme", "ACT": "Akre standardno vreme", "ACWDT": "Australijsko centralno zapadno letnje vreme", "ACWST": "Australijsko centralno zapadno standardno vreme", "ADT": "Atlantsko letnje vreme", "ADT Arabia": "Arabijsko letnje vreme", "AEDT": "Australijsko istočno letnje vreme", "AEST": "Australijsko istočno standardno vreme", "AFT": "Avganistan vreme", "AKDT": "Aljaska, letnje vreme", "AKST": "Aljaska, standardno vreme", "AMST": "Amazon, letnje vreme", "AMST Armenia": "Jermenija, letnje vreme", "AMT": "Amazon, standardno vreme", "AMT Armenia": "Jermenija, standardno vreme", "ANAST": "Anadir letnje računanje vremena", "ANAT": "Anadir standardno vreme", "ARST": "Argentina, letnje vreme", "ART": "Argentina, standardno vreme", "AST": "Atlantsko standardno vreme", "AST Arabia": "Arabijsko standardno vreme", "AWDT": "Australijsko zapadno letnje vreme", "AWST": "Australijsko zapadno standardno vreme", "AZST": "Azerbejdžan, letnje vreme", "AZT": "Azerbejdžan, standardno vreme", "BDT Bangladesh": "Bangladeš, letnje vreme", "BNT": "Brunej Darusalum vreme", "BOT": "Bolivija vreme", "BRST": "Brazilija, letnje vreme", "BRT": "Brazilija, standardno vreme", "BST Bangladesh": "Bangladeš, standardno vreme", "BT": "Butan vreme", "CAST": "CAST", "CAT": "Centralno-afričko vreme", "CCT": "Kokos (Keling) Ostrva vreme", "CDT": "Severnoameričko centralno letnje vreme", "CHADT": "Čatam, letnje vreme", "CHAST": "Čatam, standardno vreme", "CHUT": "Čuuk vreme", "CKT": "Kukova ostrva, standardno vreme", "CKT DST": "Kukova ostrva, polu-letnje vreme", "CLST": "Čile, letnje vreme", "CLT": "Čile, standardno vreme", "COST": "Kolumbija, letnje vreme", "COT": "Kolumbija, standardno vreme", "CST": "Severnoameričko centralno standardno vreme", "CST China": "Kinesko standardno vreme", "CST China DST": "Kina, letnje vreme", "CVST": "Zelenortska Ostrva, letnje vreme", "CVT": "Zelenortska Ostrva, standardno vreme", "CXT": "Božićno ostrvo vreme", "ChST": "Čamoro vreme", "ChST NMI": "Severna Marijanska Ostrva vreme", "CuDT": "Kuba, letnje vreme", "CuST": "Kuba, standardno vreme", "DAVT": "Dejvis vreme", "DDUT": "Dimon d’Urvil vreme", "EASST": "Uskršnja ostrva, letnje vreme", "EAST": "Uskršnja ostrva, standardno vreme", "EAT": "Istočno-afričko vreme", "ECT": "Ekvador vreme", "EDT": "Severnoameričko istočno letnje vreme", "EGDT": "Istočni Grenland, letnje vreme", "EGST": "Istočni Grenland, standardno vreme", "EST": "Severnoameričko istočno standardno vreme", "FEET": "Vreme daljeg istoka Evrope", "FJT": "Fidži, standardno vreme", "FJT Summer": "Fidži, letnje vreme", "FKST": "Folklandska Ostrva, letnje vreme", "FKT": "Folklandska Ostrva, standardno vreme", "FNST": "Fernando de Noronja, letnje vreme", "FNT": "Fernando de Noronja, standardno vreme", "GALT": "Galapagos vreme", "GAMT": "Gambije vreme", "GEST": "Gruzija, letnje vreme", "GET": "Gruzija, standardno vreme", "GFT": "Francuska Gvajana vreme", "GIT": "Gilbert ostrva vreme", "GMT": "Srednje vreme po Griniču", "GNSST": "GNSST", "GNST": "GNST", "GST": "Južna Džordžija vreme", "GST Guam": "Guam standardno vreme", "GYT": "Gvajana vreme", "HADT": "Havajsko-aleutsko letnje vreme", "HAST": "Havajsko-aleutsko standardno vreme", "HKST": "Hong Kong, letnje vreme", "HKT": "Hong Kong, standardno vreme", "HOVST": "Hovd, letnje vreme", "HOVT": "Hovd, standardno vreme", "ICT": "Indokina vreme", "IDT": "Izraelsko letnje vreme", "IOT": "Indijsko okeansko vreme", "IRKST": "Irkuck, letnje vreme", "IRKT": "Irkuck, standardno vreme", "IRST": "Iran, standardno vreme", "IRST DST": "Iran, letnje vreme", "IST": "Indijsko standardno vreme", "IST Israel": "Izraelsko standardno vreme", "JDT": "Japansko letnje vreme", "JST": "Japansko standardno vreme", "KOST": "Košre vreme", "KRAST": "Krasnojarsk, letnje vreme", "KRAT": "Krasnojarsk, standardno vreme", "KST": "Korejsko standardno vreme", "KST DST": "Korejsko letnje vreme", "LHDT": "Lord Hov, letnje vreme", "LHST": "Lord Hov, standardno vreme", "LINT": "Ostrva Lajn vreme", "MAGST": "Magadan, letnje vreme", "MAGT": "Magadan, standardno vreme", "MART": "Markiz vreme", "MAWT": "Moson vreme", "MDT": "Makao letnje računanje vremena", "MESZ": "Srednjeevropsko letnje vreme", "MEZ": "Srednjeevropsko standardno vreme", "MHT": "Maršalska Ostrva vreme", "MMT": "Mijanmar vreme", "MSD": "Moskva, letnje vreme", "MST": "Makao standardno vreme", "MUST": "Mauricijus, letnje vreme", "MUT": "Mauricijus, standardno vreme", "MVT": "Maldivi vreme", "MYT": "Malezija vreme", "NCT": "Nova Kaledonija, standardno vreme", "NDT": "Njufaundlend, letnje vreme", "NDT New Caledonia": "Nova Kaledonija, letnje vreme", "NFDT": "Norfolk Ostrvo, letnje vreme", "NFT": "Norfolk Ostrvo, standardno vreme", "NOVST": "Novosibirsk, letnje vreme", "NOVT": "Novosibirsk, standardno vreme", "NPT": "Nepal vreme", "NRT": "Nauru vreme", "NST": "Njufaundlend, standardno vreme", "NUT": "Niue vreme", "NZDT": "Novi Zeland, letnje vreme", "NZST": "Novi Zeland, standardno vreme", "OESZ": "Istočnoevropsko letnje vreme", "OEZ": "Istočnoevropsko standardno vreme", "OMSST": "Omsk, letnje vreme", "OMST": "Omsk, standardno vreme", "PDT": "Severnoameričko pacifičko letnje vreme", "PDTM": "Meksički Pacifik, letnje vreme", "PETDT": "Petropavlovsko-kamčatsko letnje računanje vremena", "PETST": "Petropavlovsko-kamčatsko standardno vreme", "PGT": "Papua Nova Gvineja vreme", "PHOT": "Feniks ostrva vreme", "PKT": "Pakistan, standardno vreme", "PKT DST": "Pakistan, letnje vreme", "PMDT": "Sen Pjer i Mikelon, letnje vreme", "PMST": "Sen Pjer i Mikelon, standardno vreme", "PONT": "Ponpej vreme", "PST": "Severnoameričko pacifičko standardno vreme", "PST Philippine": "Filipini, standardno vreme", "PST Philippine DST": "Filipini, letnje vreme", "PST Pitcairn": "Pitkern vreme", "PSTM": "Meksički Pacifik, standardno vreme", "PWT": "Palau vreme", "PYST": "Paragvaj, letnje vreme", "PYT": "Paragvaj, standardno vreme", "PYT Korea": "Pjongjanško vreme", "RET": "Reinion vreme", "ROTT": "Rotera vreme", "SAKST": "Sahalin, letnje vreme", "SAKT": "Sahalin, standardno vreme", "SAMST": "Samara letnje računanje vremena", "SAMT": "Samara standardno vreme", "SAST": "Južno-afričko vreme", "SBT": "Solomonska Ostrva vreme", "SCT": "Sejšeli vreme", "SGT": "Singapur, standardno vreme", "SLST": "Šri Lanka vreme", "SRT": "Surinam vreme", "SST Samoa": "Samoa, standardno vreme", "SST Samoa Apia": "Apija, standardno vreme", "SST Samoa Apia DST": "Apija, letnje vreme", "SST Samoa DST": "Samoa, letnje vreme", "SYOT": "Šova vreme", "TAAF": "Francusko južno i antarktičko vreme", "TAHT": "Tahiti vreme", "TJT": "Tadžikistan vreme", "TKT": "Tokelau vreme", "TLT": "Istočni timor vreme", "TMST": "Turkmenistan, letnje vreme", "TMT": "Turkmenistan, standardno vreme", "TOST": "Tonga, letnje vreme", "TOT": "Tonga, standardno vreme", "TVT": "Tuvalu vreme", "TWT": "Tajpej, standardno vreme", "TWT DST": "Tajpej, letnje vreme", "ULAST": "Ulan Bator, letnje vreme", "ULAT": "Ulan Bator, standardno vreme", "UYST": "Urugvaj, letnje vreme", "UYT": "Urugvaj, standardno vreme", "UZT": "Uzbekistan, standardno vreme", "UZT DST": "Uzbekistan, letnje vreme", "VET": "Venecuela vreme", "VLAST": "Vladivostok, letnje vreme", "VLAT": "Vladivostok, standardno vreme", "VOLST": "Volgograd, letnje vreme", "VOLT": "Volgograd, standardno vreme", "VOST": "Vostok vreme", "VUT": "Vanuatu, standardno vreme", "VUT DST": "Vanuatu, letnje vreme", "WAKT": "Vejk ostrvo vreme", "WARST": "Zapadna Argentina, letnje vreme", "WART": "Zapadna Argentina, standardno vreme", "WAST": "Zapadno-afričko vreme", "WAT": "Zapadno-afričko vreme", "WESZ": "Zapadnoevropsko letnje vreme", "WEZ": "Zapadnoevropsko standardno vreme", "WFT": "Valis i Futuna Ostrva vreme", "WGST": "Zapadni Grenland, letnje vreme", "WGT": "Zapadni Grenland, standardno vreme", "WIB": "Zapadno-indonezijsko vreme", "WIT": "Istočno-indonezijsko vreme", "WITA": "Centralno-indonezijsko vreme", "YAKST": "Jakutsk, letnje vreme", "YAKT": "Jakutsk, standardno vreme", "YEKST": "Jekaterinburg, letnje vreme", "YEKT": "Jekaterinburg, standardno vreme", "YST": "Jukon", "МСК": "Moskva, standardno vreme", "اقتاۋ": "Akvatau standardno vreme", "اقتاۋ قالاسى": "Akvatau letnje računanje vremena", "اقتوبە": "Akutobe standardno vreme", "اقتوبە قالاسى": "Akutobe letnje računanje vremena", "الماتى": "Almati standardno vreme", "الماتى قالاسى": "Almati letnje računanje vremena", "باتىس قازاق ەلى": "Zapadno-kazahstansko vreme", "شىعىش قازاق ەلى": "Istočno-kazahstansko vreme", "قازاق ەلى": "Kazahstansko vreme", "قىرعىزستان": "Kirgistan vreme", "قىزىلوردا": "Kizilorda standardno vreme", "قىزىلوردا قالاسى": "Kizilorda letnje računanje vremena", "∅∅∅": "Azori, letnje vreme"},
 	}
 }
 
@@ -82,13 +82,14 @@ func (sr *sr_Latn) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'sr_Latn'
 func (sr *sr_Latn) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 	i := int64(n)
 	f := locales.F(n, v)
 	iMod10 := i % 10
 	iMod100 := i % 100
-	fMod100 := f % 100
 	fMod10 := f % 10
+	fMod100 := f % 100
 
 	if (v == 0 && iMod10 == 1 && iMod100 != 11) || (fMod10 == 1 && fMod100 != 11) {
 		return locales.PluralRuleOne
@@ -106,6 +107,7 @@ func (sr *sr_Latn) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'sr_Latn'
 func (sr *sr_Latn) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
+
 	start := sr.CardinalPluralRule(num1, v1)
 	end := sr.CardinalPluralRule(num2, v2)
 
@@ -128,6 +130,7 @@ func (sr *sr_Latn) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 	}
 
 	return locales.PluralRuleOther
+
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -238,6 +241,7 @@ func (sr *sr_Latn) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'sr_Latn' and handles both Whole and Real numbers based on 'v'
 func (sr *sr_Latn) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -309,6 +313,7 @@ func (sr *sr_Latn) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'sr_Latn'
 func (sr *sr_Latn) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sr.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -366,6 +371,7 @@ func (sr *sr_Latn) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'sr_Latn'
 // in accounting notation.
 func (sr *sr_Latn) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sr.currencies[currency]
 	l := len(s) + len(symbol) + 6 + 1*len(s[:len(s)-int(v)-1])/3
@@ -394,7 +400,9 @@ func (sr *sr_Latn) FmtAccounting(num float64, v uint64, currency currency.Type) 
 	}
 
 	if num < 0 {
+
 		b = append(b, sr.currencyNegativePrefix[0])
+
 	}
 
 	// reverse
@@ -427,6 +435,7 @@ func (sr *sr_Latn) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'sr_Latn'
 func (sr *sr_Latn) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -447,6 +456,7 @@ func (sr *sr_Latn) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'sr_Latn'
 func (sr *sr_Latn) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -467,6 +477,7 @@ func (sr *sr_Latn) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'sr_Latn'
 func (sr *sr_Latn) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -487,6 +498,7 @@ func (sr *sr_Latn) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'sr_Latn'
 func (sr *sr_Latn) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, sr.daysWide[t.Weekday()]...)
@@ -509,6 +521,7 @@ func (sr *sr_Latn) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'sr_Latn'
 func (sr *sr_Latn) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -529,6 +542,7 @@ func (sr *sr_Latn) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'sr_Latn'
 func (sr *sr_Latn) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -556,6 +570,7 @@ func (sr *sr_Latn) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'sr_Latn'
 func (sr *sr_Latn) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -587,6 +602,7 @@ func (sr *sr_Latn) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'sr_Latn'
 func (sr *sr_Latn) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

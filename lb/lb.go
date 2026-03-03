@@ -46,9 +46,9 @@ func New() locales.Translator {
 		percent:                "%",
 		timeSeparator:          ":",
 		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "öS", "AU$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "$", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
-		percentSuffix:          " ",
-		currencyPositiveSuffix: " ",
-		currencyNegativeSuffix: " ",
+		percentSuffix:          " ",
+		currencyPositiveSuffix: " ",
+		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "Jan.", "Feb.", "Mäe.", "Abr.", "Mee", "Juni", "Juli", "Aug.", "Sep.", "Okt.", "Nov.", "Dez."},
 		monthsNarrow:           []string{"", "J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"},
 		monthsWide:             []string{"", "Januar", "Februar", "Mäerz", "Abrëll", "Mee", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"},
@@ -56,7 +56,7 @@ func New() locales.Translator {
 		daysNarrow:             []string{"S", "M", "D", "M", "D", "F", "S"},
 		daysShort:              []string{"So.", "Mé.", "Dë.", "Më.", "Do.", "Fr.", "Sa."},
 		daysWide:               []string{"Sonndeg", "Méindeg", "Dënschdeg", "Mëttwoch", "Donneschdeg", "Freideg", "Samschdeg"},
-		timezones:              map[string]string{"ACDT": "Zentralaustralesch Summerzäit", "ACST": "Zentralaustralesch Normalzäit", "ACT": "Acre-Normalzäit", "ACWDT": "Zentral-/Westaustralesch Summerzäit", "ACWST": "Zentral-/Westaustralesch Normalzäit", "ADT": "Atlantik-Summerzäit", "ADT Arabia": "Arabesch Summerzäit", "AEDT": "Ostaustralesch Summerzäit", "AEST": "Ostaustralesch Normalzäit", "AFT": "Afghanistan-Zäit", "AKDT": "Alaska-Summerzäit", "AKST": "Alaska-Normalzäit", "AMST": "Amazonas-Summerzäit", "AMST Armenia": "Armenesch Summerzäit", "AMT": "Amazonas-Normalzäit", "AMT Armenia": "Armenesch Normalzäit", "ANAST": "Anadyr-Summerzäit", "ANAT": "Anadyr-Normalzäit", "ARST": "Argentinesch Summerzäit", "ART": "Argentinesch Normalzäit", "AST": "Atlantik-Normalzäit", "AST Arabia": "Arabesch Normalzäit", "AWDT": "Westaustralesch Summerzäit", "AWST": "Westaustralesch Normalzäit", "AZST": "Aserbaidschanesch Summerzäit", "AZT": "Aserbeidschanesch Normalzäit", "BDT Bangladesh": "Bangladesch-Summerzäit", "BNT": "Brunei-Zäit", "BOT": "Bolivianesch Zäit", "BRST": "Brasília-Summerzäit", "BRT": "Brasília-Normalzäit", "BST Bangladesh": "Bangladesch-Normalzäit", "BT": "Bhutan-Zäit", "CAST": "CAST", "CAT": "Zentralafrikanesch Zäit", "CCT": "Kokosinselen-Zäit", "CDT": "Nordamerikanesch Inland-Summerzäit", "CHADT": "Chatham-Summerzäit", "CHAST": "Chatham-Normalzäit", "CHUT": "Chuuk-Zäit", "CKT": "Cookinselen-Normalzäit", "CKT DST": "Cookinselen-Summerzäit", "CLST": "Chilenesch Summerzäit", "CLT": "Chilenesch Normalzäit", "COST": "Kolumbianesch Summerzäit", "COT": "Kolumbianesch Normalzäit", "CST": "Nordamerikanesch Inland-Normalzäit", "CST China": "Chinesesch Normalzäit", "CST China DST": "Chinesesch Summerzäit", "CVST": "Kap-Verde-Summerzäit", "CVT": "Kap-Verde-Normalzäit", "CXT": "Chrëschtdagsinsel-Zäit", "ChST": "Chamorro-Zäit", "ChST NMI": "ChST NMI", "CuDT": "Kubanesch Summerzäit", "CuST": "Kubanesch Normalzäit", "DAVT": "Davis-Zäit", "DDUT": "Dumont-d’Urville-Zäit", "EASST": "Ouschterinsel-Summerzäit", "EAST": "Ouschterinsel-Normalzäit", "EAT": "Ostafrikanesch Zäit", "ECT": "Ecuadorianesch Zäit", "EDT": "Nordamerikanesch Ostküsten-Summerzäit", "EGDT": "Ostgrönland-Summerzäit", "EGST": "Ostgrönland-Normalzäit", "EST": "Nordamerikanesch Ostküsten-Normalzäit", "FEET": "FEET", "FJT": "Fidschi-Normalzäit", "FJT Summer": "Fidschi-Summerzäit", "FKST": "Falklandinselen-Summerzäit", "FKT": "Falklandinselen-Normalzäit", "FNST": "Fernando-de-Noronha-Summerzäit", "FNT": "Fernando-de-Noronha-Normalzäit", "GALT": "Galapagos-Zäit", "GAMT": "Gambier-Zäit", "GEST": "Georgesch Summerzäit", "GET": "Georgesch Normalzäit", "GFT": "Franséisch-Guayane-Zäit", "GIT": "Gilbert-Inselen-Zäit", "GMT": "Mëttler Greenwich-Zäit", "GNSST": "GNSST", "GNST": "GNST", "GST": "Golf-Zäit", "GST Guam": "Guam-Zäit", "GYT": "Guyana-Zäit", "HADT": "Hawaii-Aleuten-Summerzäit", "HAST": "Hawaii-Aleuten-Normalzäit", "HKST": "Hong-Kong-Summerzäit", "HKT": "Hong-Kong-Normalzäit", "HOVST": "Hovd-Summerzäit", "HOVT": "Hovd-Normalzäit", "ICT": "Indochina-Zäit", "IDT": "Israelesch Summerzäit", "IOT": "Indeschen Ozean-Zäit", "IRKST": "Irkutsk-Summerzäit", "IRKT": "Irkutsk-Normalzäit", "IRST": "Iranesch Normalzäit", "IRST DST": "Iranesch Summerzäit", "IST": "Indesch Zäit", "IST Israel": "Israelesch Normalzäit", "JDT": "Japanesch Summerzäit", "JST": "Japanesch Normalzäit", "KOST": "Kosrae-Zäit", "KRAST": "Krasnojarsk-Summerzäit", "KRAT": "Krasnojarsk-Normalzäit", "KST": "Koreanesch Normalzäit", "KST DST": "Koreanesch Summerzäit", "LHDT": "Lord-Howe-Summerzäit", "LHST": "Lord-Howe-Normalzäit", "LINT": "Linneninselen-Zäit", "MAGST": "Magadan-Summerzäit", "MAGT": "Magadan-Normalzäit", "MART": "Marquesas-Zäit", "MAWT": "Mawson-Zäit", "MDT": "MDT", "MESZ": "Mëtteleuropäesch Summerzäit", "MEZ": "Mëtteleuropäesch Normalzäit", "MHT": "Marshallinselen-Zäit", "MMT": "Myanmar-Zäit", "MSD": "Moskauer Summerzäit", "MST": "MST", "MUST": "Mauritius-Summerzäit", "MUT": "Mauritius-Normalzäit", "MVT": "Maldiven-Zäit", "MYT": "Malaysesch Zäit", "NCT": "Neikaledonesch Normalzäit", "NDT": "Neifundland-Summerzäit", "NDT New Caledonia": "Neikaledonesch Summerzäit", "NFDT": "Norfolkinselen-Summerzäit", "NFT": "Norfolkinselen-Normalzäit", "NOVST": "Nowosibirsk-Summerzäit", "NOVT": "Nowosibirsk-Normalzäit", "NPT": "Nepalesesch Zäit", "NRT": "Nauru-Zäit", "NST": "Neifundland-Normalzäit", "NUT": "Niue-Zäit", "NZDT": "Neiséiland-Summerzäit", "NZST": "Neiséiland-Normalzäit", "OESZ": "Osteuropäesch Summerzäit", "OEZ": "Osteuropäesch Normalzäit", "OMSST": "Omsk-Summerzäit", "OMST": "Omsk-Normalzäit", "PDT": "Nordamerikanesch Westküsten-Summerzäit", "PDTM": "Mexikanesch Pazifik-Summerzäit", "PETDT": "Kamtschatka-Summerzäit", "PETST": "Kamtschatka-Normalzäit", "PGT": "Papua-Neiguinea-Zäit", "PHOT": "Phoenixinselen-Zäit", "PKT": "Pakistanesch Normalzäit", "PKT DST": "Pakistanesch Summerzäit", "PMDT": "Saint-Pierre-a-Miquelon-Summerzäit", "PMST": "Saint-Pierre-a-Miquelon-Normalzäit", "PONT": "Ponape-Zäit", "PST": "Nordamerikanesch Westküsten-Normalzäit", "PST Philippine": "Philippinnesch Normalzäit", "PST Philippine DST": "Philippinnesch Summerzäit", "PST Pitcairn": "Pitcairninselen-Zäit", "PSTM": "Mexikanesch Pazifik-Normalzäit", "PWT": "Palau-Zäit", "PYST": "Paraguayanesch Summerzäit", "PYT": "Paraguayanesch Normalzäit", "PYT Korea": "PYT Korea", "RET": "Réunion-Zäit", "ROTT": "Rothera-Zäit", "SAKST": "Sakhalin-Summerzäit", "SAKT": "Sakhalin-Normalzäit", "SAMST": "Samara-Summerzäit", "SAMT": "Samara-Normalzäit", "SAST": "Südafrikanesch Zäit", "SBT": "Salomoninselen-Zäit", "SCT": "Seychellen-Zäit", "SGT": "Singapur-Standardzäit", "SLST": "SLST", "SRT": "Suriname-Zäit", "SST Samoa": "Samoa-Normalzäit", "SST Samoa Apia": "SST Samoa Apia", "SST Samoa Apia DST": "SST Samoa Apia DST", "SST Samoa DST": "Samoa-Summerzäit", "SYOT": "Syowa-Zäit", "TAAF": "Franséisch Süd- an Antarktisgebidder-Zäit", "TAHT": "Tahiti-Zäit", "TJT": "Tadschikistan-Zäit", "TKT": "Tokelau-Zäit", "TLT": "Osttimor-Zäit", "TMST": "Turkmenistan-Summerzäit", "TMT": "Turkmenistan-Normalzäit", "TOST": "Tonganesch Summerzäit", "TOT": "Tonganesch Normalzäit", "TVT": "Tuvalu-Zäit", "TWT": "Taipei-Normalzäit", "TWT DST": "Taipei-Summerzäit", "ULAST": "Ulaanbaatar-Summerzäit", "ULAT": "Ulaanbaatar-Normalzäit", "UYST": "Uruguayanesch Summerzäit", "UYT": "Uruguyanesch Normalzäit", "UZT": "Usbekistan-Normalzäit", "UZT DST": "Usbekistan-Summerzäit", "VET": "Venezuela-Zäit", "VLAST": "Wladiwostok-Summerzäit", "VLAT": "Wladiwostok-Normalzäit", "VOLST": "Wolgograd-Summerzäit", "VOLT": "Wolgograd-Normalzäit", "VOST": "Wostok-Zäit", "VUT": "Vanuatu-Normalzäit", "VUT DST": "Vanuatu-Summerzäit", "WAKT": "Wake-Insel-Zäit", "WARST": "Westargentinesch Summerzäit", "WART": "Westargentinesch Normalzäit", "WAST": "Westafrikanesch Zäit", "WAT": "Westafrikanesch Zäit", "WESZ": "Westeuropäesch Summerzäit", "WEZ": "Westeuropäesch Normalzäit", "WFT": "Wallis-a-Futuna-Zäit", "WGST": "Westgrönland-Summerzäit", "WGT": "Westgrönland-Normalzäit", "WIB": "Westindonesesch Zäit", "WIT": "Ostindonesesch Zäit", "WITA": "Zentralindonesesch Zäit", "YAKST": "Jakutsk-Summerzäit", "YAKT": "Jakutsk-Normalzäit", "YEKST": "Jekaterinbuerg-Summerzäit", "YEKT": "Jekaterinbuerg-Normalzäit", "YST": "YST", "МСК": "Moskauer Normalzäit", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "Almaty-Normalzäit", "الماتى قالاسى": "Almaty-Summerzäit", "باتىس قازاق ەلى": "Westkasachesch Zäit", "شىعىش قازاق ەلى": "Ostkasachesch Zäit", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "Kirgisistan-Zäit", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Azoren-Summerzäit"},
+		timezones:              map[string]string{"ACDT": "Zentralaustralesch Summerzäit", "ACST": "Acre-Summerzäit", "ACT": "Acre-Normalzäit", "ACWDT": "Zentral-/Westaustralesch Summerzäit", "ACWST": "Zentral-/Westaustralesch Normalzäit", "ADT": "Atlantik-Summerzäit", "ADT Arabia": "Arabesch Summerzäit", "AEDT": "Ostaustralesch Summerzäit", "AEST": "Ostaustralesch Normalzäit", "AFT": "Afghanistan-Zäit", "AKDT": "Alaska-Summerzäit", "AKST": "Alaska-Normalzäit", "AMST": "Amazonas-Summerzäit", "AMST Armenia": "Armenesch Summerzäit", "AMT": "Amazonas-Normalzäit", "AMT Armenia": "Armenesch Normalzäit", "ANAST": "Anadyr-Summerzäit", "ANAT": "Anadyr-Normalzäit", "ARST": "Argentinesch Summerzäit", "ART": "Argentinesch Normalzäit", "AST": "Atlantik-Normalzäit", "AST Arabia": "Arabesch Normalzäit", "AWDT": "Westaustralesch Summerzäit", "AWST": "Westaustralesch Normalzäit", "AZST": "Aserbaidschanesch Summerzäit", "AZT": "Aserbeidschanesch Normalzäit", "BDT Bangladesh": "Bangladesch-Summerzäit", "BNT": "Brunei-Zäit", "BOT": "Bolivianesch Zäit", "BRST": "Brasília-Summerzäit", "BRT": "Brasília-Normalzäit", "BST Bangladesh": "Bangladesch-Normalzäit", "BT": "Bhutan-Zäit", "CAST": "CAST", "CAT": "Zentralafrikanesch Zäit", "CCT": "Kokosinselen-Zäit", "CDT": "Nordamerikanesch Inland-Summerzäit", "CHADT": "Chatham-Summerzäit", "CHAST": "Chatham-Normalzäit", "CHUT": "Chuuk-Zäit", "CKT": "Cookinselen-Normalzäit", "CKT DST": "Cookinselen-Summerzäit", "CLST": "Chilenesch Summerzäit", "CLT": "Chilenesch Normalzäit", "COST": "Kolumbianesch Summerzäit", "COT": "Kolumbianesch Normalzäit", "CST": "Nordamerikanesch Inland-Normalzäit", "CST China": "Chinesesch Normalzäit", "CST China DST": "Chinesesch Summerzäit", "CVST": "Kap-Verde-Summerzäit", "CVT": "Kap-Verde-Normalzäit", "CXT": "Chrëschtdagsinsel-Zäit", "ChST": "Chamorro-Zäit", "ChST NMI": "ChST NMI", "CuDT": "Kubanesch Summerzäit", "CuST": "Kubanesch Normalzäit", "DAVT": "Davis-Zäit", "DDUT": "Dumont-d’Urville-Zäit", "EASST": "Ouschterinsel-Summerzäit", "EAST": "Ouschterinsel-Normalzäit", "EAT": "Ostafrikanesch Zäit", "ECT": "Ecuadorianesch Zäit", "EDT": "Nordamerikanesch Ostküsten-Summerzäit", "EGDT": "Ostgrönland-Summerzäit", "EGST": "Ostgrönland-Normalzäit", "EST": "Nordamerikanesch Ostküsten-Normalzäit", "FEET": "FEET", "FJT": "Fidschi-Normalzäit", "FJT Summer": "Fidschi-Summerzäit", "FKST": "Falklandinselen-Summerzäit", "FKT": "Falklandinselen-Normalzäit", "FNST": "Fernando-de-Noronha-Summerzäit", "FNT": "Fernando-de-Noronha-Normalzäit", "GALT": "Galapagos-Zäit", "GAMT": "Gambier-Zäit", "GEST": "Georgesch Summerzäit", "GET": "Georgesch Normalzäit", "GFT": "Franséisch-Guayane-Zäit", "GIT": "Gilbert-Inselen-Zäit", "GMT": "Mëttler Greenwich-Zäit", "GNSST": "GNSST", "GNST": "GNST", "GST": "Südgeorgesch Zäit", "GST Guam": "Guam-Zäit", "GYT": "Guyana-Zäit", "HADT": "Hawaii-Aleuten-Normalzäit", "HAST": "Hawaii-Aleuten-Normalzäit", "HKST": "Hong-Kong-Summerzäit", "HKT": "Hong-Kong-Normalzäit", "HOVST": "Hovd-Summerzäit", "HOVT": "Hovd-Normalzäit", "ICT": "Indochina-Zäit", "IDT": "Israelesch Summerzäit", "IOT": "Indeschen Ozean-Zäit", "IRKST": "Irkutsk-Summerzäit", "IRKT": "Irkutsk-Normalzäit", "IRST": "Iranesch Normalzäit", "IRST DST": "Iranesch Summerzäit", "IST": "Indesch Zäit", "IST Israel": "Israelesch Normalzäit", "JDT": "Japanesch Summerzäit", "JST": "Japanesch Normalzäit", "KOST": "Kosrae-Zäit", "KRAST": "Krasnojarsk-Summerzäit", "KRAT": "Krasnojarsk-Normalzäit", "KST": "Koreanesch Normalzäit", "KST DST": "Koreanesch Summerzäit", "LHDT": "Lord-Howe-Summerzäit", "LHST": "Lord-Howe-Normalzäit", "LINT": "Linneninselen-Zäit", "MAGST": "Magadan-Summerzäit", "MAGT": "Magadan-Normalzäit", "MART": "Marquesas-Zäit", "MAWT": "Mawson-Zäit", "MDT": "MDT", "MESZ": "Mëtteleuropäesch Summerzäit", "MEZ": "Mëtteleuropäesch Normalzäit", "MHT": "Marshallinselen-Zäit", "MMT": "Myanmar-Zäit", "MSD": "Moskauer Summerzäit", "MST": "MST", "MUST": "Mauritius-Summerzäit", "MUT": "Mauritius-Normalzäit", "MVT": "Maldiven-Zäit", "MYT": "Malaysesch Zäit", "NCT": "Neikaledonesch Normalzäit", "NDT": "Neifundland-Summerzäit", "NDT New Caledonia": "Neikaledonesch Summerzäit", "NFDT": "Norfolkinselen-Summerzäit", "NFT": "Norfolkinselen-Normalzäit", "NOVST": "Nowosibirsk-Summerzäit", "NOVT": "Nowosibirsk-Normalzäit", "NPT": "Nepalesesch Zäit", "NRT": "Nauru-Zäit", "NST": "Neifundland-Normalzäit", "NUT": "Niue-Zäit", "NZDT": "Neiséiland-Summerzäit", "NZST": "Neiséiland-Normalzäit", "OESZ": "Osteuropäesch Summerzäit", "OEZ": "Osteuropäesch Normalzäit", "OMSST": "Omsk-Summerzäit", "OMST": "Omsk-Normalzäit", "PDT": "Nordamerikanesch Westküsten-Summerzäit", "PDTM": "Mexikanesch Pazifik-Summerzäit", "PETDT": "Kamtschatka-Summerzäit", "PETST": "Kamtschatka-Normalzäit", "PGT": "Papua-Neiguinea-Zäit", "PHOT": "Phoenixinselen-Zäit", "PKT": "Pakistanesch Normalzäit", "PKT DST": "Pakistanesch Summerzäit", "PMDT": "Saint-Pierre-a-Miquelon-Summerzäit", "PMST": "Saint-Pierre-a-Miquelon-Normalzäit", "PONT": "Ponape-Zäit", "PST": "Nordamerikanesch Westküsten-Normalzäit", "PST Philippine": "Philippinnesch Normalzäit", "PST Philippine DST": "Philippinnesch Summerzäit", "PST Pitcairn": "Pitcairninselen-Zäit", "PSTM": "Mexikanesch Pazifik-Normalzäit", "PWT": "Palau-Zäit", "PYST": "Paraguayanesch Summerzäit", "PYT": "Paraguayanesch Normalzäit", "PYT Korea": "PYT Korea", "RET": "Réunion-Zäit", "ROTT": "Rothera-Zäit", "SAKST": "Sakhalin-Summerzäit", "SAKT": "Sakhalin-Normalzäit", "SAMST": "Samara-Summerzäit", "SAMT": "Samara-Normalzäit", "SAST": "Südafrikanesch Zäit", "SBT": "Salomoninselen-Zäit", "SCT": "Seychellen-Zäit", "SGT": "Singapur-Standardzäit", "SLST": "SLST", "SRT": "Suriname-Zäit", "SST Samoa": "Samoa-Normalzäit", "SST Samoa Apia": "SST Samoa Apia", "SST Samoa Apia DST": "SST Samoa Apia DST", "SST Samoa DST": "Samoa-Summerzäit", "SYOT": "Syowa-Zäit", "TAAF": "Franséisch Süd- an Antarktisgebidder-Zäit", "TAHT": "Tahiti-Zäit", "TJT": "Tadschikistan-Zäit", "TKT": "Tokelau-Zäit", "TLT": "Osttimor-Zäit", "TMST": "Turkmenistan-Summerzäit", "TMT": "Turkmenistan-Normalzäit", "TOST": "Tonganesch Summerzäit", "TOT": "Tonganesch Normalzäit", "TVT": "Tuvalu-Zäit", "TWT": "Taipei-Normalzäit", "TWT DST": "Taipei-Summerzäit", "ULAST": "Ulaanbaatar-Summerzäit", "ULAT": "Ulaanbaatar-Normalzäit", "UYST": "Uruguayanesch Summerzäit", "UYT": "Uruguyanesch Normalzäit", "UZT": "Usbekistan-Normalzäit", "UZT DST": "Usbekistan-Summerzäit", "VET": "Venezuela-Zäit", "VLAST": "Wladiwostok-Summerzäit", "VLAT": "Wladiwostok-Normalzäit", "VOLST": "Wolgograd-Summerzäit", "VOLT": "Wolgograd-Normalzäit", "VOST": "Wostok-Zäit", "VUT": "Vanuatu-Normalzäit", "VUT DST": "Vanuatu-Summerzäit", "WAKT": "Wake-Insel-Zäit", "WARST": "Westargentinesch Summerzäit", "WART": "Westargentinesch Normalzäit", "WAST": "Westafrikanesch Zäit", "WAT": "Westafrikanesch Zäit", "WESZ": "Westeuropäesch Summerzäit", "WEZ": "Westeuropäesch Normalzäit", "WFT": "Wallis-a-Futuna-Zäit", "WGST": "Westgrönland-Summerzäit", "WGT": "Westgrönland-Normalzäit", "WIB": "Westindonesesch Zäit", "WIT": "Ostindonesesch Zäit", "WITA": "Zentralindonesesch Zäit", "YAKST": "Jakutsk-Summerzäit", "YAKT": "Jakutsk-Normalzäit", "YEKST": "Jekaterinbuerg-Summerzäit", "YEKT": "Jekaterinbuerg-Normalzäit", "YST": "YST", "МСК": "Moskauer Normalzäit", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "Almaty-Normalzäit", "الماتى قالاسى": "Almaty-Summerzäit", "باتىس قازاق ەلى": "Westkasachesch Zäit", "شىعىش قازاق ەلى": "Ostkasachesch Zäit", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "Kirgisistan-Zäit", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Azoren-Summerzäit"},
 	}
 }
 
@@ -82,6 +82,7 @@ func (lb *lb) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'lb'
 func (lb *lb) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -209,6 +210,7 @@ func (lb *lb) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'lb' and handles both Whole and Real numbers based on 'v'
 func (lb *lb) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -282,6 +284,7 @@ func (lb *lb) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'lb'
 func (lb *lb) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := lb.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -339,6 +342,7 @@ func (lb *lb) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'lb'
 // in accounting notation.
 func (lb *lb) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := lb.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -367,7 +371,9 @@ func (lb *lb) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 	}
 
 	if num < 0 {
+
 		b = append(b, lb.minus[0])
+
 	}
 
 	// reverse
@@ -400,6 +406,7 @@ func (lb *lb) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 // FmtDateShort returns the short date representation of 't' for 'lb'
 func (lb *lb) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -428,6 +435,7 @@ func (lb *lb) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'lb'
 func (lb *lb) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -446,6 +454,7 @@ func (lb *lb) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'lb'
 func (lb *lb) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -464,6 +473,7 @@ func (lb *lb) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'lb'
 func (lb *lb) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, lb.daysWide[t.Weekday()]...)
@@ -484,6 +494,7 @@ func (lb *lb) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'lb'
 func (lb *lb) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -504,6 +515,7 @@ func (lb *lb) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'lb'
 func (lb *lb) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -531,6 +543,7 @@ func (lb *lb) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'lb'
 func (lb *lb) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -562,6 +575,7 @@ func (lb *lb) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'lb'
 func (lb *lb) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

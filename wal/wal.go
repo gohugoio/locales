@@ -199,6 +199,7 @@ func (wal *wal) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'wal' and handles both Whole and Real numbers based on 'v'
 func (wal *wal) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -270,6 +271,7 @@ func (wal *wal) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'wal'
 func (wal *wal) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := wal.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -327,6 +329,7 @@ func (wal *wal) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'wal'
 // in accounting notation.
 func (wal *wal) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := wal.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -363,6 +366,7 @@ func (wal *wal) FmtAccounting(num float64, v uint64, currency currency.Type) str
 		b = append(b, wal.minus[0])
 
 	} else {
+
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
@@ -389,6 +393,7 @@ func (wal *wal) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 // FmtDateShort returns the short date representation of 't' for 'wal'
 func (wal *wal) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -417,6 +422,7 @@ func (wal *wal) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'wal'
 func (wal *wal) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -439,6 +445,7 @@ func (wal *wal) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'wal'
 func (wal *wal) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -461,6 +468,7 @@ func (wal *wal) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'wal'
 func (wal *wal) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, wal.daysWide[t.Weekday()]...)
@@ -494,6 +502,7 @@ func (wal *wal) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'wal'
 func (wal *wal) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -523,6 +532,7 @@ func (wal *wal) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'wal'
 func (wal *wal) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -559,6 +569,7 @@ func (wal *wal) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'wal'
 func (wal *wal) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -600,6 +611,7 @@ func (wal *wal) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'wal'
 func (wal *wal) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

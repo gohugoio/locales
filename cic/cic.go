@@ -193,6 +193,7 @@ func (cic *cic) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'cic' and handles both Whole and Real numbers based on 'v'
 func (cic *cic) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -264,6 +265,7 @@ func (cic *cic) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'cic'
 func (cic *cic) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cic.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -272,6 +274,7 @@ func (cic *cic) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'cic'
 // in accounting notation.
 func (cic *cic) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cic.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -279,6 +282,7 @@ func (cic *cic) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 // FmtDateShort returns the short date representation of 't' for 'cic'
 func (cic *cic) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Month()), 10)
@@ -297,6 +301,7 @@ func (cic *cic) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'cic'
 func (cic *cic) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, cic.monthsAbbreviated[t.Month()]...)
@@ -315,6 +320,7 @@ func (cic *cic) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'cic'
 func (cic *cic) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, cic.monthsWide[t.Month()]...)
@@ -333,6 +339,7 @@ func (cic *cic) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'cic'
 func (cic *cic) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, cic.daysWide[t.Weekday()]...)
@@ -353,6 +360,7 @@ func (cic *cic) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'cic'
 func (cic *cic) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -382,6 +390,7 @@ func (cic *cic) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'cic'
 func (cic *cic) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -418,6 +427,7 @@ func (cic *cic) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'cic'
 func (cic *cic) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -459,6 +469,7 @@ func (cic *cic) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'cic'
 func (cic *cic) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

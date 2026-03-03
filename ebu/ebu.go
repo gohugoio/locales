@@ -200,6 +200,7 @@ func (ebu *ebu) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ebu' and handles both Whole and Real numbers based on 'v'
 func (ebu *ebu) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -271,6 +272,7 @@ func (ebu *ebu) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ebu'
 func (ebu *ebu) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ebu.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -328,6 +330,7 @@ func (ebu *ebu) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ebu'
 // in accounting notation.
 func (ebu *ebu) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ebu.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -364,6 +367,7 @@ func (ebu *ebu) FmtAccounting(num float64, v uint64, currency currency.Type) str
 		b = append(b, ebu.currencyNegativePrefix[0])
 
 	} else {
+
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
@@ -394,6 +398,7 @@ func (ebu *ebu) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 // FmtDateShort returns the short date representation of 't' for 'ebu'
 func (ebu *ebu) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -422,6 +427,7 @@ func (ebu *ebu) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'ebu'
 func (ebu *ebu) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -440,6 +446,7 @@ func (ebu *ebu) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'ebu'
 func (ebu *ebu) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -458,6 +465,7 @@ func (ebu *ebu) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'ebu'
 func (ebu *ebu) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, ebu.daysWide[t.Weekday()]...)
@@ -478,6 +486,7 @@ func (ebu *ebu) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'ebu'
 func (ebu *ebu) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -498,6 +507,7 @@ func (ebu *ebu) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'ebu'
 func (ebu *ebu) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -525,6 +535,7 @@ func (ebu *ebu) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'ebu'
 func (ebu *ebu) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -556,6 +567,7 @@ func (ebu *ebu) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'ebu'
 func (ebu *ebu) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

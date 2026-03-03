@@ -69,6 +69,7 @@ func (smj *smj_SE) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'smj_SE'
 func (smj *smj_SE) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -198,6 +199,7 @@ func (smj *smj_SE) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'smj_SE' and handles both Whole and Real numbers based on 'v'
 func (smj *smj_SE) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -269,6 +271,7 @@ func (smj *smj_SE) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'smj_SE'
 func (smj *smj_SE) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := smj.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -277,6 +280,7 @@ func (smj *smj_SE) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'smj_SE'
 // in accounting notation.
 func (smj *smj_SE) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := smj.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -284,6 +288,7 @@ func (smj *smj_SE) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'smj_SE'
 func (smj *smj_SE) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -291,6 +296,7 @@ func (smj *smj_SE) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'smj_SE'
 func (smj *smj_SE) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -298,6 +304,7 @@ func (smj *smj_SE) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'smj_SE'
 func (smj *smj_SE) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -305,6 +312,7 @@ func (smj *smj_SE) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'smj_SE'
 func (smj *smj_SE) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -312,6 +320,7 @@ func (smj *smj_SE) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'smj_SE'
 func (smj *smj_SE) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -319,6 +328,7 @@ func (smj *smj_SE) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'smj_SE'
 func (smj *smj_SE) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -326,6 +336,7 @@ func (smj *smj_SE) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'smj_SE'
 func (smj *smj_SE) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -333,6 +344,7 @@ func (smj *smj_SE) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'smj_SE'
 func (smj *smj_SE) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	return string(b)

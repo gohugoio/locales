@@ -50,7 +50,7 @@ func New() locales.Translator {
 		daysNarrow:        []string{"d", "l", "m", "m", "j", "v", "s"},
 		daysShort:         []string{"du", "lu", "ma", "me", "jo", "ve", "sa"},
 		daysWide:          []string{"dumìnica", "lunnidìa", "martidìa", "mercuridìa", "jovidìa", "venniridìa", "sàbbatu"},
-		timezones:         map[string]string{"ACDT": "Ura ligali di l’Australia cintrali", "ACST": "Ura sulari di l’Australia cintrali", "ACT": "ACT", "ACWDT": "Ura ligali di l’Australia cintrali di punenti", "ACWST": "Ura sulari di l’Australia cintrali di punenti", "ADT": "Ura ligali di l’Atlànticu", "ADT Arabia": "Ura ligali Àrabba", "AEDT": "Ura ligali di l’Australia di livanti", "AEST": "Ura sulari di l’Australia di livanti", "AFT": "Ura di l’Afghànistan", "AKDT": "Ura ligali di l’Alaska", "AKST": "Ura sulari di l’Alaska", "AMST": "Ura ligali di l’Amazzonia", "AMST Armenia": "Ura ligali di l’Armenia", "AMT": "Ura sulari di l’Amazzonia", "AMT Armenia": "Ura sulari di l’Armenia", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "Ura ligali di l’Argintina", "ART": "Ura sulari di l’Argintina", "AST": "Ura sulari di l’Atlànticu", "AST Arabia": "Ura sulari Àrabba", "AWDT": "Ura ligali di l’Australia di punenti", "AWST": "Ura sulari di l’Australia di punenti", "AZST": "Ura ligali di l’Azerbaijan", "AZT": "Ura sulari di l’Azerbaijan", "BDT Bangladesh": "Ura ligali dû Bàngladesh", "BNT": "Ura dû Brunei", "BOT": "Ura dâ Bulivia", "BRST": "Ura ligali di Brasilia", "BRT": "Ura sulari di Brasilia", "BST Bangladesh": "Ura sulari dû Bàngladesh", "BT": "Ura dû Bhutan", "CAST": "CAST", "CAT": "Ura di l’Àfrica Cintrali", "CCT": "Ura di l’Ìsuli Cocos", "CDT": "Ura ligali cintrali", "CHADT": "Ura ligali di Chatham", "CHAST": "Ura sulari di Chatham", "CHUT": "Ura di Chuuk", "CKT": "Ura sulari di l’Ìsuli Cook", "CKT DST": "Ura ligali di l’Ìsuli Cook", "CLST": "Ura ligali dû Cili", "CLT": "Ura sulari dû Cili", "COST": "Ura ligali dâ Culommia", "COT": "Ura sulari dâ Culommia", "CST": "Ura sulari cintrali", "CST China": "Ura sulari dâ Cina", "CST China DST": "Ura ligali dâ Cina", "CVST": "Ura ligali di Capu Virdi", "CVT": "Ura sulari di Capu Virdi", "CXT": "Ura di l’Ìsula di Natali", "ChST": "Ura di Chamorro", "ChST NMI": "ChST NMI", "CuDT": "Ura ligali di Cubba", "CuST": "Ura sulari di Cubba", "DAVT": "Ura di Davis", "DDUT": "Ura di Dumont d’Urville", "EASST": "Ura ligali di l’Ìsula di Pasca", "EAST": "Ura sulari di l’Ìsula di Pasca", "EAT": "Ura di l’Àfrica di Livanti", "ECT": "Ura di l’Ècuador", "EDT": "Ura ligali livantina", "EGDT": "Ura livantina dâ Gruillannia livantina", "EGST": "Ura sulari dâ Gruillannia livantina", "EST": "Ura sulari livantina", "FEET": "Ura di l’Europa cchiù a Livanti", "FJT": "Ura sulari dî Figi", "FJT Summer": "Ura ligali dî Figi", "FKST": "Ura ligali di l’Ìsuli Falkland", "FKT": "Ura sulari di l’Ìsuli Falkland", "FNST": "Ura ligali di Fernando di Noronha", "FNT": "Ura sulari di Fernando di Noronha", "GALT": "Ura dî Galàpagos", "GAMT": "Ura di Gambier", "GEST": "Ura ligali dâ Giorgia", "GET": "Ura sulari dâ Giorgia", "GFT": "Ura dâ Guiana Francisi", "GIT": "Ura di l’Ìsuli Gilbert", "GMT": "Ura Minzana di Greenwich", "GNSST": "Ura ligali dâ Gruillannia", "GNST": "Ura sulari dâ Gruillannia", "GST": "Ura Nurmali dû Gurfu", "GST Guam": "GST Guam", "GYT": "Ura dâ Guiana", "HADT": "Ura ligali di l’Hawaai", "HAST": "Ura sulari di l’Hawaai", "HKST": "Ura ligali di Hong Kong", "HKT": "Ura sulari di Hong Kong", "HOVST": "Ura ligali di Khovd", "HOVT": "Ura sulari di Khovd", "ICT": "Ura di l’Innucina", "IDT": "Ura ligali di Isdraeli", "IOT": "Ura di l’Ucianu Innianu", "IRKST": "Ura ligali di Irtkutsk", "IRKT": "Ura sulari di Irtkutsk", "IRST": "Ura sulari di l’Iran", "IRST DST": "Ura ligali di l’Iran", "IST": "Ura sulari di l’Ìnnia", "IST Israel": "Ura sulari di Isdraeli", "JDT": "Ura ligali dû Giappuni", "JST": "Ura sulari dû Giappuni", "KOST": "Ura di Kosrae", "KRAST": "Ura ligali di Krasnoyarsk", "KRAT": "Ura sulari di Krasnoyarsk", "KST": "Ura sulari dâ Curìa", "KST DST": "Ura ligali dâ Curìa", "LHDT": "Ura ligali di Lord Howe", "LHST": "Ura sulari di Lord Howe", "LINT": "Ura di l’Ìsuli Line", "MAGST": "Ura ligali di Magdan", "MAGT": "Ura sulari di Magdan", "MART": "Ura dî Marchesi", "MAWT": "Ura di Mawson", "MDT": "Ura ligali dî muntagni", "MESZ": "Ura ligali Cintrali Eurupea", "MEZ": "Ura sulari Cintrali Eurupea", "MHT": "Ura di l’Ìsuli Marshall", "MMT": "Ura di Myanmar", "MSD": "Ura ligali di Mosca", "MST": "Ura sulari dî muntagni", "MUST": "Ura ligali di Mauritius", "MUT": "Ura sulari di Mauritius", "MVT": "Ura dî Mardivi", "MYT": "Ura dâ Malisia", "NCT": "Ura sulari dâ Nova Calidonia", "NDT": "Ura ligali di Tirranova", "NDT New Caledonia": "Ura ligali dâ Nova Calidonia", "NFDT": "Ura ligali di l’Ìsula Norfolk", "NFT": "Ura sulari di l’Ìsula Norfolk", "NOVST": "Ura ligali di Novosibirsk", "NOVT": "Ura sulari di Novosibirsk", "NPT": "Ura dû Nepal", "NRT": "Ura di Nauru", "NST": "Ura sulari di Tirranova", "NUT": "Ura di Niue", "NZDT": "Ura ligali dâ Nova Zilannia", "NZST": "Ura sulari dâ Nova Zilannia", "OESZ": "Ura ligali di l’Europa di Livanti", "OEZ": "Ura sulari di l’Europa di Livanti", "OMSST": "Ura ligali di Omsk", "OMST": "Ura sulari di Omsk", "PDT": "Ura ligali dû Pacìficu", "PDTM": "Ura ligali dû Mèssicu Pacìficu", "PETDT": "PETDT", "PETST": "PETST", "PGT": "Ura dâ Papua Nova Guinìa", "PHOT": "Ura di l’Ìsuli Phoenix", "PKT": "Ura sulari dû Pàkistan", "PKT DST": "Ura ligali dû Pàkistan", "PMDT": "Ura ligali di S. Pierre e Miquelon", "PMST": "Ura sulari di S. Pierre e Miquelon", "PONT": "Ura di Pohnpei", "PST": "Ura sulari dû Pacìficu", "PST Philippine": "Ura sulari dî Filippini", "PST Philippine DST": "Ura ligali dî Filippini", "PST Pitcairn": "Ura di Pitcairn", "PSTM": "Ura sulari dû Mèssicu Pacìficu", "PWT": "Ura di Palau", "PYST": "Ura ligali dû Paraguay", "PYT": "Ura sulari dû Paraguay", "PYT Korea": "Ura dâ Curia di Tramuntana", "RET": "Ura di Réunion", "ROTT": "Ura di Rothera", "SAKST": "Ura ligali di Sakhalin", "SAKT": "Ura sulari di Sakhalin", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "Ura Nurmali di l’Àfrica di Sciroccu", "SBT": "Ura di l’Ìsuli Salumuni", "SCT": "Ura dî Seychelles", "SGT": "Ura di Singapuri", "SLST": "SLST", "SRT": "Ura dû Surinami", "SST Samoa": "Ura sulari dî Samoa miricani", "SST Samoa Apia": "Ura sulari di Samoa", "SST Samoa Apia DST": "Ura ligali di Samoa", "SST Samoa DST": "Ura ligali dî Samoa miricani", "SYOT": "Ura di Syowa", "TAAF": "Ura Francisi di Sciroccu e di l’Antàrtidi", "TAHT": "Ura di Tahiti", "TJT": "Ura dû Taggìkistan", "TKT": "Ura di Tukilau", "TLT": "Ura di Timor di Livanti", "TMST": "Ura ligali dû Turkmènistan", "TMT": "Ura sulari dû Turkmènistan", "TOST": "Ura ligali di Tonga", "TOT": "Ura sulari di Tonga", "TVT": "Ura di Tuvalu", "TWT": "Ura sulari di Taiwan", "TWT DST": "Ura ligali di Taiwan", "ULAST": "Ura ligali di Ulaanbaatar", "ULAT": "Ura sulari di Ulaanbaatar", "UYST": "Ura ligali di l’Uruguay", "UYT": "Ura sulari di l’Uruguay", "UZT": "Ura sulari di l’Uzbèkistan", "UZT DST": "Ura ligali di l’Uzbèkistan", "VET": "Ura dû Vinizzuela", "VLAST": "Ura ligali di Vladìvustok", "VLAT": "Ura sulari di Vladìvustok", "VOLST": "Ura ligali di Vòlgugrad", "VOLT": "Ura sulari di Vòlgugrad", "VOST": "Ura di Vostok", "VUT": "Ura sulari di Vanuatu", "VUT DST": "Ura ligali di Vanuatu", "WAKT": "Ura di l’Ìsula Wake", "WARST": "Ura ligali di l’Argintina di punenti", "WART": "Ura sulari di l’Argintina di punenti", "WAST": "Ura di l’Àfrica di Punenti", "WAT": "Ura di l’Àfrica di Punenti", "WESZ": "Ura ligali di l’Europa di Punenti", "WEZ": "Ura sulari di l’Europa di Punenti", "WFT": "Ura di Wallis e Futuna", "WGST": "Ura ligali dâ Gruillannia punintina", "WGT": "Ura sulari dâ Gruillannia punintina", "WIB": "Ura di l’Innunesia di punenti", "WIT": "Ura di l’Innunesia di livanti", "WITA": "Ura di l’Innunesia cintrali", "YAKST": "Ura ligali di Yakutsk", "YAKT": "Ura sulari di Yakutsk", "YEKST": "Ura ligali di Yekatirimmurgu", "YEKT": "Ura sulari di Yekatirimmurgu", "YST": "Ura dû Yukon", "МСК": "Ura sulari di Mosca", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "Ura dû Kazzàkistan di Punenti", "شىعىش قازاق ەلى": "Ura dû Kazzàkistan di Livanti", "قازاق ەلى": "Ura dû Kazzàkistan", "قىرعىزستان": "Ura dû Kirghìzzistan", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Ura ligali dû Pirù"},
+		timezones:         map[string]string{"ACDT": "Ura ligali di l’Australia cintrali", "ACST": "Ura sulari di l’Australia cintrali", "ACT": "ACT", "ACWDT": "Ura ligali di l’Australia cintrali di punenti", "ACWST": "Ura sulari di l’Australia cintrali di punenti", "ADT": "Ura ligali di l’Atlànticu", "ADT Arabia": "Ura ligali Àrabba", "AEDT": "Ura ligali di l’Australia di livanti", "AEST": "Ura sulari di l’Australia di livanti", "AFT": "Ura di l’Afghànistan", "AKDT": "Ura ligali di l’Alaska", "AKST": "Ura sulari di l’Alaska", "AMST": "Ura ligali di l’Amazzonia", "AMST Armenia": "Ura ligali di l’Armenia", "AMT": "Ura sulari di l’Amazzonia", "AMT Armenia": "Ura sulari di l’Armenia", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "Ura ligali di l’Argintina", "ART": "Ura sulari di l’Argintina", "AST": "Ura sulari di l’Atlànticu", "AST Arabia": "Ura sulari Àrabba", "AWDT": "Ura ligali di l’Australia di punenti", "AWST": "Ura sulari di l’Australia di punenti", "AZST": "Ura ligali di l’Azerbaijan", "AZT": "Ura sulari di l’Azerbaijan", "BDT Bangladesh": "Ura ligali dû Bàngladesh", "BNT": "Ura dû Brunei", "BOT": "Ura dâ Bulivia", "BRST": "Ura ligali di Brasilia", "BRT": "Ura sulari di Brasilia", "BST Bangladesh": "Ura sulari dû Bàngladesh", "BT": "Ura dû Bhutan", "CAST": "CAST", "CAT": "Ura di l’Àfrica Cintrali", "CCT": "Ura di l’Ìsuli Cocos", "CDT": "Ura ligali cintrali", "CHADT": "Ura ligali di Chatham", "CHAST": "Ura sulari di Chatham", "CHUT": "Ura di Chuuk", "CKT": "Ura sulari di l’Ìsuli Cook", "CKT DST": "Ura ligali di l’Ìsuli Cook", "CLST": "Ura ligali dû Cili", "CLT": "Ura sulari dû Cili", "COST": "Ura ligali dâ Culommia", "COT": "Ura sulari dâ Culommia", "CST": "Ura sulari cintrali", "CST China": "Ura sulari dâ Cina", "CST China DST": "Ura ligali dâ Cina", "CVST": "Ura ligali di Capu Virdi", "CVT": "Ura sulari di Capu Virdi", "CXT": "Ura di l’Ìsula di Natali", "ChST": "Ura di Chamorro", "ChST NMI": "ChST NMI", "CuDT": "Ura ligali di Cubba", "CuST": "Ura sulari di Cubba", "DAVT": "Ura di Davis", "DDUT": "Ura di Dumont d’Urville", "EASST": "Ura ligali di l’Ìsula di Pasca", "EAST": "Ura sulari di l’Ìsula di Pasca", "EAT": "Ura di l’Àfrica di Livanti", "ECT": "Ura di l’Ècuador", "EDT": "Ura ligali livantina", "EGDT": "Ura livantina dâ Gruillannia livantina", "EGST": "Ura sulari dâ Gruillannia livantina", "EST": "Ura sulari livantina", "FEET": "Ura di l’Europa cchiù a Livanti", "FJT": "Ura sulari dî Figi", "FJT Summer": "Ura ligali dî Figi", "FKST": "Ura ligali di l’Ìsuli Falkland", "FKT": "Ura sulari di l’Ìsuli Falkland", "FNST": "Ura ligali di Fernando di Noronha", "FNT": "Ura sulari di Fernando di Noronha", "GALT": "Ura dî Galàpagos", "GAMT": "Ura di Gambier", "GEST": "Ura ligali dâ Giorgia", "GET": "Ura sulari dâ Giorgia", "GFT": "Ura dâ Guiana Francisi", "GIT": "Ura di l’Ìsuli Gilbert", "GMT": "Ura Minzana di Greenwich", "GNSST": "Ura ligali dâ Gruillannia", "GNST": "Ura sulari dâ Gruillannia", "GST": "Ura Nurmali dû Gurfu", "GST Guam": "GST Guam", "GYT": "Ura dâ Guiana", "HADT": "Ura ligali di l’Hawaai", "HAST": "Ura sulari di l’Hawaai", "HKST": "Ura ligali di Hong Kong", "HKT": "Ura sulari di Hong Kong", "HOVST": "Ura ligali di Khovd", "HOVT": "Ura sulari di Khovd", "ICT": "Ura di l’Innucina", "IDT": "Ura ligali di Isdraeli", "IOT": "Ura di l’Ucianu Innianu", "IRKST": "Ura ligali di Irtkutsk", "IRKT": "Ura sulari di Irtkutsk", "IRST": "Ura sulari di l’Iran", "IRST DST": "Ura ligali di l’Iran", "IST": "Ura sulari di l’Ìnnia", "IST Israel": "Ura sulari di Isdraeli", "JDT": "Ura ligali dû Giappuni", "JST": "Ura sulari dû Giappuni", "KOST": "Ura di Kosrae", "KRAST": "Ura ligali di Krasnoyarsk", "KRAT": "Ura sulari di Krasnoyarsk", "KST": "Ura sulari dâ Curìa", "KST DST": "Ura ligali dâ Curìa", "LHDT": "Ura ligali di Lord Howe", "LHST": "Ura sulari di Lord Howe", "LINT": "Ura di l’Ìsuli Line", "MAGST": "Ura ligali di Magdan", "MAGT": "Ura sulari di Magdan", "MART": "Ura dî Marchesi", "MAWT": "Ura di Mawson", "MDT": "MDT", "MESZ": "Ura ligali Cintrali Eurupea", "MEZ": "Ura sulari Cintrali Eurupea", "MHT": "Ura di l’Ìsuli Marshall", "MMT": "Ura di Myanmar", "MSD": "Ura ligali di Mosca", "MST": "MST", "MUST": "Ura ligali di Mauritius", "MUT": "Ura sulari di Mauritius", "MVT": "Ura dî Mardivi", "MYT": "Ura dâ Malisia", "NCT": "Ura sulari dâ Nova Calidonia", "NDT": "Ura ligali di Tirranova", "NDT New Caledonia": "Ura ligali dâ Nova Calidonia", "NFDT": "Ura ligali di l’Ìsula Norfolk", "NFT": "Ura sulari di l’Ìsula Norfolk", "NOVST": "Ura ligali di Novosibirsk", "NOVT": "Ura sulari di Novosibirsk", "NPT": "Ura dû Nepal", "NRT": "Ura di Nauru", "NST": "Ura sulari di Tirranova", "NUT": "Ura di Niue", "NZDT": "Ura ligali dâ Nova Zilannia", "NZST": "Ura sulari dâ Nova Zilannia", "OESZ": "Ura ligali di l’Europa di Livanti", "OEZ": "Ura sulari di l’Europa di Livanti", "OMSST": "Ura ligali di Omsk", "OMST": "Ura sulari di Omsk", "PDT": "Ura ligali dû Pacìficu", "PDTM": "Ura ligali dû Mèssicu Pacìficu", "PETDT": "PETDT", "PETST": "PETST", "PGT": "Ura dâ Papua Nova Guinìa", "PHOT": "Ura di l’Ìsuli Phoenix", "PKT": "Ura sulari dû Pàkistan", "PKT DST": "Ura ligali dû Pàkistan", "PMDT": "Ura ligali di S. Pierre e Miquelon", "PMST": "Ura sulari di S. Pierre e Miquelon", "PONT": "Ura di Pohnpei", "PST": "Ura sulari dû Pacìficu", "PST Philippine": "Ura sulari dî Filippini", "PST Philippine DST": "Ura ligali dî Filippini", "PST Pitcairn": "Ura di Pitcairn", "PSTM": "Ura sulari dû Mèssicu Pacìficu", "PWT": "Ura di Palau", "PYST": "Ura ligali dû Paraguay", "PYT": "Ura sulari dû Paraguay", "PYT Korea": "Ura dâ Curia di Tramuntana", "RET": "Ura di Réunion", "ROTT": "Ura di Rothera", "SAKST": "Ura ligali di Sakhalin", "SAKT": "Ura sulari di Sakhalin", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "Ura Nurmali di l’Àfrica di Sciroccu", "SBT": "Ura di l’Ìsuli Salumuni", "SCT": "Ura dî Seychelles", "SGT": "Ura di Singapuri", "SLST": "SLST", "SRT": "Ura dû Surinami", "SST Samoa": "Ura sulari dî Samoa miricani", "SST Samoa Apia": "Ura sulari di Samoa", "SST Samoa Apia DST": "Ura ligali di Samoa", "SST Samoa DST": "Ura ligali dî Samoa miricani", "SYOT": "Ura di Syowa", "TAAF": "Ura Francisi di Sciroccu e di l’Antàrtidi", "TAHT": "Ura di Tahiti", "TJT": "Ura dû Taggìkistan", "TKT": "Ura di Tukilau", "TLT": "Ura di Timor di Livanti", "TMST": "Ura ligali dû Turkmènistan", "TMT": "Ura sulari dû Turkmènistan", "TOST": "Ura ligali di Tonga", "TOT": "Ura sulari di Tonga", "TVT": "Ura di Tuvalu", "TWT": "Ura sulari di Taiwan", "TWT DST": "Ura ligali di Taiwan", "ULAST": "Ura ligali di Ulaanbaatar", "ULAT": "Ura sulari di Ulaanbaatar", "UYST": "Ura ligali di l’Uruguay", "UYT": "Ura sulari di l’Uruguay", "UZT": "Ura sulari di l’Uzbèkistan", "UZT DST": "Ura ligali di l’Uzbèkistan", "VET": "Ura dû Vinizzuela", "VLAST": "Ura ligali di Vladìvustok", "VLAT": "Ura sulari di Vladìvustok", "VOLST": "Ura ligali di Vòlgugrad", "VOLT": "Ura sulari di Vòlgugrad", "VOST": "Ura di Vostok", "VUT": "Ura sulari di Vanuatu", "VUT DST": "Ura ligali di Vanuatu", "WAKT": "Ura di l’Ìsula Wake", "WARST": "Ura ligali di l’Argintina di punenti", "WART": "Ura sulari di l’Argintina di punenti", "WAST": "Ura di l’Àfrica di Punenti", "WAT": "Ura di l’Àfrica di Punenti", "WESZ": "Ura ligali di l’Europa di Punenti", "WEZ": "Ura sulari di l’Europa di Punenti", "WFT": "Ura di Wallis e Futuna", "WGST": "Ura ligali dâ Gruillannia punintina", "WGT": "Ura sulari dâ Gruillannia punintina", "WIB": "Ura di l’Innunesia di punenti", "WIT": "Ura di l’Innunesia di livanti", "WITA": "Ura di l’Innunesia cintrali", "YAKST": "Ura ligali di Yakutsk", "YAKT": "Ura sulari di Yakutsk", "YEKST": "Ura ligali di Yekatirimmurgu", "YEKT": "Ura sulari di Yekatirimmurgu", "YST": "Ura dû Yukon", "МСК": "Ura sulari di Mosca", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "Ura dû Kazzàkistan di Punenti", "شىعىش قازاق ەلى": "Ura dû Kazzàkistan di Livanti", "قازاق ەلى": "Ura dû Kazzàkistan", "قىرعىزستان": "Ura dû Kirghìzzistan", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Ura ligali di l’Azzorri"},
 	}
 }
 
@@ -76,6 +76,7 @@ func (scn *scn_IT) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'scn_IT'
 func (scn *scn_IT) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 	i := int64(n)
 	e := int64(0)
@@ -92,6 +93,7 @@ func (scn *scn_IT) CardinalPluralRule(num float64, v uint64) locales.PluralRule 
 
 // OrdinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for 'scn_IT'
 func (scn *scn_IT) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 
 	if n == 11 || n == 8 || (n >= 80 && n <= 89) || (n >= 800 && n <= 899) {
@@ -103,6 +105,7 @@ func (scn *scn_IT) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'scn_IT'
 func (scn *scn_IT) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
+
 	start := scn.CardinalPluralRule(num1, v1)
 	end := scn.CardinalPluralRule(num2, v2)
 
@@ -113,6 +116,7 @@ func (scn *scn_IT) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 	}
 
 	return locales.PluralRuleOther
+
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -223,6 +227,7 @@ func (scn *scn_IT) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'scn_IT' and handles both Whole and Real numbers based on 'v'
 func (scn *scn_IT) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -294,6 +299,7 @@ func (scn *scn_IT) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'scn_IT'
 func (scn *scn_IT) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := scn.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -302,6 +308,7 @@ func (scn *scn_IT) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'scn_IT'
 // in accounting notation.
 func (scn *scn_IT) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := scn.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -309,6 +316,7 @@ func (scn *scn_IT) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'scn_IT'
 func (scn *scn_IT) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -327,6 +335,7 @@ func (scn *scn_IT) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'scn_IT'
 func (scn *scn_IT) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -345,6 +354,7 @@ func (scn *scn_IT) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'scn_IT'
 func (scn *scn_IT) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -363,6 +373,7 @@ func (scn *scn_IT) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'scn_IT'
 func (scn *scn_IT) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, scn.daysWide[t.Weekday()]...)
@@ -383,6 +394,7 @@ func (scn *scn_IT) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'scn_IT'
 func (scn *scn_IT) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -403,6 +415,7 @@ func (scn *scn_IT) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'scn_IT'
 func (scn *scn_IT) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -430,6 +443,7 @@ func (scn *scn_IT) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'scn_IT'
 func (scn *scn_IT) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -461,6 +475,7 @@ func (scn *scn_IT) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'scn_IT'
 func (scn *scn_IT) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

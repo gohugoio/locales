@@ -47,18 +47,18 @@ func New() locales.Translator {
 		minus:                  "\u200e-",
 		percent:                "\u200e%\u200e",
 		timeSeparator:          ":",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		currencies:             []string{"ADP", "د.إ.\u200f", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "AR$", "ATS", "AU$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BB$", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "د.ب.\u200f", "BIF", "BM$", "BN$", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BS$", "BTN", "BUK", "BWP", "BYB", "р.", "BYR", "BZ$", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CL$", "CNH", "CNX", "CN¥", "CO$", "COU", "CRC", "CSD", "CSK", "CUC", "CU$", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DO$", "د.ج.\u200f", "ECS", "ECV", "EEK", "ج.م.\u200f", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJ$", "FKP", "FRF", "UK£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GY$", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "د.ع.\u200f", "ر.إ.", "ISJ", "ISK", "ITL", "JM$", "د.أ.\u200f", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "د.ك.\u200f", "KY$", "KZT", "LAK", "ل.ل.\u200f", "LKR", "$LR", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "د.ل.\u200f", "د.م.\u200f", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "أ.م.", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "ر.ع.\u200f", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "ر.ق.\u200f", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "ر.س.\u200f", "SB$", "SCR", "د.س.\u200f", "ج.س.", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SR$", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "ل.س.\u200f", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "د.ت.\u200f", "TOP", "TPE", "TRL", "TRY", "TT$", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "US$", "USN", "USS", "UYI", "UYP", "UY$", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "ر.ي.\u200f", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
 		currencyPositivePrefix: "\u200f",
-		currencyPositiveSuffix: " ",
-		currencyNegativePrefix: "\u200f",
-		currencyNegativeSuffix: " ",
+		currencyPositiveSuffix: " ",
+		currencyNegativePrefix: "(\u061c",
+		currencyNegativeSuffix: ")",
 		monthsNarrow:           []string{"", "ي", "ف", "م", "أ", "و", "ن", "ل", "غ", "س", "ك", "ب", "د"},
 		monthsWide:             []string{"", "يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"},
 		daysNarrow:             []string{"ح", "ن", "ث", "ر", "خ", "ج", "س"},
 		daysShort:              []string{"أحد", "إثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"},
 		daysWide:               []string{"الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"},
 		periodsAbbreviated:     []string{"ص", "م"},
-		timezones:              map[string]string{"ACDT": "توقيت وسط أستراليا الصيفي", "ACST": "توقيت وسط أستراليا الرسمي", "ACT": "ACT", "ACWDT": "توقيت غرب وسط أستراليا الصيفي", "ACWST": "توقيت غرب وسط أستراليا الرسمي", "ADT": "التوقيت الصيفي الأطلسي", "ADT Arabia": "التوقيت العربي الصيفي", "AEDT": "توقيت شرق أستراليا الصيفي", "AEST": "توقيت شرق أستراليا الرسمي", "AFT": "توقيت أفغانستان", "AKDT": "توقيت ألاسكا الصيفي", "AKST": "التوقيت الرسمي لألاسكا", "AMST": "توقيت الأمازون الصيفي", "AMST Armenia": "توقيت أرمينيا الصيفي", "AMT": "توقيت الأمازون الرسمي", "AMT Armenia": "توقيت أرمينيا الرسمي", "ANAST": "التوقيت الصيفي لأنادير", "ANAT": "توقيت أنادير الرسمي", "ARST": "توقيت الأرجنتين الصيفي", "ART": "توقيت الأرجنتين الرسمي", "AST": "التوقيت الرسمي الأطلسي", "AST Arabia": "التوقيت العربي الرسمي", "AWDT": "توقيت غرب أستراليا الصيفي", "AWST": "توقيت غرب أستراليا الرسمي", "AZST": "توقيت أذربيجان الصيفي", "AZT": "توقيت أذربيجان الرسمي", "BDT Bangladesh": "توقيت بنغلاديش الصيفي", "BNT": "توقيت بروناي", "BOT": "توقيت بوليفيا", "BRST": "توقيت برازيليا الصيفي", "BRT": "توقيت برازيليا الرسمي", "BST Bangladesh": "توقيت بنغلاديش الرسمي", "BT": "توقيت بوتان", "CAST": "CAST", "CAT": "توقيت وسط أفريقيا", "CCT": "توقيت جزر كوكوس", "CDT": "التوقيت الصيفي المركزي لأمريكا الشمالية", "CHADT": "توقيت تشاتام الصيفي", "CHAST": "توقيت تشاتام الرسمي", "CHUT": "توقيت شوك", "CKT": "توقيت جزر كوك الرسمي", "CKT DST": "توقيت جزر كوك الصيفي", "CLST": "توقيت تشيلي الصيفي", "CLT": "توقيت تشيلي الرسمي", "COST": "توقيت كولومبيا الصيفي", "COT": "توقيت كولومبيا الرسمي", "CST": "التوقيت الرسمي المركزي لأمريكا الشمالية", "CST China": "توقيت الصين الرسمي", "CST China DST": "توقيت الصين الصيفي", "CVST": "توقيت الرأس الأخضر الصيفي", "CVT": "توقيت الرأس الأخضر الرسمي", "CXT": "توقيت جزر الكريسماس", "ChST": "توقيت تشامورو", "ChST NMI": "توقيت جزر ماريانا الشمالية", "CuDT": "توقيت كوبا الصيفي", "CuST": "توقيت كوبا الرسمي", "DAVT": "توقيت دافيز", "DDUT": "توقيت دي مونت دو روفيل", "EASST": "توقيت جزيرة استر الصيفي", "EAST": "توقيت جزيرة استر الرسمي", "EAT": "توقيت شرق أفريقيا", "ECT": "توقيت الإكوادور", "EDT": "التوقيت الصيفي الشرقي لأمريكا الشمالية", "EGDT": "توقيت شرق غرينلاند الصيفي", "EGST": "توقيت شرق غرينلاند الرسمي", "EST": "التوقيت الرسمي الشرقي لأمريكا الشمالية", "FEET": "التوقيت الأوروبي (أكثر شرقًا)", "FJT": "توقيت فيجي الرسمي", "FJT Summer": "توقيت فيجي الصيفي", "FKST": "توقيت جزر فوكلاند الصيفي", "FKT": "توقيت جزر فوكلاند الرسمي", "FNST": "توقيت فرناندو دي نورونها الصيفي", "FNT": "توقيت فرناندو دي نورونها الرسمي", "GALT": "توقيت غلاباغوس", "GAMT": "توقيت جامبير", "GEST": "توقيت جورجيا الصيفي", "GET": "توقيت جورجيا الرسمي", "GFT": "توقيت غويانا الفرنسية", "GIT": "توقيت جزر جيلبرت", "GMT": "توقيت غرينتش", "GNSST": "GNSST", "GNST": "GNST", "GST": "توقيت الخليج", "GST Guam": "توقيت غوام", "GYT": "توقيت غيانا", "HADT": "توقيت هاواي ألوتيان الرسمي", "HAST": "توقيت هاواي ألوتيان الرسمي", "HKST": "توقيت هونغ كونغ الصيفي", "HKT": "توقيت هونغ كونغ الرسمي", "HOVST": "توقيت هوفد الصيفي", "HOVT": "توقيت هوفد الرسمي", "ICT": "توقيت الهند الصينية", "IDT": "توقيت إسرائيل الصيفي", "IOT": "توقيت المحيط الهندي", "IRKST": "توقيت إركوتسك الصيفي", "IRKT": "توقيت إركوتسك الرسمي", "IRST": "توقيت إيران الرسمي", "IRST DST": "توقيت إيران الصيفي", "IST": "توقيت الهند", "IST Israel": "توقيت إسرائيل الرسمي", "JDT": "توقيت اليابان الصيفي", "JST": "توقيت اليابان الرسمي", "KOST": "توقيت كوسرا", "KRAST": "التوقيت الصيفي لكراسنويارسك", "KRAT": "توقيت كراسنويارسك الرسمي", "KST": "توقيت كوريا الرسمي", "KST DST": "توقيت كوريا الصيفي", "LHDT": "التوقيت الصيفي للورد هاو", "LHST": "توقيت لورد هاو الرسمي", "LINT": "توقيت جزر لاين", "MAGST": "توقيت ماغادان الصيفي", "MAGT": "توقيت ماغادان الرسمي", "MART": "توقيت ماركيساس", "MAWT": "توقيت ماوسون", "MDT": "MDT", "MESZ": "توقيت وسط أوروبا الصيفي", "MEZ": "توقيت وسط أوروبا الرسمي", "MHT": "توقيت جزر مارشال", "MMT": "توقيت ميانمار", "MSD": "توقيت موسكو الصيفي", "MST": "MST", "MUST": "توقيت موريشيوس الصيفي", "MUT": "توقيت موريشيوس الرسمي", "MVT": "توقيت جزر المالديف", "MYT": "توقيت ماليزيا", "NCT": "توقيت كاليدونيا الجديدة الرسمي", "NDT": "توقيت نيوفاوندلاند الصيفي", "NDT New Caledonia": "توقيت كاليدونيا الجديدة الصيفي", "NFDT": "توقيت جزيرة نورفولك الصيفي", "NFT": "توقيت جزيرة نورفولك الرسمي", "NOVST": "توقيت نوفوسيبيرسك الصيفي", "NOVT": "توقيت نوفوسيبيرسك الرسمي", "NPT": "توقيت نيبال", "NRT": "توقيت ناورو", "NST": "توقيت نيوفاوندلاند الرسمي", "NUT": "توقيت نيوي", "NZDT": "توقيت نيوزيلندا الصيفي", "NZST": "توقيت نيوزيلندا الرسمي", "OESZ": "توقيت شرق أوروبا الصيفي", "OEZ": "توقيت شرق أوروبا الرسمي", "OMSST": "توقيت أومسك الصيفي", "OMST": "توقيت أومسك الرسمي", "PDT": "توقيت المحيط الهادي الصيفي", "PDTM": "توقيت المحيط الهادي الصيفي للمكسيك", "PETDT": "توقيت بيتروبافلوفسك-كامتشاتسكي الصيفي", "PETST": "توقيت بيتروبافلوفسك-كامتشاتسكي", "PGT": "توقيت بابوا غينيا الجديدة", "PHOT": "توقيت جزر فينكس", "PKT": "توقيت باكستان الرسمي", "PKT DST": "توقيت باكستان الصيفي", "PMDT": "توقيت سانت بيير وميكولون الصيفي", "PMST": "توقيت سانت بيير وميكولون الرسمي", "PONT": "توقيت بونابي", "PST": "توقيت المحيط الهادي الرسمي", "PST Philippine": "توقيت الفيلبين الرسمي", "PST Philippine DST": "توقيت الفيلبين الصيفي", "PST Pitcairn": "توقيت بيتكيرن", "PSTM": "توقيت المحيط الهادي الرسمي للمكسيك", "PWT": "توقيت بالاو", "PYST": "توقيت باراغواي الصيفي", "PYT": "توقيت باراغواي الرسمي", "PYT Korea": "توقيت بيونغ يانغ", "RET": "توقيت روينيون", "ROTT": "توقيت روثيرا", "SAKST": "توقيت ساخالين الصيفي", "SAKT": "توقيت ساخالين الرسمي", "SAMST": "توقيت سمارا الصيفي", "SAMT": "توقيت سمارا", "SAST": "توقيت جنوب أفريقيا", "SBT": "توقيت جزر سليمان", "SCT": "توقيت سيشل", "SGT": "توقيت سنغافورة", "SLST": "SLST", "SRT": "توقيت سورينام", "SST Samoa": "توقيت ساموا الرسمي", "SST Samoa Apia": "التوقيت الرسمي لآبيا", "SST Samoa Apia DST": "التوقيت الصيفي لأبيا", "SST Samoa DST": "توقيت ساموا الصيفي", "SYOT": "توقيت سايووا", "TAAF": "توقيت المقاطعات الفرنسية الجنوبية والأنتارتيكية", "TAHT": "توقيت تاهيتي", "TJT": "توقيت طاجكستان", "TKT": "توقيت توكيلاو", "TLT": "توقيت تيمور الشرقية", "TMST": "توقيت تركمانستان الصيفي", "TMT": "توقيت تركمانستان الرسمي", "TOST": "توقيت تونغا الصيفي", "TOT": "توقيت تونغا الرسمي", "TVT": "توقيت توفالو", "TWT": "توقيت تايبيه الرسمي", "TWT DST": "توقيت تايبيه الصيفي", "ULAST": "توقيت أولان باتور الصيفي", "ULAT": "توقيت أولان باتور الرسمي", "UYST": "توقيت أوروغواي الصيفي", "UYT": "توقيت أوروغواي الرسمي", "UZT": "توقيت أوزبكستان الرسمي", "UZT DST": "توقيت أوزبكستان الصيفي", "VET": "توقيت فنزويلا", "VLAST": "توقيت فلاديفوستوك الصيفي", "VLAT": "توقيت فلاديفوستوك الرسمي", "VOLST": "توقيت فولغوغراد الصيفي", "VOLT": "توقيت فولغوغراد الرسمي", "VOST": "توقيت فوستوك", "VUT": "توقيت فانواتو الرسمي", "VUT DST": "توقيت فانواتو الصيفي", "WAKT": "توقيت جزيرة ويك", "WARST": "توقيت غرب الأرجنتين الصيفي", "WART": "توقيت غرب الأرجنتين الرسمي", "WAST": "توقيت غرب أفريقيا", "WAT": "توقيت غرب أفريقيا", "WESZ": "توقيت غرب أوروبا الصيفي", "WEZ": "توقيت غرب أوروبا الرسمي", "WFT": "توقيت واليس و فوتونا", "WGST": "توقيت غرب غرينلاند الصيفي", "WGT": "توقيت غرب غرينلاند الرسمي", "WIB": "توقيت غرب إندونيسيا", "WIT": "توقيت شرق إندونيسيا", "WITA": "توقيت وسط إندونيسيا", "YAKST": "توقيت ياكوتسك الصيفي", "YAKT": "توقيت ياكوتسك الرسمي", "YEKST": "توقيت يكاترينبورغ الصيفي", "YEKT": "توقيت يكاترينبورغ الرسمي", "YST": "توقيت يوكون", "МСК": "توقيت موسكو الرسمي", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "توقيت غرب كازاخستان", "شىعىش قازاق ەلى": "توقيت شرق كازاخستان", "قازاق ەلى": "توقيت كازاخستان", "قىرعىزستان": "توقيت قيرغيزستان", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "توقيت أزورس الصيفي"},
+		timezones:              map[string]string{"ACDT": "توقيت وسط أستراليا الصيفي", "ACST": "ACST", "ACT": "ACT", "ACWDT": "توقيت غرب وسط أستراليا الصيفي", "ACWST": "توقيت غرب وسط أستراليا الرسمي", "ADT": "التوقيت الصيفي الأطلسي", "ADT Arabia": "التوقيت العربي الصيفي", "AEDT": "توقيت شرق أستراليا الصيفي", "AEST": "توقيت شرق أستراليا الرسمي", "AFT": "توقيت أفغانستان", "AKDT": "توقيت ألاسكا الصيفي", "AKST": "التوقيت الرسمي لألاسكا", "AMST": "توقيت الأمازون الصيفي", "AMST Armenia": "توقيت أرمينيا الصيفي", "AMT": "توقيت الأمازون الرسمي", "AMT Armenia": "توقيت أرمينيا الرسمي", "ANAST": "التوقيت الصيفي لأنادير", "ANAT": "توقيت أنادير الرسمي", "ARST": "توقيت الأرجنتين الصيفي", "ART": "توقيت الأرجنتين الرسمي", "AST": "التوقيت الرسمي الأطلسي", "AST Arabia": "التوقيت العربي الرسمي", "AWDT": "توقيت غرب أستراليا الصيفي", "AWST": "توقيت غرب أستراليا الرسمي", "AZST": "توقيت أذربيجان الصيفي", "AZT": "توقيت أذربيجان الرسمي", "BDT Bangladesh": "توقيت بنغلاديش الصيفي", "BNT": "توقيت بروناي", "BOT": "توقيت بوليفيا", "BRST": "توقيت برازيليا الصيفي", "BRT": "توقيت برازيليا الرسمي", "BST Bangladesh": "توقيت بنغلاديش الرسمي", "BT": "توقيت بوتان", "CAST": "CAST", "CAT": "توقيت وسط أفريقيا", "CCT": "توقيت جزر كوكوس", "CDT": "التوقيت الصيفي المركزي لأمريكا الشمالية", "CHADT": "توقيت تشاتام الصيفي", "CHAST": "توقيت تشاتام الرسمي", "CHUT": "توقيت شوك", "CKT": "توقيت جزر كوك الرسمي", "CKT DST": "توقيت جزر كوك الصيفي", "CLST": "توقيت تشيلي الصيفي", "CLT": "توقيت تشيلي الرسمي", "COST": "توقيت كولومبيا الصيفي", "COT": "توقيت كولومبيا الرسمي", "CST": "التوقيت الرسمي المركزي لأمريكا الشمالية", "CST China": "توقيت الصين الرسمي", "CST China DST": "توقيت الصين الصيفي", "CVST": "توقيت الرأس الأخضر الصيفي", "CVT": "توقيت الرأس الأخضر الرسمي", "CXT": "توقيت جزر الكريسماس", "ChST": "توقيت تشامورو", "ChST NMI": "توقيت جزر ماريانا الشمالية", "CuDT": "توقيت كوبا الصيفي", "CuST": "توقيت كوبا الرسمي", "DAVT": "توقيت دافيز", "DDUT": "توقيت دي مونت دو روفيل", "EASST": "توقيت جزيرة استر الصيفي", "EAST": "توقيت جزيرة استر الرسمي", "EAT": "توقيت شرق أفريقيا", "ECT": "توقيت الإكوادور", "EDT": "التوقيت الصيفي الشرقي لأمريكا الشمالية", "EGDT": "توقيت شرق غرينلاند الصيفي", "EGST": "توقيت شرق غرينلاند الرسمي", "EST": "التوقيت الرسمي الشرقي لأمريكا الشمالية", "FEET": "التوقيت الأوروبي (أكثر شرقًا)", "FJT": "توقيت فيجي الرسمي", "FJT Summer": "توقيت فيجي الصيفي", "FKST": "توقيت جزر فوكلاند الصيفي", "FKT": "توقيت جزر فوكلاند الرسمي", "FNST": "توقيت فرناندو دي نورونها الصيفي", "FNT": "توقيت فرناندو دي نورونها الرسمي", "GALT": "توقيت غلاباغوس", "GAMT": "توقيت جامبير", "GEST": "توقيت جورجيا الصيفي", "GET": "توقيت جورجيا الرسمي", "GFT": "توقيت غويانا الفرنسية", "GIT": "توقيت جزر جيلبرت", "GMT": "توقيت غرينتش", "GNSST": "GNSST", "GNST": "GNST", "GST": "توقيت جنوب جورجيا", "GST Guam": "توقيت غوام", "GYT": "توقيت غيانا", "HADT": "توقيت هاواي ألوتيان الرسمي", "HAST": "توقيت هاواي ألوتيان الرسمي", "HKST": "توقيت هونغ كونغ الصيفي", "HKT": "توقيت هونغ كونغ الرسمي", "HOVST": "توقيت هوفد الصيفي", "HOVT": "توقيت هوفد الرسمي", "ICT": "توقيت الهند الصينية", "IDT": "توقيت إسرائيل الصيفي", "IOT": "توقيت المحيط الهندي", "IRKST": "توقيت إركوتسك الصيفي", "IRKT": "توقيت إركوتسك الرسمي", "IRST": "توقيت إيران الرسمي", "IRST DST": "توقيت إيران الصيفي", "IST": "توقيت الهند", "IST Israel": "توقيت إسرائيل الرسمي", "JDT": "توقيت اليابان الصيفي", "JST": "توقيت اليابان الرسمي", "KOST": "توقيت كوسرا", "KRAST": "التوقيت الصيفي لكراسنويارسك", "KRAT": "توقيت كراسنويارسك الرسمي", "KST": "توقيت كوريا الرسمي", "KST DST": "توقيت كوريا الصيفي", "LHDT": "التوقيت الصيفي للورد هاو", "LHST": "توقيت لورد هاو الرسمي", "LINT": "توقيت جزر لاين", "MAGST": "توقيت ماغادان الصيفي", "MAGT": "توقيت ماغادان الرسمي", "MART": "توقيت ماركيساس", "MAWT": "توقيت ماوسون", "MDT": "MDT", "MESZ": "توقيت وسط أوروبا الصيفي", "MEZ": "توقيت وسط أوروبا الرسمي", "MHT": "توقيت جزر مارشال", "MMT": "توقيت ميانمار", "MSD": "توقيت موسكو الصيفي", "MST": "MST", "MUST": "توقيت موريشيوس الصيفي", "MUT": "توقيت موريشيوس الرسمي", "MVT": "توقيت جزر المالديف", "MYT": "توقيت ماليزيا", "NCT": "توقيت كاليدونيا الجديدة الرسمي", "NDT": "توقيت نيوفاوندلاند الصيفي", "NDT New Caledonia": "توقيت كاليدونيا الجديدة الصيفي", "NFDT": "توقيت جزيرة نورفولك الصيفي", "NFT": "توقيت جزيرة نورفولك الرسمي", "NOVST": "توقيت نوفوسيبيرسك الصيفي", "NOVT": "توقيت نوفوسيبيرسك الرسمي", "NPT": "توقيت نيبال", "NRT": "توقيت ناورو", "NST": "توقيت نيوفاوندلاند الرسمي", "NUT": "توقيت نيوي", "NZDT": "توقيت نيوزيلندا الصيفي", "NZST": "توقيت نيوزيلندا الرسمي", "OESZ": "توقيت شرق أوروبا الصيفي", "OEZ": "توقيت شرق أوروبا الرسمي", "OMSST": "توقيت أومسك الصيفي", "OMST": "توقيت أومسك الرسمي", "PDT": "توقيت المحيط الهادي الصيفي", "PDTM": "توقيت المحيط الهادي الصيفي للمكسيك", "PETDT": "توقيت بيتروبافلوفسك-كامتشاتسكي الصيفي", "PETST": "توقيت بيتروبافلوفسك-كامتشاتسكي", "PGT": "توقيت بابوا غينيا الجديدة", "PHOT": "توقيت جزر فينكس", "PKT": "توقيت باكستان الرسمي", "PKT DST": "توقيت باكستان الصيفي", "PMDT": "توقيت سانت بيير وميكولون الصيفي", "PMST": "توقيت سانت بيير وميكولون الرسمي", "PONT": "توقيت بونابي", "PST": "توقيت المحيط الهادي الرسمي", "PST Philippine": "توقيت الفيلبين الرسمي", "PST Philippine DST": "توقيت الفيلبين الصيفي", "PST Pitcairn": "توقيت بيتكيرن", "PSTM": "توقيت المحيط الهادي الرسمي للمكسيك", "PWT": "توقيت بالاو", "PYST": "توقيت باراغواي الصيفي", "PYT": "توقيت باراغواي الرسمي", "PYT Korea": "توقيت بيونغ يانغ", "RET": "توقيت روينيون", "ROTT": "توقيت روثيرا", "SAKST": "توقيت ساخالين الصيفي", "SAKT": "توقيت ساخالين الرسمي", "SAMST": "توقيت سمارا الصيفي", "SAMT": "توقيت سمارا", "SAST": "توقيت جنوب أفريقيا", "SBT": "توقيت جزر سليمان", "SCT": "توقيت سيشل", "SGT": "توقيت سنغافورة", "SLST": "SLST", "SRT": "توقيت سورينام", "SST Samoa": "توقيت ساموا الرسمي", "SST Samoa Apia": "التوقيت الرسمي لآبيا", "SST Samoa Apia DST": "التوقيت الصيفي لأبيا", "SST Samoa DST": "توقيت ساموا الصيفي", "SYOT": "توقيت سايووا", "TAAF": "توقيت المقاطعات الفرنسية الجنوبية والأنتارتيكية", "TAHT": "توقيت تاهيتي", "TJT": "توقيت طاجكستان", "TKT": "توقيت توكيلاو", "TLT": "توقيت تيمور الشرقية", "TMST": "توقيت تركمانستان الصيفي", "TMT": "توقيت تركمانستان الرسمي", "TOST": "توقيت تونغا الصيفي", "TOT": "توقيت تونغا الرسمي", "TVT": "توقيت توفالو", "TWT": "توقيت تايبيه الرسمي", "TWT DST": "توقيت تايبيه الصيفي", "ULAST": "توقيت أولان باتور الصيفي", "ULAT": "توقيت أولان باتور الرسمي", "UYST": "توقيت أوروغواي الصيفي", "UYT": "توقيت أوروغواي الرسمي", "UZT": "توقيت أوزبكستان الرسمي", "UZT DST": "توقيت أوزبكستان الصيفي", "VET": "توقيت فنزويلا", "VLAST": "توقيت فلاديفوستوك الصيفي", "VLAT": "توقيت فلاديفوستوك الرسمي", "VOLST": "توقيت فولغوغراد الصيفي", "VOLT": "توقيت فولغوغراد الرسمي", "VOST": "توقيت فوستوك", "VUT": "توقيت فانواتو الرسمي", "VUT DST": "توقيت فانواتو الصيفي", "WAKT": "توقيت جزيرة ويك", "WARST": "توقيت غرب الأرجنتين الصيفي", "WART": "توقيت غرب الأرجنتين الرسمي", "WAST": "توقيت غرب أفريقيا", "WAT": "توقيت غرب أفريقيا", "WESZ": "توقيت غرب أوروبا الصيفي", "WEZ": "توقيت غرب أوروبا الرسمي", "WFT": "توقيت واليس و فوتونا", "WGST": "توقيت غرب غرينلاند الصيفي", "WGT": "توقيت غرب غرينلاند الرسمي", "WIB": "توقيت غرب إندونيسيا", "WIT": "توقيت شرق إندونيسيا", "WITA": "توقيت وسط إندونيسيا", "YAKST": "توقيت ياكوتسك الصيفي", "YAKT": "توقيت ياكوتسك الرسمي", "YEKST": "توقيت يكاترينبورغ الصيفي", "YEKT": "توقيت يكاترينبورغ الرسمي", "YST": "توقيت يوكون", "МСК": "توقيت موسكو الرسمي", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "توقيت غرب كازاخستان", "شىعىش قازاق ەلى": "توقيت شرق كازاخستان", "قازاق ەلى": "توقيت كازاخستان", "قىرعىزستان": "توقيت قيرغيزستان", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "توقيت أزورس الصيفي"},
 	}
 }
 
@@ -84,6 +84,7 @@ func (ar *ar_KW) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'ar_KW'
 func (ar *ar_KW) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 	nMod100 := math.Mod(n, 100)
 
@@ -109,6 +110,7 @@ func (ar *ar_KW) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'ar_KW'
 func (ar *ar_KW) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
+
 	start := ar.CardinalPluralRule(num1, v1)
 	end := ar.CardinalPluralRule(num2, v2)
 
@@ -159,6 +161,7 @@ func (ar *ar_KW) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 	}
 
 	return locales.PluralRuleOther
+
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -269,6 +272,7 @@ func (ar *ar_KW) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ar_KW' and handles both Whole and Real numbers based on 'v'
 func (ar *ar_KW) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 5 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -344,6 +348,7 @@ func (ar *ar_KW) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ar_KW'
 func (ar *ar_KW) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ar.currencies[currency]
 	l := len(s) + len(symbol) + 10 + 1*len(s[:len(s)-int(v)-1])/3
@@ -407,9 +412,10 @@ func (ar *ar_KW) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ar_KW'
 // in accounting notation.
 func (ar *ar_KW) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ar.currencies[currency]
-	l := len(s) + len(symbol) + 10 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 9 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -440,14 +446,12 @@ func (ar *ar_KW) FmtAccounting(num float64, v uint64, currency currency.Type) st
 			b = append(b, ar.currencyNegativePrefix[j])
 		}
 
-		for j := len(ar.minus) - 1; j >= 0; j-- {
-			b = append(b, ar.minus[j])
-		}
-
 	} else {
+
 		for j := len(ar.currencyPositivePrefix) - 1; j >= 0; j-- {
 			b = append(b, ar.currencyPositivePrefix[j])
 		}
+
 	}
 
 	// reverse
@@ -467,8 +471,8 @@ func (ar *ar_KW) FmtAccounting(num float64, v uint64, currency currency.Type) st
 	}
 
 	if num < 0 {
-		b = append(b, ar.currencyNegativeSuffix...)
 		b = append(b, symbol...)
+		b = append(b, ar.currencyNegativeSuffix...)
 	} else {
 
 		b = append(b, ar.currencyPositiveSuffix...)
@@ -480,6 +484,7 @@ func (ar *ar_KW) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 // FmtDateShort returns the short date representation of 't' for 'ar_KW'
 func (ar *ar_KW) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -498,6 +503,7 @@ func (ar *ar_KW) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'ar_KW'
 func (ar *ar_KW) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -526,6 +532,7 @@ func (ar *ar_KW) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'ar_KW'
 func (ar *ar_KW) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -544,6 +551,7 @@ func (ar *ar_KW) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'ar_KW'
 func (ar *ar_KW) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, ar.daysWide[t.Weekday()]...)
@@ -564,6 +572,7 @@ func (ar *ar_KW) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'ar_KW'
 func (ar *ar_KW) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -593,6 +602,7 @@ func (ar *ar_KW) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'ar_KW'
 func (ar *ar_KW) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -629,6 +639,7 @@ func (ar *ar_KW) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'ar_KW'
 func (ar *ar_KW) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -670,6 +681,7 @@ func (ar *ar_KW) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'ar_KW'
 func (ar *ar_KW) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

@@ -44,7 +44,7 @@ func New() locales.Translator {
 		minus:                  "-",
 		percent:                "٪",
 		timeSeparator:          ":",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "р.", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "leu", "RSD", "RUB", "р.", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "$", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
 		currencyNegativePrefix: "(",
 		currencyNegativeSuffix: ")",
 		monthsAbbreviated:      []string{"", "Faoi", "Gearr", "Màrt", "Gibl", "Cèit", "Ògmh", "Iuch", "Lùna", "Sult", "Dàmh", "Samh", "Dùbh"},
@@ -54,7 +54,7 @@ func New() locales.Translator {
 		daysNarrow:             []string{"D", "L", "M", "C", "A", "H", "S"},
 		daysShort:              []string{"Dò", "Lu", "Mà", "Ci", "Da", "hA", "Sa"},
 		daysWide:               []string{"DiDòmhnaich", "DiLuain", "DiMàirt", "DiCiadain", "DiarDaoin", "DihAoine", "DiSathairne"},
-		timezones:              map[string]string{"ACDT": "Tìde samhraidh Meadhan Astràilia", "ACST": "Bun-àm Meadhan Astràilia", "ACT": "Bun-àm Acre", "ACWDT": "Tìde samhraidh Meadhan Astràilia an Iar", "ACWST": "Bun-àm Meadhan Astràilia an Iar", "ADT": "Tìde samhraidh a’ Chuain Shiar", "ADT Arabia": "Tìde samhraidh Arabach", "AEDT": "Tìde samhraidh Astràilia an Ear", "AEST": "Bun-àm Astràilia an Ear", "AFT": "Àm Afghanastàin", "AKDT": "Tìde samhraidh Alaska", "AKST": "Bun-àm Alaska", "AMST": "Tìde samhraidh Amasoin", "AMST Armenia": "Tìde samhraidh Airmeinia", "AMT": "Bun-àm Amasoin", "AMT Armenia": "Bun-àm Airmeinia", "ANAST": "Tìde samhraidh Anadyr", "ANAT": "Bun-àm Anadyr", "ARST": "Tìde samhraidh na h-Argantaine", "ART": "Bun-àm na h-Argantaine", "AST": "Bun-àm a’ Chuain Shiar", "AST Arabia": "Bun-àm Arabach", "AWDT": "Tìde samhraidh Astràilia an Iar", "AWST": "Bun-àm Astràilia an Iar", "AZST": "Tìde samhraidh Asarbaideàin", "AZT": "Bun-àm Asarbaideàin", "BDT Bangladesh": "Tìde samhraidh Bangladais", "BNT": "Àm Bhrùnaigh Dàr as-Salàm", "BOT": "Àm Boilibhia", "BRST": "Tìde samhraidh Bhrasília", "BRT": "Bun-àm Bhrasília", "BST Bangladesh": "Bun-àm Bangladais", "BT": "Àm Butàin", "CAST": "Àm Chasey", "CAT": "Àm Meadhan Afraga", "CCT": "Àm Eileanan Chocos", "CDT": "Tìde samhraidh Meadhan Aimeireaga", "CHADT": "Tìde samhraidh Chatham", "CHAST": "Bun-àm Chatham", "CHUT": "Àm Chuuk", "CKT": "Bun-àm Eileanan Cook", "CKT DST": "Leth-thìde samhraidh Eileanan Cook", "CLST": "Tìde samhraidh na Sile", "CLT": "Bun-àm na Sile", "COST": "Tìde samhraidh Coloimbia", "COT": "Bun-àm Coloimbia", "CST": "Bun-àm Meadhan Aimeireaga", "CST China": "Bun-àm na Sìne", "CST China DST": "Tìde samhraidh na Sìne", "CVST": "Tìde samhraidh a’ Chip Uaine", "CVT": "Bun-àm a’ Chip Uaine", "CXT": "Àm Eilean na Nollaig", "ChST": "Àm Chamorro", "ChST NMI": "Àm nan Eileanan Mairianach a Tuath", "CuDT": "Tìde samhraidh Cùba", "CuST": "Bun-àm Cùba", "DAVT": "Àm Dhavis", "DDUT": "Àm Dumont-d’Urville", "EASST": "Tìde samhraidh Eilean na Càisge", "EAST": "Bun-àm Eilean na Càisge", "EAT": "Àm Afraga an Ear", "ECT": "Àm Eacuadoir", "EDT": "Tìde samhraidh Aimeireaga an Ear", "EGDT": "Tìde samhraidh na Graonlainn an Ear", "EGST": "Bun-àm na Graonlainn an Ear", "EST": "Bun-àm Aimeireaga an Ear", "FEET": "Àm na Roinn-Eòrpa nas fhaide ear", "FJT": "Bun-àm Fìdi", "FJT Summer": "Tìde samhraidh Fìdi", "FKST": "Tìde samhraidh nan Eileanan Fàclannach", "FKT": "Bun-àm nan Eileanan Fàclannach", "FNST": "Tìde Samhraidh Fernando de Noronha", "FNT": "Bun-àm Fernando de Noronha", "GALT": "Àm Ghalapagos", "GAMT": "Àm Ghambier", "GEST": "Tìde samhraidh na Cairtbheile", "GET": "Bun-àm na Cairtbheile", "GFT": "Àm Guidheàna na Frainge", "GIT": "Àm Eileanan Ghileabairt", "GMT": "Greenwich Mean Time", "GNSST": "Tìde samhraidh na Graonlainne", "GNST": "Bun-àm na Graonlainne", "GST": "Àm a’ Chamais", "GST Guam": "Àm Guam", "GYT": "Àm Guidheàna", "HADT": "Tìde Samhraidh nan Eileanan Hawai’i ’s Aleutach", "HAST": "Bun-àm nan Eileanan Hawai’i ’s Aleutach", "HKST": "Tìde samhraidh Hong Kong", "HKT": "Bun-àm Hong Kong", "HOVST": "Tìde samhraidh Khovd", "HOVT": "Bun-àm Khovd", "ICT": "Àm Sìn-Innseanach", "IDT": "Tìde samhraidh Iosrael", "IOT": "Àm Cuan nan Innseachan", "IRKST": "Tìde Samhraidh Irkutsk", "IRKT": "Bun-àm Irkutsk", "IRST": "Bun-àm Ioràin", "IRST DST": "Tìde samhraidh Ioràin", "IST": "Àm nan Innseachan", "IST Israel": "Bun-àm Iosrael", "JDT": "Tìde samhraidh na Seapaine", "JST": "Bun-àm na Seapaine", "KOST": "Àm Kosrae", "KRAST": "Tìde samhraidh Krasnoyarsk", "KRAT": "Bun-àm Krasnoyarsk", "KST": "Bun-àm Choirèa", "KST DST": "Tìde samhraidh Choirèa", "LHDT": "Tìde samhraidh Lord Howe", "LHST": "Bun-àm Lord Howe", "LINT": "Àm Eileanan Teraina", "MAGST": "Tìde Samhraidh Magadan", "MAGT": "Bun-àm Magadan", "MART": "Àm Eileanan a’ Mharcais", "MAWT": "Àm Mhawson", "MDT": "Tìde samhraidh Macàthu", "MESZ": "Tìde samhraidh Meadhan na Roinn-Eòrpa", "MEZ": "Bun-àm Meadhan na Roinn-Eòrpa", "MHT": "Àm Eileanan Mharshall", "MMT": "Àm Miànmar", "MSD": "Tìde samhraidh Mhosgo", "MST": "Bun-àm Macàthu", "MUST": "Tìde samhraidh nan Eileanan Mhoiriseas", "MUT": "Bun-àm nan Eileanan Mhoiriseas", "MVT": "Àm nan Eileanan Mhaladaibh", "MYT": "Àm Mhalaidhsea", "NCT": "Bun-àm Chailleann Nuaidh", "NDT": "Tìde samhraidh Talamh an Èisg", "NDT New Caledonia": "Tìde samhraidh Chailleann Nuaidh", "NFDT": "Tìde samhraidh Eilein Norfolk", "NFT": "Bun-àm Eilein Norfolk", "NOVST": "Tìde samhraidh Novosibirsk", "NOVT": "Bun-àm Novosibirsk", "NPT": "Àm Neapàl", "NRT": "Àm Nabhru", "NST": "Bun-àm Talamh an Èisg", "NUT": "Àm Niue", "NZDT": "Tìde samhraidh Shealainn Nuaidh", "NZST": "Bun-àm Shealainn Nuaidh", "OESZ": "Tìde samhraidh na Roinn-Eòrpa an Ear", "OEZ": "Bun-àm na Roinn-Eòrpa an Ear", "OMSST": "Tìde samhraidh Omsk", "OMST": "Bun-àm Omsk", "PDT": "Tìde samhraidh a’ Chuain Shèimh", "PDTM": "Tìde samhraidh a’ Chuain Shèimh Mheagsago", "PETDT": "Tìde samhraidh Petropavlovsk-Kamchatsky", "PETST": "Bun-àm Petropavlovsk-Kamchatsky", "PGT": "Àm Gini Nuaidh Paputhaiche", "PHOT": "Àm Eileanan Phoenix", "PKT": "Bun-àm Pagastàin", "PKT DST": "Tìde samhraidh Pagastàin", "PMDT": "Tìde Samhraidh Saint Pierre agus Miquelon", "PMST": "Bun-àm Saint Pierre agus Miquelon", "PONT": "Àm Pohnpei", "PST": "Bun-àm a’ Chuain Shèimh", "PST Philippine": "Bun-àm nan Eilean Filipineach", "PST Philippine DST": "Tìde samhraidh nan Eilean Filipineach", "PST Pitcairn": "Àm Peit a’ Chàirn", "PSTM": "Bun-àm a’ Chuain Shèimh Mheagsago", "PWT": "Àm Palabh", "PYST": "Tìde samhraidh Paraguaidh", "PYT": "Bun-àm Paraguaidh", "PYT Korea": "Àm Pyeongyang", "RET": "Àm Reunion", "ROTT": "Àm Rothera", "SAKST": "Tìde samhraidh Sakhalin", "SAKT": "Bun-àm Sakhalin", "SAMST": "Tìde samhraidh Samara", "SAMT": "Bun-àm Samara", "SAST": "Àm Afraga a Deas", "SBT": "Àm Eileanan Sholaimh", "SCT": "Àm nan Eileanan Sheiseall", "SGT": "Àm Singeapòr", "SLST": "Àm Lanca", "SRT": "Àm Suranaim", "SST Samoa": "Bun-àm Samotha", "SST Samoa Apia": "Bun-àm Apia", "SST Samoa Apia DST": "Tìde samhraidh Apia", "SST Samoa DST": "Tìde samhraidh Samotha", "SYOT": "Àm Shyowa", "TAAF": "Àm Deasach agus Antartaigeach na Frainge", "TAHT": "Àm Tahiti", "TJT": "Àm Taidigeastàin", "TKT": "Àm Tokelau", "TLT": "Àm Thìomor an Ear", "TMST": "Tìde samhraidh Turcmanastàin", "TMT": "Bun-àm Turcmanastàin", "TOST": "Tìde samhraidh Tonga", "TOT": "Bun-àm Tonga", "TVT": "Àm Tubhalu", "TWT": "Bun-àm Taipei", "TWT DST": "Tìde samhraidh Taipei", "ULAST": "Tìde samhraidh Ulan Bator", "ULAT": "Bun-àm Ulan Bator", "UYST": "Tìde samhraidh Uruguaidh", "UYT": "Bun-àm Uruguaidh", "UZT": "Bun-àm Usbagastàn", "UZT DST": "Tìde samhraidh Usbagastàn", "VET": "Àm na Bheiniseala", "VLAST": "Tìde Samhraidh Vladivostok", "VLAT": "Bun-àm Vladivostok", "VOLST": "Tìde samhraidh Volgograd", "VOLT": "Bun-àm Volgograd", "VOST": "Àm Vostok", "VUT": "Bun-àm Vanuatu", "VUT DST": "Tìde samhraidh Vanuatu", "WAKT": "Àm Eilean Wake", "WARST": "Tìde samhraidh na h-Argantaine Siaraich", "WART": "Bun-àm na h-Argantaine Siaraich", "WAST": "Àm Afraga an Iar", "WAT": "Àm Afraga an Iar", "WESZ": "Tìde samhraidh na Roinn-Eòrpa an Iar", "WEZ": "Bun-àm na Roinn-Eòrpa an Iar", "WFT": "Àm Uallas agus Futuna", "WGST": "Tìde samhraidh na Graonlainn an Iar", "WGT": "Bun-àm na Graonlainn an Iar", "WIB": "Àm nan Innd-Innse an Iar", "WIT": "Àm nan Innd-Innse an Ear", "WITA": "Àm Meadhan nan Innd-Innse", "YAKST": "Tìde samhraidh Yakutsk", "YAKT": "Bun-àm Yakutsk", "YEKST": "Tìde samhraidh Yekaterinburg", "YEKT": "Bun-àm Yekaterinburg", "YST": "Àm Yukon", "МСК": "Bun-àm Mhosgo", "اقتاۋ": "Bun-àm Aqtau", "اقتاۋ قالاسى": "Tìde samhraidh Aqtau", "اقتوبە": "Bun-àm Aqtobe", "اقتوبە قالاسى": "Tìde samhraidh Aqtobe", "الماتى": "Bun-àm Almaty", "الماتى قالاسى": "Tìde samhraidh Almaty", "باتىس قازاق ەلى": "Àm Casachstàin an Iar", "شىعىش قازاق ەلى": "Àm Casachstàin an Ear", "قازاق ەلى": "Àm Casachstàin", "قىرعىزستان": "Àm Cìorgastain", "قىزىلوردا": "Bun-àm Qızılorda", "قىزىلوردا قالاسى": "Tìde samhraidh Qızılorda", "∅∅∅": "Tìde samhraidh nan Eileanan Asorach"},
+		timezones:              map[string]string{"ACDT": "Tìde samhraidh Meadhan Astràilia", "ACST": "Bun-àm Meadhan Astràilia", "ACT": "Bun-àm Acre", "ACWDT": "Tìde samhraidh Meadhan Astràilia an Iar", "ACWST": "Bun-àm Meadhan Astràilia an Iar", "ADT": "Tìde samhraidh a’ Chuain Shiar", "ADT Arabia": "Tìde samhraidh Arabach", "AEDT": "Tìde samhraidh Astràilia an Ear", "AEST": "Bun-àm Astràilia an Ear", "AFT": "Àm Afghanastàin", "AKDT": "Tìde samhraidh Alaska", "AKST": "Bun-àm Alaska", "AMST": "Tìde samhraidh Amasoin", "AMST Armenia": "Tìde samhraidh Airmeinia", "AMT": "Bun-àm Amasoin", "AMT Armenia": "Bun-àm Airmeinia", "ANAST": "Tìde samhraidh Anadyr", "ANAT": "Bun-àm Anadyr", "ARST": "Tìde samhraidh na h-Argantaine", "ART": "Bun-àm na h-Argantaine", "AST": "Bun-àm a’ Chuain Shiar", "AST Arabia": "Bun-àm Arabach", "AWDT": "Tìde samhraidh Astràilia an Iar", "AWST": "Bun-àm Astràilia an Iar", "AZST": "Tìde samhraidh Asarbaideàin", "AZT": "Bun-àm Asarbaideàin", "BDT Bangladesh": "Tìde samhraidh Bangladais", "BNT": "Àm Bhrùnaigh Dàr as-Salàm", "BOT": "Àm Boilibhia", "BRST": "Tìde samhraidh Bhrasília", "BRT": "Bun-àm Bhrasília", "BST Bangladesh": "Bun-àm Bangladais", "BT": "Àm Butàin", "CAST": "Àm Chasey", "CAT": "Àm Meadhan Afraga", "CCT": "Àm Eileanan Chocos", "CDT": "Tìde samhraidh Meadhan Aimeireaga", "CHADT": "Tìde samhraidh Chatham", "CHAST": "Bun-àm Chatham", "CHUT": "Àm Chuuk", "CKT": "Bun-àm Eileanan Cook", "CKT DST": "Leth-thìde samhraidh Eileanan Cook", "CLST": "Tìde samhraidh na Sile", "CLT": "Bun-àm na Sile", "COST": "Tìde samhraidh Coloimbia", "COT": "Bun-àm Coloimbia", "CST": "Bun-àm Meadhan Aimeireaga", "CST China": "Bun-àm na Sìne", "CST China DST": "Tìde samhraidh na Sìne", "CVST": "Tìde samhraidh a’ Chip Uaine", "CVT": "Bun-àm a’ Chip Uaine", "CXT": "Àm Eilean na Nollaig", "ChST": "Àm Chamorro", "ChST NMI": "Àm nan Eileanan Mairianach a Tuath", "CuDT": "Tìde samhraidh Cùba", "CuST": "Bun-àm Cùba", "DAVT": "Àm Dhavis", "DDUT": "Àm Dumont-d’Urville", "EASST": "Tìde samhraidh Eilean na Càisge", "EAST": "Bun-àm Eilean na Càisge", "EAT": "Àm Afraga an Ear", "ECT": "Àm Eacuadoir", "EDT": "Tìde samhraidh Aimeireaga an Ear", "EGDT": "Tìde samhraidh na Graonlainn an Ear", "EGST": "Bun-àm na Graonlainn an Ear", "EST": "Bun-àm Aimeireaga an Ear", "FEET": "Àm na Roinn-Eòrpa nas fhaide ear", "FJT": "Bun-àm Fìdi", "FJT Summer": "Tìde samhraidh Fìdi", "FKST": "Tìde samhraidh nan Eileanan Fàclannach", "FKT": "Bun-àm nan Eileanan Fàclannach", "FNST": "Tìde Samhraidh Fernando de Noronha", "FNT": "Bun-àm Fernando de Noronha", "GALT": "Àm Ghalapagos", "GAMT": "Àm Ghambier", "GEST": "Tìde samhraidh na Cairtbheile", "GET": "Bun-àm na Cairtbheile", "GFT": "Àm Guidheàna na Frainge", "GIT": "Àm Eileanan Ghileabairt", "GMT": "Greenwich Mean Time", "GNSST": "Tìde samhraidh na Graonlainne", "GNST": "Bun-àm na Graonlainne", "GST": "Àm Seòrsea a Deas", "GST Guam": "Àm Guam", "GYT": "Àm Guidheàna", "HADT": "Tìde Samhraidh nan Eileanan Hawai’i ’s Aleutach", "HAST": "Bun-àm nan Eileanan Hawai’i ’s Aleutach", "HKST": "Tìde samhraidh Hong Kong", "HKT": "Bun-àm Hong Kong", "HOVST": "Tìde samhraidh Khovd", "HOVT": "Bun-àm Khovd", "ICT": "Àm Sìn-Innseanach", "IDT": "Tìde samhraidh Iosrael", "IOT": "Àm Cuan nan Innseachan", "IRKST": "Tìde Samhraidh Irkutsk", "IRKT": "Bun-àm Irkutsk", "IRST": "Bun-àm Ioràin", "IRST DST": "Tìde samhraidh Ioràin", "IST": "Àm nan Innseachan", "IST Israel": "Bun-àm Iosrael", "JDT": "Tìde samhraidh na Seapaine", "JST": "Bun-àm na Seapaine", "KOST": "Àm Kosrae", "KRAST": "Tìde samhraidh Krasnoyarsk", "KRAT": "Bun-àm Krasnoyarsk", "KST": "Bun-àm Choirèa", "KST DST": "Tìde samhraidh Choirèa", "LHDT": "Tìde samhraidh Lord Howe", "LHST": "Bun-àm Lord Howe", "LINT": "Àm Eileanan Teraina", "MAGST": "Tìde Samhraidh Magadan", "MAGT": "Bun-àm Magadan", "MART": "Àm Eileanan a’ Mharcais", "MAWT": "Àm Mhawson", "MDT": "Tìde samhraidh Macàthu", "MESZ": "Tìde samhraidh Meadhan na Roinn-Eòrpa", "MEZ": "Bun-àm Meadhan na Roinn-Eòrpa", "MHT": "Àm Eileanan Mharshall", "MMT": "Àm Miànmar", "MSD": "Tìde samhraidh Mhosgo", "MST": "Bun-àm Macàthu", "MUST": "Tìde samhraidh nan Eileanan Mhoiriseas", "MUT": "Bun-àm nan Eileanan Mhoiriseas", "MVT": "Àm nan Eileanan Mhaladaibh", "MYT": "Àm Mhalaidhsea", "NCT": "Bun-àm Chailleann Nuaidh", "NDT": "Tìde samhraidh Talamh an Èisg", "NDT New Caledonia": "Tìde samhraidh Chailleann Nuaidh", "NFDT": "Tìde samhraidh Eilein Norfolk", "NFT": "Bun-àm Eilein Norfolk", "NOVST": "Tìde samhraidh Novosibirsk", "NOVT": "Bun-àm Novosibirsk", "NPT": "Àm Neapàl", "NRT": "Àm Nabhru", "NST": "Bun-àm Talamh an Èisg", "NUT": "Àm Niue", "NZDT": "Tìde samhraidh Shealainn Nuaidh", "NZST": "Bun-àm Shealainn Nuaidh", "OESZ": "Tìde samhraidh na Roinn-Eòrpa an Ear", "OEZ": "Bun-àm na Roinn-Eòrpa an Ear", "OMSST": "Tìde samhraidh Omsk", "OMST": "Bun-àm Omsk", "PDT": "Tìde samhraidh a’ Chuain Shèimh", "PDTM": "Tìde samhraidh a’ Chuain Shèimh Mheagsago", "PETDT": "Tìde samhraidh Petropavlovsk-Kamchatsky", "PETST": "Bun-àm Petropavlovsk-Kamchatsky", "PGT": "Àm Gini Nuaidh Paputhaiche", "PHOT": "Àm Eileanan Phoenix", "PKT": "Bun-àm Pagastàin", "PKT DST": "Tìde samhraidh Pagastàin", "PMDT": "Tìde Samhraidh Saint Pierre agus Miquelon", "PMST": "Bun-àm Saint Pierre agus Miquelon", "PONT": "Àm Pohnpei", "PST": "Bun-àm a’ Chuain Shèimh", "PST Philippine": "Bun-àm nan Eilean Filipineach", "PST Philippine DST": "Tìde samhraidh nan Eilean Filipineach", "PST Pitcairn": "Àm Peit a’ Chàirn", "PSTM": "Bun-àm a’ Chuain Shèimh Mheagsago", "PWT": "Àm Palabh", "PYST": "Tìde samhraidh Paraguaidh", "PYT": "Bun-àm Paraguaidh", "PYT Korea": "Àm Pyeongyang", "RET": "Àm Reunion", "ROTT": "Àm Rothera", "SAKST": "Tìde samhraidh Sakhalin", "SAKT": "Bun-àm Sakhalin", "SAMST": "Tìde samhraidh Samara", "SAMT": "Bun-àm Samara", "SAST": "Àm Afraga a Deas", "SBT": "Àm Eileanan Sholaimh", "SCT": "Àm nan Eileanan Sheiseall", "SGT": "Àm Singeapòr", "SLST": "Àm Lanca", "SRT": "Àm Suranaim", "SST Samoa": "Bun-àm Samotha", "SST Samoa Apia": "Bun-àm Apia", "SST Samoa Apia DST": "Tìde samhraidh Apia", "SST Samoa DST": "Tìde samhraidh Samotha", "SYOT": "Àm Shyowa", "TAAF": "Àm Deasach agus Antartaigeach na Frainge", "TAHT": "Àm Tahiti", "TJT": "Àm Taidigeastàin", "TKT": "Àm Tokelau", "TLT": "Àm Thìomor an Ear", "TMST": "Tìde samhraidh Turcmanastàin", "TMT": "Bun-àm Turcmanastàin", "TOST": "Tìde samhraidh Tonga", "TOT": "Bun-àm Tonga", "TVT": "Àm Tubhalu", "TWT": "Bun-àm Taipei", "TWT DST": "Tìde samhraidh Taipei", "ULAST": "Tìde samhraidh Ulan Bator", "ULAT": "Bun-àm Ulan Bator", "UYST": "Tìde samhraidh Uruguaidh", "UYT": "Bun-àm Uruguaidh", "UZT": "Bun-àm Usbagastàn", "UZT DST": "Tìde samhraidh Usbagastàn", "VET": "Àm na Bheiniseala", "VLAST": "Tìde Samhraidh Vladivostok", "VLAT": "Bun-àm Vladivostok", "VOLST": "Tìde samhraidh Volgograd", "VOLT": "Bun-àm Volgograd", "VOST": "Àm Vostok", "VUT": "Bun-àm Vanuatu", "VUT DST": "Tìde samhraidh Vanuatu", "WAKT": "Àm Eilean Wake", "WARST": "Tìde samhraidh na h-Argantaine Siaraich", "WART": "Bun-àm na h-Argantaine Siaraich", "WAST": "Àm Afraga an Iar", "WAT": "Àm Afraga an Iar", "WESZ": "Tìde samhraidh na Roinn-Eòrpa an Iar", "WEZ": "Bun-àm na Roinn-Eòrpa an Iar", "WFT": "Àm Uallas agus Futuna", "WGST": "Tìde samhraidh na Graonlainn an Iar", "WGT": "Bun-àm na Graonlainn an Iar", "WIB": "Àm nan Innd-Innse an Iar", "WIT": "Àm nan Innd-Innse an Ear", "WITA": "Àm Meadhan nan Innd-Innse", "YAKST": "Tìde samhraidh Yakutsk", "YAKT": "Bun-àm Yakutsk", "YEKST": "Tìde samhraidh Yekaterinburg", "YEKT": "Bun-àm Yekaterinburg", "YST": "Àm Yukon", "МСК": "Bun-àm Mhosgo", "اقتاۋ": "Bun-àm Aqtau", "اقتاۋ قالاسى": "Tìde samhraidh Aqtau", "اقتوبە": "Bun-àm Aqtobe", "اقتوبە قالاسى": "Tìde samhraidh Aqtobe", "الماتى": "Bun-àm Almaty", "الماتى قالاسى": "Tìde samhraidh Almaty", "باتىس قازاق ەلى": "Àm Casachstàin an Iar", "شىعىش قازاق ەلى": "Àm Casachstàin an Ear", "قازاق ەلى": "Àm Casachstàin", "قىرعىزستان": "Àm Cìorgastain", "قىزىلوردا": "Bun-àm Qızılorda", "قىزىلوردا قالاسى": "Tìde samhraidh Qızılorda", "∅∅∅": "Tìde samhraidh nan Eileanan Asorach"},
 	}
 }
 
@@ -80,6 +80,7 @@ func (gd *gd_GB) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'gd_GB'
 func (gd *gd_GB) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 
 	if n == 1 || n == 11 {
@@ -95,6 +96,7 @@ func (gd *gd_GB) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // OrdinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for 'gd_GB'
 func (gd *gd_GB) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 
 	if n == 1 || n == 11 {
@@ -221,6 +223,7 @@ func (gd *gd_GB) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'gd_GB' and handles both Whole and Real numbers based on 'v'
 func (gd *gd_GB) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -292,6 +295,7 @@ func (gd *gd_GB) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'gd_GB'
 func (gd *gd_GB) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gd.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -349,6 +353,7 @@ func (gd *gd_GB) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'gd_GB'
 // in accounting notation.
 func (gd *gd_GB) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gd.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -385,6 +390,7 @@ func (gd *gd_GB) FmtAccounting(num float64, v uint64, currency currency.Type) st
 		b = append(b, gd.currencyNegativePrefix[0])
 
 	} else {
+
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
@@ -415,6 +421,7 @@ func (gd *gd_GB) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 // FmtDateShort returns the short date representation of 't' for 'gd_GB'
 func (gd *gd_GB) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -443,6 +450,7 @@ func (gd *gd_GB) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'gd_GB'
 func (gd *gd_GB) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -462,6 +470,7 @@ func (gd *gd_GB) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'gd_GB'
 func (gd *gd_GB) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -481,6 +490,7 @@ func (gd *gd_GB) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'gd_GB'
 func (gd *gd_GB) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, gd.daysWide[t.Weekday()]...)
@@ -502,6 +512,7 @@ func (gd *gd_GB) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'gd_GB'
 func (gd *gd_GB) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -522,6 +533,7 @@ func (gd *gd_GB) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'gd_GB'
 func (gd *gd_GB) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -549,6 +561,7 @@ func (gd *gd_GB) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'gd_GB'
 func (gd *gd_GB) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -580,6 +593,7 @@ func (gd *gd_GB) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'gd_GB'
 func (gd *gd_GB) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
