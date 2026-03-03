@@ -39,7 +39,7 @@ func New() locales.Translator {
 		pluralsOrdinal:    nil,
 		pluralsRange:      nil,
 		decimal:           ",",
-		group:             " ",
+		group:             " ",
 		minus:             "-",
 		percent:           "%",
 		timeSeparator:     ":",
