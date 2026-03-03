@@ -56,7 +56,7 @@ func New() locales.Translator {
 		daysShort:              []string{"እ", "ሰ", "ማ", "ረ", "ሐ", "ዓ", "ቅ"},
 		daysWide:               []string{"እሑድ", "ሰኞ", "ማክሰኞ", "ረቡዕ", "ሐሙስ", "ዓርብ", "ቅዳሜ"},
 		periodsAbbreviated:     []string{"ጥዋት", "ከሰዓት"},
-		timezones:              map[string]string{"ACDT": "የአውስትራሊያ መካከለኛ የቀን ሰዓት አቆጣጠር", "ACST": "የአውስትራሊያ መካከለኛ መደበኛ የሰዓት አቆጣጠር", "ACT": "ACT", "ACWDT": "የአውስትራሊያ መካከለኛው ምስራቅ የቀን ሰዓት አቆጣጠር", "ACWST": "የአውስትራሊያ መካከለኛ ምስራቃዊ መደበኛ ሰዓት አቆጣጠር", "ADT": "የአትላንቲክ የቀን ሰዓት አቆጣጠር", "ADT Arabia": "የዓረቢያ የቀን ብርሃን ሰዓት", "AEDT": "የአውስትራሊያ ምዕራባዊ የቀን ሰዓት አቆጣጠር", "AEST": "የአውስትራሊያ ምዕራባዊ መደበኛ የሰዓት አቆጣጠር", "AFT": "የአፍጋኒስታን ሰዓት", "AKDT": "የአላስካ የቀን ሰዓት አቆጣጠር", "AKST": "የአላስካ መደበኛ የሰዓት አቆጣጠር", "AMST": "የአማዞን የቀን ሰዓት አቆጣጠር", "AMST Armenia": "የአርመኒያ ክረምት ሰዓት", "AMT": "የአማዞን መደበኛ ሰዓት አቆጣጠር", "AMT Armenia": "የአርመኒያ መደበኛ ሰዓት", "ANAST": "የአናድይር የበጋ የሰዓት አቆጣጠር", "ANAT": "የአናዲይር ሰዓት አቆጣጠር", "ARST": "የአርጀንቲና የበጋ ሰዓት አቆጣጠር", "ART": "የአርጀንቲና መደበኛ ሰዓት አቆጣጠር", "AST": "የአትላንቲክ መደበኛ የሰዓት አቆጣጠር", "AST Arabia": "የዓረቢያ መደበኛ ሰዓት", "AWDT": "የአውስትራሊያ ምስራቃዊ የቀን ሰዓት አቆጣጠር", "AWST": "የአውስትራሊያ ምስራቃዊ መደበኛ ሰዓት አቆጣጠር", "AZST": "የአዘርባጃን ክረምት ሰዓት", "AZT": "የአዘርባጃን መደበኛ ሰዓት", "BDT Bangladesh": "የባንግላዴሽ ክረምት ሰዓት", "BNT": "የብሩኔይ ዳሩሳላም ሰዓት", "BOT": "የቦሊቪያ ሰዓት", "BRST": "የብራዚላ የበጋ ሰዓት አቆጣጠር", "BRT": "የብራሲሊያ መደበኛ ሰዓት አቆጣጠር", "BST Bangladesh": "የባንግላዴሽ መደበኛ ሰዓት", "BT": "የቡታን ሰዓት", "CAST": "CAST", "CAT": "የመካከለኛው አፍሪካ ሰዓት", "CCT": "የኮኮስ ደሴቶች ሰዓት", "CDT": "የመካከለኛ የቀን ሰዓት አቆጣጠር", "CHADT": "የቻታም የቀን ብርሃን ሰዓት", "CHAST": "የቻታም መደበኛ ሰዓት", "CHUT": "የቹክ ሰዓት", "CKT": "የኩክ ደሴቶች መደበኛ ሰዓት", "CKT DST": "የኩክ ደሴቶች ግማሽ ክረምት ሰዓት", "CLST": "የቺሊ ክረምት ሰዓት", "CLT": "የቺሊ መደበኛ ሰዓት", "COST": "የኮሎምቢያ ክረምት ሰዓት", "COT": "የኮሎምቢያ መደበኛ ሰዓት", "CST": "የሰሜን አሜሪካ የመካከለኛ መደበኛ ሰዓት አቆጣጠር", "CST China": "የቻይና መደበኛ ሰዓት", "CST China DST": "የቻይና የቀን ብርሃን ሰዓት", "CVST": "የኬፕ ቨርዴ ክረምት ሰዓት", "CVT": "የኬፕ ቨርዴ መደበኛ ሰዓት", "CXT": "የገና ደሴት ሰዓት", "ChST": "የቻሞሮ መደበኛ ሰዓት", "ChST NMI": "ChST NMI", "CuDT": "የኩባ የቀን ብርሃን ሰዓት", "CuST": "የኩባ መደበኛ ሰዓት", "DAVT": "የዴቪስ ሰዓት", "DDUT": "የዱሞንት-ዱርቪል ሰዓት", "EASST": "የኢስተር ደሴት ክረምት ሰዓት", "EAST": "የኢስተር ደሴት መደበኛ ሰዓት", "EAT": "የምስራቅ አፍሪካ ሰዓት", "ECT": "የኢኳዶር ሰዓት", "EDT": "ምስራቃዊ የቀን ሰዓት አቆጣጠር", "EGDT": "የምስራቅ ግሪንላንድ ክረምት ሰዓት", "EGST": "የምስራቅ ግሪንላንድ መደበኛ ሰዓት", "EST": "ምስራቃዊ መደበኛ ሰዓት አቆጣጠር", "FEET": "የሩቅ ምስራቅ የአውሮፓ ሰዓት", "FJT": "የፊጂ መደበኛ ሰዓት", "FJT Summer": "የፊጂ ክረምት ሰዓት", "FKST": "የፋልክላንድ ደሴቶች ክረምት ሰዓት", "FKT": "የፋልክላንድ ደሴቶች መደበኛ ሰዓት", "FNST": "የፈርናንዶ ዲ ኖሮንሃ የበጋ የሰዓት አቆጣጠር", "FNT": "የፈርናንዶ ዲ ኖሮንቻ መደበኛ ሰዓት አቆጣጠር", "GALT": "የጋላፓጎስ ሰዓት", "GAMT": "የጋምቢየር ሰዓት", "GEST": "የጂዮርጂያ ክረምት ሰዓት", "GET": "የጂዮርጂያ መደበኛ ሰዓት", "GFT": "የፈረንሳይ ጉያና ሰዓት", "GIT": "የጂልበርት ደሴቶች ሰዓት", "GMT": "ግሪንዊች ማዕከላዊ ሰዓት", "GNSST": "GNSST", "GNST": "GNST", "GST": "የባህረሰላጤ መደበኛ ሰዓት", "GST Guam": "GST Guam", "GYT": "የጉያና ሰዓት", "HADT": "የሃዋይ አሌኡት የቀን ሰዓት አቆጣጠር", "HAST": "የሃዋይ አሌኡት መደበኛ ሰዓት አቆጣጠር", "HKST": "የሆንግ ኮንግ ክረምት ሰዓት", "HKT": "የሆንግ ኮንግ መደበኛ ሰዓት", "HOVST": "የሆቭድ የበጋ ሰዓት አቆጣጠር", "HOVT": "የሆቭድ መደበኛ የሰዓት አቆጣጠር", "ICT": "የኢንዶቻይና ሰዓት", "IDT": "የእስራኤል የቀን ብርሃን ሰዓት", "IOT": "የህንድ ውቅያኖስ ሰዓት", "IRKST": "ኢርኩትስክ የበጋ የሰዓት አቆጣጠር", "IRKT": "የኢርኩትስክ መደበኛ የሰዓት አቆጣጠር", "IRST": "የኢራን መደበኛ ሰዓት", "IRST DST": "የኢራን የቀን ብርሃን ሰዓት", "IST": "የህንድ መደበኛ ሰዓት", "IST Israel": "የእስራኤል መደበኛ ሰዓት", "JDT": "የጃፓን የቀን ብርሃን ሰዓት", "JST": "የጃፓን መደበኛ ሰዓት", "KOST": "የኮስራኤ ሰዓት", "KRAST": "የክራስኖያርስክ የበጋ ሰዓት አቆጣጠር", "KRAT": "የክራስኖይአርስክ መደበኛ ሰዓት አቆጣጠር", "KST": "የኮሪያ መደበኛ ሰዓት", "KST DST": "የኮሪያ የቀን ብርሃን ሰዓት", "LHDT": "የሎርድ ሆዌ የቀን ሰዓት አቆጣጠር", "LHST": "የሎርድ ሆዌ መደበኛ የሰዓት አቆጣጠር", "LINT": "የላይን ደሴቶች ሰዓት", "MAGST": "የማጋዳን በጋ ሰዓት አቆጣጠር", "MAGT": "የማጋዳን መደበኛ ሰዓት አቆጣጠር", "MART": "የማርኴሳስ ሰዓት", "MAWT": "የማውሰን ሰዓት", "MDT": "MDT", "MESZ": "የመካከለኛው አውሮፓ ክረምት ሰዓት", "MEZ": "የመካከለኛው አውሮፓ መደበኛ ሰዓት", "MHT": "የማርሻል ደሴቶች ሰዓት", "MMT": "የሚያንማር ሰዓት", "MSD": "የሞስኮ የበጋ ሰዓት አቆጣጠር", "MST": "MST", "MUST": "የማውሪሺየስ ክረምት ሰዓት", "MUT": "የማውሪሺየስ መደበኛ ሰዓት", "MVT": "የማልዲቭስ ሰዓት", "MYT": "የማሌይዢያ ሰዓት", "NCT": "የኒው ካሌዶኒያ መደበኛ ሰዓት", "NDT": "የኒውፋውንድላንድ የቀን የሰዓት አቆጣጠር", "NDT New Caledonia": "የኒው ካሌዶኒያ ክረምት ሰዓት", "NFDT": "የኖርፎልክ ደሴቶች የቀን የሰዓት አቆጣጠር", "NFT": "የኖርፎልክ ደሴቶች መደበኛ የሰዓት አቆጣጠር", "NOVST": "የኖቮሲብሪስክ የበጋ ሰአት አቆጣጠር", "NOVT": "የኖቮሲቢርስክ መደበኛ የሰዓት አቆጣጠር", "NPT": "የኔፓል ሰዓት", "NRT": "የናውሩ ሰዓት", "NST": "የኒውፋውንድላንድ መደበኛ የሰዓት አቆጣጠር", "NUT": "የኒዩዌ ሰዓት", "NZDT": "የኒው ዚላንድ የቀን ብርሃን ሰዓት", "NZST": "የኒው ዚላንድ መደበኛ ሰዓት", "OESZ": "የምስራቃዊ አውሮፓ ክረምት ሰዓት", "OEZ": "የምስራቃዊ አውሮፓ መደበኛ ሰዓት", "OMSST": "የኦምስክ የበጋ ሰዓት አቆጣጠር", "OMST": "የኦምስክ መደበኛ ሰዓት አቆጣጠር", "PDT": "የፓስፊክ የቀን ሰዓት አቆጣጠር", "PDTM": "የሜክሲኮ ፓሲፊክ የቀን ሰዓት አቆጣጠር", "PETDT": "የፔትሮፓቭሎስኪ - ካምቻትስኪ የበጋ ሰዓት አቆጣጠር", "PETST": "የፔትሮፓቭሎስኪ - ካምቻትስኪ ሰዓት አቆጣጠር", "PGT": "የፓፗ ኒው ጊኒ ሰዓት", "PHOT": "የፊኒክስ ደሴቶች ሰዓት", "PKT": "የፓኪስታን መደበኛ ሰዓት", "PKT DST": "የፓኪስታን ክረምት ሰዓት", "PMDT": "ቅዱስ የፒዬር እና ሚኴሎን የቀን ብርሃን ሰዓት", "PMST": "ቅዱስ የፒዬር እና ሚኴሎን መደበኛ ሰዓት", "PONT": "የፖናፔ ሰዓት", "PST": "የፓስፊክ መደበኛ ሰዓት አቆጣጠር", "PST Philippine": "የፊሊፒን መደበኛ ሰዓት", "PST Philippine DST": "የፊሊፒን ክረምት ሰዓት", "PST Pitcairn": "የፒትካይርን ሰዓት", "PSTM": "የሜክሲኮ ፓሲፊክ መደበኛ ሰዓት አቆጣጠር", "PWT": "የፓላው ሰዓት", "PYST": "የፓራጓይ ክረምት ሰዓት", "PYT": "የፓራጓይ መደበኛ ሰዓት", "PYT Korea": "የፕዮንግያንግ ሰዓት", "RET": "የሬዩኒየን ሰዓት", "ROTT": "የሮቴራ ሰዓት", "SAKST": "የሳክሃሊን የበጋ ሰዓት አቆጣጠር", "SAKT": "የሳክሃሊን መደበኛ ሰዓት አቆጣጠር", "SAMST": "የሳማራ የበጋ ሰዓት አቆጣጠር", "SAMT": "የሳማራ መደበኛ ሰዓት አቆጣጠር", "SAST": "የደቡብ አፍሪካ መደበኛ ሰዓት", "SBT": "የሰለሞን ደሴቶች ሰዓት", "SCT": "የሴሸልስ ሰዓት", "SGT": "የሲንጋፒር መደበኛ ሰዓት", "SLST": "SLST", "SRT": "የሱሪናም ሰዓት", "SST Samoa": "የሳሞዋ መደበኛ ሰዓት", "SST Samoa Apia": "የአፒያ መደበኛ ሰዓት", "SST Samoa Apia DST": "የአፒያ የቀን ጊዜ ሰዓት", "SST Samoa DST": "የሳሞዋ የበጋ ሰዓት", "SYOT": "የሲዮዋ ሰዓት", "TAAF": "የፈረንሳይ ደቡባዊ እና አንታርክቲክ ሰዓት", "TAHT": "የታሂቲ ሰዓት", "TJT": "የታጂኪስታን ሰዓት", "TKT": "የቶኬላው ሰዓት", "TLT": "የምስራቅ ቲሞር ሰዓት", "TMST": "የቱርክመኒስታን ክረምት ሰዓት", "TMT": "የቱርክመኒስታን መደበኛ ሰዓት", "TOST": "የቶንጋ ክረምት ሰዓት", "TOT": "የቶንጋ መደበኛ ሰዓት", "TVT": "የቱቫሉ ሰዓት", "TWT": "የታይፔይ መደበኛ ሰዓት", "TWT DST": "የታይፔይ የቀን ብርሃን ሰዓት", "ULAST": "የኡላን ባቶር የበጋ ሰዓት አቆጣጠር", "ULAT": "የኡላን ባቶር መደበኛ ሰዓት አቆጣጠር", "UYST": "የኡራጓይ ክረምት ሰዓት", "UYT": "የኡራጓይ መደበኛ ሰዓት", "UZT": "የኡዝቤኪስታን መደበኛ ሰዓት", "UZT DST": "የኡዝቤኪስታን ክረምት ሰዓት", "VET": "የቬኔዝዌላ ሰዓት", "VLAST": "የቭላዲቮስቶክ የበጋ የሰዓት አቆጣጠር", "VLAT": "የቪላዲቮስቶክ መደበኛ የሰዓት አቆጣጠር", "VOLST": "የቫልጎራድ የበጋ ሰዓት አቆጣጠር", "VOLT": "የቮልጎራድ መደበኛ ሰዓት አቆጣጠር", "VOST": "የቮስቶክ ሰዓት", "VUT": "የቫኗቱ መደበኛ ሰዓት", "VUT DST": "የቫኗቱ ክረምት ሰዓት", "WAKT": "የዌክ ደሴት ሰዓት", "WARST": "የምዕራባዊ አርጀንቲና የበጋ ሰዓት አቆጣጠር", "WART": "የምዕራባዊ አርጀንቲና መደበኛ ሰዓት አቆጣጠር", "WAST": "የምዕራብ አፍሪካ ሰዓት", "WAT": "የምዕራብ አፍሪካ ሰዓት", "WESZ": "የምዕራባዊ አውሮፓ ክረምት ሰዓት", "WEZ": "የምዕራባዊ አውሮፓ መደበኛ ሰዓት", "WFT": "የዋሊስ እና ፉቱና ሰዓት", "WGST": "የምዕራብ ግሪንላንድ ክረምት ሰዓት", "WGT": "የምዕራብ ግሪንላንድ መደበኛ ሰዓት", "WIB": "የምዕራባዊ ኢንዶኔዢያ ሰዓት", "WIT": "የምስራቃዊ ኢንዶኔዢያ ሰዓት", "WITA": "የመካከለኛው ኢንዶኔዢያ ሰዓት", "YAKST": "የያኩትስክ የበጋ ሰዓት አቆጣጠር", "YAKT": "ያኩትስክ መደበኛ ሰዓት አቆጣጠር", "YEKST": "የየካተሪንበርግ የበጋ ሰዓት አቆጣጠር", "YEKT": "የየካተሪንበርግ መደበኛ ሰዓት አቆጣጠር", "YST": "የዩኮን ጊዜ", "МСК": "የሞስኮ መደበኛ ሰዓት አቆጣጠር", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "የምዕራብ ካዛኪስታን ሰዓት", "شىعىش قازاق ەلى": "የምስራቅ ካዛኪስታን ሰዓት", "قازاق ەلى": "ካዛኪስታን ሰዓት", "قىرعىزستان": "የኪርጊስታን ሰዓት", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "የአዞረስ ክረምት ሰዓት"},
+		timezones:              map[string]string{"ACDT": "የአውስትራሊያ መካከለኛ የቀን ሰዓት አቆጣጠር", "ACST": "የአውስትራሊያ መካከለኛ መደበኛ የሰዓት አቆጣጠር", "ACT": "ACT", "ACWDT": "የአውስትራሊያ መካከለኛው ምስራቅ የቀን ሰዓት አቆጣጠር", "ACWST": "የአውስትራሊያ መካከለኛ ምስራቃዊ መደበኛ ሰዓት አቆጣጠር", "ADT": "የአትላንቲክ የቀን ሰዓት አቆጣጠር", "ADT Arabia": "የዓረቢያ የቀን ብርሃን ሰዓት", "AEDT": "የአውስትራሊያ ምዕራባዊ የቀን ሰዓት አቆጣጠር", "AEST": "የአውስትራሊያ ምዕራባዊ መደበኛ የሰዓት አቆጣጠር", "AFT": "የአፍጋኒስታን ሰዓት", "AKDT": "የአላስካ የቀን ሰዓት አቆጣጠር", "AKST": "የአላስካ መደበኛ የሰዓት አቆጣጠር", "AMST": "የአማዞን የቀን ሰዓት አቆጣጠር", "AMST Armenia": "የአርመኒያ ክረምት ሰዓት", "AMT": "የአማዞን መደበኛ ሰዓት አቆጣጠር", "AMT Armenia": "የአርመኒያ መደበኛ ሰዓት", "ANAST": "የአናድይር የበጋ የሰዓት አቆጣጠር", "ANAT": "የአናዲይር ሰዓት አቆጣጠር", "ARST": "የአርጀንቲና የበጋ ሰዓት አቆጣጠር", "ART": "የአርጀንቲና መደበኛ ሰዓት አቆጣጠር", "AST": "የአትላንቲክ መደበኛ የሰዓት አቆጣጠር", "AST Arabia": "የዓረቢያ መደበኛ ሰዓት", "AWDT": "የአውስትራሊያ ምስራቃዊ የቀን ሰዓት አቆጣጠር", "AWST": "የአውስትራሊያ ምስራቃዊ መደበኛ ሰዓት አቆጣጠር", "AZST": "የአዘርባጃን ክረምት ሰዓት", "AZT": "የአዘርባጃን መደበኛ ሰዓት", "BDT Bangladesh": "የባንግላዴሽ ክረምት ሰዓት", "BNT": "የብሩኔይ ዳሩሳላም ሰዓት", "BOT": "የቦሊቪያ ሰዓት", "BRST": "የብራዚላ የበጋ ሰዓት አቆጣጠር", "BRT": "የብራሲሊያ መደበኛ ሰዓት አቆጣጠር", "BST Bangladesh": "የባንግላዴሽ መደበኛ ሰዓት", "BT": "የቡታን ሰዓት", "CAST": "CAST", "CAT": "የመካከለኛው አፍሪካ ሰዓት", "CCT": "የኮኮስ ደሴቶች ሰዓት", "CDT": "የመካከለኛ የቀን ሰዓት አቆጣጠር", "CHADT": "የቻታም የቀን ብርሃን ሰዓት", "CHAST": "የቻታም መደበኛ ሰዓት", "CHUT": "የቹክ ሰዓት", "CKT": "የኩክ ደሴቶች መደበኛ ሰዓት", "CKT DST": "የኩክ ደሴቶች ግማሽ ክረምት ሰዓት", "CLST": "የቺሊ ክረምት ሰዓት", "CLT": "የቺሊ መደበኛ ሰዓት", "COST": "የኮሎምቢያ ክረምት ሰዓት", "COT": "የኮሎምቢያ መደበኛ ሰዓት", "CST": "የሰሜን አሜሪካ የመካከለኛ መደበኛ ሰዓት አቆጣጠር", "CST China": "የቻይና መደበኛ ሰዓት", "CST China DST": "የቻይና የቀን ብርሃን ሰዓት", "CVST": "የኬፕ ቨርዴ ክረምት ሰዓት", "CVT": "የኬፕ ቨርዴ መደበኛ ሰዓት", "CXT": "የገና ደሴት ሰዓት", "ChST": "የቻሞሮ መደበኛ ሰዓት", "ChST NMI": "ChST NMI", "CuDT": "የኩባ የቀን ብርሃን ሰዓት", "CuST": "የኩባ መደበኛ ሰዓት", "DAVT": "የዴቪስ ሰዓት", "DDUT": "የዱሞንት-ዱርቪል ሰዓት", "EASST": "የኢስተር ደሴት ክረምት ሰዓት", "EAST": "የኢስተር ደሴት መደበኛ ሰዓት", "EAT": "የምስራቅ አፍሪካ ሰዓት", "ECT": "የኢኳዶር ሰዓት", "EDT": "ምስራቃዊ የቀን ሰዓት አቆጣጠር", "EGDT": "የምስራቅ ግሪንላንድ ክረምት ሰዓት", "EGST": "የምስራቅ ግሪንላንድ መደበኛ ሰዓት", "EST": "ምስራቃዊ መደበኛ ሰዓት አቆጣጠር", "FEET": "የሩቅ ምስራቅ የአውሮፓ ሰዓት", "FJT": "የፊጂ መደበኛ ሰዓት", "FJT Summer": "የፊጂ ክረምት ሰዓት", "FKST": "የፋልክላንድ ደሴቶች ክረምት ሰዓት", "FKT": "የፋልክላንድ ደሴቶች መደበኛ ሰዓት", "FNST": "የፈርናንዶ ዲ ኖሮንሃ የበጋ የሰዓት አቆጣጠር", "FNT": "የፈርናንዶ ዲ ኖሮንቻ መደበኛ ሰዓት አቆጣጠር", "GALT": "የጋላፓጎስ ሰዓት", "GAMT": "የጋምቢየር ሰዓት", "GEST": "የጂዮርጂያ ክረምት ሰዓት", "GET": "የጂዮርጂያ መደበኛ ሰዓት", "GFT": "የፈረንሳይ ጉያና ሰዓት", "GIT": "የጂልበርት ደሴቶች ሰዓት", "GMT": "ግሪንዊች ማዕከላዊ ሰዓት", "GNSST": "GNSST", "GNST": "GNST", "GST": "የደቡብ ጂዮርጂያ ሰዓት", "GST Guam": "GST Guam", "GYT": "የጉያና ሰዓት", "HADT": "የሃዋይ አሌኡት የቀን ሰዓት አቆጣጠር", "HAST": "የሃዋይ አሌኡት መደበኛ ሰዓት አቆጣጠር", "HKST": "የሆንግ ኮንግ ክረምት ሰዓት", "HKT": "የሆንግ ኮንግ መደበኛ ሰዓት", "HOVST": "የሆቭድ የበጋ ሰዓት አቆጣጠር", "HOVT": "የሆቭድ መደበኛ የሰዓት አቆጣጠር", "ICT": "የኢንዶቻይና ሰዓት", "IDT": "የእስራኤል የቀን ብርሃን ሰዓት", "IOT": "የህንድ ውቅያኖስ ሰዓት", "IRKST": "ኢርኩትስክ የበጋ የሰዓት አቆጣጠር", "IRKT": "የኢርኩትስክ መደበኛ የሰዓት አቆጣጠር", "IRST": "የኢራን መደበኛ ሰዓት", "IRST DST": "የኢራን የቀን ብርሃን ሰዓት", "IST": "የህንድ መደበኛ ሰዓት", "IST Israel": "የእስራኤል መደበኛ ሰዓት", "JDT": "የጃፓን የቀን ብርሃን ሰዓት", "JST": "የጃፓን መደበኛ ሰዓት", "KOST": "የኮስራኤ ሰዓት", "KRAST": "የክራስኖያርስክ የበጋ ሰዓት አቆጣጠር", "KRAT": "የክራስኖይአርስክ መደበኛ ሰዓት አቆጣጠር", "KST": "የኮሪያ መደበኛ ሰዓት", "KST DST": "የኮሪያ የቀን ብርሃን ሰዓት", "LHDT": "የሎርድ ሆዌ የቀን ሰዓት አቆጣጠር", "LHST": "የሎርድ ሆዌ መደበኛ የሰዓት አቆጣጠር", "LINT": "የላይን ደሴቶች ሰዓት", "MAGST": "የማጋዳን በጋ ሰዓት አቆጣጠር", "MAGT": "የማጋዳን መደበኛ ሰዓት አቆጣጠር", "MART": "የማርኴሳስ ሰዓት", "MAWT": "የማውሰን ሰዓት", "MDT": "MDT", "MESZ": "የመካከለኛው አውሮፓ ክረምት ሰዓት", "MEZ": "የመካከለኛው አውሮፓ መደበኛ ሰዓት", "MHT": "የማርሻል ደሴቶች ሰዓት", "MMT": "የሚያንማር ሰዓት", "MSD": "የሞስኮ የበጋ ሰዓት አቆጣጠር", "MST": "MST", "MUST": "የማውሪሺየስ ክረምት ሰዓት", "MUT": "የማውሪሺየስ መደበኛ ሰዓት", "MVT": "የማልዲቭስ ሰዓት", "MYT": "የማሌይዢያ ሰዓት", "NCT": "የኒው ካሌዶኒያ መደበኛ ሰዓት", "NDT": "የኒውፋውንድላንድ የቀን የሰዓት አቆጣጠር", "NDT New Caledonia": "የኒው ካሌዶኒያ ክረምት ሰዓት", "NFDT": "የኖርፎልክ ደሴቶች የቀን የሰዓት አቆጣጠር", "NFT": "የኖርፎልክ ደሴቶች መደበኛ የሰዓት አቆጣጠር", "NOVST": "የኖቮሲብሪስክ የበጋ ሰአት አቆጣጠር", "NOVT": "የኖቮሲቢርስክ መደበኛ የሰዓት አቆጣጠር", "NPT": "የኔፓል ሰዓት", "NRT": "የናውሩ ሰዓት", "NST": "የኒውፋውንድላንድ መደበኛ የሰዓት አቆጣጠር", "NUT": "የኒዩዌ ሰዓት", "NZDT": "የኒው ዚላንድ የቀን ብርሃን ሰዓት", "NZST": "የኒው ዚላንድ መደበኛ ሰዓት", "OESZ": "የምስራቃዊ አውሮፓ ክረምት ሰዓት", "OEZ": "የምስራቃዊ አውሮፓ መደበኛ ሰዓት", "OMSST": "የኦምስክ የበጋ ሰዓት አቆጣጠር", "OMST": "የኦምስክ መደበኛ ሰዓት አቆጣጠር", "PDT": "የፓስፊክ የቀን ሰዓት አቆጣጠር", "PDTM": "የሜክሲኮ ፓሲፊክ የቀን ሰዓት አቆጣጠር", "PETDT": "የፔትሮፓቭሎስኪ - ካምቻትስኪ የበጋ ሰዓት አቆጣጠር", "PETST": "የፔትሮፓቭሎስኪ - ካምቻትስኪ ሰዓት አቆጣጠር", "PGT": "የፓፗ ኒው ጊኒ ሰዓት", "PHOT": "የፊኒክስ ደሴቶች ሰዓት", "PKT": "የፓኪስታን መደበኛ ሰዓት", "PKT DST": "የፓኪስታን ክረምት ሰዓት", "PMDT": "ቅዱስ የፒዬር እና ሚኴሎን የቀን ብርሃን ሰዓት", "PMST": "ቅዱስ የፒዬር እና ሚኴሎን መደበኛ ሰዓት", "PONT": "የፖናፔ ሰዓት", "PST": "የፓስፊክ መደበኛ ሰዓት አቆጣጠር", "PST Philippine": "የፊሊፒን መደበኛ ሰዓት", "PST Philippine DST": "የፊሊፒን ክረምት ሰዓት", "PST Pitcairn": "የፒትካይርን ሰዓት", "PSTM": "የሜክሲኮ ፓሲፊክ መደበኛ ሰዓት አቆጣጠር", "PWT": "የፓላው ሰዓት", "PYST": "የፓራጓይ ክረምት ሰዓት", "PYT": "የፓራጓይ መደበኛ ሰዓት", "PYT Korea": "የፕዮንግያንግ ሰዓት", "RET": "የሬዩኒየን ሰዓት", "ROTT": "የሮቴራ ሰዓት", "SAKST": "የሳክሃሊን የበጋ ሰዓት አቆጣጠር", "SAKT": "የሳክሃሊን መደበኛ ሰዓት አቆጣጠር", "SAMST": "የሳማራ የበጋ ሰዓት አቆጣጠር", "SAMT": "የሳማራ መደበኛ ሰዓት አቆጣጠር", "SAST": "የደቡብ አፍሪካ መደበኛ ሰዓት", "SBT": "የሰለሞን ደሴቶች ሰዓት", "SCT": "የሴሸልስ ሰዓት", "SGT": "የሲንጋፒር መደበኛ ሰዓት", "SLST": "SLST", "SRT": "የሱሪናም ሰዓት", "SST Samoa": "የሳሞዋ መደበኛ ሰዓት", "SST Samoa Apia": "የአፒያ መደበኛ ሰዓት", "SST Samoa Apia DST": "የአፒያ የቀን ጊዜ ሰዓት", "SST Samoa DST": "የሳሞዋ የበጋ ሰዓት", "SYOT": "የሲዮዋ ሰዓት", "TAAF": "የፈረንሳይ ደቡባዊ እና አንታርክቲክ ሰዓት", "TAHT": "የታሂቲ ሰዓት", "TJT": "የታጂኪስታን ሰዓት", "TKT": "የቶኬላው ሰዓት", "TLT": "የምስራቅ ቲሞር ሰዓት", "TMST": "የቱርክመኒስታን ክረምት ሰዓት", "TMT": "የቱርክመኒስታን መደበኛ ሰዓት", "TOST": "የቶንጋ ክረምት ሰዓት", "TOT": "የቶንጋ መደበኛ ሰዓት", "TVT": "የቱቫሉ ሰዓት", "TWT": "የታይፔይ መደበኛ ሰዓት", "TWT DST": "የታይፔይ የቀን ብርሃን ሰዓት", "ULAST": "የኡላን ባቶር የበጋ ሰዓት አቆጣጠር", "ULAT": "የኡላን ባቶር መደበኛ ሰዓት አቆጣጠር", "UYST": "የኡራጓይ ክረምት ሰዓት", "UYT": "የኡራጓይ መደበኛ ሰዓት", "UZT": "የኡዝቤኪስታን መደበኛ ሰዓት", "UZT DST": "የኡዝቤኪስታን ክረምት ሰዓት", "VET": "የቬኔዝዌላ ሰዓት", "VLAST": "የቭላዲቮስቶክ የበጋ የሰዓት አቆጣጠር", "VLAT": "የቪላዲቮስቶክ መደበኛ የሰዓት አቆጣጠር", "VOLST": "የቫልጎራድ የበጋ ሰዓት አቆጣጠር", "VOLT": "የቮልጎራድ መደበኛ ሰዓት አቆጣጠር", "VOST": "የቮስቶክ ሰዓት", "VUT": "የቫኗቱ መደበኛ ሰዓት", "VUT DST": "የቫኗቱ ክረምት ሰዓት", "WAKT": "የዌክ ደሴት ሰዓት", "WARST": "የምዕራባዊ አርጀንቲና የበጋ ሰዓት አቆጣጠር", "WART": "የምዕራባዊ አርጀንቲና መደበኛ ሰዓት አቆጣጠር", "WAST": "የምዕራብ አፍሪካ ሰዓት", "WAT": "የምዕራብ አፍሪካ ሰዓት", "WESZ": "የምዕራባዊ አውሮፓ ክረምት ሰዓት", "WEZ": "የምዕራባዊ አውሮፓ መደበኛ ሰዓት", "WFT": "የዋሊስ እና ፉቱና ሰዓት", "WGST": "የምዕራብ ግሪንላንድ ክረምት ሰዓት", "WGT": "የምዕራብ ግሪንላንድ መደበኛ ሰዓት", "WIB": "የምዕራባዊ ኢንዶኔዢያ ሰዓት", "WIT": "የምስራቃዊ ኢንዶኔዢያ ሰዓት", "WITA": "የመካከለኛው ኢንዶኔዢያ ሰዓት", "YAKST": "የያኩትስክ የበጋ ሰዓት አቆጣጠር", "YAKT": "ያኩትስክ መደበኛ ሰዓት አቆጣጠር", "YEKST": "የየካተሪንበርግ የበጋ ሰዓት አቆጣጠር", "YEKT": "የየካተሪንበርግ መደበኛ ሰዓት አቆጣጠር", "YST": "የዩኮን ጊዜ", "МСК": "የሞስኮ መደበኛ ሰዓት አቆጣጠር", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "የምዕራብ ካዛኪስታን ሰዓት", "شىعىش قازاق ەلى": "የምስራቅ ካዛኪስታን ሰዓት", "قازاق ەلى": "ካዛኪስታን ሰዓት", "قىرعىزستان": "የኪርጊስታን ሰዓት", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "የአዞረስ ክረምት ሰዓት"},
 	}
 }
 
@@ -82,6 +82,7 @@ func (am *am) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'am'
 func (am *am) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 	i := int64(n)
 
@@ -99,6 +100,7 @@ func (am *am) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'am'
 func (am *am) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
+
 	start := am.CardinalPluralRule(num1, v1)
 	end := am.CardinalPluralRule(num2, v2)
 
@@ -109,6 +111,7 @@ func (am *am) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) 
 	}
 
 	return locales.PluralRuleOther
+
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -219,6 +222,7 @@ func (am *am) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'am' and handles both Whole and Real numbers based on 'v'
 func (am *am) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -290,6 +294,7 @@ func (am *am) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'am'
 func (am *am) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := am.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -347,6 +352,7 @@ func (am *am) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'am'
 // in accounting notation.
 func (am *am) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := am.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -383,6 +389,7 @@ func (am *am) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 		b = append(b, am.currencyNegativePrefix[0])
 
 	} else {
+
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
@@ -413,6 +420,7 @@ func (am *am) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 // FmtDateShort returns the short date representation of 't' for 'am'
 func (am *am) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -441,6 +449,7 @@ func (am *am) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'am'
 func (am *am) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -459,6 +468,7 @@ func (am *am) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'am'
 func (am *am) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -477,6 +487,7 @@ func (am *am) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'am'
 func (am *am) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, am.daysWide[t.Weekday()]...)
@@ -497,6 +508,7 @@ func (am *am) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'am'
 func (am *am) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -526,6 +538,7 @@ func (am *am) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'am'
 func (am *am) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -562,6 +575,7 @@ func (am *am) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'am'
 func (am *am) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -603,6 +617,7 @@ func (am *am) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'am'
 func (am *am) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

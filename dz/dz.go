@@ -45,7 +45,7 @@ func New() locales.Translator {
 		percent:            "%",
 		timeSeparator:      ":",
 		currencies:         []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AU$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "Nu.", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KR₩", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "TH฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
-		percentSuffix:      " ",
+		percentSuffix:      " ",
 		monthsAbbreviated:  []string{"", "༡", "༢", "༣", "༤", "༥", "༦", "༧", "༨", "༩", "༡༠", "༡༡", "12"},
 		monthsNarrow:       []string{"", "༡", "༢", "༣", "4", "༥", "༦", "༧", "༨", "9", "༡༠", "༡༡", "༡༢"},
 		monthsWide:         []string{"", "ཟླ་དངཔ་", "ཟླ་གཉིས་པ་", "ཟླ་གསུམ་པ་", "ཟླ་བཞི་པ་", "ཟླ་ལྔ་པ་", "ཟླ་དྲུག་པ", "ཟླ་བདུན་པ་", "ཟླ་བརྒྱད་པ་", "ཟླ་དགུ་པ་", "ཟླ་བཅུ་པ་", "ཟླ་བཅུ་གཅིག་པ་", "ཟླ་བཅུ་གཉིས་པ་"},
@@ -53,7 +53,7 @@ func New() locales.Translator {
 		daysNarrow:         []string{"ཟླ", "མིར", "ལྷག", "ཕུར", "སངྶ", "སྤེན", "ཉི"},
 		daysWide:           []string{"གཟའ་ཟླ་བ་", "གཟའ་མིག་དམར་", "གཟའ་ལྷག་པ་", "གཟའ་ཕུར་བུ་", "གཟའ་པ་སངས་", "གཟའ་སྤེན་པ་", "གཟའ་ཉི་མ་"},
 		periodsAbbreviated: []string{"སྔ་ཆ་", "ཕྱི་ཆ་"},
-		timezones:          map[string]string{"ACDT": "དབུས་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཉིན་སྲུང་ཆུ་ཚོད", "ACST": "དབུས་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "ACT": "ACT", "ACWDT": "དབུས་ནུབ་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཉིན་སྲུང་ཆུ་ཚོད", "ACWST": "དབུས་ནུབ་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "ADT": "ཨེཊ་ལེན་ཊིཀ་ཉིན་སྲུང་ཆུ་ཚོད", "ADT Arabia": "ཨ་རེ་བྷི་ཡན་སྲུང་ཆུ་ཚོད", "AEDT": "ཤར་ཕྱོགས་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཉིན་སྲུང་ཆུ་ཚོད", "AEST": "ཤར་ཕྱོགས་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "AFT": "ཨཕ་ག་ནི་ས྄ཏཱནཆུ་ཚོད", "AKDT": "ཨ་ལསི་ཀ་ཉིན་སྲུང་ཆུ་ཚོད", "AKST": "ཨ་ལསི་ཀ་ཚད་ལྡན་ཆུ་ཚོད", "AMST": "ཨེ་མ་ཛཱོན་བྱཱར་དུས་ཆུ་ཚོད", "AMST Armenia": "ཨར་མི་ནི་ཡ་བྱཱར་དུས་ཆུ་ཚོད", "AMT": "ཨེ་མ་ཛཱོན་ཚད་ལྡན་ཆུ་ཚོད", "AMT Armenia": "ཨར་མི་ནི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "ཨར་ཇེན་ཊི་ན་བྱཱར་དུས་ཆུ་ཚོད", "ART": "ཨར་ཇེན་ཊི་ན་ཚད་ལྡན་ཆུ་ཚོད", "AST": "ཨེཊ་ལེན་ཊིཀ་ཚད་ལྡན་ཆུ་ཚོད", "AST Arabia": "ཨ་རེ་བྷི་ཡན་ཚད་ལྡན་ཆུ་ཚོད", "AWDT": "ནུབ་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཉིན་སྲུང་ཆུ་ཚོད", "AWST": "ནུབ་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "AZST": "ཨ་ཛར་བྷའི་ཇཱན་བྱཱར་དུས་ཆུ་ཚོད", "AZT": "ཨ་ཛར་བྷའི་ཇཱན་ཚད་ལྡན་ཆུ་ཚོད", "BDT Bangladesh": "བངྒ་ལ་དེཤ་བྱཱར་དུས་ཆུ་ཚོད", "BNT": "BNT", "BOT": "བྷོ་ལི་བི་ཡ་ཆུ་ཚོད", "BRST": "བྲ་ཛི་ལི་ཡ་བྱཱར་དུས་ཆུ་ཚོད", "BRT": "བྲ་ཛི་ལི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "BST Bangladesh": "བངྒ་ལ་དེཤ་ཚད་ལྡན་ཆུ་ཚོད", "BT": "འབྲུག་ཡུལ་ཆུ་ཚོད", "CAST": "CAST", "CAT": "དབུས་ཕྱོགས་ཨཕ་རི་ཀཱ་ཆུ་ཚོད", "CCT": "CCT", "CDT": "བྱང་ཨ་མི་རི་ཀ་དབུས་ཕྱོགས་ཉིན་སྲུང་ཆུ་ཚོད", "CHADT": "CHADT", "CHAST": "CHAST", "CHUT": "CHUT", "CKT": "CKT", "CKT DST": "CKT DST", "CLST": "ཅི་ལི་བྱཱར་དུས་ཆུ་ཚོད", "CLT": "ཅི་ལི་ཚད་ལྡན་ཆུ་ཚོད", "COST": "ཀོ་ལོམ་བྷི་ཡ་བྱཱར་དུས་ཆུ་ཚོད", "COT": "ཀོ་ལོམ་བྷི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "CST": "བྱང་ཨ་མི་རི་ཀ་དབུས་ཕྱོགས་ཚད་ལྡན་ཆུ་ཚོད", "CST China": "རྒྱ་ནག་ཚད་ལྡན་ཆུ་ཚོད", "CST China DST": "རྒྱ་ནག་ཉིན་སྲུང་ཆུ་ཚོད", "CVST": "ཀེཔ་བཱཌ་བྱཱར་དུས་ཆུ་ཚོད", "CVT": "ཀེཔ་བཱཌ་ཚད་ལྡན་ཆུ་ཚོད", "CXT": "ཁི་རིསྟ་མེས་མཚོ་གླིང་ཆུ་ཚོད", "ChST": "ChST", "ChST NMI": "ChST NMI", "CuDT": "ཀིའུ་བྷ་ཉིན་སྲུང་ཆུ་ཚོད", "CuST": "ཀིའུ་བྷ་ཚད་ལྡན་ཆུ་ཚོད", "DAVT": "DAVT", "DDUT": "DDUT", "EASST": "ཨིསི་ཊར་ཨཱའི་ལེནཌ་བྱཱར་དུས་ཆུ་ཚོད", "EAST": "ཨིསི་ཊར་ཨཱའི་ལེནཌ་ཚད་ལྡན་ཆུ་ཚོད", "EAT": "ཤར་ཕྱོགས་ཨཕ་རི་ཀཱ་ཆུ་ཚོད", "ECT": "ཨེ་ཀུ་ཌཽ་ཆུ་ཚོད", "EDT": "བྱང་ཨ་མི་རི་ཀ་ཤར་ཕྱོགས་ཉིན་སྲུང་ཆུ་ཚོད", "EGDT": "ཤར་ཕྱོགས་གིརིན་ལེནཌ་བྱཱར་དུས་ཆུ་ཚོད", "EGST": "ཤར་ཕྱོགས་གིརིན་ལེནཌ་ཚད་ལྡན་ཆུ་ཚོད", "EST": "བྱང་ཨ་མི་རི་ཀ་ཤར་ཕྱོགས་ཚད་ལྡན་ཆུ་ཚོད", "FEET": "FEET", "FJT": "FJT", "FJT Summer": "FJT Summer", "FKST": "ཕལཀ་ལེནཌ་ཨཱའི་ལེནཌས་བྱཱར་དུས་ཆུ་ཚོད", "FKT": "ཕལཀ་ལེནཌ་ཨཱའི་ལེནཌས་ཚད་ལྡན་ཆུ་ཚོད", "FNST": "ཕར་ནེན་ཌོ་ ཌི་ ནོ་རཱོན་ཧ་བྱཱར་དུས་ཆུ་ཚོད", "FNT": "ཕར་ནེན་ཌོ་ ཌི་ ནོ་རཱོན་ཧ་ཚད་ལྡན་ཆུ་ཚོད", "GALT": "ག་ལ་པ་གོསི་ཆུ་ཚོད", "GAMT": "GAMT", "GEST": "ཇཽ་ཇཱ་བྱཱར་དུས་ཆུ་ཚོད", "GET": "ཇཽ་ཇཱ་ཚད་ལྡན་ཆུ་ཚོད", "GFT": "ཕིརེནཅ་གི་ཡ་ན་ཆུ་ཚོད", "GIT": "GIT", "GMT": "གིརིན་ཝིཆ་ལུ་ཡོད་པའི་ཆུ་ཚོད", "GNSST": "GNSST", "GNST": "GNST", "GST": "གཱལཕི་ཆུ་ཚོད", "GST Guam": "GST Guam", "GYT": "གུ་ཡ་ན་ཆུ་ཚོད", "HADT": "ཧ་ཝའི་-ཨེ་ལིའུ་ཤེན་ཉིན་སྲུང་ཆུ་ཚོད", "HAST": "ཧ་ཝའི་-ཨེ་ལིའུ་ཤེན་ཚད་ལྡན་ཆུ་ཚོད", "HKST": "HKST", "HKT": "HKT", "HOVST": "HOVST", "HOVT": "HOVT", "ICT": "ཨིན་ཌོ་ཅཱའི་ན་ཆུ་ཚོད", "IDT": "ཨིས་རེལ་ཉིན་སྲུང་ཆུ་ཚོད", "IOT": "རྒྱ་གར་གྱི་རྒྱ་མཚོ་ཆུ་ཚོད", "IRKST": "ཨར་ཀུཙི་བྱཱར་དུས་ཆུ་ཚོད", "IRKT": "ཨར་ཀུཙི་ཚད་ལྡན་ཆུ་ཚོད", "IRST": "ཨི་རཱན་ཚད་ལྡན་ཆུ་ཚོད", "IRST DST": "ཨི་རཱན་ཉིན་སྲུང་ཆུ་ཚོད", "IST": "རྒྱ་གར་ཆུ་ཚོད", "IST Israel": "ཨིས་རེལ་ཚད་ལྡན་ཆུ་ཚོད", "JDT": "ཇ་པཱན་ཉིན་སྲུང་ཆུ་ཚོད", "JST": "ཇ་པཱན་ཚད་ལྡན་ཆུ་ཚོད", "KOST": "KOST", "KRAST": "ཀརསི་ནོ་ཡརསཀི་བྱཱར་དུས་ཆུ་ཚོད", "KRAT": "ཀརསི་ནོ་ཡརསཀི་ཚད་ལྡན་ཆུ་ཚོད", "KST": "ཀོ་རི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "KST DST": "ཀོ་རི་ཡ་ཉིན་སྲུང་ཆུ་ཚོད", "LHDT": "LHDT", "LHST": "LHST", "LINT": "LINT", "MAGST": "མ་གྷ་དཱན་བྱཱར་དུས་ཆུ་ཚོད", "MAGT": "མ་གྷ་དཱན་ཚད་ལྡན་ཆུ་ཚོད", "MART": "MART", "MAWT": "MAWT", "MDT": "བྱང་ཨ་མི་རི་ཀ་མའུ་ཊེན་ཉིན་སྲུང་ཆུ་ཚོད", "MESZ": "དབུས་ཕྱོགས་ཡུ་རོ་པེན་བྱཱར་དུས་ཆུ་ཚོད", "MEZ": "དབུས་ཕྱོགས་ཡུ་རོ་པེན་ཚད་ལྡན་ཆུ་ཚོད", "MHT": "MHT", "MMT": "MMT", "MSD": "མཽས་ཀོ་བྱཱར་དུས་ཆུ་ཚོད", "MST": "བྱང་ཨ་མི་རི་ཀ་མའུ་ཊེན་ཚད་ལྡན་ཆུ་ཚོད", "MUST": "མོ་རི་ཤཱས་བྱཱར་དུས་ཆུ་ཚོད", "MUT": "མོ་རི་ཤཱས་ཚད་ལྡན་ཆུ་ཚོད", "MVT": "མཱལ་དིབས་ཆུ་ཚོད", "MYT": "MYT", "NCT": "NCT", "NDT": "ནིའུ་ཕའུནཌ་ལེནཌ་ཉིན་སྲུང་ཆུ་ཚོད", "NDT New Caledonia": "NDT New Caledonia", "NFDT": "NFDT", "NFT": "NFT", "NOVST": "ནོ་བོ་སི་བིརསཀི་བྱཱར་དུས་ཆུ་ཚོད", "NOVT": "ནོ་བོ་སི་བིརསཀི་ཚད་ལྡན་ཆུ་ཚོད", "NPT": "ནེ་པཱལ་ཆུ་ཚོད", "NRT": "NRT", "NST": "ནིའུ་ཕའུནཌ་ལེནཌ་ཚད་ལྡན་ཆུ་ཚོད", "NUT": "NUT", "NZDT": "ནིའུ་ཛི་ལེནཌ་ཉིན་སྲུང་ཆུ་ཚོད", "NZST": "ནིའུ་ཛི་ལེནཌ་ཚད་ལྡན་ཆུ་ཚོད", "OESZ": "ཤར་ཕྱོགས་ཡུ་རོ་པེན་བྱཱར་དུས་ཆུ་ཚོད", "OEZ": "ཤར་ཕྱོགས་ཡུ་རོ་པེན་ཚད་ལྡན་ཆུ་ཚོད", "OMSST": "ཨོམསཀི་བྱཱར་དུས་ཆུ་ཚོད", "OMST": "ཨོམསཀི་ཚད་ལྡན་ཆུ་ཚོད", "PDT": "བྱང་ཨ་མི་རི་ཀ་པེ་སི་ཕིག་ཉིན་སྲུང་ཆུ་ཚོད", "PDTM": "PDTM", "PETDT": "PETDT", "PETST": "PETST", "PGT": "PGT", "PHOT": "PHOT", "PKT": "པ་ཀི་ས྄ཏཱན་ཚད་ལྡན་ཆུ་ཚོད", "PKT DST": "པ་ཀི་ས྄ཏཱན་བྱཱར་དུས་ཆུ་ཚོད", "PMDT": "པའི་རི་དང་མི་ཀི་ལཱོན་ཉིན་སྲུང་ཆུ་ཚོད", "PMST": "པའི་རི་དང་མི་ཀི་ལཱོན་ཚད་ལྡན་ཆུ་ཚོད", "PONT": "PONT", "PST": "བྱང་ཨ་མི་རི་ཀ་པེ་སི་ཕིག་ཚད་ལྡན་ཆུ་ཚོད", "PST Philippine": "PST Philippine", "PST Philippine DST": "PST Philippine DST", "PST Pitcairn": "PST Pitcairn", "PSTM": "PSTM", "PWT": "PWT", "PYST": "པ་ར་གུ་ཝའི་བྱཱར་དུས་ཆུ་ཚོད", "PYT": "པ་ར་གུ་ཝའི་ཚད་ལྡན་ཆུ་ཚོད", "PYT Korea": "PYT Korea", "RET": "རི་ཡུ་ནི་ཡཱན་ཆུ་ཚོད", "ROTT": "ROTT", "SAKST": "ས་ཁ་ལིན་བྱཱར་དུས་ཆུ་ཚོད", "SAKT": "ས་ཁ་ལིན་ཚད་ལྡན་ཆུ་ཚོད", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "ལྷོ་ཕྱོགས་ཨཕ་རི་ཀཱ་ཆུ་ཚོད", "SBT": "SBT", "SCT": "སེ་ཤཱལས་ཆུ་ཚོད", "SGT": "SGT", "SLST": "SLST", "SRT": "སུ་རི་ནཱམ་ཆུ་ཚོད", "SST Samoa": "SST Samoa", "SST Samoa Apia": "SST Samoa Apia", "SST Samoa Apia DST": "SST Samoa Apia DST", "SST Samoa DST": "SST Samoa DST", "SYOT": "SYOT", "TAAF": "TAAF", "TAHT": "TAHT", "TJT": "TJT", "TKT": "TKT", "TLT": "TLT", "TMST": "TMST", "TMT": "TMT", "TOST": "TOST", "TOT": "TOT", "TVT": "TVT", "TWT": "TWT", "TWT DST": "TWT DST", "ULAST": "ULAST", "ULAT": "ULAT", "UYST": "ཡུ་རུ་གུ་ཝཱའི་བྱཱར་དུས་ཆུ་ཚོད", "UYT": "ཡུ་རུ་གུ་ཝཱའི་ཚད་ལྡན་ཆུ་ཚོད", "UZT": "UZT", "UZT DST": "UZT DST", "VET": "བེ་ནི་ཛུ་ཝེ་ལ་ཆུ་ཚོད", "VLAST": "བ་ལ་ཌི་བོསི་ཏོཀ་བྱཱར་དུས་ཆུ་ཚོད", "VLAT": "བ་ལ་ཌི་བོསི་ཏོཀ་ཚད་ལྡན་ཆུ་ཚོད", "VOLST": "བཱོལ་གོ་གིརེཌ་བྱཱར་དུས་ཆུ་ཚོད", "VOLT": "བཱོལ་གོ་གིརེཌ་ཚད་ལྡན་ཆུ་ཚོད", "VOST": "VOST", "VUT": "VUT", "VUT DST": "VUT DST", "WAKT": "WAKT", "WARST": "ནུབ་ཕྱོགས་ཨར་ཇེན་ཊི་ན་བྱཱར་དུས་ཆུ་ཚོད", "WART": "ནུབ་ཕྱོགས་ཨར་ཇེན་ཊི་ན་ཚད་ལྡན་ཆུ་ཚོད", "WAST": "ནུབ་ཕྱོགས་ཨཕ་རི་ཀཱ་ཆུ་ཚོད", "WAT": "ནུབ་ཕྱོགས་ཨཕ་རི་ཀཱ་ཆུ་ཚོད", "WESZ": "ནུབ་ཕྱོགས་ཡུ་རོ་པེན་བྱཱར་དུས་ཆུ་ཚོད", "WEZ": "ནུབ་ཕྱོགས་ཡུ་རོ་པེན་ཚད་ལྡན་ཆུ་ཚོད", "WFT": "WFT", "WGST": "ནུབ་ཕྱོགས་གིརིན་ལེནཌ་བྱཱར་དུས་ཆུ་ཚོད", "WGT": "ནུབ་ཕྱོགས་གིརིན་ལེནཌ་ཚད་ལྡན་ཆུ་ཚོད", "WIB": "ནུབ་ཕྱོགས་ཨིན་ཌོ་ནེ་ཤི་ཡ་ཆུ་ཚོད", "WIT": "ཤར་ཕྱོགས་ཨིན་ཌོ་ནེ་ཤི་ཡ་ཆུ་ཚོད", "WITA": "དབུས་ཕྱོགས་ཨིན་ཌོ་ནེ་ཤི་ཡ་ཆུ་ཚོད", "YAKST": "ཡ་ཀུཙིཀི་བྱཱར་དུས་ཆུ་ཚོད", "YAKT": "ཡ་ཀུཙིཀི་ཚད་ལྡན་ཆུ་ཚོད", "YEKST": "ཡེ་ཀ་ཏེ་རིན་བརག་བྱཱར་དུས་ཆུ་ཚོད", "YEKT": "ཡེ་ཀ་ཏེ་རིན་བརག་ཚད་ལྡན་ཆུ་ཚོད", "YST": "YST", "МСК": "མཽས་ཀོ་ཚད་ལྡན་ཆུ་ཚོད", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "باتىس قازاق ەلى", "شىعىش قازاق ەلى": "شىعىش قازاق ەلى", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "قىرعىزستان", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "པ་རུ་བྱཱར་དུས་ཆུ་ཚོད"},
+		timezones:          map[string]string{"ACDT": "དབུས་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཉིན་སྲུང་ཆུ་ཚོད", "ACST": "ACST", "ACT": "ACT", "ACWDT": "དབུས་ནུབ་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཉིན་སྲུང་ཆུ་ཚོད", "ACWST": "དབུས་ནུབ་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "ADT": "ཨེཊ་ལེན་ཊིཀ་ཉིན་སྲུང་ཆུ་ཚོད", "ADT Arabia": "ཨ་རེ་བྷི་ཡན་སྲུང་ཆུ་ཚོད", "AEDT": "ཤར་ཕྱོགས་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཉིན་སྲུང་ཆུ་ཚོད", "AEST": "ཤར་ཕྱོགས་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "AFT": "ཨཕ་ག་ནི་ས྄ཏཱནཆུ་ཚོད", "AKDT": "ཨ་ལསི་ཀ་ཉིན་སྲུང་ཆུ་ཚོད", "AKST": "ཨ་ལསི་ཀ་ཚད་ལྡན་ཆུ་ཚོད", "AMST": "ཨེ་མ་ཛཱོན་བྱཱར་དུས་ཆུ་ཚོད", "AMST Armenia": "ཨར་མི་ནི་ཡ་བྱཱར་དུས་ཆུ་ཚོད", "AMT": "ཨེ་མ་ཛཱོན་ཚད་ལྡན་ཆུ་ཚོད", "AMT Armenia": "ཨར་མི་ནི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "ཨར་ཇེན་ཊི་ན་བྱཱར་དུས་ཆུ་ཚོད", "ART": "ཨར་ཇེན་ཊི་ན་ཚད་ལྡན་ཆུ་ཚོད", "AST": "ཨེཊ་ལེན་ཊིཀ་ཚད་ལྡན་ཆུ་ཚོད", "AST Arabia": "ཨ་རེ་བྷི་ཡན་ཚད་ལྡན་ཆུ་ཚོད", "AWDT": "ནུབ་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཉིན་སྲུང་ཆུ་ཚོད", "AWST": "ནུབ་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "AZST": "ཨ་ཛར་བྷའི་ཇཱན་བྱཱར་དུས་ཆུ་ཚོད", "AZT": "ཨ་ཛར་བྷའི་ཇཱན་ཚད་ལྡན་ཆུ་ཚོད", "BDT Bangladesh": "བངྒ་ལ་དེཤ་བྱཱར་དུས་ཆུ་ཚོད", "BNT": "BNT", "BOT": "བྷོ་ལི་བི་ཡ་ཆུ་ཚོད", "BRST": "བྲ་ཛི་ལི་ཡ་བྱཱར་དུས་ཆུ་ཚོད", "BRT": "བྲ་ཛི་ལི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "BST Bangladesh": "བངྒ་ལ་དེཤ་ཚད་ལྡན་ཆུ་ཚོད", "BT": "འབྲུག་ཡུལ་ཆུ་ཚོད", "CAST": "CAST", "CAT": "དབུས་ཕྱོགས་ཨཕ་རི་ཀཱ་ཆུ་ཚོད", "CCT": "CCT", "CDT": "བྱང་ཨ་མི་རི་ཀ་དབུས་ཕྱོགས་ཉིན་སྲུང་ཆུ་ཚོད", "CHADT": "CHADT", "CHAST": "CHAST", "CHUT": "CHUT", "CKT": "CKT", "CKT DST": "CKT DST", "CLST": "ཅི་ལི་བྱཱར་དུས་ཆུ་ཚོད", "CLT": "ཅི་ལི་ཚད་ལྡན་ཆུ་ཚོད", "COST": "ཀོ་ལོམ་བྷི་ཡ་བྱཱར་དུས་ཆུ་ཚོད", "COT": "ཀོ་ལོམ་བྷི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "CST": "བྱང་ཨ་མི་རི་ཀ་དབུས་ཕྱོགས་ཚད་ལྡན་ཆུ་ཚོད", "CST China": "རྒྱ་ནག་ཚད་ལྡན་ཆུ་ཚོད", "CST China DST": "རྒྱ་ནག་ཉིན་སྲུང་ཆུ་ཚོད", "CVST": "ཀེཔ་བཱཌ་བྱཱར་དུས་ཆུ་ཚོད", "CVT": "ཀེཔ་བཱཌ་ཚད་ལྡན་ཆུ་ཚོད", "CXT": "ཁི་རིསྟ་མེས་མཚོ་གླིང་ཆུ་ཚོད", "ChST": "ChST", "ChST NMI": "ChST NMI", "CuDT": "ཀིའུ་བྷ་ཉིན་སྲུང་ཆུ་ཚོད", "CuST": "ཀིའུ་བྷ་ཚད་ལྡན་ཆུ་ཚོད", "DAVT": "DAVT", "DDUT": "DDUT", "EASST": "ཨིསི་ཊར་ཨཱའི་ལེནཌ་བྱཱར་དུས་ཆུ་ཚོད", "EAST": "ཨིསི་ཊར་ཨཱའི་ལེནཌ་ཚད་ལྡན་ཆུ་ཚོད", "EAT": "ཤར་ཕྱོགས་ཨཕ་རི་ཀཱ་ཆུ་ཚོད", "ECT": "ཨེ་ཀུ་ཌཽ་ཆུ་ཚོད", "EDT": "བྱང་ཨ་མི་རི་ཀ་ཤར་ཕྱོགས་ཉིན་སྲུང་ཆུ་ཚོད", "EGDT": "ཤར་ཕྱོགས་གིརིན་ལེནཌ་བྱཱར་དུས་ཆུ་ཚོད", "EGST": "ཤར་ཕྱོགས་གིརིན་ལེནཌ་ཚད་ལྡན་ཆུ་ཚོད", "EST": "བྱང་ཨ་མི་རི་ཀ་ཤར་ཕྱོགས་ཚད་ལྡན་ཆུ་ཚོད", "FEET": "FEET", "FJT": "FJT", "FJT Summer": "FJT Summer", "FKST": "ཕལཀ་ལེནཌ་ཨཱའི་ལེནཌས་བྱཱར་དུས་ཆུ་ཚོད", "FKT": "ཕལཀ་ལེནཌ་ཨཱའི་ལེནཌས་ཚད་ལྡན་ཆུ་ཚོད", "FNST": "ཕར་ནེན་ཌོ་ ཌི་ ནོ་རཱོན་ཧ་བྱཱར་དུས་ཆུ་ཚོད", "FNT": "ཕར་ནེན་ཌོ་ ཌི་ ནོ་རཱོན་ཧ་ཚད་ལྡན་ཆུ་ཚོད", "GALT": "ག་ལ་པ་གོསི་ཆུ་ཚོད", "GAMT": "GAMT", "GEST": "ཇཽ་ཇཱ་བྱཱར་དུས་ཆུ་ཚོད", "GET": "ཇཽ་ཇཱ་ཚད་ལྡན་ཆུ་ཚོད", "GFT": "ཕིརེནཅ་གི་ཡ་ན་ཆུ་ཚོད", "GIT": "GIT", "GMT": "གིརིན་ཝིཆ་ལུ་ཡོད་པའི་ཆུ་ཚོད", "GNSST": "GNSST", "GNST": "GNST", "GST": "GST", "GST Guam": "GST Guam", "GYT": "གུ་ཡ་ན་ཆུ་ཚོད", "HADT": "ཧ་ཝའི་-ཨེ་ལིའུ་ཤེན་ཉིན་སྲུང་ཆུ་ཚོད", "HAST": "ཧ་ཝའི་-ཨེ་ལིའུ་ཤེན་ཚད་ལྡན་ཆུ་ཚོད", "HKST": "HKST", "HKT": "HKT", "HOVST": "HOVST", "HOVT": "HOVT", "ICT": "ཨིན་ཌོ་ཅཱའི་ན་ཆུ་ཚོད", "IDT": "ཨིས་རེལ་ཉིན་སྲུང་ཆུ་ཚོད", "IOT": "རྒྱ་གར་གྱི་རྒྱ་མཚོ་ཆུ་ཚོད", "IRKST": "ཨར་ཀུཙི་བྱཱར་དུས་ཆུ་ཚོད", "IRKT": "ཨར་ཀུཙི་ཚད་ལྡན་ཆུ་ཚོད", "IRST": "ཨི་རཱན་ཚད་ལྡན་ཆུ་ཚོད", "IRST DST": "ཨི་རཱན་ཉིན་སྲུང་ཆུ་ཚོད", "IST": "རྒྱ་གར་ཆུ་ཚོད", "IST Israel": "ཨིས་རེལ་ཚད་ལྡན་ཆུ་ཚོད", "JDT": "ཇ་པཱན་ཉིན་སྲུང་ཆུ་ཚོད", "JST": "ཇ་པཱན་ཚད་ལྡན་ཆུ་ཚོད", "KOST": "KOST", "KRAST": "ཀརསི་ནོ་ཡརསཀི་བྱཱར་དུས་ཆུ་ཚོད", "KRAT": "ཀརསི་ནོ་ཡརསཀི་ཚད་ལྡན་ཆུ་ཚོད", "KST": "ཀོ་རི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "KST DST": "ཀོ་རི་ཡ་ཉིན་སྲུང་ཆུ་ཚོད", "LHDT": "LHDT", "LHST": "LHST", "LINT": "LINT", "MAGST": "མ་གྷ་དཱན་བྱཱར་དུས་ཆུ་ཚོད", "MAGT": "མ་གྷ་དཱན་ཚད་ལྡན་ཆུ་ཚོད", "MART": "MART", "MAWT": "MAWT", "MDT": "MDT", "MESZ": "དབུས་ཕྱོགས་ཡུ་རོ་པེན་བྱཱར་དུས་ཆུ་ཚོད", "MEZ": "དབུས་ཕྱོགས་ཡུ་རོ་པེན་ཚད་ལྡན་ཆུ་ཚོད", "MHT": "MHT", "MMT": "MMT", "MSD": "མཽས་ཀོ་བྱཱར་དུས་ཆུ་ཚོད", "MST": "MST", "MUST": "མོ་རི་ཤཱས་བྱཱར་དུས་ཆུ་ཚོད", "MUT": "མོ་རི་ཤཱས་ཚད་ལྡན་ཆུ་ཚོད", "MVT": "མཱལ་དིབས་ཆུ་ཚོད", "MYT": "MYT", "NCT": "NCT", "NDT": "ནིའུ་ཕའུནཌ་ལེནཌ་ཉིན་སྲུང་ཆུ་ཚོད", "NDT New Caledonia": "NDT New Caledonia", "NFDT": "NFDT", "NFT": "NFT", "NOVST": "ནོ་བོ་སི་བིརསཀི་བྱཱར་དུས་ཆུ་ཚོད", "NOVT": "ནོ་བོ་སི་བིརསཀི་ཚད་ལྡན་ཆུ་ཚོད", "NPT": "ནེ་པཱལ་ཆུ་ཚོད", "NRT": "NRT", "NST": "ནིའུ་ཕའུནཌ་ལེནཌ་ཚད་ལྡན་ཆུ་ཚོད", "NUT": "NUT", "NZDT": "ནིའུ་ཛི་ལེནཌ་ཉིན་སྲུང་ཆུ་ཚོད", "NZST": "ནིའུ་ཛི་ལེནཌ་ཚད་ལྡན་ཆུ་ཚོད", "OESZ": "ཤར་ཕྱོགས་ཡུ་རོ་པེན་བྱཱར་དུས་ཆུ་ཚོད", "OEZ": "ཤར་ཕྱོགས་ཡུ་རོ་པེན་ཚད་ལྡན་ཆུ་ཚོད", "OMSST": "ཨོམསཀི་བྱཱར་དུས་ཆུ་ཚོད", "OMST": "ཨོམསཀི་ཚད་ལྡན་ཆུ་ཚོད", "PDT": "བྱང་ཨ་མི་རི་ཀ་པེ་སི་ཕིག་ཉིན་སྲུང་ཆུ་ཚོད", "PDTM": "PDTM", "PETDT": "PETDT", "PETST": "PETST", "PGT": "PGT", "PHOT": "PHOT", "PKT": "པ་ཀི་ས྄ཏཱན་ཚད་ལྡན་ཆུ་ཚོད", "PKT DST": "པ་ཀི་ས྄ཏཱན་བྱཱར་དུས་ཆུ་ཚོད", "PMDT": "པའི་རི་དང་མི་ཀི་ལཱོན་ཉིན་སྲུང་ཆུ་ཚོད", "PMST": "པའི་རི་དང་མི་ཀི་ལཱོན་ཚད་ལྡན་ཆུ་ཚོད", "PONT": "PONT", "PST": "བྱང་ཨ་མི་རི་ཀ་པེ་སི་ཕིག་ཚད་ལྡན་ཆུ་ཚོད", "PST Philippine": "PST Philippine", "PST Philippine DST": "PST Philippine DST", "PST Pitcairn": "PST Pitcairn", "PSTM": "PSTM", "PWT": "PWT", "PYST": "པ་ར་གུ་ཝའི་བྱཱར་དུས་ཆུ་ཚོད", "PYT": "པ་ར་གུ་ཝའི་ཚད་ལྡན་ཆུ་ཚོད", "PYT Korea": "PYT Korea", "RET": "རི་ཡུ་ནི་ཡཱན་ཆུ་ཚོད", "ROTT": "ROTT", "SAKST": "ས་ཁ་ལིན་བྱཱར་དུས་ཆུ་ཚོད", "SAKT": "ས་ཁ་ལིན་ཚད་ལྡན་ཆུ་ཚོད", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "ལྷོ་ཕྱོགས་ཨཕ་རི་ཀཱ་ཆུ་ཚོད", "SBT": "SBT", "SCT": "སེ་ཤཱལས་ཆུ་ཚོད", "SGT": "SGT", "SLST": "SLST", "SRT": "སུ་རི་ནཱམ་ཆུ་ཚོད", "SST Samoa": "SST Samoa", "SST Samoa Apia": "SST Samoa Apia", "SST Samoa Apia DST": "SST Samoa Apia DST", "SST Samoa DST": "SST Samoa DST", "SYOT": "SYOT", "TAAF": "TAAF", "TAHT": "TAHT", "TJT": "TJT", "TKT": "TKT", "TLT": "TLT", "TMST": "TMST", "TMT": "TMT", "TOST": "TOST", "TOT": "TOT", "TVT": "TVT", "TWT": "TWT", "TWT DST": "TWT DST", "ULAST": "ULAST", "ULAT": "ULAT", "UYST": "ཡུ་རུ་གུ་ཝཱའི་བྱཱར་དུས་ཆུ་ཚོད", "UYT": "ཡུ་རུ་གུ་ཝཱའི་ཚད་ལྡན་ཆུ་ཚོད", "UZT": "UZT", "UZT DST": "UZT DST", "VET": "བེ་ནི་ཛུ་ཝེ་ལ་ཆུ་ཚོད", "VLAST": "བ་ལ་ཌི་བོསི་ཏོཀ་བྱཱར་དུས་ཆུ་ཚོད", "VLAT": "བ་ལ་ཌི་བོསི་ཏོཀ་ཚད་ལྡན་ཆུ་ཚོད", "VOLST": "བཱོལ་གོ་གིརེཌ་བྱཱར་དུས་ཆུ་ཚོད", "VOLT": "བཱོལ་གོ་གིརེཌ་ཚད་ལྡན་ཆུ་ཚོད", "VOST": "VOST", "VUT": "VUT", "VUT DST": "VUT DST", "WAKT": "WAKT", "WARST": "ནུབ་ཕྱོགས་ཨར་ཇེན་ཊི་ན་བྱཱར་དུས་ཆུ་ཚོད", "WART": "ནུབ་ཕྱོགས་ཨར་ཇེན་ཊི་ན་ཚད་ལྡན་ཆུ་ཚོད", "WAST": "ནུབ་ཕྱོགས་ཨཕ་རི་ཀཱ་ཆུ་ཚོད", "WAT": "ནུབ་ཕྱོགས་ཨཕ་རི་ཀཱ་ཆུ་ཚོད", "WESZ": "ནུབ་ཕྱོགས་ཡུ་རོ་པེན་བྱཱར་དུས་ཆུ་ཚོད", "WEZ": "ནུབ་ཕྱོགས་ཡུ་རོ་པེན་ཚད་ལྡན་ཆུ་ཚོད", "WFT": "WFT", "WGST": "ནུབ་ཕྱོགས་གིརིན་ལེནཌ་བྱཱར་དུས་ཆུ་ཚོད", "WGT": "ནུབ་ཕྱོགས་གིརིན་ལེནཌ་ཚད་ལྡན་ཆུ་ཚོད", "WIB": "ནུབ་ཕྱོགས་ཨིན་ཌོ་ནེ་ཤི་ཡ་ཆུ་ཚོད", "WIT": "ཤར་ཕྱོགས་ཨིན་ཌོ་ནེ་ཤི་ཡ་ཆུ་ཚོད", "WITA": "དབུས་ཕྱོགས་ཨིན་ཌོ་ནེ་ཤི་ཡ་ཆུ་ཚོད", "YAKST": "ཡ་ཀུཙིཀི་བྱཱར་དུས་ཆུ་ཚོད", "YAKT": "ཡ་ཀུཙིཀི་ཚད་ལྡན་ཆུ་ཚོད", "YEKST": "ཡེ་ཀ་ཏེ་རིན་བརག་བྱཱར་དུས་ཆུ་ཚོད", "YEKT": "ཡེ་ཀ་ཏེ་རིན་བརག་ཚད་ལྡན་ཆུ་ཚོད", "YST": "YST", "МСК": "མཽས་ཀོ་ཚད་ལྡན་ཆུ་ཚོད", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "باتىس قازاق ەلى", "شىعىش قازاق ەلى": "شىعىش قازاق ەلى", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "قىرعىزستان", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "ཨེ་ཛོརས་བྱཱར་དུས་ཆུ་ཚོད"},
 	}
 }
 
@@ -200,6 +200,7 @@ func (dz *dz) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'dz' and handles both Whole and Real numbers based on 'v'
 func (dz *dz) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -218,6 +219,7 @@ func (dz *dz) FmtNumber(num float64, v uint64) string {
 		}
 
 		if inWhole {
+
 			if count == groupThreshold {
 				b = append(b, dz.group[0])
 				count = 1
@@ -281,6 +283,7 @@ func (dz *dz) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'dz'
 func (dz *dz) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := dz.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -300,6 +303,7 @@ func (dz *dz) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 		}
 
 		if inWhole {
+
 			if count == groupThreshold {
 				b = append(b, dz.group[0])
 				count = 1
@@ -346,6 +350,7 @@ func (dz *dz) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'dz'
 // in accounting notation.
 func (dz *dz) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := dz.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -365,6 +370,7 @@ func (dz *dz) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 		}
 
 		if inWhole {
+
 			if count == groupThreshold {
 				b = append(b, dz.group[0])
 				count = 1
@@ -390,6 +396,7 @@ func (dz *dz) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 		b = append(b, dz.minus[0])
 
 	} else {
+
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
@@ -416,6 +423,7 @@ func (dz *dz) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 // FmtDateShort returns the short date representation of 't' for 'dz'
 func (dz *dz) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -445,6 +453,7 @@ func (dz *dz) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'dz'
 func (dz *dz) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, []byte{0xe0, 0xbd, 0xa6, 0xe0, 0xbe, 0xa4, 0xe0, 0xbe, 0xb1, 0xe0, 0xbd, 0xb2, 0xe0, 0xbc, 0x8b, 0xe0, 0xbd, 0xa3, 0xe0, 0xbd, 0xbc, 0xe0, 0xbc, 0x8b}...)
@@ -470,6 +479,7 @@ func (dz *dz) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'dz'
 func (dz *dz) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, []byte{0xe0, 0xbd, 0xa6, 0xe0, 0xbe, 0xa4, 0xe0, 0xbe, 0xb1, 0xe0, 0xbd, 0xb2, 0xe0, 0xbc, 0x8b, 0xe0, 0xbd, 0xa3, 0xe0, 0xbd, 0xbc, 0xe0, 0xbc, 0x8b}...)
@@ -495,6 +505,7 @@ func (dz *dz) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'dz'
 func (dz *dz) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, dz.daysWide[t.Weekday()]...)
@@ -521,6 +532,7 @@ func (dz *dz) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'dz'
 func (dz *dz) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, []byte{0xe0, 0xbd, 0x86, 0xe0, 0xbd, 0xb4, 0xe0, 0xbc, 0x8b, 0xe0, 0xbd, 0x9a, 0xe0, 0xbd, 0xbc, 0xe0, 0xbd, 0x91, 0xe0, 0xbc, 0x8b, 0x20}...)
@@ -552,6 +564,7 @@ func (dz *dz) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'dz'
 func (dz *dz) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, []byte{0xe0, 0xbd, 0x86, 0xe0, 0xbd, 0xb4, 0xe0, 0xbc, 0x8b, 0xe0, 0xbd, 0x9a, 0xe0, 0xbd, 0xbc, 0xe0, 0xbd, 0x91, 0xe0, 0xbc, 0x8b}...)
@@ -590,6 +603,7 @@ func (dz *dz) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'dz'
 func (dz *dz) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, []byte{0xe0, 0xbd, 0x86, 0xe0, 0xbd, 0xb4, 0xe0, 0xbc, 0x8b, 0xe0, 0xbd, 0x9a, 0xe0, 0xbd, 0xbc, 0xe0, 0xbd, 0x91, 0xe0, 0xbc, 0x8b, 0x20}...)
@@ -633,6 +647,7 @@ func (dz *dz) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'dz'
 func (dz *dz) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, []byte{0xe0, 0xbd, 0x86, 0xe0, 0xbd, 0xb4, 0xe0, 0xbc, 0x8b, 0xe0, 0xbd, 0x9a, 0xe0, 0xbd, 0xbc, 0xe0, 0xbd, 0x91, 0xe0, 0xbc, 0x8b, 0x20}...)

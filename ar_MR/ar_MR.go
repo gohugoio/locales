@@ -47,11 +47,11 @@ func New() locales.Translator {
 		minus:                  "\u200e-",
 		percent:                "\u200e%\u200e",
 		timeSeparator:          ":",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		currencies:             []string{"ADP", "د.إ.\u200f", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "AR$", "ATS", "AU$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BB$", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "د.ب.\u200f", "BIF", "BM$", "BN$", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BS$", "BTN", "BUK", "BWP", "BYB", "р.", "BYR", "BZ$", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CL$", "CNH", "CNX", "CN¥", "CO$", "COU", "CRC", "CSD", "CSK", "CUC", "CU$", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DO$", "د.ج.\u200f", "ECS", "ECV", "EEK", "ج.م.\u200f", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJ$", "FKP", "FRF", "UK£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GY$", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "د.ع.\u200f", "ر.إ.", "ISJ", "ISK", "ITL", "JM$", "د.أ.\u200f", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "د.ك.\u200f", "KY$", "KZT", "LAK", "ل.ل.\u200f", "LKR", "$LR", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "د.ل.\u200f", "د.م.\u200f", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "أ.م.", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "ر.ع.\u200f", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "ر.ق.\u200f", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "ر.س.\u200f", "SB$", "SCR", "د.س.\u200f", "ج.س.", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SR$", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "ل.س.\u200f", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "د.ت.\u200f", "TOP", "TPE", "TRL", "TRY", "TT$", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "US$", "USN", "USS", "UYI", "UYP", "UY$", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "ر.ي.\u200f", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
 		currencyPositivePrefix: "\u200f",
-		currencyPositiveSuffix: " ",
-		currencyNegativePrefix: "\u200f",
-		currencyNegativeSuffix: " ",
+		currencyPositiveSuffix: " ",
+		currencyNegativePrefix: "(\u061c",
+		currencyNegativeSuffix: ")",
 		monthsNarrow:           []string{"", "ي", "ف", "م", "إ", "و", "ن", "ل", "غ", "ش", "ك", "ب", "د"},
 		monthsWide:             []string{"", "يناير", "فبراير", "مارس", "إبريل", "مايو", "يونيو", "يوليو", "أغشت", "شتمبر", "أكتوبر", "نوفمبر", "دجمبر"},
 		daysNarrow:             []string{"ح", "ن", "ث", "ر", "خ", "ج", "س"},
@@ -84,6 +84,7 @@ func (ar *ar_MR) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'ar_MR'
 func (ar *ar_MR) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 	nMod100 := math.Mod(n, 100)
 
@@ -109,6 +110,7 @@ func (ar *ar_MR) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'ar_MR'
 func (ar *ar_MR) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
+
 	start := ar.CardinalPluralRule(num1, v1)
 	end := ar.CardinalPluralRule(num2, v2)
 
@@ -159,6 +161,7 @@ func (ar *ar_MR) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 	}
 
 	return locales.PluralRuleOther
+
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -269,6 +272,7 @@ func (ar *ar_MR) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ar_MR' and handles both Whole and Real numbers based on 'v'
 func (ar *ar_MR) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 5 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -344,6 +348,7 @@ func (ar *ar_MR) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ar_MR'
 func (ar *ar_MR) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ar.currencies[currency]
 	l := len(s) + len(symbol) + 10 + 1*len(s[:len(s)-int(v)-1])/3
@@ -407,9 +412,10 @@ func (ar *ar_MR) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ar_MR'
 // in accounting notation.
 func (ar *ar_MR) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ar.currencies[currency]
-	l := len(s) + len(symbol) + 10 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 9 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -440,14 +446,12 @@ func (ar *ar_MR) FmtAccounting(num float64, v uint64, currency currency.Type) st
 			b = append(b, ar.currencyNegativePrefix[j])
 		}
 
-		for j := len(ar.minus) - 1; j >= 0; j-- {
-			b = append(b, ar.minus[j])
-		}
-
 	} else {
+
 		for j := len(ar.currencyPositivePrefix) - 1; j >= 0; j-- {
 			b = append(b, ar.currencyPositivePrefix[j])
 		}
+
 	}
 
 	// reverse
@@ -467,8 +471,8 @@ func (ar *ar_MR) FmtAccounting(num float64, v uint64, currency currency.Type) st
 	}
 
 	if num < 0 {
-		b = append(b, ar.currencyNegativeSuffix...)
 		b = append(b, symbol...)
+		b = append(b, ar.currencyNegativeSuffix...)
 	} else {
 
 		b = append(b, ar.currencyPositiveSuffix...)
@@ -480,6 +484,7 @@ func (ar *ar_MR) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 // FmtDateShort returns the short date representation of 't' for 'ar_MR'
 func (ar *ar_MR) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -498,6 +503,7 @@ func (ar *ar_MR) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'ar_MR'
 func (ar *ar_MR) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -526,6 +532,7 @@ func (ar *ar_MR) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'ar_MR'
 func (ar *ar_MR) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -544,6 +551,7 @@ func (ar *ar_MR) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'ar_MR'
 func (ar *ar_MR) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, ar.daysWide[t.Weekday()]...)
@@ -564,6 +572,7 @@ func (ar *ar_MR) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'ar_MR'
 func (ar *ar_MR) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -593,6 +602,7 @@ func (ar *ar_MR) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'ar_MR'
 func (ar *ar_MR) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -629,6 +639,7 @@ func (ar *ar_MR) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'ar_MR'
 func (ar *ar_MR) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -670,6 +681,7 @@ func (ar *ar_MR) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'ar_MR'
 func (ar *ar_MR) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

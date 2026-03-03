@@ -55,7 +55,7 @@ func New() locales.Translator {
 		daysNarrow:             []string{"k", "d", "b", "k", "y", "f", "m"},
 		daysWide:               []string{"kɔsiɖa", "dzoɖa", "blaɖa", "kuɖa", "yawoɖa", "fiɖa", "memleɖa"},
 		periodsAbbreviated:     []string{"ŋdi", "ɣetrɔ"},
-		timezones:              map[string]string{"ACDT": "Australian Central dzomeli gaƒoƒo me", "ACST": "Australian Central nutome gaƒoƒo me", "ACT": "Eker gaƒoƒoɖoanyime", "ACWDT": "Australian Central Western kele gaƒoƒo me", "ACWST": "Australian Central Western nutome gaƒoƒo me", "ADT": "Atlantic kele gaƒoƒome", "ADT Arabia": "Arabia dzomeŋɔli gaƒoƒo me", "AEDT": "Australian Eastern kele gaƒoƒo me", "AEST": "Australian Eastern nutome gaƒoƒo me", "AFT": "Afghanistan gaƒoƒo me", "AKDT": "Alaska kele gaƒoƒo me", "AKST": "Alaska nutome gaƒoƒo me", "AMST": "Amazon dzomeŋɔli gaƒoƒo me", "AMST Armenia": "Armenia dzomeŋɔli gaƒoƒo me", "AMT": "Amazon nutome gaƒoƒo me", "AMT Armenia": "Armenia nutome gaƒoƒo me", "ANAST": "Anadir ŋkekeme gaƒoƒome", "ANAT": "Anadir gaƒoƒoɖoanyime", "ARST": "Argentina dzomeŋɔli gaƒoƒo me", "ART": "Argentina nutome gaƒoƒo me", "AST": "Atlantic nutome gaƒoƒome", "AST Arabia": "Arabia nutome gaƒoƒo me", "AWDT": "Australian Western kele gaƒoƒo me", "AWST": "Australian Western nutome gaƒoƒo me", "AZST": "Azerbaijan dzomeŋɔli gaƒoƒo me", "AZT": "Azerbaijan nutome gaƒoƒo me", "BDT Bangladesh": "Bangladesh dzomeŋɔli gaƒoƒo me", "BNT": "Brunei Darussalam gaƒoƒo me", "BOT": "Bolivia gaƒoƒo me", "BRST": "Brasilia dzomeŋɔli gaƒoƒo me", "BRT": "Brasilia nutome gaƒoƒo me", "BST Bangladesh": "Bangladesh nutome gaƒoƒo me", "BT": "Bhutan gaƒoƒo me", "CAST": "CAST", "CAT": "Central Africa gaƒoƒo me", "CCT": "Cocos Islands gaƒoƒo me", "CDT": "Titina America kele gaƒoƒo me", "CHADT": "Chatham kele gaƒoƒo me", "CHAST": "Chatham nutome gaƒoƒo me", "CHUT": "Chuuk gaƒoƒo me", "CKT": "Cook Islands nutome gaƒoƒo me", "CKT DST": "Cook Islands dzomeŋɔli gaƒoƒo me", "CLST": "Chile dzomeŋɔli gaƒoƒo me", "CLT": "Chile nutome gaƒoƒo me", "COST": "Colombia dzomeŋɔli gaƒoƒo me", "COT": "Colombia nutome gaƒoƒo me", "CST": "Titina America nutome gaƒoƒo me", "CST China": "China nutome gaƒoƒo me", "CST China DST": "China kele gaƒoƒo me", "CVST": "Cape Verde dzomeŋɔli gaƒoƒo me", "CVT": "Cape Verde nutome gaƒoƒo me", "CXT": "Christmas Island gaƒoƒo me", "ChST": "Chamorro gaƒoƒo me", "ChST NMI": "ChST NMI", "CuDT": "Cuba kele gaƒoƒome", "CuST": "Cuba nutome gaƒoƒome", "DAVT": "Davis gaƒoƒo me", "DDUT": "Dumont-d’Urville gaƒoƒo me", "EASST": "Easter Island dzomeŋɔli gaƒoƒo me", "EAST": "Easter Island nutome gaƒoƒo me", "EAT": "East Africa gaƒoƒo me", "ECT": "Ecuador gaƒoƒo me", "EDT": "Eastern America kele gaƒoƒo me", "EGDT": "East Greenland dzomeŋɔli gaƒoƒo me", "EGST": "East Greenland nutome gaƒoƒo me", "EST": "Eastern America nutome gaƒoƒo me", "FEET": "FEET", "FJT": "Fiji nutome gaƒoƒo me", "FJT Summer": "Fiji dzomeŋɔli gaƒoƒo me", "FKST": "Falkland Islands dzomeŋɔli gaƒoƒo me", "FKT": "Falkland Islands nutome gaƒoƒo me", "FNST": "Fernando de Noronha dzomeŋɔli gaƒoƒo me", "FNT": "Fernando de Noronha nutome gaƒoƒo me", "GALT": "Galapagos gaƒoƒo me", "GAMT": "Gambier gaƒoƒo me", "GEST": "Georgia dzomeŋɔli gaƒoƒo me", "GET": "Georgia nutome gaƒoƒo me", "GFT": "French Guiana gaƒoƒo me", "GIT": "Gilbert Islands gaƒoƒo me", "GMT": "Greenwich gaƒoƒo", "GNSST": "GNSST", "GNST": "GNST", "GST": "Gulf nutome gaƒoƒo me", "GST Guam": "GST Guam", "GYT": "Guyana gaƒoƒo me", "HADT": "Hawaii-Aleutia kele gaƒoƒo me", "HAST": "Hawaii-Aleutia nutome gaƒoƒo me", "HKST": "Hong Kong dzomeŋɔli gaƒoƒo me", "HKT": "Hong Kong nutome gaƒoƒo me", "HOVST": "Hovd dzomeŋɔli gaƒoƒo me", "HOVT": "Hovd nutome gaƒoƒo me", "ICT": "Indonesia gaƒoƒo me", "IDT": "Israel kele gaƒoƒo me", "IOT": "Indian Ocean gaƒoƒo me", "IRKST": "Irkutsk dzomeŋɔli gaƒoƒo me", "IRKT": "Irkutsk nutome gaƒoƒo me", "IRST": "Iran nutome gaƒoƒo me", "IRST DST": "Iran kele gaƒoƒo me", "IST": "India gaƒoƒo me", "IST Israel": "Israel nutome gaƒoƒo me", "JDT": "Japan dzomeŋɔli gaƒoƒo me", "JST": "Japan nutome gaƒoƒo me", "KOST": "Kosrae gaƒoƒo me", "KRAST": "Krasnoyarsk dzomeŋɔli gaƒoƒo me", "KRAT": "Krasnoyarsk nutome gaƒoƒo me", "KST": "Korea nutome gaƒoƒo me", "KST DST": "Korea dzomeŋɔli gaƒoƒo me", "LHDT": "Lord Howe kele gaƒoƒo me", "LHST": "Lord Howe nutome gaƒoƒo me", "LINT": "Line Islands gaƒoƒo me", "MAGST": "Magadan dzomeŋɔli gaƒoƒo me", "MAGT": "Magadan nutome gaƒoƒo me", "MART": "Marquesas gaƒoƒo me", "MAWT": "Mawson gaƒoƒo me", "MDT": "Makau ŋkekeme gaƒoƒome", "MESZ": "Central Europe dzomeŋɔli gaƒoƒo me", "MEZ": "Central Europe nutome gaƒoƒo me", "MHT": "Marshall Islands gaƒoƒo me", "MMT": "Myanmar gaƒoƒo me", "MSD": "Moscow dzomeŋɔli gaƒoƒo me", "MST": "Makau gaƒoƒoɖoanyime", "MUST": "Mauritius dzomeŋɔli gaƒoƒo me", "MUT": "Mauritius nutome gaƒoƒo me", "MVT": "Maldives gaƒoƒo me", "MYT": "Malaysia gaƒoƒo me", "NCT": "New Caledonia nutome gaƒoƒo me", "NDT": "Newfoundland kele gaƒoƒome", "NDT New Caledonia": "New Caledonia dzomeŋɔli gaƒoƒo me", "NFDT": "Norfolk Island dzomeŋɔli gaƒoƒo me", "NFT": "Norfolk Island nutome gaƒoƒo me", "NOVST": "Novosibirsk dzomeŋɔli gaƒoƒo me", "NOVT": "Novosibirsk nutome gaƒoƒo me", "NPT": "Nepal gaƒoƒo me", "NRT": "Nauru gaƒoƒo me", "NST": "Newfoundland nutome gaƒoƒome", "NUT": "Niue gaƒoƒo me", "NZDT": "New Zealand kele gaƒoƒo me", "NZST": "New Zealand nutome gaƒoƒo me", "OESZ": "Ɣedzeƒe Europe ŋkekeme gaƒoƒome", "OEZ": "Ɣedzeƒe Europe gaƒoƒoɖoanyime", "OMSST": "Omsk dzomeŋɔli gaƒoƒo me", "OMST": "Omsk nutome gaƒoƒo me", "PDT": "Pacific kele gaƒoƒo me", "PDTM": "Mexican Pacific kele gaƒoƒome", "PETDT": "Petropavlovsk-Kamtsatski ŋkekeme gaƒoƒome", "PETST": "Petropavlovsk-Kamtsatski gaƒoƒoɖoanyime", "PGT": "Papua New Guinea gaƒoƒo me", "PHOT": "Phoenix Islands gaƒoƒo me", "PKT": "Pakistan nutome gaƒoƒo me", "PKT DST": "Pakistan dzomeŋɔli gaƒoƒo me", "PMDT": "St. Pierre & Miquelon kele gaƒoƒome", "PMST": "St. Pierre & Miquelon nutome gaƒoƒome", "PONT": "Ponape gaƒoƒo me", "PST": "Pacific nutome gaƒoƒo me", "PST Philippine": "Philippine nutome gaƒoƒo me", "PST Philippine DST": "Philippine dzomeŋɔli gaƒoƒo me", "PST Pitcairn": "Pitcairn gaƒoƒo me", "PSTM": "Mexican Pacific nutome gaƒoƒo me", "PWT": "Palau gaƒoƒo me", "PYST": "Paraguay dzomeŋɔli gaƒoƒo me", "PYT": "Paraguay nutome gaƒoƒo me", "PYT Korea": "Pyongyang gaƒoƒo me", "RET": "Reunion gaƒoƒo me", "ROTT": "Rothera gaƒoƒo me", "SAKST": "Sakhalin dzomeŋɔli gaƒoƒo me", "SAKT": "Sakhalin nutome gaƒoƒo me", "SAMST": "Samara ŋkekeme gaƒoƒome", "SAMT": "Samara gaƒoƒoɖoanyime", "SAST": "South Africa nutome gaƒoƒo me", "SBT": "Solomon Islands gaƒoƒo me", "SCT": "Seychelles gaƒoƒo me", "SGT": "Singapore nutome gaƒoƒo me", "SLST": "SLST", "SRT": "Suriname gaƒoƒome", "SST Samoa": "Samoa nutome gaƒoƒo me", "SST Samoa Apia": "Apia nutome gaƒoƒo me", "SST Samoa Apia DST": "Apia kele gaƒoƒo me", "SST Samoa DST": "Samoa kele gaƒoƒo me", "SYOT": "Syowa gaƒoƒo me", "TAAF": "French Southern & Antarctic gaƒoƒo me", "TAHT": "Tahiti gaƒoƒo me", "TJT": "Tajikistan gaƒoƒo me", "TKT": "Tokelau gaƒoƒo me", "TLT": "East Timor gaƒoƒo me", "TMST": "Turkmenistan dzomeŋɔli gaƒoƒo me", "TMT": "Turkmenistan nutome gaƒoƒo me", "TOST": "Tonga dzomeŋɔli gaƒoƒo me", "TOT": "Tonga nutome gaƒoƒo me", "TVT": "Tuvalu gaƒoƒo me", "TWT": "Taipei nutome gaƒoƒo me", "TWT DST": "Taipei kele gaƒoƒo me", "ULAST": "Ulan Bator dzomeŋɔli gaƒoƒo me", "ULAT": "Ulan Bator nutome gaƒoƒo me", "UYST": "Uruguay dzomeŋɔli gaƒoƒo me", "UYT": "Uruguay nutome gaƒoƒo me", "UZT": "Uzbekistan nutome gaƒoƒo me", "UZT DST": "Uzbekistan dzomeŋɔli gaƒoƒo me", "VET": "Venezuela gaƒoƒo me", "VLAST": "Vladivostok dzomeŋɔli gaƒoƒo me", "VLAT": "Vladivostok nutome gaƒoƒo me", "VOLST": "Vogograd dzomeŋɔli gaƒoƒo me", "VOLT": "Volgograd nutome gaƒoƒo me", "VOST": "Vostok gaƒoƒo me", "VUT": "Vanuatu nutome gaƒoƒo me", "VUT DST": "Vanuatu dzomeŋɔli gaƒoƒo me", "WAKT": "Wake Island gaƒoƒo me", "WARST": "Ɣetoɖoƒe Argentina dzomeŋɔli gaƒoƒo me", "WART": "Ɣetoɖoƒe Argentina nutome gaƒoƒo me", "WAST": "West Africa game", "WAT": "West Africa game", "WESZ": "Western Europe dzomeŋɔli gaƒoƒo me", "WEZ": "Western Europe nutome gaƒoƒo me", "WFT": "Wallis & Futuna gaƒoƒo me", "WGST": "West Greenland kele gaƒoƒo me", "WGT": "West Greenland nutome gaƒoƒo me", "WIB": "Western Indonesia gaƒoƒo me", "WIT": "Eastern Indonesia gaƒoƒo me", "WITA": "Central Indonesia gaƒoƒo me", "YAKST": "Yakutsk dzomeŋɔli gaƒoƒo me", "YAKT": "Yakutsk nutome gaƒoƒo me", "YEKST": "Yekaterinburg dzomeŋɔli gaƒoƒo me", "YEKT": "Yekaterinburg nutome gaƒoƒo me", "YST": "YST", "МСК": "Moscow nutome gaƒoƒo me", "اقتاۋ": "Aktau gaƒoƒoɖoanyime", "اقتاۋ قالاسى": "Aktau dzomeŋɔli gaƒoƒome", "اقتوبە": "Aktobe gaƒoƒoɖoanyime", "اقتوبە قالاسى": "Akttobe gaƒoƒome", "الماتى": "Almati gaƒoƒoɖoanyime", "الماتى قالاسى": "Almati dzomeŋɔli gaƒoƒome", "باتىس قازاق ەلى": "West Kazakhstan gaƒoƒo me", "شىعىش قازاق ەلى": "East Kazakhstan gaƒoƒo me", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "Kyrgystan gaƒoƒo me", "قىزىلوردا": "Kizilɔrda gaƒoƒoɖoanyime", "قىزىلوردا قالاسى": "Kizilɔrda dzomeŋɔli gaƒoƒome", "∅∅∅": "Peru dzomeŋɔli gaƒoƒome"},
+		timezones:              map[string]string{"ACDT": "Australian Central dzomeli gaƒoƒo me", "ACST": "Eker dzomeŋɔli gaƒoƒome", "ACT": "Eker gaƒoƒoɖoanyime", "ACWDT": "Australian Central Western kele gaƒoƒo me", "ACWST": "Australian Central Western nutome gaƒoƒo me", "ADT": "Atlantic kele gaƒoƒome", "ADT Arabia": "Arabia dzomeŋɔli gaƒoƒo me", "AEDT": "Australian Eastern kele gaƒoƒo me", "AEST": "Australian Eastern nutome gaƒoƒo me", "AFT": "Afghanistan gaƒoƒo me", "AKDT": "Alaska kele gaƒoƒo me", "AKST": "Alaska nutome gaƒoƒo me", "AMST": "Amazon dzomeŋɔli gaƒoƒo me", "AMST Armenia": "Armenia dzomeŋɔli gaƒoƒo me", "AMT": "Amazon nutome gaƒoƒo me", "AMT Armenia": "Armenia nutome gaƒoƒo me", "ANAST": "Anadir ŋkekeme gaƒoƒome", "ANAT": "Anadir gaƒoƒoɖoanyime", "ARST": "Argentina dzomeŋɔli gaƒoƒo me", "ART": "Argentina nutome gaƒoƒo me", "AST": "Atlantic nutome gaƒoƒome", "AST Arabia": "Arabia nutome gaƒoƒo me", "AWDT": "Australian Western kele gaƒoƒo me", "AWST": "Australian Western nutome gaƒoƒo me", "AZST": "Azerbaijan dzomeŋɔli gaƒoƒo me", "AZT": "Azerbaijan nutome gaƒoƒo me", "BDT Bangladesh": "Bangladesh dzomeŋɔli gaƒoƒo me", "BNT": "Brunei Darussalam gaƒoƒo me", "BOT": "Bolivia gaƒoƒo me", "BRST": "Brasilia dzomeŋɔli gaƒoƒo me", "BRT": "Brasilia nutome gaƒoƒo me", "BST Bangladesh": "Bangladesh nutome gaƒoƒo me", "BT": "Bhutan gaƒoƒo me", "CAST": "CAST", "CAT": "Central Africa gaƒoƒo me", "CCT": "Cocos Islands gaƒoƒo me", "CDT": "Titina America kele gaƒoƒo me", "CHADT": "Chatham kele gaƒoƒo me", "CHAST": "Chatham nutome gaƒoƒo me", "CHUT": "Chuuk gaƒoƒo me", "CKT": "Cook Islands nutome gaƒoƒo me", "CKT DST": "Cook Islands dzomeŋɔli gaƒoƒo me", "CLST": "Chile dzomeŋɔli gaƒoƒo me", "CLT": "Chile nutome gaƒoƒo me", "COST": "Colombia dzomeŋɔli gaƒoƒo me", "COT": "Colombia nutome gaƒoƒo me", "CST": "Titina America nutome gaƒoƒo me", "CST China": "China nutome gaƒoƒo me", "CST China DST": "China kele gaƒoƒo me", "CVST": "Cape Verde dzomeŋɔli gaƒoƒo me", "CVT": "Cape Verde nutome gaƒoƒo me", "CXT": "Christmas Island gaƒoƒo me", "ChST": "Chamorro gaƒoƒo me", "ChST NMI": "ChST NMI", "CuDT": "Cuba kele gaƒoƒome", "CuST": "Cuba nutome gaƒoƒome", "DAVT": "Davis gaƒoƒo me", "DDUT": "Dumont-d’Urville gaƒoƒo me", "EASST": "Easter Island dzomeŋɔli gaƒoƒo me", "EAST": "Easter Island nutome gaƒoƒo me", "EAT": "East Africa gaƒoƒo me", "ECT": "Ecuador gaƒoƒo me", "EDT": "Eastern America kele gaƒoƒo me", "EGDT": "East Greenland dzomeŋɔli gaƒoƒo me", "EGST": "East Greenland nutome gaƒoƒo me", "EST": "Eastern America nutome gaƒoƒo me", "FEET": "FEET", "FJT": "Fiji nutome gaƒoƒo me", "FJT Summer": "Fiji dzomeŋɔli gaƒoƒo me", "FKST": "Falkland Islands dzomeŋɔli gaƒoƒo me", "FKT": "Falkland Islands nutome gaƒoƒo me", "FNST": "Fernando de Noronha dzomeŋɔli gaƒoƒo me", "FNT": "Fernando de Noronha nutome gaƒoƒo me", "GALT": "Galapagos gaƒoƒo me", "GAMT": "Gambier gaƒoƒo me", "GEST": "Georgia dzomeŋɔli gaƒoƒo me", "GET": "Georgia nutome gaƒoƒo me", "GFT": "French Guiana gaƒoƒo me", "GIT": "Gilbert Islands gaƒoƒo me", "GMT": "Greenwich gaƒoƒo", "GNSST": "GNSST", "GNST": "GNST", "GST": "South Georgia gaƒoƒo me", "GST Guam": "GST Guam", "GYT": "Guyana gaƒoƒo me", "HADT": "Hawaii-Aleutia nutome gaƒoƒo me", "HAST": "Hawaii-Aleutia nutome gaƒoƒo me", "HKST": "Hong Kong dzomeŋɔli gaƒoƒo me", "HKT": "Hong Kong nutome gaƒoƒo me", "HOVST": "Hovd dzomeŋɔli gaƒoƒo me", "HOVT": "Hovd nutome gaƒoƒo me", "ICT": "Indonesia gaƒoƒo me", "IDT": "Israel kele gaƒoƒo me", "IOT": "Indian Ocean gaƒoƒo me", "IRKST": "Irkutsk dzomeŋɔli gaƒoƒo me", "IRKT": "Irkutsk nutome gaƒoƒo me", "IRST": "Iran nutome gaƒoƒo me", "IRST DST": "Iran kele gaƒoƒo me", "IST": "India gaƒoƒo me", "IST Israel": "Israel nutome gaƒoƒo me", "JDT": "Japan dzomeŋɔli gaƒoƒo me", "JST": "Japan nutome gaƒoƒo me", "KOST": "Kosrae gaƒoƒo me", "KRAST": "Krasnoyarsk dzomeŋɔli gaƒoƒo me", "KRAT": "Krasnoyarsk nutome gaƒoƒo me", "KST": "Korea nutome gaƒoƒo me", "KST DST": "Korea dzomeŋɔli gaƒoƒo me", "LHDT": "Lord Howe kele gaƒoƒo me", "LHST": "Lord Howe nutome gaƒoƒo me", "LINT": "Line Islands gaƒoƒo me", "MAGST": "Magadan dzomeŋɔli gaƒoƒo me", "MAGT": "Magadan nutome gaƒoƒo me", "MART": "Marquesas gaƒoƒo me", "MAWT": "Mawson gaƒoƒo me", "MDT": "Makau ŋkekeme gaƒoƒome", "MESZ": "Central Europe dzomeŋɔli gaƒoƒo me", "MEZ": "Central Europe nutome gaƒoƒo me", "MHT": "Marshall Islands gaƒoƒo me", "MMT": "Myanmar gaƒoƒo me", "MSD": "Moscow dzomeŋɔli gaƒoƒo me", "MST": "Makau gaƒoƒoɖoanyime", "MUST": "Mauritius dzomeŋɔli gaƒoƒo me", "MUT": "Mauritius nutome gaƒoƒo me", "MVT": "Maldives gaƒoƒo me", "MYT": "Malaysia gaƒoƒo me", "NCT": "New Caledonia nutome gaƒoƒo me", "NDT": "Newfoundland kele gaƒoƒome", "NDT New Caledonia": "New Caledonia dzomeŋɔli gaƒoƒo me", "NFDT": "Norfolk Island dzomeŋɔli gaƒoƒo me", "NFT": "Norfolk Island nutome gaƒoƒo me", "NOVST": "Novosibirsk dzomeŋɔli gaƒoƒo me", "NOVT": "Novosibirsk nutome gaƒoƒo me", "NPT": "Nepal gaƒoƒo me", "NRT": "Nauru gaƒoƒo me", "NST": "Newfoundland nutome gaƒoƒome", "NUT": "Niue gaƒoƒo me", "NZDT": "New Zealand kele gaƒoƒo me", "NZST": "New Zealand nutome gaƒoƒo me", "OESZ": "Ɣedzeƒe Europe ŋkekeme gaƒoƒome", "OEZ": "Ɣedzeƒe Europe gaƒoƒoɖoanyime", "OMSST": "Omsk dzomeŋɔli gaƒoƒo me", "OMST": "Omsk nutome gaƒoƒo me", "PDT": "Pacific kele gaƒoƒo me", "PDTM": "Mexican Pacific kele gaƒoƒome", "PETDT": "Petropavlovsk-Kamtsatski ŋkekeme gaƒoƒome", "PETST": "Petropavlovsk-Kamtsatski gaƒoƒoɖoanyime", "PGT": "Papua New Guinea gaƒoƒo me", "PHOT": "Phoenix Islands gaƒoƒo me", "PKT": "Pakistan nutome gaƒoƒo me", "PKT DST": "Pakistan dzomeŋɔli gaƒoƒo me", "PMDT": "St. Pierre & Miquelon kele gaƒoƒome", "PMST": "St. Pierre & Miquelon nutome gaƒoƒome", "PONT": "Ponape gaƒoƒo me", "PST": "Pacific nutome gaƒoƒo me", "PST Philippine": "Philippine nutome gaƒoƒo me", "PST Philippine DST": "Philippine dzomeŋɔli gaƒoƒo me", "PST Pitcairn": "Pitcairn gaƒoƒo me", "PSTM": "Mexican Pacific nutome gaƒoƒo me", "PWT": "Palau gaƒoƒo me", "PYST": "Paraguay dzomeŋɔli gaƒoƒo me", "PYT": "Paraguay nutome gaƒoƒo me", "PYT Korea": "Pyongyang gaƒoƒo me", "RET": "Reunion gaƒoƒo me", "ROTT": "Rothera gaƒoƒo me", "SAKST": "Sakhalin dzomeŋɔli gaƒoƒo me", "SAKT": "Sakhalin nutome gaƒoƒo me", "SAMST": "Samara ŋkekeme gaƒoƒome", "SAMT": "Samara gaƒoƒoɖoanyime", "SAST": "South Africa nutome gaƒoƒo me", "SBT": "Solomon Islands gaƒoƒo me", "SCT": "Seychelles gaƒoƒo me", "SGT": "Singapore nutome gaƒoƒo me", "SLST": "SLST", "SRT": "Suriname gaƒoƒome", "SST Samoa": "Samoa nutome gaƒoƒo me", "SST Samoa Apia": "Apia nutome gaƒoƒo me", "SST Samoa Apia DST": "Apia kele gaƒoƒo me", "SST Samoa DST": "Samoa kele gaƒoƒo me", "SYOT": "Syowa gaƒoƒo me", "TAAF": "French Southern & Antarctic gaƒoƒo me", "TAHT": "Tahiti gaƒoƒo me", "TJT": "Tajikistan gaƒoƒo me", "TKT": "Tokelau gaƒoƒo me", "TLT": "East Timor gaƒoƒo me", "TMST": "Turkmenistan dzomeŋɔli gaƒoƒo me", "TMT": "Turkmenistan nutome gaƒoƒo me", "TOST": "Tonga dzomeŋɔli gaƒoƒo me", "TOT": "Tonga nutome gaƒoƒo me", "TVT": "Tuvalu gaƒoƒo me", "TWT": "Taipei nutome gaƒoƒo me", "TWT DST": "Taipei kele gaƒoƒo me", "ULAST": "Ulan Bator dzomeŋɔli gaƒoƒo me", "ULAT": "Ulan Bator nutome gaƒoƒo me", "UYST": "Uruguay dzomeŋɔli gaƒoƒo me", "UYT": "Uruguay nutome gaƒoƒo me", "UZT": "Uzbekistan nutome gaƒoƒo me", "UZT DST": "Uzbekistan dzomeŋɔli gaƒoƒo me", "VET": "Venezuela gaƒoƒo me", "VLAST": "Vladivostok dzomeŋɔli gaƒoƒo me", "VLAT": "Vladivostok nutome gaƒoƒo me", "VOLST": "Vogograd dzomeŋɔli gaƒoƒo me", "VOLT": "Volgograd nutome gaƒoƒo me", "VOST": "Vostok gaƒoƒo me", "VUT": "Vanuatu nutome gaƒoƒo me", "VUT DST": "Vanuatu dzomeŋɔli gaƒoƒo me", "WAKT": "Wake Island gaƒoƒo me", "WARST": "Ɣetoɖoƒe Argentina dzomeŋɔli gaƒoƒo me", "WART": "Ɣetoɖoƒe Argentina nutome gaƒoƒo me", "WAST": "West Africa game", "WAT": "West Africa game", "WESZ": "Western Europe dzomeŋɔli gaƒoƒo me", "WEZ": "Western Europe nutome gaƒoƒo me", "WFT": "Wallis & Futuna gaƒoƒo me", "WGST": "West Greenland kele gaƒoƒo me", "WGT": "West Greenland nutome gaƒoƒo me", "WIB": "Western Indonesia gaƒoƒo me", "WIT": "Eastern Indonesia gaƒoƒo me", "WITA": "Central Indonesia gaƒoƒo me", "YAKST": "Yakutsk dzomeŋɔli gaƒoƒo me", "YAKT": "Yakutsk nutome gaƒoƒo me", "YEKST": "Yekaterinburg dzomeŋɔli gaƒoƒo me", "YEKT": "Yekaterinburg nutome gaƒoƒo me", "YST": "YST", "МСК": "Moscow nutome gaƒoƒo me", "اقتاۋ": "Aktau gaƒoƒoɖoanyime", "اقتاۋ قالاسى": "Aktau dzomeŋɔli gaƒoƒome", "اقتوبە": "Aktobe gaƒoƒoɖoanyime", "اقتوبە قالاسى": "Akttobe gaƒoƒome", "الماتى": "Almati gaƒoƒoɖoanyime", "الماتى قالاسى": "Almati dzomeŋɔli gaƒoƒome", "باتىس قازاق ەلى": "West Kazakhstan gaƒoƒo me", "شىعىش قازاق ەلى": "East Kazakhstan gaƒoƒo me", "قازاق ەلى": "قازاق ەلى", "قىرعىزستان": "Kyrgystan gaƒoƒo me", "قىزىلوردا": "Kizilɔrda gaƒoƒoɖoanyime", "قىزىلوردا قالاسى": "Kizilɔrda dzomeŋɔli gaƒoƒome", "∅∅∅": "Azores dzomeŋɔli gaƒoƒo me"},
 	}
 }
 
@@ -81,6 +81,7 @@ func (ee *ee) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'ee'
 func (ee *ee) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -208,6 +209,7 @@ func (ee *ee) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ee' and handles both Whole and Real numbers based on 'v'
 func (ee *ee) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -279,6 +281,7 @@ func (ee *ee) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ee'
 func (ee *ee) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ee.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -336,6 +339,7 @@ func (ee *ee) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ee'
 // in accounting notation.
 func (ee *ee) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ee.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -372,6 +376,7 @@ func (ee *ee) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 		b = append(b, ee.currencyNegativePrefix[0])
 
 	} else {
+
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
@@ -402,6 +407,7 @@ func (ee *ee) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 // FmtDateShort returns the short date representation of 't' for 'ee'
 func (ee *ee) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Month()), 10)
@@ -420,6 +426,7 @@ func (ee *ee) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'ee'
 func (ee *ee) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, ee.monthsAbbreviated[t.Month()]...)
@@ -439,6 +446,7 @@ func (ee *ee) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'ee'
 func (ee *ee) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, ee.monthsWide[t.Month()]...)
@@ -458,6 +466,7 @@ func (ee *ee) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'ee'
 func (ee *ee) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, ee.daysWide[t.Weekday()]...)
@@ -479,6 +488,7 @@ func (ee *ee) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'ee'
 func (ee *ee) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 12 {
@@ -510,6 +520,7 @@ func (ee *ee) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'ee'
 func (ee *ee) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 12 {
@@ -548,6 +559,7 @@ func (ee *ee) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'ee'
 func (ee *ee) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 12 {
@@ -590,6 +602,7 @@ func (ee *ee) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'ee'
 func (ee *ee) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 12 {

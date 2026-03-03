@@ -55,7 +55,7 @@ func New() locales.Translator {
 		daysShort:              []string{"Kwa", "Dwo", "Ben", "Wuk", "Yaw", "Fia", "Mem"},
 		daysWide:               []string{"Sun", "Dwoada", "Benada", "Wukuada", "Yawoada", "Fiada", "Memeneda"},
 		periodsAbbreviated:     []string{"AN", "ANW"},
-		timezones:              map[string]string{"ACDT": "Ɔstrelia Mfinimfini Awia Berɛ", "ACST": "Ɔstrelia Mfinimfini Susudua Berɛ", "ACT": "ACT", "ACWDT": "Ɔstrelia Mfinimfini Atɔeeɛ Awia Berɛ", "ACWST": "Ɔstrelia Mfinimfini Atɔeeɛ Susudua Berɛ", "ADT": "Atlantik Awia Berɛ", "ADT Arabia": "Arabia Awia Berɛ", "AEDT": "Ɔstrelia Apueeɛ Awia Berɛ", "AEST": "Ɔstrelia Apueeɛ Susudua Berɛ", "AFT": "Afganistan Berɛ", "AKDT": "Alaska Awia Berɛ", "AKST": "Alaska Susudua Berɛ", "AMST": "Amazon Awia Berɛ", "AMST Armenia": "Aamenia Awia Berɛ", "AMT": "Amazon Susudua Berɛ", "AMT Armenia": "Aamenia Susudua Berɛ", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "Agyɛntina Awia Berɛ", "ART": "Agyɛntina Susudua Berɛ", "AST": "Atlantik Susudua Berɛ", "AST Arabia": "Arabia Susudua Berɛ", "AWDT": "Ɔstrelia Atɔeeɛ Awia Berɛ", "AWST": "Ɔstrelia Atɔeeɛ Susudua Berɛ", "AZST": "Asabegyan Awia Berɛ", "AZT": "Asabegyan Susudua Berɛ", "BDT Bangladesh": "Bangladɛhye Awia Berɛ", "BNT": "Brunei Berɛ", "BOT": "Bolivia Berɛ", "BRST": "Brasilia Awia Berɛ", "BRT": "Brasilia Susudua Berɛ", "BST Bangladesh": "Bangladɛhye Susudua Berɛ", "BT": "Butan Berɛ", "CAST": "CAST", "CAT": "Afrika Finimfin Berɛ", "CCT": "Kokoso Aeland Berɛ", "CDT": "Mfinimfini Awia Berɛ", "CHADT": "Kyatam Awia Berɛ", "CHAST": "Kyatam Susudua Berɛ", "CHUT": "Kyuuk Berɛ", "CKT": "Kuk Aeland Susudua Berɛ", "CKT DST": "Kuk Aeland Awia Fa Berɛ", "CLST": "Kyili Awia Berɛ", "CLT": "Kyili Susudua Berɛ", "COST": "Kolombia Awia Berɛ", "COT": "Kolombia Susudua Berɛ", "CST": "Mfinimfini Susudua Berɛ", "CST China": "Kyaena Susudua Berɛ", "CST China DST": "Kyaena Awia Berɛ", "CVST": "Kepvɛde Awia Berɛ", "CVT": "Kepvɛde Susudua Berɛ", "CXT": "Buronya Aeland Berɛ", "ChST": "Kyamoro Susudua Berɛ", "ChST NMI": "ChST NMI", "CuDT": "Kuba Awia Berɛ", "CuST": "Kuba Susudua Berɛ", "DAVT": "Davis Berɛ", "DDUT": "Dumont-d’Urville Berɛ", "EASST": "Easta Aeland Awia Berɛ", "EAST": "Easta Aeland Susudua Berɛ", "EAT": "Afrika Apueeɛ Berɛ", "ECT": "Yikuwedɔ Berɛ", "EDT": "Apueeɛ Awia Berɛ", "EGDT": "Greenland Apueeɛ Awia Berɛ", "EGST": "Greenland Apueeɛ Susudua Berɛ", "EST": "Apueeɛ Susudua Berɛ", "FEET": "Yuropu Apueeɛ Nohoa Berɛ", "FJT": "Figyi Susudua Berɛ", "FJT Summer": "Figyi Awia Berɛ", "FKST": "Fɔkman Aeland Awia Berɛ", "FKT": "Fɔkman Aeland Susudua Berɛ", "FNST": "Fernando de Noronha Awia Berɛ", "FNT": "Fernando de Noronha Susudua Berɛ", "GALT": "Galapagɔs Berɛ", "GAMT": "Gambier Berɛ", "GEST": "Gyɔgyea Awia Berɛ", "GET": "Gyɔgyea Susudua Berɛ", "GFT": "Frɛnkye Gayana Berɛ", "GIT": "Geebɛt Aeland Berɛ", "GMT": "Greenwich Mean Berɛ", "GNSST": "GNSST", "GNST": "GNST", "GST": "Gɔɔfo Susudua Berɛ", "GST Guam": "GST Guam", "GYT": "Gayana Berɛ", "HADT": "Hawaii-Aleutian Awia Berɛ", "HAST": "Hawaii-Aleutian Susudua Berɛ", "HKST": "Hɔnkɔn Awia Berɛ", "HKT": "Hɔnkɔn Susudua Berɛ", "HOVST": "Hovd Awia Berɛ", "HOVT": "Hovd Susudua Berɛ", "ICT": "Indɔkyina Berɛ", "IDT": "Israel Awia Berɛ", "IOT": "India Po Berɛ", "IRKST": "Yiikusk Awia Berɛ", "IRKT": "Yiikusk Susudua Berɛ", "IRST": "Iran Susudua Berɛ", "IRST DST": "Iran Awia Berɛ", "IST": "India Susudua Berɛ", "IST Israel": "Israel Susudua Berɛ", "JDT": "Gyapan Awia Berɛ", "JST": "Gyapan Susudua Berɛ", "KOST": "Kosrae Berɛ", "KRAST": "Krasnoyarsk Awia Berɛ", "KRAT": "Krasnoyarsk Susudua Berɛ", "KST": "Korean Susudua Berɛ", "KST DST": "Korean Awia Berɛ", "LHDT": "Lɔd Howe Awia Berɛ", "LHST": "Lɔd Howe Susudua Berɛ", "LINT": "Lai Aeland Berɛ", "MAGST": "Magadan Awia Berɛ", "MAGT": "Magadan Susudua Berɛ", "MART": "Makesase Berɛ", "MAWT": "Mɔɔson Berɛ", "MDT": "MDT", "MESZ": "Yuropu Mfinimfini Awia Berɛ", "MEZ": "Yuropu Mfinimfini Susudua Berɛ", "MHT": "Mahyaa Aeland Berɛ", "MMT": "Mayaama Berɛ", "MSD": "Mɔsko Awia Berɛ", "MST": "MST", "MUST": "Mɔrihyiɔso Awia Berɛ", "MUT": "Mɔrihyiɔso Susudua Berɛ", "MVT": "Maldives Berɛ", "MYT": "Malehyia Berɛ", "NCT": "Kaledonia Foforɔ Susudua Berɛ", "NDT": "Newfoundland Awia Berɛ", "NDT New Caledonia": "Kaledonia Foforɔ Awia Berɛ", "NFDT": "Nɔɔfɔk Aeland Awia Berɛ", "NFT": "Nɔɔfɔk Aeland Susudua Berɛ", "NOVST": "Novosibirsk Awia Berɛ", "NOVT": "Novosibirsk Susudua Berɛ", "NPT": "Nɛpal Berɛ", "NRT": "Nauru Berɛ", "NST": "Newfoundland Susudua Berɛ", "NUT": "Niue Berɛ", "NZDT": "Ziland Foforɔ Awia Berɛ", "NZST": "Ziland Foforɔ Susudua Berɛ", "OESZ": "Yuropu Apueeɛ Awia Berɛ", "OEZ": "Yuropu Apueeɛ Susudua Berɛ", "OMSST": "Omsk Awia Berɛ", "OMST": "Omsk Susudua Berɛ", "PDT": "Pasifik Awia Berɛ", "PDTM": "Mɛksiko Pasifik Awia Berɛ", "PETDT": "PETDT", "PETST": "PETST", "PGT": "Papua Gini Foforɔ Berɛ", "PHOT": "Finise Aeland Berɛ", "PKT": "Pakistan Susudua Berɛ", "PKT DST": "Pakistan Awia Berɛ", "PMDT": "St. Pierre & Miquelon Awia Berɛ", "PMST": "St. Pierre & Miquelon Susudua Berɛ", "PONT": "Ponape Berɛ", "PST": "Pasifik Susudua Berɛ", "PST Philippine": "Filipin Susudua Berɛ", "PST Philippine DST": "Filipin Awia Berɛ", "PST Pitcairn": "Pitkairn Berɛ", "PSTM": "Mɛksiko Pasifik Susudua Berɛ", "PWT": "Palau Berɛ", "PYST": "Paraguae Awia Berɛ", "PYT": "Paraguae Susudua Berɛ", "PYT Korea": "Pyongyang Berɛ", "RET": "Réunion Berɛ", "ROTT": "Rotera Berɛ", "SAKST": "Sakhalin Awia Berɛ", "SAKT": "Sakhalin Susudua Berɛ", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "Afrika Anaafoɔ Susudua Berɛ", "SBT": "Solomon Aeland Berɛ", "SCT": "Seyhyɛl Berɛ", "SGT": "Singapɔ Susudua Berɛ", "SLST": "SLST", "SRT": "Suriname Berɛ", "SST Samoa": "Samoa Susudua Berɛ", "SST Samoa Apia": "Apia Susudua Berɛ", "SST Samoa Apia DST": "Apia Awia Berɛ", "SST Samoa DST": "Samoa Awia Berɛ", "SYOT": "Syowa Berɛ", "TAAF": "Frɛnkye Anaafoɔ ne Antaatik Berɛ", "TAHT": "Tahiti Berɛ", "TJT": "Tagyikistan Berɛ", "TKT": "Tokelau Berɛ", "TLT": "Timɔɔ Apueeɛ Berɛ", "TMST": "Tɛkmɛnistan Awia Berɛ", "TMT": "Tɛkmɛnistan Susudua Berɛ", "TOST": "Tonga Awia Berɛ", "TOT": "Tonga Susudua Berɛ", "TVT": "Tuvalu Berɛ", "TWT": "Taipei Susudua Berɛ", "TWT DST": "Taipei Awia Berɛ", "ULAST": "Yulanbata Awia Berɛ", "ULAT": "Yulanbata Susudua Berɛ", "UYST": "Yurugwae Awia Berɛ", "UYT": "Yurugwae Susudua Berɛ", "UZT": "Usbɛkistan Susudua Berɛ", "UZT DST": "Usbɛkistan Awia Berɛ", "VET": "Venezuela Berɛ", "VLAST": "Vladivostok Awia Berɛ", "VLAT": "Vladivostok Susudua Berɛ", "VOLST": "Volgograd Awia Berɛ", "VOLT": "Volgograd Susudua Berɛ", "VOST": "Vostok Berɛ", "VUT": "Vanuatu Susudua Berɛ", "VUT DST": "Vanuatu Awia Berɛ", "WAKT": "Wake Aeland Berɛ", "WARST": "Agyɛntina Atɔeeɛ Awia Berɛ", "WART": "Agyɛntina Atɔeeɛ Susudua Berɛ", "WAST": "Afrika Atɔeɛ Berɛ", "WAT": "Afrika Atɔeɛ Berɛ", "WESZ": "Yuropu Atɔeeɛ Awia Berɛ", "WEZ": "Yuropu Atɔeeɛ Susudua Berɛ", "WFT": "Wallis ne Futuna Berɛ", "WGST": "Greenland Atɔeɛ Awia Berɛ", "WGT": "Greenland Atɔeɛ Susudua Berɛ", "WIB": "Indɔnehyia Atɔeeɛ Berɛ", "WIT": "Indɔnehyia Apueeɛ Berɛ", "WITA": "Indɔnehyia Mfinimfini Berɛ", "YAKST": "Yakutsk Awia Berɛ", "YAKT": "Yakutsk Susudua Berɛ", "YEKST": "Yɛkatɛrinbɛg Awia Berɛ", "YEKT": "Yɛkatɛrinbɛg Susudua Berɛ", "YST": "Yukɔn Berɛ", "МСК": "Mɔsko Susudua Berɛ", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "Kazakstan Atɔeɛ Berɛ", "شىعىش قازاق ەلى": "Kazakstan Apueeɛ Berɛ", "قازاق ەلى": "Kazakstan Berɛ", "قىرعىزستان": "Kɛɛgestan Berɛ", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Peru Awia Berɛ"},
+		timezones:              map[string]string{"ACDT": "Ɔstrelia Mfinimfini Awia Berɛ", "ACST": "Ɔstrelia Mfinimfini Susudua Berɛ", "ACT": "ACT", "ACWDT": "Ɔstrelia Mfinimfini Atɔeeɛ Awia Berɛ", "ACWST": "Ɔstrelia Mfinimfini Atɔeeɛ Susudua Berɛ", "ADT": "Atlantik Awia Berɛ", "ADT Arabia": "Arabia Awia Berɛ", "AEDT": "Ɔstrelia Apueeɛ Awia Berɛ", "AEST": "Ɔstrelia Apueeɛ Susudua Berɛ", "AFT": "Afganistan Berɛ", "AKDT": "Alaska Awia Berɛ", "AKST": "Alaska Susudua Berɛ", "AMST": "Amazon Awia Berɛ", "AMST Armenia": "Aamenia Awia Berɛ", "AMT": "Amazon Susudua Berɛ", "AMT Armenia": "Aamenia Susudua Berɛ", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "Agyɛntina Awia Berɛ", "ART": "Agyɛntina Susudua Berɛ", "AST": "Atlantik Susudua Berɛ", "AST Arabia": "Arabia Susudua Berɛ", "AWDT": "Ɔstrelia Atɔeeɛ Awia Berɛ", "AWST": "Ɔstrelia Atɔeeɛ Susudua Berɛ", "AZST": "Asabegyan Awia Berɛ", "AZT": "Asabegyan Susudua Berɛ", "BDT Bangladesh": "Bangladɛhye Awia Berɛ", "BNT": "Brunei Berɛ", "BOT": "Bolivia Berɛ", "BRST": "Brasilia Awia Berɛ", "BRT": "Brasilia Susudua Berɛ", "BST Bangladesh": "Bangladɛhye Susudua Berɛ", "BT": "Butan Berɛ", "CAST": "CAST", "CAT": "Afrika Finimfin Berɛ", "CCT": "Kokoso Aeland Berɛ", "CDT": "Mfinimfini Awia Berɛ", "CHADT": "Kyatam Awia Berɛ", "CHAST": "Kyatam Susudua Berɛ", "CHUT": "Kyuuk Berɛ", "CKT": "Kuk Aeland Susudua Berɛ", "CKT DST": "Kuk Aeland Awia Fa Berɛ", "CLST": "Kyili Awia Berɛ", "CLT": "Kyili Susudua Berɛ", "COST": "Kolombia Awia Berɛ", "COT": "Kolombia Susudua Berɛ", "CST": "Mfinimfini Susudua Berɛ", "CST China": "Kyaena Susudua Berɛ", "CST China DST": "Kyaena Awia Berɛ", "CVST": "Kepvɛde Awia Berɛ", "CVT": "Kepvɛde Susudua Berɛ", "CXT": "Buronya Aeland Berɛ", "ChST": "Kyamoro Susudua Berɛ", "ChST NMI": "ChST NMI", "CuDT": "Kuba Awia Berɛ", "CuST": "Kuba Susudua Berɛ", "DAVT": "Davis Berɛ", "DDUT": "Dumont-d’Urville Berɛ", "EASST": "Easta Aeland Awia Berɛ", "EAST": "Easta Aeland Susudua Berɛ", "EAT": "Afrika Apueeɛ Berɛ", "ECT": "Yikuwedɔ Berɛ", "EDT": "Apueeɛ Awia Berɛ", "EGDT": "Greenland Apueeɛ Awia Berɛ", "EGST": "Greenland Apueeɛ Susudua Berɛ", "EST": "Apueeɛ Susudua Berɛ", "FEET": "Yuropu Apueeɛ Nohoa Berɛ", "FJT": "Figyi Susudua Berɛ", "FJT Summer": "Figyi Awia Berɛ", "FKST": "Fɔkman Aeland Awia Berɛ", "FKT": "Fɔkman Aeland Susudua Berɛ", "FNST": "Fernando de Noronha Awia Berɛ", "FNT": "Fernando de Noronha Susudua Berɛ", "GALT": "Galapagɔs Berɛ", "GAMT": "Gambier Berɛ", "GEST": "Gyɔgyea Awia Berɛ", "GET": "Gyɔgyea Susudua Berɛ", "GFT": "Frɛnkye Gayana Berɛ", "GIT": "Geebɛt Aeland Berɛ", "GMT": "Greenwich Mean Berɛ", "GNSST": "GNSST", "GNST": "GNST", "GST": "Gyɔɔgyia Anaafoɔ Berɛ", "GST Guam": "GST Guam", "GYT": "Gayana Berɛ", "HADT": "Hawaii-Aleutian Awia Berɛ", "HAST": "Hawaii-Aleutian Susudua Berɛ", "HKST": "Hɔnkɔn Awia Berɛ", "HKT": "Hɔnkɔn Susudua Berɛ", "HOVST": "Hovd Awia Berɛ", "HOVT": "Hovd Susudua Berɛ", "ICT": "Indɔkyina Berɛ", "IDT": "Israel Awia Berɛ", "IOT": "India Po Berɛ", "IRKST": "Yiikusk Awia Berɛ", "IRKT": "Yiikusk Susudua Berɛ", "IRST": "Iran Susudua Berɛ", "IRST DST": "Iran Awia Berɛ", "IST": "India Susudua Berɛ", "IST Israel": "Israel Susudua Berɛ", "JDT": "Gyapan Awia Berɛ", "JST": "Gyapan Susudua Berɛ", "KOST": "Kosrae Berɛ", "KRAST": "Krasnoyarsk Awia Berɛ", "KRAT": "Krasnoyarsk Susudua Berɛ", "KST": "Korean Susudua Berɛ", "KST DST": "Korean Awia Berɛ", "LHDT": "Lɔd Howe Awia Berɛ", "LHST": "Lɔd Howe Susudua Berɛ", "LINT": "Lai Aeland Berɛ", "MAGST": "Magadan Awia Berɛ", "MAGT": "Magadan Susudua Berɛ", "MART": "Makesase Berɛ", "MAWT": "Mɔɔson Berɛ", "MDT": "MDT", "MESZ": "Yuropu Mfinimfini Awia Berɛ", "MEZ": "Yuropu Mfinimfini Susudua Berɛ", "MHT": "Mahyaa Aeland Berɛ", "MMT": "Mayaama Berɛ", "MSD": "Mɔsko Awia Berɛ", "MST": "MST", "MUST": "Mɔrihyiɔso Awia Berɛ", "MUT": "Mɔrihyiɔso Susudua Berɛ", "MVT": "Maldives Berɛ", "MYT": "Malehyia Berɛ", "NCT": "Kaledonia Foforɔ Susudua Berɛ", "NDT": "Newfoundland Awia Berɛ", "NDT New Caledonia": "Kaledonia Foforɔ Awia Berɛ", "NFDT": "Nɔɔfɔk Aeland Awia Berɛ", "NFT": "Nɔɔfɔk Aeland Susudua Berɛ", "NOVST": "Novosibirsk Awia Berɛ", "NOVT": "Novosibirsk Susudua Berɛ", "NPT": "Nɛpal Berɛ", "NRT": "Nauru Berɛ", "NST": "Newfoundland Susudua Berɛ", "NUT": "Niue Berɛ", "NZDT": "Ziland Foforɔ Awia Berɛ", "NZST": "Ziland Foforɔ Susudua Berɛ", "OESZ": "Yuropu Apueeɛ Awia Berɛ", "OEZ": "Yuropu Apueeɛ Susudua Berɛ", "OMSST": "Omsk Awia Berɛ", "OMST": "Omsk Susudua Berɛ", "PDT": "Pasifik Awia Berɛ", "PDTM": "Mɛksiko Pasifik Awia Berɛ", "PETDT": "PETDT", "PETST": "PETST", "PGT": "Papua Gini Foforɔ Berɛ", "PHOT": "Finise Aeland Berɛ", "PKT": "Pakistan Susudua Berɛ", "PKT DST": "Pakistan Awia Berɛ", "PMDT": "St. Pierre & Miquelon Awia Berɛ", "PMST": "St. Pierre & Miquelon Susudua Berɛ", "PONT": "Ponape Berɛ", "PST": "Pasifik Susudua Berɛ", "PST Philippine": "Filipin Susudua Berɛ", "PST Philippine DST": "Filipin Awia Berɛ", "PST Pitcairn": "Pitkairn Berɛ", "PSTM": "Mɛksiko Pasifik Susudua Berɛ", "PWT": "Palau Berɛ", "PYST": "Paraguae Awia Berɛ", "PYT": "Paraguae Susudua Berɛ", "PYT Korea": "Pyongyang Berɛ", "RET": "Réunion Berɛ", "ROTT": "Rotera Berɛ", "SAKST": "Sakhalin Awia Berɛ", "SAKT": "Sakhalin Susudua Berɛ", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "Afrika Anaafoɔ Susudua Berɛ", "SBT": "Solomon Aeland Berɛ", "SCT": "Seyhyɛl Berɛ", "SGT": "Singapɔ Susudua Berɛ", "SLST": "SLST", "SRT": "Suriname Berɛ", "SST Samoa": "Samoa Susudua Berɛ", "SST Samoa Apia": "Apia Susudua Berɛ", "SST Samoa Apia DST": "Apia Awia Berɛ", "SST Samoa DST": "Samoa Awia Berɛ", "SYOT": "Syowa Berɛ", "TAAF": "Frɛnkye Anaafoɔ ne Antaatik Berɛ", "TAHT": "Tahiti Berɛ", "TJT": "Tagyikistan Berɛ", "TKT": "Tokelau Berɛ", "TLT": "Timɔɔ Apueeɛ Berɛ", "TMST": "Tɛkmɛnistan Awia Berɛ", "TMT": "Tɛkmɛnistan Susudua Berɛ", "TOST": "Tonga Awia Berɛ", "TOT": "Tonga Susudua Berɛ", "TVT": "Tuvalu Berɛ", "TWT": "Taipei Susudua Berɛ", "TWT DST": "Taipei Awia Berɛ", "ULAST": "Yulanbata Awia Berɛ", "ULAT": "Yulanbata Susudua Berɛ", "UYST": "Yurugwae Awia Berɛ", "UYT": "Yurugwae Susudua Berɛ", "UZT": "Usbɛkistan Susudua Berɛ", "UZT DST": "Usbɛkistan Awia Berɛ", "VET": "Venezuela Berɛ", "VLAST": "Vladivostok Awia Berɛ", "VLAT": "Vladivostok Susudua Berɛ", "VOLST": "Volgograd Awia Berɛ", "VOLT": "Volgograd Susudua Berɛ", "VOST": "Vostok Berɛ", "VUT": "Vanuatu Susudua Berɛ", "VUT DST": "Vanuatu Awia Berɛ", "WAKT": "Wake Aeland Berɛ", "WARST": "Agyɛntina Atɔeeɛ Awia Berɛ", "WART": "Agyɛntina Atɔeeɛ Susudua Berɛ", "WAST": "Afrika Atɔeɛ Berɛ", "WAT": "Afrika Atɔeɛ Berɛ", "WESZ": "Yuropu Atɔeeɛ Awia Berɛ", "WEZ": "Yuropu Atɔeeɛ Susudua Berɛ", "WFT": "Wallis ne Futuna Berɛ", "WGST": "Greenland Atɔeɛ Awia Berɛ", "WGT": "Greenland Atɔeɛ Susudua Berɛ", "WIB": "Indɔnehyia Atɔeeɛ Berɛ", "WIT": "Indɔnehyia Apueeɛ Berɛ", "WITA": "Indɔnehyia Mfinimfini Berɛ", "YAKST": "Yakutsk Awia Berɛ", "YAKT": "Yakutsk Susudua Berɛ", "YEKST": "Yɛkatɛrinbɛg Awia Berɛ", "YEKT": "Yɛkatɛrinbɛg Susudua Berɛ", "YST": "Yukɔn Berɛ", "МСК": "Mɔsko Susudua Berɛ", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "Kazakstan Atɔeɛ Berɛ", "شىعىش قازاق ەلى": "Kazakstan Apueeɛ Berɛ", "قازاق ەلى": "Kazakstan Berɛ", "قىرعىزستان": "Kɛɛgestan Berɛ", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Azores Awia Berɛ"},
 	}
 }
 
@@ -81,6 +81,7 @@ func (ak *ak) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'ak'
 func (ak *ak) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 
 	if n >= 0 && n <= 1 {
@@ -97,6 +98,7 @@ func (ak *ak) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'ak'
 func (ak *ak) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
+
 	start := ak.CardinalPluralRule(num1, v1)
 	end := ak.CardinalPluralRule(num2, v2)
 
@@ -109,6 +111,7 @@ func (ak *ak) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) 
 	}
 
 	return locales.PluralRuleOther
+
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -219,6 +222,7 @@ func (ak *ak) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ak' and handles both Whole and Real numbers based on 'v'
 func (ak *ak) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -290,6 +294,7 @@ func (ak *ak) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ak'
 func (ak *ak) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ak.currencies[currency]
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
@@ -347,6 +352,7 @@ func (ak *ak) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ak'
 // in accounting notation.
 func (ak *ak) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ak.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -383,6 +389,7 @@ func (ak *ak) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 		b = append(b, ak.currencyNegativePrefix[0])
 
 	} else {
+
 		for j := len(symbol) - 1; j >= 0; j-- {
 			b = append(b, symbol[j])
 		}
@@ -413,6 +420,7 @@ func (ak *ak) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 // FmtDateShort returns the short date representation of 't' for 'ak'
 func (ak *ak) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -431,6 +439,7 @@ func (ak *ak) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'ak'
 func (ak *ak) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -449,6 +458,7 @@ func (ak *ak) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'ak'
 func (ak *ak) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -467,6 +477,7 @@ func (ak *ak) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'ak'
 func (ak *ak) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, ak.daysAbbreviated[t.Weekday()]...)
@@ -487,6 +498,7 @@ func (ak *ak) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'ak'
 func (ak *ak) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -516,6 +528,7 @@ func (ak *ak) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'ak'
 func (ak *ak) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -552,6 +565,7 @@ func (ak *ak) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'ak'
 func (ak *ak) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -593,6 +607,7 @@ func (ak *ak) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'ak'
 func (ak *ak) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

@@ -191,6 +191,7 @@ func (mic *mic) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'mic' and handles both Whole and Real numbers based on 'v'
 func (mic *mic) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -262,6 +263,7 @@ func (mic *mic) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'mic'
 func (mic *mic) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := mic.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -270,6 +272,7 @@ func (mic *mic) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'mic'
 // in accounting notation.
 func (mic *mic) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := mic.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -277,6 +280,7 @@ func (mic *mic) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 // FmtDateShort returns the short date representation of 't' for 'mic'
 func (mic *mic) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -306,6 +310,7 @@ func (mic *mic) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'mic'
 func (mic *mic) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, mic.monthsAbbreviated[t.Month()]...)
@@ -324,6 +329,7 @@ func (mic *mic) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'mic'
 func (mic *mic) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, mic.monthsWide[t.Month()]...)
@@ -342,6 +348,7 @@ func (mic *mic) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'mic'
 func (mic *mic) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, mic.daysWide[t.Weekday()]...)
@@ -362,6 +369,7 @@ func (mic *mic) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'mic'
 func (mic *mic) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -391,6 +399,7 @@ func (mic *mic) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'mic'
 func (mic *mic) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -427,6 +436,7 @@ func (mic *mic) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'mic'
 func (mic *mic) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -468,6 +478,7 @@ func (mic *mic) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'mic'
 func (mic *mic) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

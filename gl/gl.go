@@ -47,10 +47,10 @@ func New() locales.Translator {
 		percent:                "%",
 		timeSeparator:          ":",
 		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "Br", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "₧", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "FC", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "$MX", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "руб", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "$", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "ƒ", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
-		percentSuffix:          " ",
-		currencyPositiveSuffix: " ",
+		percentSuffix:          " ",
+		currencyPositiveSuffix: " ",
 		currencyNegativePrefix: "(",
-		currencyNegativeSuffix: " )",
+		currencyNegativeSuffix: " )",
 		monthsAbbreviated:      []string{"", "xan.", "feb.", "mar.", "abr.", "maio", "xuño", "xul.", "ago.", "set.", "out.", "nov.", "dec."},
 		monthsNarrow:           []string{"", "x.", "f.", "m.", "a.", "m.", "x.", "x.", "a.", "s.", "o.", "n.", "d."},
 		monthsWide:             []string{"", "xaneiro", "febreiro", "marzo", "abril", "maio", "xuño", "xullo", "agosto", "setembro", "outubro", "novembro", "decembro"},
@@ -58,7 +58,7 @@ func New() locales.Translator {
 		daysNarrow:             []string{"d.", "l.", "m.", "m.", "x.", "v.", "s."},
 		daysShort:              []string{"do.", "lu.", "ma.", "mé.", "xo.", "ve.", "sá."},
 		daysWide:               []string{"domingo", "luns", "martes", "mércores", "xoves", "venres", "sábado"},
-		timezones:              map[string]string{"ACDT": "hora de verán de Australia Central", "ACST": "hora estándar de Australia Central", "ACT": "hora estándar de Acre", "ACWDT": "hora de verán de Australia Occidental Central", "ACWST": "hora estándar de Australia Occidental Central", "ADT": "hora de verán do Atlántico", "ADT Arabia": "hora de verán árabe", "AEDT": "hora de verán de Australia Oriental", "AEST": "hora estándar de Australia Oriental", "AFT": "hora de Afganistán", "AKDT": "hora de verán de Alasca", "AKST": "hora estándar de Alasca", "AMST": "hora de verán do Amazonas", "AMST Armenia": "hora de verán de Armenia", "AMT": "hora estándar do Amazonas", "AMT Armenia": "hora estándar de Armenia", "ANAST": "Horario de verán de Anadir", "ANAT": "Horario estándar de Anadir", "ARST": "hora de verán da Arxentina", "ART": "hora estándar da Arxentina", "AST": "hora estándar do Atlántico", "AST Arabia": "hora estándar árabe", "AWDT": "hora de verán de Australia Occidental", "AWST": "hora estándar de Australia Occidental", "AZST": "hora de verán de Acerbaixán", "AZT": "hora estándar de Acerbaixán", "BDT Bangladesh": "hora de verán de Bangladesh", "BNT": "hora de Brunei Darussalam", "BOT": "hora de Bolivia", "BRST": "hora de verán de Brasilia", "BRT": "hora estándar de Brasilia", "BST Bangladesh": "hora estándar de Bangladesh", "BT": "hora de Bután", "CAST": "CAST", "CAT": "hora de África Central", "CCT": "hora das Illas Cocos", "CDT": "hora de verán central, Norteamérica", "CHADT": "hora de verán de Chatham", "CHAST": "hora estándar de Chatham", "CHUT": "hora de Chuuk", "CKT": "hora estándar das Illas Cook", "CKT DST": "hora de verán medio das Illas Cook", "CLST": "hora de verán de Chile", "CLT": "hora estándar de Chile", "COST": "hora de verán de Colombia", "COT": "hora estándar de Colombia", "CST": "hora estándar central, Norteamérica", "CST China": "hora estándar da China", "CST China DST": "hora de verán da China", "CVST": "hora de verán de Cabo Verde", "CVT": "hora estándar de Cabo Verde", "CXT": "hora da Illa Christmas", "ChST": "hora estándar chamorro", "ChST NMI": "ChST NMI", "CuDT": "hora de verán de Cuba", "CuST": "hora estándar de Cuba", "DAVT": "hora de Davis", "DDUT": "hora de Dumont-d’Urville", "EASST": "hora de verán da Illa de Pascua", "EAST": "hora estándar da Illa de Pascua", "EAT": "hora de África Oriental", "ECT": "hora de Ecuador", "EDT": "hora de verán do leste, América do Norte", "EGDT": "hora de verán de Groenlandia Oriental", "EGST": "hora estándar de Groenlandia Oriental", "EST": "hora estándar do leste, América do Norte", "FEET": "hora do extremo leste europeo", "FJT": "hora estándar de Fixi", "FJT Summer": "hora de verán de Fixi", "FKST": "hora de verán das Illas Malvinas", "FKT": "hora estándar das Illas Malvinas", "FNST": "hora de verán de Fernando de Noronha", "FNT": "hora estándar de Fernando de Noronha", "GALT": "hora das Galápagos", "GAMT": "hora de Gambier", "GEST": "hora de verán de Xeorxia", "GET": "hora estándar de Xeorxia", "GFT": "hora da Güiana Francesa", "GIT": "hora das Illas Gilbert", "GMT": "hora do meridiano de Greenwich", "GNSST": "GNSST", "GNST": "GNST", "GST": "hora do Golfo", "GST Guam": "GST Guam", "GYT": "hora da Güiana", "HADT": "hora de verán de Hawai-illas Aleutianas", "HAST": "hora estándar de Hawai-illas Aleutianas", "HKST": "hora de verán de Hong Kong", "HKT": "hora estándar de Hong Kong", "HOVST": "hora de verán de Hovd", "HOVT": "hora estándar de Hovd", "ICT": "hora de Indochina", "IDT": "hora de verán de Israel", "IOT": "hora do Océano Índico", "IRKST": "hora de verán de Irkutsk", "IRKT": "hora estándar de Irkutsk", "IRST": "hora estándar de Irán", "IRST DST": "hora de verán de Irán", "IST": "hora da India", "IST Israel": "hora estándar de Israel", "JDT": "hora de verán do Xapón", "JST": "hora estándar do Xapón", "KOST": "hora de Kosrae", "KRAST": "hora de verán de Krasnoiarsk", "KRAT": "hora estándar de Krasnoiarsk", "KST": "hora estándar de Corea", "KST DST": "hora de verán de Corea", "LHDT": "hora de verán de Lord Howe", "LHST": "hora estándar de Lord Howe", "LINT": "hora das Illas da Liña", "MAGST": "hora de verán de Magadan", "MAGT": "hora estándar de Magadan", "MART": "hora das Marquesas", "MAWT": "hora de Mawson", "MDT": "MDT", "MESZ": "hora de verán de Europa Central", "MEZ": "hora estándar de Europa Central", "MHT": "hora das Illas Marshall", "MMT": "hora de Myanmar", "MSD": "hora de verán de Moscova", "MST": "MST", "MUST": "hora de verán de Mauricio", "MUT": "hora estándar de Mauricio", "MVT": "hora das Maldivas", "MYT": "hora de Malaisia", "NCT": "hora estándar de Nova Caledonia", "NDT": "hora de verán de Terra Nova", "NDT New Caledonia": "hora de verán de Nova Caledonia", "NFDT": "hora de verán da Illa Norfolk", "NFT": "hora estándar da Illa Norfolk", "NOVST": "hora de verán de Novosibirsk", "NOVT": "hora estándar de Novosibirsk", "NPT": "hora de Nepal", "NRT": "hora de Nauru", "NST": "hora estándar de Terra Nova", "NUT": "hora de Niue", "NZDT": "hora de verán de Nova Zelandia", "NZST": "hora estándar de Nova Zelandia", "OESZ": "hora de verán de Europa Oriental", "OEZ": "hora estándar de Europa Oriental", "OMSST": "hora de verán de Omsk", "OMST": "hora estándar de Omsk", "PDT": "hora de verán do Pacífico, América do Norte", "PDTM": "hora de verán do Pacífico mexicano", "PETDT": "Horario de verán de Petropávlovsk-Kamchatski", "PETST": "Horario estándar de Petropávlovsk-Kamchatski", "PGT": "hora de Papúa-Nova Guinea", "PHOT": "hora das Illas Fénix", "PKT": "hora estándar de Paquistán", "PKT DST": "hora de verán de Paquistán", "PMDT": "hora de verán de Saint Pierre et Miquelon", "PMST": "hora estándar de Saint Pierre et Miquelon", "PONT": "hora de Pohnpei", "PST": "hora estándar do Pacífico, América do Norte", "PST Philippine": "hora estándar de Filipinas", "PST Philippine DST": "hora de verán de Filipinas", "PST Pitcairn": "hora de Pitcairn", "PSTM": "hora estándar do Pacífico mexicano", "PWT": "hora de Palau", "PYST": "hora de verán do Paraguai", "PYT": "hora estándar do Paraguai", "PYT Korea": "hora de Pyongyang", "RET": "hora de Reunión", "ROTT": "hora de Rothera", "SAKST": "hora de verán de Sakhalín", "SAKT": "hora estándar de Sakhalín", "SAMST": "Horario de verán de Samara", "SAMT": "Horario estándar de Samara", "SAST": "hora de África Meridional", "SBT": "hora das Illas Salomón", "SCT": "hora das Seychelles", "SGT": "hora de Singapur", "SLST": "SLST", "SRT": "hora de Suriname", "SST Samoa": "hora estándar de Samoa", "SST Samoa Apia": "hora estándar de Apia", "SST Samoa Apia DST": "hora de verán de Apia", "SST Samoa DST": "hora de verán de Samoa", "SYOT": "hora de Syowa", "TAAF": "hora das Terras Austrais e Antárticas Francesas", "TAHT": "hora de Tahití", "TJT": "hora de Taxiquistán", "TKT": "hora de Tokelau", "TLT": "hora de Timor Leste", "TMST": "hora de verán de Turkmenistán", "TMT": "hora estándar de Turkmenistán", "TOST": "hora de verán de Tonga", "TOT": "hora estándar de Tonga", "TVT": "hora de Tuvalu", "TWT": "hora estándar de Taipei", "TWT DST": "hora de verán de Taipei", "ULAST": "hora de verán de Ulaanbaatar", "ULAT": "hora estándar de Ulaanbaatar", "UYST": "hora de verán do Uruguai", "UYT": "hora estándar do Uruguai", "UZT": "hora estándar de Uzbekistán", "UZT DST": "hora de verán de Uzbekistán", "VET": "hora de Venezuela", "VLAST": "hora de verán de Vladivostok", "VLAT": "hora estándar de Vladivostok", "VOLST": "hora de verán de Volgogrado", "VOLT": "hora estándar de Volgogrado", "VOST": "hora de Vostok", "VUT": "hora estándar de Vanuatu", "VUT DST": "hora de verán de Vanuatu", "WAKT": "hora da Illa Wake", "WARST": "hora de verán da Arxentina Occidental", "WART": "hora estándar da Arxentina Occidental", "WAST": "hora de África Occidental", "WAT": "hora de África Occidental", "WESZ": "hora de verán de Europa Occidental", "WEZ": "hora estándar de Europa Occidental", "WFT": "hora de Wallis e Futuna", "WGST": "hora de verán de Groenlandia Occidental", "WGT": "hora estándar de Groenlandia Occidental", "WIB": "hora de Indonesia Occidental", "WIT": "hora de Indonesia Oriental", "WITA": "hora de Indonesia Central", "YAKST": "hora de verán de Iakutsk", "YAKT": "hora estándar de Iakutsk", "YEKST": "hora de verán de Ekaterimburgo", "YEKT": "hora estándar de Ekaterimburgo", "YST": "hora de Yukon", "МСК": "hora estándar de Moscova", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "hora de Kazakistán Occidental", "شىعىش قازاق ەلى": "hora de Kazakistán Oriental", "قازاق ەلى": "hora de Kazakistán", "قىرعىزستان": "hora de Kirguizistán", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "hora de verán dos Azores"},
+		timezones:              map[string]string{"ACDT": "hora de verán de Australia Central", "ACST": "hora estándar de Australia Central", "ACT": "hora estándar de Acre", "ACWDT": "hora de verán de Australia Occidental Central", "ACWST": "hora estándar de Australia Occidental Central", "ADT": "hora de verán do Atlántico", "ADT Arabia": "hora de verán árabe", "AEDT": "hora de verán de Australia Oriental", "AEST": "hora estándar de Australia Oriental", "AFT": "hora de Afganistán", "AKDT": "hora de verán de Alasca", "AKST": "hora estándar de Alasca", "AMST": "hora de verán do Amazonas", "AMST Armenia": "hora de verán de Armenia", "AMT": "hora estándar do Amazonas", "AMT Armenia": "hora estándar de Armenia", "ANAST": "Horario de verán de Anadir", "ANAT": "Horario estándar de Anadir", "ARST": "hora de verán da Arxentina", "ART": "hora estándar da Arxentina", "AST": "hora estándar do Atlántico", "AST Arabia": "hora estándar árabe", "AWDT": "hora de verán de Australia Occidental", "AWST": "hora estándar de Australia Occidental", "AZST": "hora de verán de Acerbaixán", "AZT": "hora estándar de Acerbaixán", "BDT Bangladesh": "hora de verán de Bangladesh", "BNT": "hora de Brunei Darussalam", "BOT": "hora de Bolivia", "BRST": "hora de verán de Brasilia", "BRT": "hora estándar de Brasilia", "BST Bangladesh": "hora estándar de Bangladesh", "BT": "hora de Bután", "CAST": "CAST", "CAT": "hora de África Central", "CCT": "hora das Illas Cocos", "CDT": "hora de verán central, Norteamérica", "CHADT": "hora de verán de Chatham", "CHAST": "hora estándar de Chatham", "CHUT": "hora de Chuuk", "CKT": "hora estándar das Illas Cook", "CKT DST": "hora de verán medio das Illas Cook", "CLST": "hora de verán de Chile", "CLT": "hora estándar de Chile", "COST": "hora de verán de Colombia", "COT": "hora estándar de Colombia", "CST": "hora estándar central, Norteamérica", "CST China": "hora estándar da China", "CST China DST": "hora de verán da China", "CVST": "hora de verán de Cabo Verde", "CVT": "hora estándar de Cabo Verde", "CXT": "hora da Illa Christmas", "ChST": "hora estándar chamorro", "ChST NMI": "ChST NMI", "CuDT": "hora de verán de Cuba", "CuST": "hora estándar de Cuba", "DAVT": "hora de Davis", "DDUT": "hora de Dumont-d’Urville", "EASST": "hora de verán da Illa de Pascua", "EAST": "hora estándar da Illa de Pascua", "EAT": "hora de África Oriental", "ECT": "hora de Ecuador", "EDT": "hora de verán do leste, América do Norte", "EGDT": "hora de verán de Groenlandia Oriental", "EGST": "hora estándar de Groenlandia Oriental", "EST": "hora estándar do leste, América do Norte", "FEET": "hora do extremo leste europeo", "FJT": "hora estándar de Fixi", "FJT Summer": "hora de verán de Fixi", "FKST": "hora de verán das Illas Malvinas", "FKT": "hora estándar das Illas Malvinas", "FNST": "hora de verán de Fernando de Noronha", "FNT": "hora estándar de Fernando de Noronha", "GALT": "hora das Galápagos", "GAMT": "hora de Gambier", "GEST": "hora de verán de Xeorxia", "GET": "hora estándar de Xeorxia", "GFT": "hora da Güiana Francesa", "GIT": "hora das Illas Gilbert", "GMT": "hora do meridiano de Greenwich", "GNSST": "GNSST", "GNST": "GNST", "GST": "hora de Xeorxia do Sur", "GST Guam": "GST Guam", "GYT": "hora da Güiana", "HADT": "hora de verán de Hawai-illas Aleutianas", "HAST": "hora estándar de Hawai-illas Aleutianas", "HKST": "hora de verán de Hong Kong", "HKT": "hora estándar de Hong Kong", "HOVST": "hora de verán de Hovd", "HOVT": "hora estándar de Hovd", "ICT": "hora de Indochina", "IDT": "hora de verán de Israel", "IOT": "hora do Océano Índico", "IRKST": "hora de verán de Irkutsk", "IRKT": "hora estándar de Irkutsk", "IRST": "hora estándar de Irán", "IRST DST": "hora de verán de Irán", "IST": "hora da India", "IST Israel": "hora estándar de Israel", "JDT": "hora de verán do Xapón", "JST": "hora estándar do Xapón", "KOST": "hora de Kosrae", "KRAST": "hora de verán de Krasnoiarsk", "KRAT": "hora estándar de Krasnoiarsk", "KST": "hora estándar de Corea", "KST DST": "hora de verán de Corea", "LHDT": "hora de verán de Lord Howe", "LHST": "hora estándar de Lord Howe", "LINT": "hora das Illas da Liña", "MAGST": "hora de verán de Magadan", "MAGT": "hora estándar de Magadan", "MART": "hora das Marquesas", "MAWT": "hora de Mawson", "MDT": "MDT", "MESZ": "hora de verán de Europa Central", "MEZ": "hora estándar de Europa Central", "MHT": "hora das Illas Marshall", "MMT": "hora de Myanmar", "MSD": "hora de verán de Moscova", "MST": "MST", "MUST": "hora de verán de Mauricio", "MUT": "hora estándar de Mauricio", "MVT": "hora das Maldivas", "MYT": "hora de Malaisia", "NCT": "hora estándar de Nova Caledonia", "NDT": "hora de verán de Terra Nova", "NDT New Caledonia": "hora de verán de Nova Caledonia", "NFDT": "hora de verán da Illa Norfolk", "NFT": "hora estándar da Illa Norfolk", "NOVST": "hora de verán de Novosibirsk", "NOVT": "hora estándar de Novosibirsk", "NPT": "hora de Nepal", "NRT": "hora de Nauru", "NST": "hora estándar de Terra Nova", "NUT": "hora de Niue", "NZDT": "hora de verán de Nova Zelandia", "NZST": "hora estándar de Nova Zelandia", "OESZ": "hora de verán de Europa Oriental", "OEZ": "hora estándar de Europa Oriental", "OMSST": "hora de verán de Omsk", "OMST": "hora estándar de Omsk", "PDT": "hora de verán do Pacífico, América do Norte", "PDTM": "hora de verán do Pacífico mexicano", "PETDT": "Horario de verán de Petropávlovsk-Kamchatski", "PETST": "Horario estándar de Petropávlovsk-Kamchatski", "PGT": "hora de Papúa-Nova Guinea", "PHOT": "hora das Illas Fénix", "PKT": "hora estándar de Paquistán", "PKT DST": "hora de verán de Paquistán", "PMDT": "hora de verán de Saint Pierre et Miquelon", "PMST": "hora estándar de Saint Pierre et Miquelon", "PONT": "hora de Pohnpei", "PST": "hora estándar do Pacífico, América do Norte", "PST Philippine": "hora estándar de Filipinas", "PST Philippine DST": "hora de verán de Filipinas", "PST Pitcairn": "hora de Pitcairn", "PSTM": "hora estándar do Pacífico mexicano", "PWT": "hora de Palau", "PYST": "hora de verán do Paraguai", "PYT": "hora estándar do Paraguai", "PYT Korea": "hora de Pyongyang", "RET": "hora de Reunión", "ROTT": "hora de Rothera", "SAKST": "hora de verán de Sakhalín", "SAKT": "hora estándar de Sakhalín", "SAMST": "Horario de verán de Samara", "SAMT": "Horario estándar de Samara", "SAST": "hora de África Meridional", "SBT": "hora das Illas Salomón", "SCT": "hora das Seychelles", "SGT": "hora de Singapur", "SLST": "SLST", "SRT": "hora de Suriname", "SST Samoa": "hora estándar de Samoa", "SST Samoa Apia": "hora estándar de Apia", "SST Samoa Apia DST": "hora de verán de Apia", "SST Samoa DST": "hora de verán de Samoa", "SYOT": "hora de Syowa", "TAAF": "hora das Terras Austrais e Antárticas Francesas", "TAHT": "hora de Tahití", "TJT": "hora de Taxiquistán", "TKT": "hora de Tokelau", "TLT": "hora de Timor Leste", "TMST": "hora de verán de Turkmenistán", "TMT": "hora estándar de Turkmenistán", "TOST": "hora de verán de Tonga", "TOT": "hora estándar de Tonga", "TVT": "hora de Tuvalu", "TWT": "hora estándar de Taipei", "TWT DST": "hora de verán de Taipei", "ULAST": "hora de verán de Ulaanbaatar", "ULAT": "hora estándar de Ulaanbaatar", "UYST": "hora de verán do Uruguai", "UYT": "hora estándar do Uruguai", "UZT": "hora estándar de Uzbekistán", "UZT DST": "hora de verán de Uzbekistán", "VET": "hora de Venezuela", "VLAST": "hora de verán de Vladivostok", "VLAT": "hora estándar de Vladivostok", "VOLST": "hora de verán de Volgogrado", "VOLT": "hora estándar de Volgogrado", "VOST": "hora de Vostok", "VUT": "hora estándar de Vanuatu", "VUT DST": "hora de verán de Vanuatu", "WAKT": "hora da Illa Wake", "WARST": "hora de verán da Arxentina Occidental", "WART": "hora estándar da Arxentina Occidental", "WAST": "hora de África Occidental", "WAT": "hora de África Occidental", "WESZ": "hora de verán de Europa Occidental", "WEZ": "hora estándar de Europa Occidental", "WFT": "hora de Wallis e Futuna", "WGST": "hora de verán de Groenlandia Occidental", "WGT": "hora estándar de Groenlandia Occidental", "WIB": "hora de Indonesia Occidental", "WIT": "hora de Indonesia Oriental", "WITA": "hora de Indonesia Central", "YAKST": "hora de verán de Iakutsk", "YAKT": "hora estándar de Iakutsk", "YEKST": "hora de verán de Ekaterimburgo", "YEKT": "hora estándar de Ekaterimburgo", "YST": "hora de Yukon", "МСК": "hora estándar de Moscova", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "hora de Kazakistán Occidental", "شىعىش قازاق ەلى": "hora de Kazakistán Oriental", "قازاق ەلى": "hora de Kazakistán", "قىرعىزستان": "hora de Kirguizistán", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "hora de verán dos Azores"},
 	}
 }
 
@@ -84,6 +84,7 @@ func (gl *gl) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'gl'
 func (gl *gl) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 	i := int64(n)
 
@@ -101,6 +102,7 @@ func (gl *gl) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'gl'
 func (gl *gl) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
+
 	start := gl.CardinalPluralRule(num1, v1)
 	end := gl.CardinalPluralRule(num2, v2)
 
@@ -111,6 +113,7 @@ func (gl *gl) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) 
 	}
 
 	return locales.PluralRuleOther
+
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -221,6 +224,7 @@ func (gl *gl) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'gl' and handles both Whole and Real numbers based on 'v'
 func (gl *gl) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -294,6 +298,7 @@ func (gl *gl) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'gl'
 func (gl *gl) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gl.currencies[currency]
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
@@ -351,6 +356,7 @@ func (gl *gl) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'gl'
 // in accounting notation.
 func (gl *gl) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gl.currencies[currency]
 	l := len(s) + len(symbol) + 6 + 1*len(s[:len(s)-int(v)-1])/3
@@ -379,7 +385,9 @@ func (gl *gl) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 	}
 
 	if num < 0 {
+
 		b = append(b, gl.currencyNegativePrefix[0])
+
 	}
 
 	// reverse
@@ -412,6 +420,7 @@ func (gl *gl) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 // FmtDateShort returns the short date representation of 't' for 'gl'
 func (gl *gl) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -440,6 +449,7 @@ func (gl *gl) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'gl'
 func (gl *gl) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -460,6 +470,7 @@ func (gl *gl) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'gl'
 func (gl *gl) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -480,6 +491,7 @@ func (gl *gl) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'gl'
 func (gl *gl) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, gl.daysWide[t.Weekday()]...)
@@ -502,6 +514,7 @@ func (gl *gl) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'gl'
 func (gl *gl) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -522,6 +535,7 @@ func (gl *gl) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'gl'
 func (gl *gl) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -549,6 +563,7 @@ func (gl *gl) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'gl'
 func (gl *gl) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -580,6 +595,7 @@ func (gl *gl) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'gl'
 func (gl *gl) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

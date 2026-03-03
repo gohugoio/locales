@@ -41,14 +41,14 @@ func New() locales.Translator {
 		pluralsOrdinal:         []locales.PluralRule{6},
 		pluralsRange:           []locales.PluralRule{2, 4, 5, 6},
 		decimal:                ",",
-		group:                  " ",
+		group:                  " ",
 		minus:                  "−",
 		percent:                "%",
 		timeSeparator:          ":",
 		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "Br", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "zl", "PLZ", "PTE", "Gs", "QAR", "RHD", "ROL", "RON", "RSD", "rb", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
-		percentSuffix:          " ",
-		currencyPositiveSuffix: " ",
-		currencyNegativeSuffix: " ",
+		percentSuffix:          " ",
+		currencyPositiveSuffix: " ",
+		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "saus.", "vas.", "kov.", "bal.", "geg.", "birž.", "liep.", "rugp.", "rugs.", "spal.", "lapkr.", "gruod."},
 		monthsNarrow:           []string{"", "S", "V", "K", "B", "G", "B", "L", "R", "R", "S", "L", "G"},
 		monthsWide:             []string{"", "sausio", "vasario", "kovo", "balandžio", "gegužės", "birželio", "liepos", "rugpjūčio", "rugsėjo", "spalio", "lapkričio", "gruodžio"},
@@ -56,7 +56,7 @@ func New() locales.Translator {
 		daysNarrow:             []string{"S", "P", "A", "T", "K", "P", "Š"},
 		daysShort:              []string{"Sk", "Pr", "An", "Tr", "Kt", "Pn", "Št"},
 		daysWide:               []string{"sekmadienis", "pirmadienis", "antradienis", "trečiadienis", "ketvirtadienis", "penktadienis", "šeštadienis"},
-		timezones:              map[string]string{"ACDT": "Centrinės Australijos vasaros laikas", "ACST": "Centrinės Australijos žiemos laikas", "ACT": "Ako standartinis laikas", "ACWDT": "Centrinės vakarų Australijos vasaros laikas", "ACWST": "Centrinės vakarų Australijos žiemos laikas", "ADT": "Atlanto vasaros laikas", "ADT Arabia": "Arabijos vasaros laikas", "AEDT": "Rytų Australijos vasaros laikas", "AEST": "Rytų Australijos žiemos laikas", "AFT": "Afganistano laikas", "AKDT": "Aliaskos vasaros laikas", "AKST": "Aliaskos žiemos laikas", "AMST": "Amazonės vasaros laikas", "AMST Armenia": "Armėnijos vasaros laikas", "AMT": "Amazonės žiemos laikas", "AMT Armenia": "Armėnijos žiemos laikas", "ANAST": "Anadyrės vasaros laikas", "ANAT": "Anadyrės žiemos laikas", "ARST": "Argentinos vasaros laikas", "ART": "Argentinos žiemos laikas", "AST": "Atlanto žiemos laikas", "AST Arabia": "Arabijos žiemos laikas", "AWDT": "Vakarų Australijos vasaros laikas", "AWST": "Vakarų Australijos žiemos laikas", "AZST": "Azerbaidžano vasaros laikas", "AZT": "Azerbaidžano žiemos laikas", "BDT Bangladesh": "Bangladešo vasaros laikas", "BNT": "Brunėjaus Darusalamo laikas", "BOT": "Bolivijos laikas", "BRST": "Brazilijos vasaros laikas", "BRT": "Brazilijos žiemos laikas", "BST Bangladesh": "Bangladešo žiemos laikas", "BT": "Butano laikas", "CAST": "Keisio laikas", "CAT": "Centrinės Afrikos laikas", "CCT": "Kokosų Salų laikas", "CDT": "Šiaurės Amerikos centro vasaros laikas", "CHADT": "Čatamo vasaros laikas", "CHAST": "Čatamo žiemos laikas", "CHUT": "Čuko laikas", "CKT": "Kuko Salų žiemos laikas", "CKT DST": "Kuko Salų pusės vasaros laikas", "CLST": "Čilės vasaros laikas", "CLT": "Čilės žiemos laikas", "COST": "Kolumbijos vasaros laikas", "COT": "Kolumbijos žiemos laikas", "CST": "Šiaurės Amerikos centro žiemos laikas", "CST China": "Kinijos žiemos laikas", "CST China DST": "Kinijos vasaros laikas", "CVST": "Žaliojo Kyšulio vasaros laikas", "CVT": "Žaliojo Kyšulio žiemos laikas", "CXT": "Kalėdų Salos laikas", "ChST": "Čamoro laikas", "ChST NMI": "Šiaurės Marianos Salų laikas", "CuDT": "Kubos vasaros laikas", "CuST": "Kubos žiemos laikas", "DAVT": "Deiviso laikas", "DDUT": "Diumono d’Urvilio laikas", "EASST": "Velykų Salos vasaros laikas", "EAST": "Velykų salos žiemos laikas", "EAT": "Rytų Afrikos laikas", "ECT": "Ekvadoro laikas", "EDT": "Šiaurės Amerikos rytų vasaros laikas", "EGDT": "Grenlandijos rytų vasaros laikas", "EGST": "Grenlandijos rytų žiemos laikas", "EST": "Šiaurės Amerikos rytų žiemos laikas", "FEET": "Tolimųjų rytų Europos laikas", "FJT": "Fidžio žiemos laikas", "FJT Summer": "Fidžio vasaros laikas", "FKST": "Folklando Salų vasaros laikas", "FKT": "Folklandų Salų žiemos laikas", "FNST": "Fernando de Noronjos vasaros laikas", "FNT": "Fernando de Noronjos žiemos laikas", "GALT": "Galapagų laikas", "GAMT": "Gambyro laikas", "GEST": "Gruzijos vasaros laikas", "GET": "Gruzijos žiemos laikas", "GFT": "Prancūzijos Gvianos laikas", "GIT": "Gilberto Salų laikas", "GMT": "Grinvičo laikas", "GNSST": "GNSST", "GNST": "GNST", "GST": "Persijos įlankos laikas", "GST Guam": "Guamo laikas", "GYT": "Gajanos laikas", "HADT": "Havajų–Aleutų vasaros laikas", "HAST": "Havajų–Aleutų žiemos laikas", "HKST": "Honkongo vasaros laikas", "HKT": "Honkongo žiemos laikas", "HOVST": "Hovdo vasaros laikas", "HOVT": "Hovdo žiemos laikas", "ICT": "Indokinijos laikas", "IDT": "Izraelio vasaros laikas", "IOT": "Indijos vandenyno laikas", "IRKST": "Irkutsko vasaros laikas", "IRKT": "Irkutsko žiemos laikas", "IRST": "Irano žiemos laikas", "IRST DST": "Irano vasaros laikas", "IST": "Indijos laikas", "IST Israel": "Izraelio žiemos laikas", "JDT": "Japonijos vasaros laikas", "JST": "Japonijos žiemos laikas", "KOST": "Kosrajė laikas", "KRAST": "Krasnojarsko vasaros laikas", "KRAT": "Krasnojarsko žiemos laikas", "KST": "Korėjos žiemos laikas", "KST DST": "Korėjos vasaros laikas", "LHDT": "Lordo Hau vasaros laikas", "LHST": "Lordo Hau žiemos laikas", "LINT": "Laino Salų laikas", "MAGST": "Magadano vasaros laikas", "MAGT": "Magadano žiemos laikas", "MART": "Markizo Salų laikas", "MAWT": "Mosono laikas", "MDT": "Makau vasaros laikas", "MESZ": "Vidurio Europos vasaros laikas", "MEZ": "Vidurio Europos žiemos laikas", "MHT": "Maršalo Salų laikas", "MMT": "Mianmaro laikas", "MSD": "Maskvos vasaros laikas", "MST": "Makau žiemos laikas", "MUST": "Mauricijaus vasaros laikas", "MUT": "Mauricijaus žiemos laikas", "MVT": "Maldyvų laikas", "MYT": "Malaizijos laikas", "NCT": "Naujosios Kaledonijos žiemos laikas", "NDT": "Niufaundlendo vasaros laikas", "NDT New Caledonia": "Naujosios Kaledonijos vasaros laikas", "NFDT": "Norfolko Salų vasaros laikas", "NFT": "Norfolko Salų žiemos laikas", "NOVST": "Novosibirsko vasaros laikas", "NOVT": "Novosibirsko žiemos laikas", "NPT": "Nepalo laikas", "NRT": "Nauru laikas", "NST": "Niufaundlendo žiemos laikas", "NUT": "Niujė laikas", "NZDT": "Naujosios Zelandijos vasaros laikas", "NZST": "Naujosios Zelandijos žiemos laikas", "OESZ": "Rytų Europos vasaros laikas", "OEZ": "Rytų Europos žiemos laikas", "OMSST": "Omsko vasaros laikas", "OMST": "Omsko žiemos laikas", "PDT": "Šiaurės Amerikos Ramiojo vandenyno vasaros laikas", "PDTM": "Meksikos Ramiojo vandenyno vasaros laikas", "PETDT": "Kamčiatkos Petropavlovsko vasaros laikas", "PETST": "Kamčiatkos Petropavlovsko žiemos laikas", "PGT": "Papua Naujosios Gvinėjos laikas", "PHOT": "Fenikso Salų laikas", "PKT": "Pakistano žiemos laikas", "PKT DST": "Pakistano vasaros laikas", "PMDT": "Sen Pjero ir Mikelono vasaros laikas", "PMST": "Sen Pjero ir Mikelono žiemos laikas", "PONT": "Ponapės laikas", "PST": "Šiaurės Amerikos Ramiojo vandenyno žiemos laikas", "PST Philippine": "Filipinų žiemos laikas", "PST Philippine DST": "Filipinų vasaros laikas", "PST Pitcairn": "Pitkerno laikas", "PSTM": "Meksikos Ramiojo vandenyno žiemos laikas", "PWT": "Palau laikas", "PYST": "Paragvajaus vasaros laikas", "PYT": "Paragvajaus žiemos laikas", "PYT Korea": "Pchenjano laikas", "RET": "Reunjono laikas", "ROTT": "Roteros laikas", "SAKST": "Sachalino vasaros laikas", "SAKT": "Sachalino žiemos laikas", "SAMST": "Samaros vasaros laikas", "SAMT": "Samaros žiemos laikas", "SAST": "Pietų Afrikos laikas", "SBT": "Saliamono Salų laikas", "SCT": "Seišelių laikas", "SGT": "Singapūro laikas", "SLST": "Lankos laikas", "SRT": "Surinamo laikas", "SST Samoa": "Samoa žiemos laikas", "SST Samoa Apia": "Apijos žiemos laikas", "SST Samoa Apia DST": "Apijos vasaros laikas", "SST Samoa DST": "Samoa vasaros laikas", "SYOT": "Siovos laikas", "TAAF": "Pietų Prancūzijos ir antarktinis laikas", "TAHT": "Tahičio laikas", "TJT": "Tadžikistano laikas", "TKT": "Tokelau laikas", "TLT": "Rytų Timoro laikas", "TMST": "Turkmėnistano vasaros laikas", "TMT": "Turkmėnistano žiemos laikas", "TOST": "Tongos vasaros laikas", "TOT": "Tongos žiemos laikas", "TVT": "Tuvalu laikas", "TWT": "Taipėjaus žiemos laikas", "TWT DST": "Taipėjaus vasaros laikas", "ULAST": "Ulan Batoro vasaros laikas", "ULAT": "Ulan Batoro žiemos laikas", "UYST": "Urugvajaus vasaros laikas", "UYT": "Urugvajaus žiemos laikas", "UZT": "Uzbekistano žiemos laikas", "UZT DST": "Uzbekistano vasaros laikas", "VET": "Venesuelos laikas", "VLAST": "Vladivostoko vasaros laikas", "VLAT": "Vladivostoko žiemos laikas", "VOLST": "Volgogrado vasaros laikas", "VOLT": "Volgogrado žiemos laikas", "VOST": "Vostoko laikas", "VUT": "Vanuatu žiemos laikas", "VUT DST": "Vanuatu vasaros laikas", "WAKT": "Veiko Salos laikas", "WARST": "Vakarų Argentinos vasaros laikas", "WART": "Vakarų Argentinos žiemos laikas", "WAST": "Vakarų Afrikos laikas", "WAT": "Vakarų Afrikos laikas", "WESZ": "Vakarų Europos vasaros laikas", "WEZ": "Vakarų Europos žiemos laikas", "WFT": "Voliso ir Futūnos laikas", "WGST": "Grenlandijos vakarų vasaros laikas", "WGT": "Grenlandijos vakarų žiemos laikas", "WIB": "Vakarų Indonezijos laikas", "WIT": "Rytų Indonezijos laikas", "WITA": "Centrinės Indonezijos laikas", "YAKST": "Jakutsko vasaros laikas", "YAKT": "Jakutsko žiemos laikas", "YEKST": "Jekaterinburgo vasaros laikas", "YEKT": "Jekaterinburgo žiemos laikas", "YST": "Jukono laikas", "МСК": "Maskvos žiemos laikas", "اقتاۋ": "Aktau žiemos laikas", "اقتاۋ قالاسى": "Aktau vasaros laikas", "اقتوبە": "Aktobės žiemos laikas", "اقتوبە قالاسى": "Aktobės vasaros laikas", "الماتى": "Almatos žiemos laikas", "الماتى قالاسى": "Almatos vasaros laikas", "باتىس قازاق ەلى": "Vakarų Kazachstano laikas", "شىعىش قازاق ەلى": "Rytų Kazachstano laikas", "قازاق ەلى": "Kazachstano laikas", "قىرعىزستان": "Kirgistano laikas", "قىزىلوردا": "Kyzylordos žiemos laikas", "قىزىلوردا قالاسى": "Kyzylordos vasaros laikas", "∅∅∅": "Azorų Salų vasaros laikas"},
+		timezones:              map[string]string{"ACDT": "Centrinės Australijos vasaros laikas", "ACST": "Centrinės Australijos žiemos laikas", "ACT": "Ako standartinis laikas", "ACWDT": "Centrinės vakarų Australijos vasaros laikas", "ACWST": "Centrinės vakarų Australijos žiemos laikas", "ADT": "Atlanto vasaros laikas", "ADT Arabia": "Arabijos vasaros laikas", "AEDT": "Rytų Australijos vasaros laikas", "AEST": "Rytų Australijos žiemos laikas", "AFT": "Afganistano laikas", "AKDT": "Aliaskos vasaros laikas", "AKST": "Aliaskos žiemos laikas", "AMST": "Amazonės vasaros laikas", "AMST Armenia": "Armėnijos vasaros laikas", "AMT": "Amazonės žiemos laikas", "AMT Armenia": "Armėnijos žiemos laikas", "ANAST": "Anadyrės vasaros laikas", "ANAT": "Anadyrės žiemos laikas", "ARST": "Argentinos vasaros laikas", "ART": "Argentinos žiemos laikas", "AST": "Atlanto žiemos laikas", "AST Arabia": "Arabijos žiemos laikas", "AWDT": "Vakarų Australijos vasaros laikas", "AWST": "Vakarų Australijos žiemos laikas", "AZST": "Azerbaidžano vasaros laikas", "AZT": "Azerbaidžano žiemos laikas", "BDT Bangladesh": "Bangladešo vasaros laikas", "BNT": "Brunėjaus Darusalamo laikas", "BOT": "Bolivijos laikas", "BRST": "Brazilijos vasaros laikas", "BRT": "Brazilijos žiemos laikas", "BST Bangladesh": "Bangladešo žiemos laikas", "BT": "Butano laikas", "CAST": "Keisio laikas", "CAT": "Centrinės Afrikos laikas", "CCT": "Kokosų Salų laikas", "CDT": "Šiaurės Amerikos centro vasaros laikas", "CHADT": "Čatamo vasaros laikas", "CHAST": "Čatamo žiemos laikas", "CHUT": "Čuko laikas", "CKT": "Kuko Salų žiemos laikas", "CKT DST": "Kuko Salų pusės vasaros laikas", "CLST": "Čilės vasaros laikas", "CLT": "Čilės žiemos laikas", "COST": "Kolumbijos vasaros laikas", "COT": "Kolumbijos žiemos laikas", "CST": "Šiaurės Amerikos centro žiemos laikas", "CST China": "Kinijos žiemos laikas", "CST China DST": "Kinijos vasaros laikas", "CVST": "Žaliojo Kyšulio vasaros laikas", "CVT": "Žaliojo Kyšulio žiemos laikas", "CXT": "Kalėdų Salos laikas", "ChST": "Čamoro laikas", "ChST NMI": "Šiaurės Marianos Salų laikas", "CuDT": "Kubos vasaros laikas", "CuST": "Kubos žiemos laikas", "DAVT": "Deiviso laikas", "DDUT": "Diumono d’Urvilio laikas", "EASST": "Velykų Salos vasaros laikas", "EAST": "Velykų salos žiemos laikas", "EAT": "Rytų Afrikos laikas", "ECT": "Ekvadoro laikas", "EDT": "Šiaurės Amerikos rytų vasaros laikas", "EGDT": "Grenlandijos rytų vasaros laikas", "EGST": "Grenlandijos rytų žiemos laikas", "EST": "Šiaurės Amerikos rytų žiemos laikas", "FEET": "Tolimųjų rytų Europos laikas", "FJT": "Fidžio žiemos laikas", "FJT Summer": "Fidžio vasaros laikas", "FKST": "Folklando Salų vasaros laikas", "FKT": "Folklandų Salų žiemos laikas", "FNST": "Fernando de Noronjos vasaros laikas", "FNT": "Fernando de Noronjos žiemos laikas", "GALT": "Galapagų laikas", "GAMT": "Gambyro laikas", "GEST": "Gruzijos vasaros laikas", "GET": "Gruzijos žiemos laikas", "GFT": "Prancūzijos Gvianos laikas", "GIT": "Gilberto Salų laikas", "GMT": "Grinvičo laikas", "GNSST": "GNSST", "GNST": "GNST", "GST": "Pietų Džordžijos laikas", "GST Guam": "Guamo laikas", "GYT": "Gajanos laikas", "HADT": "Havajų–Aleutų vasaros laikas", "HAST": "Havajų–Aleutų žiemos laikas", "HKST": "Honkongo vasaros laikas", "HKT": "Honkongo žiemos laikas", "HOVST": "Hovdo vasaros laikas", "HOVT": "Hovdo žiemos laikas", "ICT": "Indokinijos laikas", "IDT": "Izraelio vasaros laikas", "IOT": "Indijos vandenyno laikas", "IRKST": "Irkutsko vasaros laikas", "IRKT": "Irkutsko žiemos laikas", "IRST": "Irano žiemos laikas", "IRST DST": "Irano vasaros laikas", "IST": "Indijos laikas", "IST Israel": "Izraelio žiemos laikas", "JDT": "Japonijos vasaros laikas", "JST": "Japonijos žiemos laikas", "KOST": "Kosrajė laikas", "KRAST": "Krasnojarsko vasaros laikas", "KRAT": "Krasnojarsko žiemos laikas", "KST": "Korėjos žiemos laikas", "KST DST": "Korėjos vasaros laikas", "LHDT": "Lordo Hau vasaros laikas", "LHST": "Lordo Hau žiemos laikas", "LINT": "Laino Salų laikas", "MAGST": "Magadano vasaros laikas", "MAGT": "Magadano žiemos laikas", "MART": "Markizo Salų laikas", "MAWT": "Mosono laikas", "MDT": "Makau vasaros laikas", "MESZ": "Vidurio Europos vasaros laikas", "MEZ": "Vidurio Europos žiemos laikas", "MHT": "Maršalo Salų laikas", "MMT": "Mianmaro laikas", "MSD": "Maskvos vasaros laikas", "MST": "Makau žiemos laikas", "MUST": "Mauricijaus vasaros laikas", "MUT": "Mauricijaus žiemos laikas", "MVT": "Maldyvų laikas", "MYT": "Malaizijos laikas", "NCT": "Naujosios Kaledonijos žiemos laikas", "NDT": "Niufaundlendo vasaros laikas", "NDT New Caledonia": "Naujosios Kaledonijos vasaros laikas", "NFDT": "Norfolko Salų vasaros laikas", "NFT": "Norfolko Salų žiemos laikas", "NOVST": "Novosibirsko vasaros laikas", "NOVT": "Novosibirsko žiemos laikas", "NPT": "Nepalo laikas", "NRT": "Nauru laikas", "NST": "Niufaundlendo žiemos laikas", "NUT": "Niujė laikas", "NZDT": "Naujosios Zelandijos vasaros laikas", "NZST": "Naujosios Zelandijos žiemos laikas", "OESZ": "Rytų Europos vasaros laikas", "OEZ": "Rytų Europos žiemos laikas", "OMSST": "Omsko vasaros laikas", "OMST": "Omsko žiemos laikas", "PDT": "Šiaurės Amerikos Ramiojo vandenyno vasaros laikas", "PDTM": "Meksikos Ramiojo vandenyno vasaros laikas", "PETDT": "Kamčiatkos Petropavlovsko vasaros laikas", "PETST": "Kamčiatkos Petropavlovsko žiemos laikas", "PGT": "Papua Naujosios Gvinėjos laikas", "PHOT": "Fenikso Salų laikas", "PKT": "Pakistano žiemos laikas", "PKT DST": "Pakistano vasaros laikas", "PMDT": "Sen Pjero ir Mikelono vasaros laikas", "PMST": "Sen Pjero ir Mikelono žiemos laikas", "PONT": "Ponapės laikas", "PST": "Šiaurės Amerikos Ramiojo vandenyno žiemos laikas", "PST Philippine": "Filipinų žiemos laikas", "PST Philippine DST": "Filipinų vasaros laikas", "PST Pitcairn": "Pitkerno laikas", "PSTM": "Meksikos Ramiojo vandenyno žiemos laikas", "PWT": "Palau laikas", "PYST": "Paragvajaus vasaros laikas", "PYT": "Paragvajaus žiemos laikas", "PYT Korea": "Pchenjano laikas", "RET": "Reunjono laikas", "ROTT": "Roteros laikas", "SAKST": "Sachalino vasaros laikas", "SAKT": "Sachalino žiemos laikas", "SAMST": "Samaros vasaros laikas", "SAMT": "Samaros žiemos laikas", "SAST": "Pietų Afrikos laikas", "SBT": "Saliamono Salų laikas", "SCT": "Seišelių laikas", "SGT": "Singapūro laikas", "SLST": "Lankos laikas", "SRT": "Surinamo laikas", "SST Samoa": "Samoa žiemos laikas", "SST Samoa Apia": "Apijos žiemos laikas", "SST Samoa Apia DST": "Apijos vasaros laikas", "SST Samoa DST": "Samoa vasaros laikas", "SYOT": "Siovos laikas", "TAAF": "Pietų Prancūzijos ir antarktinis laikas", "TAHT": "Tahičio laikas", "TJT": "Tadžikistano laikas", "TKT": "Tokelau laikas", "TLT": "Rytų Timoro laikas", "TMST": "Turkmėnistano vasaros laikas", "TMT": "Turkmėnistano žiemos laikas", "TOST": "Tongos vasaros laikas", "TOT": "Tongos žiemos laikas", "TVT": "Tuvalu laikas", "TWT": "Taipėjaus žiemos laikas", "TWT DST": "Taipėjaus vasaros laikas", "ULAST": "Ulan Batoro vasaros laikas", "ULAT": "Ulan Batoro žiemos laikas", "UYST": "Urugvajaus vasaros laikas", "UYT": "Urugvajaus žiemos laikas", "UZT": "Uzbekistano žiemos laikas", "UZT DST": "Uzbekistano vasaros laikas", "VET": "Venesuelos laikas", "VLAST": "Vladivostoko vasaros laikas", "VLAT": "Vladivostoko žiemos laikas", "VOLST": "Volgogrado vasaros laikas", "VOLT": "Volgogrado žiemos laikas", "VOST": "Vostoko laikas", "VUT": "Vanuatu žiemos laikas", "VUT DST": "Vanuatu vasaros laikas", "WAKT": "Veiko Salos laikas", "WARST": "Vakarų Argentinos vasaros laikas", "WART": "Vakarų Argentinos žiemos laikas", "WAST": "Vakarų Afrikos laikas", "WAT": "Vakarų Afrikos laikas", "WESZ": "Vakarų Europos vasaros laikas", "WEZ": "Vakarų Europos žiemos laikas", "WFT": "Voliso ir Futūnos laikas", "WGST": "Grenlandijos vakarų vasaros laikas", "WGT": "Grenlandijos vakarų žiemos laikas", "WIB": "Vakarų Indonezijos laikas", "WIT": "Rytų Indonezijos laikas", "WITA": "Centrinės Indonezijos laikas", "YAKST": "Jakutsko vasaros laikas", "YAKT": "Jakutsko žiemos laikas", "YEKST": "Jekaterinburgo vasaros laikas", "YEKT": "Jekaterinburgo žiemos laikas", "YST": "Jukono laikas", "МСК": "Maskvos žiemos laikas", "اقتاۋ": "Aktau žiemos laikas", "اقتاۋ قالاسى": "Aktau vasaros laikas", "اقتوبە": "Aktobės žiemos laikas", "اقتوبە قالاسى": "Aktobės vasaros laikas", "الماتى": "Almatos žiemos laikas", "الماتى قالاسى": "Almatos vasaros laikas", "باتىس قازاق ەلى": "Vakarų Kazachstano laikas", "شىعىش قازاق ەلى": "Rytų Kazachstano laikas", "قازاق ەلى": "Kazachstano laikas", "قىرعىزستان": "Kirgistano laikas", "قىزىلوردا": "Kyzylordos žiemos laikas", "قىزىلوردا قالاسى": "Kyzylordos vasaros laikas", "∅∅∅": "Azorų Salų vasaros laikas"},
 	}
 }
 
@@ -82,6 +82,7 @@ func (lt *lt) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'lt'
 func (lt *lt) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 	f := locales.F(n, v)
 	nMod10 := math.Mod(n, 10)
@@ -105,6 +106,7 @@ func (lt *lt) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'lt'
 func (lt *lt) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
+
 	start := lt.CardinalPluralRule(num1, v1)
 	end := lt.CardinalPluralRule(num2, v2)
 
@@ -141,6 +143,7 @@ func (lt *lt) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) 
 	}
 
 	return locales.PluralRuleOther
+
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -251,6 +254,7 @@ func (lt *lt) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'lt' and handles both Whole and Real numbers based on 'v'
 func (lt *lt) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -330,6 +334,7 @@ func (lt *lt) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'lt'
 func (lt *lt) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := lt.currencies[currency]
 	l := len(s) + len(symbol) + 6 + 2*len(s[:len(s)-int(v)-1])/3
@@ -391,6 +396,7 @@ func (lt *lt) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'lt'
 // in accounting notation.
 func (lt *lt) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := lt.currencies[currency]
 	l := len(s) + len(symbol) + 6 + 2*len(s[:len(s)-int(v)-1])/3
@@ -421,9 +427,11 @@ func (lt *lt) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 	}
 
 	if num < 0 {
+
 		for j := len(lt.minus) - 1; j >= 0; j-- {
 			b = append(b, lt.minus[j])
 		}
+
 	}
 
 	// reverse
@@ -456,6 +464,7 @@ func (lt *lt) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 // FmtDateShort returns the short date representation of 't' for 'lt'
 func (lt *lt) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -485,6 +494,7 @@ func (lt *lt) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'lt'
 func (lt *lt) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -514,6 +524,7 @@ func (lt *lt) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'lt'
 func (lt *lt) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -535,6 +546,7 @@ func (lt *lt) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'lt'
 func (lt *lt) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -557,6 +569,7 @@ func (lt *lt) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'lt'
 func (lt *lt) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -577,6 +590,7 @@ func (lt *lt) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'lt'
 func (lt *lt) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -604,6 +618,7 @@ func (lt *lt) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'lt'
 func (lt *lt) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -635,6 +650,7 @@ func (lt *lt) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'lt'
 func (lt *lt) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

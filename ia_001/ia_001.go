@@ -21,7 +21,6 @@ type ia_001 struct {
 	timeSeparator          string
 	currencies             []string // idx = enum of currency code
 	currencyPositivePrefix string
-	currencyPositiveSuffix string
 	currencyNegativePrefix string
 	currencyNegativeSuffix string
 	monthsAbbreviated      []string
@@ -46,10 +45,9 @@ func New() locales.Translator {
 		minus:                  "-",
 		percent:                "%",
 		timeSeparator:          ":",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
-		currencyPositivePrefix: " ",
-		currencyPositiveSuffix: ")",
-		currencyNegativePrefix: " ",
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "ƒ", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "₽", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		currencyPositivePrefix: " ",
+		currencyNegativePrefix: "( ",
 		currencyNegativeSuffix: ")",
 		monthsAbbreviated:      []string{"", "jan", "feb", "mar", "apr", "mai", "jun", "jul", "aug", "sep", "oct", "nov", "dec"},
 		monthsNarrow:           []string{"", "j", "f", "m", "a", "m", "j", "j", "a", "s", "o", "n", "d"},
@@ -58,7 +56,7 @@ func New() locales.Translator {
 		daysNarrow:             []string{"d", "l", "m", "m", "j", "v", "s"},
 		daysShort:              []string{"do", "lu", "ma", "me", "jo", "ve", "sa"},
 		daysWide:               []string{"dominica", "lunedi", "martedi", "mercuridi", "jovedi", "venerdi", "sabbato"},
-		timezones:              map[string]string{"ACDT": "hora estive de Australia central", "ACST": "hora normal de Australia central", "ACT": "hora normal de Acre", "ACWDT": "hora estive de Australia centro-occidental", "ACWST": "hora normal de Australia centro-occidental", "ADT": "hora estive atlantic", "ADT Arabia": "hora estive arabe", "AEDT": "hora estive de Australia oriental", "AEST": "hora normal de Australia oriental", "AFT": "hora de Afghanistan", "AKDT": "hora estive de Alaska", "AKST": "hora normal de Alaska", "AMST": "hora estive de Amazonia", "AMST Armenia": "hora estive de Armenia", "AMT": "hora normal de Amazonia", "AMT Armenia": "hora normal de Armenia", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "hora estive de Argentina", "ART": "hora normal de Argentina", "AST": "hora normal atlantic", "AST Arabia": "hora normal arabe", "AWDT": "hora estive de Australia occidental", "AWST": "hora normal de Australia occidental", "AZST": "hora estive de Azerbeidzhan", "AZT": "hora normal de Azerbeidzhan", "BDT Bangladesh": "hora estive de Bangladesh", "BNT": "hora de Brunei", "BOT": "hora de Bolivia", "BRST": "hora estive de Brasilia", "BRT": "hora normal de Brasilia", "BST Bangladesh": "hora normal de Bangladesh", "BT": "hora de Bhutan", "CAST": "CAST", "CAT": "hora de Africa Central", "CCT": "hora del Insulas Cocos", "CDT": "hora estive central", "CHADT": "hora estive de Chatham", "CHAST": "hora normal de Chatham", "CHUT": "hora de Chuuk", "CKT": "hora normal del Insulas Cook", "CKT DST": "hora estive del Insulas Cook", "CLST": "hora estive de Chile", "CLT": "hora normal de Chile", "COST": "hora estive de Colombia", "COT": "hora normal de Colombia", "CST": "hora normal central", "CST China": "hora normal de China", "CST China DST": "hora estive de China", "CVST": "hora estive de Capo Verde", "CVT": "hora normal de Capo Verde", "CXT": "hora del Insula de Natal", "ChST": "hora normal de Chamorro", "ChST NMI": "ChST NMI", "CuDT": "hora estive de Cuba", "CuST": "hora normal de Cuba", "DAVT": "hora de Davis", "DDUT": "hora de Dumont d’Urville", "EASST": "hora estive del Insula de Pascha", "EAST": "hora normal del Insula de Pascha", "EAT": "hora de Africa del Est", "ECT": "hora de Ecuador", "EDT": "hora estive del est", "EGDT": "hora estive de Groenlandia oriental", "EGST": "hora normal de Groenlandia oriental", "EST": "hora normal del est", "FEET": "hora de Europa ultra-oriental", "FJT": "hora normal de Fiji", "FJT Summer": "hora estive de Fiji", "FKST": "hora estive del Insulas Falkland", "FKT": "hora normal del Insulas Falkland", "FNST": "hora estive de Fernando de Noronha", "FNT": "hora normal de Fernando de Noronha", "GALT": "hora del Galápagos", "GAMT": "hora de Gambier", "GEST": "hora estive de Georgia", "GET": "hora normal de Georgia", "GFT": "hora de Guiana Francese", "GIT": "hora del Insulas Gilbert", "GMT": "hora medie de Greenwich", "GNSST": "hora estive de Groenlandia", "GNST": "hora normal de Groenlandia", "GST": "hora de Georgia del Sud", "GST Guam": "hora normal de Guam", "GYT": "hora de Guyana", "HADT": "hora estive de Hawaii-Aleutianas", "HAST": "hora normal de Hawaii-Aleutianas", "HKST": "hora estive de Hongkong", "HKT": "hora normal de Hongkong", "HOVST": "hora estive de Khovd", "HOVT": "hora normal de Khovd", "ICT": "hora de Indochina", "IDT": "hora estive de Israel", "IOT": "hora del Oceano Indian", "IRKST": "hora estive de Irkutsk", "IRKT": "hora normal de Irkutsk", "IRST": "hora normal de Iran", "IRST DST": "hora estive de Iran", "IST": "hora normal de India", "IST Israel": "hora normal de Israel", "JDT": "hora estive de Japon", "JST": "hora normal de Japon", "KOST": "hora de Kosrae", "KRAST": "hora estive de Krasnoyarsk", "KRAT": "hora normal de Krasnoyarsk", "KST": "hora normal de Corea", "KST DST": "hora estive de Corea", "LHDT": "hora estive de Lord Howe", "LHST": "hora normal de Lord Howe", "LINT": "hora del Insulas del Linea", "MAGST": "hora estive de Magadan", "MAGT": "hora normal de Magadan", "MART": "hora de Marquesas", "MAWT": "hora de Mawson", "MDT": "MDT", "MESZ": "hora estive de Europa central", "MEZ": "hora normal de Europa central", "MHT": "hora del Insulas Marshall", "MMT": "hora de Myanmar", "MSD": "hora estive de Moscova", "MST": "MST", "MUST": "hora estive de Mauritio", "MUT": "hora normal de Mauritio", "MVT": "hora del Maldivas", "MYT": "hora de Malaysia", "NCT": "hora normal de Nove Caledonia", "NDT": "hora estive de Terranova", "NDT New Caledonia": "hora estive de Nove Caledonia", "NFDT": "hora estive del Insula Norfolk", "NFT": "hora normal del Insula Norfolk", "NOVST": "hora estive de Novosibirsk", "NOVT": "hora normal de Novosibirsk", "NPT": "hora de Nepal", "NRT": "hora de Nauru", "NST": "hora normal de Terranova", "NUT": "hora de Niue", "NZDT": "hora estive de Nove Zelanda", "NZST": "hora normal de Nove Zelanda", "OESZ": "hora estive de Europa oriental", "OEZ": "hora normal de Europa oriental", "OMSST": "hora estive de Omsk", "OMST": "hora normal de Omsk", "PDT": "hora estive pacific", "PDTM": "hora estive del Pacifico mexican", "PETDT": "PETDT", "PETST": "PETST", "PGT": "hora de Papua Nove Guinea", "PHOT": "hora del Insulas Phenice", "PKT": "hora normal de Pakistan", "PKT DST": "hora estive de Pakistan", "PMDT": "hora estive de Saint-Pierre e Miquelon", "PMST": "hora normal de Saint-Pierre e Miquelon", "PONT": "hora de Pohnpei", "PST": "hora normal pacific", "PST Philippine": "hora normal del Philippinas", "PST Philippine DST": "hora estive del Philippinas", "PST Pitcairn": "hora de Pitcairn", "PSTM": "hora normal del Pacifico mexican", "PWT": "hora de Palau", "PYST": "hora estive de Paraguay", "PYT": "hora normal de Paraguay", "PYT Korea": "hora de Corea del Nord", "RET": "hora de Réunion", "ROTT": "hora de Rothera", "SAKST": "hora estive de Sachalin", "SAKT": "hora normal de Sachalin", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "hora normal de Africa del Sud", "SBT": "hora del Insulas Solomon", "SCT": "hora del Seychelles", "SGT": "hora normal de Singapore", "SLST": "SLST", "SRT": "hora de Suriname", "SST Samoa": "hora normal de Samoa american", "SST Samoa Apia": "hora normal de Samoa", "SST Samoa Apia DST": "hora estive de Samoa", "SST Samoa DST": "hora estive de Samoa american", "SYOT": "hora de Syowa", "TAAF": "hora francese meridional e antarctic", "TAHT": "hora de Tahiti", "TJT": "hora de Tajikistan", "TKT": "hora de Tokelau", "TLT": "hora de Timor Oriental", "TMST": "hora estive de Turkmenistan", "TMT": "hora normal de Turkmenistan", "TOST": "hora estive de Tonga", "TOT": "hora normal de Tonga", "TVT": "hora de Tuvalu", "TWT": "hora normal de Taiwan", "TWT DST": "hora estive de Taiwan", "ULAST": "hora estive de Ulan Bator", "ULAT": "hora normal de Ulan Bator", "UYST": "hora estive de Uruguay", "UYT": "hora normal de Uruguay", "UZT": "hora normal de Uzbekistan", "UZT DST": "hora estive de Uzbekistan", "VET": "hora de Venezuela", "VLAST": "hora estive de Vladivostok", "VLAT": "hora normal de Vladivostok", "VOLST": "hora estive de Volgograd", "VOLT": "hora normal de Volgograd", "VOST": "hora de Vostok", "VUT": "hora normal de Vanuatu", "VUT DST": "hora estive de Vanuatu", "WAKT": "hora del Insula Wake", "WARST": "hora estive de Argentina occidental", "WART": "hora normal de Argentina occidental", "WAST": "hora de Africa del West", "WAT": "hora de Africa del West", "WESZ": "hora estive de Europa occidental", "WEZ": "hora normal de Europa occidental", "WFT": "hora de Wallis e Futuna", "WGST": "hora estive de Groenlandia occidental", "WGT": "hora normal de Groenlandia occidental", "WIB": "hora de Indonesia del West", "WIT": "hora de Indonesia del Est", "WITA": "hora de Indonesia Central", "YAKST": "hora estive de Yakutsk", "YAKT": "hora normal de Yakutsk", "YEKST": "hora estive de Ekaterinburg", "YEKT": "hora normal de Ekaterinburg", "YST": "hora de Yukon", "МСК": "hora normal de Moscova", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "hora de Kazakhstan del West", "شىعىش قازاق ەلى": "hora de Kazakhstan del Est", "قازاق ەلى": "hora de Kazakhstan", "قىرعىزستان": "hora de Kirghizistan", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "hora estive del Azores"},
+		timezones:              map[string]string{"ACDT": "hora estive de Australia central", "ACST": "hora estive de Acre", "ACT": "hora normal de Acre", "ACWDT": "hora estive de Australia centro-occidental", "ACWST": "hora normal de Australia centro-occidental", "ADT": "hora estive atlantic", "ADT Arabia": "hora estive arabe", "AEDT": "hora estive de Australia oriental", "AEST": "hora normal de Australia oriental", "AFT": "hora de Afghanistan", "AKDT": "hora estive de Alaska", "AKST": "hora normal de Alaska", "AMST": "hora estive de Amazonia", "AMST Armenia": "hora estive de Armenia", "AMT": "hora normal de Amazonia", "AMT Armenia": "hora normal de Armenia", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "hora estive de Argentina", "ART": "hora normal de Argentina", "AST": "hora normal atlantic", "AST Arabia": "hora normal arabe", "AWDT": "hora estive de Australia occidental", "AWST": "hora normal de Australia occidental", "AZST": "hora estive de Azerbeidzhan", "AZT": "hora normal de Azerbeidzhan", "BDT Bangladesh": "hora estive de Bangladesh", "BNT": "hora de Brunei", "BOT": "hora de Bolivia", "BRST": "hora estive de Brasilia", "BRT": "hora normal de Brasilia", "BST Bangladesh": "hora normal de Bangladesh", "BT": "hora de Bhutan", "CAST": "CAST", "CAT": "hora de Africa Central", "CCT": "hora del Insulas Cocos", "CDT": "hora estive central", "CHADT": "hora estive de Chatham", "CHAST": "hora normal de Chatham", "CHUT": "hora de Chuuk", "CKT": "hora normal del Insulas Cook", "CKT DST": "hora estive del Insulas Cook", "CLST": "hora estive de Chile", "CLT": "hora normal de Chile", "COST": "hora estive de Colombia", "COT": "hora normal de Colombia", "CST": "hora normal central", "CST China": "hora normal de China", "CST China DST": "hora estive de China", "CVST": "hora estive de Capo Verde", "CVT": "hora normal de Capo Verde", "CXT": "hora del Insula de Natal", "ChST": "hora normal de Chamorro", "ChST NMI": "ChST NMI", "CuDT": "hora estive de Cuba", "CuST": "hora normal de Cuba", "DAVT": "hora de Davis", "DDUT": "hora de Dumont d’Urville", "EASST": "hora estive del Insula de Pascha", "EAST": "hora normal del Insula de Pascha", "EAT": "hora de Africa del Est", "ECT": "hora de Ecuador", "EDT": "hora estive del est", "EGDT": "hora estive de Groenlandia oriental", "EGST": "hora normal de Groenlandia oriental", "EST": "hora normal del est", "FEET": "hora de Europa ultra-oriental", "FJT": "hora normal de Fiji", "FJT Summer": "hora estive de Fiji", "FKST": "hora estive del Insulas Falkland", "FKT": "hora normal del Insulas Falkland", "FNST": "hora estive de Fernando de Noronha", "FNT": "hora normal de Fernando de Noronha", "GALT": "hora del Galápagos", "GAMT": "hora de Gambier", "GEST": "hora estive de Georgia", "GET": "hora normal de Georgia", "GFT": "hora de Guiana Francese", "GIT": "hora del Insulas Gilbert", "GMT": "hora medie de Greenwich", "GNSST": "hora estive de Groenlandia", "GNST": "hora normal de Groenlandia", "GST": "hora de Georgia del Sud", "GST Guam": "hora normal de Guam", "GYT": "hora de Guyana", "HADT": "hora estive de Hawaii-Aleutianas", "HAST": "hora normal de Hawaii-Aleutianas", "HKST": "hora estive de Hongkong", "HKT": "hora normal de Hongkong", "HOVST": "hora estive de Khovd", "HOVT": "hora normal de Khovd", "ICT": "hora de Indochina", "IDT": "hora estive de Israel", "IOT": "hora del Oceano Indian", "IRKST": "hora estive de Irkutsk", "IRKT": "hora normal de Irkutsk", "IRST": "hora normal de Iran", "IRST DST": "hora estive de Iran", "IST": "hora normal de India", "IST Israel": "hora normal de Israel", "JDT": "hora estive de Japon", "JST": "hora normal de Japon", "KOST": "hora de Kosrae", "KRAST": "hora estive de Krasnoyarsk", "KRAT": "hora normal de Krasnoyarsk", "KST": "hora normal de Corea", "KST DST": "hora estive de Corea", "LHDT": "hora estive de Lord Howe", "LHST": "hora normal de Lord Howe", "LINT": "hora del Insulas del Linea", "MAGST": "hora estive de Magadan", "MAGT": "hora normal de Magadan", "MART": "hora de Marquesas", "MAWT": "hora de Mawson", "MDT": "MDT", "MESZ": "hora estive de Europa central", "MEZ": "hora normal de Europa central", "MHT": "hora del Insulas Marshall", "MMT": "hora de Myanmar", "MSD": "hora estive de Moscova", "MST": "MST", "MUST": "hora estive de Mauritio", "MUT": "hora normal de Mauritio", "MVT": "hora del Maldivas", "MYT": "hora de Malaysia", "NCT": "hora normal de Nove Caledonia", "NDT": "hora estive de Terranova", "NDT New Caledonia": "hora estive de Nove Caledonia", "NFDT": "hora estive del Insula Norfolk", "NFT": "hora normal del Insula Norfolk", "NOVST": "hora estive de Novosibirsk", "NOVT": "hora normal de Novosibirsk", "NPT": "hora de Nepal", "NRT": "hora de Nauru", "NST": "hora normal de Terranova", "NUT": "hora de Niue", "NZDT": "hora estive de Nove Zelanda", "NZST": "hora normal de Nove Zelanda", "OESZ": "hora estive de Europa oriental", "OEZ": "hora normal de Europa oriental", "OMSST": "hora estive de Omsk", "OMST": "hora normal de Omsk", "PDT": "hora estive pacific", "PDTM": "hora estive del Pacifico mexican", "PETDT": "PETDT", "PETST": "PETST", "PGT": "hora de Papua Nove Guinea", "PHOT": "hora del Insulas Phenice", "PKT": "hora normal de Pakistan", "PKT DST": "hora estive de Pakistan", "PMDT": "hora estive de Saint-Pierre e Miquelon", "PMST": "hora normal de Saint-Pierre e Miquelon", "PONT": "hora de Pohnpei", "PST": "hora normal pacific", "PST Philippine": "hora normal del Philippinas", "PST Philippine DST": "hora estive del Philippinas", "PST Pitcairn": "hora de Pitcairn", "PSTM": "hora normal del Pacifico mexican", "PWT": "hora de Palau", "PYST": "hora estive de Paraguay", "PYT": "hora normal de Paraguay", "PYT Korea": "hora de Corea del Nord", "RET": "hora de Réunion", "ROTT": "hora de Rothera", "SAKST": "hora estive de Sachalin", "SAKT": "hora normal de Sachalin", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "hora normal de Africa del Sud", "SBT": "hora del Insulas Solomon", "SCT": "hora del Seychelles", "SGT": "hora normal de Singapore", "SLST": "SLST", "SRT": "hora de Suriname", "SST Samoa": "hora normal de Samoa american", "SST Samoa Apia": "hora normal de Samoa", "SST Samoa Apia DST": "hora estive de Samoa", "SST Samoa DST": "hora estive de Samoa american", "SYOT": "hora de Syowa", "TAAF": "hora francese meridional e antarctic", "TAHT": "hora de Tahiti", "TJT": "hora de Tajikistan", "TKT": "hora de Tokelau", "TLT": "hora de Timor Oriental", "TMST": "hora estive de Turkmenistan", "TMT": "hora normal de Turkmenistan", "TOST": "hora estive de Tonga", "TOT": "hora normal de Tonga", "TVT": "hora de Tuvalu", "TWT": "hora normal de Taiwan", "TWT DST": "hora estive de Taiwan", "ULAST": "hora estive de Ulan Bator", "ULAT": "hora normal de Ulan Bator", "UYST": "hora estive de Uruguay", "UYT": "hora normal de Uruguay", "UZT": "hora normal de Uzbekistan", "UZT DST": "hora estive de Uzbekistan", "VET": "hora de Venezuela", "VLAST": "hora estive de Vladivostok", "VLAT": "hora normal de Vladivostok", "VOLST": "hora estive de Volgograd", "VOLT": "hora normal de Volgograd", "VOST": "hora de Vostok", "VUT": "hora normal de Vanuatu", "VUT DST": "hora estive de Vanuatu", "WAKT": "hora del Insula Wake", "WARST": "hora estive de Argentina occidental", "WART": "hora normal de Argentina occidental", "WAST": "hora de Africa del West", "WAT": "hora de Africa del West", "WESZ": "hora estive de Europa occidental", "WEZ": "hora normal de Europa occidental", "WFT": "hora de Wallis e Futuna", "WGST": "hora estive de Groenlandia occidental", "WGT": "hora normal de Groenlandia occidental", "WIB": "hora de Indonesia del West", "WIT": "hora de Indonesia del Est", "WITA": "hora de Indonesia Central", "YAKST": "hora estive de Yakutsk", "YAKT": "hora normal de Yakutsk", "YEKST": "hora estive de Ekaterinburg", "YEKT": "hora normal de Ekaterinburg", "YST": "hora de Yukon", "МСК": "hora normal de Moscova", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "hora de Kazakhstan del West", "شىعىش قازاق ەلى": "hora de Kazakhstan del Est", "قازاق ەلى": "hora de Kazakhstan", "قىرعىزستان": "hora de Kirghizistan", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "hora estive del Azores"},
 	}
 }
 
@@ -84,6 +82,7 @@ func (ia *ia_001) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'ia_001'
 func (ia *ia_001) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 	i := int64(n)
 
@@ -212,6 +211,7 @@ func (ia *ia_001) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ia_001' and handles both Whole and Real numbers based on 'v'
 func (ia *ia_001) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -283,9 +283,10 @@ func (ia *ia_001) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ia_001'
 func (ia *ia_001) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ia.currencies[currency]
-	l := len(s) + len(symbol) + 5 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -310,12 +311,12 @@ func (ia *ia_001) FmtCurrency(num float64, v uint64, currency currency.Type) str
 		b = append(b, s[i])
 	}
 
-	for j := len(symbol) - 1; j >= 0; j-- {
-		b = append(b, symbol[j])
-	}
-
 	for j := len(ia.currencyPositivePrefix) - 1; j >= 0; j-- {
 		b = append(b, ia.currencyPositivePrefix[j])
+	}
+
+	for j := len(symbol) - 1; j >= 0; j-- {
+		b = append(b, symbol[j])
 	}
 
 	if num < 0 {
@@ -338,17 +339,16 @@ func (ia *ia_001) FmtCurrency(num float64, v uint64, currency currency.Type) str
 		}
 	}
 
-	b = append(b, ia.currencyPositiveSuffix...)
-
 	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ia_001'
 // in accounting notation.
 func (ia *ia_001) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ia.currencies[currency]
-	l := len(s) + len(symbol) + 5 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 6 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -383,18 +383,15 @@ func (ia *ia_001) FmtAccounting(num float64, v uint64, currency currency.Type) s
 			b = append(b, ia.currencyNegativePrefix[j])
 		}
 
-		b = append(b, ia.minus[0])
-
 	} else {
-
-		for j := len(symbol) - 1; j >= 0; j-- {
-			b = append(b, symbol[j])
-		}
 
 		for j := len(ia.currencyPositivePrefix) - 1; j >= 0; j-- {
 			b = append(b, ia.currencyPositivePrefix[j])
 		}
 
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
+		}
 	}
 
 	// reverse
@@ -415,8 +412,6 @@ func (ia *ia_001) FmtAccounting(num float64, v uint64, currency currency.Type) s
 
 	if num < 0 {
 		b = append(b, ia.currencyNegativeSuffix...)
-	} else {
-		b = append(b, ia.currencyPositiveSuffix...)
 	}
 
 	return string(b)
@@ -424,6 +419,7 @@ func (ia *ia_001) FmtAccounting(num float64, v uint64, currency currency.Type) s
 
 // FmtDateShort returns the short date representation of 't' for 'ia_001'
 func (ia *ia_001) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -452,6 +448,7 @@ func (ia *ia_001) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'ia_001'
 func (ia *ia_001) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -470,6 +467,7 @@ func (ia *ia_001) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'ia_001'
 func (ia *ia_001) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -489,6 +487,7 @@ func (ia *ia_001) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'ia_001'
 func (ia *ia_001) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, ia.daysWide[t.Weekday()]...)
@@ -511,6 +510,7 @@ func (ia *ia_001) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'ia_001'
 func (ia *ia_001) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -531,6 +531,7 @@ func (ia *ia_001) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'ia_001'
 func (ia *ia_001) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -558,6 +559,7 @@ func (ia *ia_001) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'ia_001'
 func (ia *ia_001) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -589,6 +591,7 @@ func (ia *ia_001) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'ia_001'
 func (ia *ia_001) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

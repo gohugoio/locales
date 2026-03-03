@@ -193,6 +193,7 @@ func (cad *cad) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'cad' and handles both Whole and Real numbers based on 'v'
 func (cad *cad) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -264,6 +265,7 @@ func (cad *cad) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'cad'
 func (cad *cad) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cad.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -272,6 +274,7 @@ func (cad *cad) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'cad'
 // in accounting notation.
 func (cad *cad) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cad.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -279,6 +282,7 @@ func (cad *cad) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 // FmtDateShort returns the short date representation of 't' for 'cad'
 func (cad *cad) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Month()), 10)
@@ -297,6 +301,7 @@ func (cad *cad) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'cad'
 func (cad *cad) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, cad.monthsAbbreviated[t.Month()]...)
@@ -315,6 +320,7 @@ func (cad *cad) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'cad'
 func (cad *cad) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, cad.monthsWide[t.Month()]...)
@@ -333,6 +339,7 @@ func (cad *cad) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'cad'
 func (cad *cad) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, cad.daysWide[t.Weekday()]...)
@@ -353,6 +360,7 @@ func (cad *cad) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'cad'
 func (cad *cad) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -382,6 +390,7 @@ func (cad *cad) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'cad'
 func (cad *cad) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -418,6 +427,7 @@ func (cad *cad) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'cad'
 func (cad *cad) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -459,6 +469,7 @@ func (cad *cad) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'cad'
 func (cad *cad) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

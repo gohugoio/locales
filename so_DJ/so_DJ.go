@@ -10,48 +10,52 @@ import (
 )
 
 type so_DJ struct {
-	locale             string
-	pluralsCardinal    []locales.PluralRule
-	pluralsOrdinal     []locales.PluralRule
-	pluralsRange       []locales.PluralRule
-	decimal            string
-	group              string
-	minus              string
-	percent            string
-	timeSeparator      string
-	currencies         []string // idx = enum of currency code
-	monthsAbbreviated  []string
-	monthsNarrow       []string
-	monthsWide         []string
-	daysAbbreviated    []string
-	daysNarrow         []string
-	daysShort          []string
-	daysWide           []string
-	periodsAbbreviated []string
-	timezones          map[string]string
+	locale                 string
+	pluralsCardinal        []locales.PluralRule
+	pluralsOrdinal         []locales.PluralRule
+	pluralsRange           []locales.PluralRule
+	decimal                string
+	group                  string
+	minus                  string
+	percent                string
+	timeSeparator          string
+	currencies             []string // idx = enum of currency code
+	currencyNegativePrefix string
+	currencyNegativeSuffix string
+	monthsAbbreviated      []string
+	monthsNarrow           []string
+	monthsWide             []string
+	daysAbbreviated        []string
+	daysNarrow             []string
+	daysShort              []string
+	daysWide               []string
+	periodsAbbreviated     []string
+	timezones              map[string]string
 }
 
 // New returns a new instance of translator for the 'so_DJ' locale
 func New() locales.Translator {
 	return &so_DJ{
-		locale:             "so_DJ",
-		pluralsCardinal:    []locales.PluralRule{2, 6},
-		pluralsOrdinal:     nil,
-		pluralsRange:       nil,
-		decimal:            ".",
-		group:              ",",
-		minus:              "-",
-		percent:            "%",
-		timeSeparator:      ":",
-		currencies:         []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "Fdj", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
-		monthsAbbreviated:  []string{"", "Jan", "Feb", "Mar", "Abr", "May", "Jun", "Lul", "Ogs", "Seb", "Okt", "Nof", "Dis"},
-		monthsNarrow:       []string{"", "J", "F", "M", "A", "M", "J", "L", "O", "S", "O", "N", "D"},
-		monthsWide:         []string{"", "Janaayo", "Febraayo", "Maarso", "Abriil", "Maayo", "Juun", "Luulyo", "Agosto", "Sebtembar", "Oktoobar", "Noofeembar", "Diseembar"},
-		daysAbbreviated:    []string{"Axd", "Isn", "Tldo", "Arbc", "Khms", "Jmc", "Sbti"},
-		daysNarrow:         []string{"A", "I", "T", "A", "Kh", "J", "S"},
-		daysWide:           []string{"Axad", "Isniin", "Talaado", "Arbaco", "Khamiis", "Jimco", "Sabti"},
-		periodsAbbreviated: []string{"GH", "GD"},
-		timezones:          map[string]string{"ACDT": "Waqtiga Dharaarta ee Bartamaha Astaraaliya", "ACST": "Wakhtiga Kulka ee Acre", "ACT": "Wakhtiga Caadiga ah ee Acre", "ACWDT": "Waqtiga Dharaarta Bartamaha Galbeedka Australiya", "ACWST": "Waqtiga Caadiga Ah ee Bartamaha Galbeedka Astaraaliya", "ADT": "Waqtiga Dharaarta ee Atlantika Waqooyiga Ameerika", "ADT Arabia": "Waqtiga Dharaarta ee Carabta", "AEDT": "Waqtiga Dharaarta ee Bariga Astaraaliya", "AEST": "Waqtiyada Caadiga ah ee Bariga Astaraaliya", "AFT": "Waqtiga Afggaanistaan", "AKDT": "Waqtiga Dharaarta ee Alaska", "AKST": "Waqtiga Caadiga Ah ee Alaska", "AMST": "Waqtiga Xagaaga ee Amason", "AMST Armenia": "Waqtiga Xagaaga ee Armeeniya", "AMT": "Waqtiga Caadiga Ah ee Amason", "AMT Armenia": "Waqtiga Caadiga Ah ee Armeeniya", "ANAST": "Wakhtiga Kulka ee Anadyr", "ANAT": "Wakhtiga Caadiga ah ee Anadyr", "ARST": "Waqtiga Xagaaga ee Arjentiina", "ART": "Waqtiga Caadiga Ah ee Arjentiina", "AST": "Waqtiga Caadiga Ah ee Atlantika Waqooyiga Ameerika", "AST Arabia": "Waqtiga Caadiga Ah ee Carabta", "AWDT": "Waqtiga Dharaarta ee Galbeedka Astaraaliya", "AWST": "Waqtiga Caadiga Ah ee Galbeedka Astaraaliya", "AZST": "Waqtiga Xagaaga ee Asarbeyjan", "AZT": "Waqtiga Caadiga Ah ee Asarbeyjan", "BDT Bangladesh": "Waqtiga Xagaaga ee Bangledeesh", "BNT": "Wakhtiga Brunei", "BOT": "Waqtiga Boliifiya", "BRST": "Waqtiga Xagaaga ee Baraasiliya", "BRT": "Waqtiga Caadiga ah ee Baraasiliya", "BST Bangladesh": "Waqtiga Caadiga Ah ee Bangledeesh", "BT": "Waqtiga Butaan", "CAST": "CAST", "CAT": "Waqtiga Bartamaha Afrika", "CCT": "Waqtiga Kokos Aylaan", "CDT": "Waqtiga Dharaarta ee Bartamaha Waqooyiga Ameerika", "CHADT": "Waqtiga Dharaarta ee Jaatam", "CHAST": "Waqtiga Caadiga Ah ee Jaatam", "CHUT": "Waqtiga Juuk", "CKT": "Waqtiga Caadiga Ah ee Jasiiradaha Cook", "CKT DST": "Waqtiga Caadiga Ah ee Jasiiradaha Cook", "CLST": "Waqtiga Xagaaga ee Jili", "CLT": "Waqtiga Caadiga Ah ee Jili", "COST": "Waqtiga Xagaaga ee Kolambiya", "COT": "Waqtiga Caadiga Ah ee Kolambiya", "CST": "Waqtiga Caadiga Ah ee Bartamaha Waqooyiga Ameerika", "CST China": "Waqtiga Caadiga Ah ee Shiinaha", "CST China DST": "Waqtiga Dharaarta ee Shiinaha", "CVST": "Waqtiga Xagaaga ee Keyb Faarde", "CVT": "Waqtiga Caadiga Ah ee Keyb Faarde", "CXT": "Waqtiga Kirismas Aylaan", "ChST": "Wakhtiga Caadiga ah ee Chamorro", "ChST NMI": "ChST NMI", "CuDT": "Waqtiga Dharaarta ee Kuuba", "CuST": "Waqtiga Caadiga Ah ee Kuuba", "DAVT": "Wakhtiga Davis", "DDUT": "Waqtiga Dumont - d’urfille", "EASST": "Waqtiga Xagaaga ee Iistar Aylaan", "EAST": "Waqtiga Caadiga Ah ee Iistar Aylaan", "EAT": "Waqtiga Bariga Afrika", "ECT": "Waqtiga Ekuwadoor", "EDT": "Waqtiga Dharaarta ee Bariga Waqooyiga Ameerika", "EGDT": "Waqtiga Xagaaga ee Bariga Giriinlaan", "EGST": "Waqtiga Caadiga ah ee Bariga Giriinlaan", "EST": "Waqtiga Caadiga Ah ee Bariga Waqooyiga Ameerika", "FEET": "Waqtiga Bariga Fog ee Yurub", "FJT": "Waqtiga Caadiga Ah ee Fiji", "FJT Summer": "Waqtiga Xagaaga ee Fiji", "FKST": "Waqtiga Xagaaga ee Faalklaan Aylaanis", "FKT": "Waqtiga Caadiga Ah ee Faalklaan Aylaanis", "FNST": "Waqtiga Xagaaga ee Farnaando de Nooronha", "FNT": "Waqtiga Caadiga Ah ee Farnaando de Nooronha", "GALT": "Waqtiga Galabagos", "GAMT": "Waqtiga Gambiyar", "GEST": "Waqtiga Xagaaga ee Joorjiya", "GET": "Waqtiga Caadiga Ah ee Joorjiya", "GFT": "Waqtiga Ferenj Guyana", "GIT": "Waqtiga Jilbeert Aylaan", "GMT": "Wakhtiga Giriinwij", "GNSST": "GNSST", "GNST": "GNST", "GST": "Waqtiga Gacanka", "GST Guam": "GST Guam", "GYT": "Waqtiga Guyaana", "HADT": "Waqtiga Dharaarta ee Hawaay-Alutiyaan", "HAST": "Waqtiga Caadiga Ah ee Hawaay-Alutiyaan", "HKST": "Waqtiga Xagaaga ee Hoong Koong", "HKT": "Waqtiga Caadiga Ah ee Hoong Koong", "HOVST": "Waqtiga Xagaaga ee Hofud", "HOVT": "Waqtiga Caadiga Ah ee Hofud", "ICT": "Wakhtiga Indochina", "IDT": "Waqtiga Dharaarta ee Israaiil", "IOT": "Waqtiga Badweynta Hindiya", "IRKST": "Waqtiga Xagaaga ee Irkutsik", "IRKT": "Waqtiga Caadiga Ah ee Irkutsik", "IRST": "Waqtiga Caadiga Ah ee Iiraan", "IRST DST": "Waqtiga Dharaarta ee Iiraan", "IST": "Waqtiga Caadiga Ah ee Hindiya", "IST Israel": "Waqtiga Caadiga Ah ee Israaiil", "JDT": "Waqtiga Dharaarta ee Jabaan", "JST": "Waqtiga Caadiga Ah ee Jabaan", "KOST": "Waqtiga Kosriy", "KRAST": "Waqtiga Xagaaga ee Karasnoyarsik", "KRAT": "Waqtiga Caadiga Ah ee Karasnoyarsik", "KST": "Waqtiga Caadiga Ah ee Kuuriya", "KST DST": "Waqtiga Dharaarta ee Kuuriya", "LHDT": "Waqtiga Dharaarta ee Lod How", "LHST": "Waqtiga Caadiga Ah ee Lod How", "LINT": "Waqtiga Leyn Aylaan", "MAGST": "Waqtiga Xagaaga ee Magedan", "MAGT": "Waqtiga Caadiga Ah ee Magedan", "MART": "Waqtiga Marquwesas", "MAWT": "Waqtiga Mawson", "MDT": "MDT", "MESZ": "Waqtiga Xagaaga ee Bartamaha Yurub", "MEZ": "Waqtiga Caadiga Ah ee Bartamaha Yurub", "MHT": "Waqtiga Maarshaal Aylaanis", "MMT": "Waqtiga Mayanmaar", "MSD": "Waqtiga Xagaaga ee Moskow", "MST": "MST", "MUST": "Waqtiga Xagaaga ee Morishiyaas", "MUT": "Waqtiga Caadiga Ah ee Morishiyaas", "MVT": "Waqtiga Maldifis", "MYT": "Waqtiga Maleyshiya", "NCT": "Waqtiga Caadiga Ah ee Niyuu Kaledoniya", "NDT": "Waqtiga Dharaarta ee Niyuufoonlaan", "NDT New Caledonia": "Waqtiga Xagaaga ee Niyuu Kaledoniya", "NFDT": "Waqtiga Maalinta ee Norfolk Island", "NFT": "Waqtiga Caadiga ah ee Norfolk Island", "NOVST": "Waqtiga Xagaaga ee Nofosibirsik", "NOVT": "Waqtiga Caadiga Ah ee Nofosibirsik", "NPT": "Waqtiga Neebaal", "NRT": "Waqtiga Nawroo", "NST": "Waqtiga Caadiga Ah ee Niyuufoonlaan", "NUT": "Waqtiga Niyuu", "NZDT": "Waqtiga Dharaarta ee Niyuu Si’laan", "NZST": "Waqtiga Caadiga Ah ee Niyuu Si’laan", "OESZ": "Waqtiga Xagaaga ee Bariga Yurub", "OEZ": "Waqtiga Caadiga Ah ee Bariga Yurub", "OMSST": "Waqtiga Xagaaga ee Omsk", "OMST": "Waqtiga Caadiga Ah ee Omsk", "PDT": "Waqtiga Dharaarta ee Basifika Waqooyiga Ameerika", "PDTM": "Waqtiga Dharaarta ee Baasifikada Meksiko", "PETDT": "Wakhtiga Kulka ee Petropavlovsk-Kamchatski", "PETST": "Wakhtiga Caadiga ah ee Petropavlovsk-Kamchatski", "PGT": "Waqtiga Babuw Niyuu Giniya", "PHOT": "Waqtiga Foonikis Aylaanis", "PKT": "Waqtiga Caadiga Ah ee Bakistaan", "PKT DST": "Waqtiga Xagaaga ee Bakistaan", "PMDT": "Waqtiga Dharaarta ee St. Beere & Mikiwelon", "PMST": "Waqtiga Caadiga Ah St. Beere & Mikiwelon", "PONT": "Wakhtiga Pohnpei", "PST": "Waqtiga Caadiga ah ee Basifika Waqooyiga Ameerika", "PST Philippine": "Waqtiga Caadiga Ah ee Filibiin", "PST Philippine DST": "Waqtiga Xagaaga ee Filibiin", "PST Pitcairn": "Waqtiga Bitkeen", "PSTM": "Waqtiga Caadiga Ah ee Baasifikada Meksiko", "PWT": "Waqtiga Balaw", "PYST": "Waqtiga Xagaaga ee Baragwaay", "PYT": "Waqtiga Caadiga Ah ee Baragwaay", "PYT Korea": "Waqtiga Boyongyang", "RET": "Waqtiga Riyuuniyon", "ROTT": "Waqtiga Rotera", "SAKST": "Waqtiga Xagaaga ee Sakhalin", "SAKT": "Waqtiga Caadiga Ah ee Sakhalin", "SAMST": "Wakhtiga Kulka ee Samara", "SAMT": "Wakhtiga Caadiga ah ee Samara", "SAST": "Waqtiyada Caadiga Ah ee Koonfur Afrika", "SBT": "Waqtiga Solomon Aylaanis", "SCT": "Waqtiga Siishalis", "SGT": "Waqtiga Singabuur", "SLST": "SLST", "SRT": "Waqtiga Surineym", "SST Samoa": "Waqtiga Caadiga Ah ee American Samoa", "SST Samoa Apia": "Waqtiga Caadiga Ah ee Samoa", "SST Samoa Apia DST": "Waqtiga Dharaarta ee Samoa", "SST Samoa DST": "Waqtiga Dharaarta ee American Samoa", "SYOT": "Waqtiga Siyowa", "TAAF": "Waqtiga Koonfurta Faransiiska & Antaarktik", "TAHT": "Waqtiga Tahiti", "TJT": "Waqtiga Tajikistan", "TKT": "Waqtiga Tokeluu", "TLT": "Wakhtiga Timor-Leste", "TMST": "Waqtiga Xagaaga ee Turkmenistan", "TMT": "Waqtiga Caadiga Ah ee Turkmenistan", "TOST": "Waqtiga Xagaaga ee Tonga", "TOT": "Waqtiga Caadiga Ah ee Tonga", "TVT": "Waqtiga Tufalu", "TWT": "Waqtiga Caadiga Ah ee Taiwan", "TWT DST": "Waqtiga Dharaarta ee Teybey", "ULAST": "Waqtiga Xagaaga ee Ulaanbaataar", "ULAT": "Waqtiga Caadiga Ah ee Ulaanbaataar", "UYST": "Waqtiga Xagaaga ee Urugwaay", "UYT": "Waqtiga Caadiga Ah ee Urugwaay", "UZT": "Waqtiga Caadiga Ah ee Usbekistan", "UZT DST": "Waqtiga Xagaaga ee Usbekistan", "VET": "Waqtiga Fenezuweela", "VLAST": "Waqtiga Xagaaga ee Faladifostok", "VLAT": "Waqtiga Caadiga Ah ee Faladifostok", "VOLST": "Waqtiga Xagaaga ee Folgograd", "VOLT": "Waqtiga Caadiga Ah ee Folgograd", "VOST": "Waqtiga Fostok", "VUT": "Waqtiga Caadiga Ah ee Fanuutu", "VUT DST": "Waqtiga Xagaaga ee Fanuutu", "WAKT": "Waqtiga Wayk Iylaanis", "WARST": "Waqtiga Xagaaga ee Galbeedka Arjentiina", "WART": "Waqtiga Caadiga Ah ee Galbeedka Arjentiina", "WAST": "Waqtiga Galbeedka Afrika", "WAT": "Waqtiga Galbeedka Afrika", "WESZ": "Waqtiga Xagaaga ee Galbeedka Yurub", "WEZ": "Waqtiga Caadiga Ah ee Galbeedka Yurub", "WFT": "Waqtiga Walis & Futuna", "WGST": "Waqtiga Xagaaga ee Galbeedka Giriinlaan", "WGT": "Waqtiga Caadiga Ah ee Galbeedka Giriinlaan", "WIB": "Waqtiga Galbeedka Indoneeysiya", "WIT": "Waqtiga Indoneeysiya", "WITA": "Waqtiga Bartamaha Indoneeysiya", "YAKST": "Waqtiga Xagaaga ee Yakut", "YAKT": "Waqtiga Caadiga Ah ee Yakut", "YEKST": "Waqtiga Xagaaga ee Yekaterinbaag", "YEKT": "Waqtiga Caadiga Ah ee Yekaterinbaag", "YST": "Waqtiga Yukon", "МСК": "Waqtiga Caadiga Ah ee Moskow", "اقتاۋ": "Waqtiga Caadiga ah ee Aqtau", "اقتاۋ قالاسى": "Saacada Waqtiga Kulaylaha Aqtau", "اقتوبە": "Waqtiga Caadiga ah ee Aqtobe", "اقتوبە قالاسى": "Saacada Waqtiga kulaylaha Aqtobe", "الماتى": "Waqtiga Caadiga ah ee Almaty", "الماتى قالاسى": "Saacada Waqtiga Kulaylaha ee Almaty", "باتىس قازاق ەلى": "Waqtiga Koonfurta Kasakhistan", "شىعىش قازاق ەلى": "Waqtiga Bariga Kasakhistaan", "قازاق ەلى": "Wakhtiga Kazakhistan", "قىرعىزستان": "Waqtiga Kiyrigistaan", "قىزىلوردا": "Waqtiga Caadiga ah ee Qyzylorda", "قىزىلوردا قالاسى": "Saacada Waqtiga Kulaylaha Qyzylorda", "∅∅∅": "Waqtiga Xagaaga ee Beeru"},
+		locale:                 "so_DJ",
+		pluralsCardinal:        []locales.PluralRule{2, 6},
+		pluralsOrdinal:         nil,
+		pluralsRange:           nil,
+		decimal:                ".",
+		group:                  ",",
+		minus:                  "-",
+		percent:                "%",
+		timeSeparator:          ":",
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "DBB", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "Fdj", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "S", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		currencyNegativePrefix: "(",
+		currencyNegativeSuffix: ")",
+		monthsAbbreviated:      []string{"", "Jan", "Feb", "Mar", "Abr", "May", "Jun", "Lul", "Ogs", "Seb", "Okt", "Nof", "Dis"},
+		monthsNarrow:           []string{"", "J", "F", "M", "A", "M", "J", "L", "O", "S", "O", "N", "D"},
+		monthsWide:             []string{"", "Janaayo", "Febraayo", "Maarso", "Abriil", "Maayo", "Juun", "Luulyo", "Agosto", "Sebtembar", "Oktoobar", "Noofeembar", "Diseembar"},
+		daysAbbreviated:        []string{"Axd", "Isn", "Tldo", "Arbc", "Khms", "Jmc", "Sbti"},
+		daysNarrow:             []string{"A", "I", "T", "A", "Kh", "J", "S"},
+		daysWide:               []string{"Axad", "Isniin", "Talaado", "Arbaco", "Khamiis", "Jimco", "Sabti"},
+		periodsAbbreviated:     []string{"GH", "GD"},
+		timezones:              map[string]string{"ACDT": "Waqtiga Dharaarta ee Bartamaha Astaraaliya", "ACST": "Wakhtiga Kulka ee Acre", "ACT": "Wakhtiga Caadiga ah ee Acre", "ACWDT": "Waqtiga Dharaarta Bartamaha Galbeedka Australiya", "ACWST": "Waqtiga Caadiga Ah ee Bartamaha Galbeedka Astaraaliya", "ADT": "Waqtiga Dharaarta ee Atlantika Waqooyiga Ameerika", "ADT Arabia": "Waqtiga Dharaarta ee Carabta", "AEDT": "Waqtiga Dharaarta ee Bariga Astaraaliya", "AEST": "Waqtiyada Caadiga ah ee Bariga Astaraaliya", "AFT": "Waqtiga Afggaanistaan", "AKDT": "Waqtiga Dharaarta ee Alaska", "AKST": "Waqtiga Caadiga Ah ee Alaska", "AMST": "Waqtiga Xagaaga ee Amason", "AMST Armenia": "Waqtiga Xagaaga ee Armeeniya", "AMT": "Waqtiga Caadiga Ah ee Amason", "AMT Armenia": "Waqtiga Caadiga Ah ee Armeeniya", "ANAST": "Wakhtiga Kulka ee Anadyr", "ANAT": "Wakhtiga Caadiga ah ee Anadyr", "ARST": "Waqtiga Xagaaga ee Arjentiina", "ART": "Waqtiga Caadiga Ah ee Arjentiina", "AST": "Waqtiga Caadiga Ah ee Atlantika Waqooyiga Ameerika", "AST Arabia": "Waqtiga Caadiga Ah ee Carabta", "AWDT": "Waqtiga Dharaarta ee Galbeedka Astaraaliya", "AWST": "Waqtiga Caadiga Ah ee Galbeedka Astaraaliya", "AZST": "Waqtiga Xagaaga ee Asarbeyjan", "AZT": "Waqtiga Caadiga Ah ee Asarbeyjan", "BDT Bangladesh": "Waqtiga Xagaaga ee Bangledeesh", "BNT": "Wakhtiga Brunei", "BOT": "Waqtiga Boliifiya", "BRST": "Waqtiga Xagaaga ee Baraasiliya", "BRT": "Waqtiga Caadiga ah ee Baraasiliya", "BST Bangladesh": "Waqtiga Caadiga Ah ee Bangledeesh", "BT": "Waqtiga Butaan", "CAST": "CAST", "CAT": "Waqtiga Bartamaha Afrika", "CCT": "Waqtiga Kokos Aylaan", "CDT": "Waqtiga Dharaarta ee Bartamaha Waqooyiga Ameerika", "CHADT": "Waqtiga Dharaarta ee Jaatam", "CHAST": "Waqtiga Caadiga Ah ee Jaatam", "CHUT": "Waqtiga Juuk", "CKT": "Waqtiga Caadiga Ah ee Jasiiradaha Cook", "CKT DST": "Waqtiga Caadiga Ah ee Jasiiradaha Cook", "CLST": "Waqtiga Xagaaga ee Jili", "CLT": "Waqtiga Caadiga Ah ee Jili", "COST": "Waqtiga Xagaaga ee Kolambiya", "COT": "Waqtiga Caadiga Ah ee Kolambiya", "CST": "Waqtiga Caadiga Ah ee Bartamaha Waqooyiga Ameerika", "CST China": "Waqtiga Caadiga Ah ee Shiinaha", "CST China DST": "Waqtiga Dharaarta ee Shiinaha", "CVST": "Waqtiga Xagaaga ee Keyb Faarde", "CVT": "Waqtiga Caadiga Ah ee Keyb Faarde", "CXT": "Waqtiga Kirismas Aylaan", "ChST": "Wakhtiga Caadiga ah ee Chamorro", "ChST NMI": "ChST NMI", "CuDT": "Waqtiga Dharaarta ee Kuuba", "CuST": "Waqtiga Caadiga Ah ee Kuuba", "DAVT": "Wakhtiga Davis", "DDUT": "Waqtiga Dumont - d’urfille", "EASST": "Waqtiga Xagaaga ee Iistar Aylaan", "EAST": "Waqtiga Caadiga Ah ee Iistar Aylaan", "EAT": "Waqtiga Bariga Afrika", "ECT": "Waqtiga Ekuwadoor", "EDT": "Waqtiga Dharaarta ee Bariga Waqooyiga Ameerika", "EGDT": "Waqtiga Xagaaga ee Bariga Giriinlaan", "EGST": "Waqtiga Caadiga ah ee Bariga Giriinlaan", "EST": "Waqtiga Caadiga Ah ee Bariga Waqooyiga Ameerika", "FEET": "Waqtiga Bariga Fog ee Yurub", "FJT": "Waqtiga Caadiga Ah ee Fiji", "FJT Summer": "Waqtiga Xagaaga ee Fiji", "FKST": "Waqtiga Xagaaga ee Faalklaan Aylaanis", "FKT": "Waqtiga Caadiga Ah ee Faalklaan Aylaanis", "FNST": "Waqtiga Xagaaga ee Farnaando de Nooronha", "FNT": "Waqtiga Caadiga Ah ee Farnaando de Nooronha", "GALT": "Waqtiga Galabagos", "GAMT": "Waqtiga Gambiyar", "GEST": "Waqtiga Xagaaga ee Joorjiya", "GET": "Waqtiga Caadiga Ah ee Joorjiya", "GFT": "Waqtiga Ferenj Guyana", "GIT": "Waqtiga Jilbeert Aylaan", "GMT": "Wakhtiga Giriinwij", "GNSST": "GNSST", "GNST": "GNST", "GST": "Waqtiga Sowt Joorjiya", "GST Guam": "GST Guam", "GYT": "Waqtiga Guyaana", "HADT": "Waqtiga Dharaarta ee Hawaay-Alutiyaan", "HAST": "Waqtiga Caadiga Ah ee Hawaay-Alutiyaan", "HKST": "Waqtiga Xagaaga ee Hoong Koong", "HKT": "Waqtiga Caadiga Ah ee Hoong Koong", "HOVST": "Waqtiga Xagaaga ee Hofud", "HOVT": "Waqtiga Caadiga Ah ee Hofud", "ICT": "Wakhtiga Indochina", "IDT": "Waqtiga Dharaarta ee Israaiil", "IOT": "Waqtiga Badweynta Hindiya", "IRKST": "Waqtiga Xagaaga ee Irkutsik", "IRKT": "Waqtiga Caadiga Ah ee Irkutsik", "IRST": "Waqtiga Caadiga Ah ee Iiraan", "IRST DST": "Waqtiga Dharaarta ee Iiraan", "IST": "Waqtiga Caadiga Ah ee Hindiya", "IST Israel": "Waqtiga Caadiga Ah ee Israaiil", "JDT": "Waqtiga Dharaarta ee Jabaan", "JST": "Waqtiga Caadiga Ah ee Jabaan", "KOST": "Waqtiga Kosriy", "KRAST": "Waqtiga Xagaaga ee Karasnoyarsik", "KRAT": "Waqtiga Caadiga Ah ee Karasnoyarsik", "KST": "Waqtiga Caadiga Ah ee Kuuriya", "KST DST": "Waqtiga Dharaarta ee Kuuriya", "LHDT": "Waqtiga Dharaarta ee Lod How", "LHST": "Waqtiga Caadiga Ah ee Lod How", "LINT": "Waqtiga Leyn Aylaan", "MAGST": "Waqtiga Xagaaga ee Magedan", "MAGT": "Waqtiga Caadiga Ah ee Magedan", "MART": "Waqtiga Marquwesas", "MAWT": "Waqtiga Mawson", "MDT": "MDT", "MESZ": "Waqtiga Xagaaga ee Bartamaha Yurub", "MEZ": "Waqtiga Caadiga Ah ee Bartamaha Yurub", "MHT": "Waqtiga Maarshaal Aylaanis", "MMT": "Waqtiga Mayanmaar", "MSD": "Waqtiga Xagaaga ee Moskow", "MST": "MST", "MUST": "Waqtiga Xagaaga ee Morishiyaas", "MUT": "Waqtiga Caadiga Ah ee Morishiyaas", "MVT": "Waqtiga Maldifis", "MYT": "Waqtiga Maleyshiya", "NCT": "Waqtiga Caadiga Ah ee Niyuu Kaledoniya", "NDT": "Waqtiga Dharaarta ee Niyuufoonlaan", "NDT New Caledonia": "Waqtiga Xagaaga ee Niyuu Kaledoniya", "NFDT": "Waqtiga Maalinta ee Norfolk Island", "NFT": "Waqtiga Caadiga ah ee Norfolk Island", "NOVST": "Waqtiga Xagaaga ee Nofosibirsik", "NOVT": "Waqtiga Caadiga Ah ee Nofosibirsik", "NPT": "Waqtiga Neebaal", "NRT": "Waqtiga Nawroo", "NST": "Waqtiga Caadiga Ah ee Niyuufoonlaan", "NUT": "Waqtiga Niyuu", "NZDT": "Waqtiga Dharaarta ee Niyuu Si’laan", "NZST": "Waqtiga Caadiga Ah ee Niyuu Si’laan", "OESZ": "Waqtiga Xagaaga ee Bariga Yurub", "OEZ": "Waqtiga Caadiga Ah ee Bariga Yurub", "OMSST": "Waqtiga Xagaaga ee Omsk", "OMST": "Waqtiga Caadiga Ah ee Omsk", "PDT": "Waqtiga Dharaarta ee Basifika Waqooyiga Ameerika", "PDTM": "Waqtiga Dharaarta ee Baasifikada Meksiko", "PETDT": "Wakhtiga Kulka ee Petropavlovsk-Kamchatski", "PETST": "Wakhtiga Caadiga ah ee Petropavlovsk-Kamchatski", "PGT": "Waqtiga Babuw Niyuu Giniya", "PHOT": "Waqtiga Foonikis Aylaanis", "PKT": "Waqtiga Caadiga Ah ee Bakistaan", "PKT DST": "Waqtiga Xagaaga ee Bakistaan", "PMDT": "Waqtiga Dharaarta ee St. Beere & Mikiwelon", "PMST": "Waqtiga Caadiga Ah St. Beere & Mikiwelon", "PONT": "Wakhtiga Pohnpei", "PST": "Waqtiga Caadiga ah ee Basifika Waqooyiga Ameerika", "PST Philippine": "Waqtiga Caadiga Ah ee Filibiin", "PST Philippine DST": "Waqtiga Xagaaga ee Filibiin", "PST Pitcairn": "Waqtiga Bitkeen", "PSTM": "Waqtiga Caadiga Ah ee Baasifikada Meksiko", "PWT": "Waqtiga Balaw", "PYST": "Waqtiga Xagaaga ee Baragwaay", "PYT": "Waqtiga Caadiga Ah ee Baragwaay", "PYT Korea": "Waqtiga Boyongyang", "RET": "Waqtiga Riyuuniyon", "ROTT": "Waqtiga Rotera", "SAKST": "Waqtiga Xagaaga ee Sakhalin", "SAKT": "Waqtiga Caadiga Ah ee Sakhalin", "SAMST": "Wakhtiga Kulka ee Samara", "SAMT": "Wakhtiga Caadiga ah ee Samara", "SAST": "Waqtiyada Caadiga Ah ee Koonfur Afrika", "SBT": "Waqtiga Solomon Aylaanis", "SCT": "Waqtiga Siishalis", "SGT": "Waqtiga Singabuur", "SLST": "SLST", "SRT": "Waqtiga Surineym", "SST Samoa": "Waqtiga Caadiga Ah ee American Samoa", "SST Samoa Apia": "Waqtiga Caadiga Ah ee Samoa", "SST Samoa Apia DST": "Waqtiga Dharaarta ee Samoa", "SST Samoa DST": "Waqtiga Dharaarta ee American Samoa", "SYOT": "Waqtiga Siyowa", "TAAF": "Waqtiga Koonfurta Faransiiska & Antaarktik", "TAHT": "Waqtiga Tahiti", "TJT": "Waqtiga Tajikistan", "TKT": "Waqtiga Tokeluu", "TLT": "Wakhtiga Timor-Leste", "TMST": "Waqtiga Xagaaga ee Turkmenistan", "TMT": "Waqtiga Caadiga Ah ee Turkmenistan", "TOST": "Waqtiga Xagaaga ee Tonga", "TOT": "Waqtiga Caadiga Ah ee Tonga", "TVT": "Waqtiga Tufalu", "TWT": "Waqtiga Caadiga Ah ee Taiwan", "TWT DST": "Waqtiga Dharaarta ee Teybey", "ULAST": "Waqtiga Xagaaga ee Ulaanbaataar", "ULAT": "Waqtiga Caadiga Ah ee Ulaanbaataar", "UYST": "Waqtiga Xagaaga ee Urugwaay", "UYT": "Waqtiga Caadiga Ah ee Urugwaay", "UZT": "Waqtiga Caadiga Ah ee Usbekistan", "UZT DST": "Waqtiga Xagaaga ee Usbekistan", "VET": "Waqtiga Fenezuweela", "VLAST": "Waqtiga Xagaaga ee Faladifostok", "VLAT": "Waqtiga Caadiga Ah ee Faladifostok", "VOLST": "Waqtiga Xagaaga ee Folgograd", "VOLT": "Waqtiga Caadiga Ah ee Folgograd", "VOST": "Waqtiga Fostok", "VUT": "Waqtiga Caadiga Ah ee Fanuutu", "VUT DST": "Waqtiga Xagaaga ee Fanuutu", "WAKT": "Waqtiga Wayk Iylaanis", "WARST": "Waqtiga Xagaaga ee Galbeedka Arjentiina", "WART": "Waqtiga Caadiga Ah ee Galbeedka Arjentiina", "WAST": "Waqtiga Galbeedka Afrika", "WAT": "Waqtiga Galbeedka Afrika", "WESZ": "Waqtiga Xagaaga ee Galbeedka Yurub", "WEZ": "Waqtiga Caadiga Ah ee Galbeedka Yurub", "WFT": "Waqtiga Walis & Futuna", "WGST": "Waqtiga Xagaaga ee Galbeedka Giriinlaan", "WGT": "Waqtiga Caadiga Ah ee Galbeedka Giriinlaan", "WIB": "Waqtiga Galbeedka Indoneeysiya", "WIT": "Waqtiga Indoneeysiya", "WITA": "Waqtiga Bartamaha Indoneeysiya", "YAKST": "Waqtiga Xagaaga ee Yakut", "YAKT": "Waqtiga Caadiga Ah ee Yakut", "YEKST": "Waqtiga Xagaaga ee Yekaterinbaag", "YEKT": "Waqtiga Caadiga Ah ee Yekaterinbaag", "YST": "Waqtiga Yukon", "МСК": "Waqtiga Caadiga Ah ee Moskow", "اقتاۋ": "Waqtiga Caadiga ah ee Aqtau", "اقتاۋ قالاسى": "Saacada Waqtiga Kulaylaha Aqtau", "اقتوبە": "Waqtiga Caadiga ah ee Aqtobe", "اقتوبە قالاسى": "Saacada Waqtiga kulaylaha Aqtobe", "الماتى": "Waqtiga Caadiga ah ee Almaty", "الماتى قالاسى": "Saacada Waqtiga Kulaylaha ee Almaty", "باتىس قازاق ەلى": "Waqtiga Koonfurta Kasakhistan", "شىعىش قازاق ەلى": "Waqtiga Bariga Kasakhistaan", "قازاق ەلى": "Wakhtiga Kazakhistan", "قىرعىزستان": "Waqtiga Kiyrigistaan", "قىزىلوردا": "Waqtiga Caadiga ah ee Qyzylorda", "قىزىلوردا قالاسى": "Saacada Waqtiga Kulaylaha Qyzylorda", "∅∅∅": "Waqtiga Xagaaga ee Asores"},
 	}
 }
 
@@ -77,6 +81,7 @@ func (so *so_DJ) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'so_DJ'
 func (so *so_DJ) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -204,6 +209,7 @@ func (so *so_DJ) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'so_DJ' and handles both Whole and Real numbers based on 'v'
 func (so *so_DJ) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -275,21 +281,133 @@ func (so *so_DJ) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'so_DJ'
 func (so *so_DJ) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := so.currencies[currency]
-	return string(append(append([]byte{}, symbol...), s...))
+	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
+	count := 0
+	inWhole := v == 0
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, so.decimal[0])
+			inWhole = true
+			continue
+		}
+
+		if inWhole {
+			if count == 3 {
+				b = append(b, so.group[0])
+				count = 1
+			} else {
+				count++
+			}
+		}
+
+		b = append(b, s[i])
+	}
+
+	for j := len(symbol) - 1; j >= 0; j-- {
+		b = append(b, symbol[j])
+	}
+
+	if num < 0 {
+		b = append(b, so.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	if int(v) < 2 {
+
+		if v == 0 {
+			b = append(b, so.decimal...)
+		}
+
+		for i := 0; i < 2-int(v); i++ {
+			b = append(b, '0')
+		}
+	}
+
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'so_DJ'
 // in accounting notation.
 func (so *so_DJ) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := so.currencies[currency]
-	return string(append(append([]byte{}, symbol...), s...))
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
+	count := 0
+	inWhole := v == 0
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, so.decimal[0])
+			inWhole = true
+			continue
+		}
+
+		if inWhole {
+			if count == 3 {
+				b = append(b, so.group[0])
+				count = 1
+			} else {
+				count++
+			}
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
+		}
+
+		b = append(b, so.currencyNegativePrefix[0])
+
+	} else {
+
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
+		}
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	if int(v) < 2 {
+
+		if v == 0 {
+			b = append(b, so.decimal...)
+		}
+
+		for i := 0; i < 2-int(v); i++ {
+			b = append(b, '0')
+		}
+	}
+
+	if num < 0 {
+		b = append(b, so.currencyNegativeSuffix...)
+	}
+
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'so_DJ'
 func (so *so_DJ) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -318,6 +436,7 @@ func (so *so_DJ) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'so_DJ'
 func (so *so_DJ) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -340,6 +459,7 @@ func (so *so_DJ) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'so_DJ'
 func (so *so_DJ) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, so.monthsWide[t.Month()]...)
@@ -358,6 +478,7 @@ func (so *so_DJ) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'so_DJ'
 func (so *so_DJ) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = append(b, so.daysWide[t.Weekday()]...)
@@ -378,6 +499,7 @@ func (so *so_DJ) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'so_DJ'
 func (so *so_DJ) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -407,6 +529,7 @@ func (so *so_DJ) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'so_DJ'
 func (so *so_DJ) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -443,6 +566,7 @@ func (so *so_DJ) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'so_DJ'
 func (so *so_DJ) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -484,6 +608,7 @@ func (so *so_DJ) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'so_DJ'
 func (so *so_DJ) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

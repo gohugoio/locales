@@ -46,11 +46,11 @@ func New() locales.Translator {
 		minus:                  "-",
 		percent:                "%",
 		timeSeparator:          ":",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "₸", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLE", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VED", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XCG", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
-		currencyPositivePrefix: " ",
-		currencyPositiveSuffix: " مىڭ",
-		currencyNegativePrefix: " ",
-		currencyNegativeSuffix: " مىڭ",
+		currencies:             []string{"ADP", "AED", "AFA", "؋", "ALK", "ALL", "֏", "ANG", "Kz", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "$", "ATS", "A$", "AWG", "AZM", "₼", "BAD", "KM", "BAN", "$", "৳", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "$", "$", "Bs", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "$", "BTN", "BUK", "P", "BYB", "р.", "BYR", "$", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "$", "CNH", "CNX", "CN¥", "$", "COU", "₡", "CSD", "CSK", "$", "$", "CVE", "CYP", "Kč", "DDM", "DEM", "DJF", "kr", "$", "DZD", "ECS", "ECV", "EEK", "E£", "ERN", "ESA", "ESB", "₧", "ETB", "€", "FIM", "$", "£", "FRF", "£", "GEK", "₾", "GHC", "GH₵", "£", "GMD", "FG", "GNS", "GQE", "GRD", "Q", "GWE", "GWP", "$", "HK$", "L", "HRD", "kn", "HTG", "Ft", "Rp", "IEP", "ILP", "ILR", "₪", "₹", "IQD", "IRR", "ISJ", "kr", "ITL", "$", "JOD", "JP¥", "KES", "⃀", "៛", "CF", "₩", "KRH", "KRO", "₩", "KWD", "$", "₸", "₭", "L£", "Rs", "$", "ЛСЛ", "Lt", "LTT", "LUC", "LUF", "LUL", "Ls", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "Ar", "MGF", "MKD", "MKN", "MLF", "K", "₮", "MOP", "MRO", "MRU", "MTL", "MTP", "Rs", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "RM", "MZE", "MZM", "MZN", "$", "₦", "NIC", "C$", "NLG", "kr", "Rs", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "₱", "Rs", "zł", "PLZ", "PTE", "₲", "QAR", "RHD", "ROL", "lei", "RSD", "₽", "RUR", "RF", "\u20c1", "$", "SCR", "SDD", "SDG", "SDP", "kr", "$", "£", "SIT", "SKK", "SLE", "SLL", "SOS", "$", "SRG", "£", "STD", "Db", "SUR", "SVC", "£", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "T$", "TPE", "TRL", "₺", "$", "NT$", "TZS", "₴", "UAK", "UGS", "UGX", "US$", "USN", "USS", "UYI", "UYP", "$", "UYW", "UZS", "VEB", "VED", "Bs", "VES", "₫", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "Cg.", "XDR", "XEU", "XFO", "XFU", "F\u202fCFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "¤", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "R", "ZMK", "ZK", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		currencyPositivePrefix: " ",
+		currencyPositiveSuffix: " مىڭ",
+		currencyNegativePrefix: " ",
+		currencyNegativeSuffix: " مىڭ",
 		monthsAbbreviated:      []string{"", "қаң.", "ақп.", "нау.", "сәу.", "мам.", "мау.", "шіл.", "там.", "қыр.", "қаз.", "қар.", "жел."},
 		monthsNarrow:           []string{"", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"},
 		monthsWide:             []string{"", "قاڭتار", "اقپان", "ناۋرىز", "ءساۋىر", "مامىر", "ماۋسىم", "شىلدە", "تامىز", "قىركۇيەك", "قازان", "قاراشا", "جەلتوقسان"},
@@ -58,7 +58,7 @@ func New() locales.Translator {
 		daysNarrow:             []string{"ج", "د", "س", "س", "ب", "ج", "س"},
 		daysShort:              []string{"جە", "دۇ", "سە", "سا", "بە", "جۇ", "سن"},
 		daysWide:               []string{"جەكسەنبى", "دۇيسەنبى", "سەيسەنبى", "سارسەنبى", "بەيسەنبى", "جۇما", "سەنبى"},
-		timezones:              map[string]string{"ACDT": "اۋستراليا جازعى ورتالىق ۋاقىتى", "ACST": "اۋستراليا ستاندارتتى ورتالىق ۋاقىتى", "ACT": "ACT", "ACWDT": "اۋستراليا جازعى ورتالىق-باتىس ۋاقىتى", "ACWST": "اۋستراليا ستاندارتتى ورتالىق-باتىس ۋاقىتى", "ADT": "اتلانتيكا جازعى ۋاقىتى", "ADT Arabia": "ساۋد ارابياسى جازعى ۋاقىتى", "AEDT": "اۋستراليا جازعى شىعىس ۋاقىتى", "AEST": "اۋستراليا ستاندارتتى شىعىس ۋاقىتى", "AFT": "اۋعانستان ۋاقىتى", "AKDT": "الاسكا جازعى ۋاقىتى", "AKST": "الاسكا ستاندارتتى ۋاقىتى", "AMST": "امازون جازعى ۋاقىتى", "AMST Armenia": "ارمەنيا جازعى ۋاقىتى", "AMT": "امازون ستاندارتتى ۋاقىتى", "AMT Armenia": "ارمەنيا ستاندارتتى ۋاقىتى", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "ارگەنتينا جازعى ۋاقىتى", "ART": "ارگەنتينا ستاندارتتى ۋاقىتى", "AST": "اتلانتيكا ستاندارتتى ۋاقىتى", "AST Arabia": "ساۋد ارابياسى ستاندارتتى ۋاقىتى", "AWDT": "اۋستراليا جازعى باتىس ۋاقىتى", "AWST": "اۋستراليا ستاندارتتى باتىس ۋاقىتى", "AZST": "ءازىربايجان جازعى ۋاقىتى", "AZT": "ءازىربايجان ستاندارتتى ۋاقىتى", "BDT Bangladesh": "بانگلادەش جازعى ۋاقىتى", "BNT": "برۋنەي-دارۋسسالام ۋاقىتى", "BOT": "بوليۆيا ۋاقىتى", "BRST": "برازيليا جازعى ۋاقىتى", "BRT": "برازيليا ستاندارتتى ۋاقىتى", "BST Bangladesh": "بانگلادەش ستاندارتتى ۋاقىتى", "BT": "بۋتان ۋاقىتى", "CAST": "CAST", "CAT": "ورتالىق افريكا ۋاقىتى", "CCT": "كوكوس ارالدارىنىڭ ۋاقىتى", "CDT": "ولتۇستىك امەريكا جازعى ورتالىق ۋاقىتى", "CHADT": "چاتەم جازعى ۋاقىتى", "CHAST": "چاتەم ستاندارتتى ۋاقىتى", "CHUT": "ترۋك ۋاقىتى", "CKT": "كۋك ارالدارىنىڭ ستاندارتتى ۋاقىتى", "CKT DST": "كۋك ارالدارىنىڭ جازعى ۋاقىتى", "CLST": "چيلي جازعى ۋاقىتى", "CLT": "چيلي ستاندارتتى ۋاقىتى", "COST": "كولۋمبيا جازعى ۋاقىتى", "COT": "كولۋمبيا ستاندارتتى ۋاقىتى", "CST": "سولتۇستىك امەريكا ستاندارتتى ورتالىق ۋاقىتى", "CST China": "قىتاي ستاندارتتى ۋاقىتى", "CST China DST": "قىتاي جازعى ۋاقىتى", "CVST": "كابو-ۆەردە جازعى ۋاقىتى", "CVT": "كابو-ۆەردە ستاندارتتى ۋاقىتى", "CXT": "كريستماس ارالىنىڭ ۋاقىتى", "ChST": "چاموررو ستاندارتتى ۋاقىتى", "ChST NMI": "ChST NMI", "CuDT": "كۋبا جازعى ۋاقىتى", "CuST": "كۋبا ستاندارتتى ۋاقىتى", "DAVT": "دەيۆيس ۋاقىتى", "DDUT": "ديۋمون-ديۋرۆيل ۋاقىتى", "EASST": "پاسحا ارالى جازعى ۋاقىتى", "EAST": "پاسحا ارالى ستاندارتتى ۋاقىتى", "EAT": "شىعىس افريكا ۋاقىتى", "ECT": "ەكۆادور ۋاقىتى", "EDT": "سولتۇستىك امەريكا جازعى شىعىس ۋاقىتى", "EGDT": "شىعىس گرەنلانديا جازعى ۋاقىتى", "EGST": "شىعىس گرەنلانديا ستاندارتتى ۋاقىتى", "EST": "سولتۇستىك امەريكا ستاندارتتى شىعىس ۋاقىتى", "FEET": "قيىر شىعىس ەۋروپا ۋاقىتى", "FJT": "فيجي ستاندارتتى ۋاقىتى", "FJT Summer": "فيجي جازعى ۋاقىتى", "FKST": "فولكلەند ارالدارى جازعى ۋاقىتى", "FKT": "فولكلەند ارالدارى ستاندارتتى ۋاقىتى", "FNST": "فەرناندۋ-دي-نورونيا جازعى ۋاقىتى", "FNT": "فەرناندۋ-دي-نورونيا ستاندارتتى ۋاقىتى", "GALT": "گالاپاگوس ۋاقىتى", "GAMT": "گامبە ۋاقىتى", "GEST": "گرۋزيا جازعى ۋاقىتى", "GET": "گرۋزيا ستاندارتتى ۋاقىتى", "GFT": "فرانتسۋز گۆياناسى ۋاقىتى", "GIT": "گيلبەرت ارالدارىنىڭ ۋاقىتى", "GMT": "گرينۆيچ ۋاقىتى", "GNSST": "GNSST", "GNST": "GNST", "GST": "پارسى شىعاناعى ستاندارتتى ۋاقىتى", "GST Guam": "GST Guam", "GYT": "گايانا ۋاقىتى", "HADT": "گاۆاي جانە الەۋت ارالدارى جازعى ۋاقىتى", "HAST": "گاۆاي جانە الەۋت ارالدارى ستاندارتتى ۋاقىتى", "HKST": "حوڭكوڭ جازعى ۋاقىتى", "HKT": "حوڭكوڭ ستاندارتتى ۋاقىتى", "HOVST": "حوۆد جازعى ۋاقىتى", "HOVT": "حوۆد ستاندارتتى ۋاقىتى", "ICT": "ءۇندى-قىتاي ۋاقىتى", "IDT": "يزرايل جازعى ۋاقىتى", "IOT": "ءۇندى مۇحيتى ۋاقىتى", "IRKST": "يركۋتسك جازعى ۋاقىتى", "IRKT": "يركۋتسك ستاندارتتى ۋاقىتى", "IRST": "يران ستاندارتتى ۋاقىتى", "IRST DST": "يران جازعى ۋاقىتى", "IST": "ءۇندىستان ستاندارتتى ۋاقىتى", "IST Israel": "يزرايل ستاندارتتى ۋاقىتى", "JDT": "جاپونيا جازعى ۋاقىتى", "JST": "جاپونيا ستاندارتتى ۋاقىتى", "KOST": "كۋسايە ۋاقىتى", "KRAST": "كراسنويارسك جازعى ۋاقىتى", "KRAT": "كراسنويارسك ستاندارتتى ۋاقىتى", "KST": "كورەيا ستاندارتتى ۋاقىتى", "KST DST": "كورەيا جازعى ۋاقىتى", "LHDT": "لورد-حاۋ جازعى ۋاقىتى", "LHST": "لورد-حاۋ ستاندارتتى ۋاقىتى", "LINT": "لاين ارالدارى ۋاقىتى", "MAGST": "ماگادان جازعى ۋاقىتى", "MAGT": "ماگادان ستاندارتتى ۋاقىتى", "MART": "ماركيز ارالدارى ۋاقىتى", "MAWT": "موۋسون ۋاقىتى", "MDT": "MDT", "MESZ": "ورتالىق ەۋروپا جازعى ۋاقىتى", "MEZ": "ورتالىق ەۋروپا ستاندارتتى ۋاقىتى", "MHT": "مارشال ارالدارى ۋاقىتى", "MMT": "ميانما ۋاقىتى", "MSD": "ماسكەۋ جازعى ۋاقىتى", "MST": "MST", "MUST": "ماۆريكيي جازعى ۋاقىتى", "MUT": "ماۆريكيي ستاندارتتى ۋاقىتى", "MVT": "مالديۆ ارالدارى ۋاقىتى", "MYT": "مالايزيا ۋاقىتى", "NCT": "جاڭا كالەدونيا ستاندارتتى ۋاقىتى", "NDT": "نيۋفاۋندلەند جازعى ۋاقىتى", "NDT New Caledonia": "جاڭا كالەدونيا جازعى ۋاقىتى", "NFDT": "نورفولك ارالى جازعى ۋاقىتى", "NFT": "نورفولك ارالى ستاندارتتى ۋاقىتى", "NOVST": "جاڭاسىبىر جازعى ۋاقىتى", "NOVT": "جاڭاسىبىر ستاندارتتى ۋاقىتى", "NPT": "نەپال ۋاقىتى", "NRT": "ناۋرۋ ۋاقىتى", "NST": "نيۋفاۋندلەند ستاندارتتى ۋاقىتى", "NUT": "نيۋە ۋاقىتى", "NZDT": "جاڭا زەلانديا جازعى ۋاقىتى", "NZST": "جاڭا زەلانديا ستاندارتتى ۋاقىتى", "OESZ": "شىعىس ەۋروپا جازعى ۋاقىتى", "OEZ": "شىعىس ەۋروپا ستاندارتتى ۋاقىتى", "OMSST": "ومبى جازعى ۋاقىتى", "OMST": "ومبى ستاندارتتى ۋاقىتى", "PDT": "سولتۇستىك امەريكا جازعى تىنىق مۇحيتى ۋاقىتى", "PDTM": "مەكسيكا جازعى تىنىق مۇحيت ۋاقىتى", "PETDT": "PETDT", "PETST": "PETST", "PGT": "پاپۋا – جاڭا گۆينەيا ۋاقىتى", "PHOT": "فەنيكس ارالدارى ۋاقىتى", "PKT": "پاكىستان ستاندارتتى ۋاقىتى", "PKT DST": "پاكىستان جازعى ۋاقىتى", "PMDT": "سەن-پەر جانە ميكەلون جازعى ۋاقىتى", "PMST": "سەن-پەر جانە ميكەلون ستاندارتتى ۋاقىتى", "PONT": "پونپەي ۋاقىتى", "PST": "سولتۇستىك امەريكا ستاندارتتى تىنىق مۇحيتى ۋاقىتى", "PST Philippine": "فيليپين ارالدارى ستاندارتتى ۋاقىتى", "PST Philippine DST": "فيليپين ارالدارى جازعى ۋاقىتى", "PST Pitcairn": "پيتكەرن ۋاقىتى", "PSTM": "مەكسيكا ستاندارتتى تىنىق مۇحيت ۋاقىتى", "PWT": "پالاۋ ۋاقىتى", "PYST": "پاراگۆاي جازعى ۋاقىتى", "PYT": "پاراگۆاي ستاندارتتى ۋاقىتى", "PYT Korea": "پحەنيان ۋاقىتى", "RET": "رەيۋنون ۋاقىتى", "ROTT": "روتەرا ۋقىتى", "SAKST": "ساحالين جازعى ۋاقىتى", "SAKT": "ساحالين ستاندارتتى ۋاقىتى", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "وڭتۇستىك افريكا ستاندارتتى ۋاقىتى", "SBT": "سولومون ارالدارى ۋاقىتى", "SCT": "سەيشەل ارالدارى ۋاقىتى", "SGT": "سينگاپۋر ستاندارتتى ۋاقىتى", "SLST": "SLST", "SRT": "سۋرينام ۋاقىتى", "SST Samoa": "ساموا ستاندارتتى ۋاقىتى", "SST Samoa Apia": "اپيا ستاندارتتى ۋاقىتى", "SST Samoa Apia DST": "اپيا جازعى ۋاقىتى", "SST Samoa DST": "ساموا جازعى ۋاقىتى", "SYOT": "سەۆا ۋاقىتى", "TAAF": "فرانتسيانىڭ وڭتۇستىك ايماعى جانە انتاركتيكا ۋاقىتى", "TAHT": "تايتي ۋاقىتى", "TJT": "تاجىكستان ۋاقىتى", "TKT": "توكەلاۋ ۋاقىتى", "TLT": "شىعىس تيمور ۋاقىتى", "TMST": "تۇرىكمەنستان جازعى ۋاقىتى", "TMT": "تۇرىكمەنستان ستاندارتتى ۋاقىتى", "TOST": "تونگا كازعى ۋاقىتى", "TOT": "تونگا ستاندارتتى ۋاقىتى", "TVT": "تۋۆالۋ ۋاقىتى", "TWT": "تايبەي ستاندارتتى ۋاقىتى", "TWT DST": "تايبەي جازعى ۋاقىتى", "ULAST": "ۇلانباتىر جازعى ۋاقىتى", "ULAT": "ۇلانباتىر ستاندارتتى ۋاقىتى", "UYST": "ۋرۋگۆاي جازعى ۋاقىتى", "UYT": "ۋرۋگۆاي ستاندارتتى ۋاقىتى", "UZT": "وزبەكستان ستاندارتتى ۋاقىتى", "UZT DST": "وزبەكستان جازعى ۋاقىتى", "VET": "ۆەنەسۋەلا ۋاقىتى", "VLAST": "ۆلاديۆوستوك جازعى ۋاقىتى", "VLAT": "ۆلاديۆوستوك ستاندارتتى ۋاقىتى", "VOLST": "ۆولگوگراد جازعى ۋاقىتى", "VOLT": "ۆولگوگراد ستاندارتتى ۋاقىتى", "VOST": "ۆوستوك ۋاقىتى", "VUT": "ۆانۋاتۋ ستاندارتتى ۋاقىتى", "VUT DST": "ۆانۋاتۋ جازعى ۋاقىتى", "WAKT": "ۋەيك ارالى ۋاقىتى", "WARST": "باتىس ارگەنتينا جازعى ۋاقىتى", "WART": "باتىس ارگەنتينا ستاندارتتى ۋاقىتى", "WAST": "باتىس افريكا ۋاقىتى", "WAT": "باتىس افريكا ۋاقىتى", "WESZ": "باتىس ەۋروپا جازعى ۋاقىتى", "WEZ": "باتىس ەۋروپا ستاندارتتى ۋاقىتى", "WFT": "ۋولليس جانە فۋتۋنا ۋاقىتى", "WGST": "باتىس گرەنلانديا جازعى ۋاقىتى", "WGT": "باتىس گرەنلانديا ستاندارتتى ۋاقىتى", "WIB": "باتىس يندونەزيا ۋاقىتى", "WIT": "شىعىس يندونەزيا ۋاقىتى", "WITA": "ورتالىق يندونەزيا ۋاقىتى", "YAKST": "ياكۋتسك جازعى ۋاقىتى", "YAKT": "ياكۋتسك ستاندارتتى ۋاقىتى", "YEKST": "ەكاتەرينبۋرگ جازعى ۋاقىتى", "YEKT": "ەكاتەرينبۋرگ ستاندارتتى ۋاقىتى", "YST": "يۋكون ۋاقىتى", "МСК": "ماسكەۋ ستاندارتتى ۋاقىتى", "اقتاۋ": "اقتاۋ ستاندارتتى ۋاقىتى", "اقتاۋ قالاسى": "اقتاۋ جازعى ۋاقىتى", "اقتوبە": "اقتوبە ستاندارتتى ۋاقىتى", "اقتوبە قالاسى": "اقتوبە جازعى ۋاقىتى", "الماتى": "الماتى ستاندارتتى ۋاقىتى", "الماتى قالاسى": "الماتى جازعى ۋاقىتى", "باتىس قازاق ەلى": "باتىس قازاق ەلى ۋاقىتى", "شىعىش قازاق ەلى": "شىعىس قازاق ەلى ۋاقىتى", "قازاق ەلى": "قازاق ەلى ۋاقىتى", "قىرعىزستان": "قىرعىزستان ۋاقىتى", "قىزىلوردا": "قىزىلوردا ستاندارتتى ۋاقىتى", "قىزىلوردا قالاسى": "قىزىلوردا جازعى ۋاقىتى", "∅∅∅": "پەرۋ جازعى ۋاقىتى"},
+		timezones:              map[string]string{"ACDT": "اۋستراليا جازعى ورتالىق ۋاقىتى", "ACST": "اۋستراليا ستاندارتتى ورتالىق ۋاقىتى", "ACT": "ACT", "ACWDT": "اۋستراليا جازعى ورتالىق-باتىس ۋاقىتى", "ACWST": "اۋستراليا ستاندارتتى ورتالىق-باتىس ۋاقىتى", "ADT": "اتلانتيكا جازعى ۋاقىتى", "ADT Arabia": "ساۋد ارابياسى جازعى ۋاقىتى", "AEDT": "اۋستراليا جازعى شىعىس ۋاقىتى", "AEST": "اۋستراليا ستاندارتتى شىعىس ۋاقىتى", "AFT": "اۋعانستان ۋاقىتى", "AKDT": "الاسكا جازعى ۋاقىتى", "AKST": "الاسكا ستاندارتتى ۋاقىتى", "AMST": "امازون جازعى ۋاقىتى", "AMST Armenia": "ارمەنيا جازعى ۋاقىتى", "AMT": "امازون ستاندارتتى ۋاقىتى", "AMT Armenia": "ارمەنيا ستاندارتتى ۋاقىتى", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "ارگەنتينا جازعى ۋاقىتى", "ART": "ارگەنتينا ستاندارتتى ۋاقىتى", "AST": "اتلانتيكا ستاندارتتى ۋاقىتى", "AST Arabia": "ساۋد ارابياسى ستاندارتتى ۋاقىتى", "AWDT": "اۋستراليا جازعى باتىس ۋاقىتى", "AWST": "اۋستراليا ستاندارتتى باتىس ۋاقىتى", "AZST": "ءازىربايجان جازعى ۋاقىتى", "AZT": "ءازىربايجان ستاندارتتى ۋاقىتى", "BDT Bangladesh": "بانگلادەش جازعى ۋاقىتى", "BNT": "برۋنەي-دارۋسسالام ۋاقىتى", "BOT": "بوليۆيا ۋاقىتى", "BRST": "برازيليا جازعى ۋاقىتى", "BRT": "برازيليا ستاندارتتى ۋاقىتى", "BST Bangladesh": "بانگلادەش ستاندارتتى ۋاقىتى", "BT": "بۋتان ۋاقىتى", "CAST": "CAST", "CAT": "ورتالىق افريكا ۋاقىتى", "CCT": "كوكوس ارالدارىنىڭ ۋاقىتى", "CDT": "ولتۇستىك امەريكا جازعى ورتالىق ۋاقىتى", "CHADT": "چاتەم جازعى ۋاقىتى", "CHAST": "چاتەم ستاندارتتى ۋاقىتى", "CHUT": "ترۋك ۋاقىتى", "CKT": "كۋك ارالدارىنىڭ ستاندارتتى ۋاقىتى", "CKT DST": "كۋك ارالدارىنىڭ جازعى ۋاقىتى", "CLST": "چيلي جازعى ۋاقىتى", "CLT": "چيلي ستاندارتتى ۋاقىتى", "COST": "كولۋمبيا جازعى ۋاقىتى", "COT": "كولۋمبيا ستاندارتتى ۋاقىتى", "CST": "سولتۇستىك امەريكا ستاندارتتى ورتالىق ۋاقىتى", "CST China": "قىتاي ستاندارتتى ۋاقىتى", "CST China DST": "قىتاي جازعى ۋاقىتى", "CVST": "كابو-ۆەردە جازعى ۋاقىتى", "CVT": "كابو-ۆەردە ستاندارتتى ۋاقىتى", "CXT": "كريستماس ارالىنىڭ ۋاقىتى", "ChST": "چاموررو ستاندارتتى ۋاقىتى", "ChST NMI": "ChST NMI", "CuDT": "كۋبا جازعى ۋاقىتى", "CuST": "كۋبا ستاندارتتى ۋاقىتى", "DAVT": "دەيۆيس ۋاقىتى", "DDUT": "ديۋمون-ديۋرۆيل ۋاقىتى", "EASST": "پاسحا ارالى جازعى ۋاقىتى", "EAST": "پاسحا ارالى ستاندارتتى ۋاقىتى", "EAT": "شىعىس افريكا ۋاقىتى", "ECT": "ەكۆادور ۋاقىتى", "EDT": "سولتۇستىك امەريكا جازعى شىعىس ۋاقىتى", "EGDT": "شىعىس گرەنلانديا جازعى ۋاقىتى", "EGST": "شىعىس گرەنلانديا ستاندارتتى ۋاقىتى", "EST": "سولتۇستىك امەريكا ستاندارتتى شىعىس ۋاقىتى", "FEET": "قيىر شىعىس ەۋروپا ۋاقىتى", "FJT": "فيجي ستاندارتتى ۋاقىتى", "FJT Summer": "فيجي جازعى ۋاقىتى", "FKST": "فولكلەند ارالدارى جازعى ۋاقىتى", "FKT": "فولكلەند ارالدارى ستاندارتتى ۋاقىتى", "FNST": "فەرناندۋ-دي-نورونيا جازعى ۋاقىتى", "FNT": "فەرناندۋ-دي-نورونيا ستاندارتتى ۋاقىتى", "GALT": "گالاپاگوس ۋاقىتى", "GAMT": "گامبە ۋاقىتى", "GEST": "گرۋزيا جازعى ۋاقىتى", "GET": "گرۋزيا ستاندارتتى ۋاقىتى", "GFT": "فرانتسۋز گۆياناسى ۋاقىتى", "GIT": "گيلبەرت ارالدارىنىڭ ۋاقىتى", "GMT": "گرينۆيچ ۋاقىتى", "GNSST": "GNSST", "GNST": "GNST", "GST": "وڭتۇستىك گەورگيا ۋاقىتى", "GST Guam": "GST Guam", "GYT": "گايانا ۋاقىتى", "HADT": "گاۆاي جانە الەۋت ارالدارى جازعى ۋاقىتى", "HAST": "گاۆاي جانە الەۋت ارالدارى ستاندارتتى ۋاقىتى", "HKST": "حوڭكوڭ جازعى ۋاقىتى", "HKT": "حوڭكوڭ ستاندارتتى ۋاقىتى", "HOVST": "حوۆد جازعى ۋاقىتى", "HOVT": "حوۆد ستاندارتتى ۋاقىتى", "ICT": "ءۇندى-قىتاي ۋاقىتى", "IDT": "يزرايل جازعى ۋاقىتى", "IOT": "ءۇندى مۇحيتى ۋاقىتى", "IRKST": "يركۋتسك جازعى ۋاقىتى", "IRKT": "يركۋتسك ستاندارتتى ۋاقىتى", "IRST": "يران ستاندارتتى ۋاقىتى", "IRST DST": "يران جازعى ۋاقىتى", "IST": "ءۇندىستان ستاندارتتى ۋاقىتى", "IST Israel": "يزرايل ستاندارتتى ۋاقىتى", "JDT": "جاپونيا جازعى ۋاقىتى", "JST": "جاپونيا ستاندارتتى ۋاقىتى", "KOST": "كۋسايە ۋاقىتى", "KRAST": "كراسنويارسك جازعى ۋاقىتى", "KRAT": "كراسنويارسك ستاندارتتى ۋاقىتى", "KST": "كورەيا ستاندارتتى ۋاقىتى", "KST DST": "كورەيا جازعى ۋاقىتى", "LHDT": "لورد-حاۋ جازعى ۋاقىتى", "LHST": "لورد-حاۋ ستاندارتتى ۋاقىتى", "LINT": "لاين ارالدارى ۋاقىتى", "MAGST": "ماگادان جازعى ۋاقىتى", "MAGT": "ماگادان ستاندارتتى ۋاقىتى", "MART": "ماركيز ارالدارى ۋاقىتى", "MAWT": "موۋسون ۋاقىتى", "MDT": "MDT", "MESZ": "ورتالىق ەۋروپا جازعى ۋاقىتى", "MEZ": "ورتالىق ەۋروپا ستاندارتتى ۋاقىتى", "MHT": "مارشال ارالدارى ۋاقىتى", "MMT": "ميانما ۋاقىتى", "MSD": "ماسكەۋ جازعى ۋاقىتى", "MST": "MST", "MUST": "ماۆريكيي جازعى ۋاقىتى", "MUT": "ماۆريكيي ستاندارتتى ۋاقىتى", "MVT": "مالديۆ ارالدارى ۋاقىتى", "MYT": "مالايزيا ۋاقىتى", "NCT": "جاڭا كالەدونيا ستاندارتتى ۋاقىتى", "NDT": "نيۋفاۋندلەند جازعى ۋاقىتى", "NDT New Caledonia": "جاڭا كالەدونيا جازعى ۋاقىتى", "NFDT": "نورفولك ارالى جازعى ۋاقىتى", "NFT": "نورفولك ارالى ستاندارتتى ۋاقىتى", "NOVST": "جاڭاسىبىر جازعى ۋاقىتى", "NOVT": "جاڭاسىبىر ستاندارتتى ۋاقىتى", "NPT": "نەپال ۋاقىتى", "NRT": "ناۋرۋ ۋاقىتى", "NST": "نيۋفاۋندلەند ستاندارتتى ۋاقىتى", "NUT": "نيۋە ۋاقىتى", "NZDT": "جاڭا زەلانديا جازعى ۋاقىتى", "NZST": "جاڭا زەلانديا ستاندارتتى ۋاقىتى", "OESZ": "شىعىس ەۋروپا جازعى ۋاقىتى", "OEZ": "شىعىس ەۋروپا ستاندارتتى ۋاقىتى", "OMSST": "ومبى جازعى ۋاقىتى", "OMST": "ومبى ستاندارتتى ۋاقىتى", "PDT": "سولتۇستىك امەريكا جازعى تىنىق مۇحيتى ۋاقىتى", "PDTM": "مەكسيكا جازعى تىنىق مۇحيت ۋاقىتى", "PETDT": "PETDT", "PETST": "PETST", "PGT": "پاپۋا – جاڭا گۆينەيا ۋاقىتى", "PHOT": "فەنيكس ارالدارى ۋاقىتى", "PKT": "پاكىستان ستاندارتتى ۋاقىتى", "PKT DST": "پاكىستان جازعى ۋاقىتى", "PMDT": "سەن-پەر جانە ميكەلون جازعى ۋاقىتى", "PMST": "سەن-پەر جانە ميكەلون ستاندارتتى ۋاقىتى", "PONT": "پونپەي ۋاقىتى", "PST": "سولتۇستىك امەريكا ستاندارتتى تىنىق مۇحيتى ۋاقىتى", "PST Philippine": "فيليپين ارالدارى ستاندارتتى ۋاقىتى", "PST Philippine DST": "فيليپين ارالدارى جازعى ۋاقىتى", "PST Pitcairn": "پيتكەرن ۋاقىتى", "PSTM": "مەكسيكا ستاندارتتى تىنىق مۇحيت ۋاقىتى", "PWT": "پالاۋ ۋاقىتى", "PYST": "پاراگۆاي جازعى ۋاقىتى", "PYT": "پاراگۆاي ستاندارتتى ۋاقىتى", "PYT Korea": "پحەنيان ۋاقىتى", "RET": "رەيۋنون ۋاقىتى", "ROTT": "روتەرا ۋقىتى", "SAKST": "ساحالين جازعى ۋاقىتى", "SAKT": "ساحالين ستاندارتتى ۋاقىتى", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "وڭتۇستىك افريكا ستاندارتتى ۋاقىتى", "SBT": "سولومون ارالدارى ۋاقىتى", "SCT": "سەيشەل ارالدارى ۋاقىتى", "SGT": "سينگاپۋر ستاندارتتى ۋاقىتى", "SLST": "SLST", "SRT": "سۋرينام ۋاقىتى", "SST Samoa": "ساموا ستاندارتتى ۋاقىتى", "SST Samoa Apia": "اپيا ستاندارتتى ۋاقىتى", "SST Samoa Apia DST": "اپيا جازعى ۋاقىتى", "SST Samoa DST": "ساموا جازعى ۋاقىتى", "SYOT": "سەۆا ۋاقىتى", "TAAF": "فرانتسيانىڭ وڭتۇستىك ايماعى جانە انتاركتيكا ۋاقىتى", "TAHT": "تايتي ۋاقىتى", "TJT": "تاجىكستان ۋاقىتى", "TKT": "توكەلاۋ ۋاقىتى", "TLT": "شىعىس تيمور ۋاقىتى", "TMST": "تۇرىكمەنستان جازعى ۋاقىتى", "TMT": "تۇرىكمەنستان ستاندارتتى ۋاقىتى", "TOST": "تونگا كازعى ۋاقىتى", "TOT": "تونگا ستاندارتتى ۋاقىتى", "TVT": "تۋۆالۋ ۋاقىتى", "TWT": "تايبەي ستاندارتتى ۋاقىتى", "TWT DST": "تايبەي جازعى ۋاقىتى", "ULAST": "ۇلانباتىر جازعى ۋاقىتى", "ULAT": "ۇلانباتىر ستاندارتتى ۋاقىتى", "UYST": "ۋرۋگۆاي جازعى ۋاقىتى", "UYT": "ۋرۋگۆاي ستاندارتتى ۋاقىتى", "UZT": "وزبەكستان ستاندارتتى ۋاقىتى", "UZT DST": "وزبەكستان جازعى ۋاقىتى", "VET": "ۆەنەسۋەلا ۋاقىتى", "VLAST": "ۆلاديۆوستوك جازعى ۋاقىتى", "VLAT": "ۆلاديۆوستوك ستاندارتتى ۋاقىتى", "VOLST": "ۆولگوگراد جازعى ۋاقىتى", "VOLT": "ۆولگوگراد ستاندارتتى ۋاقىتى", "VOST": "ۆوستوك ۋاقىتى", "VUT": "ۆانۋاتۋ ستاندارتتى ۋاقىتى", "VUT DST": "ۆانۋاتۋ جازعى ۋاقىتى", "WAKT": "ۋەيك ارالى ۋاقىتى", "WARST": "باتىس ارگەنتينا جازعى ۋاقىتى", "WART": "باتىس ارگەنتينا ستاندارتتى ۋاقىتى", "WAST": "باتىس افريكا ۋاقىتى", "WAT": "باتىس افريكا ۋاقىتى", "WESZ": "باتىس ەۋروپا جازعى ۋاقىتى", "WEZ": "باتىس ەۋروپا ستاندارتتى ۋاقىتى", "WFT": "ۋولليس جانە فۋتۋنا ۋاقىتى", "WGST": "باتىس گرەنلانديا جازعى ۋاقىتى", "WGT": "باتىس گرەنلانديا ستاندارتتى ۋاقىتى", "WIB": "باتىس يندونەزيا ۋاقىتى", "WIT": "شىعىس يندونەزيا ۋاقىتى", "WITA": "ورتالىق يندونەزيا ۋاقىتى", "YAKST": "ياكۋتسك جازعى ۋاقىتى", "YAKT": "ياكۋتسك ستاندارتتى ۋاقىتى", "YEKST": "ەكاتەرينبۋرگ جازعى ۋاقىتى", "YEKT": "ەكاتەرينبۋرگ ستاندارتتى ۋاقىتى", "YST": "يۋكون ۋاقىتى", "МСК": "ماسكەۋ ستاندارتتى ۋاقىتى", "اقتاۋ": "اقتاۋ ستاندارتتى ۋاقىتى", "اقتاۋ قالاسى": "اقتاۋ جازعى ۋاقىتى", "اقتوبە": "اقتوبە ستاندارتتى ۋاقىتى", "اقتوبە قالاسى": "اقتوبە جازعى ۋاقىتى", "الماتى": "الماتى ستاندارتتى ۋاقىتى", "الماتى قالاسى": "الماتى جازعى ۋاقىتى", "باتىس قازاق ەلى": "باتىس قازاق ەلى ۋاقىتى", "شىعىش قازاق ەلى": "شىعىس قازاق ەلى ۋاقىتى", "قازاق ەلى": "قازاق ەلى ۋاقىتى", "قىرعىزستان": "قىرعىزستان ۋاقىتى", "قىزىلوردا": "قىزىلوردا ستاندارتتى ۋاقىتى", "قىزىلوردا قالاسى": "قىزىلوردا جازعى ۋاقىتى", "∅∅∅": "ازور ارالدارى جازعى ۋاقىتى"},
 	}
 }
 
@@ -84,6 +84,7 @@ func (kk *kk_Arab) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'kk_Arab'
 func (kk *kk_Arab) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -95,6 +96,7 @@ func (kk *kk_Arab) CardinalPluralRule(num float64, v uint64) locales.PluralRule 
 
 // OrdinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for 'kk_Arab'
 func (kk *kk_Arab) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 	nMod10 := math.Mod(n, 10)
 
@@ -107,6 +109,7 @@ func (kk *kk_Arab) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'kk_Arab'
 func (kk *kk_Arab) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
+
 	start := kk.CardinalPluralRule(num1, v1)
 	end := kk.CardinalPluralRule(num2, v2)
 
@@ -117,6 +120,7 @@ func (kk *kk_Arab) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 	}
 
 	return locales.PluralRuleOther
+
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -227,6 +231,7 @@ func (kk *kk_Arab) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'kk_Arab' and handles both Whole and Real numbers based on 'v'
 func (kk *kk_Arab) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -298,6 +303,7 @@ func (kk *kk_Arab) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'kk_Arab'
 func (kk *kk_Arab) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kk.currencies[currency]
 	l := len(s) + len(symbol) + 12
@@ -314,12 +320,12 @@ func (kk *kk_Arab) FmtCurrency(num float64, v uint64, currency currency.Type) st
 		b = append(b, s[i])
 	}
 
-	for j := len(symbol) - 1; j >= 0; j-- {
-		b = append(b, symbol[j])
-	}
-
 	for j := len(kk.currencyPositivePrefix) - 1; j >= 0; j-- {
 		b = append(b, kk.currencyPositivePrefix[j])
+	}
+
+	for j := len(symbol) - 1; j >= 0; j-- {
+		b = append(b, symbol[j])
 	}
 
 	if num < 0 {
@@ -339,6 +345,7 @@ func (kk *kk_Arab) FmtCurrency(num float64, v uint64, currency currency.Type) st
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'kk_Arab'
 // in accounting notation.
 func (kk *kk_Arab) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kk.currencies[currency]
 	l := len(s) + len(symbol) + 12
@@ -357,26 +364,25 @@ func (kk *kk_Arab) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 	if num < 0 {
 
-		for j := len(symbol) - 1; j >= 0; j-- {
-			b = append(b, symbol[j])
-		}
-
 		for j := len(kk.currencyNegativePrefix) - 1; j >= 0; j-- {
 			b = append(b, kk.currencyNegativePrefix[j])
+		}
+
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
 		}
 
 		b = append(b, kk.minus[0])
 
 	} else {
 
-		for j := len(symbol) - 1; j >= 0; j-- {
-			b = append(b, symbol[j])
-		}
-
 		for j := len(kk.currencyPositivePrefix) - 1; j >= 0; j-- {
 			b = append(b, kk.currencyPositivePrefix[j])
 		}
 
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
+		}
 	}
 
 	// reverse
@@ -387,6 +393,7 @@ func (kk *kk_Arab) FmtAccounting(num float64, v uint64, currency currency.Type) 
 	if num < 0 {
 		b = append(b, kk.currencyNegativeSuffix...)
 	} else {
+
 		b = append(b, kk.currencyPositiveSuffix...)
 	}
 
@@ -395,6 +402,7 @@ func (kk *kk_Arab) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 // FmtDateShort returns the short date representation of 't' for 'kk_Arab'
 func (kk *kk_Arab) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -423,6 +431,7 @@ func (kk *kk_Arab) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'kk_Arab'
 func (kk *kk_Arab) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -441,6 +450,7 @@ func (kk *kk_Arab) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'kk_Arab'
 func (kk *kk_Arab) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -459,6 +469,7 @@ func (kk *kk_Arab) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'kk_Arab'
 func (kk *kk_Arab) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Year() > 0 {
@@ -479,6 +490,7 @@ func (kk *kk_Arab) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'kk_Arab'
 func (kk *kk_Arab) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -499,6 +511,7 @@ func (kk *kk_Arab) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'kk_Arab'
 func (kk *kk_Arab) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -526,6 +539,7 @@ func (kk *kk_Arab) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'kk_Arab'
 func (kk *kk_Arab) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {
@@ -557,6 +571,7 @@ func (kk *kk_Arab) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'kk_Arab'
 func (kk *kk_Arab) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Hour() < 10 {

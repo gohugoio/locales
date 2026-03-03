@@ -47,10 +47,10 @@ func New() locales.Translator {
 		minus:                  "-",
 		percent:                "%",
 		timeSeparator:          ":",
-		currencies:             []string{"ADP", "AED", "AFA", "AWGA", "ALK", "ALBL", "ARMD", "NLAG", "ANGK", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARJP", "ATS", "AUD", "ARBF", "AZM", "AZRM", "BAD", "BHBM", "BAN", "BRBD", "BGDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BLGL", "BGO", "BHD", "BRDF", "BRMD", "BRND", "BLWB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BHMD", "BTNN", "BUK", "BTSP", "BYB", "BLRR", "BYR", "BLZD", "KN$", "KNGF", "CHE", "SWZF", "CHW", "CLE", "CLF", "CLP", "CNYÁ", "CNX", "CHNY", "KLBP", "COU", "KRK", "CSD", "CSK", "KBKP", "CBAP", "KWRE", "CYP", "CHKK", "DDM", "DEM", "DJBF", "DNMK", "DOMP", "ALJD", "ECS", "ECV", "EEK", "MSRP", "ERTN", "ESA", "ESB", "ESP", "ETPB", "EUR", "FIM", "FJD", "FKP", "FRF", "BRTP", "GEK", "JRJL", "GHC", "GNAS", "GBRP", "GMBD", "GWNF", "GNS", "GQE", "GRD", "GTMK", "GWE", "GWP", "GYD", "HGKD", "HNDL", "HRD", "KRSK", "HTNG", "HGRF", "ENDR", "IEP", "ILP", "ILR", "ILS", "HNDR", "IQD", "ERNR", "ISJ", "ISLK", "ITL", "JMKD", "JOD", "¥", "KINS", "KGSS", "KMBR", "KMRF", "SHKW", "KRH", "KRO", "ZBKW", "KWD", "KMID", "KZKT", "LTKK", "LBNP", "SRLR", "LBRD", "LSTL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LBYD", "MRKD", "MAF", "MCF", "MDC", "MLDL", "MLGA", "MGF", "MKDD", "MKN", "MLF", "MNMK", "MNGT", "MKNP", "MRO", "MRTU", "MTL", "MTP", "MURR", "MVP", "MLDR", "MLWK", "MKS$", "MXP", "MXV", "MLRG", "MZE", "MZM", "MZBM", "NMBD", "NJRN", "NIC", "NKGC", "NLG", "NRWK", "NPLR", "NZD", "OMR", "PNMB", "PEI", "PRSL", "PES", "PGK", "PLPP", "PKRS", "PLNZ", "PLZ", "PTE", "PRGG", "QAR", "RHD", "ROL", "RMNL", "SRBD", "RUSR", "RUR", "RWDF", "SAR", "SBD", "SCLR", "SDD", "SDNP", "SDP", "SWDK", "SGPD", "SHLP", "SIT", "SKK", "SLNL", "SRLL", "SÓMS", "SRND", "SRG", "ZRSP", "STD", "STPD", "SUR", "SVC", "SURP", "SWZL", "TÁIB", "TJR", "TJS", "TMM", "TMT", "TNSD", "TOP", "TPE", "TRL", "TRKL", "TDTD", "NTWD", "TNZS", "YKNH", "UAK", "UGS", "YUGS", "$", "USN", "USS", "UYI", "UYP", "YRGP", "UYW", "OZBS", "VEB", "VED", "VEF", "WNZB", "WTND", "VNN", "VUV", "WST", "DARF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "RKB$", "XCG", "XDR", "XEU", "XFO", "XFU", "RACF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAPR", "ZMK", "ZMBK", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
-		currencyPositivePrefix: " ",
+		currencies:             []string{"ADP", "AED", "AFA", "AWGA", "ALK", "ALBL", "ARMD", "NLAG", "ANGK", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARJP", "ATS", "A$", "ARBF", "AZM", "AZRM", "BAD", "BHBM", "BAN", "BRBD", "BGDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BLGL", "BGO", "BHD", "BRDF", "BRMD", "BRND", "BLWB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BHMD", "BTNN", "BUK", "BTSP", "BYB", "BLRR", "BYR", "BLZD", "KN$", "KNGF", "CHE", "SWZF", "CHW", "CLE", "CLF", "$", "CNYÁ", "CNX", "CHNY", "KLBP", "COU", "KRK", "CSD", "CSK", "KBKP", "CBAP", "KWRE", "CYP", "CHKK", "DDM", "DEM", "DJBF", "DNMK", "DOMP", "ALJD", "ECS", "ECV", "EEK", "MSRP", "ERTN", "ESA", "ESB", "₧", "ETPB", "€", "FIM", "$", "£", "FRF", "BRTP", "GEK", "JRJL", "GHC", "GNAS", "GBRP", "GMBD", "GWNF", "GNS", "GQE", "GRD", "GTMK", "GWE", "GWP", "$", "HGKD", "HNDL", "HRD", "KRSK", "HTNG", "HGRF", "ENDR", "IEP", "ILP", "ILR", "₪", "HNDR", "IQD", "ERNR", "ISJ", "ISLK", "ITL", "JMKD", "JOD", "¥", "KINS", "KGSS", "KMBR", "KMRF", "SHKW", "KRH", "KRO", "ZBKW", "KWD", "KMID", "KZKT", "LTKK", "LBNP", "SRLR", "LBRD", "LSTL", "Lt", "LTT", "LUC", "LUF", "LUL", "Ls", "LVR", "LBYD", "MRKD", "MAF", "MCF", "MDC", "MLDL", "MLGA", "MGF", "MKDD", "MKN", "MLF", "MNMK", "MNGT", "MKNP", "MRO", "MRTU", "MTL", "MTP", "MURR", "MVP", "MLDR", "MLWK", "MKS$", "MXP", "MXV", "MLRG", "MZE", "MZM", "MZBM", "NMBD", "NJRN", "NIC", "NKGC", "NLG", "NRWK", "NPLR", "NZ$", "OMR", "PNMB", "PEI", "PRSL", "PES", "PGK", "PLPP", "PKRS", "PLNZ", "PLZ", "PTE", "PRGG", "QAR", "RHD", "ROL", "RMNL", "SRBD", "RUSR", "RUR", "RWDF", "\u20c1", "$", "SCLR", "SDD", "SDNP", "SDP", "SWDK", "SGPD", "SHLP", "SIT", "SKK", "SLNL", "SRLL", "SÓMS", "SRND", "SRG", "ZRSP", "STD", "STPD", "SUR", "SVC", "SURP", "SWZL", "TÁIB", "TJR", "TJS", "TMM", "TMT", "TNSD", "T$", "TPE", "TRL", "TRKL", "TDTD", "NTWD", "TNZS", "YKNH", "UAK", "UGS", "YUGS", "$", "USN", "USS", "UYI", "UYP", "YRGP", "UYW", "OZBS", "VEB", "VED", "Bs", "WNZB", "WTND", "VNN", "VUV", "WST", "DARF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "RKB$", "Cg.", "XDR", "XEU", "XFO", "XFU", "RACF", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "¤", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAPR", "ZMK", "ZMBK", "ZRN", "ZRZ", "ZWD", "ZWG", "ZWL", "ZWR"},
+		currencyPositivePrefix: " ",
 		currencyPositiveSuffix: "H",
-		currencyNegativePrefix: " ",
+		currencyNegativePrefix: " ",
 		currencyNegativeSuffix: "H",
 		monthsAbbreviated:      []string{"", "Jan", "Par", "Már", "Apr", "Mai", "Jun", "Jól", "Aga", "Sat", "Akt", "Naw", "Das"},
 		monthsNarrow:           []string{"", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"},
@@ -59,7 +59,7 @@ func New() locales.Translator {
 		daysNarrow:             []string{"Y", "D", "S", "Ch", "P", "J", "Sh"},
 		daysWide:               []string{"Yakshambeh", "Doshambeh", "Sayshambeh", "Chárshambeh", "Panchshambeh", "Jomah", "Shambeh"},
 		periodsAbbreviated:     []string{"am", "pm"},
-		timezones:              map[string]string{"ACDT": "Delgáhi Ástréliáay garmági wahd", "ACST": "Delgáhi Ástréliáay anjári wahd", "ACT": "ACT", "ACWDT": "Delgáhirónendi Ástréliáay garmági wahd", "ACWST": "Delgáhirónendi Ástréliáay anjári wahd", "ADT": "Atlantáay róchi wahd", "ADT Arabia": "Arabi róchi wahd", "AEDT": "Ródarátki Ástréliáay garmági wahd", "AEST": "Ródarátki Ástréliáay anjári wahd", "AFT": "Awgánestánay wahd", "AKDT": "Aláskáay garmági wahd", "AKST": "Aláskáay anjári wahd", "AMST": "Amázónay garmági wahd", "AMST Armenia": "Árminiáay garmági wahd", "AMT": "Amázónay anjári wahd", "AMT Armenia": "Árminiáay anjári wahd", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "Arjentináay garmági wahd", "ART": "Arjentináay anjári wahd", "AST": "Atlantáay anjári wahd", "AST Arabia": "Arabi anjári wahd", "AWDT": "Rónendi Ástréliáay garmági wahd", "AWST": "Rónendi Ástréliáay anjári wahd", "AZST": "Ázerbáijánay garmági wahd", "AZT": "Ázerbáijánay anjári wahd", "BDT Bangladesh": "Bangaladéshay garmági wahd", "BNT": "Brunáiay wahd", "BOT": "Boliwiáay wahd", "BRST": "Brázilay garmági wahd", "BRT": "Brázilay anjári wahd", "BST Bangladesh": "Bangaladéshay anjári wahd", "BT": "Buthánay wahd", "CAST": "CAST", "CAT": "Delgáhi Aprikáay wahd", "CCT": "Kukus Islánday wahd", "CDT": "Delgáhi Amrikáay garmági wahd", "CHADT": "Chatam róchi wahd", "CHAST": "Chatam anjári wahd", "CHUT": "Chukay wahd", "CKT": "Kuk Islánday anjári wahd", "CKT DST": "Kuk Islánday ném-garmági wahd", "CLST": "Chilayay garmági wahd", "CLT": "Chilayay anjári wahd", "COST": "Kolambiáay garmági wahd", "COT": "Kolambiáay anjári wahd", "CST": "Delgáhi Amrikáay anjári wahd", "CST China": "Chinay anjári wahd", "CST China DST": "Chinay róchi wahd", "CVST": "Kap Wardéay garmági wahd", "CVT": "Kap Wardéay anjári wahd", "CXT": "Kresmes Islánday wahd", "ChST": "Chamorróay wahd", "ChST NMI": "ChST NMI", "CuDT": "Kyubáay róchay wahd", "CuST": "Kyubáay anjári wahd", "DAVT": "Dawisay wahd", "DDUT": "Dumont Urwilay wahd", "EASST": "Isthar Islánday garmági wahd", "EAST": "Isthar Islánday anjári wahd", "EAT": "Ródarátki Aprikáay wahd", "ECT": "Ekwádóray wahd", "EDT": "Ródarátki Amrikáay garmági wahd", "EGDT": "Ródarátki Grinlánday garmági wahd", "EGST": "Ródarátki Grinlánday anjári wahd", "EST": "Ródarátki Amrikáay anjári wahd", "FEET": "Démterén Ródarátki Yuropay anjári wahd", "FJT": "Fijiay anjári wahd", "FJT Summer": "Fijiay garmági wahd", "FKST": "Palklánd Islánday garmági wahd", "FKT": "Palklánd Islánday anjári wahd", "FNST": "Noronáay garmági wahd", "FNT": "Noronáay anjári wahd", "GALT": "Galapagosay wahd", "GAMT": "Gambiray wahd", "GEST": "Járjiáay garmági wahd", "GET": "Járjiáay anjári wahd", "GFT": "Paránsi Gwináay wahd", "GIT": "Gelbart Islánday wahd", "GMT": "Grinwech Min Wahd", "GNSST": "GNSST", "GNST": "GNST", "GST": "Zerbári Járjiáay wahd", "GST Guam": "GST Guam", "GYT": "Guyánáay wahd", "HADT": "Hawái/Alushiay garmági wahd", "HAST": "Hawái/Alushiay anjári wahd", "HKST": "Háng Kángay garmági wahd", "HKT": "Háng Kángay anjári wahd", "HOVST": "Hówday garmági wahd", "HOVT": "Hówday anjári wahd", "ICT": "Hendóchinay wahd", "IDT": "Esráilay róchi wahd", "IOT": "Hendi zeray wahd", "IRKST": "Erkuskay garmági wahd", "IRKT": "Erkuskay anjári wahd", "IRST": "Éránay anjári wahd", "IRST DST": "Éránay róchi wahd", "IST": "Henday anjári wahd", "IST Israel": "Esráilay anjári wahd", "JDT": "Jápánay róchi wahd", "JST": "Jápánay anjári wahd", "KOST": "Kósraiay wahd", "KRAST": "Krasnóyáskay garmági wahd", "KRAT": "Krasnóyáskay anjári wahd", "KST": "Kóriáay anjári wahd", "KST DST": "Kóriáay róchi wahd", "LHDT": "Ástréliáay, Ládhaway garmági wahd", "LHST": "Ástréliáay, Ládhaway anjári wahd", "LINT": "Liné Islánday wahd", "MAGST": "Mágadánay garmági wahd", "MAGT": "Mágadánay anjári wahd", "MART": "Markésásay wahd", "MAWT": "Mawsonay wahd", "MDT": "MDT", "MESZ": "Delgáhi Yuropay garmági wahd", "MEZ": "Delgáhi Yuropay anjári wahd", "MHT": "Márshal Islánday wahd", "MMT": "Myanmáray wahd", "MSD": "Máskóay garmági wahd", "MST": "MST", "MUST": "Muritániáay garmági wahd", "MUT": "Muritániáay anjári wahd", "MVT": "Máldipay wahd", "MYT": "Malishiáay wahd", "NCT": "Nyu Kaledóniáay anjári wahd", "NDT": "Nipándlaynday garmági wahd", "NDT New Caledonia": "Nyu Kaledóniáay garmági wahd", "NFDT": "Nurpolk Islánday róchi wahd", "NFT": "Nurpolk Islánday anjári wahd", "NOVST": "Nawásibiskay garmági wahd", "NOVT": "Nawásibiskay anjári wahd", "NPT": "Népálay wahd", "NRT": "Nauruay wahd", "NST": "Nipándlaynday anjári wahd", "NUT": "Niuay wahd", "NZDT": "Niu Zilánday róchi wahd", "NZST": "Niu Zilánday anjári wahd", "OESZ": "Ródarátki Yuropay garmági wahd", "OEZ": "Ródarátki Yuropay anjári wahd", "OMSST": "Ómskay garmági wahd", "OMST": "Ómskay anjári wahd", "PDT": "Árámzeri Amrikáay garmági wahd", "PDTM": "Árámzeri Meksikóay garmági wahd", "PETDT": "PETDT", "PETST": "PETST", "PGT": "Pápuá Niu Giniáay wahd", "PHOT": "Phoeneks Islánday wahd", "PKT": "Pákestánay anjári wahd", "PKT DST": "Pákestánay garmági wahd", "PMDT": "St. Péri o Mikwélin róchi wahd", "PMST": "St. Péri o Mikwélin ajári wahd", "PONT": "Pónpiay wahd", "PST": "Árámzeri Amrikáay anjári wahd", "PST Philippine": "Pelpinay anjári wahd", "PST Philippine DST": "Pelpinay garmági wahd", "PST Pitcairn": "Pitkarénay wahd", "PSTM": "Árámzeri Meksikóay anjári wahd", "PWT": "Paláuay wahd", "PYST": "Paragóayay garmági wahd", "PYT": "Paragóayay anjári wahd", "PYT Korea": "Pyongyángay wahd", "RET": "Réyunianay wahd", "ROTT": "Rothéráay wahd", "SAKST": "Sakhálinay garmági wahd", "SAKT": "Sakhálinay anjári wahd", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "Ródarátki Aprikáay anjári wahd", "SBT": "Solomán Islánday wahd", "SCT": "Séchelesay wahd", "SGT": "Sengápuray anjári wahd", "SLST": "SLST", "SRT": "Surinaymay wahd", "SST Samoa": "Samóáway anjári wahd", "SST Samoa Apia": "Apiáay anjári wahd", "SST Samoa Apia DST": "Apiáay róchi wahd", "SST Samoa DST": "Samóáway róchi wahd", "SYOT": "Syówáay wahd", "TAAF": "Zerbári Paransi o Antárktikáay wahd", "TAHT": "Tahitiay wahd", "TJT": "Tájekestánay wahd", "TKT": "Tokeláuay wahd", "TLT": "Ródarátki Timuray wahd", "TMST": "Torkmenestánay garmági wahd", "TMT": "Torkmenestánay anjári wahd", "TOST": "Tongáay garmági wahd", "TOT": "Tongáay anjári wahd", "TVT": "Tuwáluay wahd", "TWT": "Táipiay anjári wahd", "TWT DST": "Táipiay róchi wahd", "ULAST": "Ulánbátaray garmági wahd", "ULAT": "Ulánbátaray anjári wahd", "UYST": "Yurógóayay garmági wahd", "UYT": "Yurógóayay anjári wahd", "UZT": "Ozbekestánay anjári wahd", "UZT DST": "Ozbekestánay garmági wahd", "VET": "Wenezwéláay wahd", "VLAST": "Waládiwástókay garmági wahd", "VLAT": "Waládiwástókay anjári wahd", "VOLST": "Wolgograday garmági wahd", "VOLT": "Wolgograday anjári wahd", "VOST": "Wostokay wahd", "VUT": "Wánuátuay anjári wahd", "VUT DST": "Wánuátuay garmági wahd", "WAKT": "Wayk Islánday wahd", "WARST": "Rónendi Arjentináay gramági wahd", "WART": "Rónendi Arjentináay anjári wahd", "WAST": "Rónendi Aprikáay wahd", "WAT": "Rónendi Aprikáay wahd", "WESZ": "Rónendi Yuropay garmági wahd", "WEZ": "Rónendi Yuropay anjári wahd", "WFT": "Wallis o Futunáay wahd", "WGST": "Rónendi Grinlánd Garmági Wahd", "WGT": "Rónendi Grinlánday anjári wahd", "WIB": "Rónendi Endhonishiáay anjári wahd", "WIT": "Ródarátki Endhonishiáay anjári wahd", "WITA": "Delgáhi Endhonishiáay anjári wahd", "YAKST": "Yákuskay garmági wahd", "YAKT": "Yákuskay anjári wahd", "YEKST": "Yakátrinborgay garmági wahd", "YEKT": "Yakátrinborgay anjári wahd", "YST": "Yukón wahd", "МСК": "Máskóay anjári wahd", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "Rónendi Kázekestánay anjári wahd", "شىعىش قازاق ەلى": "Ródarátki Kázekestánay anjári wahd", "قازاق ەلى": "Kázakestánay wahd", "قىرعىزستان": "Kargezestánay wahd", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Azóresay garmági wahd"},
+		timezones:              map[string]string{"ACDT": "Delgáhi Ástréliáay garmági wahd", "ACST": "ACST", "ACT": "ACT", "ACWDT": "Delgáhirónendi Ástréliáay garmági wahd", "ACWST": "Delgáhirónendi Ástréliáay anjári wahd", "ADT": "Atlantáay róchi wahd", "ADT Arabia": "Arabi róchi wahd", "AEDT": "Ródarátki Ástréliáay garmági wahd", "AEST": "Ródarátki Ástréliáay anjári wahd", "AFT": "Awgánestánay wahd", "AKDT": "Aláskáay garmági wahd", "AKST": "Aláskáay anjári wahd", "AMST": "Amázónay garmági wahd", "AMST Armenia": "Árminiáay garmági wahd", "AMT": "Amázónay anjári wahd", "AMT Armenia": "Árminiáay anjári wahd", "ANAST": "ANAST", "ANAT": "ANAT", "ARST": "Arjentináay garmági wahd", "ART": "Arjentináay anjári wahd", "AST": "Atlantáay anjári wahd", "AST Arabia": "Arabi anjári wahd", "AWDT": "Rónendi Ástréliáay garmági wahd", "AWST": "Rónendi Ástréliáay anjári wahd", "AZST": "Ázerbáijánay garmági wahd", "AZT": "Ázerbáijánay anjári wahd", "BDT Bangladesh": "Bangaladéshay garmági wahd", "BNT": "Brunáiay wahd", "BOT": "Boliwiáay wahd", "BRST": "Brázilay garmági wahd", "BRT": "Brázilay anjári wahd", "BST Bangladesh": "Bangaladéshay anjári wahd", "BT": "Buthánay wahd", "CAST": "CAST", "CAT": "Delgáhi Aprikáay wahd", "CCT": "Kukus Islánday wahd", "CDT": "Delgáhi Amrikáay garmági wahd", "CHADT": "Chatam róchi wahd", "CHAST": "Chatam anjári wahd", "CHUT": "Chukay wahd", "CKT": "Kuk Islánday anjári wahd", "CKT DST": "Kuk Islánday ném-garmági wahd", "CLST": "Chilayay garmági wahd", "CLT": "Chilayay anjári wahd", "COST": "Kolambiáay garmági wahd", "COT": "Kolambiáay anjári wahd", "CST": "Delgáhi Amrikáay anjári wahd", "CST China": "Chinay anjári wahd", "CST China DST": "Chinay róchi wahd", "CVST": "Kap Wardéay garmági wahd", "CVT": "Kap Wardéay anjári wahd", "CXT": "Kresmes Islánday wahd", "ChST": "Chamorróay wahd", "ChST NMI": "ChST NMI", "CuDT": "Kyubáay róchay wahd", "CuST": "Kyubáay anjári wahd", "DAVT": "Dawisay wahd", "DDUT": "Dumont Urwilay wahd", "EASST": "Isthar Islánday garmági wahd", "EAST": "Isthar Islánday anjári wahd", "EAT": "Ródarátki Aprikáay wahd", "ECT": "Ekwádóray wahd", "EDT": "Ródarátki Amrikáay garmági wahd", "EGDT": "Ródarátki Grinlánday garmági wahd", "EGST": "Ródarátki Grinlánday anjári wahd", "EST": "Ródarátki Amrikáay anjári wahd", "FEET": "Démterén Ródarátki Yuropay anjári wahd", "FJT": "Fijiay anjári wahd", "FJT Summer": "Fijiay garmági wahd", "FKST": "Palklánd Islánday garmági wahd", "FKT": "Palklánd Islánday anjári wahd", "FNST": "Noronáay garmági wahd", "FNT": "Noronáay anjári wahd", "GALT": "Galapagosay wahd", "GAMT": "Gambiray wahd", "GEST": "Járjiáay garmági wahd", "GET": "Járjiáay anjári wahd", "GFT": "Paránsi Gwináay wahd", "GIT": "Gelbart Islánday wahd", "GMT": "Grinwech Min Wahd", "GNSST": "GNSST", "GNST": "GNST", "GST": "Zerbári Járjiáay wahd", "GST Guam": "GST Guam", "GYT": "Guyánáay wahd", "HADT": "Hawái/Alushiay anjári wahd", "HAST": "Hawái/Alushiay anjári wahd", "HKST": "Háng Kángay garmági wahd", "HKT": "Háng Kángay anjári wahd", "HOVST": "Hówday garmági wahd", "HOVT": "Hówday anjári wahd", "ICT": "Hendóchinay wahd", "IDT": "Esráilay róchi wahd", "IOT": "Hendi zeray wahd", "IRKST": "Erkuskay garmági wahd", "IRKT": "Erkuskay anjári wahd", "IRST": "Éránay anjári wahd", "IRST DST": "Éránay róchi wahd", "IST": "Henday anjári wahd", "IST Israel": "Esráilay anjári wahd", "JDT": "Jápánay róchi wahd", "JST": "Jápánay anjári wahd", "KOST": "Kósraiay wahd", "KRAST": "Krasnóyáskay garmági wahd", "KRAT": "Krasnóyáskay anjári wahd", "KST": "Kóriáay anjári wahd", "KST DST": "Kóriáay róchi wahd", "LHDT": "Ástréliáay, Ládhaway garmági wahd", "LHST": "Ástréliáay, Ládhaway anjári wahd", "LINT": "Liné Islánday wahd", "MAGST": "Mágadánay garmági wahd", "MAGT": "Mágadánay anjári wahd", "MART": "Markésásay wahd", "MAWT": "Mawsonay wahd", "MDT": "MDT", "MESZ": "Delgáhi Yuropay garmági wahd", "MEZ": "Delgáhi Yuropay anjári wahd", "MHT": "Márshal Islánday wahd", "MMT": "Myanmáray wahd", "MSD": "Máskóay garmági wahd", "MST": "MST", "MUST": "Muritániáay garmági wahd", "MUT": "Muritániáay anjári wahd", "MVT": "Máldipay wahd", "MYT": "Malishiáay wahd", "NCT": "Nyu Kaledóniáay anjári wahd", "NDT": "Nipándlaynday garmági wahd", "NDT New Caledonia": "Nyu Kaledóniáay garmági wahd", "NFDT": "Nurpolk Islánday róchi wahd", "NFT": "Nurpolk Islánday anjári wahd", "NOVST": "Nawásibiskay garmági wahd", "NOVT": "Nawásibiskay anjári wahd", "NPT": "Népálay wahd", "NRT": "Nauruay wahd", "NST": "Nipándlaynday anjári wahd", "NUT": "Niuay wahd", "NZDT": "Niu Zilánday róchi wahd", "NZST": "Niu Zilánday anjári wahd", "OESZ": "Ródarátki Yuropay garmági wahd", "OEZ": "Ródarátki Yuropay anjári wahd", "OMSST": "Ómskay garmági wahd", "OMST": "Ómskay anjári wahd", "PDT": "Árámzeri Amrikáay garmági wahd", "PDTM": "Árámzeri Meksikóay garmági wahd", "PETDT": "PETDT", "PETST": "PETST", "PGT": "Pápuá Niu Giniáay wahd", "PHOT": "Phoeneks Islánday wahd", "PKT": "Pákestánay anjári wahd", "PKT DST": "Pákestánay garmági wahd", "PMDT": "St. Péri o Mikwélin róchi wahd", "PMST": "St. Péri o Mikwélin ajári wahd", "PONT": "Pónpiay wahd", "PST": "Árámzeri Amrikáay anjári wahd", "PST Philippine": "Pelpinay anjári wahd", "PST Philippine DST": "Pelpinay garmági wahd", "PST Pitcairn": "Pitkarénay wahd", "PSTM": "Árámzeri Meksikóay anjári wahd", "PWT": "Paláuay wahd", "PYST": "Paragóayay garmági wahd", "PYT": "Paragóayay anjári wahd", "PYT Korea": "Pyongyángay wahd", "RET": "Réyunianay wahd", "ROTT": "Rothéráay wahd", "SAKST": "Sakhálinay garmági wahd", "SAKT": "Sakhálinay anjári wahd", "SAMST": "SAMST", "SAMT": "SAMT", "SAST": "Ródarátki Aprikáay anjári wahd", "SBT": "Solomán Islánday wahd", "SCT": "Séchelesay wahd", "SGT": "Sengápuray anjári wahd", "SLST": "SLST", "SRT": "Surinaymay wahd", "SST Samoa": "Samóáway anjári wahd", "SST Samoa Apia": "Apiáay anjári wahd", "SST Samoa Apia DST": "Apiáay róchi wahd", "SST Samoa DST": "Samóáway róchi wahd", "SYOT": "Syówáay wahd", "TAAF": "Zerbári Paransi o Antárktikáay wahd", "TAHT": "Tahitiay wahd", "TJT": "Tájekestánay wahd", "TKT": "Tokeláuay wahd", "TLT": "Ródarátki Timuray wahd", "TMST": "Torkmenestánay garmági wahd", "TMT": "Torkmenestánay anjári wahd", "TOST": "Tongáay garmági wahd", "TOT": "Tongáay anjári wahd", "TVT": "Tuwáluay wahd", "TWT": "Táipiay anjári wahd", "TWT DST": "Táipiay róchi wahd", "ULAST": "Ulánbátaray garmági wahd", "ULAT": "Ulánbátaray anjári wahd", "UYST": "Yurógóayay garmági wahd", "UYT": "Yurógóayay anjári wahd", "UZT": "Ozbekestánay anjári wahd", "UZT DST": "Ozbekestánay garmági wahd", "VET": "Wenezwéláay wahd", "VLAST": "Waládiwástókay garmági wahd", "VLAT": "Waládiwástókay anjári wahd", "VOLST": "Wolgograday garmági wahd", "VOLT": "Wolgograday anjári wahd", "VOST": "Wostokay wahd", "VUT": "Wánuátuay anjári wahd", "VUT DST": "Wánuátuay garmági wahd", "WAKT": "Wayk Islánday wahd", "WARST": "Rónendi Arjentináay gramági wahd", "WART": "Rónendi Arjentináay anjári wahd", "WAST": "Rónendi Aprikáay wahd", "WAT": "Rónendi Aprikáay wahd", "WESZ": "Rónendi Yuropay garmági wahd", "WEZ": "Rónendi Yuropay anjári wahd", "WFT": "Wallis o Futunáay wahd", "WGST": "Rónendi Grinlánd Garmági Wahd", "WGT": "Rónendi Grinlánday anjári wahd", "WIB": "Rónendi Endhonishiáay anjári wahd", "WIT": "Ródarátki Endhonishiáay anjári wahd", "WITA": "Delgáhi Endhonishiáay anjári wahd", "YAKST": "Yákuskay garmági wahd", "YAKT": "Yákuskay anjári wahd", "YEKST": "Yakátrinborgay garmági wahd", "YEKT": "Yakátrinborgay anjári wahd", "YST": "Yukón wahd", "МСК": "Máskóay anjári wahd", "اقتاۋ": "اقتاۋ", "اقتاۋ قالاسى": "اقتاۋ قالاسى", "اقتوبە": "اقتوبە", "اقتوبە قالاسى": "اقتوبە قالاسى", "الماتى": "الماتى", "الماتى قالاسى": "الماتى قالاسى", "باتىس قازاق ەلى": "Rónendi Kázekestánay anjári wahd", "شىعىش قازاق ەلى": "Ródarátki Kázekestánay anjári wahd", "قازاق ەلى": "Kázakestánay wahd", "قىرعىزستان": "Kargezestánay wahd", "قىزىلوردا": "قىزىلوردا", "قىزىلوردا قالاسى": "قىزىلوردا قالاسى", "∅∅∅": "Azóresay garmági wahd"},
 	}
 }
 
@@ -85,6 +85,7 @@ func (bal *bal_Latn) PluralsRange() []locales.PluralRule {
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'bal_Latn'
 func (bal *bal_Latn) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -96,6 +97,7 @@ func (bal *bal_Latn) CardinalPluralRule(num float64, v uint64) locales.PluralRul
 
 // OrdinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for 'bal_Latn'
 func (bal *bal_Latn) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
+
 	n := math.Abs(num)
 
 	if n == 1 {
@@ -218,6 +220,7 @@ func (bal *bal_Latn) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'bal_Latn' and handles both Whole and Real numbers based on 'v'
 func (bal *bal_Latn) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -289,6 +292,7 @@ func (bal *bal_Latn) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'bal_Latn'
 func (bal *bal_Latn) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := bal.currencies[currency]
 	l := len(s) + len(symbol) + 5
@@ -305,12 +309,12 @@ func (bal *bal_Latn) FmtCurrency(num float64, v uint64, currency currency.Type) 
 		b = append(b, s[i])
 	}
 
-	for j := len(symbol) - 1; j >= 0; j-- {
-		b = append(b, symbol[j])
-	}
-
 	for j := len(bal.currencyPositivePrefix) - 1; j >= 0; j-- {
 		b = append(b, bal.currencyPositivePrefix[j])
+	}
+
+	for j := len(symbol) - 1; j >= 0; j-- {
+		b = append(b, symbol[j])
 	}
 
 	if num < 0 {
@@ -330,6 +334,7 @@ func (bal *bal_Latn) FmtCurrency(num float64, v uint64, currency currency.Type) 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'bal_Latn'
 // in accounting notation.
 func (bal *bal_Latn) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := bal.currencies[currency]
 	l := len(s) + len(symbol) + 5
@@ -348,26 +353,25 @@ func (bal *bal_Latn) FmtAccounting(num float64, v uint64, currency currency.Type
 
 	if num < 0 {
 
-		for j := len(symbol) - 1; j >= 0; j-- {
-			b = append(b, symbol[j])
-		}
-
 		for j := len(bal.currencyNegativePrefix) - 1; j >= 0; j-- {
 			b = append(b, bal.currencyNegativePrefix[j])
+		}
+
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
 		}
 
 		b = append(b, bal.minus[0])
 
 	} else {
 
-		for j := len(symbol) - 1; j >= 0; j-- {
-			b = append(b, symbol[j])
-		}
-
 		for j := len(bal.currencyPositivePrefix) - 1; j >= 0; j-- {
 			b = append(b, bal.currencyPositivePrefix[j])
 		}
 
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
+		}
 	}
 
 	// reverse
@@ -378,6 +382,7 @@ func (bal *bal_Latn) FmtAccounting(num float64, v uint64, currency currency.Type
 	if num < 0 {
 		b = append(b, bal.currencyNegativeSuffix...)
 	} else {
+
 		b = append(b, bal.currencyPositiveSuffix...)
 	}
 
@@ -386,6 +391,7 @@ func (bal *bal_Latn) FmtAccounting(num float64, v uint64, currency currency.Type
 
 // FmtDateShort returns the short date representation of 't' for 'bal_Latn'
 func (bal *bal_Latn) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -404,6 +410,7 @@ func (bal *bal_Latn) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'bal_Latn'
 func (bal *bal_Latn) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -422,6 +429,7 @@ func (bal *bal_Latn) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'bal_Latn'
 func (bal *bal_Latn) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -440,6 +448,7 @@ func (bal *bal_Latn) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'bal_Latn'
 func (bal *bal_Latn) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	if t.Day() < 10 {
@@ -468,6 +477,7 @@ func (bal *bal_Latn) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'bal_Latn'
 func (bal *bal_Latn) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -501,6 +511,7 @@ func (bal *bal_Latn) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'bal_Latn'
 func (bal *bal_Latn) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -541,6 +552,7 @@ func (bal *bal_Latn) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'bal_Latn'
 func (bal *bal_Latn) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -586,6 +598,7 @@ func (bal *bal_Latn) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'bal_Latn'
 func (bal *bal_Latn) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()

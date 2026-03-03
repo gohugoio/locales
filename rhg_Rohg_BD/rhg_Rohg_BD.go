@@ -191,6 +191,7 @@ func (rhg *rhg_Rohg_BD) Minus() string {
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'rhg_Rohg_BD' and handles both Whole and Real numbers based on 'v'
 func (rhg *rhg_Rohg_BD) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -262,6 +263,7 @@ func (rhg *rhg_Rohg_BD) FmtPercent(num float64, v uint64) string {
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'rhg_Rohg_BD'
 func (rhg *rhg_Rohg_BD) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := rhg.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -270,6 +272,7 @@ func (rhg *rhg_Rohg_BD) FmtCurrency(num float64, v uint64, currency currency.Typ
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'rhg_Rohg_BD'
 // in accounting notation.
 func (rhg *rhg_Rohg_BD) FmtAccounting(num float64, v uint64, currency currency.Type) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := rhg.currencies[currency]
 	return string(append(append([]byte{}, symbol...), s...))
@@ -277,6 +280,7 @@ func (rhg *rhg_Rohg_BD) FmtAccounting(num float64, v uint64, currency currency.T
 
 // FmtDateShort returns the short date representation of 't' for 'rhg_Rohg_BD'
 func (rhg *rhg_Rohg_BD) FmtDateShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -284,6 +288,7 @@ func (rhg *rhg_Rohg_BD) FmtDateShort(t time.Time) string {
 
 // FmtDateMedium returns the medium date representation of 't' for 'rhg_Rohg_BD'
 func (rhg *rhg_Rohg_BD) FmtDateMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -291,6 +296,7 @@ func (rhg *rhg_Rohg_BD) FmtDateMedium(t time.Time) string {
 
 // FmtDateLong returns the long date representation of 't' for 'rhg_Rohg_BD'
 func (rhg *rhg_Rohg_BD) FmtDateLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -298,6 +304,7 @@ func (rhg *rhg_Rohg_BD) FmtDateLong(t time.Time) string {
 
 // FmtDateFull returns the full date representation of 't' for 'rhg_Rohg_BD'
 func (rhg *rhg_Rohg_BD) FmtDateFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	return string(b)
@@ -305,6 +312,7 @@ func (rhg *rhg_Rohg_BD) FmtDateFull(t time.Time) string {
 
 // FmtTimeShort returns the short time representation of 't' for 'rhg_Rohg_BD'
 func (rhg *rhg_Rohg_BD) FmtTimeShort(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -334,6 +342,7 @@ func (rhg *rhg_Rohg_BD) FmtTimeShort(t time.Time) string {
 
 // FmtTimeMedium returns the medium time representation of 't' for 'rhg_Rohg_BD'
 func (rhg *rhg_Rohg_BD) FmtTimeMedium(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -370,6 +379,7 @@ func (rhg *rhg_Rohg_BD) FmtTimeMedium(t time.Time) string {
 
 // FmtTimeLong returns the long time representation of 't' for 'rhg_Rohg_BD'
 func (rhg *rhg_Rohg_BD) FmtTimeLong(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
@@ -411,6 +421,7 @@ func (rhg *rhg_Rohg_BD) FmtTimeLong(t time.Time) string {
 
 // FmtTimeFull returns the full time representation of 't' for 'rhg_Rohg_BD'
 func (rhg *rhg_Rohg_BD) FmtTimeFull(t time.Time) string {
+
 	b := make([]byte, 0, 32)
 
 	h := t.Hour()
