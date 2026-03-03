@@ -46,7 +46,6 @@ var (
 		},
 		"escape_str": func(s string) string {
 			r := strings.NewReplacer(
-				"\u00a0", " ", // NBSP -> regular space
 				"\u200e", `\u200e`,
 				"\u200f", `\u200f`,
 				"\u200b", `\u200b`,

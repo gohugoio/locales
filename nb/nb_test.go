@@ -225,7 +225,7 @@ func TestFmtNumber(t *testing.T) {
 		{
 			num:      1123456.5643,
 			v:        2,
-			expected: "1 123 456,56",
+			expected: "1 123 456,56",
 		},
 	}
 
@@ -250,13 +250,13 @@ func TestFmtCurrency(t *testing.T) {
 			num:      1123456.5643,
 			v:        2,
 			currency: currency.USD,
-			expected: "1 123 456,56 USD",
+			expected: "1 123 456,56 USD",
 		},
 		{
 			num:      1123456.5643,
 			v:        2,
 			currency: currency.NOK,
-			expected: "1 123 456,56 kr",
+			expected: "1 123 456,56 kr",
 		},
 	}
 
@@ -281,13 +281,13 @@ func TestFmtAccounting(t *testing.T) {
 			num:      550.5643,
 			v:        2,
 			currency: currency.USD,
-			expected: "550,56 USD",
+			expected: "550,56 USD",
 		},
 		{
 			num:      123.56,
 			v:        2,
 			currency: currency.NOK,
-			expected: "123,56 kr",
+			expected: "123,56 kr",
 		},
 	}
 
@@ -310,7 +310,7 @@ func TestFmtPercent(t *testing.T) {
 		{
 			num:      15,
 			v:        0,
-			expected: "15 %",
+			expected: "15 %",
 		},
 	}
 
