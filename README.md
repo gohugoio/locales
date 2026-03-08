@@ -1,3 +1,5 @@
+Superseeded by https://github.com/bep/golocales
+
 ## locales
 
 Locales is a set of locales generated from the [Unicode CLDR Project](http://cldr.unicode.org/) which can be used independently or within
